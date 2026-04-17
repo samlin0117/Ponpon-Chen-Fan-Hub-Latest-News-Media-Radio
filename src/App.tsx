@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign } from 'lucide-react';
 import { motion } from 'motion/react';
 import YouTubePlaylist from './components/YouTubePlaylist';
+import GiscusComments from './components/GiscusComments';
 
 type Language = 'zh' | 'en' | 'ja';
 
@@ -13,7 +14,8 @@ const translations = {
     news: { title: "新聞報導", description: "來自各大媒體的報導與專訪。", article1: "2025-10-11 台音樂人陳芃瑄爵士吉他 登ABC平台 (原文：中文)", article1Desc: "年僅23歲的台灣音樂人陳芃瑄（Ponpon Chen），以獨特爵士吉他彈唱風格，登上美國ABC News...", source: "世界新聞網", article2: "2016-08-24 國民女孩金凱德奪雙冠 模特兒組帝后潛力無限 (原文：中文)", article2Desc: "演藝組的冠軍由14歲的陳芃瑄獲得，她是本屆年紀最小的得獎者，從小就嚮往當唱跳歌手...", source2: "中國時報", article3: "2025-07-18 台灣歌手陳芃瑄登美國新聞片尾 吉他彈唱魅力創百萬點閱 (原文：中文)", article3Desc: "23歲台灣歌手陳芃瑄一段90秒爵士樂演出，登上美國ABC News新聞片尾，網路上創造120萬點閱。主播介紹她「來自台灣，正在加州竄起的新生代爵士歌手」。", source3: "中央社 CNA", article4: "2025-07-27 Ponpon Chen performs news ‘Polka’ (原文：英文)", article4Desc: "「來自台灣，現在是加州正在崛起的新生代爵士樂手，這是 Ponpon Chen 和她的五重奏。」美國新聞節目 World News Now 的主播在片尾時如此介紹。", source4: "Taipei Times", article5: "2025-07-25 FEATURE/Ponpon does polka: Taiwanese jazz musician whistles, scats her way onto US news (原文：英文)", article5Desc: "台灣爵士音樂家陳芃瑄（Ponpon Chen）帶著電吉他與她的樂團，以獨特的風格重新演繹了美國音樂喜劇演員 Barry Mitchell 著名的短曲：「World News Polka」。", source5: "僑務電子報", article6: "2024-04-29 Meet Ponpon Chen | 歌手、爵士吉他手與創作人 (原文：英文)", article6Desc: "我們有幸與 Ponpon Chen 進行了交流。在過去的十年裡，她的音樂旅程充滿了各種不同的經歷——參加比賽、上電視、錄音、跨國合作...", source6: "SHOUTOUT LA", article7: "2025-07-18 台灣女生用爵士樂征服美國！陳芃瑄登ABC新聞片尾 吉他彈唱魅力創百萬點閱 (原文：中文)", article7Desc: "23歲台灣歌手陳芃瑄一段90秒爵士樂演出，登上美國ABC News新聞片尾，網路上創造120萬點閱。主播介紹她「來自台灣，正在加州竄起的新生代爵士歌手」。", source7: "壹蘋新聞網", article8: "2025-07-20 陳芃瑄吉他菜鳥變身爵士樂新秀 誤打誤撞結識大師 (原文：中文)", article8Desc: "23歲台灣女生陳芃瑄4年間從吉他菜鳥蛻變為美國爵士樂新秀，憑著不怕犯錯的精神，在異鄉獨自打拚，作品登上美國主流媒體，也意外與樂壇大師結識。", source8: "僑務電子報", article9: "2018-05-07 王源親自挑選台灣少女！「一對一合唱對視」害羞2度笑場 (原文：中文)", article9Desc: "大陸男團TFBOYS成員王源近日受邀出演節目《我想和你唱3》，錄影前一天親自打電話邀請粉絲到現場參與錄影，結果卻被無情的掛斷電話，讓他無奈嘆氣，還好最終仍順利邀請到3位粉絲。節目中另外找來6組人合作，並選出最後單獨合唱的對象，這個幸運兒就是來自台灣的女孩陳芃瑄。", source9: "ETtoday星光雲", article10: "2025-08-02 Heaven Raven 專訪：現居加州的台灣女孩陳芃瑄 (原文：中文)", article10Desc: "現居加州的台灣女孩陳芃瑄，今年五月受到美國廣播公司 (ABC) 邀請，以爵士樂改編傳統新聞片尾曲《World News Polka》之後，已在網上累積超過 120 萬次流量，也在 Threads 上備受討論，而今天 HR 很開心能連線位於美國的芃瑄，請她和我們分享這一切是如何開始的？", source10: "Heaven Raven", readMore: "閱讀全文" },
     interview: { title: "廣播訪問", description: "收聽 Ponpon 的最新專訪，深入了解她的音樂旅程。", rti1: "音樂本事 旅美爵士新星陳芃瑄 — 尋找靈魂深處的原創聲音（上）", rti2: "音樂本事 旅美爵士新星陳芃瑄 — 尋找靈魂深處的原創聲音（下）", rti1Date: "2026-03-16", rti2Date: "2026-03-23", listenNow: "點擊前往收聽" },
     videos: { title: "影音專區", description: "探索 Ponpon 的現場演出、訪談紀錄與生活分享。", p1: "現場演出與創作", p2: "短影音 Shorts", p3: "訪談紀錄", p4: "YouTuber 分享介紹", p5: "網友拍攝 (Fan Cam)" },
-    links: { title: "關注 Ponpon", youtube: "YouTube", instagram: "Instagram", facebook: "Facebook", threads: "Threads", website: "官方網站" }
+    links: { title: "關注 Ponpon", youtube: "YouTube", instagram: "Instagram", facebook: "Facebook", threads: "Threads", website: "官方網站" },
+    comments: { title: "Fan Lounge / 粉絲留言板", description: "留下您的足跡與感受，讓這份音樂的交流在夜空下持續迴盪..." }
   },
   en: {
     nav: { home: "Home", about: "About", news: "News", interview: "Interview", videos: "Videos", links: "Links" },
@@ -22,7 +24,8 @@ const translations = {
     news: { title: "News & Press", description: "Media coverage and features.", article1: "2025-10-11 Taiwanese Musician Ponpon Chen Featured on ABC Platform (Original: Chinese)", article1Desc: "23-year-old Taiwanese musician Ponpon Chen brings her unique jazz guitar and vocal style to ABC News...", source: "World Journal", article2: "2016-08-24 Eelin Star Entertainment Group Champion Ponpon Chen (Original: Chinese)", article2Desc: "The Entertainment Group championship was won by 14-year-old Ponpon Chen, the youngest winner of this year, who has aspired to be a singer-dancer since childhood...", source2: "China Times", article3: "2025-07-18 Taiwanese Singer Ponpon Chen Featured on US News Outro, Guitar Performance Hits Million Views (Original: Chinese)", article3Desc: "A 90-second jazz performance by 23-year-old Taiwanese singer Ponpon Chen was featured at the end of an ABC News broadcast, generating 1.2 million views online...", source3: "CNA", article4: "2025-07-27 Ponpon Chen performs news ‘Polka’ (Original: English)", article4Desc: "\"Originally from Taiwan and now one of California’s rising young jazz artists, here is Ponpon Chen and her quintet,\" the announcer of US news program World News Now said...", source4: "Taipei Times", article5: "2025-07-25 FEATURE/Ponpon does polka: Taiwanese jazz musician whistles, scats her way onto US news (Original: English)", article5Desc: "Fronting her band with an electric guitar, Taiwanese jazz musician Ponpon Chen then broke into her unique rendition of American musical comedian Barry Mitchell's famous jingle...", source5: "OCAC News", article6: "2024-04-29 Meet Ponpon Chen | Singer, Jazz Guitarist & Songwriter (Original: English)", article6Desc: "We had the good fortune of connecting with Ponpon Chen and we've shared our conversation below. Over the past decade, my musical journey has been filled with diverse experiences...", source6: "SHOUTOUT LA", article7: "2025-07-18 Taiwanese Girl Conquers US with Jazz! Ponpon Chen Featured on ABC News Outro (Original: Chinese)", article7Desc: "A 90-second jazz performance by 23-year-old Taiwanese singer Ponpon Chen was featured at the end of an ABC News broadcast, generating 1.2 million views online...", source7: "Next Apple News", article8: "2025-07-20 Ponpon Chen Transforms from Guitar Novice to Jazz Rising Star, Unexpectedly Meets Masters (Original: Chinese)", article8Desc: "In just 4 years, 23-year-old Taiwanese girl Ponpon Chen transformed from a guitar novice to a rising jazz star in the US. With a fearless spirit, she worked hard abroad...", source8: "OCAC News", article9: "2018-05-07 Wang Yuan Personally Selects Taiwanese Girl! \"One-on-One Duet Eye Contact\" Makes Him Shyly Laugh Twice (Original: Chinese)", article9Desc: "TFBOYS member Wang Yuan was recently invited to appear on the show \"Come Sing with Me 3\". The day before recording, he personally called fans to invite them to the show, but was ruthlessly hung up on. Fortunately, he successfully invited 3 fans. The show also featured 6 groups for collaboration, and the final lucky girl chosen for a solo duet was Ponpon Chen from Taiwan.", source9: "ETtoday Star", article10: "2025-08-02 Heaven Raven Interview: Taiwanese Girl Ponpon Chen Living in California (Original: Chinese)", article10Desc: "Taiwanese girl Ponpon Chen, currently living in California, was invited by ABC this May to rearrange the traditional news outro \"World News Polka\" into jazz. It has accumulated over 1.2 million views online and sparked discussions on Threads. Today, HR is happy to connect with Ponpon in the US to share how it all started.", source10: "Heaven Raven", readMore: "Read More" },
     interview: { title: "Radio Interview", description: "Listen to Ponpon's latest interview and dive deep into her musical journey.", rti1: "Music Essence: Rising Jazz Star Ponpon Chen - Finding the Original Voice (Part 1)", rti2: "Music Essence: Rising Jazz Star Ponpon Chen - Finding the Original Voice (Part 2)", rti1Date: "2026-03-16", rti2Date: "2026-03-23", listenNow: "Listen Now" },
     videos: { title: "Video Gallery", description: "Explore Ponpon's live performances, interviews, and vlogs.", p1: "Live & Originals", p2: "Shorts", p3: "Interviews", p4: "Vlogs & Features", p5: "Fan Cams" },
-    links: { title: "Follow Ponpon", youtube: "YouTube", instagram: "Instagram", facebook: "Facebook", threads: "Threads", website: "Official Site" }
+    links: { title: "Follow Ponpon", youtube: "YouTube", instagram: "Instagram", facebook: "Facebook", threads: "Threads", website: "Official Site" },
+    comments: { title: "Fan Lounge", description: "Leave your footprints and feelings, letting this musical exchange resonate under the night sky..." }
   },
   ja: {
     nav: { home: "ホーム", about: "プロフィール", news: "ニュース", interview: "インタビュー", videos: "動画", links: "リンク" },
@@ -31,7 +34,8 @@ const translations = {
     news: { title: "ニュース＆プレス", description: "メディア掲載と特集。", article1: "2025-10-11 台湾のミュージシャンPonpon ChenがABCプラットフォームに登場 (原文：中国語)", article1Desc: "23歳の台湾人ミュージシャンPonpon Chenが、ユニークなジャズギターとボーカルスタイルでABC Newsに...", source: "世界日報", article2: "2016-08-24 イーリン・スター エンターテインメント部門優勝 Ponpon Chen (原文：中国語)", article2Desc: "エンターテインメント部門の優勝は14歳のPonpon Chenが獲得しました。今大会最年少の受賞者であり、幼い頃から歌手を志していました...", source2: "中国時報", article3: "2025-07-18 台湾の歌手Ponpon Chenが米ニュースのエンディングに登場、ギター弾き語りで100万回再生を記録 (原文：中国語)", article3Desc: "23歳の台湾人歌手Ponpon Chenの90秒間のジャズパフォーマンスが米ABC Newsのエンディングで放送され、ネット上で120万回の再生回数を記録しました...", source3: "中央社 CNA", article4: "2025-07-27 Ponpon Chen performs news ‘Polka’ (原文：英語)", article4Desc: "「台湾出身で、現在はカリフォルニアで注目を集める若手ジャズアーティスト、Ponpon Chenと彼女のクインテットです」と米ニュース番組のアナウンサーが紹介しました...", source4: "Taipei Times", article5: "2025-07-25 FEATURE/Ponpon does polka: Taiwanese jazz musician whistles, scats her way onto US news (原文：英語)", article5Desc: "台湾のジャズミュージシャンPonpon Chenは、エレキギターを手にバンドを率い、アメリカの音楽コメディアンBarry Mitchellの有名なジングルを独自のアレンジで披露しました...", source5: "僑務電子報", article6: "2024-04-29 Meet Ponpon Chen | 歌手、ジャズギタリスト、ソングライター (原文：英語)", article6Desc: "Ponpon Chenとつながる幸運に恵まれ、その会話をシェアします。過去10年間、私の音楽の旅は多様な経験に満ちていました...", source6: "SHOUTOUT LA", article7: "2025-07-18 台湾の女性がジャズでアメリカを魅了！Ponpon ChenがABCニュースのエンディングに登場 (原文：中国語)", article7Desc: "23歳の台湾人歌手Ponpon Chenの90秒間のジャズパフォーマンスが米ABC Newsのエンディングで放送され、ネット上で120万回の再生回数を記録しました...", source7: "壹蘋新聞網", article8: "2025-07-20 Ponpon Chen、ギター初心者からジャズの新星へ変身、思いがけず巨匠たちと出会う (原文：中国語)", article8Desc: "23歳の台湾人女性Ponpon Chenは、わずか4年間でギター初心者からアメリカのジャズの新星へと成長しました。失敗を恐れない精神で異国で奮闘し...", source8: "僑務電子報", article9: "2018-05-07 ワン・ユエンが台湾の少女を自ら指名！「1対1のデュエットで見つめ合い」照れて2度笑ってしまう (原文：中国語)", article9Desc: "TFBOYSのメンバーであるワン・ユエン（王源）が最近、番組「Come Sing with Me 3」にゲスト出演しました。収録の前日に自らファンに電話をかけて招待しましたが、無情にも電話を切られてしまい、ため息をつく場面も。幸いにも最終的に3人のファンを招待できました。番組では他に6組とコラボし、最後に単独デュエットの相手として選ばれた幸運な女の子は、台湾出身のポンポン・チェン（陳芃瑄）でした。", source9: "ETtoday Star", article10: "2025-08-02 Heaven Raven インタビュー：カリフォルニア在住の台湾人女性 Ponpon Chen (原文：中国語)", article10Desc: "カリフォルニア在住の台湾人女性Ponpon Chenは、今年5月にABCから招待を受け、伝統的なニュースエンディング曲「World News Polka」をジャズにアレンジしました。ネット上で120万回以上の再生回数を記録し、Threadsでも話題になっています。今日HRはアメリカにいるPonponとつながり、すべてがどのように始まったのかをシェアしてもらいます。", source10: "Heaven Raven", readMore: "続きを読む" },
     interview: { title: "ラジオインタビュー", description: "Ponponの最新インタビューを聴いて、彼女の音楽の旅を深く知ろう。", rti1: "音楽の真髄：米国の新星ジャズシンガー Ponpon Chen - 魂の奥底にあるオリジナルな声を探して (前編)", rti2: "音楽の真髄：米国の新星ジャズシンガー Ponpon Chen - 魂の奥底にあるオリジナルな声を探して (後編)", rti1Date: "2026-03-16", rti2Date: "2026-03-23", listenNow: "今すぐ聴く" },
     videos: { title: "ビデオギャラリー", description: "Ponponのライブパフォーマンス、インタビュー、Vlogをご覧ください。", p1: "ライブ＆オリジナル", p2: "ショート動画", p3: "インタビュー", p4: "Vlog＆特集", p5: "ファンカメラ (Fan Cams)" },
-    links: { title: "フォローする", youtube: "YouTube", instagram: "Instagram", facebook: "Facebook", threads: "Threads", website: "公式サイト" }
+    links: { title: "フォローする", youtube: "YouTube", instagram: "Instagram", facebook: "Facebook", threads: "Threads", website: "公式サイト" },
+    comments: { title: "Fan Lounge", description: "あなたの足跡と思いを残し、この音楽の交流を夜空の下で響かせましょう..." }
   }
 };
 
@@ -749,6 +753,28 @@ export default function App() {
               </a>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Comments Section */}
+      <section id="comments" className="py-32 bg-dark relative">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-serif mb-6 text-gold">{t.comments.title}</h2>
+            <p className="text-gray-400 font-light italic">
+              "{t.comments.description}"
+            </p>
+          </motion.div>
+          
+          <div className="bg-dark-lighter p-6 md:p-10 rounded-2xl border border-white/5 shadow-2xl shadow-gold/5">
+            <GiscusComments />
+          </div>
         </div>
       </section>
 
