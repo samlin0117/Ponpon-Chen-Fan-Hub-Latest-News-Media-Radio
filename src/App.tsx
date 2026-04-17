@@ -402,41 +402,6 @@ export default function App() {
             </a>
 
             <a 
-              href="https://news.nextapple.com/international/20250718/1CDE7CF653E631BCF463DF5256AF216C" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="group block p-8 border border-white/10 rounded-2xl bg-dark-lighter hover:border-gold/50 transition-all duration-300 relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
-              <div className="flex flex-col md:flex-row gap-8 items-center md:items-start relative z-10">
-                <div className="w-full md:w-1/3 aspect-video md:aspect-square rounded-xl overflow-hidden bg-black shrink-0 border border-white/5">
-                  <img 
-                    src="https://static-cdn.nextapple.tw/prod/2025-07/1CDE7CF653E631BCF463DF5256AF216C/756558a47edfe7ad17dee7db3c0570fc_750.jpeg" 
-                    alt="News Article" 
-                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-500"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-                <div className="flex-1 text-left flex flex-col justify-center h-full py-2">
-                  <div className="flex items-center mb-4">
-                    <Globe className="w-4 h-4 text-gold mr-2" />
-                    <span className="text-xs font-mono text-gold-light tracking-widest">{t.news.source7}</span>
-                  </div>
-                  <h3 className="font-serif text-2xl mb-4 group-hover:text-gold transition-colors leading-snug">
-                    {t.news.article7}
-                  </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                    {t.news.article7Desc}
-                  </p>
-                  <div className="mt-auto flex items-center text-xs text-gray-300 uppercase tracking-wider">
-                    <span>{t.news.readMore}</span>
-                    <div className="ml-3 w-6 h-[1px] bg-gray-500 group-hover:bg-gold group-hover:w-10 transition-all duration-300"></div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <a 
               href="https://shoutoutla.com/meet-ponpon-chen-singer-jazz-guitarist-songwriter/" 
               target="_blank" 
               rel="noopener noreferrer" 
