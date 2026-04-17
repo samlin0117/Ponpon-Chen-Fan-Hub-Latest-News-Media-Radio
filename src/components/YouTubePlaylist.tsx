@@ -21,7 +21,9 @@ export default function YouTubePlaylist({ title, playlistId }: YouTubePlaylistPr
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY;
+        // Try to get from env, fallback to hardcoded key if env is missing
+        const apiKey = import.meta.env.VITE_YOUTUBE_API_KEY || 'AIzaSyAp5UXwfKe-UJez2uraOdQ0q8147iuBiko';
+        
         if (!apiKey) {
           console.error('YouTube API Key is missing');
           return;
