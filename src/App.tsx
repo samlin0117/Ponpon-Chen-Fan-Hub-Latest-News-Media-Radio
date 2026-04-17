@@ -146,8 +146,8 @@ export default function App() {
             className="text-center"
           >
             <Mic2 className="w-8 h-8 text-gold mx-auto mb-6 opacity-80" />
-            <h2 className="text-3xl md:text-4xl font-serif mb-10">{t.about.title}</h2>
-            <p className="text-gray-300 leading-loose text-lg font-light md:text-xl text-justify md:text-center whitespace-pre-wrap">
+            <h2 className="text-3xl md:text-4xl font-serif mb-10 text-center">{t.about.title}</h2>
+            <p className="text-gray-300 leading-loose text-lg font-light md:text-xl text-left whitespace-pre-wrap max-w-3xl mx-auto">
               {t.about.description}
             </p>
             
