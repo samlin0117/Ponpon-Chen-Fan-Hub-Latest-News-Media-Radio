@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign } from 'lucide-react';
 import { motion } from 'motion/react';
 import YouTubePlaylist from './components/YouTubePlaylist';
-import FacebookComments from './components/FacebookComments';
+import GiscusComments from './components/GiscusComments';
 
 type Language = 'zh' | 'en' | 'ja';
 
@@ -773,7 +773,7 @@ export default function App() {
           </motion.div>
           
           <div className="bg-dark-lighter p-6 md:p-10 rounded-2xl border border-white/5 shadow-2xl shadow-gold/5">
-            <FacebookComments />
+            <GiscusComments />
           </div>
         </div>
       </section>
