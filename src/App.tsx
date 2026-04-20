@@ -3,7 +3,7 @@ import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X } fro
 import { motion, AnimatePresence } from 'motion/react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import YouTubePlaylist from './components/YouTubePlaylist';
-import GiscusComments from './components/GiscusComments';
+import CusdisComments from './components/CusdisComments';
 
 type Language = 'zh' | 'en' | 'ja';
 
@@ -937,7 +937,7 @@ function MainContent() {
           </motion.div>
           
           <div className="bg-dark-lighter p-6 md:p-10 rounded-2xl border border-white/5 shadow-2xl shadow-gold/5">
-            <GiscusComments />
+            <CusdisComments />
           </div>
         </div>
       </section>

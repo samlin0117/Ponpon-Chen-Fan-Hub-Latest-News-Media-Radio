@@ -10,9 +10,10 @@ interface Video {
 interface YouTubePlaylistProps {
   title: string;
   playlistId: string;
+  featured?: boolean;
 }
 
-export default function YouTubePlaylist({ title, playlistId }: YouTubePlaylistProps) {
+export default function YouTubePlaylist({ title, playlistId, featured = false }: YouTubePlaylistProps) {
   const [videos, setVideos] = useState<Video[]>([]);
   const [currentVideo, setCurrentVideo] = useState<Video | null>(null);
   const [loading, setLoading] = useState(true);
@@ -71,11 +72,11 @@ export default function YouTubePlaylist({ title, playlistId }: YouTubePlaylistPr
 
   if (loading) {
     return (
-      <div className="flex flex-col text-left bg-dark rounded-2xl overflow-hidden border border-white/5 shadow-2xl shadow-gold/5">
+      <div className={`flex flex-col text-left bg-dark rounded-2xl overflow-hidden border border-white/5 shadow-2xl shadow-gold/5 ${featured ? 'md:col-span-2' : ''}`}>
         <div className="p-6 pb-4 border-b border-white/5">
           <h3 className="text-xl font-serif text-gold">{title}</h3>
         </div>
-        <div className="w-full aspect-video bg-dark-lighter animate-pulse flex items-center justify-center text-gray-500">
+        <div className={`w-full aspect-video bg-dark-lighter animate-pulse flex items-center justify-center text-gray-500 ${featured ? 'md:aspect-[21/9]' : ''}`}>
           載入中...
         </div>
       </div>
@@ -87,13 +88,18 @@ export default function YouTubePlaylist({ title, playlistId }: YouTubePlaylistPr
   }
 
   return (
-    <div className="flex flex-col text-left bg-dark rounded-2xl overflow-hidden border border-white/5 shadow-2xl shadow-gold/5">
-      <div className="p-6 pb-4 border-b border-white/5">
+    <div className={`flex flex-col text-left bg-dark rounded-2xl overflow-hidden border border-white/5 shadow-2xl shadow-gold/5 ${featured ? 'md:col-span-2' : ''}`}>
+      <div className="p-6 pb-4 border-b border-white/5 flex justify-between items-center">
         <h3 className="text-xl font-serif text-gold">{title}</h3>
+        {featured && (
+          <span className="text-xs font-mono text-gold-light border border-gold/20 px-2 py-1 rounded-full uppercase tracking-wider">
+            Featured
+          </span>
+        )}
       </div>
       
       {/* Main Player */}
-      <div className="w-full aspect-video bg-black shrink-0">
+      <div className={`w-full aspect-video bg-black shrink-0 ${featured ? 'md:aspect-[21/9]' : ''}`}>
         <iframe 
           width="100%" 
           height="100%" 
