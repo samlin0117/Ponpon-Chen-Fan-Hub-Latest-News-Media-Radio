@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign } from 'lucide-react';
-import { motion } from 'motion/react';
+import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import YouTubePlaylist from './components/YouTubePlaylist';
 import GiscusComments from './components/GiscusComments';
 
@@ -79,36 +80,38 @@ const getTimelineData = (lang: Language) => {
   ];
 };
 
-export default function App() {
+function MainContent() {
   const [lang, setLang] = useState<Language>('zh');
   const t = translations[lang];
   const timelineItems = getTimelineData(lang);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
-  // Smooth scroll to section
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const closeMenu = () => setIsMenuOpen(false);
+
+  // Scroll to top when changing route
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-dark text-gray-100 font-sans selection:bg-gold/30 selection:text-gold-light">
+    <div className="min-h-screen bg-dark text-gray-100 font-sans selection:bg-gold/30 selection:text-gold-light flex flex-col pt-20">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-md border-b border-white/5">
         <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="font-serif text-xl font-semibold tracking-widest text-gold cursor-pointer" onClick={() => scrollTo('hero')}>
+          <Link to="/" className="font-serif text-xl font-semibold tracking-widest text-gold cursor-pointer" onClick={closeMenu}>
             PONPON
-          </div>
+          </Link>
           
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8 text-sm uppercase tracking-widest">
-            <button onClick={() => scrollTo('hero')} className="hover:text-gold transition-colors">{t.nav.home}</button>
-            <button onClick={() => scrollTo('about')} className="hover:text-gold transition-colors">{t.nav.about}</button>
-            <button onClick={() => scrollTo('timeline')} className="hover:text-gold transition-colors">{t.nav.timeline}</button>
-            <button onClick={() => scrollTo('news')} className="hover:text-gold transition-colors">{t.nav.news}</button>
-            <button onClick={() => scrollTo('interview')} className="hover:text-gold transition-colors">{t.nav.interview}</button>
-            <button onClick={() => scrollTo('videos')} className="hover:text-gold transition-colors">{t.nav.videos}</button>
-            <button onClick={() => scrollTo('links')} className="hover:text-gold transition-colors">{t.nav.links}</button>
+            <Link to="/" className={`transition-colors ${location.pathname === '/' ? 'text-gold' : 'hover:text-gold'}`}>{t.nav.home}</Link>
+            <Link to="/about" className={`transition-colors ${location.pathname === '/about' ? 'text-gold' : 'hover:text-gold'}`}>{t.nav.about}</Link>
+            <Link to="/timeline" className={`transition-colors ${location.pathname === '/timeline' ? 'text-gold' : 'hover:text-gold'}`}>{t.nav.timeline}</Link>
+            <Link to="/news" className={`transition-colors ${location.pathname === '/news' ? 'text-gold' : 'hover:text-gold'}`}>{t.nav.news}</Link>
+            <Link to="/interview" className={`transition-colors ${location.pathname === '/interview' ? 'text-gold' : 'hover:text-gold'}`}>{t.nav.interview}</Link>
+            <Link to="/videos" className={`transition-colors ${location.pathname === '/videos' ? 'text-gold' : 'hover:text-gold'}`}>{t.nav.videos}</Link>
+            <Link to="/links" className={`transition-colors ${location.pathname === '/links' ? 'text-gold' : 'hover:text-gold'}`}>{t.nav.links}</Link>
           </div>
 
           <div className="flex items-center space-x-4">
@@ -124,15 +127,53 @@ export default function App() {
                 <option value="ja" className="bg-dark text-white">日本語</option>
               </select>
             </div>
-            <div className="flex opacity-70 hover:opacity-100 transition-opacity shrink-0">
+            <div className="hidden md:flex opacity-70 hover:opacity-100 transition-opacity shrink-0">
               <img src="https://visitor-badge.laobi.icu/badge?page_id=ponponchen.com&left_color=gray&right_color=goldenrod&left_text=VISITORS" alt="Visitors" className="h-5" />
             </div>
+            
+            {/* Mobile Hamburger Button */}
+            <button 
+              className="md:hidden text-gray-300 hover:text-gold p-2 transition-colors ml-4 focus:outline-none"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 bg-dark/95 backdrop-blur-xl pt-24 pb-12 px-6 md:hidden flex flex-col items-center space-y-6 overflow-y-auto"
+          >
+            <div className="flex flex-col items-center space-y-8 w-full max-w-sm mt-8">
+              <Link to="/" onClick={closeMenu} className={`text-xl uppercase tracking-[0.2em] w-full text-center py-3 border-b border-white/5 transition-colors ${location.pathname === '/' ? 'text-gold' : 'text-gray-300 hover:text-gold'}`}>{t.nav.home}</Link>
+              <Link to="/about" onClick={closeMenu} className={`text-xl uppercase tracking-[0.2em] w-full text-center py-3 border-b border-white/5 transition-colors ${location.pathname === '/about' ? 'text-gold' : 'text-gray-300 hover:text-gold'}`}>{t.nav.about}</Link>
+              <Link to="/timeline" onClick={closeMenu} className={`text-xl uppercase tracking-[0.2em] w-full text-center py-3 border-b border-white/5 transition-colors ${location.pathname === '/timeline' ? 'text-gold' : 'text-gray-300 hover:text-gold'}`}>{t.nav.timeline}</Link>
+              <Link to="/news" onClick={closeMenu} className={`text-xl uppercase tracking-[0.2em] w-full text-center py-3 border-b border-white/5 transition-colors ${location.pathname === '/news' ? 'text-gold' : 'text-gray-300 hover:text-gold'}`}>{t.nav.news}</Link>
+              <Link to="/interview" onClick={closeMenu} className={`text-xl uppercase tracking-[0.2em] w-full text-center py-3 border-b border-white/5 transition-colors ${location.pathname === '/interview' ? 'text-gold' : 'text-gray-300 hover:text-gold'}`}>{t.nav.interview}</Link>
+              <Link to="/videos" onClick={closeMenu} className={`text-xl uppercase tracking-[0.2em] w-full text-center py-3 border-b border-white/5 transition-colors ${location.pathname === '/videos' ? 'text-gold' : 'text-gray-300 hover:text-gold'}`}>{t.nav.videos}</Link>
+              <Link to="/links" onClick={closeMenu} className={`text-xl uppercase tracking-[0.2em] w-full text-center py-3 transition-colors ${location.pathname === '/links' ? 'text-gold' : 'text-gray-300 hover:text-gold'}`}>{t.nav.links}</Link>
+              
+              <div className="pt-8 w-full flex justify-center opacity-70">
+                <img src="https://visitor-badge.laobi.icu/badge?page_id=ponponchen.com&left_color=gray&right_color=goldenrod&left_text=VISITORS" alt="Visitors" className="h-6" />
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <div className="flex-grow">
+      <Routes>
+        <Route path="/" element={
+          <section id="hero" className="relative min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden py-12 md:py-20">
         {/* Atmospheric background */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-[100px]"></div>
@@ -187,9 +228,11 @@ export default function App() {
           </motion.div>
         </div>
       </section>
+        } />
 
-      {/* About Section */}
-      <section id="about" className="py-32 bg-dark-lighter relative">
+        {/* About Section */}
+        <Route path="/about" element={
+      <section id="about" className="py-12 md:py-32 bg-dark-lighter relative min-h-[calc(100vh-80px)] flex items-center">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -211,9 +254,11 @@ export default function App() {
           </motion.div>
         </div>
       </section>
+        } />
 
-      {/* Timeline Section */}
-      <section id="timeline" className="py-32 bg-dark relative border-t border-white/5 overflow-hidden">
+        {/* Timeline Section */}
+        <Route path="/timeline" element={
+      <section id="timeline" className="py-12 md:py-32 bg-dark relative border-t border-white/5 overflow-hidden min-h-[calc(100vh-80px)]">
         {/* Background glow for timeline */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold/5 rounded-full blur-[150px] pointer-events-none hidden md:block"></div>
         
@@ -271,9 +316,11 @@ export default function App() {
           </div>
         </div>
       </section>
+        } />
 
-      {/* News Section */}
-      <section id="news" className="py-32 bg-dark-lighter relative">
+        {/* News Section */}
+        <Route path="/news" element={
+      <section id="news" className="py-12 md:py-32 bg-dark-lighter relative min-h-[calc(100vh-80px)]">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -610,9 +657,11 @@ export default function App() {
           </motion.div>
         </div>
       </section>
+        } />
 
-      {/* Interview Section */}
-      <section id="interview" className="py-32 bg-dark-lighter relative">
+        {/* Interview Section */}
+        <Route path="/interview" element={
+      <section id="interview" className="py-12 md:py-32 bg-dark-lighter relative min-h-[calc(100vh-80px)]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -719,9 +768,11 @@ export default function App() {
           </motion.div>
         </div>
       </section>
+        } />
 
-      {/* Videos Section */}
-      <section id="videos" className="py-32 bg-dark relative">
+        {/* Videos Section */}
+        <Route path="/videos" element={
+      <section id="videos" className="py-12 md:py-32 bg-dark relative min-h-[calc(100vh-80px)]">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -763,9 +814,11 @@ export default function App() {
           </motion.div>
         </div>
       </section>
+        } />
 
-      {/* Links Section */}
-      <section id="links" className="py-32 bg-dark-lighter relative">
+        {/* Links Section */}
+        <Route path="/links" element={<>
+      <section id="links" className="py-12 md:py-32 bg-dark-lighter relative min-h-max">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -851,11 +904,22 @@ export default function App() {
           </div>
         </div>
       </section>
+        </>} />
+      </Routes>
+      </div>
 
       {/* Footer */}
       <footer className="py-8 text-center border-t border-white/5 text-gray-500 text-sm">
         <p>&copy; {new Date().getFullYear()} Ponpon Chen. All rights reserved.</p>
       </footer>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <MainContent />
+    </Router>
   );
 }
