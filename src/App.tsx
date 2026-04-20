@@ -53,7 +53,7 @@ const getTimelineData = (lang: Language) => {
       { year: "2022 - 2023", title: "Studying in LA & Transformation", desc: <>Moved to Los Angeles to study Jazz Guitar at the Musicians Institute (MI). Forced to take a six-month break from playing due to tendonitis from intense practice, she used this time to deeply study jazz vocals and music history, beautifully evolving into a versatile, all-around musician.</> },
       { year: "2024", title: "LA Gigs & Social Media Breakthrough", desc: <>Became active in LA jazz clubs as a Band Leader, accumulating deep live performance experience. Invited by Grammy-winning studio owner Tom Weir to release performance videos on his channel, her unique charm quickly sparked a social media craze with rapidly soaring viewership.</> },
       { year: "2025", title: "Global Recognition & Master Collaborations", desc: <>In May, she was invited to perform a rearranged outro for <strong>ABC News</strong> "World News Now", with the video surpassing a million views. At the end of the year, she was invited to an annual L.A. grand event to perform alongside Grammy winner Randy Waldman.</> },
-      { year: "2026", title: "Debut Jazz Album & Gibson Spotlight Artist", desc: <>Synthesizing a decade of musical depth and her US experiences, she released her debut English jazz studio album, opening a new chapter in her career. That same year, her exceptional guitar skills were recognized by the world's top guitar brand, inviting her to be <strong>Gibson</strong>'s 2026 Spotlight Artist, showcasing the international impact of a new-generation jazz diva.</> }
+      { year: "2026", title: "Debut Jazz Album & Gibson Spotlight Artist", desc: <>Synthesizing a decade of musical depth and her US experiences, she is soon to release her debut English jazz studio album, opening a new chapter in her career. That same year, her exceptional guitar skills were recognized by the world's top guitar brand, inviting her to be <strong>Gibson</strong>'s 2026 Spotlight Artist, showcasing the international impact of a new-generation jazz diva.</> }
     ];
   }
   if (lang === 'ja') {
@@ -65,7 +65,7 @@ const getTimelineData = (lang: Language) => {
       { year: "2022 - 2023", title: "渡米と試練からの進化", desc: <>ロサンゼルスのMusicians Institute（MI）でジャズギターを専攻。猛練習による腱鞘炎で半年間ギターを弾けない休養期間を強いられるが、その間にジャズボーカルと音楽史を深く学び、楽器奏者から全方位的な音楽家へと華麗な進化を遂げる。</> },
       { year: "2024", title: "LAでのライブとSNSでのブレイク", desc: <>ロサンゼルスの各ジャズクラブでバンドリーダーとして活躍し、確かなライブパフォーマンスの実力を築く。グラミー賞受賞のスタジオオーナーTom Weirの招待で彼のチャンネルに演奏動画を公開したところ、その独特な魅力で瞬く間にSNSで話題となり、視聴回数が急上昇。</> },
       { year: "2025", title: "国際メディア掲載と巨匠との共演", desc: <>5月、米国<strong>ABC News</strong>「World News Now」のエンディング曲アレンジと演奏に招待され、動画は100万回再生を突破。年末にはロサンゼルスの年末恒例行事に招かれ、グラミー賞受賞者Randy Waldmanと共演を果たす。</> },
-      { year: "2026", title: "ファーストアルバム＆Gibson年間注目アーティスト", desc: <>10年以上の音楽的蓄積と渡米の経験を結集し、自身初の全編英語ジャズスタジオアルバムをリリースし、キャリアの新たな扉を開く。同年、その卓越したギターテクニックが世界トップメーカーに認められ、<strong>Gibson</strong>の2026年度注目アーティストに選出。新世代ジャズ歌姫としての国際的な影響力を示している。</> }
+      { year: "2026", title: "ファーストアルバム＆Gibson年間注目アーティスト", desc: <>10年以上の音楽的蓄積と渡米の経験を結集し、自身初の全編英語ジャズスタジオアルバムのリリースを控え、キャリアの新たな扉を開く。同年、その卓越したギターテクニックが世界トップメーカーに認められ、<strong>Gibson</strong>の2026年度注目アーティストに選出。新世代ジャズ歌姫としての国際的な影響力を示している。</> }
     ];
   }
   return [
@@ -76,7 +76,7 @@ const getTimelineData = (lang: Language) => {
     { year: "2022 - 2023", title: "赴美深造與沉潛蛻變", desc: <>前往洛杉磯 Musicians Institute 專攻爵士吉他。雖因高強度苦練引發肌腱炎被迫休養半年，卻在停彈期間深研爵士人聲與音樂史，完成從樂手到全方位音樂人的華麗進化。</> },
     { year: "2024", title: "洛杉磯實戰與社群突圍", desc: <>活躍於洛杉磯各大 Jazz Club 並擔任 Band Leader，累積深厚現場實戰力。受葛萊美錄音室老闆 Tom Weir 邀請，於其頻道發布演出影片，憑藉獨特魅力迅速引發社群熱潮，觀看人數迅速飆升。</> },
     { year: "2025", title: "躍上國際媒體與大師結緣", desc: <>5月受邀為美國 <strong>ABC News</strong>《World News Now》演出改編片尾曲，影片突破百萬點閱；年底受邀洛杉磯年度盛事，與葛萊美得主 Randy Waldman 同台演出。</> },
-    { year: "2026", title: "首張爵士專輯與榮膺 Gibson 年度焦點藝術家", desc: <>匯聚十載音樂底蘊與旅美淬鍊，發行首張個人英文爵士錄音室專輯，開啟演藝生涯嶄新篇章。同年琴藝深獲國際頂尖琴廠肯定，受邀擔任 <strong>Gibson</strong> 2026 年度焦點藝術家，展現新世代爵士女伶的國際影響力。</> }
+    { year: "2026", title: "首張爵士專輯與榮膺 Gibson 年度焦點藝術家", desc: <>匯聚十載音樂底蘊與旅美淬鍊，即將發行首張個人英文爵士錄音室專輯，開啟演藝生涯嶄新篇章。同年琴藝深獲國際頂尖琴廠肯定，受邀擔任 <strong>Gibson</strong> 2026 年度焦點藝術家，展現新世代爵士女伶的國際影響力。</> }
   ];
 };
 
