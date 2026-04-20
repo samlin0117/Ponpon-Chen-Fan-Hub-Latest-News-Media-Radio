@@ -937,7 +937,7 @@ function MainContent() {
           </motion.div>
           
           <div className="bg-dark-lighter p-6 md:p-10 rounded-2xl border border-white/5 shadow-2xl shadow-gold/5">
-            <CusdisComments />
+            <CusdisComments lang={lang} />
           </div>
         </div>
       </section>
