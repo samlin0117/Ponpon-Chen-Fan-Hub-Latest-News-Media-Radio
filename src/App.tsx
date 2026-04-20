@@ -85,6 +85,7 @@ function MainContent() {
   const t = translations[lang];
   const timelineItems = getTimelineData(lang);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeVideoTab, setActiveVideoTab] = useState('all');
   const location = useLocation();
 
   const closeMenu = () => setIsMenuOpen(false);
@@ -818,36 +819,70 @@ function MainContent() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-serif mb-6">{t.videos.title}</h2>
-            <p className="text-gray-400 mb-12 font-light">{t.videos.description}</p>
+            <p className="text-gray-400 mb-8 font-light">{t.videos.description}</p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              <YouTubePlaylist title={t.videos.p1} playlistId="PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj" />
-              <YouTubePlaylist title={t.videos.p2} playlistId="PLLwWHVIUlB8lbrhitwdm9yq5MhKKn_lNT" />
-              <YouTubePlaylist title={t.videos.p3} playlistId="PLLwWHVIUlB8llQJXiVeWR7vSSsg8Ink4e" />
-              <YouTubePlaylist title={t.videos.p4} playlistId="PLLwWHVIUlB8ltR-2B1q4ZAFnQm6NOGxJq" />
+            {/* Filter Tabs */}
+            <div className="flex overflow-x-auto gap-2 md:gap-4 pb-4 mb-8 custom-scrollbar hide-scrollbar-on-mobile w-full justify-start md:justify-center sticky top-20 z-40 bg-dark/95 backdrop-blur-md pt-4 border-b border-white/5">
+              {[
+                { id: 'all', label: lang === 'zh' ? '全部' : lang === 'ja' ? 'すべて' : 'All' },
+                { id: 'p1', label: t.videos.p1 },
+                { id: 'p2', label: t.videos.p2 },
+                { id: 'p3', label: t.videos.p3 },
+                { id: 'p4', label: t.videos.p4 },
+                { id: 'p5', label: t.videos.p5 }
+              ].map(tab => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveVideoTab(tab.id)}
+                  className={`px-5 py-2.5 rounded-full whitespace-nowrap text-sm font-medium transition-all duration-300 ${
+                    activeVideoTab === tab.id 
+                      ? 'bg-gold text-dark shadow-lg shadow-gold/20 scale-105' 
+                      : 'bg-dark-lighter border border-white/10 text-gray-300 hover:text-gold hover:border-gold/50'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+            
+            <div className={`grid grid-cols-1 ${activeVideoTab === 'all' ? 'md:grid-cols-2' : ''} gap-8 mb-16`}>
+              {(activeVideoTab === 'all' || activeVideoTab === 'p1') && (
+                 <YouTubePlaylist title={t.videos.p1} playlistId="PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj" featured={activeVideoTab !== 'all'} />
+              )}
+              {(activeVideoTab === 'all' || activeVideoTab === 'p2') && (
+                 <YouTubePlaylist title={t.videos.p2} playlistId="PLLwWHVIUlB8lbrhitwdm9yq5MhKKn_lNT" featured={activeVideoTab !== 'all'} />
+              )}
+              {(activeVideoTab === 'all' || activeVideoTab === 'p3') && (
+                 <YouTubePlaylist title={t.videos.p3} playlistId="PLLwWHVIUlB8llQJXiVeWR7vSSsg8Ink4e" featured={activeVideoTab !== 'all'} />
+              )}
+              {(activeVideoTab === 'all' || activeVideoTab === 'p4') && (
+                 <YouTubePlaylist title={t.videos.p4} playlistId="PLLwWHVIUlB8ltR-2B1q4ZAFnQm6NOGxJq" featured={activeVideoTab !== 'all'} />
+              )}
             </div>
 
             {/* Fan Cams (Social Media) */}
-            <div className="mt-16 border-t border-white/10 pt-16">
-              <h3 className="text-2xl font-serif mb-8 text-gold">{t.videos.p5}</h3>
-              <div className="flex flex-wrap justify-center gap-8">
-                <div className="flex flex-col items-center">
-                  <p className="text-gray-300 mb-4 font-medium tracking-wide">20260204 Music Corner 角落音樂餐廳。</p>
-                  <div className="rounded-2xl overflow-hidden shadow-2xl shadow-gold/5 border border-white/10 bg-black inline-block">
-                    <iframe 
-                      src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1177729904529661&show_text=false&width=316&t=0" 
-                      width="316" 
-                      height="562" 
-                      style={{ border: 'none', overflow: 'hidden' }} 
-                      scrolling="no" 
-                      frameBorder="0" 
-                      allowFullScreen={true} 
-                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                    ></iframe>
+            {(activeVideoTab === 'all' || activeVideoTab === 'p5') && (
+              <div className="mt-8 border-t border-white/10 pt-12 md:pt-16">
+                <h3 className="text-2xl font-serif mb-8 text-gold">{t.videos.p5}</h3>
+                <div className="flex flex-wrap justify-center gap-8">
+                  <div className="flex flex-col items-center">
+                    <p className="text-gray-300 mb-4 font-medium tracking-wide">20260204 Music Corner 角落音樂餐廳。</p>
+                    <div className="rounded-2xl overflow-hidden shadow-2xl shadow-gold/5 border border-white/10 bg-black inline-block">
+                      <iframe 
+                        src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1177729904529661&show_text=false&width=316&t=0" 
+                        width="316" 
+                        height="562" 
+                        style={{ border: 'none', overflow: 'hidden' }} 
+                        scrolling="no" 
+                        frameBorder="0" 
+                        allowFullScreen={true} 
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                      ></iframe>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
           </motion.div>
         </div>
       </section>
