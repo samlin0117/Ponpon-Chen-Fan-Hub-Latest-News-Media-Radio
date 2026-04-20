@@ -947,7 +947,8 @@ function MainContent() {
 
       {/* Footer */}
       <footer className="py-8 text-center border-t border-white/5 text-gray-500 text-sm">
-        <p>&copy; {new Date().getFullYear()} Ponpon Chen. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Ponpon Chen Fan Site &middot; Unofficial &bull; Built by Sam Lin</p>
+        <p className="mt-2 text-xs text-gray-600">All rights to content belong to their respective owners.</p>
       </footer>
     </div>
   );
