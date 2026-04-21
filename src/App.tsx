@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import YouTubePlaylist from './components/YouTubePlaylist';
 import CusdisComments from './components/CusdisComments';
+import chinatimesImg from './assets/chinatimes.jpg';
+import citystarImg from './assets/citystar.jpg';
 
 type Language = 'zh' | 'en' | 'ja';
 
@@ -631,7 +633,7 @@ function MainContent() {
               <div className="flex flex-col md:flex-row gap-8 items-center md:items-start relative z-10">
                 <div className="w-full md:w-1/3 aspect-video md:aspect-square rounded-xl overflow-hidden bg-black shrink-0 border border-white/5 flex items-start justify-center">
                   <img 
-                    src={`${import.meta.env.BASE_URL}chinatimes.jpg`} 
+                    src={chinatimesImg} 
                     alt="News Article" 
                     className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-500"
                     referrerPolicy="no-referrer"
@@ -666,7 +668,7 @@ function MainContent() {
               <div className="flex flex-col md:flex-row gap-8 items-center md:items-start relative z-10">
                 <div className="w-full md:w-1/3 aspect-video md:aspect-square rounded-xl overflow-hidden bg-black shrink-0 border border-white/5">
                   <img 
-                    src={`${import.meta.env.BASE_URL}citystar.jpg`} 
+                    src={citystarImg} 
                     alt="News Article" 
                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-500"
                     referrerPolicy="no-referrer"
