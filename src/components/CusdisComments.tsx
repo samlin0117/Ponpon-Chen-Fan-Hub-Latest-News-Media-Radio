@@ -9,23 +9,23 @@ const translations = {
   zh: {
     header: "FAN LOUNGE",
     noLogin: "免登入留言區",
-    title: "想對 Ponpon 說什麼嗎？",
-    desc: "您的留言是對 Ponpon 最大的支持與鼓勵。您可以直接在下方輸入暱稱與內容 (不需要註冊帳號)。",
-    disclaimer: "※ 為了維護高品質的空間，留言送出後會先由版主過目，稍微等待一下就會顯示出來囉！"
+    title: "想對 Ponpon 說些什麼嗎？",
+    desc: "每一份留言，都是對 Ponpon 爵士旅程最溫暖的支持與鼓勵。您可以直接在下方輸入暱稱並發佈內容（無需註冊帳號）。\n\n也歡迎在這裡留下給版主的建議或鼓勵，您的回饋是支持本站持續更新的最大動力！",
+    disclaimer: "※ 為了維護良好的交流品質，留言將由版主審核後顯示，感謝您的耐心等待。"
   },
   en: {
     header: "FAN LOUNGE",
     noLogin: "Guest Comments",
-    title: "Anything to say to Ponpon?",
-    desc: "Your words are the greatest support and encouragement for Ponpon. You can simply enter your nickname and message below (no registration required).",
-    disclaimer: "※ To maintain a high-quality space, comments are moderated and will appear shortly after approval!"
+    title: "Anything you'd like to say to Ponpon?",
+    desc: "Every message is the warmest support for Ponpon's jazz journey. Enter your nickname and post directly below (no registration required).\n\nSuggestions or words of encouragement for the site moderator are also welcome. Your feedback is what keeps this site constantly updated!",
+    disclaimer: "* To maintain a high-quality community, comments will be reviewed by the moderator before they appear. Thank you for your patience."
   },
   ja: {
     header: "FAN LOUNGE",
     noLogin: "ゲストコメント",
     title: "Ponponに伝えたいことはありますか？",
-    desc: "あなたのメッセージはPonponにとって最大の支えであり励ましです。下にニックネームとメッセージを入力するだけです（登録不要）。",
-    disclaimer: "※ 質の高い空間を保つため、コメントは管理者の承認後に表示されます。しばらくお待ちください！"
+    desc: "皆様からのメッセージは、Ponponのジャズの旅への最も温かいサポートと励みになります。下にニックネームを入力して直接投稿できます（アカウント登録は不要です）。\n\n管理人へのご意見や応援の言葉も大歓迎です。皆様からのフィードバックが、当サイトを運営する最大の原動力です！",
+    disclaimer: "※ 良好な交流環境を保つため、コメントは管理人の承認後に公開されます。ご迷惑をおかけしますが、ご理解のほどよろしくお願いいたします。"
   }
 };
 
@@ -142,15 +142,14 @@ export default function CusdisComments({ lang = 'zh' }: CusdisCommentsProps) {
           <div className="bg-dark p-3 rounded-full border border-gold/10 shrink-0">
             <Sparkles className="w-6 h-6 text-gold/80" />
           </div>
-          <div>
-            <h4 className="text-gray-200 font-medium mb-1 tracking-wide">{t.title}</h4>
-            <p className="text-gray-400 text-sm leading-relaxed">
+          <div className="flex-1">
+            <h4 className="text-gray-200 font-medium mb-3 tracking-wide">{t.title}</h4>
+            <div className="text-gray-400 text-sm leading-relaxed whitespace-pre-wrap">
               {t.desc}
-              <br className="hidden md:block" />
-              <span className="text-gold/70 text-xs mt-1 md:mt-0 inline-block">
-                {t.disclaimer}
-              </span>
-            </p>
+            </div>
+            <div className="text-gold/70 text-xs mt-4 block italic">
+              {t.disclaimer}
+            </div>
           </div>
         </div>
       </div>
