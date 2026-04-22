@@ -17,7 +17,7 @@ export default defineConfig(({ command, mode }) => {
       },
     },
     build: {
-      assetsInlineLimit: 512000, // Inline images smaller than 500 KB
+      assetsInlineLimit: 1000000, // Force inline images smaller than 1 MB to guarantee finding them on GH Pages
     },
     server: {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
