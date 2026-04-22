@@ -1,0 +1,146 @@
+{
+  "site_title": "Ponpon Chen 陳芃瑄 | ジャズアーティスト",
+  "site_description": "Ponpon Chen (陳芃瑄) の非公式音楽アーカイブ。新世代のジャズ歌手であるPonponの音楽の旅、ニュース、ライブパフォーマンス、ラジオインタビューを収録しています。",
+  "nav": {
+    "home": "ホーム",
+    "about": "プロフィール",
+    "timeline": "タイムライン",
+    "news": "ニュース",
+    "interview": "インタビュー",
+    "videos": "動画",
+    "links": "リンク"
+  },
+  "timeline": {
+    "title": "マイルストーン",
+    "description": "Ponponの音楽の旅と重要な瞬間"
+  },
+  "hero": {
+    "title": "Ponpon Chen",
+    "subtitle": "ジャズアーティスト",
+    "slogan": "魂の歌声で、すべての夜の物語を語る。",
+    "disclaimer": "ファンによって構築された非公式の音楽アーカイブです。国内外のメディア報道、ラジオインタビュー、ライブパフォーマンスなど、Ponponの音楽の旅の貴重な瞬間を丁寧に集めました。誤りやご提案がありましたら、<a href=\"mailto:samlin0117@gmail.com\" class=\"text-gold hover:text-gold-light transition-colors hover:underline\">samlin0117@gmail.com</a> までご連絡ください。"
+  },
+  "about": {
+    "title": "Ponponについて",
+    "description": "Ponpon (陳芃瑄) の音楽の世界では、楽器と歌声に境界はありません。彼女は表現力豊かな歌声をベースに、流れるようなギターの伴奏を組み合わせ、メロディーの中を自由に駆け巡ります。\n\nファンを最も魅了するのは、ライブパフォーマンスにおいて、澄んだ口笛、軽快なスキャット、そしてギターのピッキングを同時に操る姿です。この「三位一体」の同時演奏技術は、彼女の最も象徴的な音楽的シグネチャーとなっています。2026年には待望のファースト・ジャズ・アルバムがリリース予定です。繊細かつ力強い音楽のエネルギーにぜひご期待ください。"
+  },
+  "news": {
+    "title": "ニュース＆プレス",
+    "description": "メディア掲載と特集。",
+    "article1": "2025-10-11 台湾のミュージシャンPonpon ChenがABCプラットフォームに登場 (原文：中国語)",
+    "article1Desc": "23歳の台湾人ミュージシャンPonpon Chenが、ユニークなジャズギターとボーカルスタイルでABC Newsに...",
+    "source": "世界日報",
+    "article2": "2016-08-24 イーリン・スター エンターテインメント部門優勝 Ponpon Chen (原文：中国語)",
+    "article2Desc": "エンターテインメント部門の優勝は14歳のPonpon Chenが獲得しました。今大会最年少の受賞者であり、幼い頃から歌手を志していました...",
+    "source2": "中国時報",
+    "article3": "2025-07-18 台湾の歌手Ponpon Chenが米ニュースのエンディングに登場、ギター弾き語りで100万回再生を記録 (原文：中国語)",
+    "article3Desc": "23歳の台湾人歌手Ponpon Chenの90秒間のジャズパフォーマンスが米ABC Newsのエンディングで放送され、ネット上で120万回の再生回数を記録しました...",
+    "source3": "中央社 CNA",
+    "article4": "2025-07-27 Ponpon Chen performs news ‘Polka’ (原文：英語)",
+    "article4Desc": "「台湾出身で、現在はカリフォルニアで注目を集める若手ジャズアーティスト、Ponpon Chenと彼女のクインテットです」と米ニュース番組のアナウンサーが紹介しました...",
+    "source4": "Taipei Times",
+    "article5": "2025-07-25 FEATURE/Ponpon does polka: Taiwanese jazz musician whistles, scats her way onto US news (原文：英語)",
+    "article5Desc": "台湾のジャズミュージシャンPonpon Chenは、エレキギターを手にバンドを率い、アメリカの音楽コメディアンBarry Mitchellの有名なジングルを独自のアレンジで披露しました...",
+    "source5": "僑務電子報",
+    "article6": "2024-04-29 Meet Ponpon Chen | 歌手、ジャズギタリスト、ソングライター (原文：英語)",
+    "article6Desc": "Ponpon Chenとつながる幸運に恵まれ、その会話をシェアします。過去10年間、私の音楽の旅は多様な経験に満ちていました...",
+    "source6": "SHOUTOUT LA",
+    "article7": "2025-07-18 台湾の女性がジャズでアメリカを魅了！Ponpon ChenがABCニュースのエンディングに登場 (原文：中国語)",
+    "article7Desc": "23歳の台湾人歌手Ponpon Chenの90秒間のジャズパフォーマンスが米ABC Newsのエンディングで放送され、ネット上で120万回の再生回数を記録しました...",
+    "source7": "壹蘋新聞網",
+    "article8": "2025-07-20 Ponpon Chen、ギター初心者からジャズの新星へ変身、思いがけず巨匠たちと出会う (原文：中国語)",
+    "article8Desc": "23歳の台湾人女性Ponpon Chenは、わずか4年間でギター初心者からアメリカのジャズの新星へと成長しました。失敗を恐れない精神で異国で奮闘し...",
+    "source8": "僑務電子報",
+    "article9": "2018-05-07 ワン・ユエンが台湾の少女を自ら指名！「1対1のデュエットで見つめ合い」照れて2度笑ってしまう (原文：中国語)",
+    "article9Desc": "TFBOYSのメンバーであるワン・ユエン（王源）が最近、番組「Come Sing with Me 3」にゲスト出演しました。収録の前日に自らファンに電話をかけて招待しましたが、無情にも電話を切られてしまい、ため息をつく場面も。幸いにも最終的に3人のファンを招待できました。番組では他に6組とコラボし、最後に単独デュエットの相手として選ばれた幸運な女の子は、台湾出身のポンポン・チェン（陳芃瑄）でした。",
+    "source9": "ETtoday Star",
+    "article10": "2025-08-02 Heaven Raven インタビュー：カリフォルニア在住の台湾人女性 Ponpon Chen (原文：中国語)",
+    "article10Desc": "カリフォルニア在住の台湾人女性Ponpon Chenは、今年5月にABCから招待を受け、伝統的なニュースエンディング曲「World News Polka」をジャズにアレンジしました。ネット上で120万回以上の再生回数を記録し、Threadsでも話題になっています。今日HRはアメリカにいるPonponとつながり、すべてがどのように始まったのかをシェアしてもらいます。",
+    "source10": "Heaven Raven",
+    "article11": "2015-05-24 芸能事務所との契約と歌手の夢を懸け、600人の学生が「City Star」で競演 (原文：中国語)",
+    "article11Desc": "台北シティ科技大学が「2015 City Star」オーディションを開催。台湾全土から情熱的な学生が歌とダンスのスキルを披露しました。600人の若者が参加する激戦の中、Ponponは見事2位を獲得しました。",
+    "source11": "自由時報",
+    "readMore": "続きを読む"
+  },
+  "interview": {
+    "title": "ラジオインタビュー",
+    "description": "Ponponの最新インタビューを聴いて、彼女の音楽の旅を深く知ろう。",
+    "rti1": "音楽の真髄：米国の新星ジャズシンガー Ponpon Chen - 魂の奥底にあるオリジナルな声を探して (前編)",
+    "rti2": "音楽の真髄：米国の新星ジャズシンガー Ponpon Chen - 魂の奥底にあるオリジナルな声を探して (後編)",
+    "rti1Date": "2026-03-16",
+    "rti2Date": "2026-03-23",
+    "pod1": "BCC Midnight You & Me - インタビュー: Ponpon Chen",
+    "pod1Date": "2026-03-08",
+    "podSource": "BCCラジオ",
+    "pod2": "台湾のジャズシンガー Ponpon Chenの歌声がABCニュースで輝く",
+    "pod2Date": "2025-10-07",
+    "pod2Source": "Happy Equation",
+    "pod3": "EP125 LAで夢を追う！ABCニュースも認めたジャズの実力！",
+    "pod3Date": "2025-08-11",
+    "pod3Source": "跳脫Do式圈",
+    "listenNow": "今すぐ聴く"
+  },
+  "videos": {
+    "title": "ビデオギャラリー",
+    "description": "Ponponのライブパフォーマンス、インタビュー、Vlogをご覧ください。",
+    "p1": "ライブ＆オリジナル",
+    "p2": "ショート動画",
+    "p3": "インタビュー",
+    "p4": "Vlog＆特集",
+    "p5": "ファンカメラ (Fan Cams)"
+  },
+  "links": {
+    "title": "フォローする",
+    "youtube": "YouTube",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "threads": "Threads",
+    "website": "公式サイト"
+  },
+  "comments": {
+    "title": "Fan Lounge",
+    "description": "あなたの足跡と思いを残し、この音楽の交流を夜空の下で響かせましょう..."
+  },
+  "timelineItems": [
+    {
+      "year": "2012 - 2014",
+      "title": "音楽の芽生え",
+      "desc": "10歳でストリートダンスを学びリズム感を養い、歌って踊れるアーティストへの夢を抱く。12歳で歌への情熱から、ボーカルコンテストに出場し始める。"
+    },
+    {
+      "year": "2015 - 2016",
+      "title": "注目の新星",
+      "desc": "2015年の<a href=\"https://news.ltn.com.tw/news/life/breakingnews/1327418\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">歌唱コンテストで2位を獲得</a>。2016年、わずか14歳で第5回<a href=\"https://www.chinatimes.com/newspapers/20160824000626-260507?chdtv\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">「イーリン・スター」エンターテインメント部門で優勝</a>。<a href=\"https://www.youtube.com/watch?v=D4eou5cff68\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 演出ハイライトを観る</a>"
+    },
+    {
+      "year": "2018 - 2019",
+      "title": "海外での挑戦と飛躍",
+      "desc": "2018年に人気音楽番組<a href=\"https://star.ettoday.net/news/1164745\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">「Come Sing with Me 3」に出演</a>し、人気歌手ワン・ユエンとデュエット。<a href=\"https://www.youtube.com/watch?v=JNy94_bUgx0&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=24\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 演出ハイライトを観る</a><br/><br/>2019年には台湾を代表するオーディション番組<strong>「Jungle Voice」</strong>にチャレンジャーとして参戦。<a href=\"https://www.youtube.com/watch?v=5lPml-yAc2I&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=25\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 演出ハイライトを観る</a>"
+    },
+    {
+      "year": "2020 - 2021",
+      "title": "ジャズへの覚醒",
+      "desc": "台湾芸術大学に進学するも、コロナ禍でジャズの巨匠<strong>George Benson</strong>の動画に衝撃を受け、休学してジャズエレクトリックギターの猛特訓を開始。渡米を決意する。"
+    },
+    {
+      "year": "2022 - 2023",
+      "title": "渡米と試練からの進化",
+      "desc": "ロサンゼルスのMusicians Institute（MI）でジャズギターを専攻。猛練習による腱鞘炎で半年間ギターを弾けない休養期間を強いられるが、その間にジャズボーカルと音楽史を深く学び、楽器奏者から全方位的な音楽家へと華麗な進化を遂げる。"
+    },
+    {
+      "year": "2024",
+      "title": "LAでのライブとSNSでのブレイク",
+      "desc": "ロサンゼルスの各ジャズクラブでバンドリーダーとして活躍し、確かなライブパフォーマンスの実力を築く。グラミー賞受賞のスタジオオーナーTom Weirの招待で彼のチャンネルに演奏動画を公開したところ、その独特な魅力で瞬く間にSNSで話題となり、視聴回数が急上昇。"
+    },
+    {
+      "year": "2025",
+      "title": "国際メディア掲載と巨匠との共演",
+      "desc": "5月、米国<strong>ABC News</strong>「World News Now」のエンディング曲アレンジと演奏に招待され、動画は100万回再生を突破。<a href=\"https://www.youtube.com/watch?v=1Fnnr4TOjVQ&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 演出を観る</a><br/><br/>年末にはロサンゼルスの年末恒例行事に招かれ、グラミー賞受賞者Randy Waldmanと共演を果たす。<a href=\"https://www.youtube.com/watch?v=HCUE2cDCOqs&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=1\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 演出を観る</a>"
+    },
+    {
+      "year": "2026",
+      "title": "ファーストアルバム＆Gibson年間注目アーティスト",
+      "desc": "10年以上の音楽的蓄積と渡米の経験を結集し、自身初の全編英語ジャズスタジオアルバムのリリースを控え、キャリアの新たな扉を開く。同年、その卓越したギターテクニックが世界トップメーカーに認められ、<strong>Gibson</strong>の2026年度注目アーティストに選出。新世代ジャズ歌姫としての国際的な影響力を示している。"
+    }
+  ]
+}
