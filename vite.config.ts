@@ -3,10 +3,10 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig, loadEnv} from 'vite';
 
-export default defineConfig(({mode}) => {
+export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, '.', '');
   return {
-    base: '/Ponpon-Chen-Fan-Hub-Latest-News-Media-Radio/', // Added for GitHub Pages deployment
+    base: command === 'build' ? '/Ponpon-Chen-Fan-Hub-Latest-News-Media-Radio/' : '/', // Added for GitHub Pages deployment, / for local dev
     plugins: [react(), tailwindcss()],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),

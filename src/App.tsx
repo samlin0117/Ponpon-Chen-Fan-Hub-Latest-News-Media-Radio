@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import YouTubePlaylist from './components/YouTubePlaylist';
 import CusdisComments from './components/CusdisComments';
+import hrCover from './assets/hr-cover.jpg';
 
 type Language = 'zh' | 'en' | 'ja';
 
@@ -386,10 +387,9 @@ function MainContent() {
               <div className="flex flex-col md:flex-row gap-8 items-center md:items-start relative z-10">
                 <div className="w-full md:w-1/3 aspect-video md:aspect-square rounded-xl overflow-hidden bg-black shrink-0 border border-white/5">
                   <img 
-                    src="https://scontent-sof1-2.cdninstagram.com/v/t51.82787-15/527327478_18516424330008067_2745243435798350628_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=H0QL959b968Q7kNvwEgK2le&_nc_oc=Adre3qL4hSpnUEAUD8xmOjSsJAVgvRyi0dvldm6FkKJ_b7HJDELLqwr1Y7XYCnml6BarFqXkgxKCYhlfwrXhcLGf&_nc_zt=23&_nc_ht=scontent-sof1-2.cdninstagram.com&_nc_gid=m_uQg6m-RFxyGtEunEzvQg&_nc_ss=7a289&oh=00_Af1g-f5CuhdKbhU3dDn4IAItENiqGREnfKcXvTqmQW29Gw&oe=69E63BCC" 
+                    src={hrCover}
                     alt="News Article" 
-                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-500"
-                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-500"
                   />
                 </div>
                 <div className="flex-1 text-left flex flex-col justify-center h-full py-2">
