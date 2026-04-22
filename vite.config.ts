@@ -6,7 +6,7 @@ import {defineConfig, loadEnv} from 'vite';
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, '.', '');
   return {
-    base: command === 'build' ? '/Ponpon-Chen-Fan-Hub-Latest-News-Media-Radio/' : '/', // Added for GitHub Pages deployment, / for local dev
+    base: './', // Use relative paths for static assets so it works on any subpath (like GitHub Pages) and local dev
     plugins: [react(), tailwindcss()],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
