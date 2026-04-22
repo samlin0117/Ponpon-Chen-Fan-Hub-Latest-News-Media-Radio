@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { translations, Language } from '../locales';
 
 export const useTranslation = () => {
+  const location = useLocation();
+
   const [lang, setLangState] = useState<Language>(() => {
     const supportedLangs = ['zh', 'en', 'ja'];
 
@@ -34,27 +37,47 @@ export const useTranslation = () => {
       }
     }
 
-    // 將決定的語言存回 localStorage，讓之後訪問維持一致
     localStorage.setItem('app-lang', initialLang);
     return initialLang as Language;
   });
+
+  // 自動同步：當 URL (location.search 或 location.hash) 變動時，更新語言
+  useEffect(() => {
+    const supportedLangs = ['zh', 'en', 'ja'];
+    
+    const queryParams = new URLSearchParams(window.location.search);
+    let urlLang = queryParams.get('lang');
+
+    if (!urlLang && window.location.hash.includes('?')) {
+      const hashQueryString = window.location.hash.split('?')[1];
+      const hashParams = new URLSearchParams(hashQueryString);
+      urlLang = hashParams.get('lang');
+    }
+
+    if (urlLang && supportedLangs.includes(urlLang) && urlLang !== lang) {
+      setLangState(urlLang as Language);
+      localStorage.setItem('app-lang', urlLang);
+    }
+  }, [location.search, location.hash, lang]);
 
   const setLang = (newLang: Language) => {
     setLangState(newLang);
     localStorage.setItem('app-lang', newLang);
     
-    // 同步更新網址 (可選，讓使用者切換語言時網址也保持最新，方便複製分享)
+    // 同步更新網址
     const currentUrl = new URL(window.location.href);
     if (currentUrl.searchParams.has('lang')) {
         currentUrl.searchParams.set('lang', newLang);
         window.history.replaceState({}, '', currentUrl.toString());
     } else if (window.location.hash.includes('?lang=')) {
-        // 簡單相容處理修改 HashRouter 裡的 lang
-        // (這裡不覆寫所有結構，僅在已存在 lang 參數時做替換維持乾淨的路由)
         const newHash = window.location.hash.replace(/[?&]lang=[^&]*/, (match) => {
            return match.replace(/=[^&]*/, `=${newLang}`);
         });
         window.location.hash = newHash;
+    } else {
+        // 若網址原本沒有 lang，可以在切換時自動加上去 (如果使用者有此需求，可選加入)
+        // currentUrl.searchParams.set('lang', newLang);
+        // window.history.replaceState({}, '', currentUrl.toString());
     }
   };
 
@@ -64,7 +87,7 @@ export const useTranslation = () => {
     // 確保 t 有值
     if (!t) return;
 
-    // 動態更新 Document Title (支援 TypeScript 任意寫法或我們已經確定的屬性)
+    // 動態更新 Document Title
     if ((t as any).site_title) {
       document.title = (t as any).site_title;
     }
@@ -73,14 +96,13 @@ export const useTranslation = () => {
     if ((t as any).site_description) {
       let metaDescription = document.querySelector('meta[name="description"]');
       if (!metaDescription) {
-        // 如果原本沒有這個 meta 標籤就建立一個
         metaDescription = document.createElement('meta');
         metaDescription.setAttribute('name', 'description');
         document.head.appendChild(metaDescription);
       }
       metaDescription.setAttribute('content', (t as any).site_description);
     }
-  }, [lang, t]); // 當語系變更或 t 接到新值時觸發這段邏輯
+  }, [lang, t]);
 
   return { t, lang, setLang };
 };
