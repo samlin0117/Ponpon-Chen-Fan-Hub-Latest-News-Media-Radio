@@ -10,7 +10,9 @@ import { useTranslation } from './hooks/useTranslation';
 
 function MainContent() {
   const { t, lang, setLang } = useTranslation();
-  const timelineItems = t.timelineItems;
+  const [timelineFilter, setTimelineFilter] = useState<'all' | 'first'>('all');
+  const timelineItems = t.timelineItems as any[];
+  const filteredTimelineItems = timelineItems.filter(item => timelineFilter === 'all' || item.category === 'first');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeVideoTab, setActiveVideoTab] = useState('all');
   const location = useLocation();
@@ -196,10 +198,34 @@ function MainContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-24"
+            className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-serif mb-6">{t.timeline.title}</h2>
-            <p className="text-gray-400 font-light max-w-xl mx-auto">{t.timeline.description}</p>
+            <p className="text-gray-400 font-light max-w-xl mx-auto mb-8">{t.timeline.description}</p>
+            
+            {/* Filter Buttons */}
+            <div className="flex items-center justify-center gap-4">
+              <button 
+                onClick={() => setTimelineFilter('all')}
+                className={`px-6 py-2 rounded-full border transition-colors ${
+                  timelineFilter === 'all' 
+                    ? 'bg-gold/20 border-gold text-gold-light' 
+                    : 'border-white/20 text-gray-400 hover:border-white/50 hover:text-gray-200'
+                }`}
+              >
+                {(t.timeline as any).filterAll || '全部里程碑'}
+              </button>
+              <button 
+                onClick={() => setTimelineFilter('first')}
+                className={`px-6 py-2 rounded-full border transition-colors ${
+                  timelineFilter === 'first' 
+                    ? 'bg-gold/20 border-gold text-gold-light' 
+                    : 'border-white/20 text-gray-400 hover:border-white/50 hover:text-gray-200'
+                }`}
+              >
+                {(t.timeline as any).filterFirst || '解鎖第一次'}
+              </button>
+            </div>
           </motion.div>
 
           {/* Timeline Container */}
@@ -208,7 +234,7 @@ function MainContent() {
             <div className="absolute left-[15px] md:left-1/2 md:-ml-[1px] top-4 bottom-4 w-[2px] bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
 
             <div className="space-y-16 md:space-y-24">
-              {timelineItems.map((item, index) => {
+              {filteredTimelineItems.map((item, index) => {
                 const isEven = index % 2 === 0;
                 return (
                   <motion.div 

@@ -12,7 +12,9 @@
   },
   "timeline": {
     "title": "Milestones",
-    "description": "Ponpon's musical journey from her roots to the international stage"
+    "description": "Ponpon's musical journey from her roots to the international stage",
+    "filterAll": "All Milestones",
+    "filterFirst": "Unlock 'Firsts'"
   },
   "hero": {
     "title": "Ponpon Chen",
@@ -105,42 +107,62 @@
     {
       "year": "2012 - 2014",
       "title": "Musical Beginnings",
-      "desc": "Started learning street dance at 10, laying a rhythmic foundation and sparking her dream of becoming a singer-dancer. At 12, driven by her passion for singing, she began entering vocal competitions."
+      "desc": "Started learning street dance at 10, laying a rhythmic foundation and sparking her dream of becoming a singer-dancer. At 12, driven by her passion for singing, she began entering vocal competitions.",
+      "category": "normal"
     },
     {
       "year": "2015 - 2016",
       "title": "Rising Star",
-      "desc": "Won 2nd place at the <a href=\"https://news.ltn.com.tw/news/life/breakingnews/1327418\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">\"City Star\" singing contest</a> in 2015. In 2016, at just 14 years old, she won the <a href=\"https://www.chinatimes.com/newspapers/20160824000626-260507?chdtv\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">Entertainment Group Championship of the 5th \"Eelin Star\"</a>. <a href=\"https://www.youtube.com/watch?v=D4eou5cff68\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch highlights</a>"
+      "desc": "Won 2nd place at the <a href=\"https://news.ltn.com.tw/news/life/breakingnews/1327418\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">\"City Star\" singing contest</a> in 2015. In 2016, at just 14 years old, she won the <a href=\"https://www.chinatimes.com/newspapers/20160824000626-260507?chdtv\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">Entertainment Group Championship of the 5th \"Eelin Star\"</a>. <a href=\"https://www.youtube.com/watch?v=D4eou5cff68\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch highlights</a>",
+      "category": "normal"
     },
     {
       "year": "2018 - 2019",
       "title": "Overseas Duet & Landmark Contest",
-      "desc": "Performed on the popular TV show <a href=\"https://star.ettoday.net/news/1164745\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">\"Come Sing with Me 3\"</a> in 2018, singing a solo duet with Wang Yuan. <a href=\"https://www.youtube.com/watch?v=JNy94_bUgx0&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=24\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch highlights</a><br/><br/>In 2019, she competed as a challenger in Taiwan's iconic music survival show <strong>\"Jungle Voice\"</strong>. <a href=\"https://www.youtube.com/watch?v=5lPml-yAc2I&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=25\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch highlights</a>"
+      "desc": "Performed on the popular TV show <a href=\"https://star.ettoday.net/news/1164745\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">\"Come Sing with Me 3\"</a> in 2018, singing a solo duet with Wang Yuan. <a href=\"https://www.youtube.com/watch?v=JNy94_bUgx0&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=24\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch highlights</a><br/><br/>In 2019, she competed as a challenger in Taiwan's iconic music survival show <strong>\"Jungle Voice\"</strong>. <a href=\"https://www.youtube.com/watch?v=5lPml-yAc2I&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=25\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch highlights</a>",
+      "category": "normal"
     },
     {
       "year": "2020 - 2021",
       "title": "Jazz Awakening",
-      "desc": "Admitted to the Drama Dept at NTUA. Inspired by jazz legend <strong>George Benson</strong> during pandemic lockdown, she took a leave of absence to passionately self-study jazz electric guitar, deciding to pursue music in the US."
+      "desc": "Admitted to the Drama Dept at NTUA. Inspired by jazz legend <strong>George Benson</strong> during pandemic lockdown, she took a leave of absence to passionately self-study jazz electric guitar, deciding to pursue music in the US.",
+      "category": "normal"
     },
     {
       "year": "2022 - 2023",
       "title": "Studying in LA & Transformation",
-      "desc": "Moved to Los Angeles to study Jazz Guitar at the Musicians Institute (MI). Forced to take a six-month break from playing due to tendonitis from intense practice, she used this time to deeply study jazz vocals and music history, beautifully evolving into a versatile, all-around musician."
+      "desc": "Moved to Los Angeles to study Jazz Guitar at the Musicians Institute (MI). Forced to take a six-month break from playing due to tendonitis from intense practice, she used this time to deeply study jazz vocals and music history, beautifully evolving into a versatile, all-around musician.",
+      "category": "normal"
     },
     {
       "year": "2024",
       "title": "LA Gigs & Social Media Breakthrough",
-      "desc": "Became active in LA jazz clubs as a Band Leader, accumulating deep live performance experience. Invited by Grammy-winning studio owner Tom Weir to release performance videos on his channel, her unique charm quickly sparked a social media craze with rapidly soaring viewership."
+      "desc": "Became active in LA jazz clubs as a Band Leader, accumulating deep live performance experience. Invited by Grammy-winning studio owner Tom Weir to release performance videos on his channel, her unique charm quickly sparked a social media craze with rapidly soaring viewership.",
+      "category": "normal"
+    },
+    {
+      "year": "Jan 2025",
+      "title": "First Ticketed Show in the US",
+      "desc": "Successfully held her first official solo ticketed performance in the US at Agua Caliente Casino in Palm Springs, marking a significant milestone in her musical career.<a href=\"https://www.youtube.com/watch?v=KmhrMOit4dI&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=3\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch performance</a>",
+      "category": "first"
+    },
+    {
+      "year": "Apr 2025",
+      "title": "First Public Washboard Performance",
+      "desc": "Incorporated the washboard into her live performance for the very first time at Cicada Restaurant and Lounge in Los Angeles.<a href=\"https://www.youtube.com/watch?v=PwxGVbZvWXI&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch performance</a>",
+      "category": "first"
     },
     {
       "year": "2025",
       "title": "Global Recognition & Master Collaborations",
-      "desc": "In May, she was invited to perform a rearranged outro for <strong>ABC News</strong> \"World News Now\", with the video surpassing a million views. <a href=\"https://www.youtube.com/watch?v=1Fnnr4TOjVQ&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch performance</a><br/><br/>At the end of the year, she was invited to an annual L.A. grand event to perform alongside Grammy winner Randy Waldman. <a href=\"https://www.youtube.com/watch?v=HCUE2cDCOqs&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=1\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch performance</a>"
+      "desc": "In May, she was invited to perform a rearranged outro for <strong>ABC News</strong> \"World News Now\", with the video surpassing a million views. <a href=\"https://www.youtube.com/watch?v=1Fnnr4TOjVQ&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch performance</a><br/><br/>At the end of the year, she was invited to an annual L.A. grand event to perform alongside Grammy winner Randy Waldman. <a href=\"https://www.youtube.com/watch?v=HCUE2cDCOqs&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=1\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch performance</a>",
+      "category": "normal"
     },
     {
       "year": "2026",
       "title": "Debut Jazz Album & Gibson Spotlight Artist",
-      "desc": "Synthesizing a decade of musical depth and her US experiences, she is soon to release her debut English jazz studio album, opening a new chapter in her career. That same year, her exceptional guitar skills were recognized by the world's top guitar brand, inviting her to be <strong>Gibson</strong>'s 2026 Spotlight Artist, showcasing the international impact of a new-generation jazz diva."
+      "desc": "Synthesizing a decade of musical depth and her US experiences, she is soon to release her debut English jazz studio album, opening a new chapter in her career. That same year, her exceptional guitar skills were recognized by the world's top guitar brand, inviting her to be <strong>Gibson</strong>'s 2026 Spotlight Artist, showcasing the international impact of a new-generation jazz diva.",
+      "category": "normal"
     }
   ]
 }

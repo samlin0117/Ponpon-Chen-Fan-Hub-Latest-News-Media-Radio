@@ -12,7 +12,9 @@
   },
   "timeline": {
     "title": "演藝里程碑",
-    "description": "Ponpon 從初心到躍上國際的音樂旅程"
+    "description": "Ponpon 從初心到躍上國際的音樂旅程",
+    "filterAll": "全部里程碑",
+    "filterFirst": "解鎖第一次"
   },
   "hero": {
     "title": "Ponpon Chen",
@@ -105,42 +107,62 @@
     {
       "year": "2012 - 2014",
       "title": "初心萌芽與舞台起步",
-      "desc": "10歲學習街舞奠定律動基礎，萌發唱跳歌手夢。12歲憑藉對歌唱的熱愛，開始報名歌唱比賽。"
+      "desc": "10歲學習街舞奠定律動基礎，萌發唱跳歌手夢。12歲憑藉對歌唱的熱愛，開始報名歌唱比賽。",
+      "category": "normal"
     },
     {
       "year": "2015 - 2016",
       "title": "初試啼聲與耀眼新星",
-      "desc": "2015年獲得<a href=\"https://news.ltn.com.tw/news/life/breakingnews/1327418\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">「城市之星」歌唱比賽第二名</a>；2016年以14歲之姿奪得第5屆<a href=\"https://www.chinatimes.com/newspapers/20160824000626-260507?chdtv\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">「伊林璀璨之星」演藝組冠軍</a>。<a href=\"https://www.youtube.com/watch?v=D4eou5cff68\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 點此觀看演出精華</a>"
+      "desc": "2015年獲得<a href=\"https://news.ltn.com.tw/news/life/breakingnews/1327418\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">「城市之星」歌唱比賽第二名</a>；2016年以14歲之姿奪得第5屆<a href=\"https://www.chinatimes.com/newspapers/20160824000626-260507?chdtv\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">「伊林璀璨之星」演藝組冠軍</a>。<a href=\"https://www.youtube.com/watch?v=D4eou5cff68\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 點此觀看演出精華</a>",
+      "category": "normal"
     },
     {
       "year": "2018 - 2019",
       "title": "跨海登台與指標定錨",
-      "desc": "2018年赴湖南衛視參與<a href=\"https://star.ettoday.net/news/1164745\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">《我想和你唱3》</a>，獲選與王源單獨合唱《驕傲》。<a href=\"https://www.youtube.com/watch?v=JNy94_bUgx0&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=24\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 點此觀看演出精華</a><br/><br/>2019年擔任台灣指標性音樂節目<strong>《聲林之王》</strong>第二季踢館歌手，演唱《台北某個地方》。<a href=\"https://www.youtube.com/watch?v=5lPml-yAc2I&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=25\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 點此觀看演出精華</a>"
+      "desc": "2018年赴湖南衛視參與<a href=\"https://star.ettoday.net/news/1164745\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">《我想和你唱3》</a>，獲選與王源單獨合唱《驕傲》。<a href=\"https://www.youtube.com/watch?v=JNy94_bUgx0&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=24\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 點此觀看演出精華</a><br/><br/>2019年擔任台灣指標性音樂節目<strong>《聲林之王》</strong>第二季踢館歌手，演唱《台北某個地方》。<a href=\"https://www.youtube.com/watch?v=5lPml-yAc2I&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=25\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 點此觀看演出精華</a>",
+      "category": "normal"
     },
     {
       "year": "2020 - 2021",
       "title": "爵士覺醒與破釜沉舟",
-      "desc": "錄取台藝大戲劇系後因疫情線上學習，深受爵士傳奇大師 <strong>George Benson</strong> 影片啟發，決定休學並全心鑽研爵士電吉他，拜師林正如，確立赴美深造的決心。"
+      "desc": "錄取台藝大戲劇系後因疫情線上學習，深受爵士傳奇大師 <strong>George Benson</strong> 影片啟發，決定休學並全心鑽研爵士電吉他，拜師林正如，確立赴美深造的決心。",
+      "category": "normal"
     },
     {
       "year": "2022 - 2023",
       "title": "赴美深造與沉潛蛻變",
-      "desc": "前往洛杉磯 Musicians Institute 專攻爵士吉他。雖因高強度苦練引發肌腱炎被迫休養半年，卻在停彈期間深研爵士人聲與音樂史，完成從樂手到全方位音樂人的華麗進化。"
+      "desc": "前往洛杉磯 Musicians Institute 專攻爵士吉他。雖因高強度苦練引發肌腱炎被迫休養半年，卻在停彈期間深研爵士人聲與音樂史，完成從樂手到全方位音樂人的華麗進化。",
+      "category": "normal"
     },
     {
       "year": "2024",
       "title": "洛杉磯實戰與社群突圍",
-      "desc": "活躍於洛杉磯各大 Jazz Club 並擔任 Band Leader，累積深厚現場實戰力。受葛萊美錄音室老闆 Tom Weir 邀請，於其頻道發布演出影片，憑藉獨特魅力迅速引發社群熱潮，觀看人數迅速飆升。"
+      "desc": "活躍於洛杉磯各大 Jazz Club 並擔任 Band Leader，累積深厚現場實戰力。受葛萊美錄音室老闆 Tom Weir 邀請，於其頻道發布演出影片，憑藉獨特魅力迅速引發社群熱潮，觀看人數迅速飆升。",
+      "category": "normal"
+    },
+    {
+      "year": "2025年1月",
+      "title": "美國首場售票演出",
+      "desc": "於加州棕櫚泉 (Palm Springs) 的 Agua Caliente Casino 完成音樂生涯在美國的第一場正式的個人售票演出，標誌著演藝事業的重要里程碑。<a href=\"https://www.youtube.com/watch?v=KmhrMOit4dI&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=3\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 點此觀看演出精華</a>",
+      "category": "first"
+    },
+    {
+      "year": "2025年4月",
+      "title": "第一次在公開場合表演 WASHBOARD",
+      "desc": "於洛杉磯 Cicada Restaurant and Lounge 的現場演出中，首次加入 Washboard (洗衣板) 進行演奏。<a href=\"https://www.youtube.com/watch?v=PwxGVbZvWXI&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 點此觀看演出精華</a>",
+      "category": "first"
     },
     {
       "year": "2025",
       "title": "躍上國際媒體與大師結緣",
-      "desc": "5月受邀為美國 <strong>ABC News</strong>《World News Now》演出改編片尾曲，影片突破百萬點閱。<a href=\"https://www.youtube.com/watch?v=1Fnnr4TOjVQ&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 點此觀看演出精華</a><br/><br/>年底受邀洛杉磯年度盛事，與葛萊美得主 Randy Waldman 同台演出。<a href=\"https://www.youtube.com/watch?v=HCUE2cDCOqs&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=1\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 點此觀看演出精華</a>"
+      "desc": "5月受邀為美國 <strong>ABC News</strong>《World News Now》演出改編片尾曲，影片突破百萬點閱。<a href=\"https://www.youtube.com/watch?v=1Fnnr4TOjVQ&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 點此觀看演出精華</a><br/><br/>年底受邀洛杉磯年度盛事，與葛萊美得主 Randy Waldman 同台演出。<a href=\"https://www.youtube.com/watch?v=HCUE2cDCOqs&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=1\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 點此觀看演出精華</a>",
+      "category": "normal"
     },
     {
       "year": "2026",
       "title": "首張爵士專輯與榮膺 Gibson 年度焦點藝術家",
-      "desc": "匯聚十載音樂底蘊與旅美淬鍊，即將發行首張個人英文爵士錄音室專輯，開啟演藝生涯嶄新篇章。同年琴藝深獲國際頂尖琴廠肯定，受邀擔任 <strong>Gibson</strong> 2026 年度焦點藝術家，展現新世代爵士女伶的國際影響力。"
+      "desc": "匯聚十載音樂底蘊與旅美淬鍊，即將發行首張個人英文爵士錄音室專輯，開啟演藝生涯嶄新篇章。同年琴藝深獲國際頂尖琴廠肯定，受邀擔任 <strong>Gibson</strong> 2026 年度焦點藝術家，展現新世代爵士女伶的國際影響力。",
+      "category": "normal"
     }
   ]
 }

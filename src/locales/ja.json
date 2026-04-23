@@ -12,7 +12,9 @@
   },
   "timeline": {
     "title": "マイルストーン",
-    "description": "Ponponの音楽の旅と重要な瞬間"
+    "description": "Ponponの音楽の旅と重要な瞬間",
+    "filterAll": "すべてのマイルストーン",
+    "filterFirst": "「初めて」を解禁"
   },
   "hero": {
     "title": "Ponpon Chen",
@@ -105,42 +107,62 @@
     {
       "year": "2012 - 2014",
       "title": "音楽の芽生え",
-      "desc": "10歳でストリートダンスを学びリズム感を養い、歌って踊れるアーティストへの夢を抱く。12歳で歌への情熱から、ボーカルコンテストに出場し始める。"
+      "desc": "10歳でストリートダンスを学びリズム感を養い、歌って踊れるアーティストへの夢を抱く。12歳で歌への情熱から、ボーカルコンテストに出場し始める。",
+      "category": "normal"
     },
     {
       "year": "2015 - 2016",
       "title": "注目の新星",
-      "desc": "2015年の<a href=\"https://news.ltn.com.tw/news/life/breakingnews/1327418\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">歌唱コンテストで2位を獲得</a>。2016年、わずか14歳で第5回<a href=\"https://www.chinatimes.com/newspapers/20160824000626-260507?chdtv\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">「イーリン・スター」エンターテインメント部門で優勝</a>。<a href=\"https://www.youtube.com/watch?v=D4eou5cff68\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 演出ハイライトを観る</a>"
+      "desc": "2015年の<a href=\"https://news.ltn.com.tw/news/life/breakingnews/1327418\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">歌唱コンテストで2位を獲得</a>。2016年、わずか14歳で第5回<a href=\"https://www.chinatimes.com/newspapers/20160824000626-260507?chdtv\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">「イーリン・スター」エンターテインメント部門で優勝</a>。<a href=\"https://www.youtube.com/watch?v=D4eou5cff68\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 演出ハイライトを観る</a>",
+      "category": "normal"
     },
     {
       "year": "2018 - 2019",
       "title": "海外での挑戦と飛躍",
-      "desc": "2018年に人気音楽番組<a href=\"https://star.ettoday.net/news/1164745\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">「Come Sing with Me 3」に出演</a>し、人気歌手ワン・ユエンとデュエット。<a href=\"https://www.youtube.com/watch?v=JNy94_bUgx0&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=24\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 演出ハイライトを観る</a><br/><br/>2019年には台湾を代表するオーディション番組<strong>「Jungle Voice」</strong>にチャレンジャーとして参戦。<a href=\"https://www.youtube.com/watch?v=5lPml-yAc2I&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=25\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 演出ハイライトを観る</a>"
+      "desc": "2018年に人気音楽番組<a href=\"https://star.ettoday.net/news/1164745\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">「Come Sing with Me 3」に出演</a>し、人気歌手ワン・ユエンとデュエット。<a href=\"https://www.youtube.com/watch?v=JNy94_bUgx0&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=24\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 演出ハイライトを観る</a><br/><br/>2019年には台湾を代表するオーディション番組<strong>「Jungle Voice」</strong>にチャレンジャーとして参戦。<a href=\"https://www.youtube.com/watch?v=5lPml-yAc2I&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=25\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 演出ハイライトを観る</a>",
+      "category": "normal"
     },
     {
       "year": "2020 - 2021",
       "title": "ジャズへの覚醒",
-      "desc": "台湾芸術大学に進学するも、コロナ禍でジャズの巨匠<strong>George Benson</strong>の動画に衝撃を受け、休学してジャズエレクトリックギターの猛特訓を開始。渡米を決意する。"
+      "desc": "台湾芸術大学に進学するも、コロナ禍でジャズの巨匠<strong>George Benson</strong>の動画に衝撃を受け、休学してジャズエレクトリックギターの猛特訓を開始。渡米を決意する。",
+      "category": "normal"
     },
     {
       "year": "2022 - 2023",
       "title": "渡米と試練からの進化",
-      "desc": "ロサンゼルスのMusicians Institute（MI）でジャズギターを専攻。猛練習による腱鞘炎で半年間ギターを弾けない休養期間を強いられるが、その間にジャズボーカルと音楽史を深く学び、楽器奏者から全方位的な音楽家へと華麗な進化を遂げる。"
+      "desc": "ロサンゼルスのMusicians Institute（MI）でジャズギターを専攻。猛練習による腱鞘炎で半年間ギターを弾けない休養期間を強いられるが、その間にジャズボーカルと音楽史を深く学び、楽器奏者から全方位的な音楽家へと華麗な進化を遂げる。",
+      "category": "normal"
     },
     {
       "year": "2024",
       "title": "LAでのライブとSNSでのブレイク",
-      "desc": "ロサンゼルスの各ジャズクラブでバンドリーダーとして活躍し、確かなライブパフォーマンスの実力を築く。グラミー賞受賞のスタジオオーナーTom Weirの招待で彼のチャンネルに演奏動画を公開したところ、その独特な魅力で瞬く間にSNSで話題となり、視聴回数が急上昇。"
+      "desc": "ロサンゼルスの各ジャズクラブでバンドリーダーとして活躍し、確かなライブパフォーマンスの実力を築く。グラミー賞受賞のスタジオオーナーTom Weirの招待で彼のチャンネルに演奏動画を公開したところ、その独特な魅力で瞬く間にSNSで話題となり、視聴回数が急上昇。",
+      "category": "normal"
+    },
+    {
+      "year": "2025年1月",
+      "title": "米国で初のチケット販売公演",
+      "desc": "パームスプリングスの Agua Caliente Casino で、米国での自身の音楽キャリア初となる公式のチケット制単独ライブを成功させ、重要なマイルストーンを築く。<a href=\"https://www.youtube.com/watch?v=KmhrMOit4dI&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=3\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 演出を観る</a>",
+      "category": "first"
+    },
+    {
+      "year": "2025年4月",
+      "title": "初のウォッシュボード公の場でのパフォーマンス",
+      "desc": "ロサンゼルスの Cicada Restaurant and Lounge でのライブパフォーマンスにて、初めてウォッシュボード（洗濯板）を取り入れて演奏を披露。<a href=\"https://www.youtube.com/watch?v=PwxGVbZvWXI&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 演出を観る</a>",
+      "category": "first"
     },
     {
       "year": "2025",
       "title": "国際メディア掲載と巨匠との共演",
-      "desc": "5月、米国<strong>ABC News</strong>「World News Now」のエンディング曲アレンジと演奏に招待され、動画は100万回再生を突破。<a href=\"https://www.youtube.com/watch?v=1Fnnr4TOjVQ&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 演出を観る</a><br/><br/>年末にはロサンゼルスの年末恒例行事に招かれ、グラミー賞受賞者Randy Waldmanと共演を果たす。<a href=\"https://www.youtube.com/watch?v=HCUE2cDCOqs&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=1\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 演出を観る</a>"
+      "desc": "5月、米国<strong>ABC News</strong>「World News Now」のエンディング曲アレンジと演奏に招待され、動画は100万回再生を突破。<a href=\"https://www.youtube.com/watch?v=1Fnnr4TOjVQ&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=5\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 演出を観る</a><br/><br/>年末にはロサンゼルスの年末恒例行事に招かれ、グラミー賞受賞者Randy Waldmanと共演を果たす。<a href=\"https://www.youtube.com/watch?v=HCUE2cDCOqs&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=1\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 演出を観る</a>",
+      "category": "normal"
     },
     {
       "year": "2026",
       "title": "ファーストアルバム＆Gibson年間注目アーティスト",
-      "desc": "10年以上の音楽的蓄積と渡米の経験を結集し、自身初の全編英語ジャズスタジオアルバムのリリースを控え、キャリアの新たな扉を開く。同年、その卓越したギターテクニックが世界トップメーカーに認められ、<strong>Gibson</strong>の2026年度注目アーティストに選出。新世代ジャズ歌姫としての国際的な影響力を示している。"
+      "desc": "10年以上の音楽的蓄積と渡米の経験を結集し、自身初の全編英語ジャズスタジオアルバムのリリースを控え、キャリアの新たな扉を開く。同年、その卓越したギターテクニックが世界トップメーカーに認められ、<strong>Gibson</strong>の2026年度注目アーティストに選出。新世代ジャズ歌姫としての国際的な影響力を示している。",
+      "category": "normal"
     }
   ]
 }
