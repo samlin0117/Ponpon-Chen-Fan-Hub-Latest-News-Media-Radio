@@ -3,7 +3,7 @@ export type Platform = 'youtube' | 'facebook' | 'instagram' | 'threads';
 export interface VideoInfo {
   id: string;
   platform: Platform;
-  category: 'p1' | 'p2' | 'p3' | 'p4' | 'p5';
+  category: 'p1' | 'p2' | 'p3' | 'p5' | 'p6' | 'p7';
   title: string;
   date: string;
   embedUrl: string;
@@ -245,7 +245,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-JNy94_bUgx0",
     "platform": "youtube",
-    "category": "p1",
+    "category": "p7",
     "title": "【我想和你唱3】Ep2 陳芃瑄精華片段｜TFBOYS王源搭檔元氣少女陳芃瑄 清新溫暖薄荷音同台合唱《我們的時光》《十七》《第一天》《驕傲》",
     "date": "2025-09-05",
     "embedUrl": "JNy94_bUgx0",
@@ -255,7 +255,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-5lPml-yAc2I",
     "platform": "youtube",
-    "category": "p1",
+    "category": "p7",
     "title": "【聲林之王2】Ep13 陳芃瑄精華片段｜踢館小魔王馬來貘年僅17歲 吉他彈唱陳綺貞《台北某個地方》獲得三位導師一致好評",
     "date": "2025-09-05",
     "embedUrl": "5lPml-yAc2I",
@@ -265,7 +265,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-wINZhpe7ZSY",
     "platform": "youtube",
-    "category": "p1",
+    "category": "p7",
     "title": "【希望之星】陳芃瑄《葉子》〈EP3 20171021〉",
     "date": "2025-08-02",
     "embedUrl": "wINZhpe7ZSY",
@@ -285,7 +285,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-zQf79JxO9k4",
     "platform": "youtube",
-    "category": "p1",
+    "category": "p7",
     "title": "仁中校慶星光大道決賽 陳芃萱 張宗奇",
     "date": "2025-08-02",
     "embedUrl": "zQf79JxO9k4",
@@ -295,7 +295,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-0uxWxdIMtbk",
     "platform": "youtube",
-    "category": "p1",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄",
     "date": "2025-08-02",
     "embedUrl": "0uxWxdIMtbk",
@@ -305,7 +305,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-t9ajbW_ge5U",
     "platform": "youtube",
-    "category": "p1",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄 ポンポン・チェン",
     "date": "2025-08-02",
     "embedUrl": "t9ajbW_ge5U",
@@ -315,7 +315,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-cFz6HHFAZ18",
     "platform": "youtube",
-    "category": "p1",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄 ポンポン・チェン",
     "date": "2025-08-02",
     "embedUrl": "cFz6HHFAZ18",
@@ -325,7 +325,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-479YPbzDjBE",
     "platform": "youtube",
-    "category": "p1",
+    "category": "p5",
     "title": "On the Sunny Side of the Street - cover by Pon Pon Chen",
     "date": "2025-09-25",
     "embedUrl": "479YPbzDjBE",
@@ -335,7 +335,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-FQ8HoS0HQxg",
     "platform": "youtube",
-    "category": "p1",
+    "category": "p5",
     "title": "The Frim-Fram Sauce cover by PonPon Chen",
     "date": "2025-08-08",
     "embedUrl": "FQ8HoS0HQxg",
@@ -345,7 +345,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-S57lXI0jQ_o",
     "platform": "youtube",
-    "category": "p1",
+    "category": "p5",
     "title": "Moon River by PonPon Chen",
     "date": "2025-08-08",
     "embedUrl": "S57lXI0jQ_o",
@@ -355,7 +355,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-QYjG_8KhaJY",
     "platform": "youtube",
-    "category": "p1",
+    "category": "p6",
     "title": "陳芃瑄 Ponpon Chen 微博早期翻唱精華(被馴服的象&斑馬，斑馬&蒲公英的約定&陽光不鏽&因為遇見你)",
     "date": "2025-09-17",
     "embedUrl": "QYjG_8KhaJY",
@@ -365,7 +365,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-2GXGTsKk1hE",
     "platform": "youtube",
-    "category": "p1",
+    "category": "p6",
     "title": "陳芃瑄 Ponpon Chen 微博早期翻唱精華(我不願讓你一個人&寵愛&如果沒有你&紙短情長)",
     "date": "2025-09-23",
     "embedUrl": "2GXGTsKk1hE",
@@ -375,7 +375,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-tIed1O57EPg",
     "platform": "youtube",
-    "category": "p1",
+    "category": "p6",
     "title": "陳芃瑄 Ponpon Chen 微博早期翻唱精華(我還年輕 我還年輕&我愛你&魚仔&你不知道的事&真心話太冒險)",
     "date": "2025-09-26",
     "embedUrl": "tIed1O57EPg",
@@ -385,7 +385,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-S_eBj6DrYOY",
     "platform": "youtube",
-    "category": "p1",
+    "category": "p6",
     "title": "Ponpon Chen 陳芃瑄 即興哼唱 Scat Singing 精華 | Ponpon Chen Scat Singing Highlights",
     "date": "2025-10-04",
     "embedUrl": "S_eBj6DrYOY",
@@ -395,7 +395,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-tEqs-1S47Fw",
     "platform": "youtube",
-    "category": "p1",
+    "category": "p6",
     "title": "Ponpon Chen  陳芃瑄– Guitar, Scat Singing, Washboard & Whistling Highlights 吉他彈唱・即興哼唱・Washboard 打擊與口哨精華",
     "date": "2025-10-05",
     "embedUrl": "tEqs-1S47Fw",
@@ -405,7 +405,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-nhcE4DW--A4",
     "platform": "youtube",
-    "category": "p1",
+    "category": "p6",
     "title": "Ponpon Chen 陳芃瑄– Guitar, Scat Singing, Washboard, Shaker & Whistling Highlights",
     "date": "2025-10-06",
     "embedUrl": "nhcE4DW--A4",
@@ -415,7 +415,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-3UbzT0qT1w8",
     "platform": "youtube",
-    "category": "p1",
+    "category": "p6",
     "title": "他們都笑了 They All Laugh｜Ponpon Chen 陳芃瑄  Highlights of Joyful Moments",
     "date": "2025-11-07",
     "embedUrl": "3UbzT0qT1w8",
@@ -425,23 +425,14 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-LHz2Y36D4bM",
     "platform": "youtube",
-    "category": "p1",
+    "category": "p6",
     "title": "Ponpon Chen(陳芃瑄) - Christmas Song Medley (Taipei & Los Angeles) 陳芃瑄 - 耶誕暖心歌曲串燒 (台北 & 洛杉磯)",
     "date": "2026-04-10",
     "embedUrl": "LHz2Y36D4bM",
     "thumbnailUrl": "https://i.ytimg.com/vi/LHz2Y36D4bM/maxresdefault.jpg",
     "isFeatured": false
   },
-  {
-    "id": "v-PFE3ZEa9I_I",
-    "platform": "youtube",
-    "category": "p1",
-    "title": "Ponpon Chen \\\"But Not for Me\\\"",
-    "date": "2026-03-03",
-    "embedUrl": "PFE3ZEa9I_I",
-    "thumbnailUrl": "https://i.ytimg.com/vi/PFE3ZEa9I_I/maxresdefault.jpg",
-    "isFeatured": false
-  },
+
   {
     "id": "v-XaiYQoDK6uM",
     "platform": "youtube",
@@ -495,7 +486,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-yapgiplpVZE",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄 ポンポン・チェン",
     "date": "2025-09-25",
     "embedUrl": "yapgiplpVZE",
@@ -505,7 +496,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-hbxM3dv_Lcs",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄 ポンポン・チェン",
     "date": "2025-09-25",
     "embedUrl": "hbxM3dv_Lcs",
@@ -515,7 +506,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-p3v2XboDUEU",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄 ポンポン・チェン",
     "date": "2025-09-25",
     "embedUrl": "p3v2XboDUEU",
@@ -525,7 +516,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-ZvreeOM6rKg",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄 ポンポン・チェン",
     "date": "2025-09-25",
     "embedUrl": "ZvreeOM6rKg",
@@ -535,7 +526,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-YEK5rj1BSe4",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄 ポンポン・チェン",
     "date": "2025-09-25",
     "embedUrl": "YEK5rj1BSe4",
@@ -545,7 +536,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-ATPRb9TE41w",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄",
     "date": "2025-09-25",
     "embedUrl": "ATPRb9TE41w",
@@ -555,7 +546,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-HEI2cPgnTwA",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄",
     "date": "2025-09-25",
     "embedUrl": "HEI2cPgnTwA",
@@ -565,7 +556,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-_mVLfO_QqXc",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄",
     "date": "2025-09-25",
     "embedUrl": "_mVLfO_QqXc",
@@ -575,7 +566,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-0Q3TJo8wzeA",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄",
     "date": "2025-09-25",
     "embedUrl": "0Q3TJo8wzeA",
@@ -585,7 +576,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-kuJ4iRKAwz8",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄",
     "date": "2025-09-25",
     "embedUrl": "kuJ4iRKAwz8",
@@ -595,7 +586,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-yZPtaCwoOoI",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄",
     "date": "2025-09-25",
     "embedUrl": "yZPtaCwoOoI",
@@ -605,7 +596,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-LcM-CXK7VJo",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄 ポンポン・チェン",
     "date": "2025-09-25",
     "embedUrl": "LcM-CXK7VJo",
@@ -615,7 +606,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-S-Y6QvTFlUg",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄",
     "date": "2025-09-25",
     "embedUrl": "S-Y6QvTFlUg",
@@ -625,7 +616,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-wlUD89VV9P8",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄 ポンポン・チェン",
     "date": "2025-09-25",
     "embedUrl": "wlUD89VV9P8",
@@ -635,7 +626,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-YnJcEVgI0mg",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄",
     "date": "2025-09-25",
     "embedUrl": "YnJcEVgI0mg",
@@ -645,7 +636,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-04C6w5SxhVk",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄",
     "date": "2025-09-25",
     "embedUrl": "04C6w5SxhVk",
@@ -655,7 +646,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-4n3ljMz_Kwo",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄 ポンポン・チェン",
     "date": "2025-09-25",
     "embedUrl": "4n3ljMz_Kwo",
@@ -665,7 +656,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-uEnrXSQpXDY",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄 ポンポン・チェン",
     "date": "2025-09-25",
     "embedUrl": "uEnrXSQpXDY",
@@ -675,7 +666,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-M-zdDxrux9Y",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Ponpon Chen 陳芃瑄 ポンポン・チェン",
     "date": "2025-09-25",
     "embedUrl": "M-zdDxrux9Y",
@@ -695,7 +686,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-ORpAsB_xC8c",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Sway - cover by PonPon Chen",
     "date": "2025-09-25",
     "embedUrl": "ORpAsB_xC8c",
@@ -705,7 +696,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-KemQ67OBJCk",
     "platform": "youtube",
-    "category": "p2",
+    "category": "p5",
     "title": "Skylark - cover by PonPon Chen",
     "date": "2025-09-25",
     "embedUrl": "KemQ67OBJCk",
@@ -765,7 +756,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-DbZEcTrNNyw",
     "platform": "youtube",
-    "category": "p4",
+    "category": "p3",
     "title": "歌もギターもチャーミングなPonpon Chen【Aji Radio 94】",
     "date": "2026-01-31",
     "embedUrl": "DbZEcTrNNyw",
@@ -775,7 +766,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-ZakfOT7pN6c",
     "platform": "youtube",
-    "category": "p4",
+    "category": "p3",
     "title": "ジョージ・ベンソンスタイルの台湾人ジャズシンガーPONPON CHEN（ポンポンチェン：陳芃瑄）がおすすめ！",
     "date": "2026-01-31",
     "embedUrl": "ZakfOT7pN6c",
@@ -785,7 +776,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-425ULiZebD8",
     "platform": "youtube",
-    "category": "p4",
+    "category": "p3",
     "title": "Ponpon Chen (with her quintet performed at Cicada Restaurant) - Them There Eyes. A Layman's Reaction",
     "date": "2026-01-31",
     "embedUrl": "425ULiZebD8",
@@ -795,7 +786,7 @@ export const videoList: VideoInfo[] = [
   {
     "id": "v-Snovf3c8Qnk",
     "platform": "youtube",
-    "category": "p4",
+    "category": "p3",
     "title": "Ponpon Chen 陳芃瑄 - The Moon Represents My Heart 月亮代表我的心(Live @ Biscuits & Blues), A Layman's Reaction",
     "date": "2026-01-31",
     "embedUrl": "Snovf3c8Qnk",
@@ -818,6 +809,16 @@ export const videoList: VideoInfo[] = [
     "title": "Ponpon Chen Quintet at View Music Bar",
     "date": "2025-09-05",
     "embedUrl": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fcat821%2Fvideos%2F1786267441981450%2F&show_text=false&width=316&t=0",
+    "isFeatured": false
+  },
+  {
+    "id": "v-D4eou5cff68",
+    "platform": "youtube",
+    "category": "p7",
+    "title": "Ponpon Chen 陳芃瑄 2016 伊林璀璨之星演藝組冠軍高光與訪問 (Performing Arts Champion Highlights & Interview)",
+    "date": "2025-09-05",
+    "embedUrl": "D4eou5cff68",
+    "thumbnailUrl": "https://i.ytimg.com/vi/D4eou5cff68/maxresdefault.jpg",
     "isFeatured": false
   }
 ];

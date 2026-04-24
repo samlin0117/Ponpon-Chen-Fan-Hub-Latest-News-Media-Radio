@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import YouTubePlaylist from './components/YouTubePlaylist';
 import CusdisComments from './components/CusdisComments';
 import { videoList } from './data/videos';
 import VideoCard from './components/VideoCard';
@@ -14,7 +13,7 @@ function MainContent() {
   const { t, lang, setLang } = useTranslation();
   const [timelineFilter, setTimelineFilter] = useState<'all' | 'first'>('all');
   const timelineItems = t.timelineItems as any[];
-  const filteredTimelineItems = timelineItems.filter(item => timelineFilter === 'all' || item.category === 'first');
+  const filteredTimelineItems = timelineItems.filter(item => timelineFilter === 'all' ? item.category !== 'first' : item.category === 'first');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeVideoTab, setActiveVideoTab] = useState('all');
   const location = useLocation();
@@ -849,10 +848,11 @@ function MainContent() {
             <div className="flex overflow-x-auto gap-2 md:gap-4 pb-4 mb-8 custom-scrollbar hide-scrollbar-on-mobile w-full justify-start md:justify-center sticky top-20 z-40 bg-dark/95 backdrop-blur-md pt-4 border-b border-white/5">
               {[
                 { id: 'all', label: lang === 'zh' ? '精選影片' : lang === 'ja' ? 'おすすめ' : 'Featured' },
+                { id: 'p6', label: t.videos.p6 },
+                { id: 'p7', label: t.videos.p7 },
                 { id: 'p1', label: t.videos.p1 },
                 { id: 'p2', label: t.videos.p2 },
                 { id: 'p3', label: t.videos.p3 },
-                { id: 'p4', label: t.videos.p4 },
                 { id: 'p5', label: t.videos.p5 }
               ].map(tab => (
                 <button

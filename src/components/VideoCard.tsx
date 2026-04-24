@@ -26,11 +26,7 @@ export default function VideoCard({ video }: { video: VideoInfo }) {
     <>
       <div className="flex flex-col items-center w-full group relative">
         <div className="mb-4 text-left w-full">
-          {video.category === 'p5' && (
-            <span className="text-xs font-mono text-gold-light tracking-widest bg-gold/10 px-2 py-1 rounded-full mb-2 inline-block">
-              {video.date}
-            </span>
-          )}
+
           <h3 className="text-lg font-serif text-gray-200 group-hover:text-gold transition-colors line-clamp-2">
             {video.title}
           </h3>

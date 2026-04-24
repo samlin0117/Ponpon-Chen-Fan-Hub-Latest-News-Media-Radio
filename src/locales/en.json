@@ -87,9 +87,10 @@
     "description": "Explore Ponpon's live performances, interviews, and vlogs.",
     "p1": "Live & Originals",
     "p2": "Shorts",
-    "p3": "Interviews",
-    "p4": "Vlogs & Features",
-    "p5": "Fan Cams"
+    "p3": "Press & Interviews",
+    "p5": "Fan Cams",
+    "p6": "Highlights",
+    "p7": "Auditions & TV Shows"
   },
   "links": {
     "title": "Follow Ponpon",
