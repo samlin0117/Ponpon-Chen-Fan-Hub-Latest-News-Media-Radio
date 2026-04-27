@@ -30,6 +30,11 @@ export default function VideoCard({ video }: { video: VideoInfo }) {
           <h3 className="text-lg font-serif text-gray-200 group-hover:text-gold transition-colors line-clamp-2">
             {video.title}
           </h3>
+          {video.date && (
+            <p className="text-sm text-gray-400 mt-1 font-mono tracking-wide">
+              {video.date}
+            </p>
+          )}
         </div>
         
         <div 
