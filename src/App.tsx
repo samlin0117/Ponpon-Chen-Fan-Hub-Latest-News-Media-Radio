@@ -5,6 +5,8 @@ import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-ro
 import CusdisComments from './components/CusdisComments';
 import { videoList } from './data/videos';
 import VideoCard from './components/VideoCard';
+import VideoGroupCard from './components/VideoGroupCard';
+
 
 import { Language } from './locales';
 import { useTranslation } from './hooks/useTranslation';
@@ -870,12 +872,48 @@ function MainContent() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-              {videoList
-                .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-                .filter(v => activeVideoTab === 'all' ? v.isFeatured : v.category === activeVideoTab)
-                .map(video => (
-                  <VideoCard key={video.id} video={video} />
-                ))}
+              {(() => {
+                const filtered = videoList
+                  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+                  .filter(v => activeVideoTab === 'all' ? v.isFeatured : v.category === activeVideoTab);
+                
+                if (activeVideoTab === 'all') {
+                  return filtered.map(video => (
+                    <VideoCard key={video.id} video={video} />
+                  ));
+                }
+
+                // Grouping logic for categories
+                const groups: { [key: string]: VideoInfo[] } = {};
+                const singles: VideoInfo[] = [];
+                const order: string[] = [];
+
+                filtered.forEach(video => {
+                  if (video.eventGroup) {
+                    if (!groups[video.eventGroup]) {
+                      groups[video.eventGroup] = [];
+                      order.push(video.eventGroup);
+                    }
+                    groups[video.eventGroup].push(video);
+                  } else {
+                    singles.push(video);
+                    order.push(`single-${video.id}`);
+                  }
+                });
+
+                // Dedup order while maintaining sequence
+                const uniqueOrder = Array.from(new Set(order));
+
+                return uniqueOrder.map(key => {
+                  if (key.startsWith('single-')) {
+                    const videoId = key.replace('single-', '');
+                    const video = singles.find(v => v.id === videoId);
+                    return video ? <VideoCard key={video.id} video={video} /> : null;
+                  } else {
+                    return <VideoGroupCard key={key} name={key} videos={groups[key]} />;
+                  }
+                });
+              })()}
             </div>
           </motion.div>
         </div>
