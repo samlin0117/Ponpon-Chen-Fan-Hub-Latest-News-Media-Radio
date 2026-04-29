@@ -14,6 +14,70 @@ export interface VideoInfo {
 
 export const videoList: VideoInfo[] = [
   {
+    "id": "v-fb-995751751518630",
+    "platform": "facebook",
+    "category": "p1",
+    "title": "Ponpon｜I’ll Close My Eyes (Live at The Barkley)",
+    "date": "2023-11-22",
+    "embedUrl": "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/watch/?v=995751751518630&show_text=0&width=500",
+    "isFeatured": false
+  },
+  {
+    "id": "v-ig-C9g4xitu6qT",
+    "platform": "instagram",
+    "category": "p1",
+    "title": "Ponpon｜Blue Skies (Live at Pacific GROOVE)",
+    "date": "2024-07-16",
+    "embedUrl": "C9g4xitu6qT",
+    "isFeatured": false
+  },
+  {
+    "id": "v-ig-C18e6XCL0G8",
+    "platform": "instagram",
+    "category": "p1",
+    "title": "Ponpon｜Billie’s Bounce / Charlie Parker (Live at The Barkley)",
+    "date": "2024-01-10",
+    "embedUrl": "C18e6XCL0G8",
+    "isFeatured": false
+  },
+  {
+    "id": "v-ig-COP_dlIgVCM",
+    "platform": "instagram",
+    "category": "p1",
+    "title": "Ponpon｜找自己 / 可不可以 (Live at OKIII Studio)",
+    "date": "2021-04-25",
+    "embedUrl": "COP_dlIgVCM",
+    "isFeatured": false
+  },
+  {
+    "id": "v-fb-1295790065336477",
+    "platform": "facebook",
+    "category": "p1",
+    "title": "Ponpon｜If I Had You (Live in San Francisco)",
+    "date": "2025-09-21",
+    "embedUrl": "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1295790065336477&show_text=0&width=500",
+    "isFeatured": false
+  },
+  {
+    "id": "v-fb-5299252240089221",
+    "platform": "facebook",
+    "category": "p1",
+    "title": "Ponpon｜Just Friends (Live at Oldie Goodie)",
+    "date": "2021-12-17",
+    "embedUrl": "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/5299252240089221&show_text=0&width=500",
+    "isFeatured": false
+  },
+  {
+    "id": "v-PBjJmX-bf_0",
+    "platform": "youtube",
+    "category": "p1",
+    "title": "陳綺貞 Cheer Chen -【台北某個地方 Somewhere, Taipei】 Cover by 陳芃瑄 Ponpon",
+    "date": "2020-09-30",
+    "embedUrl": "PBjJmX-bf_0",
+    "thumbnailUrl": "https://i.ytimg.com/vi/PBjJmX-bf_0/maxresdefault.jpg",
+    "isFeatured": false
+  },
+  {
     "id": "v-fb-353832705569724",
     "platform": "facebook",
     "category": "p1",
@@ -192,7 +256,7 @@ export const videoList: VideoInfo[] = [
     "platform": "youtube",
     "category": "p1",
     "title": "Ponpon Chen 陳芃瑄 - 夢想騎士-唐吉訶德(2021希望城堡主題曲)Dream Knight – Don Quixote (2021 Castle of Hope Theme Song)",
-    "date": "2024-08-15",
+    "date": "2021-03",
     "embedUrl": "hY3H5ob2wbE",
     "thumbnailUrl": "https://i.ytimg.com/vi/hY3H5ob2wbE/maxresdefault.jpg",
     "isFeatured": false

@@ -870,19 +870,67 @@ function MainContent() {
               ))}
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <div className="mb-16">
               {(() => {
                 const filtered = videoList
-                  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-                  .filter(v => activeVideoTab === 'all' ? v.isFeatured : v.category === activeVideoTab);
+                  .filter(v => activeVideoTab === 'all' ? v.isFeatured : v.category === activeVideoTab)
+                  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
                 
-                if (activeVideoTab === 'all') {
-                  return filtered.map(video => (
-                    <VideoCard key={video.id} video={video} />
-                  ));
+                // Only group by year for 'p1' (Live & Music Works)
+                if (activeVideoTab === 'p1') {
+                  const yearGroups: { [year: string]: VideoInfo[] } = {};
+                  filtered.forEach(v => {
+                    const year = v.date ? v.date.split('-')[0] : 'Other';
+                    if (!yearGroups[year]) yearGroups[year] = [];
+                    yearGroups[year].push(v);
+                  });
+                  
+                  const years = Object.keys(yearGroups).sort((a, b) => b.localeCompare(a));
+                  
+                  return years.map(year => {
+                    const yearVideos = yearGroups[year];
+                    const groups: { [key: string]: VideoInfo[] } = {};
+                    const singles: VideoInfo[] = [];
+                    const order: string[] = [];
+
+                    yearVideos.forEach(video => {
+                      if (video.eventGroup) {
+                        if (!groups[video.eventGroup]) {
+                          groups[video.eventGroup] = [];
+                          order.push(video.eventGroup);
+                        }
+                        groups[video.eventGroup].push(video);
+                      } else {
+                        singles.push(video);
+                        order.push(`single-${video.id}`);
+                      }
+                    });
+
+                    const uniqueOrder = Array.from(new Set(order));
+
+                    return (
+                      <div key={year} className="mb-16 last:mb-0">
+                        <div className="flex items-center gap-4 mb-8">
+                          <h3 className="text-3xl font-serif text-gold/90">{year}</h3>
+                          <div className="h-px flex-1 bg-gradient-to-r from-gold/30 to-transparent"></div>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                          {uniqueOrder.map(key => {
+                            if (key.startsWith('single-')) {
+                              const videoId = key.replace('single-', '');
+                              const video = singles.find(v => v.id === videoId);
+                              return video ? <VideoCard key={video.id} video={video} /> : null;
+                            } else {
+                              return <VideoGroupCard key={key} name={key} videos={groups[key]} />;
+                            }
+                          })}
+                        </div>
+                      </div>
+                    );
+                  });
                 }
 
-                // Grouping logic for categories
+                // Default layout for other categories (Flat grid with event grouping)
                 const groups: { [key: string]: VideoInfo[] } = {};
                 const singles: VideoInfo[] = [];
                 const order: string[] = [];
@@ -900,18 +948,21 @@ function MainContent() {
                   }
                 });
 
-                // Dedup order while maintaining sequence
                 const uniqueOrder = Array.from(new Set(order));
 
-                return uniqueOrder.map(key => {
-                  if (key.startsWith('single-')) {
-                    const videoId = key.replace('single-', '');
-                    const video = singles.find(v => v.id === videoId);
-                    return video ? <VideoCard key={video.id} video={video} /> : null;
-                  } else {
-                    return <VideoGroupCard key={key} name={key} videos={groups[key]} />;
-                  }
-                });
+                return (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {uniqueOrder.map(key => {
+                      if (key.startsWith('single-')) {
+                        const videoId = key.replace('single-', '');
+                        const video = singles.find(v => v.id === videoId);
+                        return video ? <VideoCard key={video.id} video={video} /> : null;
+                      } else {
+                        return <VideoGroupCard key={key} name={key} videos={groups[key]} />;
+                      }
+                    })}
+                  </div>
+                );
               })()}
             </div>
           </motion.div>

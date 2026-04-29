@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom';
 
 export default function VideoCard({ video }: { video: VideoInfo }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const isFbVertical = video.platform === 'facebook' && ((video.embedUrl.includes('reel') && video.id !== 'v-music-corner') || video.id === 'v-fb-cat821');
+  const isFbVertical = video.platform === 'facebook' && ((video.embedUrl.includes('reel') && video.id !== 'v-music-corner' && video.id !== 'v-fb-5299252240089221') || video.id === 'v-fb-cat821' || video.id === 'v-fb-995751751518630');
 
   useEffect(() => {
     if (isModalOpen) {
@@ -82,6 +82,23 @@ export default function VideoCard({ video }: { video: VideoInfo }) {
               </div>
             </div>
           )}
+
+          {video.platform === 'instagram' && (
+            <div className="w-full h-full flex justify-center items-center overflow-hidden relative pointer-events-none bg-black">
+              <iframe
+                src={`https://www.instagram.com/p/${video.embedUrl}/embed`}
+                className="w-full h-full"
+                style={{ border: 'none', overflow: 'hidden' }}
+                scrolling="no"
+                frameBorder="0"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-colors z-10">
+                <div className="z-20 w-16 h-16 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] rounded-full flex justify-center items-center shadow-[0_0_20px_rgba(238,42,123,0.5)] group-hover:scale-110 transition-transform">
+                  <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -115,6 +132,16 @@ export default function VideoCard({ video }: { video: VideoInfo }) {
                 frameBorder="0"
                 allowFullScreen
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              ></iframe>
+            )}
+            {video.platform === 'instagram' && (
+              <iframe
+                src={`https://www.instagram.com/p/${video.embedUrl}/embed`}
+                className="w-full h-full max-w-xl mx-auto"
+                style={{ border: 'none', overflow: 'hidden' }}
+                scrolling="no"
+                frameBorder="0"
+                allowTransparency
               ></iframe>
             )}
           </div>
