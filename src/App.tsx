@@ -17,7 +17,7 @@ function MainContent() {
   const timelineItems = t.timelineItems as any[];
   const filteredTimelineItems = timelineItems.filter(item => timelineFilter === 'all' ? item.category !== 'first' : item.category === 'first');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeVideoTab, setActiveVideoTab] = useState('all');
+  const [activeVideoTab, setActiveVideoTab] = useState('p1');
   const location = useLocation();
 
   const closeMenu = () => setIsMenuOpen(false);
@@ -849,10 +849,9 @@ function MainContent() {
             {/* Filter Tabs */}
             <div className="flex overflow-x-auto gap-2 md:gap-4 pb-4 mb-8 custom-scrollbar hide-scrollbar-on-mobile w-full justify-start sticky top-20 z-40 bg-dark/95 backdrop-blur-md pt-4 border-b border-white/5">
               {[
-                { id: 'all', label: lang === 'zh' ? '精選影片' : lang === 'ja' ? 'おすすめ' : 'Featured' },
+                { id: 'p1', label: t.videos.p1 },
                 { id: 'p6', label: t.videos.p6 },
                 { id: 'p7', label: t.videos.p7 },
-                { id: 'p1', label: t.videos.p1 },
                 { id: 'p2', label: t.videos.p2 },
                 { id: 'p3', label: t.videos.p3 },
                 { id: 'p5', label: t.videos.p5 }
