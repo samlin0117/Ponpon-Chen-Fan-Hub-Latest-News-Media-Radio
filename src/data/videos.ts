@@ -107,7 +107,7 @@ export const videoList: VideoInfo[] = [
     "platform": "youtube",
     "category": "p1",
     "title": "Fall in love with her voice, Feat Ponpon Chen, I'VE NEVER BEEN IN LOVE BEFORE (5)",
-    "date": "2025-01-18",
+    "date": "2025-01-14",
     "embedUrl": "ckiVCfDHduk",
     "thumbnailUrl": "https://i.ytimg.com/vi/ckiVCfDHduk/maxresdefault.jpg",
     "isFeatured": false
@@ -193,7 +193,7 @@ export const videoList: VideoInfo[] = [
     "platform": "youtube",
     "category": "p1",
     "title": "ALL OF ME (3) by Ponpon Chen live at The Barkley #JoeNDancer",
-    "date": "2024-05-19",
+    "date": "2025-05-04",
     "embedUrl": "03_h4Pnn3jA",
     "thumbnailUrl": "https://i.ytimg.com/vi/03_h4Pnn3jA/maxresdefault.jpg",
     "isFeatured": false
@@ -203,7 +203,7 @@ export const videoList: VideoInfo[] = [
     "platform": "youtube",
     "category": "p1",
     "title": "IF I HAD YOU (2) by Ponpon Chen live at The Barkley",
-    "date": "2024-05-19",
+    "date": "2025-05-03",
     "embedUrl": "WB2B_y2jbhQ",
     "thumbnailUrl": "https://i.ytimg.com/vi/WB2B_y2jbhQ/hqdefault.jpg",
     "isFeatured": false
@@ -232,7 +232,7 @@ export const videoList: VideoInfo[] = [
     "platform": "youtube",
     "category": "p1",
     "title": "陳芃瑄Ponpon - 無畏無謂 | Live Video",
-    "date": "2022-08-17",
+    "date": "2022-07-23",
     "embedUrl": "jPLzOi0IRiU",
     "thumbnailUrl": "https://i.ytimg.com/vi/jPLzOi0IRiU/maxresdefault.jpg",
     "isFeatured": false
@@ -242,7 +242,7 @@ export const videoList: VideoInfo[] = [
     "platform": "youtube",
     "category": "p1",
     "title": "陳芃瑄Ponpon - 愛的代價 The price of love | Live Video",
-    "date": "2022-08-14",
+    "date": "2022-07-23",
     "embedUrl": "6mbNk1uqzns",
     "thumbnailUrl": "https://i.ytimg.com/vi/6mbNk1uqzns/maxresdefault.jpg",
     "isFeatured": false
@@ -252,7 +252,7 @@ export const videoList: VideoInfo[] = [
     "platform": "youtube",
     "category": "p1",
     "title": "陳芃瑄Ponpon - On The Sunny Side Of The Street | Live Video",
-    "date": "2022-08-14",
+    "date": "2022-07-23",
     "embedUrl": "5IMYZKvUgTY",
     "thumbnailUrl": "https://i.ytimg.com/vi/5IMYZKvUgTY/maxresdefault.jpg",
     "isFeatured": false
@@ -262,7 +262,7 @@ export const videoList: VideoInfo[] = [
     "platform": "youtube",
     "category": "p1",
     "title": "陳芃瑄 [周休六日]￼",
-    "date": "2022-02-15",
+    "date": "2022-02-02",
     "embedUrl": "5_Z4G6ar7d4",
     "thumbnailUrl": "https://i.ytimg.com/vi/5_Z4G6ar7d4/hqdefault.jpg",
     "isFeatured": false
@@ -272,7 +272,7 @@ export const videoList: VideoInfo[] = [
     "platform": "youtube",
     "category": "p1",
     "title": "木匠兄妹The Carpenters【Top of the world 】 Cover by 陳芃瑄 Ponpon Chen（Live At Oldie Goodie）",
-    "date": "2021-05-12",
+    "date": "2021-05-14",
     "embedUrl": "EOqoo_513Ic",
     "thumbnailUrl": "https://i.ytimg.com/vi/EOqoo_513Ic/maxresdefault.jpg",
     "isFeatured": false
@@ -282,7 +282,7 @@ export const videoList: VideoInfo[] = [
     "platform": "youtube",
     "category": "p1",
     "title": "盧廣仲 Crowd Lu 【100種生活 100 Kinds of Living】 Cover by 陳芃瑄 Ponpon",
-    "date": "2021-07-15",
+    "date": "2020-12-25",
     "embedUrl": "p53N4_5HdmE",
     "thumbnailUrl": "https://i.ytimg.com/vi/p53N4_5HdmE/maxresdefault.jpg",
     "isFeatured": false
@@ -292,7 +292,7 @@ export const videoList: VideoInfo[] = [
     "platform": "youtube",
     "category": "p1",
     "title": "陳綺貞 Cheer Chen -【After 17】 Cover by 陳芃瑄 Ponpon",
-    "date": "2021-06-30",
+    "date": "2020-12-11",
     "embedUrl": "jCo0cspQ65M",
     "thumbnailUrl": "https://i.ytimg.com/vi/jCo0cspQ65M/maxresdefault.jpg",
     "isFeatured": false
@@ -302,7 +302,7 @@ export const videoList: VideoInfo[] = [
     "platform": "youtube",
     "category": "p1",
     "title": "木匠兄妹The carpenters【Top of the world 】 Cover by 陳芃瑄 Ponpon",
-    "date": "2021-03-08",
+    "date": "2021-02-09",
     "embedUrl": "noykxfdrOnw",
     "thumbnailUrl": "https://i.ytimg.com/vi/noykxfdrOnw/maxresdefault.jpg",
     "isFeatured": false
@@ -441,16 +441,7 @@ export const videoList: VideoInfo[] = [
     "isFeatured": false
   },
 
-  {
-    "id": "v-R1fGXPiLngs",
-    "platform": "youtube",
-    "category": "p2",
-    "title": "When The Artist's Dream To Sing At The Grand Ballroom Comes To Life (7) - Ponpon live",
-    "date": "2026-02",
-    "embedUrl": "R1fGXPiLngs",
-    "thumbnailUrl": "https://i.ytimg.com/vi/R1fGXPiLngs/maxresdefault.jpg",
-    "isFeatured": false
-  },
+
   {
     "id": "v-omov--yzMQw",
     "platform": "youtube",

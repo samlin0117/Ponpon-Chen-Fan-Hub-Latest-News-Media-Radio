@@ -255,7 +255,7 @@ function MainContent() {
                      <div className="hidden md:block w-1/2"></div>
 
                      {/* Content Card */}
-                     <div className={`pl-12 md:pl-0 w-full md:w-1/2 ${isEven ? 'md:pr-16 text-left md:text-right' : 'md:pl-16 text-left'} relative z-20`}>
+                     <div className={`pl-12 md:pl-0 w-full md:w-1/2 ${isEven ? 'md:pr-16 text-left' : 'md:pl-16 text-left'} relative z-20`}>
                        <div className="bg-dark-lighter/50 backdrop-blur-sm border border-white/5 p-6 rounded-2xl group-hover:border-gold/30 transition-colors duration-500 hover:shadow-2xl hover:shadow-gold/5">
                          <span className="inline-block px-3 py-1 bg-gold/10 text-gold-light rounded-full text-sm font-mono tracking-widest mb-4">
                            {item.year}
@@ -847,7 +847,7 @@ function MainContent() {
             <p className="text-gray-400 mb-8 font-light">{t.videos.description}</p>
             
             {/* Filter Tabs */}
-            <div className="flex overflow-x-auto gap-2 md:gap-4 pb-4 mb-8 custom-scrollbar hide-scrollbar-on-mobile w-full justify-start md:justify-center sticky top-20 z-40 bg-dark/95 backdrop-blur-md pt-4 border-b border-white/5">
+            <div className="flex overflow-x-auto gap-2 md:gap-4 pb-4 mb-8 custom-scrollbar hide-scrollbar-on-mobile w-full justify-start sticky top-20 z-40 bg-dark/95 backdrop-blur-md pt-4 border-b border-white/5">
               {[
                 { id: 'all', label: lang === 'zh' ? '精選影片' : lang === 'ja' ? 'おすすめ' : 'Featured' },
                 { id: 'p6', label: t.videos.p6 },

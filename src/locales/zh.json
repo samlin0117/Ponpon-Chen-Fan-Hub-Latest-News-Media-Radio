@@ -20,7 +20,7 @@
     "title": "Ponpon Chen",
     "subtitle": "爵士藝術家",
     "slogan": "用靈魂的聲音，訴說每一個夜晚的故事。",
-    "disclaimer": "本站為粉絲建立的非官方音樂典藏館，致力於收錄 Ponpon 音樂旅程中的媒體報導與演出紀錄。站內所有影音、照片版權均屬原權利人所有，本站僅作學術研究與非營利推廣使用。如有任何錯誤建議或版權疑慮，請來信：<a href=\"mailto:samlin0117@gmail.com\" class=\"text-gold hover:text-gold-light transition-colors hover:underline\">samlin0117@gmail.com</a>，我們將立即處理。"
+    "disclaimer": "本站是由粉絲建立的非官方音樂典藏館，致力於收錄 Ponpon 音樂旅程中的媒體報導與演出紀錄。站內所有影音、照片版權均屬原權利人所有，本站僅作學術研究與非營利推廣使用。若發現內容有誤、有任何改進建議或版權疑慮，請來信：<a href=\"mailto:samlin0117@gmail.com\" class=\"text-gold hover:text-gold-light transition-colors hover:underline\">samlin0117@gmail.com</a>，本站將立即處理。"
   },
   "about": {
     "title": "關於 Ponpon",
@@ -115,6 +115,12 @@
       "year": "2015 - 2016",
       "title": "初試啼聲與耀眼新星",
       "desc": "2015年獲得<a href=\"https://news.ltn.com.tw/news/life/breakingnews/1327418\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">「城市之星」歌唱比賽第二名</a>；2016年以14歲之姿奪得第5屆<a href=\"https://www.chinatimes.com/newspapers/20160824000626-260507?chdtv\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">「伊林璀璨之星」演藝組冠軍</a>。<a href=\"https://www.youtube.com/watch?v=D4eou5cff68\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 點此觀看演出精華</a>",
+      "category": "normal"
+    },
+    {
+      "year": "2017",
+      "title": "考取臺北市立復興高中戲劇班",
+      "desc": "在這所以培育藝術人才聞名的學府，她接受了系統化的表演、肢體與戲劇訓練。這段扎實的藝術薰陶，不僅磨練了她的舞台魅力，也為其日後獨具風格的音樂表演風格奠定了深厚基礎。<a href=\"https://www.facebook.com/share/v/1Dy5p92Apj/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 點此觀看演出彩排精華</a>",
       "category": "normal"
     },
     {

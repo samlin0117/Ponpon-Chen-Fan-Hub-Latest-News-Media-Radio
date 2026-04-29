@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom';
 
 export default function VideoCard({ video }: { video: VideoInfo }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const isFbVertical = video.platform === 'facebook' && (video.id === 'v-fb-cat821' || video.embedUrl.includes('reel'));
+  const isFbVertical = video.platform === 'facebook' && ((video.embedUrl.includes('reel') && video.id !== 'v-music-corner') || video.id === 'v-fb-cat821');
 
   useEffect(() => {
     if (isModalOpen) {
@@ -108,7 +108,7 @@ export default function VideoCard({ video }: { video: VideoInfo }) {
             )}
             {video.platform === 'facebook' && (
               <iframe
-                src={`${video.embedUrl.replace(/width=\d+/, isFbVertical ? 'width=500' : 'width=600')}&autoplay=1`}
+                src={`${video.embedUrl.replace(/width=\d+/, isFbVertical ? 'width=500' : 'width=600')}`}
                 className={isFbVertical ? "h-full aspect-[9/16] max-w-full mx-auto" : "w-full h-full max-w-5xl mx-auto"}
                 style={{ border: 'none', overflow: 'hidden' }}
                 scrolling="no"
