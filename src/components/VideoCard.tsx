@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom';
 
 export default function VideoCard({ video }: { video: VideoInfo }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const isFbVertical = video.platform === 'facebook' && ((video.embedUrl.includes('reel') && video.id !== 'v-music-corner' && video.id !== 'v-fb-5299252240089221') || video.id === 'v-fb-cat821' || video.id === 'v-fb-995751751518630');
+  const isFbVertical = video.platform === 'facebook' && ((video.embedUrl.includes('reel') && video.id !== 'v-music-corner' && video.id !== 'v-fb-5299252240089221') || video.id === 'v-fb-cat821' || video.id === 'v-fb-995751751518630' || video.id === 'v-fb-1387294209248782');
 
   useEffect(() => {
     if (isModalOpen) {
@@ -43,24 +43,34 @@ export default function VideoCard({ video }: { video: VideoInfo }) {
         >
           {video.platform === 'youtube' && (
             <>
-              <img
-                src={video.thumbnailUrl || `https://img.youtube.com/vi/${video.embedUrl}/maxresdefault.jpg`}
-                onError={(e) => {
-                  const target = e.currentTarget as HTMLImageElement;
-                  if (!target.src.includes('hqdefault.jpg')) {
-                    target.src = `https://img.youtube.com/vi/${video.embedUrl}/hqdefault.jpg`;
-                  } else if (!target.src.includes('mqdefault.jpg')) {
-                    target.src = `https://img.youtube.com/vi/${video.embedUrl}/mqdefault.jpg`;
-                  } else if (!target.src.includes('0.jpg')) {
-                    target.src = `https://img.youtube.com/vi/${video.embedUrl}/0.jpg`;
-                  }
-                }}
-                alt={video.title}
-                className={`absolute inset-0 w-full h-full opacity-70 group-hover:opacity-90 transition-opacity ${video.category === 'p2' ? 'object-contain bg-black' : 'object-cover'}`}
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
-              <div className="z-20 w-16 h-16 bg-red-600/90 rounded-full flex justify-center items-center shadow-[0_0_20px_rgba(220,38,38,0.5)] group-hover:scale-110 transition-transform">
-                <Play className="w-8 h-8 text-white ml-1" fill="white" />
+              {video.thumbnailUrl ? (
+                <img
+                  src={video.thumbnailUrl}
+                  alt={video.title}
+                  className={`absolute inset-0 w-full h-full opacity-70 group-hover:opacity-90 transition-opacity ${video.category === 'p2' ? 'object-contain bg-black' : 'object-cover'}`}
+                />
+              ) : (
+                <img
+                  src={`https://img.youtube.com/vi/${video.embedUrl}/maxresdefault.jpg`}
+                  onError={(e) => {
+                    const target = e.currentTarget as HTMLImageElement;
+                    if (!target.src.includes('hqdefault.jpg')) {
+                      target.src = `https://img.youtube.com/vi/${video.embedUrl}/hqdefault.jpg`;
+                    } else if (!target.src.includes('mqdefault.jpg')) {
+                      target.src = `https://img.youtube.com/vi/${video.embedUrl}/mqdefault.jpg`;
+                    } else if (!target.src.includes('0.jpg')) {
+                      target.src = `https://img.youtube.com/vi/${video.embedUrl}/0.jpg`;
+                    }
+                  }}
+                  alt={video.title}
+                  className={`absolute inset-0 w-full h-full opacity-70 group-hover:opacity-90 transition-opacity ${video.category === 'p2' ? 'object-contain bg-black' : 'object-cover'}`}
+                />
+              )}
+              
+              <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/5 transition-colors z-10">
+                <div className="z-20 w-16 h-16 rounded-full flex justify-center items-center shadow-2xl group-hover:scale-110 transition-transform duration-500 bg-red-600/90 shadow-red-600/30">
+                  <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                </div>
               </div>
             </>
           )}
@@ -87,8 +97,14 @@ export default function VideoCard({ video }: { video: VideoInfo }) {
             <div className="w-full h-full flex justify-center items-center overflow-hidden relative pointer-events-none bg-black">
               <iframe
                 src={`https://www.instagram.com/p/${video.embedUrl}/embed`}
-                className="w-full h-full"
-                style={{ border: 'none', overflow: 'hidden' }}
+                className="w-full"
+                style={{ 
+                  border: 'none', 
+                  overflow: 'hidden',
+                  height: '160%', // 增加高度
+                  marginTop: '-15%', // 往上提，避開 header
+                  transform: 'scale(1.1)', // 稍微放大
+                }}
                 scrolling="no"
                 frameBorder="0"
               />

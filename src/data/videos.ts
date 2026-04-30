@@ -14,6 +14,42 @@ export interface VideoInfo {
 
 export const videoList: VideoInfo[] = [
   {
+    "id": "v-fb-1387294209248782",
+    "platform": "facebook",
+    "category": "p1",
+    "title": "Ponpon｜I Can't Give You Anything But Love (Live at Cicada Club)",
+    "date": "2025-04-12",
+    "embedUrl": "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1387294209248782/&show_text=0&width=500",
+    "isFeatured": false
+  },
+  {
+    "id": "v-fb-1364553878201641",
+    "platform": "facebook",
+    "category": "p1",
+    "title": "Ponpon｜It's Been a Long, Long Time (Live at Cicada Club)",
+    "date": "2025-04-12",
+    "embedUrl": "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1364553878201641/&show_text=0&width=500",
+    "isFeatured": false
+  },
+  {
+    "id": "v-ig-CJ-39RJnPhQ",
+    "platform": "instagram",
+    "category": "p1",
+    "title": "Ponpon｜Cellophane (Cover by Ponpon)",
+    "date": "2021-01-14",
+    "embedUrl": "CJ-39RJnPhQ",
+    "isFeatured": false
+  },
+  {
+    "id": "v-ig-CRwRLU1n5c4",
+    "platform": "instagram",
+    "category": "p1",
+    "title": "Ponpon｜Someday (Cover by Ponpon)",
+    "date": "2021-07-25",
+    "embedUrl": "CRwRLU1n5c4",
+    "isFeatured": false
+  },
+  {
     "id": "v-fb-995751751518630",
     "platform": "facebook",
     "category": "p1",
