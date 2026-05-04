@@ -102,7 +102,12 @@
   },
   "comments": {
     "title": "Fan Lounge",
-    "description": "Leave your footprints and feelings, letting this musical exchange resonate under the night sky..."
+    "description": "Leave your footprints and feelings, letting this musical exchange resonate under the night sky...",
+    "welcome_title": "Want to say something to Ponpon?",
+    "welcome_p1": "Every comment is the warmest support and encouragement for Ponpon's jazz journey. You can enter a nickname and post directly below (no registration required).",
+    "welcome_p2": "You are also welcome to leave suggestions or encouragement for the webmaster here. Your feedback is the biggest motivation for the continuous updates of this site!",
+    "welcome_note": "* To maintain good quality of exchange, comments will be displayed after moderation by the webmaster. Thank you for your patience.",
+    "tag_no_login": "No Login Required"
   },
   "timelineItems": [
     {
@@ -120,7 +125,7 @@
     {
       "year": "2017",
       "title": "Admitted to Drama Class at Fuxing Senior High School",
-      "desc": "In this renowned institution for nurturing artistic talent, she received systematic training in acting, physical expression, and theater. This solid artistic foundation not only honed her stage presence but also laid a profound groundwork for her uniquely stylized musical performances in the future. <a href=\"https://www.facebook.com/share/v/1Dy5p92Apj/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch rehearsal highlights</a>",
+      "desc": "In this renowned institution for nurturing artistic talent, she received systematic training in acting, physical expression, and theater. This solid artistic foundation not only honed her stage presence but also laid a profound groundwork for her uniquely stylized musical performances in the future. <a href=\"https://www.facebook.com/ponpon0405/videos/1861982100487320/?t=0\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch rehearsal highlights</a>",
       "category": "normal"
     },
     {

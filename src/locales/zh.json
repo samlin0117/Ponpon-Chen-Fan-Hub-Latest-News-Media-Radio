@@ -102,7 +102,12 @@
   },
   "comments": {
     "title": "Fan Lounge / 粉絲留言板",
-    "description": "留下您的足跡與感受，讓這份音樂的交流在夜空下持續迴盪..."
+    "description": "留下您的足跡與感受，讓這份音樂的交流在夜空下持續迴盪...",
+    "welcome_title": "想對 Ponpon 說些什麼嗎？",
+    "welcome_p1": "每一份留言，都是對 Ponpon 爵士旅程最溫暖的支持與鼓勵。您可以直接在下方輸入暱稱並發佈內容（無需註冊帳號）。",
+    "welcome_p2": "也歡迎在這裡留下給版主的建議或鼓勵，您的回饋是支持本站持續更新的最大動力！",
+    "welcome_note": "※ 為了維護良好的交流品質，留言將由版主審核後顯示，感謝您的耐心等待。",
+    "tag_no_login": "免登入留言區"
   },
   "timelineItems": [
     {
@@ -120,7 +125,7 @@
     {
       "year": "2017",
       "title": "考取臺北市立復興高中戲劇班",
-      "desc": "在這所以培育藝術人才聞名的學府，她接受了系統化的表演、肢體與戲劇訓練。這段扎實的藝術薰陶，不僅磨練了她的舞台魅力，也為其日後獨具風格的音樂表演風格奠定了深厚基礎。<a href=\"https://www.facebook.com/share/v/1Dy5p92Apj/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 點此觀看演出彩排精華</a>",
+      "desc": "在這所以培育藝術人才聞名的學府，她接受了系統化的表演、肢體與戲劇訓練。這段扎實的藝術薰陶，不僅磨練了她的舞台魅力，也為其日後獨具風格的音樂表演風格奠定了深厚基礎。<a href=\"https://www.facebook.com/ponpon0405/videos/1861982100487320/?t=0\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 點此觀看演出彩排精華</a>",
       "category": "normal"
     },
     {

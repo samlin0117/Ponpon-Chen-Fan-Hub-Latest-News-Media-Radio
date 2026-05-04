@@ -3,9 +3,13 @@ import { Play, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-export default function VideoCard({ video }: { video: VideoInfo }) {
+export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const isFbVertical = video.platform === 'facebook' && ((video.embedUrl.includes('reel') && video.id !== 'v-music-corner' && video.id !== 'v-fb-5299252240089221') || video.id === 'v-fb-cat821' || video.id === 'v-fb-995751751518630' || video.id === 'v-fb-1387294209248782');
+  // 判斷是否為直向 FB 影片 (Reels 或特定 ID)
+  const isFbVertical = video.platform === 'facebook' && (
+    (video.embedUrl.includes('reel') && video.id !== 'v-music-corner' && video.id !== 'v-fb-5299252240089221') || 
+    ['v-fb-cat821', 'v-fb-995751751518630', 'v-fb-1387294209248782'].includes(video.id)
+  );
 
   useEffect(() => {
     if (isModalOpen) {
@@ -78,7 +82,7 @@ export default function VideoCard({ video }: { video: VideoInfo }) {
           {video.platform === 'facebook' && (
             <div className="w-full h-full flex justify-center items-center overflow-hidden relative pointer-events-none bg-black">
               <iframe
-                src={video.embedUrl.replace(/width=\d+/, isFbVertical ? 'width=316' : 'width=450')}
+                src={video.embedUrl.replace(/width=\d+/, isFbVertical ? 'width=316' : 'width=350')}
                 className={isFbVertical ? "h-full aspect-[9/16]" : "w-full h-full"}
                 style={{ border: 'none', overflow: 'hidden' }}
                 scrolling="no"
@@ -128,7 +132,11 @@ export default function VideoCard({ video }: { video: VideoInfo }) {
             <X className="w-6 h-6 md:w-8 md:h-8" />
           </button>
 
-          <div className={`w-full max-w-6xl bg-black md:rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] border-y md:border border-white/10 relative flex flex-col items-center justify-center animate-in zoom-in-95 duration-300 ${video.platform === 'youtube' ? 'aspect-video h-auto' : 'h-full md:h-[85vh] py-10'}`}>
+          <div className={`w-full max-w-6xl bg-black md:rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.5)] border-y md:border border-white/10 relative flex flex-col items-center justify-center animate-in zoom-in-95 duration-300 ${
+            (video.platform === 'youtube' || (video.platform === 'facebook' && !isFbVertical)) 
+              ? 'aspect-video h-auto overflow-hidden' 
+              : 'h-full md:h-[85vh] py-10 overflow-y-auto'
+          }`}>
             {video.platform === 'youtube' && (
               <iframe
                 className="w-full h-full aspect-video"
@@ -141,7 +149,7 @@ export default function VideoCard({ video }: { video: VideoInfo }) {
             )}
             {video.platform === 'facebook' && (
               <iframe
-                src={`${video.embedUrl.replace(/width=\d+/, isFbVertical ? 'width=500' : 'width=600')}`}
+                src={`${video.embedUrl.replace(/width=\d+/, isFbVertical ? 'width=500' : 'width=550')}`}
                 className={isFbVertical ? "h-full aspect-[9/16] max-w-full mx-auto" : "w-full h-full max-w-5xl mx-auto"}
                 style={{ border: 'none', overflow: 'hidden' }}
                 scrolling="no"

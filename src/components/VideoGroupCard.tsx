@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import VideoCard from './VideoCard';
 
-export default function VideoGroupCard({ name, videos }: { name: string, videos: VideoInfo[] }) {
+export default function VideoGroupCard({ name, videos }: { name: string; videos: VideoInfo[]; key?: any }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const mainVideo = videos[0];
   const date = mainVideo.date;

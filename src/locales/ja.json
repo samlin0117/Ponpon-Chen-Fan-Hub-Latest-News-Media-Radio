@@ -102,7 +102,12 @@
   },
   "comments": {
     "title": "Fan Lounge",
-    "description": "あなたの足跡と思いを残し、この音楽の交流を夜空の下で響かせましょう..."
+    "description": "あなたの足跡と思いを残し、この音楽の交流を夜空の下で響かせましょう...",
+    "welcome_title": "Ponponに何か伝えたいことはありますか？",
+    "welcome_p1": "すべてのメッセージは、Ponponのジャズの旅への最も温かい支持と励ましになります。以下にニックネームを入力して直接投稿できます（会員登録不要）。",
+    "welcome_p2": "管理人への提案や励ましも大歓迎です。皆様からのフィードバックが、このサイトを更新し続ける最大の原動力です！",
+    "welcome_note": "※ 交流の質を維持するため、メッセージは管理人の承認後に表示されます。ご理解のほどよろしくお願いいたします。",
+    "tag_no_login": "ログイン不要"
   },
   "timelineItems": [
     {
@@ -120,7 +125,7 @@
     {
       "year": "2017",
       "title": "台北市立復興高中演劇科に合格",
-      "desc": "芸術人材の育成で有名なこの学校で、演技、身体表現、演劇の体系的な訓練を受ける。この確かな芸術的基盤は、ステージ上での魅力を磨き上げただけでなく、後の独自の音楽パフォーマンススタイルの深い土台となった。<a href=\"https://www.facebook.com/share/v/1Dy5p92Apj/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ リハーサルのハイライトを観る</a>",
+      "desc": "芸術人材の育成で有名なこの学校で、演技、身體表現、演劇の體系的な訓練を受ける。この確かな芸術的基盤は、ステージ上での魅力を磨き上げただけでなく、後の独自の音樂パフォーマンススタイルの深い土台となった。<a href=\"https://www.facebook.com/ponpon0405/videos/1861982100487320/?t=0\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ リハーサルのハイライトを観る</a>",
       "category": "normal"
     },
     {
