@@ -36,7 +36,7 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
           </h3>
           {video.date && (
             <p className="text-sm text-gray-400 mt-1 font-mono tracking-wide">
-              {video.date}
+              {video.displayDate || video.date}
             </p>
           )}
         </div>

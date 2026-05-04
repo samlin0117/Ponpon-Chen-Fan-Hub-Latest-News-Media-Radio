@@ -6,6 +6,7 @@ export interface VideoInfo {
   category: 'p1' | 'p2' | 'p3' | 'p5' | 'p6' | 'p7';
   title: string;
   date: string;
+  displayDate?: string;
   embedUrl: string;
   thumbnailUrl?: string;
   isFeatured: boolean;
@@ -242,16 +243,6 @@ export const videoList: VideoInfo[] = [
     "isFeatured": true
   },
   {
-    "id": "_BVm-hixXt4",
-    "platform": "youtube",
-    "category": "p1",
-    "title": "Ponpon Chen \"How High The Moon\"",
-    "date": "2024-11-04",
-    "embedUrl": "_BVm-hixXt4",
-    "thumbnailUrl": "https://i.ytimg.com/vi/_BVm-hixXt4/maxresdefault.jpg",
-    "isFeatured": true
-  },
-  {
     "id": "v-fb-1104056930986826",
     "platform": "facebook",
     "category": "p1",
@@ -286,6 +277,17 @@ export const videoList: VideoInfo[] = [
     "date": "2024-10-31",
     "embedUrl": "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/943741067777001&show_text=0&width=500",
     "isFeatured": false
+  },
+  {
+    "id": "_BVm-hixXt4",
+    "platform": "youtube",
+    "category": "p1",
+    "title": "Ponpon Chen \"How High The Moon\"",
+    "date": "2024-08-15",
+    "displayDate": "2024 Q3",
+    "embedUrl": "_BVm-hixXt4",
+    "thumbnailUrl": "https://i.ytimg.com/vi/_BVm-hixXt4/maxresdefault.jpg",
+    "isFeatured": true
   },
   {
     "id": "v-hY3H5ob2wbE",

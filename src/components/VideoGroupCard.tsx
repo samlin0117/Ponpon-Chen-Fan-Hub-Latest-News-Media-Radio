@@ -8,7 +8,7 @@ import VideoCard from './VideoCard';
 export default function VideoGroupCard({ name, videos }: { name: string; videos: VideoInfo[]; key?: any }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const mainVideo = videos[0];
-  const date = mainVideo.date;
+  const date = mainVideo.displayDate || mainVideo.date;
 
   useEffect(() => {
     if (isExpanded) {
