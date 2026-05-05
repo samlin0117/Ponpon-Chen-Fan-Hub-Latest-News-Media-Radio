@@ -8,7 +8,7 @@
     "news": "ニュース",
     "interview": "インタビュー",
     "videos": "動画",
-    "quiz": "クイズ",
+    "quiz": "粉絲大考驗",
     "links": "リンク"
   },
   "timeline": {
@@ -66,7 +66,7 @@
     "readMore": "続きを読む"
   },
   "quiz": {
-    "title": "Ponpon 知識クイズ",
+    "title": "粉絲大考驗",
     "description": "Ponponのジャズの旅についてどれくらい知っていますか？<br/>34問の中からランダムに10問出題。1問10点、満点を目指そう！",
     "start": "挑戦を始める",
     "question_label": "第 {{current}} / {{total}} 問",

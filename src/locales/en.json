@@ -8,7 +8,7 @@
     "news": "News",
     "interview": "Interview",
     "videos": "Videos",
-    "quiz": "Quiz",
+    "quiz": "粉絲大考驗",
     "links": "Links"
   },
   "timeline": {
@@ -66,7 +66,7 @@
     "readMore": "Read More"
   },
   "quiz": {
-    "title": "Ponpon Knowledge Quiz",
+    "title": "粉絲大考驗",
     "description": "How much do you know about Ponpon's jazz journey?<br/>10 random questions, 10 points each. Can you get a perfect 100?",
     "start": "Start Challenge",
     "question_label": "Question {{current}} / {{total}}",
