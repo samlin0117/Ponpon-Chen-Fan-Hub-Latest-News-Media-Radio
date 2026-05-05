@@ -4,10 +4,11 @@
   "nav": {
     "home": "ホーム",
     "about": "プロフィール",
-    "timeline": "タイムライン",
+    "timeline": "経歴",
     "news": "ニュース",
     "interview": "インタビュー",
     "videos": "動画",
+    "quiz": "クイズ",
     "links": "リンク"
   },
   "timeline": {
@@ -24,7 +25,7 @@
   },
   "about": {
     "title": "Ponponについて",
-    "description": "Ponpon (陳芃瑄) の音楽の世界では、楽器と歌声に境界はありません。彼女は表現力豊かな歌声をベースに、流れるようなギターの伴奏を組み合わせ、メロディーの中を自由に駆け巡ります。\n\nファンを最も魅了するのは、ライブパフォーマンスにおいて、澄んだ口笛、軽快なスキャット、そしてギターのピッキングを同時に操る姿です。この「三位一体」の同時演奏技術は、彼女の最も象徴的な音楽的シグネチャーとなっています。2026年には待望のファースト・ジャズ・アルバムがリリース予定です。繊細かつ力強い音楽のエネルギーにぜひご期待ください。"
+    "description": "Ponpon (陳芃瑄) の音楽の世界では、楽器と歌声に境界はありません。彼女は表現力豊かな歌声をベースに、流れるようなギターの伴奏を組み合わせ、メロディの中を自由に駆け巡ります。\n\nファンを最も魅了するのは、彼女が非常に長けている「音楽で物語を語る」魅力に加え、ライブパフォーマンスにおいて、透き通った口笛、躍動感あふれるスキャット (Scatting)、そしてギターのピッキングを同時に操る姿です。この「三位一体」の同期演奏技術は、一音一音が物語を伝える媒体となり、彼女の最も特徴的な音楽的シグネチャーとなっています。2026年には待望の1stジャズアルバムがリリース予定。繊細かつパワフルなその音楽エネルギーにぜひご期待ください。"
   },
   "news": {
     "title": "ニュース＆プレス",
@@ -63,6 +64,273 @@
     "article11Desc": "台北シティ科技大学が「2015 City Star」オーディションを開催。台湾全土から情熱的な学生が歌とダンスのスキルを披露しました。600人の若者が参加する激戦の中、Ponponは見事2位を獲得しました。",
     "source11": "自由時報",
     "readMore": "続きを読む"
+  },
+  "quiz": {
+    "title": "Ponpon 知識クイズ",
+    "description": "Ponponのジャズの旅についてどれくらい知っていますか？<br/>34問の中からランダムに10問出題。1問10点、満点を目指そう！",
+    "start": "挑戦を始める",
+    "question_label": "第 {{current}} / {{total}} 問",
+    "points_label": "現在のスコア",
+    "correct_label": "🎉 正解！+10 点",
+    "wrong_label": "💡 正解は：",
+    "next": "次の問題へ",
+    "view_result": "結果を見る",
+    "completed": "挑戦完了！",
+    "total_score": "合計スコア",
+    "accuracy": "正解率",
+    "try_again": "もう一度挑戦",
+    "rank_senior": "🏆 Ponpon の超熱狂的ファン",
+    "rank_senior_desc": "素晴らしい！あなたはPonponのことをすべて知り尽くしていますね！",
+    "rank_loyal": "🌟 Ponpon の忠実なファン",
+    "rank_loyal_desc": "すごい！Ponponの音楽の旅を本当によく追いかけていますね！",
+    "rank_entry": "🎵 Ponpon 入門ファン",
+    "rank_entry_desc": "いいですね！これからもPonponの最新情報をチェックしましょう！",
+    "rank_passing": "🎸 通りすがりのジャズリスナー",
+    "rank_passing_desc": "Ponponの音楽世界へようこそ！ゆっくりしていってくださいね。",
+    "rank_visitor": "👋 初めての訪問者",
+    "rank_visitor_desc": "大丈夫ですよ！これからPonponのことを知っていけばいいんです！",
+    "rank_newbie": "🌱 Ponpon の新しい友達",
+    "rank_newbie_desc": "ファンコミュニティへようこそ！一緒に探索しましょう！",
+    "questions": [
+      {
+        "id": 1,
+        "question": "2025年4月、Ponponがロサンゼルスで初めて公の場で演奏した「特殊な楽器」は何ですか？",
+        "options": ["ハーモニカ", "ウォッシュボード (Washboard)", "ウクレレ", "アコーディオン"],
+        "correctAnswer": 1,
+        "explanation": "2025年4月、Cicada Restaurant and Loungeでの公演で、初めてウォッシュボードの演奏を取り入れました。"
+      },
+      {
+        "id": 2,
+        "question": "Ponponが初めて公の場で「スキャット（ギターと歌の斉奏）」の技術を披露したのはどの動画ですか？",
+        "options": ["All of Me", "Blue Skies", "How High The Moon", "Reflection"],
+        "correctAnswer": 2,
+        "explanation": "2024年第3四半期の「How High The Moon」の演奏で、彼女の代名詞であるスキャットを初めて披露しました。"
+      },
+      {
+        "id": 3,
+        "question": "Ponpon Chen（陳芃瑄）の生年月日はいつですか？",
+        "options": ["2000年4月5日", "2002年4月5日", "2002年5月4日", "2004年4月5日"],
+        "correctAnswer": 1,
+        "explanation": "Ponpon Chenは2002年4月5日生まれです。"
+      },
+      {
+        "id": 4,
+        "question": "10歳の時、Ponponがステージ上でのリズム感を養うために習い始めたダンスは何ですか？",
+        "options": ["バレエとコンテンポラリー", "ブレイキンとロッキング", "ストリートとジャズ", "タップダンス"],
+        "correctAnswer": 1,
+        "explanation": "10歳の時にブレイキンとロッキングを習い始め、リズム感を養いました。"
+      },
+      {
+        "id": 5,
+        "question": "2015年、中学1年生だった彼女が2位を獲得したオーディションは何ですか？",
+        "options": ["Eelin Star", "Jungle Voice", "City Star (城市之星)", "Star Search"],
+        "correctAnswer": 2,
+        "explanation": "2015年、中学1年生の時に「City Star」というオーディションで2位に輝きました。"
+      },
+      {
+        "id": 6,
+        "question": "2016年、わずか14歳で「第5回 Eelin Star」の決勝に進出し、どの部門で優勝しましたか？",
+        "options": ["歌唱部門", "モデル部門", "エンターテインメント部門", "ダンス部門"],
+        "correctAnswer": 2,
+        "explanation": "2016年、14歳の時に第5回「Eelin Star」でエンターテインメント部門のグランプリを獲得しました。"
+      },
+      {
+        "id": 7,
+        "question": "PonponがEelin Starで優勝した際に樹立した特別な記録は何ですか？",
+        "options": ["過去最高得点", "大会史上最年少での優勝", "初の満点獲得者", "ネット投票1位"],
+        "correctAnswer": 1,
+        "explanation": "14歳という若さで、その大会の史上最年少優勝者となりました。"
+      },
+      {
+        "id": 8,
+        "question": "2018年に「我想和你唱」第3シーズンに参加した際、最終的にどの歌手とデュエットすることになりましたか？",
+        "options": ["ワン・ユエン (王源)", "リン・ジュンジエ", "ジェイ・チョウ", "ジャム・シャオ"],
+        "correctAnswer": 0,
+        "explanation": "「我想和你唱」第3シーズンで、TFBOYSのメンバーであるワン・ユエンとのデュエット相手に選ばれました。"
+      },
+      {
+        "id": 9,
+        "question": "「我想和你唱」第3シーズンで、Ponponがワン・ユエンと一緒に歌った曲は何ですか？",
+        "options": ["台北某個地方", "驕傲 (Pride)", "告白気球", "修練愛情"],
+        "correctAnswer": 1,
+        "explanation": "ワン・ユエンと共に「驕傲」という曲をデュエットしました。"
+      },
+      {
+        "id": 10,
+        "question": "2019年、17歳だったPonponが「Jungle Voice 2 (聲林之王)」に参加した際の役割は何でしたか？",
+        "options": ["メンターとのコラボ", "チャレンジャー (魔王)", "グランドファイナリスト", "デュエット参加者"],
+        "correctAnswer": 1,
+        "explanation": "「Jungle Voice 2」に、高い実力を持つ「チャレンジャー（魔王）」として参加しました。"
+      },
+      {
+        "id": 11,
+        "question": "「Jungle Voice 2」で、Ponponが披露した陳綺貞（チアー・チェン）の曲は何ですか？",
+        "options": ["旅行の意義", "台北某個地方", "魚", "還是會寂寞"],
+        "correctAnswer": 1,
+        "explanation": "「台北某個地方」を歌い、3人のメンターから絶賛されました。"
+      },
+      {
+        "id": 12,
+        "question": "高校時代、Ponponは復興高校のどの学科に在籍していましたか？",
+        "options": ["音楽科", "ダンス科", "演劇科", "美術科"],
+        "correctAnswer": 2,
+        "explanation": "2017年に芸術人材の育成で知られる復興高校の演劇科に合格しました。"
+      },
+      {
+        "id": 13,
+        "question": "パンデミック中、Ponponがポップスからジャズへ転向し、ギターを猛練習するきっかけとなった大物ミュージシャンは誰ですか？",
+        "options": ["Wes Montgomery", "Joe Pass", "George Benson", "Pat Metheny"],
+        "correctAnswer": 2,
+        "explanation": "大学時代、George Bensonの動画に衝撃を受け、ジャズギターに専念するために渡米を決意しました。"
+      },
+      {
+        "id": 14,
+        "question": "大学を休学後、彼女は台湾の「河岸留言」でどの先生に師事しましたか？",
+        "options": ["林正如 (Geddy Lin)", "董舜文", "黄瑞豊", "門田英司"],
+        "correctAnswer": 0,
+        "explanation": "大学休学後、「河岸留言」で林正如先生にギターを学び始めました。"
+      },
+      {
+        "id": 15,
+        "question": "2022年に渡米する前、Ponponが初の単独ワンマンライブを開催した場所はどこですか？",
+        "options": ["台北アリーナ", "国家音楽庁", "河岸留言 (Riverside)", "Legacy Taipei"],
+        "correctAnswer": 2,
+        "explanation": "2022年の渡米前に、河岸留言で初の単独ワンマンライブを開催しました。"
+      },
+      {
+        "id": 16,
+        "question": "2022年9月に公開された初のオリジナル曲のMV。実は15歳の時の作品ですが、その曲名は何ですか？",
+        "options": ["找到一樣在邊緣徘徊中的你", "ジャズ狂想曲", "ロサンゼルスの夜", "誇り高き旅路"],
+        "correctAnswer": 0,
+        "explanation": "15歳の時に作った「找到一樣在邊緣徘徊中的你」が、初のオリジナルMVとなりました。"
+      },
+      {
+        "id": 17,
+        "question": "2022年、Ponponがロサンゼルスへ留学した際に通った学校はどこですか？",
+        "options": ["バークリー音楽大学", "ジュリアード音楽院", "Musicians Institute (MI)", "南カリフォルニア大学 ソーントン音楽学校"],
+        "correctAnswer": 2,
+        "explanation": "ロサンゼルスのMusicians Institute (MI)に留学しました。"
+      },
+      {
+        "id": 18,
+        "question": "Musicians Institute (MI)で、彼女が専攻したのはどの分野ですか？",
+        "options": ["ジャズピアノ", "ジャズギター", "ジャズベース", "ジャズボーカル"],
+        "correctAnswer": 1,
+        "explanation": "MIではジャズギターを専攻しました。"
+      },
+      {
+        "id": 19,
+        "question": "2023年、毎日の猛練習が原因でどのような職業病を患い、半年間の休養を余儀なくされましたか？",
+        "options": ["声帯結節", "手根管症候群", "腱鞘炎", "筋膜炎"],
+        "correctAnswer": 2,
+        "explanation": "2023年、猛練習により腱鞘炎を患い、半年間ギターを弾けなくなりました。"
+      },
+      {
+        "id": 20,
+        "question": "ロサンゼルスのStudio City Soundで出会い、演奏動画のアップロードを勧めてくれたグラミー賞受賞エンジニアは誰ですか？",
+        "options": ["Al Schmitt", "Tom Weir", "Manny Marroquin", "Serban Ghenea"],
+        "correctAnswer": 1,
+        "explanation": "グラミー賞受賞者のTom Weirと出会い、彼の勧めでYouTubeに動画を上げ始めました。"
+      },
+      {
+        "id": 21,
+        "question": "2024年12月、一時帰国して単独有料ライブを開催した場所はどこですか？",
+        "options": ["台北アリーナ", "国家音楽庁", "西門紅楼「河岸留言」", "Legacy Taipei"],
+        "correctAnswer": 2,
+        "explanation": "2024年12月、西門紅楼にある「河岸留言」で単独ライブを行いました。"
+      },
+      {
+        "id": 22,
+        "question": "2025年5月、Ponponが招待されて出演したアメリカABC放送の深夜番組は何ですか？",
+        "options": ["The Tonight Show", "Jimmy Kimmel Live!", "World News Now", "The Late Show"],
+        "correctAnswer": 2,
+        "explanation": "ABCニュースの深夜番組「World News Now」に出演しました。"
+      },
+      {
+        "id": 23,
+        "question": "ABCの番組で、彼女がアレンジして披露したエンディング曲は何ですか？",
+        "options": ["World News Polka", "ABC News Theme", "Good Morning America Theme", "Nightline Closing"],
+        "correctAnswer": 0,
+        "explanation": "「World News Polka」をアレンジして披露し、100万回以上の再生を記録しました。"
+      },
+      {
+        "id": 24,
+        "question": "2025年のワークショップで、憧れのGeorge Bensonから直接贈られた言葉は何ですか？",
+        "options": ["「スケールをもっと練習しなさい」", "「ニューヨークへ行きなさい」", "「模倣ではなく、自分の声を見つけなさい」", "「ギターは君の武器だ」"],
+        "correctAnswer": 2,
+        "explanation": "George Bensonから「模倣ではなく、自分の声を見つけなさい」という言葉を贈られました。"
+      },
+      {
+        "id": 25,
+        "question": "2025年12月24日、Ponponが招待されたロサンゼルスの恒例行事は何ですか？",
+        "options": ["グラミー賞授賞式", "L.A. County Holiday Celebration", "LAジャズフェスティバル", "カリフォルニア・ニューイヤーコンサート"],
+        "correctAnswer": 1,
+        "explanation": "2025年のクリスマスイブに、「L.A. County Holiday Celebration」に出演しました。"
+      },
+      {
+        "id": 26,
+        "question": "L.A. County Holiday Celebrationで、Ponponはどのグラミー賞受賞者と共演しましたか？",
+        "options": ["John Mayer", "Randy Waldman", "Herbie Hancock", "Jacob Collier"],
+        "correctAnswer": 1,
+        "explanation": "グラミー賞受賞者のRandy Waldmanと共演しました。"
+      },
+      {
+        "id": 27,
+        "question": "2015年の「City Star」オーディション当時、Ponponはどの中学校に通っていましたか？",
+        "options": ["復興中学校", "仁愛中学校", "金華中学校", "中正中学校"],
+        "correctAnswer": 1,
+        "explanation": "2015年当時は仁愛中学校の生徒でした。"
+      },
+      {
+        "id": 28,
+        "question": "2024年にTom WeirがPonponに送った重要なアドバイスは何ですか？",
+        "options": ["音楽院に入学すること", "演奏動画をたくさんYouTubeに上げること", "アイドルオーディションに出ること", "アナログ盤を出すこと"],
+        "correctAnswer": 1,
+        "explanation": "Tom Weirは、多くの人に才能を知ってもらうためにYouTubeへの投稿を勧めました。"
+      },
+      {
+        "id": 29,
+        "question": "アメリカでの負傷療養中、先生から「音楽の進歩を止めないために」と勧められた勉強法は何ですか？",
+        "options": ["左手だけでピアノを弾く", "演劇科に転科する", "ジャズの歴史や曲の背景を研究する", "地元の放送講座を受ける"],
+        "correctAnswer": 2,
+        "explanation": "療養中、ジャズの歴史や楽曲のストーリーを深く学ぶことを勧められました。"
+      },
+      {
+        "id": 30,
+        "question": "2025年にABC Newsからメールが届いた際、彼女の最初の反応はどうでしたか？",
+        "options": ["詐欺メールだと思って信じられなかった", "すぐに台湾の両親に電話した", "準備不足だと思って断ろうとした", "出演料が安いと思って一度断った"],
+        "correctAnswer": 0,
+        "explanation": "最初、ABC Newsからのメールは詐欺だと思ったそうです。"
+      },
+      {
+        "id": 31,
+        "question": "ABC Newsでの演奏で、歌とギター、スキャットに加えて披露した彼女ならではの要素は何ですか？",
+        "options": ["口笛 (Whistling)", "ハーモニカ演奏", "B-box", "タップダンス"],
+        "correctAnswer": 0,
+        "explanation": "演奏に彼女の代名詞である「口笛」を取り入れ、完璧なパフォーマンスを披露しました。"
+      },
+      {
+        "id": 32,
+        "question": "MI在学中、負傷してギターが弾けなかった彼女はどうやって卒業単位を取得しましたか？",
+        "options": ["レポートを提出した", "ギターの代わりに歌で実技試験を受けた", "休学して台湾で療養した", "制作やミキシングの授業に振り替えた"],
+        "correctAnswer": 1,
+        "explanation": "ギターが弾けなかったため、実技試験を「歌」で受けることで単位を取得しました。"
+      },
+      {
+        "id": 33,
+        "question": "Ponponは、ジャズの演奏における「ミス」をどのようなものだと考えていますか？",
+        "options": ["即興の一部であり、創造の始まり", "出演料が引かれる対象", "すぐに演奏を止めて謝るべきもの", "プロ失格であり、避けるべきもの"],
+        "correctAnswer": 0,
+        "explanation": "ミスは即興の一部であり、新しいアイデアを生むきっかけだと考えています。"
+      },
+      {
+        "id": 34,
+        "question": "Ponponが最も好きな色は何ですか？",
+        "options": ["青", "赤", "黒", "金"],
+        "correctAnswer": 1,
+        "explanation": "多くのステージで鮮やかな赤のドレスを着ていることから、赤色が好きであることがわかります。"
+      }
+    ]
   },
   "interview": {
     "title": "ラジオインタビュー",

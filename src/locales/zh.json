@@ -8,6 +8,7 @@
     "news": "新聞報導",
     "interview": "廣播訪問",
     "videos": "演出影片",
+    "quiz": "粉絲大考驗",
     "links": "連結"
   },
   "timeline": {
@@ -24,7 +25,7 @@
   },
   "about": {
     "title": "關於 Ponpon",
-    "description": "在 Ponpon (陳芃瑄) 的音樂世界裡，樂器與人聲是沒有邊界的。她以富有渲染力的嗓音為基底，結合流暢的吉他伴奏，在旋律中自由穿梭。\n\n最令樂迷著迷的，莫過於她在現場演出中，能同時操縱清透的口哨、靈動的人聲即興 (Scatting) 與吉他撥奏，這種三位一體的同步演繹技術，已成為她最具辨識度的音樂標籤。2026 年即將發行首張爵士專輯，敬請期待這份細膩且強大的音樂能量。"
+    "description": "在 Ponpon (陳芃瑄) 的音樂世界裡，樂器與人聲是沒有邊界的。她以富有渲染力的嗓音為基底，結合流暢的吉他伴奏，在旋律中自由穿梭。\n\n最令樂迷著迷的，除了她極擅長「用音樂說故事」的魅力之外，莫過於她在現場演出中，能同時操縱清透的口哨、靈動的人聲即興 (Scatting) 與吉他撥奏。這種三位一體的同步演繹技術，讓每一個音符都成為她傳遞故事的載體，已成為她最具辨識度的音樂標籤。2026 年即將發行首張爵士專輯，敬請期待這份細膩且強大的音樂能量。"
   },
   "news": {
     "title": "新聞報導",
@@ -63,6 +64,273 @@
     "article11Desc": "台北城市科技大學舉辦「2015城市之星」選拔賽，廣邀全台灣熱情有勁的國高中學子，一展歌喉與舞技。共有600名青少年報名參賽，而 Ponpon 在本次激烈競爭的比賽中奪得第二名的佳績。",
     "source11": "自由時報",
     "readMore": "閱讀全文"
+  },
+  "quiz": {
+    "title": "Ponpon 知識大考驗",
+    "description": "你對 Ponpon 的爵士旅程了解多少呢？<br/>從題庫中隨機抽出 10 題，每題 10 分，滿分 100！",
+    "start": "開始挑戰",
+    "question_label": "第 {{current}} / {{total}} 題",
+    "points_label": "目前得分",
+    "correct_label": "🎉 答對了！+10 分",
+    "wrong_label": "💡 正確答案是：",
+    "next": "下一題",
+    "view_result": "查看結果",
+    "completed": "挑戰完成！",
+    "total_score": "總得分",
+    "accuracy": "正確率",
+    "try_again": "再次挑戰",
+    "rank_senior": "🏆 Ponpon 資深鐵粉",
+    "rank_senior_desc": "太厲害了！你對 Ponpon 的一切瞭若指掌！",
+    "rank_loyal": "🌟 Ponpon 忠實粉絲",
+    "rank_loyal_desc": "超棒！你真的很關注 Ponpon 的音樂旅程！",
+    "rank_entry": "🎵 Ponpon 入門粉絲",
+    "rank_entry_desc": "不錯喔～繼續追蹤 Ponpon 的最新動態吧！",
+    "rank_passing": "🎸 路過的爵士聽眾",
+    "rank_passing_desc": "歡迎你走進 Ponpon 的音樂世界，多逛逛吧！",
+    "rank_visitor": "👋 初來乍到的訪客",
+    "rank_visitor_desc": "沒關係！從現在開始認識 Ponpon 也不遲～",
+    "rank_newbie": "🌱 Ponpon 世界的新朋友",
+    "rank_newbie_desc": "歡迎來到 Ponpon 的粉絲世界，一起來探索吧！",
+    "questions": [
+      {
+        "id": 1,
+        "question": "下列哪一項技能是 Ponpon 在 2025 年 4 月首次於洛杉磯公開表演的「特殊樂器」？",
+        "options": ["口琴", "洗衣板 (Washboard)", "尤克里里", "手風琴"],
+        "correctAnswer": 1,
+        "explanation": "2025年4月，她在 Cicada Restaurant and Lounge 的演出中首次加入了洗衣板 (Washboard) 演奏。"
+      },
+      {
+        "id": 2,
+        "question": "哪一部影片是 Ponpon 首次在公開場合展示「Scatting (吉他與人聲齊奏)」技巧？",
+        "options": ["All of Me", "Blue Skies", "How High The Moon", "Reflection"],
+        "correctAnswer": 2,
+        "explanation": "在 2024 Q3 演出的 《How High The Moon》中，她首次展示了標誌性的 Scatting 技巧。"
+      },
+      {
+        "id": 3,
+        "question": "陳芃瑄（Ponpon Chen）的出生日期是哪一天？",
+        "options": ["2000年4月5日", "2002年4月5日", "2002年5月4日", "2004年4月5日"],
+        "correctAnswer": 1,
+        "explanation": "陳芃瑄出生於 2002 年 4 月 5 日。"
+      },
+      {
+        "id": 4,
+        "question": "在 10 歲時，陳芃瑄為了培養舞台節奏感，開始學習哪種舞蹈？",
+        "options": ["芭蕾與現代舞", "霹靂舞與鎖舞", "街舞與爵士舞", "踢踏舞"],
+        "correctAnswer": 1,
+        "explanation": "陳芃瑄在 10 歲時開始學習霹靂舞與鎖舞，培養舞台節奏感。"
+      },
+      {
+        "id": 5,
+        "question": "2015年，就讀國一的她在哪一場選拔賽中獲得了第二名？",
+        "options": ["伊林璀璨之星", "聲林之王", "城市之星", "超級星光大道"],
+        "correctAnswer": 2,
+        "explanation": "2015年，就讀國一的陳芃瑄在「城市之星」選拔賽中獲得第二名。"
+      },
+      {
+        "id": 6,
+        "question": "2016年，年僅 14 歲的她參加「第 5 屆伊林璀璨之星」總決賽，獲得了哪個組別的冠軍？",
+        "options": ["歌唱組", "模特兒組", "演藝組", "舞蹈組"],
+        "correctAnswer": 2,
+        "explanation": "2016年，年僅14歲的 Ponpon 在第5屆「伊林璀璨之星」總決賽中奪得演藝組冠軍。"
+      },
+      {
+        "id": 7,
+        "question": "當年Ponpon在「伊林璀璨之星」奪冠時，創下了什麼特別的紀錄？",
+        "options": ["最高分過關", "當屆最年輕冠軍", "首位獲得滿分的參賽者", "網路票選第一名"],
+        "correctAnswer": 1,
+        "explanation": "陳芃瑄以 14 歲之齡成為該屆最年輕的冠軍。"
+      },
+      {
+        "id": 8,
+        "question": "2018年參加《我想和你唱》第三季時，她最後獲選與哪位歌手單獨合唱？",
+        "options": ["王源", "林俊傑", "周杰倫", "蕭敬騰"],
+        "correctAnswer": 0,
+        "explanation": "在《我想和你唱》第三季中，陳芃瑄獲選與 TFBOYS 成員王源單獨合唱。"
+      },
+      {
+        "id": 9,
+        "question": "2018年參加《我想和你唱》第三季時，Ponpon最後與王源單獨合唱哪一首歌曲？",
+        "options": ["台北某個地方", "驕傲", "告白氣球", "修煉愛情"],
+        "correctAnswer": 1,
+        "explanation": "陳芃瑄與王源一起合唱了《驕傲》。"
+      },
+      {
+        "id": 10,
+        "question": "2019年，17 歲的陳芃瑄在《聲林之王》第 2 季中，參與了哪一個賽制環節？",
+        "options": ["導師合作賽", "魔王踢館賽", "總決賽", "雙人合唱賽"],
+        "correctAnswer": 1,
+        "explanation": "陳芃瑄在《聲林之王》第 2 季中以踢館小魔王身份參與了魔王踢館賽。"
+      },
+      {
+        "id": 11,
+        "question": "陳芃瑄在《聲林之王》第 2 季中，當時她演唱了陳綺貞的哪首歌曲？",
+        "options": ["旅行的意義", "台北某個地方", "魚", "還是會寂寞"],
+        "correctAnswer": 1,
+        "explanation": "她在《聲林之王》演唱了陳綺貞的《台北某個地方》，獲得三位導師一致好評。"
+      },
+      {
+        "id": 12,
+        "question": "高中時期，陳芃瑄就讀於復興高中的哪一個科系？",
+        "options": ["音樂科", "舞蹈科", "戲劇科", "美術科"],
+        "correctAnswer": 2,
+        "explanation": "2017年，Ponpon 考取了以培育藝術人才聞名的台北市立復興高中戲劇班。"
+      },
+      {
+        "id": 13,
+        "question": "在疫情期間，陳芃瑄受哪位音樂大師的影片啟發，決定從流行轉向爵士並開始苦練電吉他？",
+        "options": ["Wes Montgomery", "Joe Pass", "George Benson", "Pat Metheny"],
+        "correctAnswer": 2,
+        "explanation": "在台灣藝術大學就讀期間，她受 George Benson 的影片衝擊，決定休學苦練爵士吉他並赴美。"
+      },
+      {
+        "id": 14,
+        "question": "Ponpon 大一休學後，她進入「河岸留言」拜哪位老師學習吉他？",
+        "options": ["林正如", "董舜文", "黃瑞豐", "門田英司"],
+        "correctAnswer": 0,
+        "explanation": "Ponpon 大一休學後進入「河岸留言」拜林正如老師學習吉他。"
+      },
+      {
+        "id": 15,
+        "question": "2022年陳芃瑄赴美深造前，在哪裡舉辦了首場個人專場演出？",
+        "options": ["台北小巨蛋", "國家音樂廳", "河岸留言", "Legacy Taipei"],
+        "correctAnswer": 2,
+        "explanation": "2022年赴美前，她在河岸留言舉辦了首場個人專場演出。"
+      },
+      {
+        "id": 16,
+        "question": "2022年 9 月，她正式發布了首支原創 MV，這首歌其實是她 15 歲時的創作，歌名是？",
+        "options": ["找到一樣在邊緣徘徊中的你", "爵士狂想曲", "洛杉磯的夜", "驕傲的旅程"],
+        "correctAnswer": 0,
+        "explanation": "2022年9月發布的首支原創 MV《找到一樣在邊緣徘徊中的你》，是她 15 歲時的創作。"
+      },
+      {
+        "id": 17,
+        "question": "2022年，陳芃瑄前往美國洛杉磯深造，她就讀的是哪一所學校？",
+        "options": ["Berklee College of Music", "Juilliard School", "Musicians Institute (MI)", "USC Thornton School of Music"],
+        "correctAnswer": 2,
+        "explanation": "陳芃瑄前往美國洛杉磯就讀 Musicians Institute (MI)。"
+      },
+      {
+        "id": 18,
+        "question": "在美國音樂家學院（MI），她專攻的是哪個領域？",
+        "options": ["爵士鋼琴", "爵士吉他", "爵士貝斯", "爵士聲樂"],
+        "correctAnswer": 1,
+        "explanation": "她在 MI 專攻爵士吉他。"
+      },
+      {
+        "id": 19,
+        "question": "2023年，陳芃瑄因為每天高強度練習導致了什麼職業傷害，被迫休息了半年？",
+        "options": ["聲帶長繭", "腕隧道症候群", "腱鞘炎", "肌腱炎"],
+        "correctAnswer": 3,
+        "explanation": "2023年，她因高強度練習導致肌腱炎，被迫休息了半年。"
+      },
+      {
+        "id": 20,
+        "question": "在洛杉磯的 Studio City Sound，她結識了哪位葛萊美獲獎錄音師，並受到他的鼓勵上傳演出影片？",
+        "options": ["Al Schmitt", "Tom Weir", "Manny Marroquin", "Serban Ghenea"],
+        "correctAnswer": 1,
+        "explanation": "她在 Studio City Sound 結識了葛萊美獲獎錄音師 Tom Weir，受到他的鼓勵上傳演出影片。"
+      },
+      {
+        "id": 21,
+        "question": "2024年 12 月，她短暫返台舉辦了個人專場售票演出，地點在哪裡？",
+        "options": ["台北小巨蛋", "國家音樂廳", "西門紅樓「河岸留言」", "Legacy Taipei"],
+        "correctAnswer": 2,
+        "explanation": "2024年12月，她返台在西門紅樓「河岸留言」舉辦了個人專場售票演出。"
+      },
+      {
+        "id": 22,
+        "question": "2025年 5 月，陳芃瑄受邀在哪個美國廣播公司（ABC）的深夜節目演出？",
+        "options": ["The Tonight Show", "Jimmy Kimmel Live!", "World News Now", "The Late Show"],
+        "correctAnswer": 2,
+        "explanation": "Ponpon 受邀在 ABC News《World News Now》深夜節目中演出。"
+      },
+      {
+        "id": 23,
+        "question": "在 ABC 的節目上，她改編並演出了哪一首片尾曲？",
+        "options": ["World News Polka", "ABC News Theme", "Good Morning America Theme", "Nightline Closing"],
+        "correctAnswer": 0,
+        "explanation": "她改編並演出了《World News Polka》片尾曲，影片突破百萬點閱。"
+      },
+      {
+        "id": 24,
+        "question": "2025年參加 George Benson 工作坊時，這位啟發她練琴的偶像親自給了她哪一句勉勵的話？",
+        "options": ["「多練習音階」", "「去紐約發展吧」", "「不要模仿，要找到自己的聲音」", "「吉他就是你的武器」"],
+        "correctAnswer": 2,
+        "explanation": "George Benson 親自勉勵她：「不要模仿，要找到自己的聲音」。"
+      },
+      {
+        "id": 25,
+        "question": "2025年 12 月 24 日，陳芃瑄受邀參加洛杉磯的哪項年度盛事？",
+        "options": ["葛萊美獎頒頒獎典禮", "L.A. County Holiday Celebration", "洛杉磯爵士音樂節", "加州新年音樂會"],
+        "correctAnswer": 1,
+        "explanation": "2025年聖誕夜，她受邀參加 L.A. County Holiday Celebration。"
+      },
+      {
+        "id": 26,
+        "question": "Ponpon 在 L.A. County Holiday Celebration 盛事上與哪位葛萊美得主同台演出？",
+        "options": ["John Mayer", "Randy Waldman", "Herbie Hancock", "Jacob Collier"],
+        "correctAnswer": 1,
+        "explanation": "她與葛萊美得主 Randy Waldman 同台演出。"
+      },
+      {
+        "id": 27,
+        "question": "2015年「城市之星」選拔賽中，陳芃瑄當時就讀哪一所國中？",
+        "options": ["復興國中", "仁愛國中", "金華國中", "中正國中"],
+        "correctAnswer": 1,
+        "explanation": "2015年參加「城市之星」時，她就讀於仁愛國中。"
+      },
+      {
+        "id": 28,
+        "question": "Tom Weir 在 2024 年給予陳芃瑄的重要建議是什麼？",
+        "options": ["報名音樂學院", "將多場演出影片上傳 YouTube", "參加歌唱選秀", "發行實體黑膠唱片"],
+        "correctAnswer": 1,
+        "explanation": "Tom Weir 建議她將多場演出影片上傳 YouTube，讓更多人看見她的才華。"
+      },
+      {
+        "id": 29,
+        "question": "在美國受傷休養期間，陳芃瑄的老師建議她改用何種方式學習，以維持音樂進度？",
+        "options": ["練習使用左手彈奏鋼琴", "轉系至戲劇科繼續學業", "研究爵士樂歷史與歌曲背後的故事情節", "報名當地的廣播播音課程"],
+        "correctAnswer": 2,
+        "explanation": "受傷期間，老師建議她研究爵士樂歷史與歌曲背後的故事情節，以維持音樂進度。"
+      },
+      {
+        "id": 30,
+        "question": "關於陳芃瑄在 2025 年 ABC News 的演出，最初她收到電子郵件時的反應為何？",
+        "options": ["以為是詐騙郵件而不敢相信", "立刻打電話給台灣的父母報喜", "覺得自己還沒準備好而要求延期", "覺得演出費太少而一度拒絕"],
+        "correctAnswer": 0,
+        "explanation": "收到 ABC News 的邀約郵件時，她最初以為是詐騙郵件而不敢相信。"
+      },
+      {
+        "id": 31,
+        "question": "陳芃瑄在 ABC News 節目的演出中，除了主唱、吉他彈奏與即興哼唱（Scatting）外，還加入了哪種獨特的表演元素？",
+        "options": ["口哨（Whistling）", "口琴演奏", "B-box 節奏口技", "踢踏舞（Tap Dance）"],
+        "correctAnswer": 0,
+        "explanation": "在 ABC News 的演出中，Ponpon 完美結合了吉他、Scatting 以及她標誌性的口哨（Whistling）技巧。"
+      },
+      {
+        "id": 32,
+        "question": "在 Musicians Institute (MI) 就讀期間，陳芃瑄因為受傷無法彈琴，她是透過什麼方式獲得學分完成學業的？",
+        "options": ["提交書面理論報告來抵免術科練習", "改以唱歌的方式替代吉他演奏進行考評", "申請延長畢業時間並回台灣休養", "改修音樂製作與混音課程"],
+        "correctAnswer": 1,
+        "explanation": "受傷期間她無法彈奏吉他，因此改以唱歌的方式代替演奏來獲得術科考評的學分。"
+      },
+      {
+        "id": 33,
+        "question": "陳芃瑄提到她對爵士樂的理解中，認為失誤在演奏中扮演什麼角色？",
+        "options": ["是即興的一部分，也是創意的開端", "會導致當場演出費被扣款", "必須立刻停止演奏並向觀眾致歉", "是專業度不足的表現，應盡力避免"],
+        "correctAnswer": 0,
+        "explanation": "Ponpon 認為在爵士樂中，失誤往往是即興的一部分，甚至是激發新創意的開端。"
+      },
+      {
+        "id": 34,
+        "question": "Ponpon 最喜歡的顏色是什麼？",
+        "options": ["藍色", "紅色", "黑色", "金色"],
+        "correctAnswer": 1,
+        "explanation": "從 Ponpon 多場演出中常穿著多套亮眼的紅色禮服，可以看出她對紅色的喜愛。"
+      }
+    ]
   },
   "interview": {
     "title": "廣播訪問",

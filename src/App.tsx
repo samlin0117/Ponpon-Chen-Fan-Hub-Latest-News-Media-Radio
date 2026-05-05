@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X } from 'lucide-react';
+import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X, Trophy, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import CusdisComments from './components/CusdisComments';
 import { videoList, VideoInfo } from './data/videos';
 import VideoCard from './components/VideoCard';
 import VideoGroupCard from './components/VideoGroupCard';
+import QuizGame from './components/QuizGame';
 
 
 import { Language } from './locales';
@@ -44,6 +45,7 @@ function MainContent() {
             <Link to="/news" className={`transition-colors ${location.pathname === '/news' ? 'text-gold' : 'hover:text-gold'}`}>{t.nav.news}</Link>
             <Link to="/interview" className={`transition-colors ${location.pathname === '/interview' ? 'text-gold' : 'hover:text-gold'}`}>{t.nav.interview}</Link>
             <Link to="/videos" className={`transition-colors ${location.pathname === '/videos' ? 'text-gold' : 'hover:text-gold'}`}>{t.nav.videos}</Link>
+            <Link to="/quiz" className={`transition-colors ${location.pathname === '/quiz' ? 'text-gold' : 'hover:text-gold'}`}>{t.nav.quiz}</Link>
             <Link to="/links" className={`transition-colors ${location.pathname === '/links' ? 'text-gold' : 'hover:text-gold'}`}>{t.nav.links}</Link>
           </div>
 
@@ -163,10 +165,18 @@ function MainContent() {
       </section>
         } />
 
-        {/* About Section */}
         <Route path="/about" element={
       <section id="about" className="py-12 md:py-32 bg-dark-lighter relative min-h-[calc(100vh-80px)] flex items-center">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-6 relative">
+          {/* Prominent top-left Quiz button */}
+          <Link 
+            to="/quiz" 
+            className="absolute -top-12 left-0 md:-left-20 flex items-center gap-3 px-6 py-3 bg-gold/10 hover:bg-gold/20 border border-gold/40 rounded-2xl text-gold-light text-sm font-bold tracking-widest transition-all hover:scale-105 shadow-[0_0_15px_rgba(212,175,55,0.1)] hover:shadow-gold/20 group"
+          >
+            <Trophy className="w-5 h-5 text-gold group-hover:rotate-12 transition-transform" /> 
+            <span>{t.nav.quiz}</span>
+          </Link>
+
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -187,6 +197,12 @@ function MainContent() {
           </motion.div>
         </div>
       </section>
+        } />
+
+        <Route path="/quiz" element={
+          <div className="pt-10">
+            <QuizGame />
+          </div>
         } />
 
         {/* Timeline Section */}
@@ -969,7 +985,6 @@ function MainContent() {
         </div>
       </section>
         } />
-
         {/* Links Section */}
         <Route path="/links" element={<>
       <section id="links" className="py-12 md:py-32 bg-dark-lighter relative min-h-max">

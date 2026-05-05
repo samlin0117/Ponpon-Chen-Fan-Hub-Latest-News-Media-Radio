@@ -43,7 +43,15 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
 
         <div
           className="w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-black relative flex justify-center items-center group-hover:border-gold/50 transition-colors duration-500 cursor-pointer aspect-video"
-          onClick={() => setIsModalOpen(true)}
+          onClick={() => {
+            if (video.platform === 'instagram') {
+              window.open(`https://www.instagram.com/p/${video.embedUrl}/`, '_blank', 'noopener,noreferrer');
+            } else if (video.platform === 'threads') {
+              window.open(video.embedUrl, '_blank', 'noopener,noreferrer');
+            } else {
+              setIsModalOpen(true);
+            }
+          }}
         >
           {video.platform === 'youtube' && (
             <>
@@ -98,26 +106,33 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
           )}
 
           {video.platform === 'instagram' && (
-            <div className="w-full h-full flex justify-center items-center overflow-hidden relative pointer-events-none bg-black">
-              <iframe
-                src={`https://www.instagram.com/p/${video.embedUrl}/embed`}
-                className="w-full"
-                style={{ 
-                  border: 'none', 
-                  overflow: 'hidden',
-                  height: '160%', // 增加高度
-                  marginTop: '-15%', // 往上提，避開 header
-                  transform: 'scale(1.1)', // 稍微放大
-                }}
-                scrolling="no"
-                frameBorder="0"
+            <>
+              <img
+                src={video.thumbnailUrl || ''}
+                alt={video.title}
+                className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-colors z-10">
-                <div className="z-20 w-16 h-16 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] rounded-full flex justify-center items-center shadow-[0_0_20px_rgba(238,42,123,0.5)] group-hover:scale-110 transition-transform">
+              <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/5 transition-colors z-10">
+                <div className="z-20 w-16 h-16 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] rounded-full flex justify-center items-center shadow-[0_0_20px_rgba(238,42,123,0.5)] group-hover:scale-110 transition-transform duration-500">
                   <Play className="w-8 h-8 text-white ml-1" fill="white" />
                 </div>
               </div>
-            </div>
+            </>
+          )}
+
+          {video.platform === 'threads' && (
+            <>
+              <img
+                src={video.thumbnailUrl || ''}
+                alt={video.title}
+                className="absolute inset-0 w-full h-full object-contain bg-black opacity-70 group-hover:opacity-90 transition-opacity"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/5 transition-colors z-10">
+                <div className="z-20 w-16 h-16 bg-black/80 rounded-full flex justify-center items-center shadow-[0_0_20px_rgba(0,0,0,0.5)] group-hover:scale-110 transition-transform duration-500">
+                  <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                </div>
+              </div>
+            </>
           )}
         </div>
       </div>
@@ -135,7 +150,7 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
           <div className={`w-full max-w-6xl bg-black md:rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.5)] border-y md:border border-white/10 relative flex flex-col items-center justify-center animate-in zoom-in-95 duration-300 ${
             (video.platform === 'youtube' || (video.platform === 'facebook' && !isFbVertical)) 
               ? 'aspect-video h-auto overflow-hidden' 
-              : 'h-full md:h-[85vh] py-10 overflow-y-auto'
+              : 'h-[90vh] md:h-[85vh] py-6 md:py-10 overflow-y-auto'
           }`}>
             {video.platform === 'youtube' && (
               <iframe
@@ -161,8 +176,8 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
             {video.platform === 'instagram' && (
               <iframe
                 src={`https://www.instagram.com/p/${video.embedUrl}/embed`}
-                className="w-full h-full max-w-xl mx-auto"
-                style={{ border: 'none', overflow: 'hidden' }}
+                className="w-full max-w-xl mx-auto"
+                style={{ border: 'none', overflow: 'hidden', minHeight: '500px', height: '100%' }}
                 scrolling="no"
                 frameBorder="0"
                 allowTransparency

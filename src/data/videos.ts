@@ -39,6 +39,7 @@ export const videoList: VideoInfo[] = [
     "title": "Ponpon｜Cellophane (Cover by Ponpon)",
     "date": "2021-01-14",
     "embedUrl": "CJ-39RJnPhQ",
+    "thumbnailUrl": "/ig-cellophane.jpg",
     "isFeatured": false
   },
   {
@@ -48,6 +49,7 @@ export const videoList: VideoInfo[] = [
     "title": "Ponpon｜Someday (Cover by Ponpon)",
     "date": "2021-07-25",
     "embedUrl": "CRwRLU1n5c4",
+    "thumbnailUrl": "/ig-someday.jpg",
     "isFeatured": false
   },
   {
@@ -66,6 +68,7 @@ export const videoList: VideoInfo[] = [
     "title": "Ponpon｜Blue Skies (Live at Pacific GROOVE)",
     "date": "2024-07-16",
     "embedUrl": "C9g4xitu6qT",
+    "thumbnailUrl": "/ig-blue-skies.jpg",
     "isFeatured": false
   },
   {
@@ -75,15 +78,17 @@ export const videoList: VideoInfo[] = [
     "title": "Ponpon｜Billie’s Bounce / Charlie Parker (Live at The Barkley)",
     "date": "2024-01-10",
     "embedUrl": "C18e6XCL0G8",
+    "thumbnailUrl": "/ig-billies-bounce.jpg",
     "isFeatured": false
   },
   {
     "id": "v-ig-COP_dlIgVCM",
     "platform": "instagram",
     "category": "p1",
-    "title": "Ponpon｜找自己 / 可不可以 (Live at OKIII Studio)",
+    "title": "Ponpon｜找自己 (Live at OKIII Studio)",
     "date": "2021-04-25",
     "embedUrl": "COP_dlIgVCM",
+    "thumbnailUrl": "/ig-find-myself.jpg",
     "isFeatured": false
   },
   {
@@ -881,6 +886,16 @@ export const videoList: VideoInfo[] = [
     "eventGroup": "Arcadia Elks Lodge (2025-07-27)",
     "embedUrl": "KemQ67OBJCk",
     "thumbnailUrl": "https://i.ytimg.com/vi/KemQ67OBJCk/maxresdefault.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": "v-threads-riverside-20241213",
+    "platform": "threads",
+    "category": "p5",
+    "title": "Ponpon Chen & 古皓｜Scatting 擬聲吟唱即興現場 @河岸留言",
+    "date": "2024-12-13",
+    "embedUrl": "https://www.threads.net/@singaporeanintaipei/post/DDhn0bKzMn9",
+    "thumbnailUrl": "/threads-riverside.jpg",
     "isFeatured": false
   },
 
