@@ -8,8 +8,9 @@
     "news": "News",
     "interview": "Interview",
     "videos": "Videos",
-    "quiz": "粉絲大考驗",
-    "links": "Links"
+    "quiz": "Fan Quiz",
+    "links": "Links",
+    "changelog": "Site Update Log"
   },
   "timeline": {
     "title": "Milestones",
@@ -25,7 +26,50 @@
   },
   "about": {
     "title": "About Ponpon",
-    "description": "In the musical world of Ponpon Chen (陳芃瑄), there are no boundaries between instruments and the human voice. With her soulful, evocative vocals as a foundation, combined with fluid guitar accompaniment, she weaves freely through melodies.\n\nBeyond her captivating \"musical storytelling\" charm, what fascinates fans most is her live performance, where she simultaneously masterfully executes crystal-clear whistling, dynamic scatting, and intricate guitar picking. This \"trinity\" of synchronized performance—where every note serves as a vessel for storytelling—has become her most recognizable musical signature. With her debut jazz album set for release in 2026, look forward to this delicate yet powerful musical energy."
+    "description": "Ponpon hails from Taipei, Taiwan, and moved to the US at age 20 to study jazz. In the musical world of Ponpon Chen (陳芃瑄), there are no boundaries between instruments and the human voice. With her soulful, evocative vocals as a foundation, combined with fluid guitar accompaniment, she weaves freely through melodies.\n\nBeyond her captivating \"musical storytelling\" charm, what fascinates fans most is her live performance, where she simultaneously masterfully executes crystal-clear whistling, dynamic scatting, and intricate guitar picking. This \"trinity\" of synchronized performance—where every note serves as a vessel for storytelling—has become her most recognizable musical signature. With her debut jazz album set for release in 2026, look forward to this delicate yet powerful musical energy."
+  },
+  "endorsement": {
+    "title": "Notable Mentions",
+    "subtitle": "MUSICAL CODA",
+    "krugman_name": "Paul Krugman",
+    "krugman_title": "Nobel Prize-winning Economist",
+    "krugman_desc": "Nobel laureate Paul Krugman has recently featured Ponpon's jazz performance videos in the \"Musical Coda\" section at the end of his Substack columns, introducing her music to a wide audience of readers who have praised her talent.",
+    "read_article": "Read Article",
+    "article1_date": "2026-03-19",
+    "article2_date": "2026-05-05",
+    "page_desc": "Notable figures who have featured Ponpon's music on their platforms, helping her reach new audiences."
+  },
+  "changelog": {
+    "title": "Site Update Log",
+    "subtitle": "DEVELOPMENT LOG",
+    "description": "Chronicle of major feature updates and content revisions.",
+    "items": [
+      {
+        "date": "2026-05-06",
+        "title": "Notable Mentions Page Launched",
+        "content": "Added a dedicated page for celebrity endorsements, featuring repeated mentions by Nobel laureate Paul Krugman."
+      },
+      {
+        "date": "2026-05-04",
+        "title": "Fan Knowledge Quiz Launched",
+        "content": "Introduced an interactive quiz game for fans to test their knowledge about Ponpon's musical journey."
+      },
+      {
+        "date": "2026-04-30",
+        "title": "Video Gallery Optimization",
+        "content": "Implemented year-based grouping to help fans navigate through performances and works more efficiently."
+      },
+      {
+        "date": "2026-04-28",
+        "title": "Trilingual Support Live",
+        "content": "Full site content localized in Traditional Chinese, English, and Japanese."
+      },
+      {
+        "date": "2026-04-18",
+        "title": "Site Development Started",
+        "content": "Official start of the Ponpon Chen Music Hub project."
+      }
+    ]
   },
   "news": {
     "title": "News & Press",
@@ -66,7 +110,7 @@
     "readMore": "Read More"
   },
   "quiz": {
-    "title": "粉絲大考驗",
+    "title": "Ponpon Knowledge Quiz",
     "description": "How much do you know about Ponpon's jazz journey?<br/>10 random questions, 10 points each. Can you get a perfect 100?",
     "start": "Start Challenge",
     "question_label": "Question {{current}} / {{total}}",
@@ -113,13 +157,7 @@
         "correctAnswer": 1,
         "explanation": "Ponpon Chen was born on April 5, 2002."
       },
-      {
-        "id": 4,
-        "question": "At age 10, which dance style did Ponpon start learning to develop her stage rhythm?",
-        "options": ["Ballet & Modern", "Breaking & Locking", "Street & Jazz", "Tap Dance"],
-        "correctAnswer": 1,
-        "explanation": "Ponpon started learning Breaking and Locking at age 10 to develop her rhythm."
-      },
+
       {
         "id": 5,
         "question": "In 2015, in which competition did she win 2nd place while in 7th grade?",

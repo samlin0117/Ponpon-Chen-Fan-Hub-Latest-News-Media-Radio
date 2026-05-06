@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X, Trophy, ArrowRight } from 'lucide-react';
+import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X, Trophy, ArrowRight, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import CusdisComments from './components/CusdisComments';
@@ -140,6 +140,22 @@ function MainContent() {
               </span>
               <span dangerouslySetInnerHTML={{ __html: t.hero.disclaimer as string }} />
             </div>
+            
+            {/* Changelog Entry Button */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1 }}
+              className="mt-12"
+            >
+              <Link 
+                to="/changelog" 
+                className="inline-flex items-center gap-4 px-10 py-5 border-2 border-gold/40 hover:border-gold bg-gold/15 hover:bg-gold/25 rounded-full text-base font-bold tracking-[0.2em] text-gold hover:text-white transition-all hover:scale-105 shadow-[0_0_30px_rgba(212,175,55,0.15)] hover:shadow-gold/40 group"
+              >
+                <div className="w-12 h-0.5 bg-gold/50 group-hover:bg-gold transition-colors"></div>
+                <span>{t.nav.changelog}</span>
+              </Link>
+            </motion.div>
           </motion.div>
 
           <motion.div 
@@ -168,14 +184,23 @@ function MainContent() {
         <Route path="/about" element={
       <section id="about" className="py-12 md:py-32 bg-dark-lighter relative min-h-[calc(100vh-80px)] flex items-center">
         <div className="max-w-4xl mx-auto px-6 relative">
-          {/* Prominent top-left Quiz button */}
-          <Link 
-            to="/quiz" 
-            className="absolute -top-12 left-0 md:-left-20 flex items-center gap-3 px-6 py-3 bg-gold/10 hover:bg-gold/20 border border-gold/40 rounded-2xl text-gold-light text-sm font-bold tracking-widest transition-all hover:scale-105 shadow-[0_0_15px_rgba(212,175,55,0.1)] hover:shadow-gold/20 group"
-          >
-            <Trophy className="w-5 h-5 text-gold group-hover:rotate-12 transition-transform" /> 
-            <span>{t.nav.quiz}</span>
-          </Link>
+          {/* Top-left action buttons */}
+          <div className="absolute -top-12 left-0 md:-left-20 flex items-center gap-3 flex-wrap">
+            <Link 
+              to="/quiz" 
+              className="flex items-center gap-3 px-6 py-3 bg-gold/10 hover:bg-gold/20 border border-gold/40 rounded-2xl text-gold-light text-sm font-bold tracking-widest transition-all hover:scale-105 shadow-[0_0_15px_rgba(212,175,55,0.1)] hover:shadow-gold/20 group"
+            >
+              <Trophy className="w-5 h-5 text-gold group-hover:rotate-12 transition-transform" /> 
+              <span>{t.nav.quiz}</span>
+            </Link>
+            <Link 
+              to="/endorsement" 
+              className="flex items-center gap-3 px-6 py-3 bg-gold/10 hover:bg-gold/20 border border-gold/40 rounded-2xl text-gold-light text-sm font-bold tracking-widest transition-all hover:scale-105 shadow-[0_0_15px_rgba(212,175,55,0.1)] hover:shadow-gold/20 group"
+            >
+              <Star className="w-5 h-5 text-gold group-hover:rotate-12 transition-transform" /> 
+              <span>{(t as any).endorsement?.title || 'Notable Mentions'}</span>
+            </Link>
+          </div>
 
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -190,6 +215,7 @@ function MainContent() {
               {t.about.description}
             </p>
             
+
             <div className="mt-16 inline-flex items-center justify-center space-x-4 border border-gold/30 rounded-full px-8 py-4 bg-dark/50">
               <Music className="w-5 h-5 text-gold" />
               <span className="text-sm tracking-widest uppercase text-gold-light">New Album 2026</span>
@@ -203,6 +229,108 @@ function MainContent() {
           <div className="pt-10">
             <QuizGame />
           </div>
+        } />
+
+        <Route path="/endorsement" element={
+          <section className="py-12 md:py-32 bg-dark-lighter relative min-h-[calc(100vh-80px)]">
+            <div className="max-w-4xl mx-auto px-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="text-center mb-16">
+                  <Star className="w-8 h-8 text-gold mx-auto mb-6 opacity-80" />
+                  <h2 className="text-3xl md:text-4xl font-serif mb-4">{(t as any).endorsement?.title}</h2>
+                  <p className="text-gray-400 font-light">{(t as any).endorsement?.page_desc}</p>
+                </div>
+
+                {/* Paul Krugman Card */}
+                <div className="relative p-8 md:p-10 rounded-2xl border border-gold/20 bg-gradient-to-br from-gold/5 via-dark-lighter to-dark-lighter backdrop-blur-sm overflow-hidden group hover:border-gold/40 transition-all duration-500 mb-8">
+                  <div className="absolute top-4 right-6 text-gold/10 text-8xl font-serif select-none leading-none">"</div>
+                  <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/5 rounded-full blur-[80px] -ml-12 -mb-12"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gold/10 border border-gold/30 rounded-full mb-6">
+                      <Music className="w-3.5 h-3.5 text-gold" />
+                      <span className="text-xs font-mono text-gold-light tracking-[0.2em] uppercase">{(t as any).endorsement?.subtitle}</span>
+                    </div>
+                    
+                    <div className="mb-5">
+                      <h3 className="text-2xl md:text-3xl font-serif text-white mb-1">{(t as any).endorsement?.krugman_name}</h3>
+                      <p className="text-sm text-gold/80 tracking-widest uppercase">{(t as any).endorsement?.krugman_title}</p>
+                    </div>
+                    
+                    <p className="text-gray-300 leading-relaxed text-base md:text-lg font-light mb-8 text-left">
+                      {(t as any).endorsement?.krugman_desc}
+                    </p>
+                    
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <a 
+                        href="https://paulkrugman.substack.com/p/a-whiff-of-stagflation"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/10 rounded-xl text-sm text-gray-300 hover:text-gold hover:border-gold/50 transition-all duration-300 group/link"
+                      >
+                        <ArrowRight className="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" />
+                        <span>{(t as any).endorsement?.article1_date} {(t as any).endorsement?.read_article} #1</span>
+                      </a>
+                      <a 
+                        href="https://paulkrugman.substack.com/p/trump-is-losing-a-second-war"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/10 rounded-xl text-sm text-gray-300 hover:text-gold hover:border-gold/50 transition-all duration-300 group/link"
+                      >
+                        <ArrowRight className="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" />
+                        <span>{(t as any).endorsement?.article2_date} {(t as any).endorsement?.read_article} #2</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </motion.div>
+            </div>
+          </section>
+        } />
+
+        <Route path="/changelog" element={
+          <section className="py-12 md:py-32 bg-dark relative min-h-[calc(100vh-80px)]">
+            <div className="max-w-3xl mx-auto px-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="text-center mb-20">
+                  <span className="text-xs font-mono text-gold tracking-[0.3em] uppercase mb-4 block">{(t as any).changelog?.subtitle}</span>
+                  <h2 className="text-3xl md:text-5xl font-serif mb-6">{(t as any).changelog?.title}</h2>
+                  <p className="text-gray-400 font-light max-w-lg mx-auto">{(t as any).changelog?.description}</p>
+                </div>
+
+                <div className="relative space-y-12">
+                  {/* Vertical Line */}
+                  <div className="absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-gold/50 via-gold/10 to-transparent ml-4 md:ml-0 md:left-0"></div>
+
+                  {((t as any).changelog?.items || []).map((item: any, idx: number) => (
+                    <div key={idx} className="relative pl-12 md:pl-16 group">
+                      {/* Dot */}
+                      <div className="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-gold shadow-[0_0_10px_rgba(212,175,55,0.5)] group-hover:scale-150 transition-transform duration-300 ml-4 md:ml-0 md:left-[-4px]"></div>
+                      
+                      <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-2">
+                        <span className="text-xs font-mono text-gold/60 tracking-widest">{item.date}</span>
+                        <h3 className="text-xl font-serif text-white group-hover:text-gold transition-colors">{item.title}</h3>
+                      </div>
+                      <p className="text-gray-400 font-light leading-relaxed text-sm md:text-base">
+                        {item.content}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </section>
         } />
 
         {/* Timeline Section */}
