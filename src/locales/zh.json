@@ -367,6 +367,41 @@
         "options": ["藍色", "紅色", "黑色", "金色"],
         "correctAnswer": 1,
         "explanation": "從 Ponpon 多場演出中常穿著多套亮眼的紅色禮服，可以看出她對紅色的喜愛。"
+      },
+      {
+        "id": 35,
+        "question": "在國中畢業典禮上，班導師寫信向 Ponpon 道歉的原因為何？",
+        "options": ["沒能幫她寫推薦信申請高中", "忘記將她的獎狀頒發給她", "曾反對她參加校園新光大道", "當初不相信她能達成演藝目標"],
+        "correctAnswer": 3,
+        "explanation": "在國中畢業典禮上，班導師寫信向她道歉，表示當初不相信她能達成演藝目標。"
+      },
+      {
+        "id": 36,
+        "question": "Ponpon 的父親在同意她赴美留學前，提出了什麼具體的要求？",
+        "options": ["在台灣先拿到大學畢業證書", "必須先考取雅思 7.0 以上", "必須先在台灣舉辦個人售票演唱會", "製作一份年度開銷的財務評估報表"],
+        "correctAnswer": 3,
+        "explanation": "父親以投資的角度，要求她清楚列出學費與生活費，以評估回報率。"
+      },
+      {
+        "id": 37,
+        "question": "Ponpon 在美國錄製 ABC 新聞片尾曲時，所加入的「識別音樂（Intro）」創意來自何處？",
+        "options": ["結合台灣傳統歌謠與爵士樂的混搭", "她在 YouTube 上自學的經典波卡舞曲旋律", "模仿 1920 年代爵士樂的開場風格", "錄音室老闆 Tom Weir 哼唱提示的招牌旋律"],
+        "correctAnswer": 3,
+        "explanation": "錄音室老闆 Tom Weir 在錄音時哼唱了節目的招牌旋律，這個提示成為了她加入 Intro 的靈感來源。"
+      },
+      {
+        "id": 38,
+        "question": "Ponpon 第一個接受專訪的 Podcast 節目名稱是什麼？",
+        "options": ["快樂方程式", "音樂本事", "跳脫Do式圈", "Midnight You & Me"],
+        "correctAnswer": 2,
+        "explanation": "2025年8月，Ponpon 首次受邀參加了 Podcast 節目《跳脫Do式圈》的專訪。"
+      },
+      {
+        "id": 39,
+        "question": "Ponpon 首次的廣播節目專訪是哪一個節目？",
+        "options": ["央廣《音樂本事》", "飛碟聯播網《夜光家族》", "中廣流行網《Midnight You & Me》", "Hit FM 聯播網"],
+        "correctAnswer": 0,
+        "explanation": "2021年4月，Ponpon 接受了中央廣播電台（央廣）節目《音樂本事》主持人咖啡貓的訪問，這也是她首次的個人電台專訪。"
       }
     ]
   },

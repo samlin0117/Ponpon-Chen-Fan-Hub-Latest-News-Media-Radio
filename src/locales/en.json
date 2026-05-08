@@ -367,6 +367,41 @@
         "options": ["Blue", "Red", "Black", "Gold"],
         "correctAnswer": 1,
         "explanation": "Her frequent use of bright red dresses in live performances shows her love for the color red."
+      },
+      {
+        "id": 35,
+        "question": "Why did the homeroom teacher write a letter to apologize to Ponpon at her junior high school graduation ceremony?",
+        "options": ["Failed to write a recommendation letter for her high school application", "Forgot to award her the certificate of merit", "Previously opposed her participation in the Campus Million Star singing contest", "Didn't believe she could achieve her goal in the entertainment industry"],
+        "correctAnswer": 3,
+        "explanation": "At the graduation ceremony, her homeroom teacher wrote a letter apologizing for initially not believing she could achieve her goal in the entertainment industry."
+      },
+      {
+        "id": 36,
+        "question": "Before agreeing to let her study in the US, what specific requirement did Ponpon's father make?",
+        "options": ["Get a university degree in Taiwan first", "Achieve an IELTS score of 7.0 or higher", "Hold a solo ticketed concert in Taiwan first", "Create a financial assessment report of annual expenses"],
+        "correctAnswer": 3,
+        "explanation": "From an investment perspective, her father required her to clearly list tuition and living expenses to evaluate the return on investment."
+      },
+      {
+        "id": 37,
+        "question": "When Ponpon recorded the ABC News outro in the US, where did the idea for the \"Intro\" signature music come from?",
+        "options": ["A mashup of traditional Taiwanese folk songs and jazz", "A classic polka melody she self-taught on YouTube", "Imitating the opening style of 1920s jazz", "The signature melody hummed by studio owner Tom Weir"],
+        "correctAnswer": 3,
+        "explanation": "Studio owner Tom Weir hummed the show's signature melody during the recording, which became her inspiration for the Intro."
+      },
+      {
+        "id": 38,
+        "question": "What was the name of the first podcast show that interviewed Ponpon?",
+        "options": ["Happy Equation", "Music Essence", "Breaking Out of the Do-Zone", "Midnight You & Me"],
+        "correctAnswer": 2,
+        "explanation": "In August 2025, Ponpon was invited for her first podcast interview on the show \"Breaking Out of the Do-Zone\"."
+      },
+      {
+        "id": 39,
+        "question": "Which radio program was Ponpon's first radio interview?",
+        "options": ["RTI 'Music Essence'", "UFO Radio 'Midnight Family'", "BCC 'Midnight You & Me'", "Hit FM Network"],
+        "correctAnswer": 0,
+        "explanation": "In April 2021, Ponpon was interviewed by host CafeCat on Radio Taiwan International's program \"Music Essence\", marking her first-ever solo radio interview."
       }
     ]
   },
