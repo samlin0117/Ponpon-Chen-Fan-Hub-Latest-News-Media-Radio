@@ -10,7 +10,8 @@
     "videos": "Videos",
     "quiz": "Fan Quiz",
     "links": "Links",
-    "changelog": "Site Update Log"
+    "changelog": "Site Update Log",
+    "repertoire": "Jazz Repertoire"
   },
   "timeline": {
     "title": "Milestones",
@@ -449,6 +450,44 @@
     "welcome_p2": "You are also welcome to leave suggestions or encouragement for the webmaster here. Your feedback is the biggest motivation for the continuous updates of this site!",
     "welcome_note": "* To maintain good quality of exchange, comments will be displayed after moderation by the webmaster. Thank you for your patience.",
     "tag_no_login": "No Login Required"
+  },
+  "repertoire": {
+    "title": "Jazz Repertoire",
+    "description": "Explore the classic jazz standards Ponpon has performed, and learn about the background and meaning behind each song.",
+    "songs": [
+      {
+        "id": "cheek-to-cheek",
+        "title": "Cheek to Cheek",
+        "year": "1935",
+        "composer": "Irving Berlin",
+        "background": "Written for the Fred Astaire and Ginger Rogers film 'Top Hat'. Ponpon's performance of this classic standard brings out its lighthearted and romantic atmosphere.",
+        "lyricsLink": "https://genius.com/Irving-berlin-cheek-to-cheek-lyrics"
+      },
+      {
+        "id": "fly-me-to-the-moon",
+        "title": "Fly Me to the Moon",
+        "year": "1954",
+        "composer": "Bart Howard",
+        "background": "Originally titled 'In Other Words', it became globally famous through Frank Sinatra's cover, symbolizing romance and the space age. Ponpon breathes new life into this song with her quintet.",
+        "lyricsLink": "https://genius.com/Frank-sinatra-fly-me-to-the-moon-lyrics"
+      },
+      {
+        "id": "all-of-me",
+        "title": "All of Me",
+        "year": "1931",
+        "composer": "Gerald Marks, Seymour Simons",
+        "background": "One of the most famous jazz standards, expressing unreserved love and the pain of loss. Ponpon's live performances often interpret this song with deep emotional resonance.",
+        "lyricsLink": "https://genius.com/Billie-holiday-all-of-me-lyrics"
+      },
+      {
+        "id": "on-the-sunny-side",
+        "title": "On the Sunny Side of the Street",
+        "year": "1930",
+        "composer": "Jimmy McHugh",
+        "background": "A song that brought hope during the Great Depression. Ponpon's rendition often combines clean guitar lines with her unique scat singing, radiating warmth and sunshine.",
+        "lyricsLink": "https://genius.com/Billie-holiday-on-the-sunny-side-of-the-street-lyrics"
+      }
+    ]
   },
   "timelineItems": [
     {

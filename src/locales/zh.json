@@ -10,7 +10,8 @@
     "videos": "演出影片",
     "quiz": "粉絲大考驗",
     "links": "相關連結",
-    "changelog": "本站更新紀錄"
+    "changelog": "本站更新紀錄",
+    "repertoire": "爵士曲庫"
   },
   "timeline": {
     "title": "演藝里程碑",
@@ -449,6 +450,44 @@
     "welcome_p2": "也歡迎在這裡留下給版主的建議或鼓勵，您的回饋是支持本站持續更新的最大動力！",
     "welcome_note": "※ 為了維護良好的交流品質，留言將由版主審核後顯示，感謝您的耐心等待。",
     "tag_no_login": "免登入留言區"
+  },
+  "repertoire": {
+    "title": "爵士曲庫",
+    "description": "探索 Ponpon 曾演唱過的經典爵士曲目，了解每首歌曲的時代背景與意境。",
+    "songs": [
+      {
+        "id": "cheek-to-cheek",
+        "title": "Cheek to Cheek",
+        "year": "1935",
+        "composer": "Irving Berlin",
+        "background": "這首歌是為了佛雷·亞斯坦和琴·羅傑斯主演的電影《Top Hat》所寫。Ponpon 演唱這首經典爵士標準曲，帶出輕快浪漫的氛圍。",
+        "lyricsLink": "https://genius.com/Irving-berlin-cheek-to-cheek-lyrics"
+      },
+      {
+        "id": "fly-me-to-the-moon",
+        "title": "Fly Me to the Moon",
+        "year": "1954",
+        "composer": "Bart Howard",
+        "background": "原名《In Other Words》，由法蘭克·辛納屈翻唱後紅遍全球，象徵著浪漫與太空時代的幻想。Ponpon 以五重奏的形式為這首歌注入新的生命。",
+        "lyricsLink": "https://genius.com/Frank-sinatra-fly-me-to-the-moon-lyrics"
+      },
+      {
+        "id": "all-of-me",
+        "title": "All of Me",
+        "year": "1931",
+        "composer": "Gerald Marks, Seymour Simons",
+        "background": "爵士樂中最著名的標準曲之一，表達對愛人的毫無保留與失去愛情的痛苦。Ponpon 的現場演出經常將這首歌詮釋得極具感染力。",
+        "lyricsLink": "https://genius.com/Billie-holiday-all-of-me-lyrics"
+      },
+      {
+        "id": "on-the-sunny-side",
+        "title": "On the Sunny Side of the Street",
+        "year": "1930",
+        "composer": "Jimmy McHugh",
+        "background": "在大蕭條時期帶給人們希望的歌曲。Ponpon 的演繹常結合清新的吉他與獨特的即興哼唱(Scatting)，讓人感受到溫暖與陽光。",
+        "lyricsLink": "https://genius.com/Billie-holiday-on-the-sunny-side-of-the-street-lyrics"
+      }
+    ]
   },
   "timelineItems": [
     {

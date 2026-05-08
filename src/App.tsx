@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X, Trophy, ArrowRight, Star } from 'lucide-react';
+import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X, Trophy, ArrowRight, Star, Disc3 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import CusdisComments from './components/CusdisComments';
@@ -7,6 +7,7 @@ import { videoList, VideoInfo } from './data/videos';
 import VideoCard from './components/VideoCard';
 import VideoGroupCard from './components/VideoGroupCard';
 import QuizGame from './components/QuizGame';
+import Repertoire from './components/Repertoire';
 
 
 import { Language } from './locales';
@@ -185,20 +186,39 @@ function MainContent() {
       <section id="about" className="py-12 md:py-32 bg-dark-lighter relative min-h-[calc(100vh-80px)] flex items-center">
         <div className="max-w-4xl mx-auto px-6 relative">
           {/* Top-left action buttons */}
-          <div className="absolute -top-12 left-0 md:-left-20 flex items-center gap-3 flex-wrap">
+          <div className="absolute -top-12 left-0 md:-left-20 flex items-center gap-3 flex-wrap z-30">
             <Link 
               to="/quiz" 
-              className="flex items-center gap-3 px-6 py-3 bg-gold/10 hover:bg-gold/20 border border-gold/40 rounded-2xl text-gold-light text-sm font-bold tracking-widest transition-all hover:scale-105 shadow-[0_0_15px_rgba(212,175,55,0.1)] hover:shadow-gold/20 group"
+              className="relative flex items-center gap-3 px-6 py-3 bg-gold/10 hover:bg-gold/20 border border-gold/40 rounded-2xl text-gold-light text-sm font-bold tracking-widest transition-all hover:scale-105 shadow-[0_0_15px_rgba(212,175,55,0.1)] hover:shadow-gold/20 group"
             >
               <Trophy className="w-5 h-5 text-gold group-hover:rotate-12 transition-transform" /> 
               <span>{t.nav.quiz}</span>
+              {/* Tooltip */}
+              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-300 w-64 p-4 bg-dark/95 backdrop-blur-md border border-white/10 rounded-xl text-gray-300 text-xs font-normal leading-relaxed text-center shadow-2xl scale-95 group-hover:scale-100 origin-top">
+                <span dangerouslySetInnerHTML={{ __html: ((t as any).quiz?.description || '').split('<br/>')[0] }} />
+              </div>
             </Link>
             <Link 
               to="/endorsement" 
-              className="flex items-center gap-3 px-6 py-3 bg-gold/10 hover:bg-gold/20 border border-gold/40 rounded-2xl text-gold-light text-sm font-bold tracking-widest transition-all hover:scale-105 shadow-[0_0_15px_rgba(212,175,55,0.1)] hover:shadow-gold/20 group"
+              className="relative flex items-center gap-3 px-6 py-3 bg-gold/10 hover:bg-gold/20 border border-gold/40 rounded-2xl text-gold-light text-sm font-bold tracking-widest transition-all hover:scale-105 shadow-[0_0_15px_rgba(212,175,55,0.1)] hover:shadow-gold/20 group"
             >
               <Star className="w-5 h-5 text-gold group-hover:rotate-12 transition-transform" /> 
               <span>{(t as any).endorsement?.title || 'Notable Mentions'}</span>
+              {/* Tooltip */}
+              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-300 w-64 p-4 bg-dark/95 backdrop-blur-md border border-white/10 rounded-xl text-gray-300 text-xs font-normal leading-relaxed text-center shadow-2xl scale-95 group-hover:scale-100 origin-top">
+                {(t as any).endorsement?.page_desc}
+              </div>
+            </Link>
+            <Link 
+              to="/repertoire" 
+              className="relative flex items-center gap-3 px-6 py-3 bg-gold/10 hover:bg-gold/20 border border-gold/40 rounded-2xl text-gold-light text-sm font-bold tracking-widest transition-all hover:scale-105 shadow-[0_0_15px_rgba(212,175,55,0.1)] hover:shadow-gold/20 group"
+            >
+              <Disc3 className="w-5 h-5 text-gold group-hover:animate-spin transition-transform" /> 
+              <span>{(t as any).repertoire?.title || 'Jazz Repertoire'}</span>
+              {/* Tooltip */}
+              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-300 w-64 p-4 bg-dark/95 backdrop-blur-md border border-white/10 rounded-xl text-gray-300 text-xs font-normal leading-relaxed text-center shadow-2xl scale-95 group-hover:scale-100 origin-top">
+                {(t as any).repertoire?.description}
+              </div>
             </Link>
           </div>
 
@@ -228,6 +248,12 @@ function MainContent() {
         <Route path="/quiz" element={
           <div className="pt-10">
             <QuizGame />
+          </div>
+        } />
+
+        <Route path="/repertoire" element={
+          <div className="pt-10">
+            <Repertoire />
           </div>
         } />
 

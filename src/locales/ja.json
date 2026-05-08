@@ -10,7 +10,8 @@
     "videos": "動画",
     "quiz": "ファンクイズ",
     "links": "リンク",
-    "changelog": "サイト更新履歴"
+    "changelog": "サイト更新履歴",
+    "repertoire": "ジャズ・レパートリー"
   },
   "timeline": {
     "title": "マイルストーン",
@@ -449,6 +450,44 @@
     "welcome_p2": "管理人への提案や励ましも大歓迎です。皆様からのフィードバックが、このサイトを更新し続ける最大の原動力です！",
     "welcome_note": "※ 交流の質を維持するため、メッセージは管理人の承認後に表示されます。ご理解のほどよろしくお願いいたします。",
     "tag_no_login": "ログイン不要"
+  },
+  "repertoire": {
+    "title": "ジャズ・レパートリー",
+    "description": "Ponponが演奏したクラシックなジャズのスタンダード曲を探索し、各曲の時代背景や意味を学びましょう。",
+    "songs": [
+      {
+        "id": "cheek-to-cheek",
+        "title": "Cheek to Cheek",
+        "year": "1935",
+        "composer": "Irving Berlin",
+        "background": "フレッド・アステアとジンジャー・ロジャース主演の映画『トップ・ハット』のために書かれました。Ponponの歌声は、軽快でロマンチックな雰囲気を引き出しています。",
+        "lyricsLink": "https://genius.com/Irving-berlin-cheek-to-cheek-lyrics"
+      },
+      {
+        "id": "fly-me-to-the-moon",
+        "title": "Fly Me to the Moon",
+        "year": "1954",
+        "composer": "Bart Howard",
+        "background": "元々は「In Other Words」というタイトルで、フランク・シナトラのカバーで世界的に有名になりました。ロマンスと宇宙時代の象徴です。Ponponはクインテットと共にこの曲に新たな命を吹き込んでいます。",
+        "lyricsLink": "https://genius.com/Frank-sinatra-fly-me-to-the-moon-lyrics"
+      },
+      {
+        "id": "all-of-me",
+        "title": "All of Me",
+        "year": "1931",
+        "composer": "Gerald Marks, Seymour Simons",
+        "background": "愛する人への惜しみない愛と失恋の痛みを表現した、最も有名なジャズ・スタンダードの1つ。Ponponのライブパフォーマンスは、しばしばこの曲を非常に感情的に解釈します。",
+        "lyricsLink": "https://genius.com/Billie-holiday-all-of-me-lyrics"
+      },
+      {
+        "id": "on-the-sunny-side",
+        "title": "On the Sunny Side of the Street",
+        "year": "1930",
+        "composer": "Jimmy McHugh",
+        "background": "大恐慌の時代に人々に希望をもたらした曲。Ponponの解釈は、クリーンなギターと彼女独特のスキャットを組み合わせ、暖かさと陽光を感じさせます。",
+        "lyricsLink": "https://genius.com/Billie-holiday-on-the-sunny-side-of-the-street-lyrics"
+      }
+    ]
   },
   "timelineItems": [
     {
