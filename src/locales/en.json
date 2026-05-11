@@ -46,6 +46,11 @@
     "description": "Chronicle of major feature updates and content revisions.",
     "items": [
       {
+        "date": "2026-05-11",
+        "title": "New 'Jazz Repertoire' Launched",
+        "content": "Added the Jazz Repertoire page with search and filter features. Gradually adding in-depth appreciation of classic jazz standards performed by Ponpon, along with links to Ponpon's live performance of the respective jazz song."
+      },
+      {
         "date": "2026-05-06",
         "title": "Notable Mentions Page Launched",
         "content": "Added a dedicated page for celebrity endorsements, featuring repeated mentions by Nobel laureate Paul Krugman."
@@ -454,40 +459,31 @@
   "repertoire": {
     "title": "Jazz Repertoire",
     "description": "Explore the classic jazz standards Ponpon has performed, and learn about the background and meaning behind each song.",
-    "songs": [
-      {
-        "id": "cheek-to-cheek",
+    "watchPerformance": "Watch Ponpon's Live Performance",
+    "viewLyrics": "View Lyrics",
+    "detailsBtn": "Read Description",
+    "searchPlaceholder": "Search by title, year, or composer...",
+    "filterAll": "ALL",
+    "songsFound": "songs found",
+    "noSongsFound": "No songs found matching your criteria.",
+    "songs": {
+      "cheek-to-cheek": {
         "title": "Cheek to Cheek",
-        "year": "1935",
-        "composer": "Irving Berlin",
-        "background": "Written for the Fred Astaire and Ginger Rogers film 'Top Hat'. Ponpon's performance of this classic standard brings out its lighthearted and romantic atmosphere.",
-        "lyricsLink": "https://genius.com/Irving-berlin-cheek-to-cheek-lyrics"
+        "background": "Written specifically for the classic 1935 Hollywood musical film 'Top Hat'. In the 1930s, the United States was overshadowed by the Great Depression, with high unemployment and a bleak social atmosphere. The public desperately needed a sanctuary for their minds, and glamorous Hollywood musicals became the best form of escapism. Accompanied by the elegant, luxurious, and lighthearted duet dance of the film's lead characters, 'Cheek to Cheek' provided audiences with a utopian fantasy far removed from their harsh reality.<br/><br/>The song's atmosphere is incredibly light, dreamy, and intoxicating. The melody and rhythm carry an effortless sense of floating, creating an ultimately romantic ambiance where the entire world seems to stand still, leaving only two lovers under the spotlight, immersed in their spinning dance steps.<br/><br/>'Cheek to Cheek' is more than just a love song; it embodies the idea that: 'Even if reality is imperfect, simply dancing with the one you love feels like being in heaven.'"
       },
-      {
-        "id": "fly-me-to-the-moon",
+      "fly-me-to-the-moon": {
         "title": "Fly Me to the Moon",
-        "year": "1954",
-        "composer": "Bart Howard",
-        "background": "Originally titled 'In Other Words', it became globally famous through Frank Sinatra's cover, symbolizing romance and the space age. Ponpon breathes new life into this song with her quintet.",
-        "lyricsLink": "https://genius.com/Frank-sinatra-fly-me-to-the-moon-lyrics"
+        "background": "This song was originally titled 'In Other Words', but because the recurring chorus line 'Fly me to the moon' became so deeply ingrained in people's minds, it was officially renamed to 'Fly Me to the Moon' in 1963.<br/><br/>Although the song was written in the 1950s, its massive popularity in the 1960s coincided with the peak of the Space Race during the Cold War between the United States and the Soviet Union. At that time, humanity was filled with boundless longing and imagination for the unknown universe. Frank Sinatra's upbeat 1964 version perfectly captured the American public's enthusiasm and optimism about the moon landing.<br/><br/>'Fly Me to the Moon' is a masterpiece that flawlessly combines a 'grand cosmic perspective' with 'microscopic personal emotions.' It tells us that the magic of love is enough to make one feel like flying into space, yet all these miracles stem from a simple holding of hands, a kiss, and a simple 'I love you.'"
       },
-      {
-        "id": "all-of-me",
+      "all-of-me": {
         "title": "All of Me",
-        "year": "1931",
-        "composer": "Gerald Marks, Seymour Simons",
-        "background": "One of the most famous jazz standards, expressing unreserved love and the pain of loss. Ponpon's live performances often interpret this song with deep emotional resonance.",
-        "lyricsLink": "https://genius.com/Billie-holiday-all-of-me-lyrics"
+        "background": "📍 Historical Background: An Emotional Outlet During the Great Depression<br/>Born in the 1930s at the onset of the Great Depression in the US, an era of economic hardship, rising unemployment, and immense social pressure, music became a crucial emotional comfort and outlet for the general public. 'All of Me' spread through radio broadcasts and live performances, soothing countless weary souls.<br/><br/>🍸 Cultural Depth: The Jazz Spirit of Turning Sorrow into Romance<br/>Although 'All of Me' is a song about heartbreak, it rejects hysterical, tragic breakdowns. Instead, it carries a unique urban humor and an inescapable sense of heartbreak, perfectly fitting the jazz bar culture of the time—where people were accustomed to drinking while following unpredictable rhythms, transforming life's and love's sorrows into a tipsy romance.<br/><br/>💔 Lyrical Imagery: Ultimate Deprivation and Manifested Pain<br/>The song is most praised for its ingenious lyrics, translating the mental agony of having one's 'heart hollowed out' after a breakup into a sense of physical incompleteness.<br/>The lyrics straightforwardly plead: Since you took the part that used to be my heart, why not take my lips and arms as well? It perfectly depicts the unreserved dedication in love and the profound sense of deprivation upon losing the other person."
       },
-      {
-        "id": "on-the-sunny-side",
+      "on-the-sunny-side": {
         "title": "On the Sunny Side of the Street",
-        "year": "1930",
-        "composer": "Jimmy McHugh",
-        "background": "A song that brought hope during the Great Depression. Ponpon's rendition often combines clean guitar lines with her unique scat singing, radiating warmth and sunshine.",
-        "lyricsLink": "https://genius.com/Billie-holiday-on-the-sunny-side-of-the-street-lyrics"
+        "background": "📍 Historical Background: A Ray of Light in a Turbulent Era<br/>The United States had just experienced the 1929 Wall Street Crash and was stepping into the despairing \"Great Depression.\" As unemployment and poverty shrouded society, this song made its debut in a 1930 Broadway musical. Instead of wallowing in sorrow, it acted like a ray of sunlight breaking through the clouds, injecting a much-needed shot of optimism into the gloomy American society of the time.<br/><br/>☀️ Lyrical Imagery: Change Your Mindset, Leave Worries at the Door<br/>The song's opening is highly visual and action-oriented:<br/>\"Grab your coat, and get your hat / Leave your worry on the doorstep\"<br/>This represents a proactive kind of optimism. The lyrics encourage people not to linger in dark corners. As long as you are willing to take a step toward the sunny side of the street, life can take a turn for the better. This philosophy of \"changing your mindset\" fills the song with inspiring power.<br/><br/>👣 Core Meaning: Ultimate Spiritual Wealth<br/>In an era when many struggled to afford their next meal, one of the song's most classic verses gave \"wealth\" a whole new definition:<br/>\"If I never have a cent / I'll be rich as Rockefeller / Gold dust at my feet / On the sunny side of the street.\"<br/>This verse cleverly compares the sunlight scattered on the ground to gold dust, conveying a profound message: even if your pockets are empty, as long as your heart remains optimistic and sunny, you can be as spiritually wealthy as an oil tycoon.<br/><br/>🎧 Enduring Swing Charm<br/>For jazz singers, this tune is the perfect choice for interacting with the audience and spreading joy and warmth. When the brisk rhythm starts, it truly feels as though it can make people forget their worries and stroll along the sunlit street alongside the singing voice."
       }
-    ]
+    }
   },
   "timelineItems": [
     {

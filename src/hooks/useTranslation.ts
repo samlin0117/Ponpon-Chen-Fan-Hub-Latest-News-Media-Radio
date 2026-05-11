@@ -60,9 +60,25 @@ export const useTranslation = () => {
     }
   }, [location.search, location.hash, lang]);
 
+  // 同步其他組件的語言切換
+  useEffect(() => {
+    const handleLanguageChange = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      if (customEvent.detail && customEvent.detail !== lang) {
+        setLangState(customEvent.detail as Language);
+      }
+    };
+    
+    window.addEventListener('languagechange', handleLanguageChange);
+    return () => {
+      window.removeEventListener('languagechange', handleLanguageChange);
+    };
+  }, [lang]);
+
   const setLang = (newLang: Language) => {
     setLangState(newLang);
     localStorage.setItem('app-lang', newLang);
+    window.dispatchEvent(new CustomEvent('languagechange', { detail: newLang }));
     
     // 同步更新網址
     const currentUrl = new URL(window.location.href);

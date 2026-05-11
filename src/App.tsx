@@ -186,7 +186,7 @@ function MainContent() {
       <section id="about" className="py-12 md:py-32 bg-dark-lighter relative min-h-[calc(100vh-80px)] flex items-center">
         <div className="max-w-4xl mx-auto px-6 relative">
           {/* Top-left action buttons */}
-          <div className="absolute -top-12 left-0 md:-left-20 flex items-center gap-3 flex-wrap z-30">
+          <div className="relative md:absolute mb-10 md:mb-0 md:-top-12 left-0 md:-left-20 flex items-center justify-center md:justify-start gap-3 flex-wrap z-30">
             <Link 
               to="/quiz" 
               className="relative flex items-center gap-3 px-6 py-3 bg-gold/10 hover:bg-gold/20 border border-gold/40 rounded-2xl text-gold-light text-sm font-bold tracking-widest transition-all hover:scale-105 shadow-[0_0_15px_rgba(212,175,55,0.1)] hover:shadow-gold/20 group"
