@@ -145,267 +145,456 @@
       {
         "id": 1,
         "question": "Which of the following skills is a 'special instrument' Ponpon first performed publicly in LA in April 2025?",
-        "options": ["Harmonica", "Washboard", "Ukulele", "Accordion"],
+        "options": [
+          "Harmonica",
+          "Washboard",
+          "Ukulele",
+          "Accordion"
+        ],
         "correctAnswer": 1,
         "explanation": "In April 2025, she incorporated the Washboard into her performance at Cicada Restaurant and Lounge for the first time."
       },
       {
         "id": 2,
         "question": "In which video did Ponpon first publicly demonstrate her 'Scatting' technique?",
-        "options": ["All of Me", "Blue Skies", "How High The Moon", "Reflection"],
+        "options": [
+          "All of Me",
+          "Blue Skies",
+          "How High The Moon",
+          "Reflection"
+        ],
         "correctAnswer": 2,
         "explanation": "She first demonstrated her signature Scatting technique in the 2024 Q3 performance of 'How High The Moon'."
       },
       {
         "id": 3,
         "question": "What is Ponpon Chen's date of birth?",
-        "options": ["April 5, 2000", "April 5, 2002", "May 4, 2002", "April 5, 2004"],
+        "options": [
+          "April 5, 2000",
+          "April 5, 2002",
+          "May 4, 2002",
+          "April 5, 2004"
+        ],
         "correctAnswer": 1,
         "explanation": "Ponpon Chen was born on April 5, 2002."
       },
-
       {
         "id": 5,
         "question": "In 2015, in which competition did she win 2nd place while in 7th grade?",
-        "options": ["Eelin Star", "Jungle Voice", "City Star", "Star Search"],
+        "options": [
+          "Eelin Star",
+          "Jungle Voice",
+          "City Star",
+          "Star Search"
+        ],
         "correctAnswer": 2,
         "explanation": "In 2015, she won 2nd place in the 'City Star' competition during her 7th grade year."
       },
       {
         "id": 6,
         "question": "In 2016, at age 14, which category championship did she win at the 5th Eelin Star finals?",
-        "options": ["Singing", "Modeling", "Entertainment", "Dancing"],
+        "options": [
+          "Singing",
+          "Modeling",
+          "Entertainment",
+          "Dancing"
+        ],
         "correctAnswer": 2,
         "explanation": "In 2016, at age 14, Ponpon won the Entertainment Group championship at the 5th Eelin Star finals."
       },
       {
         "id": 7,
         "question": "What special record did Ponpon set when she won the Eelin Star championship?",
-        "options": ["Highest score ever", "Youngest champion of that year", "First perfect score", "Most online votes"],
+        "options": [
+          "Highest score ever",
+          "Youngest champion of that year",
+          "First perfect score",
+          "Most online votes"
+        ],
         "correctAnswer": 1,
         "explanation": "Ponpon became the youngest champion of that year's competition at age 14."
       },
       {
         "id": 8,
         "question": "When participating in 'Come Sing with Me 3' in 2018, which singer was she chosen to perform a solo duet with?",
-        "options": ["Wang Yuan (Roy Wang)", "JJ Lin", "Jay Chou", "Jam Hsiao"],
+        "options": [
+          "Wang Yuan (Roy Wang)",
+          "JJ Lin",
+          "Jay Chou",
+          "Jam Hsiao"
+        ],
         "correctAnswer": 0,
         "explanation": "In 'Come Sing with Me 3', Ponpon was chosen to perform a solo duet with TFBOYS member Wang Yuan."
       },
       {
         "id": 9,
         "question": "Which song did Ponpon perform with Wang Yuan in 'Come Sing with Me 3'?",
-        "options": ["Somewhere in Taipei", "Pride", "Love Confession", "Practice Love"],
+        "options": [
+          "Somewhere in Taipei",
+          "Pride",
+          "Love Confession",
+          "Practice Love"
+        ],
         "correctAnswer": 1,
         "explanation": "Ponpon performed the song 'Pride' (驕傲) with Wang Yuan."
       },
       {
         "id": 10,
         "question": "In 2019, which segment did 17-year-old Ponpon participate in during 'Jungle Voice 2'?",
-        "options": ["Mentor Collaboration", "Challenger Round", "Grand Finals", "Duo Duet"],
+        "options": [
+          "Mentor Collaboration",
+          "Challenger Round",
+          "Grand Finals",
+          "Duo Duet"
+        ],
         "correctAnswer": 1,
         "explanation": "Ponpon participated as a 'Little Demon' challenger in the Challenger Round of Jungle Voice 2."
       },
       {
         "id": 11,
         "question": "Which song by Cheer Chen did Ponpon perform in 'Jungle Voice 2'?",
-        "options": ["The Meaning of Travel", "Somewhere in Taipei", "Fish", "Lonely Without You"],
+        "options": [
+          "The Meaning of Travel",
+          "Somewhere in Taipei",
+          "Fish",
+          "Lonely Without You"
+        ],
         "correctAnswer": 1,
         "explanation": "She performed Cheer Chen's 'Somewhere in Taipei', receiving high praise from all three mentors."
       },
       {
         "id": 12,
         "question": "Which department did Ponpon attend during her time at Fuxing Senior High School?",
-        "options": ["Music", "Dance", "Drama", "Fine Arts"],
+        "options": [
+          "Music",
+          "Dance",
+          "Drama",
+          "Fine Arts"
+        ],
         "correctAnswer": 2,
         "explanation": "In 2017, Ponpon was admitted to the Drama Class at Fuxing Senior High School, known for nurturing artistic talent."
       },
       {
         "id": 13,
         "question": "During the pandemic, which music legend's video inspired Ponpon to switch from Pop to Jazz and start practicing electric guitar intensely?",
-        "options": ["Wes Montgomery", "Joe Pass", "George Benson", "Pat Metheny"],
+        "options": [
+          "Wes Montgomery",
+          "Joe Pass",
+          "George Benson",
+          "Pat Metheny"
+        ],
         "correctAnswer": 2,
         "explanation": "While at NTUA, she was inspired by a George Benson video and decided to take a leave to focus on jazz guitar."
       },
       {
         "id": 14,
         "question": "After taking a leave from university, which teacher did she study guitar with at 'Riverside Music'?",
-        "options": ["Geddy Lin", "Shun-wen Tung", "Rich Huang", "Eiji Kadota"],
+        "options": [
+          "Geddy Lin",
+          "Shun-wen Tung",
+          "Rich Huang",
+          "Eiji Kadota"
+        ],
         "correctAnswer": 0,
         "explanation": "Ponpon studied with teacher Geddy Lin (林正如) at Riverside Music after taking a leave from university."
       },
       {
         "id": 15,
         "question": "Where did Ponpon hold her first solo headline show before moving to the US in 2022?",
-        "options": ["Taipei Arena", "National Concert Hall", "Riverside Live House", "Legacy Taipei"],
+        "options": [
+          "Taipei Arena",
+          "National Concert Hall",
+          "Riverside Live House",
+          "Legacy Taipei"
+        ],
         "correctAnswer": 2,
         "explanation": "In 2022, she held her first solo headline show at Riverside Live House before moving to the US."
       },
       {
         "id": 16,
         "question": "In Sep 2022, she released her first original MV. This song was actually written when she was 15. What is the title?",
-        "options": ["Finding Someone Like You on the Edge", "Jazz Rhapsody", "LA Night", "Proud Journey"],
+        "options": [
+          "Finding Someone Like You on the Edge",
+          "Jazz Rhapsody",
+          "LA Night",
+          "Proud Journey"
+        ],
         "correctAnswer": 0,
         "explanation": "Her first original MV, 'Finding Someone Like You on the Edge' (找到一樣在邊緣徘徊中的你), was written when she was 15."
       },
       {
         "id": 17,
         "question": "Which school did Ponpon attend when she moved to Los Angeles in 2022?",
-        "options": ["Berklee College of Music", "Juilliard School", "Musicians Institute (MI)", "USC Thornton School of Music"],
+        "options": [
+          "Berklee College of Music",
+          "Juilliard School",
+          "Musicians Institute (MI)",
+          "USC Thornton School of Music"
+        ],
         "correctAnswer": 2,
         "explanation": "Ponpon moved to LA to attend the Musicians Institute (MI)."
       },
       {
         "id": 18,
         "question": "What was her major at the Musicians Institute (MI)?",
-        "options": ["Jazz Piano", "Jazz Guitar", "Jazz Bass", "Jazz Vocals"],
+        "options": [
+          "Jazz Piano",
+          "Jazz Guitar",
+          "Jazz Bass",
+          "Jazz Vocals"
+        ],
         "correctAnswer": 1,
         "explanation": "She majored in Jazz Guitar at MI."
       },
       {
         "id": 19,
         "question": "In 2023, what occupational injury forced Ponpon to rest for six months due to intense daily practice?",
-        "options": ["Vocal nodules", "Carpal Tunnel", "Tenosynovitis", "Tendonitis"],
+        "options": [
+          "Vocal nodules",
+          "Carpal Tunnel",
+          "Tenosynovitis",
+          "Tendonitis"
+        ],
         "correctAnswer": 3,
         "explanation": "In 2023, she suffered from Tendonitis due to intense practice and was forced to rest for half a year."
       },
       {
         "id": 20,
         "question": "At Studio City Sound in LA, which Grammy-winning engineer encouraged her to upload her performance videos?",
-        "options": ["Al Schmitt", "Tom Weir", "Manny Marroquin", "Serban Ghenea"],
+        "options": [
+          "Al Schmitt",
+          "Tom Weir",
+          "Manny Marroquin",
+          "Serban Ghenea"
+        ],
         "correctAnswer": 1,
         "explanation": "She met Grammy-winning engineer Tom Weir at Studio City Sound, who encouraged her to share her videos."
       },
       {
         "id": 21,
         "question": "Where did Ponpon hold her solo ticketed show during her brief return to Taiwan in Dec 2024?",
-        "options": ["Taipei Arena", "National Concert Hall", "Riverside Live House (Ximen)", "Legacy Taipei"],
+        "options": [
+          "Taipei Arena",
+          "National Concert Hall",
+          "Riverside Live House (Ximen)",
+          "Legacy Taipei"
+        ],
         "correctAnswer": 2,
         "explanation": "In Dec 2024, she held a solo ticketed show at Riverside Live House in Ximen Red House."
       },
       {
         "id": 22,
         "question": "In May 2025, which ABC late-night program did Ponpon perform on?",
-        "options": ["The Tonight Show", "Jimmy Kimmel Live!", "World News Now", "The Late Show"],
+        "options": [
+          "The Tonight Show",
+          "Jimmy Kimmel Live!",
+          "World News Now",
+          "The Late Show"
+        ],
         "correctAnswer": 2,
         "explanation": "Ponpon was invited to perform on the ABC News late-night show 'World News Now'."
       },
       {
         "id": 23,
         "question": "Which outro song did she rearrange and perform on the ABC program?",
-        "options": ["World News Polka", "ABC News Theme", "Good Morning America Theme", "Nightline Closing"],
+        "options": [
+          "World News Polka",
+          "ABC News Theme",
+          "Good Morning America Theme",
+          "Nightline Closing"
+        ],
         "correctAnswer": 0,
         "explanation": "She rearranged and performed 'World News Polka', and the video reached over a million views."
       },
       {
         "id": 24,
         "question": "What advice did George Benson personally give Ponpon at his 2025 workshop?",
-        "options": ["'Practice more scales'", "'Move to New York'", "'Don't imitate, find your own voice'", "'The guitar is your weapon'"],
+        "options": [
+          "'Practice more scales'",
+          "'Move to New York'",
+          "'Don't imitate, find your own voice'",
+          "'The guitar is your weapon'"
+        ],
         "correctAnswer": 2,
         "explanation": "George Benson personally told her: 'Don't imitate, find your own voice'."
       },
       {
         "id": 25,
         "question": "Which annual LA event did Ponpon perform at on Dec 24, 2025?",
-        "options": ["The Grammy Awards", "L.A. County Holiday Celebration", "LA Jazz Festival", "California New Year Concert"],
+        "options": [
+          "The Grammy Awards",
+          "L.A. County Holiday Celebration",
+          "LA Jazz Festival",
+          "California New Year Concert"
+        ],
         "correctAnswer": 1,
         "explanation": "On Christmas Eve 2025, she was invited to perform at the L.A. County Holiday Celebration."
       },
       {
         "id": 26,
         "question": "Which Grammy winner did Ponpon perform alongside at the L.A. County Holiday Celebration?",
-        "options": ["John Mayer", "Randy Waldman", "Herbie Hancock", "Jacob Collier"],
+        "options": [
+          "John Mayer",
+          "Randy Waldman",
+          "Herbie Hancock",
+          "Jacob Collier"
+        ],
         "correctAnswer": 1,
         "explanation": "She performed alongside Grammy winner Randy Waldman."
       },
       {
         "id": 27,
         "question": "Which junior high school was Ponpon attending during the 2015 'City Star' competition?",
-        "options": ["Fuxing", "Renai", "Jinhua", "Zhongzheng"],
+        "options": [
+          "Fuxing",
+          "Renai",
+          "Jinhua",
+          "Zhongzheng"
+        ],
         "correctAnswer": 1,
         "explanation": "In 2015, she was a student at Renai Junior High School."
       },
       {
         "id": 28,
         "question": "What important advice did Tom Weir give Ponpon in 2024?",
-        "options": ["Enroll in a conservatory", "Upload multiple performance videos to YouTube", "Join a singing idol show", "Release a vinyl record"],
+        "options": [
+          "Enroll in a conservatory",
+          "Upload multiple performance videos to YouTube",
+          "Join a singing idol show",
+          "Release a vinyl record"
+        ],
         "correctAnswer": 1,
         "explanation": "Tom Weir suggested she upload her videos to YouTube to let more people see her talent."
       },
       {
         "id": 29,
         "question": "During her injury recovery in the US, what did her teacher suggest she study to maintain her progress?",
-        "options": ["Practice piano with her left hand", "Transfer to the Drama department", "Study jazz history and stories behind songs", "Enroll in a broadcasting course"],
+        "options": [
+          "Practice piano with her left hand",
+          "Transfer to the Drama department",
+          "Study jazz history and stories behind songs",
+          "Enroll in a broadcasting course"
+        ],
         "correctAnswer": 2,
         "explanation": "During her recovery, her teacher suggested studying jazz history and song backstories."
       },
       {
         "id": 30,
         "question": "What was Ponpon's initial reaction to receiving the email from ABC News in 2025?",
-        "options": ["Thought it was a scam and couldn't believe it", "Immediately called her parents in Taiwan", "Felt unprepared and asked for a delay", "Rejected it initially due to low pay"],
+        "options": [
+          "Thought it was a scam and couldn't believe it",
+          "Immediately called her parents in Taiwan",
+          "Felt unprepared and asked for a delay",
+          "Rejected it initially due to low pay"
+        ],
         "correctAnswer": 0,
         "explanation": "When she first received the email from ABC News, she thought it was a scam."
       },
       {
         "id": 31,
         "question": "In her ABC News performance, what unique element did she add besides singing, guitar, and scatting?",
-        "options": ["Whistling", "Harmonica", "B-box", "Tap Dance"],
+        "options": [
+          "Whistling",
+          "Harmonica",
+          "B-box",
+          "Tap Dance"
+        ],
         "correctAnswer": 0,
         "explanation": "In the ABC News performance, Ponpon combined guitar, scatting, and her signature whistling technique."
       },
       {
         "id": 32,
         "question": "How did Ponpon earn credits to complete her studies at MI while she was unable to play guitar due to injury?",
-        "options": ["Submit written theory reports", "Use singing to replace guitar for evaluations", "Apply for leave and return to Taiwan", "Switch to Music Production courses"],
+        "options": [
+          "Submit written theory reports",
+          "Use singing to replace guitar for evaluations",
+          "Apply for leave and return to Taiwan",
+          "Switch to Music Production courses"
+        ],
         "correctAnswer": 1,
         "explanation": "Unable to play guitar, she used singing as a substitute to earn credits for her practical evaluations."
       },
       {
         "id": 33,
         "question": "What role does Ponpon believe 'mistakes' play in a jazz performance?",
-        "options": ["Part of improvisation and start of creativity", "Results in a pay deduction", "Must stop and apologize to the audience", "Sign of lack of professionalism"],
+        "options": [
+          "Part of improvisation and start of creativity",
+          "Results in a pay deduction",
+          "Must stop and apologize to the audience",
+          "Sign of lack of professionalism"
+        ],
         "correctAnswer": 0,
         "explanation": "Ponpon believes that in jazz, mistakes are part of improvisation and can even spark new creative ideas."
       },
       {
         "id": 34,
         "question": "What is Ponpon's favorite color?",
-        "options": ["Blue", "Red", "Black", "Gold"],
+        "options": [
+          "Blue",
+          "Red",
+          "Black",
+          "Gold"
+        ],
         "correctAnswer": 1,
         "explanation": "Her frequent use of bright red dresses in live performances shows her love for the color red."
       },
       {
         "id": 35,
         "question": "Why did the homeroom teacher write a letter to apologize to Ponpon at her junior high school graduation ceremony?",
-        "options": ["Failed to write a recommendation letter for her high school application", "Forgot to award her the certificate of merit", "Previously opposed her participation in the Campus Million Star singing contest", "Didn't believe she could achieve her goal in the entertainment industry"],
+        "options": [
+          "Failed to write a recommendation letter for her high school application",
+          "Forgot to award her the certificate of merit",
+          "Previously opposed her participation in the Campus Million Star singing contest",
+          "Didn't believe she could achieve her goal in the entertainment industry"
+        ],
         "correctAnswer": 3,
         "explanation": "At the graduation ceremony, her homeroom teacher wrote a letter apologizing for initially not believing she could achieve her goal in the entertainment industry."
       },
       {
         "id": 36,
         "question": "Before agreeing to let her study in the US, what specific requirement did Ponpon's father make?",
-        "options": ["Get a university degree in Taiwan first", "Achieve an IELTS score of 7.0 or higher", "Hold a solo ticketed concert in Taiwan first", "Create a financial assessment report of annual expenses"],
+        "options": [
+          "Get a university degree in Taiwan first",
+          "Achieve an IELTS score of 7.0 or higher",
+          "Hold a solo ticketed concert in Taiwan first",
+          "Create a financial assessment report of annual expenses"
+        ],
         "correctAnswer": 3,
         "explanation": "From an investment perspective, her father required her to clearly list tuition and living expenses to evaluate the return on investment."
       },
       {
         "id": 37,
         "question": "When Ponpon recorded the ABC News outro in the US, where did the idea for the \"Intro\" signature music come from?",
-        "options": ["A mashup of traditional Taiwanese folk songs and jazz", "A classic polka melody she self-taught on YouTube", "Imitating the opening style of 1920s jazz", "The signature melody hummed by studio owner Tom Weir"],
+        "options": [
+          "A mashup of traditional Taiwanese folk songs and jazz",
+          "A classic polka melody she self-taught on YouTube",
+          "Imitating the opening style of 1920s jazz",
+          "The signature melody hummed by studio owner Tom Weir"
+        ],
         "correctAnswer": 3,
         "explanation": "Studio owner Tom Weir hummed the show's signature melody during the recording, which became her inspiration for the Intro."
       },
       {
         "id": 38,
         "question": "What was the name of the first podcast show that interviewed Ponpon?",
-        "options": ["Happy Equation", "Music Essence", "Breaking Out of the Do-Zone", "Midnight You & Me"],
+        "options": [
+          "Happy Equation",
+          "Music Essence",
+          "Breaking Out of the Do-Zone",
+          "Midnight You & Me"
+        ],
         "correctAnswer": 2,
         "explanation": "In August 2025, Ponpon was invited for her first podcast interview on the show \"Breaking Out of the Do-Zone\"."
       },
       {
         "id": 39,
         "question": "Which radio program was Ponpon's first radio interview?",
-        "options": ["RTI 'Music Essence'", "UFO Radio 'Midnight Family'", "BCC 'Midnight You & Me'", "Hit FM Network"],
+        "options": [
+          "RTI 'Music Essence'",
+          "UFO Radio 'Midnight Family'",
+          "BCC 'Midnight You & Me'",
+          "Hit FM Network"
+        ],
         "correctAnswer": 0,
         "explanation": "In April 2021, Ponpon was interviewed by host CafeCat on Radio Taiwan International's program \"Music Essence\", marking her first-ever solo radio interview."
       }
@@ -458,30 +647,42 @@
   },
   "repertoire": {
     "title": "Jazz Repertoire",
-    "description": "Explore the classic jazz standards Ponpon has performed, and learn about the background and meaning behind each song.",
+    "description": "Explore the classic jazz standards Ponpon has performed and learn about their historical background.",
     "watchPerformance": "Watch Ponpon's Live Performance",
-    "viewLyrics": "View Lyrics",
-    "detailsBtn": "Read Description",
-    "searchPlaceholder": "Search by title, year, or composer...",
-    "filterAll": "ALL",
+    "viewLyrics": "View Full Lyrics",
+    "detailsBtn": "Read In-depth Intro",
+    "searchPlaceholder": "Search by song, year, or composer...",
+    "filterAll": "All",
     "songsFound": "songs found",
-    "noSongsFound": "No songs found matching your criteria.",
+    "noSongsFound": "No songs found matching the criteria.",
     "songs": {
       "cheek-to-cheek": {
         "title": "Cheek to Cheek",
-        "background": "Written specifically for the classic 1935 Hollywood musical film 'Top Hat'. In the 1930s, the United States was overshadowed by the Great Depression, with high unemployment and a bleak social atmosphere. The public desperately needed a sanctuary for their minds, and glamorous Hollywood musicals became the best form of escapism. Accompanied by the elegant, luxurious, and lighthearted duet dance of the film's lead characters, 'Cheek to Cheek' provided audiences with a utopian fantasy far removed from their harsh reality.<br/><br/>The song's atmosphere is incredibly light, dreamy, and intoxicating. The melody and rhythm carry an effortless sense of floating, creating an ultimately romantic ambiance where the entire world seems to stand still, leaving only two lovers under the spotlight, immersed in their spinning dance steps.<br/><br/>'Cheek to Cheek' is more than just a love song; it embodies the idea that: 'Even if reality is imperfect, simply dancing with the one you love feels like being in heaven.'"
+        "background": "Written specifically for the classic 1935 Hollywood musical film 'Top Hat'. In the 1930s, the United States was overshadowed by the Great Depression, with high unemployment and a bleak social atmosphere. The public desperately needed a spiritual sanctuary, and Hollywood's glamorous musicals became the best form of 'Escapism'. 'Cheek to Cheek', accompanied by the elegant, luxurious, and light ballroom dance of the leads, provided audiences of that time with a dreamlike utopia far from the hardships of reality.<br/><br/>The mood of the entire song is extremely light, dreamy, and intoxicating. The melody and rhythm carry an effortless sense of floating, creating an atmosphere as if the whole world has stood still, leaving only the two people in love under the spotlight, immersed in the ultimate romance of their rotating dance steps.<br/><br/>'Cheek to Cheek' is more than just a love song; it represents the idea that 'even if reality is not perfect, as long as you are dancing with the one you love, it's like being in heaven.'<br/><br/>🌟 Ponpon's Interpretation<br/>In Ponpon's live performance, she transforms the original's luxurious dreamlike utopia into a relaxed and joyful Swing Dance party vibe. She sways lightly with the band's rhythm, leading the entire audience to enjoy the moment with her infectious vocals. The most stunning part is in the latter half of the song, where she engages in a brilliant Scatting (vocal improvisation) dialogue with the saxophonist. The human voice and instrument toss and catch melodies with playful wit, fully showcasing her deep jazz foundation. This interaction not only pushes the atmosphere to a climax but also perfectly demonstrates the charming free spirit of jazz, injecting fresh soul into a classic."
       },
       "fly-me-to-the-moon": {
         "title": "Fly Me to the Moon",
-        "background": "This song was originally titled 'In Other Words', but because the recurring chorus line 'Fly me to the moon' became so deeply ingrained in people's minds, it was officially renamed to 'Fly Me to the Moon' in 1963.<br/><br/>Although the song was written in the 1950s, its massive popularity in the 1960s coincided with the peak of the Space Race during the Cold War between the United States and the Soviet Union. At that time, humanity was filled with boundless longing and imagination for the unknown universe. Frank Sinatra's upbeat 1964 version perfectly captured the American public's enthusiasm and optimism about the moon landing.<br/><br/>'Fly Me to the Moon' is a masterpiece that flawlessly combines a 'grand cosmic perspective' with 'microscopic personal emotions.' It tells us that the magic of love is enough to make one feel like flying into space, yet all these miracles stem from a simple holding of hands, a kiss, and a simple 'I love you.'"
+        "background": "Originally titled 'In Other Words', this song was renamed 'Fly Me to the Moon' in 1963 due to the popularity of its recurring refrain. Born in the 1950s, its peak popularity in the 1960s coincided with the height of the Space Race between the US and the Soviet Union. At that time, humanity had infinite longing and imagination for the unknown universe. Frank Sinatra's upbeat version in 1964 perfectly captured the enthusiasm and optimism for the moon landing in American society.<br/><br/>'Fly Me to the Moon' is a masterpiece that perfectly combines a 'grand cosmic perspective' with 'microscopic personal emotions'. It tells us that the magic of love is enough to make one feel like they are flying into space, but all these miracles actually stem from a single hand-hold, a kiss, and an 'I love you' from the other person.<br/><br/>🌟 Ponpon's Interpretation<br/>In the video, Ponpon demonstrates the elegant composure of self-accompaniment, pairing warm, lazy vocals with jazz guitar to delicately convey a romantic and relaxed tipsy atmosphere. Her singing is highly rhythmic, not only perfectly matching the steps of the swing dancers below the stage but also showing excellent chemistry with the quintet. Especially in the latter half of the performance, she engages in a brilliant Scatting dialogue with the saxophonist; the lazy human voice and high-pitched saxophone respond to each other with agile wit, weaving together intense jazz sparks that push the joyful party atmosphere to its peak."
       },
       "all-of-me": {
         "title": "All of Me",
-        "background": "📍 Historical Background: An Emotional Outlet During the Great Depression<br/>Born in the 1930s at the onset of the Great Depression in the US, an era of economic hardship, rising unemployment, and immense social pressure, music became a crucial emotional comfort and outlet for the general public. 'All of Me' spread through radio broadcasts and live performances, soothing countless weary souls.<br/><br/>🍸 Cultural Depth: The Jazz Spirit of Turning Sorrow into Romance<br/>Although 'All of Me' is a song about heartbreak, it rejects hysterical, tragic breakdowns. Instead, it carries a unique urban humor and an inescapable sense of heartbreak, perfectly fitting the jazz bar culture of the time—where people were accustomed to drinking while following unpredictable rhythms, transforming life's and love's sorrows into a tipsy romance.<br/><br/>💔 Lyrical Imagery: Ultimate Deprivation and Manifested Pain<br/>The song is most praised for its ingenious lyrics, translating the mental agony of having one's 'heart hollowed out' after a breakup into a sense of physical incompleteness.<br/>The lyrics straightforwardly plead: Since you took the part that used to be my heart, why not take my lips and arms as well? It perfectly depicts the unreserved dedication in love and the profound sense of deprivation upon losing the other person."
+        "background": "📍 Historical Background: A Spiritual Outlet during the Great Depression<br/>Born in the 1930s at the start of the Great Depression in the US. In an era of economic hardship and high social pressure, music became a vital emotional comfort for the masses. 'All of Me' spread through radio programs and live performances, soothing countless weary souls.<br/><br/>🍸 Cultural Depth: The Jazz Spirit of Singing Sadness as Romance<br/>Though a song about heartbreak, 'All of Me' refuses to be a hysterical tragedy. It carries a unique urban humor and helpless heartbreak, perfectly fitting the jazz bar culture of the time—where people were accustomed to drinking while following the shifting rhythms, transforming life's sorrows into a tipsy romance.<br/><br/>💔 Lyric Meaning: Extreme Deprivation and Concrete Pain<br/>The song is most praised for its clever lyrics. It transforms the spiritual torture of 'the heart being emptied' after heartbreak into a sense of physical incompleteness. The lyrics directly plead: since you took away the part that was my heart, why not take my lips and arms along with it? It depicts to the extreme the selfless giving in love and the sense of deprivation upon losing the other person.<br/><br/>🌟 Ponpon's Interpretation<br/>Ponpon continues to showcase her natural and highly infectious stage charm. She wears a traditional Washboard as a percussion instrument, tapping out light and hopping rhythms while singing, injecting lively ingenuity into this jazz classic. Her voice remains warm and lazy, interspersed with plenty of agile and vivid Scatting. Her improvisational dialogue with the saxophonist and bassist is full of chemistry, bringing the free-spirited, joyful, and tipsy atmosphere of jazz to life."
       },
       "on-the-sunny-side": {
         "title": "On the Sunny Side of the Street",
-        "background": "📍 Historical Background: A Ray of Light in a Turbulent Era<br/>The United States had just experienced the 1929 Wall Street Crash and was stepping into the despairing \"Great Depression.\" As unemployment and poverty shrouded society, this song made its debut in a 1930 Broadway musical. Instead of wallowing in sorrow, it acted like a ray of sunlight breaking through the clouds, injecting a much-needed shot of optimism into the gloomy American society of the time.<br/><br/>☀️ Lyrical Imagery: Change Your Mindset, Leave Worries at the Door<br/>The song's opening is highly visual and action-oriented:<br/>\"Grab your coat, and get your hat / Leave your worry on the doorstep\"<br/>This represents a proactive kind of optimism. The lyrics encourage people not to linger in dark corners. As long as you are willing to take a step toward the sunny side of the street, life can take a turn for the better. This philosophy of \"changing your mindset\" fills the song with inspiring power.<br/><br/>👣 Core Meaning: Ultimate Spiritual Wealth<br/>In an era when many struggled to afford their next meal, one of the song's most classic verses gave \"wealth\" a whole new definition:<br/>\"If I never have a cent / I'll be rich as Rockefeller / Gold dust at my feet / On the sunny side of the street.\"<br/>This verse cleverly compares the sunlight scattered on the ground to gold dust, conveying a profound message: even if your pockets are empty, as long as your heart remains optimistic and sunny, you can be as spiritually wealthy as an oil tycoon.<br/><br/>🎧 Enduring Swing Charm<br/>For jazz singers, this tune is the perfect choice for interacting with the audience and spreading joy and warmth. When the brisk rhythm starts, it truly feels as though it can make people forget their worries and stroll along the sunlit street alongside the singing voice."
+        "background": "📍 Historical Background: A Ray of Light in a Turbulent Era<br/>The United States had just experienced the 1929 Wall Street Crash and was entering the desperate Great Depression. As unemployment and poverty shrouded society, this song debuted in a 1930 Broadway musical. Instead of wallowing in sadness, it was like a burst of sunlight through the clouds, injecting a shot of optimism into a low-spirited American society.<br/><br/>☀️ Lyric Meaning: Change Your Mindset, Leave Worries at the Door<br/>The beginning of the song is very visual and action-oriented: 'Grab your coat, and get your hat / Leave your worry on the doorstep'. This is an active form of optimism. The lyrics encourage people not to stay in dark corners; as long as you are willing to step out to the sunny side of the street, life can take a turn for the better. This philosophy of 'changing one's mindset' makes the song full of encouraging power.<br/><br/>👣 Core Meaning: Ultimate Spiritual Abundance<br/>In an era when many struggled to eat, the song's most classic lines gave 'wealth' a new definition: 'If I never have a cent / I'll be rich as Rockefeller / Gold dust at my feet / On the sunny side of the street.' It cleverly compares the sunlight on the ground to gold, conveying a profound message: even with empty pockets, as long as you maintain a sunny optimism, you are as spiritually rich as an oil tycoon.<br/><br/>🎧 The Timeless Charm of Swing<br/>For jazz singers, this piece is the best choice for interacting with the audience and conveying joy and warmth. When the light rhythm starts, it's as if you can really forget your worries and stroll down the sunny street with the song.<br/><br/>🌟 Ponpon's Interpretation<br/>Ponpon appears in a striking red dress, showcasing a confident and charming stage presence. She possesses not only a warm and rhythmic voice but also incorporates vibrant and improvisational Scatting into her performance. Her voice blends perfectly with the band like an instrument, frequently interacting with the swing dancers in the audience as the music flows, spreading the joyful and cheerful jazz atmosphere to everyone present."
+      },
+      "them-there-eyes": {
+        "title": "Them There Eyes",
+        "background": "📍 Historical Background: Sweet Sparks of the Swing Era<br/>Born in 1930, this song arrived just as jazz was gearing up for the golden age of Swing with its more upbeat rhythms.<br/>The pop music of that time had a distinct characteristic: even when the world was tough, love songs remained light and charming.<br/><br/>👀 Lyric Interpretation: A 'Dangerous' Signal of Love at First Sight<br/>The song's vibe is direct and adorable, accurately capturing that split-second moment of being 'zapped' by love.<br/>The protagonist half-jokingly complains that the other person's eyes are full of 'danger' because one look is all it takes to fall hopelessly in love:<br/>'I fell in love with you, first time I looked into them there eyes.'<br/>It's a defenseless fluttering of the heart, using the briskest tempo to deliver the most direct confession.<br/><br/>✨ Core Meaning: The Ultimate Flirtation of Intertwined Glances<br/>The entire song revolves around those electric 'eyes.' The lyrics not only praise the sparkle in the other person's gaze but even carry a playful warning of playing hard to get:<br/>'You better watch them very closely / 'Cause they're reaching right into my soul.'<br/>It vividly and amusingly portrays that fluttering feeling and the ambiguous push-and-pull of early romance where you feel overwhelmed by the other person's immense charm.<br/><br/>🎧 Atmosphere Maker for Live Performances<br/>Due to its light, hopping melody and imagery-rich lyrics, 'Them There Eyes' is perfect for incorporating spontaneous scat singing.<br/>In live performances, when the brisk bass and piano rhythms kick in, a singer only needs a playful raised eyebrow or a smiling glance to instantly ignite the atmosphere, letting the entire audience immerse themselves in the sweet vibe of love.<br/><br/>🌟 Ponpon's Performance Style<br/>In Ponpon's interpretation, she cleverly incorporates the traditional Washboard instrument as a rhythmic element in the interludes, injecting a rich American vintage jazz flavor into the work. The unique and rhythmic sound of the washboard not only makes the song's Swing atmosphere more vivid and agile but also reflects Ponpon's deep understanding and innovative interpretation of early jazz musical vocabulary."
+      },
+      "route-66": {
+        "title": "Route 66",
+        "background": "Historical Background: A Roadside Poem of the American Dream<br/><br/>This classic standard was born in 1946, composed by Bobby Troup during his personal cross-country drive from Pennsylvania to Los Angeles. As World War II had just ended, the United States was entering an era of hope, vitality, and prosperity, with millions of veterans returning home and yearning for a brand new life.<br/><br/>The \"Route 66\" depicted in the song stretches nearly 4,000 kilometers from Chicago, Illinois, to Los Angeles, California, and is famously known as \"The Mother Road.\" It was more than just a legendary highway leading to freedom and opportunity; this song perfectly captured the zeitgeist of Americans' longing to head west in pursuit of a better life. Consequently, \"Route 66\" has never been just a simple travel song—it remains a vivid portrayal of the collective social desire of that era to \"get on the road and chase the dream.\"<br/><br/>🚗 Atmosphere: A Rhythmic \"Musical Map\"<br/>The rhythm of \"Route 66\" carries strong blues undertones and a Swing pulse. It sounds like the steady yet dynamic engine beat of a car driving down a straight highway. The most fascinating part of the song is that its lyrics are practically a \"road guide.\" While driving from the East Coast to California with his wife, Bobby Troup wrote each city they passed into the song, giving the entire piece a sense of speed, imagery, and anticipation of life on the road.<br/><br/>🛣️ Lyrical Meaning: The \"Get Your Kicks\" Philosophy of Pleasure<br/>The core soul of the song lies in the recurring refrain: \"Get your kicks on Route 66.\" Here, \"Kicks\" represents pure joy, thrill, and enjoyment. The lyrics list a long string of cities along the way—from Chicago and St. Louis to Oklahoma City, all the way to San Bernardino and LA. This conveys an essential road trip philosophy: true pleasure lies not in the final destination, but in the surprise-filled journey itself.<br/><br/><br/>🌟 Ponpon's Interpretation<br/>In this live performance of \"Route 66,\" Ponpon wears an elegant one-shoulder white dress, showcasing excellent stage charisma with her natural and playful body language. Her warm and rhythmic vocals bring a vibrant energy to this light American road classic. She shares a great rapport with the quintet, especially the playful improvisational interaction and agile scatting with the saxophonist, which injects rich dramatic tension into the performance. This relaxed yet explosive singing style perfectly ignites the joyous party atmosphere of the swing dancers in the audience."
+      },
+      "but-not-for-me": {
+        "title": "But Not for Me",
+        "background": "If love songs exist to celebrate the beauty of romance, then \"But Not For Me\" is an inverse love song dedicated to those \"forgotten by Cupid.\" It is witty, self-deprecating, yet heartbreakingly beautiful—one of the most iconic anthems of unrequited love and heartbreak in jazz history.<br/><br/>📍 Historical Background: A Masterpiece by the Golden Broadway Duo<br/>Born in 1930, this song was composed by the greatest brothers in American music history—George Gershwin (music) and Ira Gershwin (lyrics). Originally written for the Broadway musical \"Girl Crazy,\" it arrived in an era when Hollywood and Broadway were constantly selling \"romantic myths\" to the public. The Gershwin brothers, however, took the opposite path, writing a song that burst the pink bubbles with a touch of realism. Far from being buried by time, it resonated so deeply with audiences that it has remained a beloved jazz standard for nearly a century.<br/><br/>🌧️ Atmosphere: \"Sober Romance\" Amidst a Sweet World<br/>While the melody is exquisitely beautiful and tinged with melancholy, the lyrics cast the singer as an observer on the edge of a bustling dance floor. Watching those \"fools in love\" with a cool gaze, the protagonist wryly admits: those wonderful things just aren't meant for me.<br/><br/>💔 Key Lyrical Meanings: Witty Self-Deprecation Breaking Romantic Myths<br/><br/>Disconnected from the Romantic World:<br/>The song opens with a direct admission: \"They're writing songs of love, but not for me. / A lucky star's above, but not for me.\" It creates a sharp contrast between the romantic atmosphere of the surroundings and the protagonist's solitary situation.<br/><br/>Seeing Through the Essence of Love:<br/>The lyrics mock cliché romantic tropes, describing love as an illusion: \"With love to lead the way / I've found more clouds of gray / Than any Russian play could guarantee.\" Comparing the bleakness of love to a tragic Russian play is a stroke of lyrical genius.<br/><br/><br/>🌟 Ponpon's Interpretation<br/><br/>In this performance of \"But Not For Me,\" Ponpon appears charmingly in an elegant bright red gown, holding her jazz guitar. Her warm, lazy vocals interpret this classic jazz ballad with deep emotion and delicacy, showcasing her effortless mastery of self-accompaniment. The most stunning moment occurs during the middle improvisation, where she demonstrates a \"synchronized guitar and vocal Scatting\" technique reminiscent of jazz legend George Benson. She skillfully merges her voice with the guitar notes into a single entity, pushing her personal technique to the limit and injecting breathtaking musical sparks into the entire performance."
       }
     }
   },

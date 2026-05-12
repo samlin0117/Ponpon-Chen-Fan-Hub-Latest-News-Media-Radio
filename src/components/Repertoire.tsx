@@ -62,14 +62,25 @@ const Repertoire: React.FC = () => {
     return result;
   }, [searchQuery, activeFilter, filterType, localizedSongs]);
 
-  // Lock body scroll when modal is open
+  // Lock body scroll when modal is open and handle scrollbar jitter
   useEffect(() => {
+    const navbar = document.querySelector('nav');
     if (selectedSong) {
+      // Calculate scrollbar width
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      if (navbar) navbar.style.paddingRight = `${scrollbarWidth}px`;
     } else {
       document.body.style.overflow = 'unset';
+      document.body.style.paddingRight = '0px';
+      if (navbar) navbar.style.paddingRight = '0px';
     }
-    return () => { document.body.style.overflow = 'unset'; };
+    return () => { 
+      document.body.style.overflow = 'unset'; 
+      document.body.style.paddingRight = '0px';
+      if (navbar) navbar.style.paddingRight = '0px';
+    };
   }, [selectedSong]);
 
   return (

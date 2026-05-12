@@ -34,5 +34,26 @@ export const repertoireData: RepertoireSong[] = [
     composer: 'Jimmy McHugh, Dorothy Fields',
     lyricsLink: 'https://genius.com/Billie-holiday-on-the-sunny-side-of-the-street-lyrics',
     youtubeId: '0uxWxdIMtbk'
+  },
+  {
+    id: 'them-there-eyes',
+    year: '1930',
+    composer: 'Maceo Pinkard, Doris Tauber, William Tracey',
+    lyricsLink: 'https://genius.com/Billie-holiday-them-there-eyes-lyrics',
+    youtubeId: 'PwxGVbZvWXI'
+  },
+  {
+    id: 'route-66',
+    year: '1946',
+    composer: 'Bobby Troup',
+    lyricsLink: 'https://genius.com/Nat-king-cole-route-66-lyrics',
+    youtubeId: 'TwpQd-D4Lf8'
+  },
+  {
+    id: 'but-not-for-me',
+    year: '1930',
+    composer: 'George Gershwin, Ira Gershwin',
+    lyricsLink: 'https://genius.com/Chet-baker-but-not-for-me-lyrics',
+    youtubeId: 'KmhrMOit4dI'
   }
 ];
