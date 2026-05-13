@@ -117,7 +117,7 @@
   },
   "quiz": {
     "title": "Ponpon Knowledge Quiz",
-    "description": "How much do you know about Ponpon's jazz journey?<br/>10 random questions, 10 points each. Can you get a perfect 100?",
+    "description": "How much do you know about Ponpon's jazz journey?<br/>10 random questions from the pool. 10 points each, aim for a perfect score!",
     "start": "Start Challenge",
     "question_label": "Question {{current}} / {{total}}",
     "points_label": "Current Score",
@@ -312,7 +312,7 @@
       },
       {
         "id": 16,
-        "question": "In Sep 2022, she released her first original MV. This song was actually written when she was 15. What is the title?",
+        "question": "In Sep 2022, she released her first original MV. This song was actually written when she was 18. What is the title?",
         "options": [
           "Finding Someone Like You on the Edge",
           "Jazz Rhapsody",
@@ -320,7 +320,7 @@
           "Proud Journey"
         ],
         "correctAnswer": 0,
-        "explanation": "Her first original MV, 'Finding Someone Like You on the Edge' (找到一樣在邊緣徘徊中的你), was written when she was 15."
+        "explanation": "Her first original MV, 'Finding Someone Like You on the Edge' (找到一樣在邊緣徘徊中的你), was written when she was 18."
       },
       {
         "id": 17,
@@ -597,6 +597,66 @@
         ],
         "correctAnswer": 0,
         "explanation": "In April 2021, Ponpon was interviewed by host CafeCat on Radio Taiwan International's program \"Music Essence\", marking her first-ever solo radio interview."
+      },
+      {
+        "id": 41,
+        "question": "On Sep 20, 2025, Ponpon performed in San Francisco for the first time. What was the name of the venue?",
+        "options": [
+          "Blue Note San Francisco",
+          "Biscuits & Blues",
+          "SFJAZZ Center",
+          "The Fillmore"
+        ],
+        "correctAnswer": 1,
+        "explanation": "On September 20, 2025, Ponpon made her San Francisco debut at Biscuits & Blues, located at 401 Mason St."
+      },
+      {
+        "id": 42,
+        "question": "At her Biscuits & Blues performance, which classic Teresa Teng Chinese song did Ponpon rearrange in jazz style?",
+        "options": [
+          "Tian Mi Mi (Sweet)",
+          "Ye Lai Xiang (Tuberose)",
+          "The Moon Represents My Heart (月亮代表我的心)",
+          "I Only Care About You (我只在乎你)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Ponpon performed a jazz arrangement of Teresa Teng's iconic classic 'The Moon Represents My Heart' (月亮代表我的心) at Biscuits & Blues, receiving an enthusiastic response from the audience."
+      },
+      {
+        "id": 43,
+        "question": "In 2026, Ponpon was invited to become the annual Spotlight Artist for which world-renowned instrument brand?",
+        "options": [
+          "Fender",
+          "Martin",
+          "Gibson",
+          "PRS"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In 2026, Ponpon's exceptional guitar talent was recognized by the world's top guitar brand Gibson, and she was invited to become Gibson's Spotlight Artist of the Year."
+      },
+      {
+        "id": 44,
+        "question": "What is the guitar model Ponpon used when performing 'World News Polka'?",
+        "options": [
+          "Ibanez PM200",
+          "Gibson ES-175",
+          "D'Angelico EXL-1",
+          "Fender Telecaster"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In her ABC News performance, Ponpon used the classic Gibson ES-175 hollow body jazz guitar."
+      },
+      {
+        "id": 45,
+        "question": "Who lent Ponpon her Gibson ES-175 electric guitar?",
+        "options": [
+          "Tom Weir",
+          "George Benson",
+          "Geddy Lin (林正如)",
+          "Randy Waldman"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The classic Gibson ES-175 was generously lent to Ponpon by her mentor, Geddy Lin (founder of Riverside Music), to accompany her studies in the US."
       }
     ]
   },
@@ -682,7 +742,15 @@
       },
       "but-not-for-me": {
         "title": "But Not for Me",
-        "background": "If love songs exist to celebrate the beauty of romance, then \"But Not For Me\" is an inverse love song dedicated to those \"forgotten by Cupid.\" It is witty, self-deprecating, yet heartbreakingly beautiful—one of the most iconic anthems of unrequited love and heartbreak in jazz history.<br/><br/>📍 Historical Background: A Masterpiece by the Golden Broadway Duo<br/>Born in 1930, this song was composed by the greatest brothers in American music history—George Gershwin (music) and Ira Gershwin (lyrics). Originally written for the Broadway musical \"Girl Crazy,\" it arrived in an era when Hollywood and Broadway were constantly selling \"romantic myths\" to the public. The Gershwin brothers, however, took the opposite path, writing a song that burst the pink bubbles with a touch of realism. Far from being buried by time, it resonated so deeply with audiences that it has remained a beloved jazz standard for nearly a century.<br/><br/>🌧️ Atmosphere: \"Sober Romance\" Amidst a Sweet World<br/>While the melody is exquisitely beautiful and tinged with melancholy, the lyrics cast the singer as an observer on the edge of a bustling dance floor. Watching those \"fools in love\" with a cool gaze, the protagonist wryly admits: those wonderful things just aren't meant for me.<br/><br/>💔 Key Lyrical Meanings: Witty Self-Deprecation Breaking Romantic Myths<br/><br/>Disconnected from the Romantic World:<br/>The song opens with a direct admission: \"They're writing songs of love, but not for me. / A lucky star's above, but not for me.\" It creates a sharp contrast between the romantic atmosphere of the surroundings and the protagonist's solitary situation.<br/><br/>Seeing Through the Essence of Love:<br/>The lyrics mock cliché romantic tropes, describing love as an illusion: \"With love to lead the way / I've found more clouds of gray / Than any Russian play could guarantee.\" Comparing the bleakness of love to a tragic Russian play is a stroke of lyrical genius.<br/><br/><br/>🌟 Ponpon's Interpretation<br/><br/>In this performance of \"But Not For Me,\" Ponpon appears charmingly in an elegant bright red gown, holding her jazz guitar. Her warm, lazy vocals interpret this classic jazz ballad with deep emotion and delicacy, showcasing her effortless mastery of self-accompaniment. The most stunning moment occurs during the middle improvisation, where she demonstrates a \"synchronized guitar and vocal Scatting\" technique reminiscent of jazz legend George Benson. She skillfully merges her voice with the guitar notes into a single entity, pushing her personal technique to the limit and injecting breathtaking musical sparks into the entire performance."
+        "background": "If love songs exist to celebrate the beauty of romance, then \"But Not For Me\" is an inverse love song dedicated to those \"forgotten by Cupid.\" It is witty, self-deprecating, yet heartbreakingly beautiful—one of the most iconic anthems of unrequited love and heartbreak in jazz history.<br/><br/>📍 Historical Background: A Masterpiece by the Golden Broadway Duo<br/>Born in 1930, this song was composed by the greatest brothers in American music history—George Gershwin (music) and Ira Gershwin (lyrics). Originally written for the Broadway musical \"Girl Crazy,\" it arrived in an era when Hollywood and Broadway were constantly selling \"romantic myths\" to the public. The Gershwin brothers, however, took the opposite path, writing a song that burst the pink bubbles with a touch of realism. Far from being buried by time, it resonated so deeply with audiences that it has remained a beloved jazz standard for nearly a century.<br/><br/>🌧️ Atmosphere: \"Sober Romance\" Amidst a Sweet World<br/>While the melody is exquisitely beautiful and tinged with melancholy, the lyrics cast the singer as an observer on the edge of a bustling dance floor. Watching those \"fools in love\" with a cool gaze, the protagonist wryly admits: those wonderful things just aren't meant for me.<br/><br/>💔 Key Lyrical Meanings: Witty Self-Deprecation Breaking Romantic Myths<br/><br/>Disconnected from the Romantic World:<br/>The song opens with a direct admission: \"They're writing songs of love, but not for me. / A lucky star's above, but not for me.\" It creates a sharp contrast between the romantic atmosphere of the surroundings and the protagonist's solitary situation.<br/><br/>Seeing Through the Essence of Love:<br/>The lyrics mock cliché romantic tropes, describing love as an illusion: \"With love to lead the way / I've found more clouds of gray / Than any Russian play could guarantee.\" Comparing the bleakness of love to a tragic Russian play is a stroke of lyrical genius.<br/><br/><br/>🌟 Ponpon's Interpretation<br/><br/>In this performance of \"But Not For Me,\" Ponpon appears charmingly in an elegant red gown, holding her jazz guitar. Her warm, lazy vocals interpret this classic jazz ballad with deep emotion and delicacy, showcasing her effortless mastery of self-accompaniment. The most stunning moment occurs during the middle improvisation, where she demonstrates a \"synchronized guitar and vocal Scatting\" technique reminiscent of jazz legend George Benson. She skillfully merges her voice with the guitar notes into a single entity, pushing her personal technique to the limit and injecting breathtaking musical sparks into the entire performance."
+      },
+      "how-high-the-moon": {
+        "title": "How High The Moon",
+        "background": "\"How High The Moon\" is one of the most iconic standards in jazz history and famously served as the ultimate canvas for improvisation during the Bebop era.<br/><br/>📍 Historical Background: From Broadway to the Anthem of Bebop<br/>Composed in 1940 for the Broadway revue \"Two for the Show,\" the song's true legacy was cemented during the Bebop revolution of the 1940s. Because of its challenging and endlessly flowing chord progression, jazz legends like Charlie Parker used its chords to compose entirely new, complex melodies (such as the famous \"Ornithology\"). This made \"How High The Moon\" the ultimate proving ground for a jazz musician's improvisational skills. Later, the First Lady of Song, Ella Fitzgerald, elevated it to legendary status with one of the greatest Scatting performances ever recorded.<br/><br/>🌧️ Atmosphere & Lyrical Meaning: An Unreachable Love<br/>The lyrics poetically link \"love\" to the \"moon,\" illustrating deep longing and desire. The opening lines, \"Somewhere there's music, how faint the tune / Somewhere there's heaven, how high the moon,\" use the moon as a metaphor for love that feels distant and unattainable. When a lover is far away, heaven and music seem faint and unreachable, waiting for love's return to bring them back to reality.<br/><br/>🌟 Ponpon's Interpretation<br/>In this performance, Ponpon showcases her signature talent to a public audience for the first time: her \"synchronized guitar and vocal Scatting.\" Holding her jazz guitar, she gracefully delivers the classic melody with her clear, lazy, and captivating vocals. During the mid-song improvisation, she masterfully merges her voice with the guitar notes, perfectly recreating the iconic technique of jazz master George Benson. This flawless combination of instrumental virtuosity and vocal talent not only pays homage to the improvisational spirit of the Bebop era but also breathes a fresh, mesmerizing energy into this historic jazz standard."
+      },
+      "bennys-from-heaven": {
+        "title": "Benny's From Heaven",
+        "background": "\"Benny's From Heaven\" is a brilliant and humorous classic in the Vocalese jazz tradition. It is a witty parody of the 1936 jazz standard \"Pennies from Heaven,\" with special lyrics written and popularized by Vocalese pioneer Eddie Jefferson.<br/><br/>📍 Historical Background: The Humorous Revolution of Vocalese<br/>In the 1950s and 60s, a new singing style called \"Vocalese\" emerged, where vocalists wrote and sang lyrics to preexisting instrumental jazz solos. Eddie Jefferson completely transformed the originally sweet and romantic \"Pennies from Heaven\" into a masterpiece of dark comedy. His 1977 release (featured on the album 'The Main Man') of this version quickly became a legendary and highly entertaining anomaly among jazz enthusiasts.<br/><br/>🌧️ Atmosphere & Lyrical Meaning: A Dark Comedy of Infidelity<br/>The lyrics tell an absurd and hilarious story: a soldier returns home after being deployed overseas for three long years, only to find his wife nursing a brand new baby boy named Benny. When the baffled husband questions her, the wife stubbornly denies any infidelity. Instead, she points to the sky and swears it was a miracle, claiming that \"Benny's from Heaven.\" Sung from the husband's perspective, the song is filled with disbelief, helplessness, and self-deprecation, turning a tragic tale of betrayal into a side-splitting comedy.<br/><br/>🌟 Ponpon's Interpretation<br/>In this performance, Ponpon showcases her incredible talent as a musical storyteller. Instead of simply singing the melody, she fully embodies the role of the bewildered husband. Through her expressive facial expressions, animated body language, and theatrical vocal delivery, she brings this \"domestic tragedy\" to life with vivid humor. Her rhythmic articulation syncs perfectly with the swinging groove of her guitar. She successfully delivers the stand-up comedy essence of Vocalese jazz, keeping the audience engaged. Moreover, she brilliantly incorporates her signature \"whistling improvisation\" into the performance. The clear, lively whistling not only enriches the musical texture but also fills the room with laughter and delight."
       }
     }
   },

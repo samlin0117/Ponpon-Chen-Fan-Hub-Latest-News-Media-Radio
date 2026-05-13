@@ -117,7 +117,7 @@
   },
   "quiz": {
     "title": "Ponpon 知識大考驗",
-    "description": "你對 Ponpon 的爵士旅程了解多少呢？<br/>從題庫中隨機抽出 10 題，每題 10 分，滿分 100！",
+    "description": "您對 Ponpon 的爵士旅程了解多少？<br/>從題庫中隨機抽取 10 題，每題 10 分，看看您能拿幾分！",
     "start": "開始挑戰",
     "question_label": "第 {{current}} / {{total}} 題",
     "points_label": "目前得分",
@@ -312,7 +312,7 @@
       },
       {
         "id": 16,
-        "question": "2022年 9 月，她正式發布了首支原創 MV，這首歌其實是她 15 歲時的創作，歌名是？",
+        "question": "2022年 9 月，她正式發布了首支原創 MV，這首歌其實是她 18 歲時的創作，歌名是？",
         "options": [
           "找到一樣在邊緣徘徊中的你",
           "爵士狂想曲",
@@ -320,7 +320,7 @@
           "驕傲的旅程"
         ],
         "correctAnswer": 0,
-        "explanation": "2022年9月發布的首支原創 MV《找到一樣在邊緣徘徊中的你》，是她 15 歲時的創作。"
+        "explanation": "2022年9月發布的首支原創 MV《找到一樣在邊緣徘徊中的你》，是她 18 歲時的創作。"
       },
       {
         "id": 17,
@@ -577,6 +577,66 @@
         ],
         "correctAnswer": 0,
         "explanation": "ABC News 的製作團隊是在 YouTube 上看到 Ponpon 的這兩部演出影片後，深受其魅力吸引而發出邀約。"
+      },
+      {
+        "id": 41,
+        "question": "2025 年 9 月 20 日，Ponpon 首次在舊金山登台演出，請問演出場地是哪裡？",
+        "options": [
+          "Blue Note San Francisco",
+          "Biscuits & Blues",
+          "SFJAZZ Center",
+          "The Fillmore"
+        ],
+        "correctAnswer": 1,
+        "explanation": "2025年9月20日，Ponpon 首次踏上舊金山的舞台，演出場地是位於 401 Mason St 的 Biscuits & Blues。"
+      },
+      {
+        "id": 42,
+        "question": "在 Biscuits & Blues 的演出中，Ponpon 改編了鄧麗君的哪一首中文經典歌曲？",
+        "options": [
+          "甜蜜蜜",
+          "夜來香",
+          "月亮代表我的心",
+          "我只在乎你"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Ponpon 在 Biscuits & Blues 的現場演出中，以爵士風格改編詮釋了鄧麗君的經典名曲《月亮代表我的心》，獲得現場觀眾熱烈迴響。"
+      },
+      {
+        "id": 43,
+        "question": "2026 年，Ponpon 獲邀成為哪一個國際知名樂器品牌的年度焦點藝術家（Spotlight Artist）？",
+        "options": [
+          "Fender",
+          "Martin",
+          "Gibson",
+          "PRS"
+        ],
+        "correctAnswer": 2,
+        "explanation": "2026 年，Ponpon 憑藉出色的吉他才華，受到全球頂尖吉他品牌 Gibson 的肯定，獲邀擔任 Gibson 年度焦點藝術家。"
+      },
+      {
+        "id": 44,
+        "question": "Ponpon 在演唱 《World News Polka》時所使用的吉他型號是什麼？",
+        "options": [
+          "Ibanez PM200",
+          "Gibson ES-175",
+          "D'Angelico EXL-1",
+          "Fender Telecaster"
+        ],
+        "correctAnswer": 1,
+        "explanation": "在 ABC News 的演出中，Ponpon 使用的是經典的 Gibson ES-175 爵士空心電吉他。"
+      },
+      {
+        "id": 45,
+        "question": "Ponpon 的 Gibson ES-175 電吉他是誰借給她的？",
+        "options": [
+          "Tom Weir",
+          "George Benson",
+          "Geddy Lin 林正如",
+          "Randy Waldman"
+        ],
+        "correctAnswer": 2,
+        "explanation": "該把經典的 Gibson ES-175 是由 Ponpon 的恩師、河岸留言創辦人林正如（Geddy Lin）老師大方出借，伴隨她遠赴美國深造。"
       }
     ]
   },
@@ -662,7 +722,15 @@
       },
       "but-not-for-me": {
         "title": "But Not for Me",
-        "background": "如果說情歌是為了讚頌愛情的美好而存在，那麼《But Not For Me》（但不是為我）就是一首專門唱給那些「被愛神遺忘的人」聽的反向情歌。它幽默、自嘲，卻又美得讓人心碎，是爵士樂中最具代表性的單戀與失戀金曲之一。<br/><br/>📍 時代背景：百老匯黃金兄弟檔的傳世之作<br/>這首歌誕生於 1930 年，由美國音樂史上最偉大的兄弟檔——喬治·蓋希文（George Gershwin） 作曲、艾拉·蓋希文（Ira Gershwin） 作詞。這首歌最初是為百老匯音樂劇《Girl Crazy》所創作。在那個好萊塢與百老匯不斷向大眾推銷「浪漫愛情神話」的年代，蓋希文兄弟卻反其道而行，寫出了這首戳破粉紅泡泡、帶點現實主義色彩的歌曲。它不僅沒有被時代淹沒，反而因為寫進了無數人心底的共鳴，成為了傳唱近百年的爵士標準曲。<br/><br/>🌧️ 歌曲意境：眾人皆甜我獨苦的「清醒浪漫」<br/>歌曲旋律本身非常優美、帶有一絲憂鬱，但歌詞卻像是一個站在熱鬧舞池邊緣的旁觀者，冷冷地看著那些陷入熱戀的傻瓜，然後苦笑著承認：這些美好的事情，似乎永遠都不會發生在我身上。<br/><br/>💔 歌詞的重要含意：打破浪漫迷思的機智自嘲<br/><br/>與浪漫世界脫節：<br/>歌曲開頭直接破題：「They're writing songs of love, but not for me. / A lucky star's above, but not for me.」（人們寫著一首首浪漫的情歌，但都不是寫給我的；幸運星在天上閃耀，但也不是為我照耀。）強烈對比出周遭的浪漫氣氛與自己孤單處境的落差。<br/><br/>看透愛情的本質：<br/>歌詞中嘲諷了那些老掉牙的愛情套路，並形容愛情只是一場幻覺：「With love to lead the way / I've found more clouds of gray / Than any Russian play could guarantee.」（讓愛情來指引方向？我發現這帶來的烏雲，簡直比任何一齣悲慘的俄羅斯戲劇還要多。）用俄國悲劇來比喻愛情的慘淡，堪稱神來一筆。<br/><br/>🌟 Ponpon 的演繹特色<br/>在這段《But Not For Me》的演出中，Ponpon 抱著爵士吉他，以一襲亮紅色的優雅禮服迷人登場。她溫暖慵懶的嗓音將這首經典爵士慢板詮釋得深情細膩，完美展現游刃有餘的自彈自唱功力。影片中最令人驚豔的，是她在中段即興時，展現出宛如吉他大師 George Benson 般「吉他與人聲 Scatting 同步」的絕技。她巧妙地讓歌聲與琴音合而為一，音符緊密貼合，不僅將個人技巧發揮到極致，也為整場演出注入了令人驚嘆的音樂火花。"
+        "background": "如果說情歌是為了讚頌愛情的美好而存在，那麼《But Not For Me》（但不是為我）就是一首專門唱給那些「被愛神遺忘的人」聽的反向情歌。它幽默、自嘲，卻又美得讓人心碎，是爵士樂中最具代表性的單戀與失戀金曲之一。<br/><br/>📍 時代背景：百老匯黃金兄弟檔的傳世之作<br/>這首歌誕生於 1930 年，由美國音樂史上最偉大的兄弟檔——喬治·蓋希文（George Gershwin） 作曲、艾拉·蓋希文（Ira Gershwin） 作詞。這首歌最初是為百老匯音樂劇《Girl Crazy》所創作。在那個好萊塢與百老匯不斷向大眾推銷「浪漫愛情神話」的年代，蓋希文兄弟卻反其道而行，寫出了這首戳破粉紅泡泡、帶點現實主義色彩的歌曲。它不僅沒有被時代淹沒，反而因為寫進了無數人心底的共鳴，成為了傳唱近百年的爵士標準曲。<br/><br/>🌧️ 歌曲意境：眾人皆甜我獨苦的「清醒浪漫」<br/>歌曲旋律本身非常優美、帶有一絲憂鬱，但歌詞卻像是一個站在熱鬧舞池邊緣的旁觀者，冷冷地看著那些陷入熱戀的傻瓜，然後苦笑著承認：這些美好的事情，似乎永遠都不會發生在我身上。<br/><br/>💔 歌詞的重要含意：打破浪漫迷思的機智自嘲<br/><br/>與浪漫世界脫節：<br/>歌曲開頭直接破題：「They're writing songs of love, but not for me. / A lucky star's above, but not for me.」（人們寫著一首首浪漫的情歌，但都不是寫給我的；幸運星在天上閃耀，但也不是為我照耀。）強烈對比出周遭的浪漫氣氛與自己孤單處境的落差。<br/><br/>看透愛情的本質：<br/>歌詞中嘲諷了那些老掉牙的愛情套路，並形容愛情只是一場幻覺：「With love to lead the way / I've found more clouds of gray / Than any Russian play could guarantee.」（讓愛情來指引方向？我發現這帶來的烏雲，簡直比任何一齣悲慘的俄羅斯戲劇還要多。）用俄國悲劇來比喻愛情的慘淡，堪稱神來一筆。<br/><br/>🌟 Ponpon 的演繹特色<br/>在這段《But Not For Me》的演出中，Ponpon 抱著爵士吉他，以一襲紅色的優雅禮服迷人登場。她溫暖慵懶的嗓音將這首經典爵士慢板詮釋得深情細膩，完美展現游刃有餘的自彈自唱功力。影片中最令人驚豔的，是她在中段即興時，展現出宛如吉他大師 George Benson 般「吉他與人聲 Scatting 同步」的絕技。她巧妙地讓歌聲與琴音合而為一，音符緊密貼合，不僅將個人技巧發揮到極致，也為整場演出注入了令人驚嘆的音樂火花。"
+      },
+      "how-high-the-moon": {
+        "title": "How High The Moon",
+        "background": "《How High The Moon》是爵士樂史上最具指標性的標準曲之一，更是咆勃爵士（Bebop）時代樂手們最愛用來即興較勁的經典和聲架構。<br/><br/>📍 時代背景：從百老匯到咆勃爵士的國歌<br/>這首歌誕生於 1940 年，最初是為百老匯音樂劇《Two for the Show》所寫。然而，真正讓它名留青史的，是 1940 年代咆勃爵士（Bebop）革命。由於它的和聲行進（Chord progression）極具挑戰性與流動感，當時的爵士巨匠如 Charlie Parker 等人，常以它的和絃為基礎，創作出全新的複雜旋律（例如著名的《Ornithology》）。這讓《How High The Moon》成為了爵士樂手證明自己即興實力的「終極試金石」。隨後，爵士天后 Ella Fitzgerald 更以這首歌展現了史上最偉大的 Scatting（擬聲吟唱）表演，將它推向了神壇。<br/><br/>🌧️ 歌曲意境與歌詞含意：遙不可及的愛與月亮<br/>歌詞將「愛情」與「月亮」相連繫，描繪一種思念與渴望。開頭唱道：「Somewhere there's music, how faint the tune / Somewhere there's heaven, how high the moon.」（某處有著微弱的音樂，某處有著天堂，而月亮有多高？）月亮在此象徵著遙不可及的愛情，當愛人不在身邊時，美好的事物似乎都顯得虛無縹緲。直到愛人出現，那些遙遠的音符與月光，才會真正照進心裡。<br/><br/>🌟 Ponpon 的演繹特色<br/>在這場演出中，Ponpon 首度在公開場合向觀眾展示了她的招牌絕活——「吉他與人聲 Scatting 同步」。她在影片中抱著爵士吉他，優雅而自信地以清亮慵懶的嗓音詮釋這首經典名曲。在歌曲中段的即興橋段，她巧妙地讓歌聲與吉他琴音合而為一，完美復刻了吉他大師 George Benson 的經典技巧。這種將極致的樂器技巧與人聲天賦結合的演出，不僅向咆勃時代的即興精神致敬，也為這首歷史悠久的爵士經典注入了屬於 Ponpon 的迷人火花。"
+      },
+      "bennys-from-heaven": {
+        "title": "Benny's From Heaven",
+        "background": "《Benny's From Heaven》是一首極具幽默感與戲劇張力的 Vocalese（爵士填詞演唱）經典作品。它改編自 1936 年的爵士標準曲《Pennies from Heaven》，由 Vocalese 先驅 Eddie Jefferson 重新填詞並唱紅。<br/><br/>📍 時代背景：Vocalese 的幽默革命<br/>在 1950 到 1960 年代，爵士樂手們開始流行一種名為「Vocalese」的演唱形式，也就是將原本只有樂器演奏的即興獨奏（Solo）旋律填上歌詞來演唱。Eddie Jefferson 將原本浪漫溫馨的《Pennies from Heaven》大改編，賦予了它一個極具黑色幽默的全新靈魂，讓這首歌在 1977 年發表（收錄於專輯《The Main Man》）後成為了爵士樂迷津津樂道的奇作。<br/><br/>🌧️ 歌曲意境與歌詞含意：一頂綠帽子的黑色喜劇<br/>歌詞講述了一個荒誕又惹人發笑的故事：一位士兵離家服役了整整三年，滿心歡喜地退伍回家後，卻發現妻子懷裡抱著一個剛出生的男嬰，名叫 Benny。面對丈夫的質疑，妻子堅決不承認自己出軌，反而指著天花板發誓，聲稱這是一個奇蹟，說「Benny 是從天上掉下來的（Benny's from Heaven）」。整首歌以第一人稱視角，充滿了丈夫的無奈、傻眼與自嘲，把一個悲慘的「戴綠帽」故事唱成了令人捧腹的喜劇。<br/><br/>🌟 Ponpon 的演繹特色<br/>Ponpon 在這場演出中，展現了她身為「說故事歌手（Storyteller）」的絕佳天賦。她不再只是單純地演唱旋律，而是化身為那位無奈的丈夫，用豐富的臉部表情、生動的肢體動作與戲劇化的語氣，將這齣「家庭慘劇」演繹得活靈活現。她的咬字充滿節奏感，與吉他的搖擺律動完美契合，成功地將這種帶有脫口秀性質的 Vocalese 爵士風格，以極具個人魅力的方式呈現給觀眾。此外，她還在演出中巧妙地融入了她的招牌絕活「口哨即興（Whistling）」，清脆靈動的口哨聲不僅豐富了音樂層次，更讓全場充滿了笑聲與驚喜。"
       }
     }
   },

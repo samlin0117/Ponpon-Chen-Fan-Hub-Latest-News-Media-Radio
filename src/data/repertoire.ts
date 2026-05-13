@@ -55,5 +55,19 @@ export const repertoireData: RepertoireSong[] = [
     composer: 'George Gershwin, Ira Gershwin',
     lyricsLink: 'https://genius.com/Chet-baker-but-not-for-me-lyrics',
     youtubeId: 'KmhrMOit4dI'
+  },
+  {
+    id: 'how-high-the-moon',
+    year: '1940',
+    composer: 'Morgan Lewis, Nancy Hamilton',
+    lyricsLink: 'https://genius.com/Ella-fitzgerald-how-high-the-moon-lyrics',
+    youtubeId: '_BVm-hixXt4'
+  },
+  {
+    id: 'bennys-from-heaven',
+    year: '1977',
+    composer: 'Arthur Johnston, Eddie Jefferson',
+    lyricsLink: 'https://genius.com/Eddie-jefferson-bennys-from-heaven-lyrics',
+    youtubeId: 'p3v2XboDUEU'
   }
 ];
