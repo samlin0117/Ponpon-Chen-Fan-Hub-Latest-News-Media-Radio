@@ -67,7 +67,7 @@ export const repertoireData: RepertoireSong[] = [
     id: 'bennys-from-heaven',
     year: '1977',
     composer: 'Arthur Johnston, Eddie Jefferson',
-    lyricsLink: 'https://genius.com/Eddie-jefferson-bennys-from-heaven-lyrics',
+    lyricsLink: 'https://www.lyrics.com/sublyric/190292/Eddie+Jefferson/Bennie%E2%80%99s+from+Heaven#google_vignette',
     youtubeId: 'p3v2XboDUEU'
   }
 ];

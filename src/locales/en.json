@@ -599,6 +599,18 @@
         "explanation": "In April 2021, Ponpon was interviewed by host CafeCat on Radio Taiwan International's program \"Music Essence\", marking her first-ever solo radio interview."
       },
       {
+        "id": 40,
+        "question": "Which two YouTube videos of Ponpon did the ABC News team watch before inviting her to adapt 'World News Polka'?",
+        "options": [
+          "'How High The Moon' and 'But Not For Me'",
+          "'Cheek to Cheek' and 'Fly Me to the Moon'",
+          "'On the Sunny Side of the Street' and 'All of Me'",
+          "'Cheek to Cheek' and 'How High The Moon'"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The ABC News production team was charmed by Ponpon's performances in these two YouTube videos and subsequently sent the invitation."
+      },
+      {
         "id": 41,
         "question": "On Sep 20, 2025, Ponpon performed in San Francisco for the first time. What was the name of the venue?",
         "options": [
