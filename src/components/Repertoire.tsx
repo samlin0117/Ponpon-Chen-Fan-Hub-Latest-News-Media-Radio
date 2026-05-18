@@ -290,9 +290,9 @@ const Repertoire: React.FC = () => {
                     <span>{repoTranslations.viewLyrics || 'View Lyrics'}</span>
                   </a>
                 )}
-                {selectedSong.youtubeId && (
+                {(selectedSong.youtubeId || selectedSong.videoLink) && (
                   <a
-                    href={`https://youtube.com/watch?v=${selectedSong.youtubeId}`}
+                    href={selectedSong.videoLink || `https://youtube.com/watch?v=${selectedSong.youtubeId}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-gold/20 hover:bg-gold/30 border border-gold/30 rounded-xl text-sm text-gold-light hover:text-white transition-all"

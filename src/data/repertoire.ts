@@ -1,9 +1,10 @@
 export interface RepertoireSong {
-  id: string;
+  id: string; // Used as key for localization
   year: string;
   composer: string;
   lyricsLink?: string;
   youtubeId?: string;
+  videoLink?: string;
 }
 
 export const repertoireData: RepertoireSong[] = [
@@ -69,5 +70,33 @@ export const repertoireData: RepertoireSong[] = [
     composer: 'Arthur Johnston, Eddie Jefferson',
     lyricsLink: 'https://www.lyrics.com/sublyric/190292/Eddie+Jefferson/Bennie%E2%80%99s+from+Heaven#google_vignette',
     youtubeId: 'p3v2XboDUEU'
+  },
+  {
+    id: 'if-i-had-you',
+    year: '1928',
+    composer: 'Jimmy Campbell, Reginald Connelly, Ted Shapiro',
+    lyricsLink: 'https://genius.com/Frank-sinatra-if-i-had-you-lyrics',
+    youtubeId: 'WB2B_y2jbhQ'
+  },
+  {
+    id: 'ive-never-been-in-love-before',
+    year: '1950',
+    composer: 'Frank Loesser',
+    lyricsLink: 'https://genius.com/Chet-baker-ive-never-been-in-love-before-lyrics',
+    youtubeId: 'ckiVCfDHduk'
+  },
+  {
+    id: 'sway',
+    year: '1953',
+    composer: 'Pablo Beltrán Ruiz, Norman Gimbel',
+    lyricsLink: 'https://www.azlyrics.com/lyrics/michaelbuble/sway.html',
+    youtubeId: '5YdGLRsudOE'
+  },
+  {
+    id: 'i-cant-give-you-anything-but-love',
+    year: '1928',
+    composer: 'Jimmy McHugh, Dorothy Fields',
+    lyricsLink: 'https://www.azlyrics.com/lyrics/billieholiday/icantgiveyouanythingbutlove.html',
+    videoLink: 'https://www.facebook.com/watch/?ref=embed_video&v=1387294209248782'
   }
 ];
