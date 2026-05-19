@@ -65,11 +65,11 @@ export const repertoireData: RepertoireSong[] = [
     youtubeId: '_BVm-hixXt4'
   },
   {
-    id: 'bennys-from-heaven',
-    year: '1977',
-    composer: 'Arthur Johnston, Eddie Jefferson',
-    lyricsLink: 'https://www.lyrics.com/sublyric/190292/Eddie+Jefferson/Bennie%E2%80%99s+from+Heaven#google_vignette',
-    youtubeId: 'p3v2XboDUEU'
+    "id": "bennys-from-heaven",
+    "year": "1936",
+    "composer": "Arthur Johnston, Eddie Jefferson",
+    "lyricsLink": "https://www.lyrics.com/sublyric/190292/Eddie+Jefferson/Bennie%E2%80%99s+from+Heaven#google_vignette",
+    "youtubeId": "p3v2XboDUEU"
   },
   {
     id: 'if-i-had-you',
@@ -98,5 +98,19 @@ export const repertoireData: RepertoireSong[] = [
     composer: 'Jimmy McHugh, Dorothy Fields',
     lyricsLink: 'https://www.azlyrics.com/lyrics/billieholiday/icantgiveyouanythingbutlove.html',
     videoLink: 'https://www.facebook.com/watch/?ref=embed_video&v=1387294209248782'
+  },
+  {
+    "id": "its-been-a-long-long-time",
+    "year": "1945",
+    "composer": "Jule Styne, Sammy Cahn",
+    "lyricsLink": "https://genius.com/Harry-james-and-his-orchestra-its-been-a-long-long-time-lyrics",
+    "videoLink": "https://www.facebook.com/watch/?v=1364553878201641"
+  },
+  {
+    "id": "they-cant-take-that-away-from-me",
+    "year": "1937",
+    "composer": "George Gershwin, Ira Gershwin",
+    "lyricsLink": "https://genius.com/Frank-sinatra-they-cant-take-that-away-from-me-lyrics",
+    "videoLink": "https://www.facebook.com/reel/1177729904529661"
   }
 ];
