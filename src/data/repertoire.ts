@@ -112,5 +112,12 @@ export const repertoireData: RepertoireSong[] = [
     "composer": "George Gershwin, Ira Gershwin",
     "lyricsLink": "https://genius.com/Frank-sinatra-they-cant-take-that-away-from-me-lyrics",
     "videoLink": "https://www.facebook.com/reel/1177729904529661"
+  },
+  {
+    "id": "blue-skies",
+    "year": "1926",
+    "composer": "Irving Berlin",
+    "lyricsLink": "https://genius.com/Ella-fitzgerald-blue-skies-lyrics",
+    "videoLink": "https://www.instagram.com/p/C9g4xitu6qT/"
   }
 ];
