@@ -119,5 +119,24 @@ export const repertoireData: RepertoireSong[] = [
     "composer": "Irving Berlin",
     "lyricsLink": "https://genius.com/Ella-fitzgerald-blue-skies-lyrics",
     "videoLink": "https://www.instagram.com/p/C9g4xitu6qT/"
+  },
+  {
+    "id": "billies-bounce",
+    "year": "1945",
+    "composer": "Charlie Parker",
+    "videoLink": "https://www.instagram.com/p/C18e6XCL0G8/"
+  },
+  {
+    "id": "this-i-dig-of-you",
+    "year": "1960",
+    "composer": "Hank Mobley",
+    "videoLink": "https://www.youtube.com/watch?v=bCBVW_Xs-NY&t=60s"
+  },
+  {
+    "id": "they-all-laughed",
+    "year": "1937",
+    "composer": "George Gershwin, Ira Gershwin",
+    "lyricsLink": "https://genius.com/Ella-fitzgerald-they-all-laughed-lyrics",
+    "videoLink": "https://www.youtube.com/watch?v=XaiYQoDK6uM"
   }
 ];
