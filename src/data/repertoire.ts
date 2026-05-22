@@ -130,7 +130,7 @@ export const repertoireData: RepertoireSong[] = [
     "id": "this-i-dig-of-you",
     "year": "1960",
     "composer": "Hank Mobley",
-    "videoLink": "https://www.youtube.com/watch?v=bCBVW_Xs-NY&t=60s"
+    "videoLink": "https://www.youtube.com/watch?v=bCBVW_Xs-NY"
   },
   {
     "id": "they-all-laughed",
@@ -138,5 +138,40 @@ export const repertoireData: RepertoireSong[] = [
     "composer": "George Gershwin, Ira Gershwin",
     "lyricsLink": "https://genius.com/Ella-fitzgerald-they-all-laughed-lyrics",
     "videoLink": "https://www.youtube.com/watch?v=XaiYQoDK6uM"
+  },
+  {
+    id: 'almost-like-being-in-love',
+    year: '1947',
+    composer: 'Frederick Loewe, Alan Jay Lerner',
+    lyricsLink: 'https://genius.com/Nat-king-cole-almost-like-being-in-love-lyrics',
+    youtubeId: 'cFz6HHFAZ18'
+  },
+  {
+    id: 'destination-moon',
+    year: '1951',
+    composer: 'Marvin Fisher, Roy Alfred',
+    lyricsLink: 'https://genius.com/Nat-king-cole-destination-moon-lyrics',
+    youtubeId: 'kuJ4iRKAwz8'
+  },
+  {
+    id: 'skylark',
+    year: '1941',
+    composer: 'Hoagy Carmichael, Johnny Mercer',
+    lyricsLink: 'https://genius.com/Ella-fitzgerald-skylark-lyrics',
+    youtubeId: 'KemQ67OBJCk'
+  },
+  {
+    id: 'moon-river',
+    year: '1961',
+    composer: 'Henry Mancini, Johnny Mercer',
+    lyricsLink: 'https://genius.com/Audrey-hepburn-moon-river-lyrics',
+    youtubeId: 'S57lXI0jQ_o'
+  },
+  {
+    id: 'the-frim-fram-sauce',
+    year: '1945',
+    composer: 'Joe Ricardel, Redd Evans',
+    lyricsLink: 'https://genius.com/Nat-king-cole-the-frim-fram-sauce-lyrics',
+    youtubeId: 'FQ8HoS0HQxg'
   }
 ];
