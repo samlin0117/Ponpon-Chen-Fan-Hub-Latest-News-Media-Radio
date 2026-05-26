@@ -36,14 +36,14 @@ const Repertoire: React.FC = () => {
 
   const filteredSongs = useMemo(() => {
     let result = [...repertoireData];
-    
+
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
       result = result.filter(song => {
         const title = localizedSongs[song.id]?.title || '';
         return title.toLowerCase().includes(query) ||
-               song.year.includes(query) ||
-               song.composer.toLowerCase().includes(query);
+          song.year.includes(query) ||
+          song.composer.toLowerCase().includes(query);
       });
     } else if (activeFilter) {
       if (filterType === 'alpha') {
@@ -76,8 +76,8 @@ const Repertoire: React.FC = () => {
       document.body.style.paddingRight = '0px';
       if (navbar) navbar.style.paddingRight = '0px';
     }
-    return () => { 
-      document.body.style.overflow = 'unset'; 
+    return () => {
+      document.body.style.overflow = 'unset';
       document.body.style.paddingRight = '0px';
       if (navbar) navbar.style.paddingRight = '0px';
     };
@@ -123,7 +123,7 @@ const Repertoire: React.FC = () => {
               }}
             />
             {searchQuery && (
-              <button 
+              <button
                 onClick={() => setSearchQuery('')}
                 className="absolute inset-y-0 right-4 flex items-center text-gray-500 hover:text-white"
               >
@@ -135,7 +135,7 @@ const Repertoire: React.FC = () => {
 
         {/* Quick Navigation / Filters */}
         {!searchQuery && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -155,7 +155,7 @@ const Repertoire: React.FC = () => {
                 <Calendar className="w-4 h-4" /> Year
               </button>
             </div>
-            
+
             <div className="flex flex-wrap justify-center gap-2">
               <button
                 onClick={() => setActiveFilter(null)}
@@ -202,7 +202,7 @@ const Repertoire: React.FC = () => {
                     </h3>
                     <Music className="w-5 h-5 text-gold/20 group-hover:text-gold/50 flex-shrink-0 ml-3" />
                   </div>
-                  
+
                   <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-gray-400 uppercase mb-6">
                     <span className="bg-white/5 px-2 py-1 rounded">{song.year}</span>
                     <span className="truncate" title={song.composer}>{song.composer}</span>
@@ -242,7 +242,7 @@ const Repertoire: React.FC = () => {
               onClick={() => setSelectedSong(null)}
               className="absolute inset-0 bg-dark/80 backdrop-blur-sm"
             />
-            
+
             <motion.div
               initial={{ opacity: 0, y: 50, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -271,7 +271,7 @@ const Repertoire: React.FC = () => {
 
               {/* Modal Body */}
               <div className="p-6 overflow-y-auto custom-scrollbar">
-                <div 
+                <div
                   className="prose prose-invert prose-gold max-w-none text-gray-300 font-light leading-relaxed text-lg"
                   dangerouslySetInnerHTML={{ __html: localizedSongs[selectedSong.id]?.background || '' }}
                 />
