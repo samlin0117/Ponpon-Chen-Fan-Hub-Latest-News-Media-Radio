@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X, Trophy, ArrowRight, Star, Disc3 } from 'lucide-react';
+import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X, Trophy, ArrowRight, Star, Disc3, Users } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import CusdisComments from './components/CusdisComments';
@@ -8,6 +8,7 @@ import VideoCard from './components/VideoCard';
 import VideoGroupCard from './components/VideoGroupCard';
 import QuizGame from './components/QuizGame';
 import Repertoire from './components/Repertoire';
+import Mentors from './components/Mentors';
 
 
 import { Language } from './locales';
@@ -15,9 +16,12 @@ import { useTranslation } from './hooks/useTranslation';
 
 function MainContent() {
   const { t, lang, setLang } = useTranslation();
-  const [timelineFilter, setTimelineFilter] = useState<'all' | 'first'>('all');
+  const [timelineFilter, setTimelineFilter] = useState<'all' | 'first' | 'album'>('all');
   const timelineItems = t.timelineItems as any[];
-  const filteredTimelineItems = timelineItems.filter(item => timelineFilter === 'all' ? item.category !== 'first' : item.category === 'first');
+  const filteredTimelineItems = timelineItems.filter(item => {
+    if (timelineFilter === 'all') return item.category !== 'first' && item.category !== 'album';
+    return item.category === timelineFilter;
+  });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeVideoTab, setActiveVideoTab] = useState('p1');
   const location = useLocation();
@@ -264,6 +268,17 @@ function MainContent() {
                 {(t as any).repertoire?.description}
               </div>
             </Link>
+            <Link 
+              to="/mentors" 
+              className="relative flex items-center gap-3 px-6 py-3 bg-gold/10 hover:bg-gold/20 border border-gold/40 rounded-2xl text-gold-light text-sm font-bold tracking-widest transition-all hover:scale-105 shadow-[0_0_15px_rgba(212,175,55,0.1)] hover:shadow-gold/20 group"
+            >
+              <Users className="w-5 h-5 text-gold group-hover:-translate-y-1 transition-transform" /> 
+              <span>{(t as any).mentors?.title || '音樂推手'}</span>
+              {/* Tooltip */}
+              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-300 w-64 p-4 bg-dark/95 backdrop-blur-md border border-white/10 rounded-xl text-gray-300 text-xs font-normal leading-relaxed text-center shadow-2xl scale-95 group-hover:scale-100 origin-top">
+                <span dangerouslySetInnerHTML={{ __html: ((t as any).mentors?.description || '').split('<br/>')[0] }} />
+              </div>
+            </Link>
           </div>
 
           <motion.div 
@@ -278,12 +293,6 @@ function MainContent() {
             <p className="text-gray-300 leading-loose text-lg font-light md:text-xl text-left whitespace-pre-wrap max-w-3xl mx-auto">
               {t.about.description}
             </p>
-            
-
-            <div className="mt-16 inline-flex items-center justify-center space-x-4 border border-gold/30 rounded-full px-8 py-4 bg-dark/50">
-              <Music className="w-5 h-5 text-gold" />
-              <span className="text-sm tracking-widest uppercase text-gold-light">New Album 2026</span>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -298,6 +307,12 @@ function MainContent() {
         <Route path="/repertoire" element={
           <div className="pt-10">
             <Repertoire />
+          </div>
+        } />
+
+        <Route path="/mentors" element={
+          <div className="pt-20">
+            <Mentors />
           </div>
         } />
 
@@ -421,7 +436,18 @@ function MainContent() {
             <p className="text-gray-400 font-light max-w-xl mx-auto mb-8">{t.timeline.description}</p>
             
             {/* Filter Buttons */}
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-4 mb-16 relative z-10">
+            <button 
+              onClick={() => setTimelineFilter('album')}
+              className={`px-6 py-2.5 rounded-full text-sm font-medium tracking-wider transition-all duration-300 flex items-center gap-2 ${
+                timelineFilter === 'album' 
+                  ? 'bg-gold text-dark shadow-[0_0_20px_rgba(212,175,55,0.4)]' 
+                  : 'bg-dark-lighter border border-white/10 text-gray-400 hover:text-white hover:border-white/30'
+              }`}
+            >
+              <Music className="w-4 h-4" />
+              NEW ALBUM 2026
+            </button>
               <button 
                 onClick={() => setTimelineFilter('all')}
                 className={`px-6 py-2 rounded-full border transition-colors ${

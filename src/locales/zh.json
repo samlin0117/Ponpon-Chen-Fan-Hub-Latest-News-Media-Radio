@@ -41,11 +41,50 @@
     "article2_date": "2026-05-05",
     "page_desc": "感謝這些名人在各自的平台上推薦 Ponpon 的音樂，讓更多人認識她的才華。"
   },
+  "mentors": {
+    "title": "音樂推手",
+    "description": "Ponpon 音樂之路除了自身的努力外，一路上也遇到許多貴人幫助。<br/>這些音樂推手都是從 Ponpon 親口描述、新聞專訪與社群發文中得知。以下列出 Ponpon 較常提到的幾位重要人物，此外還有許多一路上幫助過她而未列出的貴人們。",
+    "close": "關閉",
+    "list": [
+      {
+        "name": "George Benson",
+        "role": "啟蒙偶像",
+        "shortDesc": "2020 年因為一段 YouTube 影片大受震撼，成為她休學赴美專攻爵士吉他的起點。2025 年在鳳凰城迎來奇蹟般的相遇，不僅見到了偶像，更獲得了一生受用的箴言...",
+        "detailedStory": [
+          {
+            "date": "2020年｜命運的啟蒙",
+            "content": "疫情停課期間，偶然看到大師邊彈吉他邊即興哼唱的影片，大受震撼，成為她休學赴美專攻爵士的關鍵起點。"
+          },
+          {
+            "date": "2024年8月｜遙遠的第一次",
+            "content": "買了能負擔得起的最貴門票，前往 Hollywood Bowl 觀看大師演出。即使只能坐在大螢幕前，仍覺得圓了夢。"
+          },
+          {
+            "date": "2025年1月｜奇蹟的鳳凰城工作坊",
+            "content": "得知大師舉辦工作坊，獨自開車 6 小時前往。在角落練琴時，誤打誤撞認識了大師的音樂總監 Randy Waldman。透過 Randy 帶領破例進入彩排室，在第一排觀看大師彩排，回想起隻身赴美的艱辛，激動爆哭一小時。<br/><br/>演出後受邀進入後台，親口對大師表達感謝。[HOVER_IMG:Benson握著她的手勉勵：<strong>「妳可以喜歡我的音樂，但千萬不要模仿我，妳要找到妳自己的聲音 (find your own voice)。」</strong>|https://scontent-tpe1-1.xx.fbcdn.net/v/t51.75761-15/476007965_18475892992050265_7723100454829646141_n.jpg?stp=dst-jpegr_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=GYagZj2z1TIQ7kNvwEDiP5E&_nc_oc=AdpDCKlgh-om0P1dzj0cvxmgw6jdnLzRruisUgtjJTdzDU7DhRVVGZavsw5H5i0PLwo&_nc_zt=23&se=-1&_nc_ht=scontent-tpe1-1.xx&_nc_gid=UMmNbmURNl4DBerI2wz8Yg&_nc_ss=7b2a8&oh=00_Af6QPi-AaXfp3NnLrqd9RjHfNWfTrA8bOCaH_mTlwhIjQw&oe=6A1C9815|https://www.facebook.com/photo/?fbid=1407946237188972&set=pcb.1407946257188970]退房前再次巧遇，大師團隊留下了聯絡方式，並答應未來願意聽她的原創作品。"
+          },
+          {
+            "date": "2025年5月後｜大師的認可",
+            "content": "Ponpon 在 ABC News 表演了融合口哨與哼唱的吉他獨奏。大師看到影片後相當驚豔，一眼認出這是傳承自他的精神：「That's my stuff」。"
+          },
+          {
+            "date": "2026年5月｜兌現承諾交付母帶",
+            "content": "距離初次見面的一年多後，Ponpon 兌現了當初的約定，[HOVER_IMG:親手把製作完成的首張專輯母帶交到了 George Benson 手中|https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/699874554_1819123912737867_5791924134187042974_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=wqvV_Wm36F0Q7kNvwFMr4In&_nc_oc=AdosHosVs1ozQf0YZBHAvRcxKnHn3eNswqP9j1-eb5agknifhgSVRTnpNrPp6X39RxU&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=GwjJtxJ1TmwDkN2WFM7w9Q&_nc_ss=7b2a8&oh=00_Af59EvziWgQo9ihig1op_b-BNPAgFKH9q7I6cEoqaGzh6A&oe=6A1C7B7C|https://www.facebook.com/photo?fbid=1819123906071201&set=a.482592819724323]。兩人坐下來深聊，大師認真聽她介紹專輯並給予真誠建議。這次交流讓她深刻感受到真正大師的溫暖、謙遜與風範。"
+          }
+        ]
+      }
+    ]
+  },
   "changelog": {
     "title": "網站更新紀錄",
     "subtitle": "DEVELOPMENT LOG",
     "description": "記錄本站的重大功能更新與內容調整。",
     "items": [
+      {
+        "date": "2026.05.27",
+        "title": "新增「音樂推手」專頁",
+        "content": "（位於「關於」頁面）全新推出音樂推手專頁，以互動式時間軸紀錄對 Ponpon 音樂之路影響深遠的貴人們。首波釋出啟蒙偶像 George Benson 的專屬故事與珍貴合照，未來將陸續新增其他曾經幫助過她的貴人們。"
+      },
       {
         "date": "2026-05-11",
         "title": "全新「爵士曲庫」上線",
@@ -828,6 +867,14 @@
     }
   },
   "timelineItems": [
+    {
+      "year": "2026",
+      "date": "Coming Soon",
+      "title": "首張爵士專輯籌備中",
+      "category": "album",
+      "content": "更多關於這張新專輯的製作細節、時間點與預告，即將在這裡公開，敬請期待！",
+      "image": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&q=80"
+    },
     {
       "year": "2012 - 2014",
       "title": "初心萌芽與舞台起步",

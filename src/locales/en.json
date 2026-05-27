@@ -47,6 +47,11 @@
     "description": "Chronicle of major feature updates and content revisions.",
     "items": [
       {
+        "date": "2026.05.27",
+        "title": "New \"Music Mentors\" Page",
+        "content": "(Located in the About page) Launched the new Music Mentors page, featuring an interactive timeline of the key figures who influenced Ponpon's musical journey. The first release features the full story and photos of her idol George Benson, with more mentors and benefactors to be added gradually in the future."
+      },
+      {
         "date": "2026-05-11",
         "title": "Brand New 'Jazz Repertoire' Launched",
         "content": "(Located in the About page) Added the Jazz Repertoire page with search and filter features. Gradually adding in-depth appreciation of classic jazz standards performed by Ponpon, along with links to Ponpon's live performance of the respective jazz song."
@@ -828,6 +833,14 @@
     }
   },
   "timelineItems": [
+    {
+      "year": "2026",
+      "date": "Coming Soon",
+      "title": "First Jazz Album in Progress",
+      "category": "album",
+      "content": "More details, timeline, and teasers about the production of this new album will be revealed here soon. Stay tuned!",
+      "image": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&q=80"
+    },
     {
       "year": "2012 - 2014",
       "title": "Musical Beginnings",
