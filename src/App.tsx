@@ -217,7 +217,7 @@ function MainContent() {
                   className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-white/50 group-hover:text-white/90 whitespace-nowrap bg-black/50 group-hover:bg-black/80 px-3 py-1.5 rounded-full backdrop-blur-md transition-all duration-300 z-20 flex items-center gap-1.5"
                 >
                   <Facebook className="w-3 h-3" />
-                  <span>照片來源：Ponpon的fb粉絲專頁</span>
+                  <span>{t.hero.photoSource as string}</span>
                 </div>
               </a>
             </div>
