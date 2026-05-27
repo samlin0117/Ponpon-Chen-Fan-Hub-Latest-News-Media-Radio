@@ -22,6 +22,30 @@ function MainContent() {
   const [activeVideoTab, setActiveVideoTab] = useState('p1');
   const location = useLocation();
 
+  const carouselImages = [
+    {
+      src: "https://shoutoutla.s3.us-west-1.amazonaws.com/wp-content/uploads/2024/04/c-PonponChen__IMG5020_1712948629197.jpg",
+      link: "https://www.facebook.com/photo/?fbid=3842701859081991&set=a.482592819724323"
+    },
+    {
+      src: "/slide1.jpg",
+      link: "https://www.facebook.com/photo/?fbid=1777153813601544&set=pb.100039208281828.-2207520000"
+    },
+    {
+      src: "/slide2.jpg",
+      link: "https://www.facebook.com/photo/?fbid=1771077854209140&set=pb.100039208281828.-2207520000"
+    }
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   const closeMenu = () => setIsMenuOpen(false);
 
   // Scroll to top when changing route
@@ -165,17 +189,37 @@ function MainContent() {
             transition={{ duration: 1, delay: 0.2 }}
             className="order-1 md:order-2 flex justify-center"
           >
-            <div className="relative w-64 h-80 md:w-80 md:h-[450px] rounded-t-full overflow-hidden border border-white/10 p-2">
-              <div className="w-full h-full rounded-t-full overflow-hidden bg-dark-lighter relative">
-                {/* Hero Image */}
-                <img 
-                  src="https://shoutoutla.s3.us-west-1.amazonaws.com/wp-content/uploads/2024/04/c-PonponChen__IMG5020_1712948629197.jpg" 
-                  alt="Ponpon Chen" 
-                  className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-all duration-700"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
-              </div>
+            <div className="relative w-64 h-80 md:w-80 md:h-[450px] rounded-t-full overflow-hidden border border-white/10 p-2 group">
+              <a 
+                href={carouselImages[currentImageIndex].link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block w-full h-full rounded-t-full overflow-hidden bg-dark-lighter relative cursor-pointer"
+              >
+                {/* Hero Images Carousel */}
+                <AnimatePresence initial={false}>
+                  <motion.img 
+                    key={currentImageIndex}
+                    src={carouselImages[currentImageIndex].src} 
+                    alt="Ponpon Chen" 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 0.8 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1 }}
+                    className="absolute inset-0 w-full h-full object-cover hover:opacity-100 transition-all duration-700"
+                    referrerPolicy="no-referrer"
+                    loading={currentImageIndex === 0 ? "eager" : "lazy"}
+                  />
+                </AnimatePresence>
+                <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent pointer-events-none"></div>
+                {/* Image Source Attribution */}
+                <div 
+                  className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-white/50 group-hover:text-white/90 whitespace-nowrap bg-black/50 group-hover:bg-black/80 px-3 py-1.5 rounded-full backdrop-blur-md transition-all duration-300 z-20 flex items-center gap-1.5"
+                >
+                  <Facebook className="w-3 h-3" />
+                  <span>照片來源：Ponpon的fb粉絲專頁</span>
+                </div>
+              </a>
             </div>
           </motion.div>
         </div>
