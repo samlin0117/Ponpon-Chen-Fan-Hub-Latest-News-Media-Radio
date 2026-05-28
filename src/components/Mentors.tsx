@@ -3,6 +3,40 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Heart, Users, X, ChevronRight } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 
+const HoverImageLink = ({ text, url, linkUrl, photoSourceLabel, index }: { text: string, url: string, linkUrl: string, photoSourceLabel: string, index: number }) => {
+  const [isOpenMobile, setIsOpenMobile] = useState(false);
+
+  return (
+    <a 
+      key={`img-${index}`} 
+      href={linkUrl} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="relative inline group/link text-gold font-medium cursor-pointer border-b border-gold/30 hover:border-gold transition-colors"
+      onClick={(e) => {
+        const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        if (isTouch) {
+          if (!isOpenMobile) {
+            e.preventDefault();
+            setIsOpenMobile(true);
+          }
+        }
+      }}
+    >
+      <span dangerouslySetInnerHTML={{ __html: text }} />
+      <div className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-3 transition-all duration-300 z-50 w-64 md:w-80 shadow-2xl rounded-xl overflow-hidden border border-white/10 origin-bottom pointer-events-none ${isOpenMobile ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible group-hover/link:opacity-100 group-hover/link:scale-100 group-hover/link:visible'}`}>
+        <div className="relative">
+          <img src={url} alt="hover popup" className="w-full h-auto object-cover block" />
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-white/90 whitespace-nowrap bg-black/70 px-2.5 py-1.5 rounded-full backdrop-blur-md flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-facebook w-3 h-3"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+            <span>{photoSourceLabel}</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  );
+};
+
 const Mentors = () => {
   const { t } = useTranslation();
   const mentorsData = (t as any).mentors;
@@ -24,27 +58,23 @@ const Mentors = () => {
       const text = match[1];
       const url = match[2];
       const linkUrl = match[3] || "https://www.facebook.com/profile.php?id=100039208281828"; // Default to Ponpon's FB
-      
+
       parts.push(
-        <a key={`img-${match.index}`} href={linkUrl} target="_blank" rel="noopener noreferrer" className="relative inline group/link text-gold font-medium cursor-pointer border-b border-gold/30 hover:border-gold transition-colors">
-          <span dangerouslySetInnerHTML={{ __html: text }} />
-          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 opacity-0 group-hover/link:opacity-100 transition-all duration-300 z-50 w-64 md:w-80 shadow-2xl rounded-xl overflow-hidden border border-white/10 scale-95 group-hover/link:scale-100 origin-bottom pointer-events-none">
-            <div className="relative">
-              <img src={url} alt={text} className="w-full h-auto object-cover block" />
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-white/90 whitespace-nowrap bg-black/70 px-2.5 py-1.5 rounded-full backdrop-blur-md flex items-center gap-1.5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-facebook w-3 h-3"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                <span>{(t as any).hero?.photoSource || '照片來源：Ponpon的fb粉絲專頁'}</span>
-              </div>
-            </div>
-          </div>
-        </a>
+        <HoverImageLink 
+          key={`img-${match.index}`} 
+          index={match.index}
+          text={text} 
+          url={url} 
+          linkUrl={linkUrl} 
+          photoSourceLabel={(t as any).hero?.photoSource || '照片來源：Ponpon的fb粉絲專頁'} 
+        />
       );
       lastIndex = regex.lastIndex;
     }
     if (lastIndex < content.length) {
       parts.push(<span key={`text-${lastIndex}`} dangerouslySetInnerHTML={{ __html: content.slice(lastIndex) }} />);
     }
-    
+
     return parts;
   };
 
@@ -65,7 +95,7 @@ const Mentors = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {mentorsData.list.map((mentor: any, idx: number) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -98,15 +128,15 @@ const Mentors = () => {
       <AnimatePresence>
         {selectedMentor && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-12">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedMentor(null)}
               className="absolute inset-0 bg-black/80 backdrop-blur-sm cursor-pointer"
             ></motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -118,15 +148,50 @@ const Mentors = () => {
                   <h3 className="text-2xl md:text-3xl font-serif text-gold mb-2">{selectedMentor.name}</h3>
                   <p className="text-sm tracking-widest text-gray-400 uppercase">{selectedMentor.role}</p>
                 </div>
-                <button 
+                <button
                   onClick={() => setSelectedMentor(null)}
                   className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
-              
+
               <div className="p-6 md:p-8 overflow-y-auto custom-scrollbar">
+                {selectedMentor.intro && (
+                  <div className="mb-12 bg-dark-lighter/50 border border-gold/20 rounded-2xl p-6 md:p-8 relative overflow-hidden group shadow-lg">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-full -mr-8 -mt-8 pointer-events-none transition-transform group-hover:scale-110 duration-700"></div>
+                    <div className="relative z-10">
+                      <h4 className="text-gold font-serif text-xl mb-4 flex items-center gap-2">
+                        關於 {selectedMentor.name}
+                      </h4>
+                      <p className="text-gray-300 font-light leading-relaxed mb-6">
+                        {selectedMentor.intro.bio}
+                      </p>
+                      {selectedMentor.intro.classicSongs && (
+                        <div>
+                          <h5 className="text-xs font-mono text-gold-light tracking-widest uppercase mb-3 flex items-center gap-2">
+                            <span className="w-4 h-px bg-gold/50"></span> 經典必聽 <span className="w-4 h-px bg-gold/50"></span>
+                          </h5>
+                          <div className="flex flex-col gap-2.5">
+                            {selectedMentor.intro.classicSongs.map((song: any, idx: number) => (
+                              <a 
+                                key={idx} 
+                                href={song.url} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-3 text-sm text-gray-300 hover:text-white bg-white/5 hover:bg-white/10 px-4 py-2.5 rounded-xl border border-white/5 hover:border-gold/40 transition-all duration-300 w-fit group/song"
+                              >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-youtube text-red-500 group-hover/song:scale-110 transition-transform"><path d="M2.5 7.1c.1-1.4 1.2-2.5 2.6-2.6 3.1-.2 9.7-.2 12.8 0 1.4.1 2.5 1.2 2.6 2.6.2 3.1.2 9.7 0 12.8-.1 1.4-1.2 2.5-2.6 2.6-3.1.2-9.7.2-12.8 0-1.4-.1-2.5-1.2-2.6-2.6-.2-3.1-.2-9.7 0-12.8z"/><polygon points="10 15 15 12 10 9 10 15"/></svg>
+                                {song.name}
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+                
                 <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
                   {selectedMentor.detailedStory.map((story: any, idx: number) => (
                     <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">

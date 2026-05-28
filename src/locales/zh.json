@@ -49,10 +49,23 @@
       {
         "name": "George Benson",
         "role": "啟蒙偶像",
-        "shortDesc": "2020 年因為一段 YouTube 影片大受震撼，成為她休學赴美專攻爵士吉他的起點。2025 年在鳳凰城迎來奇蹟般的相遇，不僅見到了偶像，更獲得了一生受用的箴言...",
+        "intro": {
+          "bio": "George Benson 是一位傳奇的美國爵士吉他手與歌手，曾榮獲十座葛萊美獎。他以精湛的吉他技巧，以及將吉他彈奏與人聲擬音 (Scatting) 完美同步的標誌性風格聞名於世。這種獨一無二的表演魅力，深深震撼了 Ponpon，也成為她踏上爵士音樂之路的最重要啟發。",
+          "classicSongs": [
+            {
+              "name": "This Masquerade (吉他與人聲完美同步 - Live 現場版)",
+              "url": "https://www.youtube.com/watch?v=qZK3NJlTDm0"
+            },
+            {
+              "name": "Breezin' (爵士器樂神曲 - 經典 Live 現場版)",
+              "url": "https://www.youtube.com/watch?v=Je3Pe3gWU0U"
+            }
+          ]
+        },
+        "shortDesc": "2021 年因為一段 YouTube 影片大受震撼，成為她休學赴美專攻爵士吉他的起點。2025 年在鳳凰城迎來奇蹟般的相遇，不僅見到了偶像，更獲得了一生受用的箴言...",
         "detailedStory": [
           {
-            "date": "2020年｜命運的啟蒙",
+            "date": "2021年｜命運的啟蒙",
             "content": "疫情停課期間，偶然看到大師邊彈吉他邊即興哼唱的影片，大受震撼，成為她休學赴美專攻爵士的關鍵起點。"
           },
           {
@@ -709,6 +722,18 @@
         ],
         "correctAnswer": 2,
         "explanation": "該把經典的 Gibson ES-175 是由 Ponpon 的恩師、河岸留言創辦人林正如（Geddy Lin）老師大方出借，伴隨她遠赴美國深造。"
+      },
+      {
+        "id": 46,
+        "question": "Ponpon 首張爵士專輯的製作人是誰？",
+        "options": [
+          "George Benson",
+          "Graham Dechter",
+          "Herbie Hancock",
+          "John Mayer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Ponpon 首張爵士專輯是由 Graham Dechter 擔任製作人。他同時也是 Ponpon 在美國的爵士吉他老師。"
       }
     ]
   },

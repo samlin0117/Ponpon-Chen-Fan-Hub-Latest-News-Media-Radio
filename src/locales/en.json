@@ -41,6 +41,53 @@
     "article2_date": "2026-05-05",
     "page_desc": "Notable figures who have featured Ponpon's music on their platforms, helping her reach new audiences."
   },
+  "mentors": {
+    "title": "Music Mentors",
+    "description": "Ponpon's musical journey has been shaped not only by her hard work but also by the guidance of many benefactors. These mentors are introduced based on Ponpon's own words, interviews, and social media posts. Below are some of the key figures she frequently mentions, though many other unlisted individuals have also supported her along the way.",
+    "close": "Close",
+    "list": [
+      {
+        "name": "George Benson",
+        "role": "Idol & Inspiration",
+        "intro": {
+          "bio": "George Benson is a legendary American jazz guitarist and singer, and a ten-time Grammy Award winner. He is renowned for his masterful guitar skills and his signature style of flawlessly synchronizing his guitar playing with his scat singing. This unique and captivating performance style profoundly moved Ponpon and became the ultimate inspiration for her pursuit of jazz music.",
+          "classicSongs": [
+            {
+              "name": "This Masquerade (Perfect Guitar-Scat Sync - Live)",
+              "url": "https://www.youtube.com/watch?v=qZK3NJlTDm0"
+            },
+            {
+              "name": "Breezin' (Classic Instrumental Hit - Live)",
+              "url": "https://www.youtube.com/watch?v=Je3Pe3gWU0U"
+            }
+          ]
+        },
+        "shortDesc": "In 2021, a YouTube video of his performance deeply shocked her, leading her to take a leave from school to study jazz guitar in the US. In 2025, a miraculous encounter in Phoenix allowed her to meet her idol and receive a lifelong piece of advice...",
+        "detailedStory": [
+          {
+            "date": "2021 | The Enlightenment of Destiny",
+            "content": "During the pandemic school closures, she accidentally stumbled upon a video of the master improvising scat while playing guitar. This revelation became the turning point that made her pause her studies and head to the US to specialize in jazz."
+          },
+          {
+            "date": "Aug 2024 | The Distant First Time",
+            "content": "Bought the most expensive ticket she could afford to watch the master perform at the Hollywood Bowl. Even sitting far away watching the big screen, it felt like a dream come true."
+          },
+          {
+            "date": "Jan 2025 | The Miraculous Phoenix Workshop",
+            "content": "Learning about his workshop, she drove 6 hours alone to attend. While practicing in a corner, she coincidentally met the master's musical director, Randy Waldman. Through Randy, she was granted a rare chance to watch the rehearsal from the front row. Reflecting on her difficult journey in the US, she broke down in tears of emotion for an hour.<br/><br/>After the show, she was invited backstage and personally thanked him. [HOVER_IMG:Benson held her hand and encouraged: <strong>\"You can like my music, but never copy me. You have to find your own voice.\"</strong>|https://scontent-tpe1-1.xx.fbcdn.net/v/t51.75761-15/476007965_18475892992050265_7723100454829646141_n.jpg?stp=dst-jpegr_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=GYagZj2z1TIQ7kNvwEDiP5E&_nc_oc=AdpDCKlgh-om0P1dzj0cvxmgw6jdnLzRruisUgtjJTdzDU7DhRVVGZavsw5H5i0PLwo&_nc_zt=23&se=-1&_nc_ht=scontent-tpe1-1.xx&_nc_gid=UMmNbmURNl4DBerI2wz8Yg&_nc_ss=7b2a8&oh=00_Af6QPi-AaXfp3NnLrqd9RjHfNWfTrA8bOCaH_mTlwhIjQw&oe=6A1C9815|https://www.facebook.com/photo/?fbid=1407946237188972&set=pcb.1407946257188970] Before checking out of her hotel, she ran into them again. The team exchanged contacts and promised to listen to her original music in the future."
+          },
+          {
+            "date": "May 2025 onwards | The Master's Recognition",
+            "content": "Ponpon performed an original guitar solo combining whistling and humming on ABC News. When the master saw the video, he was amazed and immediately recognized the spirit passed down from him: \"That's my stuff.\""
+          },
+          {
+            "date": "May 2026 | Keeping the Promise",
+            "content": "More than a year after their first meeting, Ponpon fulfilled her promise, [HOVER_IMG:personally delivering the master copy of her completed debut album into George Benson's hands|https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/699874554_1819123912737867_5791924134187042974_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=wqvV_Wm36F0Q7kNvwFMr4In&_nc_oc=AdosHosVs1ozQf0YZBHAvRcxKnHn3eNswqP9j1-eb5agknifhgSVRTnpNrPp6X39RxU&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=GwjJtxJ1TmwDkN2WFM7w9Q&_nc_ss=7b2a8&oh=00_Af59EvziWgQo9ihig1op_b-BNPAgFKH9q7I6cEoqaGzh6A&oe=6A1C7B7C|https://www.facebook.com/photo?fbid=1819123906071201&set=a.482592819724323]. They sat down for a deep conversation, and he earnestly listened to her album concepts and gave sincere advice. This exchange made her deeply feel the warmth, humility, and grace of a true master."
+          }
+        ]
+      }
+    ]
+  },
   "changelog": {
     "title": "Site Update Log",
     "subtitle": "DEVELOPMENT LOG",
@@ -675,6 +722,18 @@
         ],
         "correctAnswer": 2,
         "explanation": "The classic Gibson ES-175 was generously lent to Ponpon by her mentor, Geddy Lin (founder of Riverside Music), to accompany her studies in the US."
+      },
+      {
+        "id": 46,
+        "question": "Who is the producer of Ponpon's debut jazz album?",
+        "options": [
+          "George Benson",
+          "Graham Dechter",
+          "Herbie Hancock",
+          "John Mayer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Ponpon's debut jazz album is produced by Graham Dechter, who is also her jazz guitar teacher in the US."
       }
     ]
   },

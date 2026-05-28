@@ -41,6 +41,53 @@
     "article2_date": "2026-05-05",
     "page_desc": "各プラットフォームでPonponの音楽を紹介してくださった著名人の方々に感謝いたします。"
   },
+  "mentors": {
+    "title": "音楽の恩師たち",
+    "description": "Ponponの音楽の道は、自身の努力だけでなく、多くの恩人たちの助けによって支えられています。<br/>これらの恩師たちは、Ponpon自身の言葉やインタビュー、SNSの投稿から知られています。以下は彼女が頻繁に言及する重要な人物たちですが、この他にも彼女を助けてくれた多くの恩人たちがいます。",
+    "close": "閉じる",
+    "list": [
+      {
+        "name": "George Benson",
+        "role": "憧れの存在",
+        "intro": {
+          "bio": "George Bensonは、グラミー賞を10回受賞しているアメリカの伝説的なジャズギタリストでありシンガーです。卓越したギターテクニックと、ギターの演奏とスキャットを見事に同期させる彼独自のスタイルで世界中に知られています。この唯一無二のパフォーマンスはPonponに深い衝撃を与え、彼女がジャズ音楽の道を志す最も重要なきっかけとなりました。",
+          "classicSongs": [
+            {
+              "name": "This Masquerade (ギターとスキャットの完璧な同期 - Live)",
+              "url": "https://www.youtube.com/watch?v=qZK3NJlTDm0"
+            },
+            {
+              "name": "Breezin' (インストゥルメンタルの名曲 - Live)",
+              "url": "https://www.youtube.com/watch?v=Je3Pe3gWU0U"
+            }
+          ]
+        },
+        "shortDesc": "2021年、YouTubeの動画に大きな衝撃を受け、大学を休学して渡米しジャズギターを専攻するきっかけとなりました。2025年、フェニックスで奇跡的な出会いを果たし、アイドルに会えただけでなく、生涯の財産となる言葉を授かりました...",
+        "detailedStory": [
+          {
+            "date": "2021年｜運命の啓示",
+            "content": "パンデミックで学校が休校中、偶然に巨匠がギターを弾きながらスキャットする動画を見て大きな衝撃を受けました。これが彼女が休学し、渡米してジャズを専攻する決定的なきっかけとなりました。"
+          },
+          {
+            "date": "2024年8月｜遥か遠くの初めて",
+            "content": "買える中で最も高いチケットを手に入れ、ハリウッドボウルで巨匠の公演を観に行きました。遠くのスクリーンでしか見られなくても、夢が叶ったと感じました。"
+          },
+          {
+            "date": "2025年1月｜奇跡のフェニックス・ワークショップ",
+            "content": "巨匠のワークショップが開催されると知り、一人で6時間運転して参加しました。隅で練習していたところ、偶然にも巨匠の音楽監督であるRandy Waldmanと知り合いました。彼の計らいで特別にリハーサル室に入り、最前列で巨匠のリハーサルを見ることができ、単身アメリカで苦労した日々を思い出し、1時間も涙が止まりませんでした。<br/><br/>終演後、楽屋に招かれ、直接感謝の気持ちを伝えることができました。[HOVER_IMG:Bensonは彼女の手を握り、<strong>「僕の音楽を好きでいてくれるのは嬉しいが、決して僕の真似をしてはいけない。君自身の声（find your own voice）を見つけなさい。」</strong>と励ましました。|https://scontent-tpe1-1.xx.fbcdn.net/v/t51.75761-15/476007965_18475892992050265_7723100454829646141_n.jpg?stp=dst-jpegr_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=GYagZj2z1TIQ7kNvwEDiP5E&_nc_oc=AdpDCKlgh-om0P1dzj0cvxmgw6jdnLzRruisUgtjJTdzDU7DhRVVGZavsw5H5i0PLwo&_nc_zt=23&se=-1&_nc_ht=scontent-tpe1-1.xx&_nc_gid=UMmNbmURNl4DBerI2wz8Yg&_nc_ss=7b2a8&oh=00_Af6QPi-AaXfp3NnLrqd9RjHfNWfTrA8bOCaH_mTlwhIjQw&oe=6A1C9815|https://www.facebook.com/photo/?fbid=1407946237188972&set=pcb.1407946257188970] チェックアウト前に再び遭遇し、チームと連絡先を交換し、将来彼女のオリジナル曲を聴くと約束してもらえました。"
+          },
+          {
+            "date": "2025年5月以降｜巨匠の承認",
+            "content": "PonponはABC Newsで口笛とハミングを交えたギターソロを披露しました。巨匠はその動画を見て驚き、すぐに自分の精神を受け継いでいることに気づきました：「That's my stuff」"
+          },
+          {
+            "date": "2026年5月｜約束を果たしマスターテープを渡す",
+            "content": "初めての出会いから1年以上経ち、Ponponは約束を果たし、[HOVER_IMG:完成したデビューアルバムのマスターテープを直接George Bensonの手に渡しました|https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/699874554_1819123912737867_5791924134187042974_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=wqvV_Wm36F0Q7kNvwFMr4In&_nc_oc=AdosHosVs1ozQf0YZBHAvRcxKnHn3eNswqP9j1-eb5agknifhgSVRTnpNrPp6X39RxU&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=GwjJtxJ1TmwDkN2WFM7w9Q&_nc_ss=7b2a8&oh=00_Af59EvziWgQo9ihig1op_b-BNPAgFKH9q7I6cEoqaGzh6A&oe=6A1C7B7C|https://www.facebook.com/photo?fbid=1819123906071201&set=a.482592819724323]。二人は深く語り合い、巨匠は彼女のアルバム紹介に真剣に耳を傾け、心からのアドバイスをくれました。この交流を通じて、彼女は真の巨匠の温かさ、謙虚さ、そして風格を深く感じました。"
+          }
+        ]
+      }
+    ]
+  },
   "changelog": {
     "title": "サイト更新履歴",
     "subtitle": "DEVELOPMENT LOG",
@@ -675,6 +722,18 @@
         ],
         "correctAnswer": 2,
         "explanation": "そのクラシックなGibson ES-175は, Ponponの恩師であり、Riverside Music（河岸留言）の創設者である林正如（Geddy Lin）先生から、彼女の渡米修行のために貸し出されたものです。"
+      },
+      {
+        "id": 46,
+        "question": "Ponponのデビュー・ジャズ・アルバムのプロデューサーは誰ですか？",
+        "options": [
+          "George Benson",
+          "Graham Dechter",
+          "Herbie Hancock",
+          "John Mayer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Ponponのデビュー・ジャズ・アルバムはGraham Dechterがプロデュースしています。彼はまた、Ponponのアメリカでのジャズギターの先生でもあります。"
       }
     ]
   },
