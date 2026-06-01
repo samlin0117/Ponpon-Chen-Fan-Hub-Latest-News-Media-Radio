@@ -113,12 +113,13 @@ const FirebaseComments: React.FC<FirebaseCommentsProps> = ({ lang, t }) => {
       });
       
       // Send Telegram notification (Use GET to avoid CORS preflight issues in browsers)
-      const botToken = '8802698250:AAEexpQMvKQuiotR39eqhCmWN6PGApEb7bc';
-      const chatId = '8517022751';
-      const text = `🎉 粉絲網站有新留言囉！\n\n👤 暱稱：${newComment.name}\n💬 內容：${newComment.content}`;
-      const tgUrl = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`;
-      
-      fetch(tgUrl, { method: 'GET' }).catch(err => console.error('TG error', err));
+      const botToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
+      const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+      if (botToken && chatId) {
+        const text = `🎉 粉絲網站有新留言囉！\n\n👤 暱稱：${newComment.name}\n💬 內容：${newComment.content}`;
+        const tgUrl = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`;
+        fetch(tgUrl, { method: 'GET' }).catch(err => console.error('TG error', err));
+      }
       
       setName('');
       setContent('');
