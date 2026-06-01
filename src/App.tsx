@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X, Trophy, ArrowRight, Star, Disc3, Users } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import CusdisComments from './components/CusdisComments';
+import FirebaseComments from './components/FirebaseComments';
 import { videoList, VideoInfo } from './data/videos';
 import VideoCard from './components/VideoCard';
 import VideoGroupCard from './components/VideoGroupCard';
@@ -1293,7 +1293,7 @@ function MainContent() {
           </motion.div>
           
           <div className="bg-dark-lighter p-6 md:p-10 rounded-2xl border border-white/5 shadow-2xl shadow-gold/5">
-            <CusdisComments lang={lang} t={t.comments} />
+            <FirebaseComments lang={lang} t={t.comments} />
           </div>
         </div>
       </section>

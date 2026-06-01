@@ -69,7 +69,7 @@
             "content": "During the pandemic school closures, she accidentally stumbled upon a video of the master improvising scat while playing guitar. This revelation became the turning point that made her pause her studies and head to the US to specialize in jazz."
           },
           {
-            "date": "Aug 2024 | The Distant First Time",
+            "date": "Summer 2024 | The Distant First Time",
             "content": "Bought the most expensive ticket she could afford to watch the master perform at the Hollywood Bowl. Even sitting far away watching the big screen, it felt like a dream come true."
           },
           {
@@ -734,6 +734,18 @@
         ],
         "correctAnswer": 1,
         "explanation": "Ponpon's debut jazz album is produced by Graham Dechter, who is also her jazz guitar teacher in the US."
+      },
+      {
+        "id": 47,
+        "question": "What is the era of jazz songs that Ponpon likes?",
+        "options": [
+          "1920s-1950s",
+          "1950s-1970s",
+          "1970s-1990s",
+          "1990s-2010s"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Ponpon loves classic jazz from the 1920s to 1950s, which is evident from her live performance setlists."
       }
     ]
   },
@@ -893,12 +905,34 @@
   },
   "timelineItems": [
     {
-      "year": "2026",
-      "date": "Coming Soon",
-      "title": "First Jazz Album in Progress",
-      "category": "album",
-      "content": "More details, timeline, and teasers about the production of this new album will be revealed here soon. Stay tuned!",
-      "image": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&q=80"
+      "year": "Early 2025",
+      "title": "Inception, Producer's Push, and a Promise to a Master",
+      "desc": "Her guitar teacher and producer, Graham Dechter, considering her US visa and career development, proactively suggested: \"You need to have your own work; only with works can you tour and truly start your career.\" Facing concerns about high production costs and lacking a dedicated band, her producer boldly assured her and volunteered to coordinate with top industry veterans to help with the recording.<br/><br/>In January of the same year, backstage at a workshop in Arizona, she promised her idol George Benson that she would \"release an album next year and hope to personally deliver it to him,\" receiving the master's anticipation and approval.",
+      "category": "album"
+    },
+    {
+      "year": "Late 2025",
+      "title": "Seclusion for Prep and High-Pressure Recording",
+      "desc": "After going viral on ABC News, she decided to temporarily pause public performances to focus entirely on studio preparations.<br/><br/>They spent about four months intensively discussing and arranging. The recording sessions were highly efficient and high-pressure; without any prior rehearsals, she did \"One take\" synchronized recordings with veteran musicians (including teachers her producer invited from the East Coast), recording up to five songs a day. In this all-English jazz album, she insisted on secretly including one Chinese song.",
+      "category": "album"
+    },
+    {
+      "year": "Early 2026",
+      "title": "Recording Wrap-up and Post-Production",
+      "desc": "The album was successfully recorded before the Lunar New Year. Immediately after wrapping up, Ponpon took leave from her producer and flew back to Taiwan to spend her first Lunar New Year there in three years, while the US team took over the post-production.",
+      "category": "album"
+    },
+    {
+      "year": "May 2026",
+      "title": "Mastering and Fulfilling the Promise",
+      "desc": "Over a year after their first meeting, she successfully completed the album's master tape. She met George Benson again and personally handed the master tape to him. The master listened earnestly, shared his thoughts, and gave sincere advice, perfectly fulfilling their promise.",
+      "category": "album"
+    },
+    {
+      "year": "Late 2026 & Beyond",
+      "title": "Expected Release and Future Tour Plans",
+      "desc": "This debut personal jazz album is scheduled to be officially released in the second half of 2026.<br/><br/>After the release, she plans to arrange a tour in the US first, followed by the goal of expanding the tour back to Asia.",
+      "category": "album"
     },
     {
       "year": "2012 - 2014",
