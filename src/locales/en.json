@@ -94,6 +94,11 @@
     "description": "Chronicle of major feature updates and content revisions.",
     "items": [
       {
+        "date": "2026.06.02",
+        "title": "Added '2026 New album' Milestone",
+        "content": "Added a dedicated 'NEW ALBUM 2026' category in the Milestones page, documenting the precious journey of Ponpon's debut English jazz album from preparation and recording to its successful completion. We will continuously update this section with the latest album progress."
+      },
+      {
         "date": "2026.05.27",
         "title": "New \"Music Mentors\" Page",
         "content": "(Located in the About page) Launched the new Music Mentors page, featuring an interactive timeline of the key figures who influenced Ponpon's musical journey. The first release features the full story and photos of her idol George Benson, with more mentors and benefactors to be added gradually in the future."
@@ -209,7 +214,7 @@
       },
       {
         "id": 2,
-        "question": "In which video did Ponpon first publicly demonstrate her 'Scatting' technique?",
+        "question": "In which video did Ponpon first demonstrate her 'Scatting' technique during a public performance?",
         "options": [
           "All of Me",
           "Blue Skies",
@@ -257,15 +262,15 @@
       },
       {
         "id": 7,
-        "question": "What special record did Ponpon set when she won the Eelin Star championship?",
+        "question": "What special record did Ponpon set when she won the Eelin Star championship in 2016?",
         "options": [
           "Highest score ever",
-          "Youngest champion of that year",
+          "Youngest award winner of that year",
           "First perfect score",
           "Most online votes"
         ],
         "correctAnswer": 1,
-        "explanation": "Ponpon became the youngest champion of that year's competition at age 14."
+        "explanation": "Ponpon became the youngest award winner of that year's competition at age 14."
       },
       {
         "id": 8,
@@ -329,7 +334,7 @@
       },
       {
         "id": 13,
-        "question": "During the pandemic, which music legend's video inspired Ponpon to switch from Pop to Jazz and start practicing electric guitar intensely?",
+        "question": "During the pandemic, which music legend's video inspired Ponpon to take a leave from university and start practicing electric guitar intensely?",
         "options": [
           "Wes Montgomery",
           "Joe Pass",
@@ -355,17 +360,17 @@
         "id": 15,
         "question": "Where did Ponpon hold her first solo headline show before moving to the US in 2022?",
         "options": [
-          "Taipei Arena",
-          "National Concert Hall",
+          "Witch House",
+          "THE WALL Gongguan",
           "Riverside Live House",
-          "Legacy Taipei"
+          "Kafka by the Sea"
         ],
         "correctAnswer": 2,
         "explanation": "In 2022, she held her first solo headline show at Riverside Live House before moving to the US."
       },
       {
         "id": 16,
-        "question": "In Sep 2022, she released her first original MV. This song was actually written when she was 18. What is the title?",
+        "question": "Ponpon released her first original MV in Sep 2022. What is the title of this original song?",
         "options": [
           "Finding you, lingering on the edge just like me",
           "Jazz Rhapsody",
@@ -373,7 +378,7 @@
           "Proud Journey"
         ],
         "correctAnswer": 0,
-        "explanation": "Her first original MV, 'Finding you, lingering on the edge just like me' (找到一樣在邊緣徘徊中的你), was written when she was 18."
+        "explanation": "Her first original MV is 'Finding you, lingering on the edge just like me' (找到一樣在邊緣徘徊中的你)."
       },
       {
         "id": 17,
@@ -413,7 +418,7 @@
       },
       {
         "id": 20,
-        "question": "At Studio City Sound in LA, which Grammy-winning engineer encouraged her to upload her performance videos?",
+        "question": "Which Grammy-winning mixing engineer and studio owner proactively brought his team to a bar to film Ponpon's live performance and published it on YouTube?",
         "options": [
           "Al Schmitt",
           "Tom Weir",
@@ -421,14 +426,14 @@
           "Serban Ghenea"
         ],
         "correctAnswer": 1,
-        "explanation": "She met Grammy-winning engineer Tom Weir at Studio City Sound, who encouraged her to share her videos."
+        "explanation": "Grammy-winning engineer Tom Weir uploaded the video of Ponpon's bar performance to YouTube, which eventually caught the attention of ABC News."
       },
       {
         "id": 21,
         "question": "Where did Ponpon hold her solo ticketed show during her brief return to Taiwan in Dec 2024?",
         "options": [
-          "Taipei Arena",
-          "National Concert Hall",
+          "THE WALL Gongguan",
+          "Clapper Studio",
           "Riverside Live House (Ximen)",
           "Legacy Taipei"
         ],
@@ -437,7 +442,7 @@
       },
       {
         "id": 22,
-        "question": "In May 2025, which ABC late-night program did Ponpon perform on?",
+        "question": "In May 2025, which ABC late-night news program did Ponpon appear on, delivering a stunning performance at the end of the show?",
         "options": [
           "The Tonight Show",
           "Jimmy Kimmel Live!",
@@ -449,7 +454,7 @@
       },
       {
         "id": 23,
-        "question": "Which outro song did she rearrange and perform on the ABC program?",
+        "question": "On the ABC News program in May 2025, which outro song did Ponpon rearrange and perform?",
         "options": [
           "World News Polka",
           "ABC News Theme",
@@ -465,15 +470,15 @@
         "options": [
           "'Practice more scales'",
           "'Move to New York'",
-          "'Don't imitate, find your own voice'",
+          "'You can like my music, but never imitate me; find your own voice'",
           "'The guitar is your weapon'"
         ],
         "correctAnswer": 2,
-        "explanation": "George Benson personally told her: 'Don't imitate, find your own voice'."
+        "explanation": "George Benson personally told her: 'You can like my music, but never imitate me; find your own voice'."
       },
       {
         "id": 25,
-        "question": "Which annual LA event did Ponpon perform at on Dec 24, 2025?",
+        "question": "Which local annual LA event was Ponpon selected to participate in on Dec 24, 2025, adding another brilliant milestone to her jazz performance career?",
         "options": [
           "The Grammy Awards",
           "L.A. County Holiday Celebration",
@@ -481,7 +486,7 @@
           "California New Year Concert"
         ],
         "correctAnswer": 1,
-        "explanation": "On Christmas Eve 2025, she was invited to perform at the L.A. County Holiday Celebration."
+        "explanation": "On Christmas Eve 2025, she was selected to perform at the L.A. County Holiday Celebration, adding a brilliant milestone to her career."
       },
       {
         "id": 26,
@@ -506,18 +511,6 @@
         ],
         "correctAnswer": 1,
         "explanation": "In 2015, she was a student at Renai Junior High School."
-      },
-      {
-        "id": 28,
-        "question": "What important advice did Tom Weir give Ponpon in 2024?",
-        "options": [
-          "Enroll in a conservatory",
-          "Upload multiple performance videos to YouTube",
-          "Join a singing idol show",
-          "Release a vinyl record"
-        ],
-        "correctAnswer": 1,
-        "explanation": "Tom Weir suggested she upload her videos to YouTube to let more people see her talent."
       },
       {
         "id": 29,
@@ -593,15 +586,15 @@
       },
       {
         "id": 35,
-        "question": "Why did the homeroom teacher write a letter to apologize to Ponpon at her junior high school graduation ceremony?",
+        "question": "At the junior high graduation ceremony, the homeroom teacher gave everyone a letter, and specifically apologized to Ponpon in hers. What was the main reason for the teacher's apology?",
         "options": [
           "Failed to write a recommendation letter for her high school application",
-          "Forgot to award her the certificate of merit",
-          "Previously opposed her participation in the Campus Million Star singing contest",
-          "Didn't believe she could achieve her goal in the entertainment industry"
+          "Confiscated her guitar and hindered her from learning music",
+          "Didn't believe her 7th-grade goal of 'participating in a TV talent show' could be achieved",
+          "Didn't think she would successfully get into Fuxing Senior High School's Drama program"
         ],
-        "correctAnswer": 3,
-        "explanation": "At the graduation ceremony, her homeroom teacher wrote a letter apologizing for initially not believing she could achieve her goal in the entertainment industry."
+        "correctAnswer": 2,
+        "explanation": "The teacher admitted in the letter that she originally thought Ponpon's dream of joining a TV talent show was unlikely to come true, but Ponpon actually achieved it. Thus, she specifically apologized and congratulated her in the letter."
       },
       {
         "id": 36,
@@ -625,7 +618,7 @@
           "The signature melody hummed by studio owner Tom Weir"
         ],
         "correctAnswer": 3,
-        "explanation": "Studio owner Tom Weir hummed the show's signature melody during the recording, which became her inspiration for the Intro."
+        "explanation": "Studio owner Tom Weir hummed the show's signature melody, which became her inspiration for the Intro."
       },
       {
         "id": 38,
@@ -913,7 +906,7 @@
     {
       "year": "Late 2025",
       "title": "Seclusion for Prep and High-Pressure Recording",
-      "desc": "After going viral on ABC News, she decided to temporarily pause public performances to focus entirely on studio preparations.<br/><br/>They spent about four months intensively discussing and arranging. The recording sessions were highly efficient and high-pressure; without any prior rehearsals, she did \"One take\" synchronized recordings with veteran musicians (including teachers her producer invited from the East Coast), recording up to five songs a day. In this all-English jazz album, she insisted on secretly including one Chinese song.",
+      "desc": "After her performance in San Francisco in September, she decided to temporarily pause public performances to focus entirely on studio preparations.<br/><br/>They spent about four months intensively discussing and arranging. The recording sessions were highly efficient and high-pressure; without any prior rehearsals, she did \"One take\" synchronized recordings with veteran musicians (including teachers her producer invited from the East Coast), recording up to five songs a day. In this all-English jazz album, she insisted on secretly including one Chinese song.",
       "category": "album"
     },
     {
