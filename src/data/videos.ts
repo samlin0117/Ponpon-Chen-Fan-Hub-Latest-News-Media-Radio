@@ -3,7 +3,7 @@ export type Platform = 'youtube' | 'facebook' | 'instagram' | 'threads';
 export interface VideoInfo {
   id: string;
   platform: Platform;
-  category: 'p1' | 'p2' | 'p3' | 'p5' | 'p6' | 'p7';
+  category: 'p1' | 'p2' | 'p3' | 'p5' | 'p6' | 'p7' | 'p8';
   title: string;
   date: string;
   displayDate?: string;
@@ -898,5 +898,54 @@ export const videoList: VideoInfo[] = [
     "thumbnailUrl": "/threads-riverside.jpg",
     "isFeatured": false
   },
-
+  {
+    "id": "v-01XxA9Xze-U",
+    "platform": "youtube",
+    "category": "p8",
+    "title": "Ponpon Chen 陳芃瑄 - All Of Me Scat Solo Transcription",
+    "date": "2026-04-21",
+    "embedUrl": "01XxA9Xze-U",
+    "thumbnailUrl": "https://i.ytimg.com/vi/01XxA9Xze-U/maxresdefault.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": "v-NLcXFaTeCw4",
+    "platform": "youtube",
+    "category": "p8",
+    "title": "Ponpon Chen 陳芃瑄 - But Not For Me Scat & Guitar Solo Transcription",
+    "date": "2025-10-21",
+    "embedUrl": "NLcXFaTeCw4",
+    "thumbnailUrl": "https://i.ytimg.com/vi/NLcXFaTeCw4/maxresdefault.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": "v-ZoRF-C-fzOg",
+    "platform": "youtube",
+    "category": "p8",
+    "title": "Ponpon Chen - Fly Me To The Moon Cover (Tap Dance)",
+    "date": "2026-01-16",
+    "embedUrl": "ZoRF-C-fzOg",
+    "thumbnailUrl": "https://i.ytimg.com/vi/ZoRF-C-fzOg/maxresdefault.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": "v-ZRvUJJ0MGa4",
+    "platform": "youtube",
+    "category": "p8",
+    "title": "Ponpon & Colin - How high the Moon (Acoustic Fretless Bass)",
+    "date": "2025-07-21",
+    "embedUrl": "ZRvUJJ0MGa4",
+    "thumbnailUrl": "https://i.ytimg.com/vi/ZRvUJJ0MGa4/maxresdefault.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": "v-ig-DWhAwQeiJqa",
+    "platform": "instagram",
+    "category": "p8",
+    "title": "Ponpon Chen - How high the moon (Guitar Cover)",
+    "date": "2026-03-31",
+    "embedUrl": "DWhAwQeiJqa",
+    "thumbnailUrl": "/ig-DWhAwQeiJqa.png",
+    "isFeatured": false
+  }
 ];

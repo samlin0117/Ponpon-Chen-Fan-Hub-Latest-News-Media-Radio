@@ -94,6 +94,11 @@
     "description": "記錄本站的重大功能更新與內容調整。",
     "items": [
       {
+        "date": "2026.06.03",
+        "title": "影音專區新增「網友創意致敬」",
+        "content": "於「演出影片」頁面新增「網友創意致敬」分類，收錄世界各地粉絲受 Ponpon 音樂啟發而創作的致敬影片與翻奏演出。"
+      },
+      {
         "date": "2026.06.02",
         "title": "新增「2026 New album」里程碑",
         "content": "於「演藝里程碑」頁面新增「NEW ALBUM 2026」專屬分類，完整紀錄 Ponpon 首張全英文爵士專輯從籌備、錄音到殺青的珍貴歷程，未來也將持續更新專輯的最新進度。"
@@ -262,7 +267,7 @@
       },
       {
         "id": 7,
-        "question": "Ponpon在2016年「伊林璀璨之星」奪冠時，創下了什麼特別的紀錄？",
+        "question": "Ponpon在2016年「伊林璀璨之星」演藝組奪冠時，創下了什麼特別的紀錄？",
         "options": [
           "最高分過關",
           "當屆年紀最小的得獎者",
@@ -645,18 +650,6 @@
         "explanation": "2021年4月，Ponpon 接受了中央廣播電台（央廣）節目《音樂本事》主持人咖啡貓的訪問，這也是她首次的個人電台專訪。"
       },
       {
-        "id": 40,
-        "question": "ABC News 是看了 Ponpon 在 YouTube 上的哪兩部影片後，邀請她改編《World News Polka》？",
-        "options": [
-          "《How High The Moon》與《But Not For Me》",
-          "《Cheek to Cheek》與《Fly Me to the Moon》",
-          "《On the Sunny Side of the Street》與《All of Me》",
-          "《Cheek to Cheek》與《How High The Moon》"
-        ],
-        "correctAnswer": 0,
-        "explanation": "ABC News 的製作團隊是在 YouTube 上看到 Ponpon 的這兩部演出影片後，深受其魅力吸引而發出邀約。"
-      },
-      {
         "id": 41,
         "question": "2025 年 9 月 20 日，Ponpon 首次在舊金山登台演出，請問演出場地是哪裡？",
         "options": [
@@ -768,7 +761,8 @@
     "p3": "報導與訪談",
     "p5": "網友拍攝 (Fan Cam)",
     "p6": "高光集錦",
-    "p7": "選秀與節目"
+    "p7": "選秀與節目",
+    "p8": "網友創意致敬"
   },
   "links": {
     "title": "關注 Ponpon",

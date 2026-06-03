@@ -74,7 +74,7 @@
           },
           {
             "date": "Jan 2025 | The Miraculous Phoenix Workshop",
-            "content": "Learning about his workshop, she drove 6 hours alone to attend. While practicing in a corner, she coincidentally met the master's musical director, Randy Waldman. Through Randy, she was granted a rare chance to watch the rehearsal from the front row. Reflecting on her difficult journey in the US, she broke down in tears of emotion for an hour.<br/><br/>After the show, she was invited backstage and personally thanked him. [HOVER_IMG:Benson held her hand and encouraged: <strong>\"You can like my music, but never copy me. You have to find your own voice.\"</strong>|https://scontent-tpe1-1.xx.fbcdn.net/v/t51.75761-15/476007965_18475892992050265_7723100454829646141_n.jpg?stp=dst-jpegr_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=GYagZj2z1TIQ7kNvwEDiP5E&_nc_oc=AdpDCKlgh-om0P1dzj0cvxmgw6jdnLzRruisUgtjJTdzDU7DhRVVGZavsw5H5i0PLwo&_nc_zt=23&se=-1&_nc_ht=scontent-tpe1-1.xx&_nc_gid=UMmNbmURNl4DBerI2wz8Yg&_nc_ss=7b2a8&oh=00_Af6QPi-AaXfp3NnLrqd9RjHfNWfTrA8bOCaH_mTlwhIjQw&oe=6A1C9815|https://www.facebook.com/photo/?fbid=1407946237188972&set=pcb.1407946257188970] Before checking out of her hotel, she ran into them again. The team exchanged contacts and promised to listen to her original music in the future."
+            "content": "Learning about his workshop, she drove 6 hours alone to attend. While practicing in a corner, she coincidentally met the master's musical director, Randy Waldman. Through Randy, she was granted a rare chance to watch the rehearsal from the front row. Reflecting on her difficult journey in the US, she broke down in tears of emotion for an hour.<br/><br/>After the show, she was invited backstage and personally thanked him. [HOVER_IMG:Benson held her hand and encouraged: <strong>\"You can like my music, but please don't copy me. You've got to find your own voice.\"</strong>|https://scontent-tpe1-1.xx.fbcdn.net/v/t51.75761-15/476007965_18475892992050265_7723100454829646141_n.jpg?stp=dst-jpegr_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=GYagZj2z1TIQ7kNvwEDiP5E&_nc_oc=AdpDCKlgh-om0P1dzj0cvxmgw6jdnLzRruisUgtjJTdzDU7DhRVVGZavsw5H5i0PLwo&_nc_zt=23&se=-1&_nc_ht=scontent-tpe1-1.xx&_nc_gid=UMmNbmURNl4DBerI2wz8Yg&_nc_ss=7b2a8&oh=00_Af6QPi-AaXfp3NnLrqd9RjHfNWfTrA8bOCaH_mTlwhIjQw&oe=6A1C9815|https://www.facebook.com/photo/?fbid=1407946237188972&set=pcb.1407946257188970] Before checking out of her hotel, she ran into them again. The team exchanged contacts and promised to listen to her original music in the future."
           },
           {
             "date": "May 2025 onwards | The Master's Recognition",
@@ -93,6 +93,11 @@
     "subtitle": "DEVELOPMENT LOG",
     "description": "Chronicle of major feature updates and content revisions.",
     "items": [
+      {
+        "date": "2026.06.03",
+        "title": "Added 'Creative Fan Tributes' to Video Gallery",
+        "content": "Added a new 'Creative Fan Tributes' category in the Video Gallery, featuring tribute videos and covers created by fans worldwide who were inspired by Ponpon's music."
+      },
       {
         "date": "2026.06.02",
         "title": "Added '2026 New album' Milestone",
@@ -262,7 +267,7 @@
       },
       {
         "id": 7,
-        "question": "What special record did Ponpon set when she won the Eelin Star championship in 2016?",
+        "question": "What special record did Ponpon set when she won the Eelin Star Entertainment Group championship in 2016?",
         "options": [
           "Highest score ever",
           "Youngest award winner of that year",
@@ -276,17 +281,17 @@
         "id": 8,
         "question": "When participating in 'Come Sing with Me 3' in 2018, which singer was she chosen to perform a solo duet with?",
         "options": [
-          "Wang Yuan (Roy Wang)",
-          "JJ Lin",
-          "Jay Chou",
-          "Jam Hsiao"
+          "Wang Yuan(王源)",
+          "JJ Lin(林俊傑)",
+          "Jay Chou(周杰倫)",
+          "Jam Hsiao(蕭敬騰)"
         ],
         "correctAnswer": 0,
-        "explanation": "In 'Come Sing with Me 3', Ponpon was chosen to perform a solo duet with TFBOYS member Wang Yuan."
+        "explanation": "In 'Come Sing with Me 3', Ponpon was chosen to perform a solo duet with TFBOYS member Wang Yuan(王源)."
       },
       {
         "id": 9,
-        "question": "Which song did Ponpon perform with Wang Yuan in 'Come Sing with Me 3'?",
+        "question": "Which song did Ponpon perform with Wang Yuan(王源) in 'Come Sing with Me 3'?",
         "options": [
           "Somewhere in Taipei",
           "Pride",
@@ -294,7 +299,7 @@
           "Practice Love"
         ],
         "correctAnswer": 1,
-        "explanation": "Ponpon performed the song 'Pride' (驕傲) with Wang Yuan."
+        "explanation": "Ponpon performed the song 'Pride' (驕傲) with Wang Yuan(王源)."
       },
       {
         "id": 10,
@@ -310,7 +315,7 @@
       },
       {
         "id": 11,
-        "question": "Which song by Cheer Chen did Ponpon perform in 'Jungle Voice 2'?",
+        "question": "Which song by Cheer Chen(陳綺貞) did Ponpon perform in 'Jungle Voice 2'?",
         "options": [
           "The Meaning of Travel",
           "Somewhere in Taipei",
@@ -318,7 +323,7 @@
           "Lonely Without You"
         ],
         "correctAnswer": 1,
-        "explanation": "She performed Cheer Chen's 'Somewhere in Taipei', receiving high praise from all three mentors."
+        "explanation": "She performed Cheer Chen(陳綺貞)'s 'Somewhere in Taipei', receiving high praise from all three mentors."
       },
       {
         "id": 12,
@@ -372,10 +377,10 @@
         "id": 16,
         "question": "Ponpon released her first original MV in Sep 2022. What is the title of this original song?",
         "options": [
-          "Finding you, lingering on the edge just like me",
-          "Jazz Rhapsody",
-          "LA Night",
-          "Proud Journey"
+          "Finding you, lingering on the edge just like me(找到一樣在邊緣徘徊中的你)",
+          "Jazz Rhapsody(爵士狂想曲)",
+          "LA Night(洛杉磯之夜)",
+          "Proud Journey(驕傲的旅程)"
         ],
         "correctAnswer": 0,
         "explanation": "Her first original MV is 'Finding you, lingering on the edge just like me' (找到一樣在邊緣徘徊中的你)."
@@ -470,11 +475,11 @@
         "options": [
           "'Practice more scales'",
           "'Move to New York'",
-          "'You can like my music, but never imitate me; find your own voice'",
+          "'You can like my music, but please don't copy me. You've got to find your own voice'",
           "'The guitar is your weapon'"
         ],
         "correctAnswer": 2,
-        "explanation": "George Benson personally told her: 'You can like my music, but never imitate me; find your own voice'."
+        "explanation": "George Benson personally told her: 'You can like my music, but please don't copy me. You've got to find your own voice'."
       },
       {
         "id": 25,
@@ -504,13 +509,13 @@
         "id": 27,
         "question": "Which junior high school was Ponpon attending during the 2015 'City Star' competition?",
         "options": [
-          "Fuxing",
-          "Renai",
-          "Jinhua",
-          "Zhongzheng"
+          "Fuxing(復興國中)",
+          "Renai(仁愛國中)",
+          "Jinhua(金華國中)",
+          "Zhongzheng(中正國中)"
         ],
         "correctAnswer": 1,
-        "explanation": "In 2015, she was a student at Renai Junior High School."
+        "explanation": "In 2015, she was a student at Renai Junior High School(仁愛國中)."
       },
       {
         "id": 29,
@@ -624,38 +629,27 @@
         "id": 38,
         "question": "What was the name of the first podcast show that interviewed Ponpon?",
         "options": [
-          "Happy Equation",
-          "Music Essence",
-          "The DoDo Men",
+          "Happy Equation(快樂方程式)",
+          "Music Essence(音樂本事)",
+          "The DoDo Men(跳脫Do式圈)",
           "Midnight You & Me"
         ],
         "correctAnswer": 2,
-        "explanation": "In August 2025, Ponpon was invited for her first podcast interview on the show \"The DoDo Men\"."
+        "explanation": "In August 2025, Ponpon was invited for her first podcast interview on the show \"The DoDo Men(跳脫Do式圈)\"."
       },
       {
         "id": 39,
         "question": "Which radio program was Ponpon's first radio interview?",
         "options": [
-          "RTI 'Music Essence'",
-          "UFO Radio 'Midnight Family'",
-          "BCC 'Midnight You & Me'",
-          "Hit FM Network"
+          "RTI 'Music Essence'(央廣《音樂本事》)",
+          "UFO Radio 'Midnight Family'(飛碟聯播網《夜光家族》)",
+          "BCC 'Midnight You & Me'(中廣流行網《Midnight You & Me》)",
+          "Hit FM Network(Hit FM 聯播網)"
         ],
         "correctAnswer": 0,
-        "explanation": "In April 2021, Ponpon was interviewed by host CafeCat on Radio Taiwan International's program \"Music Essence\", marking her first-ever solo radio interview."
+        "explanation": "In April 2021, Ponpon was interviewed by host CafeCat on Radio Taiwan International's program \"Music Essence\"(央廣《音樂本事》), marking her first-ever solo radio interview."
       },
-      {
-        "id": 40,
-        "question": "Which two YouTube videos of Ponpon did the ABC News team watch before inviting her to adapt 'World News Polka'?",
-        "options": [
-          "'How High The Moon' and 'But Not For Me'",
-          "'Cheek to Cheek' and 'Fly Me to the Moon'",
-          "'On the Sunny Side of the Street' and 'All of Me'",
-          "'Cheek to Cheek' and 'How High The Moon'"
-        ],
-        "correctAnswer": 0,
-        "explanation": "The ABC News production team was charmed by Ponpon's performances in these two YouTube videos and subsequently sent the invitation."
-      },
+
       {
         "id": 41,
         "question": "On Sep 20, 2025, Ponpon performed in San Francisco for the first time. What was the name of the venue?",
@@ -672,8 +666,8 @@
         "id": 42,
         "question": "At her Biscuits & Blues performance, which classic Teresa Teng Chinese song did Ponpon rearrange in jazz style?",
         "options": [
-          "Tian Mi Mi (Sweet)",
-          "Ye Lai Xiang (Tuberose)",
+          "Tian Mi Mi (甜蜜蜜)",
+          "Ye Lai Xiang (夜來香)",
           "The Moon Represents My Heart (月亮代表我的心)",
           "I Only Care About You (我只在乎你)"
         ],
@@ -768,7 +762,8 @@
     "p3": "Press & Interviews",
     "p5": "Fan Cams",
     "p6": "Highlights",
-    "p7": "Auditions & TV Shows"
+    "p7": "Auditions & TV Shows",
+    "p8": "Fan Covers & Tributes"
   },
   "links": {
     "title": "Follow Ponpon",

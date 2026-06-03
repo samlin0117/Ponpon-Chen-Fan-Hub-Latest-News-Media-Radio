@@ -1094,7 +1094,8 @@ function MainContent() {
                 { id: 'p7', label: t.videos.p7 },
                 { id: 'p2', label: t.videos.p2 },
                 { id: 'p3', label: t.videos.p3 },
-                { id: 'p5', label: t.videos.p5 }
+                { id: 'p5', label: t.videos.p5 },
+                { id: 'p8', label: (t.videos as any).p8 }
               ].map(tab => (
                 <button
                   key={tab.id}
@@ -1110,6 +1111,16 @@ function MainContent() {
               ))}
             </div>
             
+            {activeVideoTab === 'p8' && (t.videos as any).p8_desc && (
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="max-w-3xl mx-auto mb-10 text-gray-300 font-light leading-relaxed bg-dark-lighter/50 p-6 md:p-8 rounded-2xl border border-white/5 shadow-xl text-left"
+              >
+                {(t.videos as any).p8_desc}
+              </motion.div>
+            )}
+
             <div className="mb-16">
               {(() => {
                 const filtered = videoList
