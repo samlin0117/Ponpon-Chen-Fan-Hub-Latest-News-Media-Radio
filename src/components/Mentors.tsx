@@ -5,17 +5,23 @@ import { useTranslation } from '../hooks/useTranslation';
 
 const HoverImageLink = ({ text, url, linkUrl, photoSourceLabel, index }: { text: string, url: string, linkUrl: string, photoSourceLabel: string, index: number }) => {
   const [isOpenMobile, setIsOpenMobile] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [imgError, setImgError] = useState(false);
+
+  const hasImage = url && url.trim() !== '';
 
   return (
-    <a 
-      key={`img-${index}`} 
-      href={linkUrl} 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      className="relative inline group/link text-gold font-medium cursor-pointer border-b border-gold/30 hover:border-gold transition-colors"
+    <a
+      key={`img-${index}`}
+      href={linkUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="relative inline text-gold font-medium cursor-pointer border-b border-gold/30 hover:border-gold transition-colors"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       onClick={(e) => {
         const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-        if (isTouch) {
+        if (isTouch && hasImage) {
           if (!isOpenMobile) {
             e.preventDefault();
             setIsOpenMobile(true);
@@ -24,18 +30,32 @@ const HoverImageLink = ({ text, url, linkUrl, photoSourceLabel, index }: { text:
       }}
     >
       <span dangerouslySetInnerHTML={{ __html: text }} />
-      <div className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-3 transition-all duration-300 z-50 w-64 md:w-80 shadow-2xl rounded-xl overflow-hidden border border-white/10 origin-bottom pointer-events-none ${isOpenMobile ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible group-hover/link:opacity-100 group-hover/link:scale-100 group-hover/link:visible'}`}>
-        <div className="relative">
-          <img src={url} alt="hover popup" className="w-full h-auto object-cover block" />
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-white/90 whitespace-nowrap bg-black/70 px-2.5 py-1.5 rounded-full backdrop-blur-md flex items-center gap-1.5">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-facebook w-3 h-3"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
-            <span>{photoSourceLabel}</span>
+      {hasImage && (
+        <div className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-3 transition-all duration-300 z-50 w-64 md:w-80 shadow-2xl rounded-xl overflow-hidden border border-white/10 origin-bottom pointer-events-none ${(isOpenMobile || isHovered) ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}>
+          <div className="relative min-h-[120px] bg-[#1a1a1a] flex items-center justify-center">
+            {!imgError ? (
+              <img
+                src={url}
+                alt="hover popup"
+                className="w-full h-auto object-cover block"
+                onError={() => setImgError(true)}
+              />
+            ) : (
+              <div className="text-gray-400 text-sm text-center p-6 mb-6">
+                照片預覽已失效<br /><span className="text-xs text-gray-500">(FB圖床網址有時效限制)</span>
+              </div>
+            )}
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-white/90 whitespace-nowrap bg-black/70 px-2.5 py-1.5 rounded-full backdrop-blur-md flex items-center gap-1.5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-facebook w-3 h-3"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+              <span>{photoSourceLabel}</span>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </a>
   );
 };
+
 
 const Mentors = () => {
   const { t } = useTranslation();
@@ -60,13 +80,13 @@ const Mentors = () => {
       const linkUrl = match[3] || "https://www.facebook.com/profile.php?id=100039208281828"; // Default to Ponpon's FB
 
       parts.push(
-        <HoverImageLink 
-          key={`img-${match.index}`} 
+        <HoverImageLink
+          key={`img-${match.index}`}
           index={match.index}
-          text={text} 
-          url={url} 
-          linkUrl={linkUrl} 
-          photoSourceLabel={(t as any).hero?.photoSource || '照片來源：Ponpon的fb粉絲專頁'} 
+          text={text}
+          url={url}
+          linkUrl={linkUrl}
+          photoSourceLabel={(t as any).hero?.photoSource || '照片來源：Ponpon的fb粉絲專頁'}
         />
       );
       lastIndex = regex.lastIndex;
@@ -174,14 +194,14 @@ const Mentors = () => {
                           </h5>
                           <div className="flex flex-col gap-2.5">
                             {selectedMentor.intro.classicSongs.map((song: any, idx: number) => (
-                              <a 
-                                key={idx} 
-                                href={song.url} 
-                                target="_blank" 
+                              <a
+                                key={idx}
+                                href={song.url}
+                                target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-3 text-sm text-gray-300 hover:text-white bg-white/5 hover:bg-white/10 px-4 py-2.5 rounded-xl border border-white/5 hover:border-gold/40 transition-all duration-300 w-fit group/song"
                               >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-youtube text-red-500 group-hover/song:scale-110 transition-transform"><path d="M2.5 7.1c.1-1.4 1.2-2.5 2.6-2.6 3.1-.2 9.7-.2 12.8 0 1.4.1 2.5 1.2 2.6 2.6.2 3.1.2 9.7 0 12.8-.1 1.4-1.2 2.5-2.6 2.6-3.1.2-9.7.2-12.8 0-1.4-.1-2.5-1.2-2.6-2.6-.2-3.1-.2-9.7 0-12.8z"/><polygon points="10 15 15 12 10 9 10 15"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-youtube text-red-500 group-hover/song:scale-110 transition-transform"><path d="M2.5 7.1c.1-1.4 1.2-2.5 2.6-2.6 3.1-.2 9.7-.2 12.8 0 1.4.1 2.5 1.2 2.6 2.6.2 3.1.2 9.7 0 12.8-.1 1.4-1.2 2.5-2.6 2.6-3.1.2-9.7.2-12.8 0-1.4-.1-2.5-1.2-2.6-2.6-.2-3.1-.2-9.7 0-12.8z" /><polygon points="10 15 15 12 10 9 10 15" /></svg>
                                 {song.name}
                               </a>
                             ))}
@@ -191,7 +211,7 @@ const Mentors = () => {
                     </div>
                   </div>
                 )}
-                
+
                 <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
                   {selectedMentor.detailedStory.map((story: any, idx: number) => (
                     <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">

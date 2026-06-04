@@ -48,7 +48,8 @@
     "list": [
       {
         "name": "George Benson",
-        "role": "Idol & Inspiration",
+        "avatar": "/benson-1.jpg",
+        "role": "Jazz Guitar Legend",
         "intro": {
           "bio": "George Benson is a legendary American jazz guitarist and singer, and a ten-time Grammy Award winner. He is renowned for his masterful guitar skills and his signature style of flawlessly synchronizing his guitar playing with his scat singing. This unique and captivating performance style profoundly moved Ponpon and became the ultimate inspiration for her pursuit of jazz music.",
           "classicSongs": [
@@ -74,7 +75,7 @@
           },
           {
             "date": "Jan 2025 | The Miraculous Phoenix Workshop",
-            "content": "Learning about his workshop, she drove 6 hours alone to attend. While practicing in a corner, she coincidentally met the master's musical director, Randy Waldman. Through Randy, she was granted a rare chance to watch the rehearsal from the front row. Reflecting on her difficult journey in the US, she broke down in tears of emotion for an hour.<br/><br/>After the show, she was invited backstage and personally thanked him. [HOVER_IMG:Benson held her hand and encouraged: <strong>\"You can like my music, but please don't copy me. You've got to find your own voice.\"</strong>|https://scontent-tpe1-1.xx.fbcdn.net/v/t51.75761-15/476007965_18475892992050265_7723100454829646141_n.jpg?stp=dst-jpegr_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=GYagZj2z1TIQ7kNvwEDiP5E&_nc_oc=AdpDCKlgh-om0P1dzj0cvxmgw6jdnLzRruisUgtjJTdzDU7DhRVVGZavsw5H5i0PLwo&_nc_zt=23&se=-1&_nc_ht=scontent-tpe1-1.xx&_nc_gid=UMmNbmURNl4DBerI2wz8Yg&_nc_ss=7b2a8&oh=00_Af6QPi-AaXfp3NnLrqd9RjHfNWfTrA8bOCaH_mTlwhIjQw&oe=6A1C9815|https://www.facebook.com/photo/?fbid=1407946237188972&set=pcb.1407946257188970] Before checking out of her hotel, she ran into them again. The team exchanged contacts and promised to listen to her original music in the future."
+            "content": "Learning about his workshop, she drove 6 hours alone to attend. While practicing in a corner, she coincidentally met the master's musical director, Randy Waldman. Through Randy, she was granted a rare chance to watch the rehearsal from the front row. Reflecting on her difficult journey in the US, she broke down in tears of emotion for an hour.<br/><br/>After the show, she was invited backstage and personally thanked him. [HOVER_IMG:Benson held her hand and encouraged: <strong>\"You can like my music, but please don't copy me. You've got to find your own voice.\"</strong>|/benson-1.jpg|https://www.facebook.com/photo/?fbid=1407946237188972&set=pcb.1407946257188970] Before checking out of her hotel, she ran into them again. The team exchanged contacts and promised to listen to her original music in the future."
           },
           {
             "date": "May 2025 onwards | The Master's Recognition",
@@ -82,7 +83,73 @@
           },
           {
             "date": "May 2026 | Keeping the Promise",
-            "content": "More than a year after their first meeting, Ponpon fulfilled her promise, [HOVER_IMG:personally delivering the master copy of her completed debut album into George Benson's hands|https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/699874554_1819123912737867_5791924134187042974_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=wqvV_Wm36F0Q7kNvwFMr4In&_nc_oc=AdosHosVs1ozQf0YZBHAvRcxKnHn3eNswqP9j1-eb5agknifhgSVRTnpNrPp6X39RxU&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=GwjJtxJ1TmwDkN2WFM7w9Q&_nc_ss=7b2a8&oh=00_Af59EvziWgQo9ihig1op_b-BNPAgFKH9q7I6cEoqaGzh6A&oe=6A1C7B7C|https://www.facebook.com/photo?fbid=1819123906071201&set=a.482592819724323]. They sat down for a deep conversation, and he earnestly listened to her album concepts and gave sincere advice. This exchange made her deeply feel the warmth, humility, and grace of a true master."
+            "content": "More than a year after their first meeting, Ponpon fulfilled her promise, [HOVER_IMG:personally delivering the master copy of her completed debut album into George Benson's hands|/benson-2.jpg|https://www.facebook.com/photo?fbid=1819123906071201&set=a.482592819724323]. They sat down for a deep conversation, and he earnestly listened to her album concepts and gave sincere advice. This exchange made her deeply feel the warmth, humility, and grace of a true master."
+          }
+        ]
+      },
+      {
+        "name": "Lin Cheng-Ju (Teacher Geddy)",
+        "avatar": "/geddy.jpg",
+        "role": "Guitar Mentor",
+        "intro": {
+          "bio": "Founder of 'Riverside Live House,' one of Taiwan's most representative independent music performance brands, and an honors graduate of the G.I.T. program at M.I. (Musicians Institute) in the US. He is also the author of the renowned guitar method book series 'Conquering the Sea of Guitars' and has frequently served as a judge for the Golden Melody Awards and Golden Indie Music Awards. Dedicated to music education, performance, and talent cultivation for many years, he has had a profound impact on the development of jazz and independent music in Taiwan. To Ponpon, Teacher Geddy played the role of an important mentor in her jazz music learning journey, helping her establish a solid foundation in guitar and music theory, and inspiring her deeper exploration of jazz music.",
+          "classicSongs": [
+            {
+              "name": "Performing together with Ponpon",
+              "url": "https://www.facebook.com/reel/605666635476108"
+            }
+          ]
+        },
+        "shortDesc": "Guided her into the jazz world from scratch, built a solid guitar foundation, and encouraged her to study in the US...",
+        "detailedStory": [
+          {
+            "date": "Supporting Her Determination",
+            "content": "When Ponpon decided to suspend her studies to practice guitar, he admired her resolute determination, believing this focus was the key to surviving in the jazz world."
+          },
+          {
+            "date": "Building the Foundation",
+            "content": "Spent a year teaching her from the very basics—how to hold a pick and change strings—helping her build a solid foundation in music theory and jazz harmony."
+          },
+          {
+            "date": "Broadening Musical Horizons",
+            "content": "Recommended a large amount of jazz and fusion music, vastly expanding her musical horizons and helping her establish her future direction."
+          },
+          {
+            "date": "Lending a Precious Guitar",
+            "content": "To fully support Ponpon's learning and growth in jazz guitar, he generously lent her his precious Gibson ES-175 jazz guitar for practice, demonstrating his immense expectations and high regard for his beloved student."
+          },
+          {
+            "date": "Encouraging Studies in the US",
+            "content": "Discovering her passion and talent for guitar, he actively encouraged her to travel to California, USA, to experience authentic jazz music firsthand."
+          }
+        ]
+      },
+      {
+        "name": "Teacher Yun-Hui Hung",
+        "avatar": "/yunhui.jpg",
+        "role": "Jazz Initiator & Study Abroad Guide",
+        "intro": {
+          "bio": "A veteran crossover musician, arranger, performer, and music educator in Taiwan, she studied at the Berklee College of Music in the US. Her classic 'Four-Hands Piano' series with Kay Huang is widely loved by music fans, and she won the 39th Golden Bell Award in the technical category for the Da Ai TV drama 'Quartet' soundtrack. Active on pop music and concert stages for many years, she has participated in large-scale concert tours for famous singers like Jay Chou and Stefanie Sun. To Ponpon, Teacher Hung is not only an important mentor who initiated her into piano but also provided crucial guidance and support throughout her musical learning and studies abroad.",
+          "classicSongs": [
+            {
+              "name": "Performing as Keyboardist at Ponpon's Solo Concert - The Price of Love",
+              "url": "https://www.youtube.com/watch?v=6mbNk1uqzns&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=12"
+            }
+          ]
+        },
+        "shortDesc": "The mentor who first planted the concept of \"jazz\" in her mind and devised a practical strategy before she impulsively studied abroad...",
+        "detailedStory": [
+          {
+            "date": "Jazz Awakening",
+            "content": "To Ponpon, Teacher Yun-Hui Hung is not only an important mentor for her piano awakening but also a crucial guide on her path to jazz music. When she was 15 and learning piano chords, Teacher Hung used the jazz standard 'Blue Monk' as teaching material, allowing jazz to enter her musical world for the first time."
+          },
+          {
+            "date": "Providing Practical Advice",
+            "content": "When Ponpon was planning to study in the US, Teacher Hung provided advice from the perspectives of language proficiency, learning efficiency, and long-term development, helping her establish a more comprehensive learning plan."
+          },
+          {
+            "date": "Laying a Crucial Foundation",
+            "content": "Consolidating her English, music theory, and performance basics before officially going to the US allowed her to truly invest her study abroad resources into stylistic exploration and professional refinement, laying an important foundation for her subsequent jazz music development."
           }
         ]
       }
@@ -733,6 +800,18 @@
         ],
         "correctAnswer": 0,
         "explanation": "Ponpon loves classic jazz from the 1920s to 1950s, which is evident from her live performance setlists."
+      },
+      {
+        "id": 48,
+        "question": "What kind of special class did Ponpon attend during her elementary school years?",
+        "options": [
+          "Music class",
+          "Art class",
+          "Sports class",
+          "Dance class"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Although she is now a jazz singer shining on stage, Ponpon has liked sports since childhood."
       }
     ]
   },
@@ -901,7 +980,7 @@
     {
       "year": "Late 2025",
       "title": "Seclusion for Prep and High-Pressure Recording",
-      "desc": "After her performance in San Francisco in September, she decided to temporarily pause public performances to focus entirely on studio preparations.<br/><br/>They spent about four months intensively discussing and arranging. The recording sessions were highly efficient and high-pressure; without any prior rehearsals, she did \"One take\" synchronized recordings with veteran musicians (including teachers her producer invited from the East Coast), recording up to five songs a day. In this all-English jazz album, she insisted on secretly including one Chinese song.",
+      "desc": "After her performance in San Francisco in September, she decided to temporarily pause public performances to focus entirely on studio preparations.<br/><br/>They spent about four months intensively discussing and arranging. The recording sessions were highly efficient and high-pressure; without any prior rehearsals, she did \"One take\" synchronized recordings with veteran musicians (including teachers her producer invited from the East Coast), recording up to five songs a day. In this all-English jazz album, she insisted on including one Chinese song.",
       "category": "album"
     },
     {
@@ -966,8 +1045,8 @@
     },
     {
       "year": "2024 Q3",
-      "title": "First Public SCATTING Performance",
-      "desc": "During the performance of \"How High The Moon\", Ponpon debuted her signature Scatting (guitar and vocal unison) technique in a public setting for the first time. <a href=\"https://www.youtube.com/watch?v=_BVm-hixXt4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch performance</a>",
+      "title": "First SCATTING in a Public Performance",
+      "desc": "During the performance of \"How High The Moon\", Ponpon debuted her signature Scatting (guitar and vocal unison) technique in a public performance for the first time. <a href=\"https://www.youtube.com/watch?v=_BVm-hixXt4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch performance</a>",
       "category": "first"
     },
     {
@@ -978,7 +1057,7 @@
     },
     {
       "year": "Apr 2025",
-      "title": "First Public Washboard Performance",
+      "title": "First WASHBOARD in a Public Performance",
       "desc": "Incorporated the washboard into her live performance for the very first time at Cicada Restaurant and Lounge in Los Angeles.<a href=\"https://www.youtube.com/watch?v=PwxGVbZvWXI&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch performance</a>",
       "category": "first"
     },

@@ -48,7 +48,8 @@
     "list": [
       {
         "name": "George Benson",
-        "role": "啟蒙偶像",
+        "avatar": "/benson-1.jpg",
+        "role": "爵士吉他傳奇大師",
         "intro": {
           "bio": "George Benson 是一位傳奇的美國爵士吉他手與歌手，曾榮獲十座葛萊美獎。他以精湛的吉他技巧，以及將吉他彈奏與人聲擬音 (Scatting) 完美同步的標誌性風格聞名於世。這種獨一無二的表演魅力，深深震撼了 Ponpon，也成為她踏上爵士音樂之路的最重要啟發。",
           "classicSongs": [
@@ -74,7 +75,7 @@
           },
           {
             "date": "2025年1月｜奇蹟的鳳凰城工作坊",
-            "content": "得知大師舉辦工作坊，獨自開車 6 小時前往。在角落練琴時，誤打誤撞認識了大師的音樂總監 Randy Waldman。透過 Randy 帶領破例進入彩排室，在第一排觀看大師彩排，回想起隻身赴美的艱辛，激動爆哭一小時。<br/><br/>演出後受邀進入後台，親口對大師表達感謝。[HOVER_IMG:Benson握著她的手勉勵：<strong>「妳可以喜歡我的音樂，但千萬不要模仿我，妳要找到妳自己的聲音 (find your own voice)。」</strong>|https://scontent-tpe1-1.xx.fbcdn.net/v/t51.75761-15/476007965_18475892992050265_7723100454829646141_n.jpg?stp=dst-jpegr_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=GYagZj2z1TIQ7kNvwEDiP5E&_nc_oc=AdpDCKlgh-om0P1dzj0cvxmgw6jdnLzRruisUgtjJTdzDU7DhRVVGZavsw5H5i0PLwo&_nc_zt=23&se=-1&_nc_ht=scontent-tpe1-1.xx&_nc_gid=UMmNbmURNl4DBerI2wz8Yg&_nc_ss=7b2a8&oh=00_Af6QPi-AaXfp3NnLrqd9RjHfNWfTrA8bOCaH_mTlwhIjQw&oe=6A1C9815|https://www.facebook.com/photo/?fbid=1407946237188972&set=pcb.1407946257188970]退房前再次巧遇，大師團隊留下了聯絡方式，並答應未來願意聽她的原創作品。"
+            "content": "得知大師舉辦工作坊，獨自開車 6 小時前往。在角落練琴時，誤打誤撞認識了大師的音樂總監 Randy Waldman。透過 Randy 帶領破例進入彩排室，在第一排觀看大師彩排，回想起隻身赴美的艱辛，激動爆哭一小時。<br/><br/>演出後受邀進入後台，親口對大師表達感謝。[HOVER_IMG:Benson握著她的手勉勵：<strong>「妳可以喜歡我的音樂，但千萬不要模仿我，妳要找到妳自己的聲音 (find your own voice)。」</strong>|/benson-1.jpg|https://www.facebook.com/photo/?fbid=1407946237188972&set=pcb.1407946257188970]退房前再次巧遇，大師團隊留下了聯絡方式，並答應未來願意聽她的原創作品。"
           },
           {
             "date": "2025年5月後｜大師的認可",
@@ -82,7 +83,73 @@
           },
           {
             "date": "2026年5月｜兌現承諾交付母帶",
-            "content": "距離初次見面的一年多後，Ponpon 兌現了當初的約定，[HOVER_IMG:親手把製作完成的首張專輯母帶交到了 George Benson 手中|https://scontent-tpe1-1.xx.fbcdn.net/v/t39.30808-6/699874554_1819123912737867_5791924134187042974_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=wqvV_Wm36F0Q7kNvwFMr4In&_nc_oc=AdosHosVs1ozQf0YZBHAvRcxKnHn3eNswqP9j1-eb5agknifhgSVRTnpNrPp6X39RxU&_nc_zt=23&_nc_ht=scontent-tpe1-1.xx&_nc_gid=GwjJtxJ1TmwDkN2WFM7w9Q&_nc_ss=7b2a8&oh=00_Af59EvziWgQo9ihig1op_b-BNPAgFKH9q7I6cEoqaGzh6A&oe=6A1C7B7C|https://www.facebook.com/photo?fbid=1819123906071201&set=a.482592819724323]。兩人坐下來深聊，大師認真聽她介紹專輯並給予真誠建議。這次交流讓她深刻感受到真正大師的溫暖、謙遜與風範。"
+            "content": "距離初次見面的一年多後，Ponpon 兌現了當初的約定，[HOVER_IMG:親手把製作完成的首張專輯母帶交到了 George Benson 手中|/benson-2.jpg|https://www.facebook.com/photo?fbid=1819123906071201&set=a.482592819724323]。兩人坐下來深聊，大師認真聽她介紹專輯並給予真誠建議。這次交流讓她深刻感受到真正大師的溫暖、謙遜與風範。"
+          }
+        ]
+      },
+      {
+        "name": "林正如 (Geddy老師)",
+        "avatar": "/geddy.jpg",
+        "role": "吉他啟蒙恩師",
+        "intro": {
+          "bio": "台灣最具代表性的獨立音樂展演品牌之一「河岸留言」創辦人，美國 M.I. 音樂學院 G.I.T. 榮譽畢業，亦是知名吉他教材《征服琴海》系列作者，並多次擔任金曲獎與金音獎評審。多年來致力於音樂教育、演出與人才培育，對台灣爵士樂及獨立音樂發展具有深遠影響。對 Ponpon 而言，Geddy 老師在其爵士音樂學習歷程中扮演重要導師角色，協助她建立扎實的吉他與樂理基礎，並啟發其對爵士音樂更深入的探索。",
+          "classicSongs": [
+            {
+              "name": "與 Ponpon 共同演出",
+              "url": "https://www.facebook.com/reel/605666635476108"
+            }
+          ]
+        },
+        "shortDesc": "從零開始引導她踏入爵士樂世界，為她打下扎實的吉他與樂理基礎，並鼓勵她赴美深造的關鍵推手...",
+        "detailedStory": [
+          {
+            "date": "支持休學決心",
+            "content": "當 Ponpon 決定休學練琴時，他非常欣賞這種「破釜沉舟」的決心，認為這份專注與毅力是未來在爵士樂界立足的關鍵。"
+          },
+          {
+            "date": "打穩吉他基礎",
+            "content": "花了一年時間，親自從最基礎的拿 Pick、換弦教起，幫助當時還是「吉他小白」的她建立扎實的樂理與爵士和聲基礎。"
+          },
+          {
+            "date": "打開音樂視野",
+            "content": "推薦她聆聽大量爵士與融合爵士音樂，大大拓展了她的音樂視野，幫助她逐漸確立未來鑽研的方向。"
+          },
+          {
+            "date": "出借珍貴名琴相挺",
+            "content": "為了全力支持 Ponpon 在爵士吉他上的學習與成長，慷慨地出借了自己珍貴的 Gibson ES-175 爵士吉他讓她練習使用，展現了對這位愛徒極大的器重與期許。"
+          },
+          {
+            "date": "鼓勵赴美深造",
+            "content": "在教學中發掘了她對吉他的熱忱與天賦，積極鼓勵她前往美國加州，親身接觸最道地的爵士音樂。"
+          }
+        ]
+      },
+      {
+        "name": "洪筠惠老師",
+        "avatar": "/yunhui.jpg",
+        "role": "爵士啟蒙與留學引路人",
+        "intro": {
+          "bio": "台灣資深跨界音樂人、編曲家、演奏家與音樂教育工作者，曾赴美就讀 Berklee 音樂學院。她與黃韻玲合作的《四手聯彈》系列廣受樂迷喜愛，並以大愛劇場《四重奏》配樂榮獲第39屆金鐘獎技術類獎項。多年來活躍於流行音樂與演唱會舞台，曾參與周杰倫、孫燕姿等知名歌手大型巡迴演唱會演出。對 Ponpon 而言，洪老師不僅是鋼琴啟蒙的重要導師，更在其音樂學習與赴美深造的過程中提供關鍵指引與支持。",
+          "classicSongs": [
+            {
+              "name": "擔任 Ponpon 專場演出鍵盤手 - 愛的代價 The price of love",
+              "url": "https://www.youtube.com/watch?v=6mbNk1uqzns&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=12"
+            }
+          ]
+        },
+        "shortDesc": "將「爵士樂」概念首次植入她腦海，並在赴美深造前為她踩下煞車、擬定留學戰略的關鍵啟蒙者...",
+        "detailedStory": [
+          {
+            "date": "爵士樂的啟蒙",
+            "content": "對 Ponpon 而言，洪筠惠老師不僅是鋼琴啟蒙的重要導師，更是她踏上爵士音樂道路的重要引路人。15歲學習鋼琴和弦期間，洪老師以爵士標準曲《Blue Monk》作為教材，讓爵士樂首次走入她的音樂世界。"
+          },
+          {
+            "date": "提供務實建議",
+            "content": "當 Ponpon 規劃赴美進修時，洪老師也從語言能力、學習效率與長遠發展等角度提供建議，協助她建立更完整的學習規劃。"
+          },
+          {
+            "date": "奠定重要基礎",
+            "content": "在正式赴美之前先鞏固英文、樂理與演奏基礎，使她能將留學資源真正投入於曲風探索與專業精進，為後來的爵士音樂發展奠定重要基礎。"
           }
         ]
       }
@@ -732,6 +799,18 @@
         ],
         "correctAnswer": 0,
         "explanation": "Ponpon 鍾愛 1920 至 1950 年代的經典爵士，這點從她的現場演出選曲就能看出。"
+      },
+      {
+        "id": 48,
+        "question": "Ponpon 的國小生涯曾就讀過哪一種特色班級？",
+        "options": [
+          "音樂班",
+          "美術班",
+          "體育班",
+          "舞蹈班"
+        ],
+        "correctAnswer": 2,
+        "explanation": "雖然現在是在舞台上發光的爵士歌手，但 Ponpon從小就喜歡運動"
       }
     ]
   },
@@ -822,7 +901,7 @@
       },
       "how-high-the-moon": {
         "title": "How High The Moon",
-        "background": "《How High The Moon》是爵士樂史上最具指標性的標準曲之一，更是咆勃爵士（Bebop）時代樂手們最愛用來即興較勁的經典和聲架構。<br/><br/>📍 時代背景：從百老匯到咆勃爵士的國歌<br/>這首歌誕生於 1940 年，最初是為百老匯音樂劇《Two for the Show》所寫。然而，真正讓它名留青史的，是 1940 年代咆勃爵士（Bebop）革命。由於它的和聲行進（Chord progression）極具挑戰性與流動感，當時的爵士巨匠如 Charlie Parker 等人，常以它的和絃為基礎，創作出全新的複雜旋律（例如著名的《Ornithology》）。這讓《How High The Moon》成為了爵士樂手證明自己即興實力的「終極試金石」。隨後，爵士天后 Ella Fitzgerald 更以這首歌展現了史上最偉大的 Scatting（擬聲吟唱）表演，將它推向了神壇。<br/><br/>🌧️ 歌曲意境與歌詞含意：遙不可及的愛與月亮<br/>歌詞將「愛情」與「月亮」相連繫，描繪一種思念與渴望。開頭唱道：「Somewhere there's music, how faint the tune / Somewhere there's heaven, how high the moon.」（某處有著微弱的音樂，某處有著天堂，而月亮有多高？）月亮在此象徵著遙不可及的愛情，當愛人不在身邊時，美好的事物似乎都顯得虛無縹緲。直到愛人出現，那些遙遠的音符與月光，才會真正照進心裡。<br/><br/>🌟 Ponpon 的演繹特色<br/>在這場演出中，Ponpon 首度在公開場合向觀眾展示了她的招牌絕活——「吉他與人聲 Scatting 同步」。她在影片中抱著爵士吉他，優雅而自信地以清亮慵懶的嗓音詮釋這首經典名曲。在歌曲中段的即興橋段，她巧妙地讓歌聲與吉他琴音合而為一，完美復刻了吉他大師 George Benson 的經典技巧。這種將極致的樂器技巧與人聲天賦結合的演出，不僅向咆勃時代的即興精神致敬，也為這首歷史悠久的爵士經典注入了屬於 Ponpon 的迷人火花。"
+        "background": "《How High The Moon》是爵士樂史上最具指標性的標準曲之一，更是咆勃爵士（Bebop）時代樂手們最愛用來即興較勁的經典和聲架構。<br/><br/>📍 時代背景：從百老匯到咆勃爵士的國歌<br/>這首歌誕生於 1940 年，最初是為百老匯音樂劇《Two for the Show》所寫。然而，真正讓它名留青史的，是 1940 年代咆勃爵士（Bebop）革命。由於它的和聲行進（Chord progression）極具挑戰性與流動感，當時的爵士巨匠如 Charlie Parker 等人，常以它的和絃為基礎，創作出全新的複雜旋律（例如著名的《Ornithology》）。這讓《How High The Moon》成為了爵士樂手證明自己即興實力的「終極試金石」。隨後，爵士天后 Ella Fitzgerald 更以這首歌展現了史上最偉大的 Scatting（擬聲吟唱）表演，將它推向了神壇。<br/><br/>🌧️ 歌曲意境與歌詞含意：遙不可及的愛與月亮<br/>歌詞將「愛情」與「月亮」相連繫，描繪一種思念與渴望。開頭唱道：「Somewhere there's music, how faint the tune / Somewhere there's heaven, how high the moon.」（某處有著微弱的音樂，某處有著天堂，而月亮有多高？）月亮在此象徵著遙不可及的愛情，當愛人不在身邊時，美好的事物似乎都顯得虛無縹緲。直到愛人出現，那些遙遠的音符與月光，才會真正照進心裡。<br/><br/>🌟 Ponpon 的演繹特色<br/>在這場演出中，Ponpon 首度在公開演出場合向觀眾展示了她的招牌絕活——「吉他與人聲 Scatting 同步」。她在影片中抱著爵士吉他，優雅而自信地以清亮慵懶的嗓音詮釋這首經典名曲。在歌曲中段的即興橋段，她巧妙地讓歌聲與吉他琴音合而為一，完美復刻了吉他大師 George Benson 的經典技巧。這種將極致的樂器技巧與人聲天賦結合的演出，不僅向咆勃時代的即興精神致敬，也為這首歷史悠久的爵士經典注入了屬於 Ponpon 的迷人火花。"
       },
       "bennys-from-heaven": {
         "title": "Benny's From Heaven",
@@ -900,7 +979,7 @@
     {
       "year": "2025年下半年",
       "title": "閉關籌備與高壓錄製期",
-      "desc": "在經歷九月舊金山演出後，決定暫停短時間內的公開演出，專注將心力投入錄音室的籌備。<br/><br/>花了約四個月密集討論與編曲。錄音現場非常精實且高壓，在沒有事前練團的情況下，與大前輩們（包含製作人動用人脈從東岸請來的老師）一起在現場「One take」同步錄音，一天必須錄製高達五首歌。這張全英文爵士專輯中，她還堅持在其中偷藏了一首中文歌。",
+      "desc": "在經歷九月舊金山演出後，決定暫停短時間內的公開演出，專注將心力投入錄音室的籌備。<br/><br/>花了約四個月密集討論與編曲。錄音現場非常精實且高壓，在沒有事前練團的情況下，與大前輩們（包含製作人動用人脈從東岸請來的老師）一起在現場「One take」同步錄音，一天必須錄製高達五首歌。這張全英文爵士專輯中，她還堅持在其中放了一首中文歌曲。",
       "category": "album"
     },
     {
@@ -965,8 +1044,8 @@
     },
     {
       "year": "2024年 Q3",
-      "title": "第一次在公開場合表演 SCATTING",
-      "desc": "在演出 《How High The Moon》時，Ponpon 首次在公開場合中使用 Scatting (吉他與人聲齊奏) 的表演方式，展現其獨特的音樂標籤。<a href=\"https://www.youtube.com/watch?v=_BVm-hixXt4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 點此觀看演出精華</a>",
+      "title": "第一次在公開演出場合表演 SCATTING",
+      "desc": "在演出 《How High The Moon》時，Ponpon 首次在公開演出場合中使用 Scatting (吉他與人聲齊奏) 的表演方式，展現其獨特的音樂標籤。<a href=\"https://www.youtube.com/watch?v=_BVm-hixXt4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 點此觀看演出精華</a>",
       "category": "first"
     },
     {
@@ -977,7 +1056,7 @@
     },
     {
       "year": "2025年4月",
-      "title": "第一次在公開場合表演 WASHBOARD",
+      "title": "第一次在公開演出場合表演 WASHBOARD",
       "desc": "於洛杉磯 Cicada Restaurant and Lounge 的現場演出中，首次加入 Washboard (洗衣板) 進行演奏。<a href=\"https://www.youtube.com/watch?v=PwxGVbZvWXI&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 點此觀看演出精華</a>",
       "category": "first"
     },
