@@ -28,7 +28,7 @@
   },
   "about": {
     "title": "About Ponpon",
-    "description": "Ponpon hails from Taipei, Taiwan, and moved to the US at age 20 to study jazz. In the musical world of Ponpon Chen (陳芃瑄), there are no boundaries between instruments and the human voice. With her soulful, evocative vocals as a foundation, combined with fluid guitar accompaniment, she weaves freely through melodies.\n\nBeyond her captivating \"musical storytelling\" charm, what fascinates fans most is her live performance, where she simultaneously masterfully executes crystal-clear whistling, dynamic scatting, and intricate guitar picking. This \"trinity\" of synchronized performance—where every note serves as a vessel for storytelling—has become her most recognizable musical signature. With her debut jazz album set for release in 2026, look forward to this delicate yet powerful musical energy."
+    "description": "Ponpon (Chen Peng-Hsuan) hails from Taipei, Taiwan, and traveled to the US to study jazz. In her musical world, instruments and the human voice blend seamlessly without clear boundaries. With her infectious vocals as a foundation, she integrates the spirit of jazz improvisation with diverse musical elements, roaming freely through melodies.\n\nBeyond her captivating charm of musical storytelling, what fascinates fans most is her ability to simultaneously utilize crystal-clear whistling, dynamic scat singing, and guitar playing during live performances. This intertwined, multi-role performance style makes every note a carrier of emotions and stories, and has gradually become her most recognizable musical signature.\n\nCurrently, Ponpon is continuing to expand her musical territory and preparing her personal musical works, showcasing a delicate yet energetic style of creation and singing."
   },
   "endorsement": {
     "title": "Notable Mentions",
@@ -103,24 +103,24 @@
         "shortDesc": "Guided her into the jazz world from scratch, built a solid guitar foundation, and encouraged her to study in the US...",
         "detailedStory": [
           {
-            "date": "Supporting Her Determination",
-            "content": "When Ponpon decided to suspend her studies to practice guitar, he admired her resolute determination, believing this focus was the key to surviving in the jazz world."
+            "date": "Supporting Her Decision to Suspend Studies",
+            "content": "When Ponpon decided to suspend her studies to practice guitar, he highly appreciated this \"burning the boats\" determination, believing this focus and perseverance would be key to establishing herself in the music industry in the future."
           },
           {
-            "date": "Building the Foundation",
-            "content": "Spent a year teaching her from the very basics—how to hold a pick and change strings—helping her build a solid foundation in music theory and jazz harmony."
+            "date": "Building a Solid Guitar Foundation",
+            "content": "He spent a year personally teaching her from the very basics of holding a pick and changing strings, helping her—then a \"guitar novice\"—build solid music theory concepts and guiding her first steps into Jazz harmony."
+          },
+          {
+            "date": "Lending a Precious Guitar in Support",
+            "content": "To fully support Ponpon's learning and growth on the guitar, he generously lent her his precious Gibson ES-175 jazz guitar for practice, showing immense high regard and expectations for his beloved student."
           },
           {
             "date": "Broadening Musical Horizons",
-            "content": "Recommended a large amount of jazz and fusion music, vastly expanding her musical horizons and helping her establish her future direction."
+            "content": "Before Ponpon was even clear on her idol George Benson's genre positioning, Teacher Geddy recommended she listen to a large amount of Jazz and Fusion music, greatly expanding her musical horizons and becoming vital nourishment for her later focus on studying jazz in the US."
           },
           {
-            "date": "Lending a Precious Guitar",
-            "content": "To fully support Ponpon's learning and growth in jazz guitar, he generously lent her his precious Gibson ES-175 jazz guitar for practice, demonstrating his immense expectations and high regard for his beloved student."
-          },
-          {
-            "date": "Encouraging Studies in the US",
-            "content": "Discovering her passion and talent for guitar, he actively encouraged her to travel to California, USA, to experience authentic jazz music firsthand."
+            "date": "Encouraging Further Studies in the US",
+            "content": "Discovering her passion and talent for the guitar during their lessons, he actively encouraged her to pursue further studies in California, USA, to personally explore and find a musical style that truly belonged to her."
           }
         ]
       },
@@ -842,7 +842,9 @@
     "p5": "Fan Cams",
     "p6": "Highlights",
     "p7": "Auditions & TV Shows",
-    "p8": "Fan Covers & Tributes"
+    "p8": "Fan Covers & Tributes",
+    "filterAllYears": "All Years",
+    "before2020": "Before 2020"
   },
   "links": {
     "title": "Follow Ponpon",
@@ -973,8 +975,8 @@
   "timelineItems": [
     {
       "year": "Early 2025",
-      "title": "Inception, Producer's Push, and a Promise to a Master",
-      "desc": "Her guitar teacher and producer, Graham Dechter, considering her US visa and career development, proactively suggested: \"You need to have your own work; only with works can you tour and truly start your career.\" Facing concerns about high production costs and lacking a dedicated band, her producer boldly assured her and volunteered to coordinate with top industry veterans to help with the recording.<br/><br/>In January of the same year, backstage at a workshop in Arizona, she promised her idol George Benson that she would \"release an album next year and hope to personally deliver it to him,\" receiving the master's anticipation and approval.",
+      "title": "Inception and Producer's Push",
+      "desc": "Her guitar teacher and producer, Graham Dechter, considering her US visa and career development, proactively suggested: \"You need to have your own work; only with works can you tour and truly start your career.\" Facing concerns about high production costs and lacking a dedicated band, her producer boldly assured her and volunteered to coordinate with top industry veterans to help with the recording.",
       "category": "album"
     },
     {
@@ -990,15 +992,15 @@
       "category": "album"
     },
     {
-      "year": "May 2026",
-      "title": "Mastering and Fulfilling the Promise",
-      "desc": "Over a year after their first meeting, she successfully completed the album's master tape. She met George Benson again and personally handed the master tape to him. The master listened earnestly, shared his thoughts, and gave sincere advice, perfectly fulfilling their promise.",
+      "year": "Apr-May 2026",
+      "title": "Album Master Tape Completed",
+      "desc": "After months of recording and post-production, Ponpon successfully completed the master tape for her debut jazz album, getting fully prepared for its upcoming release.",
       "category": "album"
     },
     {
       "year": "Late 2026 & Beyond",
       "title": "Expected Release and Future Tour Plans",
-      "desc": "This debut personal jazz album is scheduled to be officially released in the second half of 2026.<br/><br/>After the release, she plans to arrange a tour in the US first, followed by the goal of expanding the tour back to Asia.",
+      "desc": "This debut personal jazz album is scheduled to be officially released in the second half of 2026.<br/><br/>After the release, Ponpon plans to arrange a tour in the US first, followed by the goal of expanding the tour back to Asia.",
       "category": "album"
     },
     {

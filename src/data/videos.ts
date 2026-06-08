@@ -11,6 +11,8 @@ export interface VideoInfo {
   thumbnailUrl?: string;
   isFeatured: boolean;
   eventGroup?: string;
+  startTime?: number;
+  endTime?: number;
 }
 
 export const videoList: VideoInfo[] = [
@@ -947,5 +949,37 @@ export const videoList: VideoInfo[] = [
     "embedUrl": "DWhAwQeiJqa",
     "thumbnailUrl": "/ig-DWhAwQeiJqa.png",
     "isFeatured": false
+  },
+  {
+    "id": "v-5MkCK5aRCNk",
+    "platform": "youtube",
+    "category": "p8",
+    "title": "Ponpon Chen Beautiful Jazz Guitar Solo How High The Moon #guitartabs #amazingguitar",
+    "date": "2025-08-24",
+    "embedUrl": "5MkCK5aRCNk",
+    "thumbnailUrl": "https://i.ytimg.com/vi/5MkCK5aRCNk/maxresdefault.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": "v-ig-C7vde9ru1w-",
+    "platform": "instagram",
+    "category": "p2",
+    "title": "“All The Things You Are” —— Jerome Kern",
+    "date": "2024-06-03",
+    "embedUrl": "C7vde9ru1w-",
+    "thumbnailUrl": "/ig-All The Things You Are.JPG",
+    "isFeatured": false
+  },
+  {
+    "id": "v-OB584QFToTY",
+    "platform": "youtube",
+    "category": "p3",
+    "title": "REQUEST FEST 53 -THE WARNING -  HALESTORM - MISSIONED SOULS - LUCY THOMAS - PONPON CHEN  - TPW",
+    "date": "2026-06-08",
+    "embedUrl": "OB584QFToTY",
+    "thumbnailUrl": "/REQUEST FEST.JPG",
+    "isFeatured": false,
+    "startTime": 5697,
+    "endTime": 6767
   }
 ];

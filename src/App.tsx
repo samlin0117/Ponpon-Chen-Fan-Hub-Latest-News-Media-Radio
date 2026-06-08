@@ -24,6 +24,7 @@ function MainContent() {
   });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeVideoTab, setActiveVideoTab] = useState('p1');
+  const [activeYearTab, setActiveYearTab] = useState('all');
   const location = useLocation();
 
   const carouselImages = [
@@ -1110,6 +1111,32 @@ function MainContent() {
                 </button>
               ))}
             </div>
+
+            {activeVideoTab === 'p1' && (
+              <div className="flex overflow-x-auto gap-2 md:gap-4 pb-4 mb-8 custom-scrollbar hide-scrollbar-on-mobile w-full justify-start">
+                {[
+                  { id: 'all', label: (t.videos as any).filterAllYears },
+                  { id: '2025', label: '2025' },
+                  { id: '2024', label: '2024' },
+                  { id: '2023', label: '2023' },
+                  { id: '2022', label: '2022' },
+                  { id: '2021', label: '2021' },
+                  { id: 'before2020', label: (t.videos as any).before2020 }
+                ].map(tab => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveYearTab(tab.id)}
+                    className={`px-4 py-2 rounded-full whitespace-nowrap text-xs md:text-sm font-medium transition-all duration-300 ${
+                      activeYearTab === tab.id 
+                        ? 'bg-white/20 text-white shadow-lg' 
+                        : 'bg-dark-lighter border border-white/10 text-gray-400 hover:text-white hover:border-white/30'
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+            )}
             
             {activeVideoTab === 'p8' && (t.videos as any).p8_desc && (
               <motion.div 
@@ -1123,9 +1150,17 @@ function MainContent() {
 
             <div className="mb-16">
               {(() => {
-                const filtered = videoList
+                let filtered = videoList
                   .filter(v => activeVideoTab === 'all' ? v.isFeatured : v.category === activeVideoTab)
                   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+                if (activeVideoTab === 'p1' && activeYearTab !== 'all') {
+                  filtered = filtered.filter(v => {
+                    const year = v.date ? parseInt(v.date.split('-')[0], 10) : 0;
+                    if (activeYearTab === 'before2020') return year <= 2020;
+                    return year.toString() === activeYearTab;
+                  });
+                }
                 
                 // Only group by year for 'p1' (Live & Music Works)
                 if (activeVideoTab === 'p1') {

@@ -155,7 +155,7 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
             {video.platform === 'youtube' && (
               <iframe
                 className="w-full h-full aspect-video"
-                src={`https://www.youtube.com/embed/${video.embedUrl}?autoplay=1&vq=hd1080&hd=1`}
+                src={`https://www.youtube.com/embed/${video.embedUrl}?autoplay=1&vq=hd1080&hd=1${video.startTime ? `&start=${video.startTime}` : ''}${video.endTime ? `&end=${video.endTime}` : ''}`}
                 title={video.title}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
