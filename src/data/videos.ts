@@ -931,13 +931,13 @@ export const videoList: VideoInfo[] = [
     "isFeatured": false
   },
   {
-    "id": "v-ZRvUJJ0MGa4",
+    "id": "v-5GhRU9aepAc",
     "platform": "youtube",
     "category": "p8",
     "title": "Ponpon & Colin - How high the Moon (Acoustic Fretless Bass)",
     "date": "2025-07-21",
-    "embedUrl": "ZRvUJJ0MGa4",
-    "thumbnailUrl": "https://i.ytimg.com/vi/ZRvUJJ0MGa4/maxresdefault.jpg",
+    "embedUrl": "5GhRU9aepAc",
+    "thumbnailUrl": "https://i.ytimg.com/vi/5GhRU9aepAc/maxresdefault.jpg",
     "isFeatured": false
   },
   {

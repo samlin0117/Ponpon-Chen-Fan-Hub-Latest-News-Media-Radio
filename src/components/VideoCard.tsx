@@ -147,7 +147,7 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
             <X className="w-6 h-6 md:w-8 md:h-8" />
           </button>
 
-          <div className={`w-full max-w-6xl bg-black md:rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.5)] border-y md:border border-white/10 relative flex flex-col items-center justify-center animate-in zoom-in-95 duration-300 ${
+          <div className={`bg-black md:rounded-2xl shadow-[0_0_80px_rgba(212,175,55,0.15)] ring-1 ring-white/10 md:ring-gold/30 relative flex flex-col items-center justify-center animate-in zoom-in-95 duration-300 w-full md:w-[90vw] max-w-[1600px] ${
             (video.platform === 'youtube' || (video.platform === 'facebook' && !isFbVertical)) 
               ? 'aspect-video h-auto overflow-hidden' 
               : 'h-[90vh] md:h-[85vh] py-6 md:py-10 overflow-y-auto'
