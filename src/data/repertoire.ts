@@ -3,6 +3,7 @@ export interface RepertoireSong {
   year: string;
   composer: string;
   lyricsLink?: string;
+  lyricsText?: string;
   youtubeId?: string;
   videoLink?: string;
 }
@@ -111,7 +112,8 @@ export const repertoireData: RepertoireSong[] = [
     "year": "1937",
     "composer": "George Gershwin, Ira Gershwin",
     "lyricsLink": "https://genius.com/Frank-sinatra-they-cant-take-that-away-from-me-lyrics",
-    "videoLink": "https://www.facebook.com/reel/1177729904529661"
+    "youtubeId": "erFPDQHv8fg",
+    "endTime": 118
   },
   {
     "id": "blue-skies",
@@ -130,14 +132,14 @@ export const repertoireData: RepertoireSong[] = [
     "id": "this-i-dig-of-you",
     "year": "1960",
     "composer": "Hank Mobley",
-    "videoLink": "https://www.youtube.com/watch?v=bCBVW_Xs-NY"
+    "youtubeId": "bCBVW_Xs-NY"
   },
   {
     "id": "they-all-laughed",
     "year": "1937",
     "composer": "George Gershwin, Ira Gershwin",
     "lyricsLink": "https://genius.com/Ella-fitzgerald-they-all-laughed-lyrics",
-    "videoLink": "https://www.youtube.com/watch?v=XaiYQoDK6uM"
+    "youtubeId": "XaiYQoDK6uM"
   },
   {
     id: 'almost-like-being-in-love',

@@ -13,6 +13,8 @@ const Repertoire: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [filterType, setFilterType] = useState<'alpha' | 'year'>('alpha');
   const [selectedSong, setSelectedSong] = useState<RepertoireSong | null>(null);
+  const [showVideo, setShowVideo] = useState(false);
+  const [inlineVideoId, setInlineVideoId] = useState<string | null>(null);
 
   // Compute available alphabets and decades based on data
   const availableLetters = useMemo(() => {
@@ -82,6 +84,28 @@ const Repertoire: React.FC = () => {
       if (navbar) navbar.style.paddingRight = '0px';
     };
   }, [selectedSong]);
+
+  const handleContentClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLElement;
+    const anchor = target.closest('a');
+    
+    if (anchor && anchor.href) {
+      try {
+        const url = new URL(anchor.href);
+        if (url.hostname.includes('youtube.com') && url.searchParams.get('v')) {
+          e.preventDefault();
+          setInlineVideoId(url.searchParams.get('v'));
+          setShowVideo(true);
+        } else if (url.hostname === 'youtu.be') {
+          e.preventDefault();
+          setInlineVideoId(url.pathname.substring(1));
+          setShowVideo(true);
+        }
+      } catch (err) {
+        // Ignore invalid URLs
+      }
+    }
+  };
 
   return (
     <section className="py-12 md:py-32 bg-dark relative min-h-[calc(100vh-80px)] overflow-hidden">
@@ -210,7 +234,11 @@ const Repertoire: React.FC = () => {
 
                   <div className="mt-auto pt-4 flex gap-3">
                     <button
-                      onClick={() => setSelectedSong(song)}
+                      onClick={() => {
+                        setSelectedSong(song);
+                        setShowVideo(false);
+                        setInlineVideoId(null);
+                      }}
                       className="flex-1 flex justify-center items-center gap-2 py-2.5 bg-gold/10 hover:bg-gold/20 text-gold-light rounded-xl text-sm font-medium transition-colors"
                     >
                       <BookOpen className="w-4 h-4" />
@@ -239,7 +267,11 @@ const Repertoire: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setSelectedSong(null)}
+              onClick={() => {
+                setSelectedSong(null);
+                setShowVideo(false);
+                setInlineVideoId(null);
+              }}
               className="absolute inset-0 bg-dark/80 backdrop-blur-sm"
             />
 
@@ -262,7 +294,11 @@ const Repertoire: React.FC = () => {
                   </div>
                 </div>
                 <button
-                  onClick={() => setSelectedSong(null)}
+                  onClick={() => {
+                    setSelectedSong(null);
+                    setShowVideo(false);
+                    setInlineVideoId(null);
+                  }}
                   className="p-2 rounded-full hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
                 >
                   <X className="w-6 h-6" />
@@ -271,9 +307,20 @@ const Repertoire: React.FC = () => {
 
               {/* Modal Body */}
               <div className="p-6 overflow-y-auto custom-scrollbar">
+                {showVideo && (inlineVideoId || selectedSong.youtubeId) && (
+                  <div className="aspect-video w-full rounded-xl overflow-hidden bg-black mb-6 border border-white/10 shadow-lg">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${inlineVideoId || selectedSong.youtubeId}?autoplay=1${!inlineVideoId && (selectedSong as any).endTime ? `&end=${(selectedSong as any).endTime}` : ''}`}
+                      className="w-full h-full border-0"
+                      allow="autoplay; encrypted-media; fullscreen"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                )}
                 <div
                   className="prose prose-invert prose-gold max-w-none text-gray-300 font-light leading-relaxed text-lg"
                   dangerouslySetInnerHTML={{ __html: localizedSongs[selectedSong.id]?.background || '' }}
+                  onClick={handleContentClick}
                 />
               </div>
 
@@ -290,16 +337,30 @@ const Repertoire: React.FC = () => {
                     <span>{repoTranslations.viewLyrics || 'View Lyrics'}</span>
                   </a>
                 )}
+
                 {(selectedSong.youtubeId || selectedSong.videoLink) && (
-                  <a
-                    href={selectedSong.videoLink || `https://youtube.com/watch?v=${selectedSong.youtubeId}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-gold/20 hover:bg-gold/30 border border-gold/30 rounded-xl text-sm text-gold-light hover:text-white transition-all"
-                  >
-                    <Disc3 className="w-4 h-4" />
-                    <span>{repoTranslations.watchPerformance || 'Watch Performance'}</span>
-                  </a>
+                  selectedSong.youtubeId ? (
+                    <button
+                      onClick={() => {
+                        setInlineVideoId(null);
+                        setShowVideo(true);
+                      }}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-gold/20 hover:bg-gold/30 border border-gold/30 rounded-xl text-sm text-gold-light hover:text-white transition-all"
+                    >
+                      <Disc3 className="w-4 h-4" />
+                      <span>{repoTranslations.watchPerformance || 'Watch Performance'}</span>
+                    </button>
+                  ) : (
+                    <a
+                      href={selectedSong.videoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-gold/20 hover:bg-gold/30 border border-gold/30 rounded-xl text-sm text-gold-light hover:text-white transition-all"
+                    >
+                      <Disc3 className="w-4 h-4" />
+                      <span>{repoTranslations.watchPerformance || 'Watch Performance'}</span>
+                    </a>
+                  )
                 )}
               </div>
             </motion.div>

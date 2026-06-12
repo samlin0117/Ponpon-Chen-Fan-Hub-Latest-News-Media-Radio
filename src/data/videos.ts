@@ -703,12 +703,13 @@ export const videoList: VideoInfo[] = [
     "isFeatured": false
   },
   {
-    "id": "v-music-corner",
-    "platform": "facebook",
+    "id": "v-erFPDQHv8fg",
+    "platform": "youtube",
     "category": "p5",
     "title": "Music Corner 角落音樂餐廳",
     "date": "2026-02-04",
-    "embedUrl": "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1177729904529661&show_text=false&width=316&t=0",
+    "embedUrl": "erFPDQHv8fg",
+    "thumbnailUrl": "https://i.ytimg.com/vi/erFPDQHv8fg/sd3.jpg",
     "isFeatured": false
   },
   {
