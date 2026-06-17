@@ -962,12 +962,12 @@ export const videoList: VideoInfo[] = [
     "isFeatured": false
   },
   {
-    "id": "v-OB584QFToTY",
+    "id": "v-U-OxnwsQB8Y",
     "platform": "youtube",
     "category": "p3",
     "title": "REQUEST FEST 53 -THE WARNING -  HALESTORM - MISSIONED SOULS - LUCY THOMAS - PONPON CHEN  - TPW",
     "date": "2026-06-08",
-    "embedUrl": "OB584QFToTY",
+    "embedUrl": "U-OxnwsQB8Y",
     "thumbnailUrl": "/REQUEST FEST.JPG",
     "isFeatured": false,
     "startTime": 5697,

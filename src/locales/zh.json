@@ -350,6 +350,7 @@
     "total_score": "總得分",
     "accuracy": "正確率",
     "try_again": "再次挑戰",
+    "back_to_about": "回到關於",
     "rank_senior": "🏆 Ponpon 資深鐵粉",
     "rank_senior_desc": "太厲害了！你對 Ponpon 的一切瞭若指掌！",
     "rank_loyal": "🌟 Ponpon 忠實粉絲",
@@ -753,7 +754,7 @@
         "options": [
           "忘了寫高中推甄推薦信",
           "曾經沒收她的吉他，阻礙她學音樂",
-          "當初不相信她國一寫下「去電視參加選秀節目」的目標能夠達成",
+          "當初不相信她國一寫下「上電視參加選秀節目」的目標能夠達成",
           "當初不看好她能順利考上復興高中戲劇科"
         ],
         "correctAnswer": 2,

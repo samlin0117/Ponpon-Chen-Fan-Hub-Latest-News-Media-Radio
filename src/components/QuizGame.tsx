@@ -3,12 +3,14 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Trophy, RefreshCw, CheckCircle2, XCircle, ChevronRight, Timer, Star, Music, Heart, Award, Zap } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import { QuizQuestion } from '../data/quiz';
+import { useNavigate } from 'react-router-dom';
 
 const QUESTIONS_PER_GAME = 10;
 
 export default function QuizGame() {
   const { t } = useTranslation();
   const quizTranslations = (t as any)?.quiz;
+  const navigate = useNavigate();
   
   const [gameState, setGameState] = useState<'start' | 'playing' | 'result'>('start');
   const [currentQuestions, setCurrentQuestions] = useState<QuizQuestion[]>([]);
@@ -245,7 +247,7 @@ export default function QuizGame() {
                 </div>
               </div>
 
-              <div className="flex justify-center">
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <button 
                   onClick={startBatch}
                   className="group relative flex items-center justify-center gap-3 py-4 px-12 bg-gold text-dark font-bold rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(212,175,55,0.2)]"
@@ -253,6 +255,13 @@ export default function QuizGame() {
                   <RefreshCw className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" /> 
                   <span>{quizTranslations?.try_again || 'Try Again'}</span>
                   <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                </button>
+                <button 
+                  onClick={() => navigate('/about')}
+                  className="group relative flex items-center justify-center gap-3 py-4 px-12 bg-dark-lighter border border-white/20 text-white font-bold rounded-full overflow-hidden transition-all hover:scale-105 hover:border-white/50 active:scale-95"
+                >
+                  <span>{quizTranslations?.back_to_about || '回到關於'}</span>
+                  <div className="absolute inset-0 bg-white/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                 </button>
               </div>
             </motion.div>
