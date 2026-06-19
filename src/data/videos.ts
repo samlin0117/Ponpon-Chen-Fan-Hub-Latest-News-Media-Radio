@@ -972,5 +972,15 @@ export const videoList: VideoInfo[] = [
     "isFeatured": false,
     "startTime": 5697,
     "endTime": 6767
+  },
+  {
+    "id": "v-da9z6rvy5F4",
+    "platform": "youtube",
+    "category": "p8",
+    "title": "【guitar solo cover】 Ponpon Chen - World News Polka",
+    "date": "2025-07-06",
+    "embedUrl": "da9z6rvy5F4",
+    "thumbnailUrl": "https://i.ytimg.com/vi/da9z6rvy5F4/maxresdefault.jpg",
+    "isFeatured": false
   }
 ];

@@ -5,14 +5,16 @@
     "home": "首頁",
     "about": "關於",
     "timeline": "里程碑",
-    "news": "新聞報導",
-    "interview": "廣播訪問",
+    "news": "最新消息",
+    "interview": "專訪報導",
     "videos": "演出影片",
+    "signature": "特色技巧",
     "quiz": "粉絲大考驗",
     "links": "相關連結",
     "changelog": "本站更新紀錄",
     "repertoire": "爵士曲庫"
   },
+
   "timeline": {
     "title": "演藝里程碑",
     "description": "Ponpon 從初心到躍上國際的音樂旅程",
@@ -243,6 +245,52 @@
             "content": "當 Ponpon 得知偶像 George Benson 將在距離洛杉磯約六小時車程的鳳凰城舉辦工作坊時，立刻打電話回台灣，希望說服爸媽支持這趟難得的追夢之旅。她告訴父母，這可能是自己一生中唯一一次能親眼見到偶像、近距離學習的機會。父母再次選擇相信她，並全力贊助這段旅程。這筆出自愛與信任的投入，最終讓 Ponpon 幸運地進入排練室，與 George Benson 近距離交流。就連廣播主持人在聽完這段故事後，也忍不住笑說：「陳爸爸、陳媽媽，你們這個錢花得太值得了！」"
           }
         ]
+      },
+      {
+        "name": "Tom Weir",
+        "avatar": "",
+        "role": "躍上美國主流媒體的重要推手",
+        "intro": {
+          "bio": "葛萊美獲獎混音工程師、Studio City Sound 錄音室負責人 Tom Weir，是 Ponpon（陳芃瑄）音樂旅程中的重要推手之一。從發掘她獨特的表演魅力、鼓勵經營網路平台，到促成她與美國主流媒體接軌，Tom 不僅是一位錄音工程師，更像是一位具備敏銳眼光的伯樂與職涯引路人。",
+          "songListLabel": "Tom 團隊拍攝後製",
+          "classicSongs": [
+            {
+              "name": "Ponpon - Them There Eyes (Live)",
+              "url": "https://www.youtube.com/watch?v=PwxGVbZvWXI"
+            },
+            {
+              "name": "Ponpon - But Not For Me (Live)",
+              "url": "https://www.youtube.com/watch?v=KmhrMOit4dI"
+            },
+            {
+              "name": "Ponpon Chen \"How High The Moon\"",
+              "url": "https://www.youtube.com/watch?v=_BVm-hixXt4"
+            }
+          ]
+        },
+        "shortDesc": "葛萊美獲獎混音工程師，是 Ponpon 音樂旅程中的重要推手之一...",
+        "detailedStory": [
+          {
+            "date": "慧眼識珠：鼓勵將演出分享給世界",
+            "content": "Tom Weir 在錄音室走道上偶然遇見經常透過友人介紹前來練琴的 Ponpon。看過她過去的演出側錄後，他立刻意識到這是一位極具個人特色的表演者。<br/><br/>他形容 Ponpon 結合吉他、哼唱與口哨的演出是「<a href=\"https://youtu.be/aswtSPQCcOU?t=95\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold border-b border-gold/30 hover:border-gold transition-colors\">有畫面的爵士（Visual Jazz）</a>」，彷彿能將旋律轉化為鮮明的故事與畫面。正因如此，他極力鼓勵 Ponpon 將現場演出影片上傳至 YouTube，讓更多人看見她獨特的音樂語言。"
+          },
+          {
+            "date": "親自投入拍攝，讓更多人看見 Ponpon",
+            "content": "當時正計畫拍攝 Live Band 演出的 Tom，主動帶領團隊前往 Ponpon 演出的小酒館，完整記錄她一整晚的演出，並精選影片上傳至網路。<br/><br/>幾個月後，這些影片開始在網路上獲得關注，觀看次數迅速上升。之後 Ponpon 在 Palm Springs 舉辦首場正式售票演出時，Tom 再次帶領團隊到場拍攝。其中一支身穿紅色禮服的演出影片更在短短兩週內突破十萬次觀看，讓她逐漸受到更多觀眾的注意。"
+          },
+          {
+            "date": "提供關鍵的職涯戰略建議",
+            "content": "隨著影片流量持續成長，Tom 給了 Ponpon 一項看似簡單卻極具影響力的建議：他提醒 Ponpon 務必趕快把「Email 聯絡資訊」留在影片下方，或許會帶來意想不到的工作機會。正是因為這個舉動，美國廣播公司 ABC News 得以順利聯繫上她，開啟後續合作的契機。"
+          },
+          {
+            "date": "破解「詐騙」疑雲，推動接下 ABC News 邀約",
+            "content": "當 Ponpon 第一次收到 ABC News 的來信時，由於從未聽過這家媒體，一度懷疑這可能是詐騙信件。<br/><br/>她第一時間致電向 Tom 求助。身為美國人的 Tom 聽完後既驚訝又哭笑不得，立刻確認信件的真實性，並強烈建議她把握這個難得的機會。<br/><br/>他甚至幽默地形容：「妳聽起來就像是有人要給你100萬美金，然後妳還那邊想說『讓我想我應該把這筆錢放在哪裡，那我先去問一下我媽』」"
+          },
+          {
+            "date": "為 ABC News 演出注入畫龍點睛的靈感",
+            "content": "Ponpon 最終在 Tom 的 Studio City Sound 錄音室錄製這首 ABC News 的片尾曲《World News Polka》<br/><br/>在錄製過程中，Ponpon 原本對前奏編排準備了許多版本，Tom 聽完後，親自哼出了一段 ABC 新聞的「標誌性旋律」，建議她以此作為改編發想。這個畫龍點睛的靈感，讓作品播出後，美國觀眾得以在第一時間產生強烈共鳴，也使這段演出獲得熱烈迴響。"
+          }
+        ]
       }
     ]
   },
@@ -259,7 +307,7 @@
       {
         "date": "2026.06.02",
         "title": "新增「2026 New album」里程碑",
-        "content": "於「演藝里程碑」頁面新增「NEW ALBUM 2026」專屬分類，完整紀錄 Ponpon 首張全英文爵士專輯從籌備、錄音到殺青的珍貴歷程，未來也將持續更新專輯的最新進度。"
+        "content": "於「演藝里程碑」頁面新增「NEW ALBUM 2026」專屬分類，完整紀錄 Ponpon 首張英文爵士專輯從籌備、錄音到殺青的珍貴歷程，未來也將持續更新專輯的最新進度。"
       },
       {
         "date": "2026.05.27",
@@ -1085,7 +1133,7 @@
     {
       "year": "2025年下半年",
       "title": "閉關籌備與高壓錄製期",
-      "desc": "在經歷九月舊金山演出後，決定暫停短時間內的公開演出，專注將心力投入錄音室的籌備。<br/><br/>花了約四個月密集討論與編曲。錄音現場非常精實且高壓，在沒有事前練團的情況下，與大前輩們（包含製作人動用人脈從東岸請來的老師）一起在現場「One take」同步錄音，一天必須錄製高達五首歌。這張全英文爵士專輯中，她還堅持在其中放了一首中文歌曲。",
+      "desc": "在經歷九月舊金山演出後，決定暫停短時間內的公開演出，專注將心力投入錄音室的籌備。<br/><br/>花了約四個月密集討論與編曲。錄音現場非常精實且高壓，在沒有事前練團的情況下，與大前輩們（包含製作人動用人脈從東岸請來的老師）一起在現場「One take」同步錄音，一天必須錄製高達五首歌。這張英文爵士專輯中，她還堅持在其中放了一首中文歌曲。",
       "category": "album"
     },
     {
@@ -1178,5 +1226,47 @@
       "desc": "匯聚十載音樂底蘊與旅美淬鍊，即將發行首張個人英文爵士錄音室專輯，開啟演藝生涯嶄新篇章。同年琴藝深獲國際頂尖琴廠肯定，受邀擔任 <strong>Gibson</strong> 2026 年度焦點藝術家，展現新世代爵士女伶的國際影響力。",
       "category": "normal"
     }
-  ]
+  ],
+  "signature": {
+    "title": "The Art of Ponpon",
+    "subtitle": "Behind the Notes",
+    "intro": "這些技巧在爵士史上曾被哪些大師使用？Ponpon 又如何重新詮釋？讓我們一起拆解她的爵士魔法。",
+    "historicalContext": "歷史傳承",
+    "ponponInterpretation": "Ponpon 的詮釋",
+    "scatting": {
+      "title": "Scat Singing (擬聲吟唱)",
+      "desc": "Scat Singing 是一種爵士人聲中的即興唱法，歌手不依賴完整歌詞，而是用沒有固定字義的音節（如「ba、doo、sha、bee」等）自由組合旋律與節奏，讓聲音像樂器一樣參與演出。這種唱法強調即時創作能力，透過音色變化、節奏律動與即興反應，表現出高度自由且富有個人風格的爵士語言。",
+      "ponpon": "Ponpon 的 Scat Singing 特色在於能於歌詞與即興之間自然切換，聲線溫潤且具備清晰的咬字顆粒感與節奏辨識度。她的即興線條常帶有器樂化思維，彷彿與樂團中的管樂聲部進行對話般流動，並融合現代切分節奏與 swing feel，使整體演出呈現輕盈、富空氣感且具推進力的音樂張力。"
+    },
+    "jazzGuitar": {
+      "title": "Jazz Guitar (爵士吉他獨奏)",
+      "desc": "展現吉他指板上的即興功力與爵士語彙，純粹的器樂表現。",
+      "ponpon": "她的吉他 solo 帶有強烈的旋律性與流暢的咆勃（Bebop）語法，展出赴美深造後紮實的底蘊。"
+    },
+    "guitarUnison": {
+      "title": "Scat–Guitar Unison (吉他與人聲齊奏)",
+      "desc": "演唱者必須同時構思旋律、控制手指，並讓聲帶發出完全精準的音高，是一項需要極度協調性的頂級技巧。",
+      "ponpon": "將這項技巧延伸到更自然的舞台互動。不只是炫技，更像是在「和自己的吉他對話」。"
+    },
+    "whistling": {
+      "title": "Whistling (爵士口哨)",
+      "desc": "將輕靈、具空氣感的口哨音色融入沈穩的爵士和弦中，為音樂帶來不同的層次。",
+      "ponpon": "並非單純模仿，而是將這種歐洲爵士的浪漫感，結合亞洲細膩敘事，並同時融入自己的 Scat。"
+    },
+    "whistlingUnison": {
+      "title": "Whistle–Guitar Unison (口哨吉他同步)",
+      "desc": "口哨與吉他齊奏各自有大師，但「三項同場並存」在爵士史上是極為珍稀的組合。",
+      "ponpon": "她的獨特之處不在於「發明」新技巧，而是將原本分散在不同大師身上的語彙，完美地整合在同一個人的表演中。"
+    },
+    "scatWhistleGuitarUnison": {
+      "title": "Scat/Whistle–Guitar Unison (人聲、口哨與吉他三項同步)",
+      "desc": "在同一段即興中，將人聲、口哨與吉他旋律完美交織，展現驚人的多工協調與音樂才華。",
+      "ponpon": "這是她最具代表性的獨家絕活。她能在一瞬間於這三種發聲方式間自如切換並保持與吉他高度同步，令人嘆為觀止。"
+    },
+    "storytelling": {
+      "title": "Storytelling (戲劇性敘事)",
+      "desc": "常被忽略的隱藏優勢。源自她的復興高中戲劇科背景與豐富舞台經驗。",
+      "ponpon": "像演戲般的情境轉換。用眼神帶情緒，透過停頓製造幽默，能讓一首曲子聽起來像一齣充滿張力的小劇場。"
+    }
+  }
 }

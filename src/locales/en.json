@@ -8,6 +8,7 @@
     "news": "News",
     "interview": "Interview",
     "videos": "Videos",
+    "signature": "Signature",
     "quiz": "Fan Quiz",
     "links": "Links",
     "changelog": "Site Update Log",
@@ -241,6 +242,52 @@
           {
             "date": "Sponsoring the Dream Trip, Leading to a Miraculous Encounter with the Master",
             "content": "When Ponpon learned that her idol George Benson was holding a workshop in Phoenix, about a six-hour drive from Los Angeles, she immediately called back to Taiwan, hoping to convince her parents to support this rare dream-chasing trip. She told them it might be the only chance in her life to see her idol and learn from him up close. Her parents chose to believe in her once again and fully sponsored the trip. This investment born out of love and trust ultimately allowed Ponpon to miraculously enter the rehearsal room and interact closely with George Benson. Even the radio host couldn't help but laugh after hearing this story, saying, \"Mr. and Mrs. Chen, this money was totally worth it!\""
+          }
+        ]
+      },
+      {
+        "name": "Tom Weir",
+        "avatar": "",
+        "role": "An Important Promoter for Reaching US Mainstream Media",
+        "intro": {
+          "bio": "Grammy-winning mixing engineer and Studio City Sound owner Tom Weir is one of the important promoters in Ponpon's musical journey. From discovering her unique performance charm and encouraging her to manage online platforms, to helping her connect with mainstream US media, Tom is not just a recording engineer, but more like a talent scout with a keen eye and a career guide.",
+          "songListLabel": "Filmed & Produced by Tom's Team",
+          "classicSongs": [
+            {
+              "name": "Ponpon - Them There Eyes (Live)",
+              "url": "https://www.youtube.com/watch?v=PwxGVbZvWXI"
+            },
+            {
+              "name": "Ponpon - But Not For Me (Live)",
+              "url": "https://www.youtube.com/watch?v=KmhrMOit4dI"
+            },
+            {
+              "name": "Ponpon Chen \"How High The Moon\"",
+              "url": "https://www.youtube.com/watch?v=_BVm-hixXt4"
+            }
+          ]
+        },
+        "shortDesc": "Grammy-winning mixing engineer and an important promoter in Ponpon's musical journey...",
+        "detailedStory": [
+          {
+            "date": "Recognizing Talent: Encouraging Her to Share Performances with the World",
+            "content": "Tom Weir unexpectedly met Ponpon in the studio hallway when she frequently came to practice through a friend's introduction. After watching some of her past performance videos, he immediately realized she was a performer with extremely unique personal characteristics.<br/><br/>He described Ponpon's combination of guitar playing, scatting, and whistling as '<a href=\"https://youtu.be/aswtSPQCcOU?t=95\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold border-b border-gold/30 hover:border-gold transition-colors\">Visual Jazz</a>', as if she could transform melodies into vivid stories and scenes. Because of this, he strongly encouraged Ponpon to upload her live performance videos to YouTube, allowing more people to see her unique musical language."
+          },
+          {
+            "date": "Personally Filming Shows to Let More People See Ponpon",
+            "content": "Tom, who was planning to film a live band performance at the time, proactively led his team to the small tavern where Ponpon was performing. They completely recorded her whole night's show and selected videos to upload online.<br/><br/>A few months later, these videos started gaining attention online, and the views rose rapidly. Later, when Ponpon held her first official ticketed show in Palm Springs, Tom led his team to film again. Among them, a video of her performing in a red dress broke 100,000 views in just two weeks, gradually bringing her to the attention of more audiences."
+          },
+          {
+            "date": "Providing Crucial Career Strategy Advice",
+            "content": "As the video traffic continued to grow, Tom gave Ponpon an advice that seemed simple but had a huge impact: he reminded Ponpon to immediately put her 'Email contact info' under the videos, which might bring unexpected job opportunities. Exactly because of this action, the American broadcasting company ABC News was able to successfully contact her, opening up the opportunity for their subsequent collaboration."
+          },
+          {
+            "date": "Debunking the 'Scam' Suspicion and Pushing Her to Accept the ABC News Offer",
+            "content": "When Ponpon first received the email from ABC News, since she had never heard of this media company, she once suspected it might be a scam email.<br/><br/>She immediately called Tom for help. As an American, Tom was both surprised and amused after hearing this. He immediately confirmed the authenticity of the email and strongly suggested she seize this rare opportunity.<br/><br/>He even humorously described: 'You sound like someone is offering you a million dollars, and you're still there thinking \"Let me think where I should put this money, let me go ask my mom first\"'."
+          },
+          {
+            "date": "Inspiring the Finishing Touch for Her ABC News Performance",
+            "content": "Ponpon ultimately recorded this ABC News outro, 'World News Polka', at Tom's Studio City Sound studio.<br/><br/>During the recording process, Ponpon originally prepared many versions for the intro arrangement. After listening, Tom personally hummed a 'signature melody' of ABC News, suggesting she use it as inspiration for her adaptation. This brilliant inspiration allowed the American audience to immediately have a strong resonance after the work was broadcast, and also made this performance receive an enthusiastic response."
           }
         ]
       }
@@ -1086,7 +1133,7 @@
     {
       "year": "Late 2025",
       "title": "Seclusion for Prep and High-Pressure Recording",
-      "desc": "After her performance in San Francisco in September, she decided to temporarily pause public performances to focus entirely on studio preparations.<br/><br/>They spent about four months intensively discussing and arranging. The recording sessions were highly efficient and high-pressure; without any prior rehearsals, she did \"One take\" synchronized recordings with veteran musicians (including teachers her producer invited from the East Coast), recording up to five songs a day. In this all-English jazz album, she insisted on including one Chinese song.",
+      "desc": "After her performance in San Francisco in September, she decided to temporarily pause public performances to focus entirely on studio preparations.<br/><br/>They spent about four months intensively discussing and arranging. The recording sessions were highly efficient and high-pressure; without any prior rehearsals, she did \"One take\" synchronized recordings with veteran musicians (including teachers her producer invited from the East Coast), recording up to five songs a day. In this English jazz album, she insisted on including one Chinese song.",
       "category": "album"
     },
     {
@@ -1179,5 +1226,47 @@
       "desc": "Synthesizing a decade of musical depth and her US experiences, she is soon to release her debut English jazz studio album, opening a new chapter in her career. That same year, her exceptional guitar skills were recognized by the world's top guitar brand, inviting her to be <strong>Gibson</strong>'s 2026 Spotlight Artist, showcasing the international impact of a new-generation jazz diva.",
       "category": "normal"
     }
-  ]
+  ],
+  "signature": {
+    "title": "The Art of Ponpon",
+    "subtitle": "Behind the Notes",
+    "intro": "Which masters used these techniques in jazz history? And how does Ponpon reinterpret them? Let's deconstruct her jazz magic.",
+    "historicalContext": "Historical Context",
+    "ponponInterpretation": "Ponpon's Interpretation",
+    "scatting": {
+      "title": "Scat Singing",
+      "desc": "Scat Singing is an improvised vocal style in jazz where the singer does not rely on complete lyrics. Instead, they freely combine melody and rhythm using nonsense syllables (such as \"ba, doo, sha, bee\") to make the voice participate in the performance like an instrument. This singing style emphasizes real-time creative ability, expressing a highly free and personal jazz language through tonal changes, rhythmic grooves, and spontaneous reactions.",
+      "ponpon": "The signature of Ponpon's Scat Singing lies in her ability to transition naturally between lyrics and improvisation, with a warm vocal tone that possesses distinct articulation and rhythmic clarity. Her improvisational lines often carry an instrumental mindset, flowing as if in dialogue with the horn section of the band. By blending modern syncopated rhythms with a swing feel, she imbues the overall performance with a light, airy, and driving musical tension."
+    },
+    "jazzGuitar": {
+      "title": "Jazz Guitar",
+      "desc": "Showcasing improvisation skills and jazz vocabulary on the fretboard, a pure instrumental performance without vocals.",
+      "ponpon": "Her guitar solo carries strong melodicism and fluent bebop phrasing, demonstrating her solid instrumental foundation after studying in the US."
+    },
+    "guitarUnison": {
+      "title": "Scat–Guitar Unison",
+      "desc": "The singer must simultaneously construct melodies, control their fingers, and make their vocal cords produce completely accurate pitches. It's a top-tier technique requiring extreme coordination.",
+      "ponpon": "Extending this technique into more natural stage interaction. It's not just showing off; it's more like \"having a dialogue with her own guitar.\""
+    },
+    "whistling": {
+      "title": "Whistling",
+      "desc": "Integrating the light, airy timbre of whistling into deep jazz chords brings a different layer to the music.",
+      "ponpon": "Instead of purely imitating, she combines the romanticism of European jazz with delicate Asian storytelling, seamlessly integrating her scatting."
+    },
+    "whistlingUnison": {
+      "title": "Whistle–Guitar Unison",
+      "desc": "There are masters of whistling and guitar unison, but having all three elements coexist is an extremely rare combination in jazz history.",
+      "ponpon": "Her uniqueness lies not in \"inventing\" new techniques, but in perfectly integrating vocabulary originally scattered across different masters into one single performance."
+    },
+    "scatWhistleGuitarUnison": {
+      "title": "Scat/Whistle–Guitar Unison",
+      "desc": "Perfectly interweaving vocals, whistling, and guitar melodies within the same improvisation, showcasing incredible multitasking coordination and musical talent.",
+      "ponpon": "This is her most representative exclusive skill. She can effortlessly switch between these three sound sources in an instant while remaining highly synchronized with her guitar, which is truly breathtaking."
+    },
+    "storytelling": {
+      "title": "Storytelling",
+      "desc": "An often overlooked hidden strength, originating from her drama department background at Fuxing High School and her rich stage experience.",
+      "ponpon": "Theatrical mood shifts. Leading emotions with her eyes, creating humor through pauses, she can make a song sound like a tension-filled short play."
+    }
+  }
 }

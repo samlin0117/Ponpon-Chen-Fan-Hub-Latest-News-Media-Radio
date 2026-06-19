@@ -190,7 +190,7 @@ const Mentors = () => {
                       {selectedMentor.intro.classicSongs && (
                         <div>
                           <h5 className="text-xs font-mono text-gold-light tracking-widest uppercase mb-3 flex items-center gap-2">
-                            <span className="w-4 h-px bg-gold/50"></span> 經典必聽 <span className="w-4 h-px bg-gold/50"></span>
+                            <span className="w-4 h-px bg-gold/50"></span> {selectedMentor.intro.songListLabel || '經典必聽'} <span className="w-4 h-px bg-gold/50"></span>
                           </h5>
                           <div className="flex flex-col gap-2.5">
                             {selectedMentor.intro.classicSongs.map((song: any, idx: number) => (
