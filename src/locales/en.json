@@ -299,6 +299,11 @@
     "description": "Chronicle of major feature updates and content revisions.",
     "items": [
       {
+        "date": "2026.06.23",
+        "title": "The Art of Ponpon (New Section)",
+        "content": "This brand new section takes you deep into the core of Ponpon's performance vocabulary, covering Scat Singing, Jazz Whistling, Guitar Unison, and Independence, as well as the ultimate challenge: \"Vocals, Whistling, and Guitar Triple Synchronization\". This section traces the lineage of jazz improvisation, paying homage to the Scat tradition established by Louis Armstrong and Ella Fitzgerald, George Benson's guitar unison language, and Toots Thielemans' jazz whistling, guiding you to explore how the classics of the masters extend into contemporary, spectacular multi-part improvisational art."
+      },
+      {
         "date": "2026.06.03",
         "title": "Added 'Creative Fan Tributes' to Video Gallery",
         "content": "Added a new 'Creative Fan Tributes' category in the Video Gallery, featuring tribute videos and covers created by fans worldwide who were inspired by Ponpon's music."
@@ -855,7 +860,6 @@
         "correctAnswer": 0,
         "explanation": "In April 2021, Ponpon was interviewed by host CafeCat on Radio Taiwan International's program \"Music Essence\"(央廣《音樂本事》), marking her first-ever solo radio interview."
       },
-
       {
         "id": 41,
         "question": "On Sep 20, 2025, Ponpon performed in San Francisco for the first time. What was the name of the venue?",
@@ -1245,28 +1249,33 @@
     },
     "guitarUnison": {
       "title": "Scat–Guitar Unison",
-      "desc": "The singer must simultaneously construct melodies, control their fingers, and make their vocal cords produce completely accurate pitches. It's a top-tier technique requiring extreme coordination.",
-      "ponpon": "Extending this technique into more natural stage interaction. It's not just showing off; it's more like \"having a dialogue with her own guitar.\""
+      "desc": "Scat–Guitar Unison is a highly coordinated synchronized performance technique where the vocalist simultaneously conceives improvisational melodies and accurately reproduces the pitches and rhythms played on the guitar with their vocal cords. This technique requires extreme auditory reaction and physical control, turning the human voice into an instant extension of the guitar rather than just singing, forming highly consistent and fast-paced musical lines.",
+      "ponpon": "Ponpon excels at naturally blending Scat Singing with guitar melodies, allowing her vocals and guitar phrases to closely echo each other in rhythm, accent, and melodic lines. This expression of Scat-Guitar Unison not only showcases her acute mastery of melodic lines but also forms a personal style that is fluid, warm, and highly recognizable."
     },
     "whistling": {
       "title": "Whistling",
-      "desc": "Integrating the light, airy timbre of whistling into deep jazz chords brings a different layer to the music.",
-      "ponpon": "Instead of purely imitating, she combines the romanticism of European jazz with delicate Asian storytelling, seamlessly integrating her scatting."
+      "desc": "Whistling is a jazz expression that uses whistling as a melodic part. Its tone is light, transparent, and airy, falling somewhere between the human voice and woodwind instruments. Through stable breath control and accurate pitch, whistling naturally integrates into jazz harmonic structures, bringing a more open sonic layer and soft melodic colors, acting as an extension of a woodwind instrument.",
+      "ponpon": "Ponpon's whistling is not just a melodic embellishment but another independent voice in the performance. With delicate and stable pitch control, her whistling maintains a light and transparent tone while possessing smooth melodic lines. In solo passages, the whistling naturally interacts with vocals, guitar, and the band, forming a layered musical dialogue that showcases her agile and narrative personal style."
     },
     "whistlingUnison": {
       "title": "Whistle–Guitar Unison",
-      "desc": "There are masters of whistling and guitar unison, but having all three elements coexist is an extremely rare combination in jazz history.",
-      "ponpon": "Her uniqueness lies not in \"inventing\" new techniques, but in perfectly integrating vocabulary originally scattered across different masters into one single performance."
+      "desc": "Whistle-Guitar Unison is a performance technique centered on completely synchronized melodies, where the whistling and guitar are highly consistent in pitch and rhythm, jointly presenting the same melodic line. The overlapping of two distinctly different timbres creates a \"single melody, dual sound\" effect, giving the music a more three-dimensional texture and clear melodic penetration.",
+      "ponpon": "When interpreting Whistle-Guitar Unison, Ponpon demonstrates a high degree of control over pitch and inner hearing. She naturally blends the airy whistling tone with the resonance formed by the vibration of the guitar strings, constructing a unique color akin to a third voice. This performance not only reflects precise synchronization techniques but also injects a delicate sense of breath into the instrumental melody, presenting a more fluid and vital layer of expression."
     },
     "scatWhistleGuitarUnison": {
-      "title": "Scat/Whistle–Guitar Unison",
-      "desc": "Perfectly interweaving vocals, whistling, and guitar melodies within the same improvisation, showcasing incredible multitasking coordination and musical talent.",
-      "ponpon": "This is her most representative exclusive skill. She can effortlessly switch between these three sound sources in an instant while remaining highly synchronized with her guitar, which is truly breathtaking."
+      "title": "Scat / Whistle–Guitar Unison",
+      "desc": "Scat / Whistle-Guitar Unison is a highly integrated multi-part performance vocabulary where vocals, whistling, and guitar are used for synchronized or semi-synchronized performance in the same phrase. The performer must integrate three vocalization systems in real-time creation, keeping melody, rhythm, and phrasing consistent or echoing across different mediums, demonstrating extreme coordination and musical control.",
+      "ponpon": "Scat / Whistle-Guitar Unison is a highly integrated multi-part performance vocabulary, the difficulty of which lies in transforming guitar fingering, vocal cord phonation, and whistling breath into a single, intricately woven musical line. During her interpretation, Ponpon makes the three vocalization mechanisms share the same melodic consciousness, maintaining consistent phrasing and time structure across slides, ornaments, and syncopations. This approach turns the guitar into an extended interface between body and sound, rather than a mere accompaniment tool."
     },
     "storytelling": {
       "title": "Storytelling",
       "desc": "An often overlooked hidden strength, originating from her drama department background at Fuxing High School and her rich stage experience.",
       "ponpon": "Theatrical mood shifts. Leading emotions with her eyes, creating humor through pauses, she can make a song sound like a tension-filled short play."
+    },
+    "whistlingGuitarIndependence": {
+      "title": "Whistle–Guitar Independence",
+      "desc": "Whistle-Guitar Independence is a two-part performance where whistling carries the main melody while the guitar simultaneously provides harmonic accompaniment and rhythmic groove. While maintaining independent parts, the two echo each other within the overall musical structure, forming a multi-layered sonic texture that demonstrates a high degree of musical division and real-time coordination.",
+      "ponpon": "Ponpon treats whistling and the guitar as two independent yet echoing voices. As the whistling smoothly depicts the main melody, the guitar lays down the harmony, rhythm, and syncopated grooves, allowing the two musical lines to weave a dialogue across different layers, showcasing high coordination and delicate musical thinking."
     }
   }
 }

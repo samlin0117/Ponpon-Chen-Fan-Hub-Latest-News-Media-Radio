@@ -20,11 +20,17 @@ interface Technique {
   titleKey: string;
   descKey: string;
   masters: Master[];
+  hideMasters?: boolean;
   ponpon: {
     desc: string;
-    videoId: string;
+    videoId?: string;
     startTime?: number;
     endTime?: number;
+    videos?: {
+      videoId: string;
+      startTime?: number;
+      endTime?: number;
+    }[];
   };
 }
 
@@ -66,52 +72,76 @@ export default function SignatureTechniques() {
       id: "guitar-unison",
       icon: <Music className="w-6 h-6" />,
       titleKey: sigT.guitarUnison?.title || "Scat–Guitar Unison (吉他與人聲齊奏)",
-      descKey: sigT.guitarUnison?.desc || "演唱者必須同時構思旋律、控制手指，並讓聲帶發出完全精準的音高，是一項需要極度協調性的頂級技巧。",
+      descKey: sigT.guitarUnison?.desc || "Scat–Guitar Unison 是一種高協調性的同步演奏方式，演唱者需同時構思即興旋律，並以聲帶精準重現吉他所演奏的音高與節奏。此技巧要求極高的聽覺反應能力與身體控制，使人聲不再只是歌唱，而是成為吉他的即時延伸聲部，形成高度一致且具速度感的音樂線條。",
       masters: [
         { name: "George Benson", era: "1970s-", trait: "人聲與吉他的革命", desc: "George Benson 以 Scat Singing 與吉他即興之間高度同步的 Unison 表現聞名。邊彈邊唱的緊密配合，讓他的旋律同時具備器樂般的流暢線條與人聲特有的溫度，形成極具辨識度的爵士風格。", image: masterImages.benson, videoHref: "https://www.youtube.com/embed/qWZFGXTuoRo?start=168&end=283&autoplay=1", videoTitle: 'George Benson "This Masquerade"' }
       ],
       ponpon: {
         desc: sigT.guitarUnison?.ponpon || "將這項技巧延伸到更自然的舞台互動。不只是炫技，更像是在「和自己的吉他對話」。",
-        videoId: "3p26J-MbuTY", // But Not For Me
-        startTime: 20
+        videos: [
+          { videoId: "_BVm-hixXt4", startTime: 98, endTime: 139 },
+          { videoId: "KmhrMOit4dI", startTime: 45, endTime: 93 }
+        ]
       }
     },
     {
       id: "whistling",
       icon: <Wind className="w-6 h-6" />,
       titleKey: sigT.whistling?.title || "Whistling (爵士口哨)",
-      descKey: sigT.whistling?.desc || "將輕靈、具空氣感的口哨音色融入沈穩的爵士和弦中，為音樂帶來不同的層次。",
+      descKey: sigT.whistling?.desc || "Whistling 是一種將口哨作為旋律聲部的爵士表現形式，其音色輕盈、透明且具空氣感，介於人聲與管樂器之間。透過穩定的氣息控制與精準音準，口哨能自然融入爵士和聲結構之中，為音樂帶來更開闊的聲響層次與柔和的旋律色彩，宛如木管樂器的延伸。",
       masters: [
         { name: "Toots Thielemans", era: "1960s", trait: "爵士口哨大師", desc: "代表作《Bluesette》以吉他與口哨 unison 開創爵士口哨技法，將口哨提升為正式爵士語言。", image: masterImages.toots }
       ],
+      hideMasters: true,
       ponpon: {
         desc: sigT.whistling?.ponpon || "並非單純模仿，而是將這種歐洲爵士的浪漫感，結合亞洲細膩敘事，並同時融入自己的 Scat。",
-        videoId: "tEqs-1S47Fw",
-        startTime: 50
+        videoId: "erFPDQHv8fg",
+        startTime: 33,
+        endTime: 96
+      }
+    },
+    {
+      id: "whistling-guitar-independence",
+      icon: <MessageSquare className="w-6 h-6" />,
+      titleKey: sigT.whistlingGuitarIndependence?.title || "Whistle–Guitar Independence (口哨與吉他獨立雙聲部)",
+      descKey: sigT.whistlingGuitarIndependence?.desc || "Whistle–Guitar Independence 是一種雙聲部表演形式，口哨負責主要旋律線，吉他則同時進行和聲鋪陳與節奏律動。兩者在保持獨立聲部運作的同時，又在整體音樂結構中彼此呼應，形成多層次的聲響結構，展現高度的音樂分工與即時協調能力。",
+      masters: [],
+      hideMasters: true,
+      ponpon: {
+        desc: sigT.whistlingGuitarIndependence?.ponpon || "Ponpon 將口哨與吉他視為兩個獨立卻互相呼應的聲部。當口哨流暢地描繪主旋律時，吉他同時進行和聲、節奏與切分律動的鋪陳，使兩條音樂線條在不同層次中交織對話，展現高度的協調性與即時音樂思維。",
+        videoId: "p3v2XboDUEU",
+        startTime: 73,
+        endTime: 124
       }
     },
     {
       id: "whistling-unison",
       icon: <Radio className="w-6 h-6" />,
       titleKey: sigT.whistlingUnison?.title || "Whistle–Guitar Unison (口哨吉他同步)",
-      descKey: sigT.whistlingUnison?.desc || "口哨、吉他齊奏各自有大師，但「三項同場並存」在爵士史上是極為珍稀的組合。",
-      masters: [],
+      descKey: sigT.whistlingUnison?.desc || "Whistle–Guitar Unison 是一種以完全同步旋律為核心的演奏方式，口哨與吉他在音高與節奏上高度一致，共同呈現同一條旋律線。兩種截然不同的音色疊合後，形成「單旋律、雙聲響」的效果，使音樂呈現更立體的層次感與清晰的旋律穿透力。",
+      masters: [
+        { name: "Toots Thielemans", era: "1960s", trait: "爵士口哨大師", desc: "Toots Thielemans 是爵士樂史上的傳奇，以半音階口琴與爵士口哨聞名於世。他在經典名曲《Bluesette》中展現了極具開創性的「口哨與吉他齊奏」，以輕快優美的音色風靡全球，更成功將口哨提升為正式且優雅的爵士語言。", image: masterImages.toots, videoId: "vtGMDmjk6EA", videoTitle: 'Toots Thielemans "Bluesette"' }
+      ],
       ponpon: {
-        desc: sigT.whistlingUnison?.ponpon || "她的獨特之處不在於「發明」新技巧，而是將原本分散在不同大師身上的語彙，完美地整合在同一個人的表演中。",
-        videoId: "1Fnnr4TOjVQ", // World News Polka
-        startTime: 62
+        desc: sigT.whistlingUnison?.ponpon || "Ponpon 在詮釋口哨與吉他同步齊奏時，展現出對音準與內在聽覺的高度控制能力...",
+        videos: [
+          { videoId: "HCUE2cDCOqs", startTime: 67, endTime: 86 }
+        ]
       }
     },
     {
       id: "scat-whistle-guitar-unison",
       icon: <Star className="w-6 h-6" />,
-      titleKey: sigT.scatWhistleGuitarUnison?.title || "Scat/Whistle–Guitar Unison (人聲、口哨與吉他三項同步)",
-      descKey: sigT.scatWhistleGuitarUnison?.desc || "在同一段即興中，將人聲、口哨與吉他旋律完美交織，展現驚人的多工協調與音樂才華。",
+      titleKey: sigT.scatWhistleGuitarUnison?.title || "Scat / Whistle–Guitar Unison (三重同步)",
+      descKey: sigT.scatWhistleGuitarUnison?.desc || "Scat / Whistle–Guitar Unison 是一種高度整合的多聲部表演語法，在同一段即興樂句中，同時運用人聲、口哨與吉他進行同步或半同步演奏。表演者需在即時創作中統合三種發聲系統，使旋律、節奏與語氣在不同媒介間保持一致或相互呼應，展現極高的協調性與音樂控制力，形成具張力且多層次的聲響結構。",
       masters: [],
+      hideMasters: true,
       ponpon: {
         desc: sigT.scatWhistleGuitarUnison?.ponpon || "這是她最具代表性的獨家絕活。她能在一瞬間於這三種發聲方式間自如切換並保持與吉他高度同步，令人嘆為觀止。",
-        videoId: "1Fnnr4TOjVQ", 
-        startTime: 62
+        videos: [
+          { videoId: "1Fnnr4TOjVQ", startTime: 38, endTime: 63 },
+          { videoId: "HCUE2cDCOqs", startTime: 257, endTime: 287 }
+        ]
       }
     }
   ];
@@ -188,8 +218,9 @@ export default function SignatureTechniques() {
                 </div>
               </div>
 
-              <div className="grid lg:grid-cols-2 gap-12 items-start">
+              <div className={`grid ${tech.hideMasters ? 'grid-cols-1 max-w-4xl mx-auto' : 'lg:grid-cols-2'} gap-12 items-start`}>
                 {/* Left Column: Historical Context */}
+                {!tech.hideMasters && (
                 <div className="space-y-6">
                   <div className="flex items-center gap-3 mb-6">
                     <History className="w-5 h-5 text-gold/70" />
@@ -233,6 +264,7 @@ export default function SignatureTechniques() {
                     </div>
                   )}
                 </div>
+                )}
 
                 {/* Right Column: Ponpon's Interpretation */}
                 <div className="relative">
@@ -249,19 +281,23 @@ export default function SignatureTechniques() {
                       {tech.ponpon.desc}
                     </p>
 
-                    <div className="relative aspect-video rounded-2xl overflow-hidden bg-black border border-white/10 group">
-                      <div className="absolute top-4 left-4 z-20 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full border border-white/20 flex items-center gap-2">
-                        <Youtube className="w-4 h-4 text-red-500" />
-                        <span className="text-xs text-white font-medium tracking-wider">Golden Snippet</span>
-                      </div>
-                      <iframe 
-                        className="w-full h-full"
-                        src={`https://www.youtube.com/embed/${tech.ponpon.videoId}?start=${tech.ponpon.startTime || 0}${tech.ponpon.endTime ? `&end=${tech.ponpon.endTime}` : ''}`} 
-                        title="YouTube video player" 
-                        frameBorder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowFullScreen>
-                      </iframe>
+                    <div className="flex flex-col gap-6">
+                      {(tech.ponpon.videos || [{videoId: tech.ponpon.videoId, startTime: tech.ponpon.startTime, endTime: tech.ponpon.endTime}]).map((video, vIdx) => video.videoId ? (
+                        <div key={vIdx} className="relative aspect-video rounded-2xl overflow-hidden bg-black border border-white/10 group">
+                          <div className="absolute top-4 left-4 z-20 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full border border-white/20 flex items-center gap-2">
+                            <Youtube className="w-4 h-4 text-red-500" />
+                            <span className="text-xs text-white font-medium tracking-wider">Golden Snippet</span>
+                          </div>
+                          <iframe 
+                            className="w-full h-full"
+                            src={`https://www.youtube.com/embed/${video.videoId}?start=${video.startTime || 0}${video.endTime ? `&end=${video.endTime}` : ''}`} 
+                            title="YouTube video player" 
+                            frameBorder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowFullScreen>
+                          </iframe>
+                        </div>
+                      ) : null)}
                     </div>
                   </div>
                 </div>

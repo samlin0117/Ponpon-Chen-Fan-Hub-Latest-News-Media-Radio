@@ -236,18 +236,17 @@ function MainContent() {
         <div className="max-w-4xl mx-auto px-6 relative">
           {/* Top-left action buttons */}
           <div className="relative md:absolute mb-10 md:mb-0 md:-top-12 left-0 md:-left-20 flex items-center justify-center md:justify-start gap-3 flex-wrap z-30">
-            <div 
-              className="relative flex items-center gap-3 px-6 py-3 bg-gold/5 border border-gold/20 rounded-2xl text-gold-light/60 text-sm font-bold tracking-widest cursor-not-allowed group"
-              title="Coming Soon"
+            <Link 
+              to="/signature"
+              className="relative flex items-center gap-3 px-6 py-3 bg-gold/10 hover:bg-gold/20 border border-gold/40 rounded-2xl text-gold-light text-sm font-bold tracking-widest transition-all hover:scale-105 shadow-[0_0_15px_rgba(212,175,55,0.1)] hover:shadow-gold/20 group"
             >
-              <Mic2 className="w-5 h-5 text-gold/60" /> 
+              <Mic2 className="w-5 h-5 text-gold group-hover:rotate-12 transition-transform" /> 
               <span>{(t as any).signature?.title || '特色技巧'}</span>
               {/* Tooltip */}
-              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-300 w-64 p-4 bg-dark/95 backdrop-blur-md border border-white/10 rounded-xl text-gray-400 text-xs font-normal leading-relaxed text-center shadow-2xl scale-95 group-hover:scale-100 origin-top">
-                <span className="text-gold mb-2 block font-medium">Coming Soon</span>
+              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-300 w-64 p-4 bg-dark/95 backdrop-blur-md border border-white/10 rounded-xl text-gray-300 text-xs font-normal leading-relaxed text-center shadow-2xl scale-95 group-hover:scale-100 origin-top">
                 <span dangerouslySetInnerHTML={{ __html: ((t as any).signature?.description || (t as any).signature?.intro || '').split('<br/>')[0] }} />
               </div>
-            </div>
+            </Link>
             <Link 
               to="/quiz" 
               className="relative flex items-center gap-3 px-6 py-3 bg-gold/10 hover:bg-gold/20 border border-gold/40 rounded-2xl text-gold-light text-sm font-bold tracking-widest transition-all hover:scale-105 shadow-[0_0_15px_rgba(212,175,55,0.1)] hover:shadow-gold/20 group"
