@@ -61,6 +61,33 @@ const Mentors = () => {
   const { t } = useTranslation();
   const mentorsData = (t as any).mentors;
   const [selectedMentor, setSelectedMentor] = useState<any>(null);
+  const [activeVideo, setActiveVideo] = useState<{type: 'youtube' | 'facebook', url: string, videoId?: string} | null>(null);
+
+  const handleVideoClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLElement;
+    const aTag = target.closest('a');
+    if (aTag && aTag.href) {
+      const url = aTag.href;
+      if (url.includes('youtube.com/watch') || url.includes('youtu.be/')) {
+        e.preventDefault();
+        let videoId = '';
+        try {
+          if (url.includes('youtube.com/watch')) {
+            const urlObj = new URL(url);
+            videoId = urlObj.searchParams.get('v') || '';
+          } else {
+            videoId = url.split('youtu.be/')[1].split('?')[0];
+          }
+        } catch (err) {}
+        if (videoId) {
+          setActiveVideo({ type: 'youtube', url, videoId });
+        }
+      } else if (url.includes('facebook.com') && url.includes('/videos/')) {
+        e.preventDefault();
+        setActiveVideo({ type: 'facebook', url });
+      }
+    }
+  };
 
   if (!mentorsData) return null;
 
@@ -176,7 +203,7 @@ const Mentors = () => {
                 </button>
               </div>
 
-              <div className="p-6 md:p-8 overflow-y-auto custom-scrollbar">
+              <div className="p-6 md:p-8 overflow-y-auto custom-scrollbar" onClick={handleVideoClick}>
                 {selectedMentor.intro && (
                   <div className="mb-12 bg-dark-lighter/50 border border-gold/20 rounded-2xl p-6 md:p-8 relative overflow-hidden group shadow-lg">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-full -mr-8 -mt-8 pointer-events-none transition-transform group-hover:scale-110 duration-700"></div>
@@ -227,6 +254,55 @@ const Mentors = () => {
                     </div>
                   ))}
                 </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* Video Modal */}
+      <AnimatePresence>
+        {activeVideo && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setActiveVideo(null)}
+              className="absolute inset-0 bg-dark/90 backdrop-blur-sm"
+            />
+            <motion.div
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.95 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              className="relative w-full max-w-4xl bg-black border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col"
+            >
+              <div className="absolute top-0 right-0 z-20 p-4">
+                <button
+                  onClick={() => setActiveVideo(null)}
+                  className="p-2 rounded-full bg-black/60 hover:bg-white/20 text-white backdrop-blur-md transition-colors"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+              <div className="relative aspect-video w-full bg-black">
+                {activeVideo.type === 'youtube' ? (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${activeVideo.videoId}?autoplay=1`}
+                    className="absolute inset-0 w-full h-full border-0"
+                    allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                ) : (
+                  <iframe
+                    src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(activeVideo.url)}&show_text=false&width=560`}
+                    className="absolute inset-0 w-full h-full border-0"
+                    scrolling="no"
+                    allowFullScreen={true}
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  ></iframe>
+                )}
               </div>
             </motion.div>
           </div>

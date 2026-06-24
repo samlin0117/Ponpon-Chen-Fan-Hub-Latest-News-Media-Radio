@@ -47,7 +47,7 @@ export default function SignatureTechniques() {
     ella: "https://img.youtube.com/vi/ekmwIStfR0o/hqdefault.jpg",
     sarah: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Sarah_Vaughan_in_1946.jpg/640px-Sarah_Vaughan_in_1946.jpg",
     benson: "https://img.youtube.com/vi/qWZFGXTuoRo/hqdefault.jpg",
-    toots: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Toots_Thielemans_1982.jpg/640px-Toots_Thielemans_1982.jpg",
+    toots: "https://img.youtube.com/vi/vtGMDmjk6EA/hqdefault.jpg",
     frank: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Frank_Sinatra_%2757.jpg/640px-Frank_Sinatra_%2757.jpg",
     carmen: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Carmen_McRae_%28Gottlieb_06151%29.jpg/640px-Carmen_McRae_%28Gottlieb_06151%29.jpg"
   };
@@ -284,10 +284,6 @@ export default function SignatureTechniques() {
                     <div className="flex flex-col gap-6">
                       {(tech.ponpon.videos || [{videoId: tech.ponpon.videoId, startTime: tech.ponpon.startTime, endTime: tech.ponpon.endTime}]).map((video, vIdx) => video.videoId ? (
                         <div key={vIdx} className="relative aspect-video rounded-2xl overflow-hidden bg-black border border-white/10 group">
-                          <div className="absolute top-4 left-4 z-20 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full border border-white/20 flex items-center gap-2">
-                            <Youtube className="w-4 h-4 text-red-500" />
-                            <span className="text-xs text-white font-medium tracking-wider">Golden Snippet</span>
-                          </div>
                           <iframe 
                             className="w-full h-full"
                             src={`https://www.youtube.com/embed/${video.videoId}?start=${video.startTime || 0}${video.endTime ? `&end=${video.endTime}` : ''}`} 
