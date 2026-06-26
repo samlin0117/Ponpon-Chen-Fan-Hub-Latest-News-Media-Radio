@@ -902,6 +902,15 @@ export const videoList: VideoInfo[] = [
     "isFeatured": false
   },
   {
+    "id": "v-fb-1026651136577463",
+    "platform": "facebook",
+    "category": "p8",
+    "title": "Ponpon Chen - How high the moon (Electric Guitar Cover)",
+    "date": "2026-06-16",
+    "embedUrl": "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/watch/?v=1026651136577463&show_text=0&width=500",
+    "isFeatured": false
+  },
+  {
     "id": "v-01XxA9Xze-U",
     "platform": "youtube",
     "category": "p8",
@@ -935,7 +944,7 @@ export const videoList: VideoInfo[] = [
     "id": "v-ig-DWhAwQeiJqa",
     "platform": "instagram",
     "category": "p8",
-    "title": "Ponpon Chen - How high the moon (Guitar Cover)",
+    "title": "Ponpon Chen - How high the moon (Electric Guitar Cover)",
     "date": "2026-03-31",
     "embedUrl": "DWhAwQeiJqa",
     "thumbnailUrl": "/ig-DWhAwQeiJqa.png",
@@ -977,7 +986,7 @@ export const videoList: VideoInfo[] = [
     "id": "v-da9z6rvy5F4",
     "platform": "youtube",
     "category": "p8",
-    "title": "【guitar solo cover】 Ponpon Chen - World News Polka",
+    "title": "Ponpon Chen - World News Polka (Electric Guitar Solo Cover)",
     "date": "2025-07-06",
     "embedUrl": "da9z6rvy5F4",
     "thumbnailUrl": "https://i.ytimg.com/vi/da9z6rvy5F4/maxresdefault.jpg",

@@ -8,7 +8,7 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
   // 判斷是否為直向 FB 影片 (Reels 或特定 ID)
   const isFbVertical = video.platform === 'facebook' && (
     (video.embedUrl.includes('reel') && video.id !== 'v-music-corner' && video.id !== 'v-fb-5299252240089221') || 
-    ['v-fb-cat821', 'v-fb-995751751518630', 'v-fb-1387294209248782'].includes(video.id)
+    ['v-fb-cat821', 'v-fb-995751751518630', 'v-fb-1387294209248782', 'v-fb-1026651136577463'].includes(video.id)
   );
 
   useEffect(() => {
