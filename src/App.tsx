@@ -1127,7 +1127,7 @@ function MainContent() {
                   <p className="text-gray-400 mb-8 font-light">{t.videos.description}</p>
 
                   {/* Filter Tabs */}
-                  <div className="flex overflow-x-auto gap-2 md:gap-4 pb-4 mb-8 custom-scrollbar hide-scrollbar-on-mobile w-full justify-start sticky top-20 z-40 bg-dark/95 backdrop-blur-md pt-4 border-b border-white/5">
+                  <div className="flex overflow-x-auto gap-2 md:gap-4 pb-4 mb-8 custom-scrollbar hide-scrollbar-on-mobile w-full justify-start sticky top-20 z-30 bg-dark/95 backdrop-blur-md pt-4 border-b border-white/5">
                     {[
                       { id: 'p1', label: t.videos.p1 },
                       { id: 'p6', label: t.videos.p6 },

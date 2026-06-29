@@ -8,7 +8,7 @@
     "news": "新聞報導",
     "interview": "廣播訪問",
     "videos": "影音專區",
-    "signature": "特色技巧",
+    "signature": "Ponpon 的表演藝術",
     "quiz": "粉絲大考驗",
     "links": "相關連結",
     "changelog": "本站更新紀錄",
@@ -300,8 +300,8 @@
     "items": [
       {
         "date": "2026.06.23",
-        "title": "The Art of Ponpon（全新上線）",
-        "content": "全新區塊帶您深入解析 Ponpon 的核心表演語彙，涵蓋擬聲吟唱 (Scat)、爵士口哨 (Whistling)、吉他齊奏 (Unison) 與獨立聲部 (Independence)，以及挑戰極致的「人聲、口哨與吉他三重同步」。本區塊回溯爵士即興脈絡，致敬 Louis Armstrong 與 Ella Fitzgerald 所奠定的 Scat 傳統、George Benson 的吉他齊奏語法，以及 Toots Thielemans 的爵士口哨，帶您探索大師經典如何延伸為當代精彩的多聲部即興藝術。"
+        "title": "Ponpon 的表演藝術",
+        "content": "(位於「關於」頁面)深入解析她獨具辨識度的核心表演語彙，涵蓋擬聲吟唱（Scat Singing）、爵士口哨（Whistling）、吉他齊奏（Unison）等多聲部即興表現，展現她如何將人聲、口哨與吉他融合為自然流動的舞台語言。"
       },
       {
         "date": "2026.06.03",
@@ -1232,7 +1232,7 @@
     }
   ],
   "signature": {
-    "title": "The Art of Ponpon",
+    "title": "Ponpon 的表演藝術",
     "subtitle": "Behind the Notes",
     "intro": "這些技巧在爵士史上曾被哪些大師使用？Ponpon 又如何重新詮釋？讓我們一起拆解她的爵士魔法。",
     "historicalContext": "歷史傳承",
