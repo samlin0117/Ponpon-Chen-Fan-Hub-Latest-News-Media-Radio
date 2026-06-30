@@ -991,5 +991,25 @@ export const videoList: VideoInfo[] = [
     "embedUrl": "da9z6rvy5F4",
     "thumbnailUrl": "https://i.ytimg.com/vi/da9z6rvy5F4/maxresdefault.jpg",
     "isFeatured": false
+  },
+  {
+    "id": "v-JIDmHcdXiEM",
+    "platform": "youtube",
+    "category": "p8",
+    "title": "Ponpon Chen - But Not For Me (Electric Guitar Solo Cover)",
+    "date": "2025-09-03",
+    "embedUrl": "JIDmHcdXiEM",
+    "thumbnailUrl": "https://i.ytimg.com/vi/JIDmHcdXiEM/hqdefault.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": "v-HD2usveL-Ww",
+    "platform": "youtube",
+    "category": "p1",
+    "title": "「幸福在歌唱」（清唱版）Cover by 陳芃瑄、楊豐彥、古晧",
+    "date": "2026-06-29",
+    "embedUrl": "HD2usveL-Ww",
+    "thumbnailUrl": "https://i.ytimg.com/vi/HD2usveL-Ww/maxresdefault.jpg",
+    "isFeatured": false
   }
 ];
