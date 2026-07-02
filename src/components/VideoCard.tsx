@@ -7,7 +7,7 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   // 判斷是否為直向 FB 影片 (Reels 或特定 ID)
   const isFbVertical = video.platform === 'facebook' && (
-    (video.embedUrl.includes('reel') && video.id !== 'v-music-corner' && video.id !== 'v-fb-5299252240089221') || 
+    (video.embedUrl.includes('reel') && video.id !== 'v-music-corner' && video.id !== 'v-fb-5299252240089221') ||
     ['v-fb-cat821', 'v-fb-995751751518630', 'v-fb-1387294209248782', 'v-fb-1026651136577463'].includes(video.id)
   );
 
@@ -78,7 +78,7 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
                   className={`absolute inset-0 w-full h-full opacity-70 group-hover:opacity-90 transition-opacity ${video.category === 'p2' ? 'object-contain bg-black' : 'object-cover'}`}
                 />
               )}
-              
+
               <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/5 transition-colors z-10">
                 <div className="z-20 w-16 h-16 rounded-full flex justify-center items-center shadow-2xl group-hover:scale-110 transition-transform duration-500 bg-red-600/90 shadow-red-600/30">
                   <Play className="w-8 h-8 text-white ml-1" fill="white" />
@@ -147,11 +147,10 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
             <X className="w-6 h-6 md:w-8 md:h-8" />
           </button>
 
-          <div className={`bg-black md:rounded-2xl shadow-[0_0_80px_rgba(212,175,55,0.15)] ring-1 ring-white/10 md:ring-gold/30 relative flex flex-col items-center justify-center animate-in zoom-in-95 duration-300 w-full md:w-[90vw] max-w-[1600px] ${
-            (video.platform === 'youtube' || (video.platform === 'facebook' && !isFbVertical)) 
-              ? 'aspect-video h-auto overflow-hidden' 
+          <div className={`bg-black md:rounded-2xl shadow-[0_0_80px_rgba(212,175,55,0.15)] ring-1 ring-white/10 md:ring-gold/30 relative flex flex-col items-center justify-center animate-in zoom-in-95 duration-300 w-full md:w-[90vw] max-w-[1600px] ${(video.platform === 'youtube' || (video.platform === 'facebook' && !isFbVertical))
+              ? 'aspect-video h-auto overflow-hidden'
               : 'h-[90vh] md:h-[85vh] py-6 md:py-10 overflow-y-auto'
-          }`}>
+            }`}>
             {video.platform === 'youtube' && (
               <iframe
                 className="w-full h-full aspect-video"

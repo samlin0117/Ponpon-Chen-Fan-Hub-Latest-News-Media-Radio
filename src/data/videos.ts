@@ -1011,5 +1011,15 @@ export const videoList: VideoInfo[] = [
     "embedUrl": "HD2usveL-Ww",
     "thumbnailUrl": "https://i.ytimg.com/vi/HD2usveL-Ww/maxresdefault.jpg",
     "isFeatured": false
+  },
+  {
+    "id": "v-threads-DZoh3Ewkzkn",
+    "platform": "threads",
+    "category": "p8",
+    "title": "Ponpon Chen - But Not For Me (直笛(recorder) Cover)",
+    "date": "2026-06-16",
+    "embedUrl": "https://www.threads.net/@eason.chiou197/post/DZoh3Ewkzkn",
+    "thumbnailUrl": "/threads-but-not-for-me.jpg",
+    "isFeatured": false
   }
 ];
