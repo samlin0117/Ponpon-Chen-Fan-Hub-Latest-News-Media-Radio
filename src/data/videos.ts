@@ -1,4 +1,4 @@
-export type Platform = 'youtube' | 'facebook' | 'instagram' | 'threads';
+export type Platform = 'youtube' | 'facebook' | 'instagram' | 'threads' | 'pbs';
 
 export interface VideoInfo {
   id: string;
@@ -13,6 +13,7 @@ export interface VideoInfo {
   eventGroup?: string;
   startTime?: number;
   endTime?: number;
+  originalUrl?: string;
 }
 
 export const videoList: VideoInfo[] = [
@@ -139,6 +140,19 @@ export const videoList: VideoInfo[] = [
     "embedUrl": "HCUE2cDCOqs",
     "thumbnailUrl": "https://i.ytimg.com/vi/HCUE2cDCOqs/maxresdefault.jpg",
     "isFeatured": true
+  },
+  {
+    "id": "v-pbs-a8tyjp",
+    "platform": "pbs",
+    "category": "p1",
+    "title": "Ponpon｜Let It Snow & Sleigh Ride (Live 官方高畫質版)",
+    "date": "2025-12-24",
+    "embedUrl": "3106497621",
+    "thumbnailUrl": "https://i.ytimg.com/vi/HCUE2cDCOqs/maxresdefault.jpg",
+    "isFeatured": true,
+    "startTime": 4749,
+    "endTime": 5097,
+    "originalUrl": "https://www.pbs.org/video/66th-annual-la-county-holiday-celebration-a8tyjp/"
   },
   {
     "id": "v-1X0U_GupqPQ",

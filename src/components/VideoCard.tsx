@@ -1,5 +1,5 @@
 import { VideoInfo } from '../data/videos';
-import { Play, X } from 'lucide-react';
+import { Play, X, ExternalLink } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -53,7 +53,7 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
             }
           }}
         >
-          {video.platform === 'youtube' && (
+          {(video.platform === 'youtube' || video.platform === 'pbs') && (
             <>
               {video.thumbnailUrl ? (
                 <img
@@ -139,6 +139,32 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
 
       {isModalOpen && typeof document !== 'undefined' && createPortal(
         <div className="fixed inset-0 z-[9999] flex items-center justify-center p-0 md:p-12 bg-black/95 backdrop-blur-xl transition-opacity animate-in fade-in duration-300">
+          {(() => {
+            let link = video.originalUrl;
+            if (!link) {
+              if (video.platform === 'youtube') link = `https://www.youtube.com/watch?v=${video.embedUrl}${video.startTime ? `&t=${video.startTime}s` : ''}`;
+              else if (video.platform === 'instagram') link = `https://www.instagram.com/p/${video.embedUrl}/`;
+              else if (video.platform === 'threads') link = video.embedUrl;
+              else if (video.platform === 'facebook') {
+                const fbMatch = video.embedUrl.match(/href=([^&]+)/);
+                if (fbMatch) link = decodeURIComponent(fbMatch[1]);
+              }
+            }
+            if (!link) return null;
+            return (
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute top-4 left-4 md:top-8 md:left-8 p-3 bg-white/5 hover:bg-gold/20 hover:text-gold rounded-full text-white/70 hover:text-white transition-all cursor-pointer z-[10000] focus:outline-none flex items-center gap-2 group backdrop-blur-md"
+                aria-label="Open original video"
+                title="前往原網站觀看"
+              >
+                <ExternalLink className="w-6 h-6 md:w-7 md:h-7" />
+                <span className="hidden md:inline text-sm font-medium pr-2 whitespace-nowrap">在原網站觀看</span>
+              </a>
+            );
+          })()}
           <button
             onClick={handleCloseModal}
             className="absolute top-4 right-4 md:top-8 md:right-8 p-3 bg-white/5 hover:bg-gold/20 hover:text-gold rounded-full text-white/70 hover:text-white transition-all cursor-pointer z-[10000] focus:outline-none"
@@ -147,7 +173,7 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
             <X className="w-6 h-6 md:w-8 md:h-8" />
           </button>
 
-          <div className={`bg-black md:rounded-2xl shadow-[0_0_80px_rgba(212,175,55,0.15)] ring-1 ring-white/10 md:ring-gold/30 relative flex flex-col items-center justify-center animate-in zoom-in-95 duration-300 w-full md:w-[90vw] max-w-[1600px] ${(video.platform === 'youtube' || (video.platform === 'facebook' && !isFbVertical))
+          <div className={`bg-black md:rounded-2xl shadow-[0_0_80px_rgba(212,175,55,0.15)] ring-1 ring-white/10 md:ring-gold/30 relative flex flex-col items-center justify-center animate-in zoom-in-95 duration-300 w-full md:w-[90vw] max-w-[1600px] ${(video.platform === 'youtube' || video.platform === 'pbs' || (video.platform === 'facebook' && !isFbVertical))
               ? 'aspect-video h-auto overflow-hidden'
               : 'h-[90vh] md:h-[85vh] py-6 md:py-10 overflow-y-auto'
             }`}>
@@ -155,6 +181,16 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
               <iframe
                 className="w-full h-full aspect-video"
                 src={`https://www.youtube.com/embed/${video.embedUrl}?autoplay=1&vq=hd1080&hd=1${video.startTime ? `&start=${video.startTime}` : ''}${video.endTime ? `&end=${video.endTime}` : ''}`}
+                title={video.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            )}
+            {video.platform === 'pbs' && (
+              <iframe
+                className="w-full h-full aspect-video"
+                src={`https://player.pbs.org/viralplayer/${video.embedUrl}/?autoplay=true${video.startTime ? `&start=${video.startTime}` : ''}${video.endTime ? `&end=${video.endTime}` : ''}`}
                 title={video.title}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
