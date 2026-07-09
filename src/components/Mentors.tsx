@@ -61,26 +61,36 @@ const Mentors = () => {
   const { t } = useTranslation();
   const mentorsData = (t as any).mentors;
   const [selectedMentor, setSelectedMentor] = useState<any>(null);
-  const [activeVideo, setActiveVideo] = useState<{type: 'youtube' | 'facebook', url: string, videoId?: string} | null>(null);
+  const [activeVideo, setActiveVideo] = useState<{type: 'youtube' | 'facebook', url: string, videoId?: string, embedUrl?: string} | null>(null);
 
   const handleVideoClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const target = e.target as HTMLElement;
     const aTag = target.closest('a');
     if (aTag && aTag.href) {
       const url = aTag.href;
-      if (url.includes('youtube.com/watch') || url.includes('youtu.be/')) {
+      if (url.includes('youtube.com/watch') || url.includes('youtu.be/') || url.includes('youtube.com/embed/')) {
         e.preventDefault();
         let videoId = '';
+        let embedUrl = '';
         try {
-          if (url.includes('youtube.com/watch')) {
+          if (url.includes('youtube.com/embed/')) {
+            const urlObj = new URL(url);
+            videoId = urlObj.pathname.split('/').pop() || '';
+            urlObj.searchParams.set('autoplay', '1');
+            embedUrl = urlObj.toString();
+          } else if (url.includes('youtube.com/watch')) {
             const urlObj = new URL(url);
             videoId = urlObj.searchParams.get('v') || '';
+            const t = urlObj.searchParams.get('t');
+            embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1${t ? `&start=${parseInt(t)}` : ''}`;
           } else {
             videoId = url.split('youtu.be/')[1].split('?')[0];
+            const t = new URL(url).searchParams.get('t');
+            embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1${t ? `&start=${parseInt(t)}` : ''}`;
           }
         } catch (err) {}
         if (videoId) {
-          setActiveVideo({ type: 'youtube', url, videoId });
+          setActiveVideo({ type: 'youtube', url, videoId, embedUrl });
         }
       } else if (url.includes('facebook.com') && url.includes('/videos/')) {
         e.preventDefault();
@@ -289,7 +299,7 @@ const Mentors = () => {
               <div className="relative aspect-video w-full bg-black">
                 {activeVideo.type === 'youtube' ? (
                   <iframe
-                    src={`https://www.youtube.com/embed/${activeVideo.videoId}?autoplay=1`}
+                    src={activeVideo.embedUrl || `https://www.youtube.com/embed/${activeVideo.videoId}?autoplay=1`}
                     className="absolute inset-0 w-full h-full border-0"
                     allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
                     allowFullScreen

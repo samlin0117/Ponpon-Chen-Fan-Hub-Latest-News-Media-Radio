@@ -47,7 +47,7 @@
   },
   "mentors": {
     "title": "Music Mentors",
-    "description": "Ponpon's musical journey has been shaped not only by her hard work but also by the guidance of many benefactors. These mentors are introduced based on Ponpon's own words, interviews, and social media posts. Below are some of the key figures she frequently mentions, though many other unlisted individuals have also supported her along the way.",
+    "description": "Ponpon's musical journey has been shaped not only by her hard work but also by the guidance of many benefactors.<br/>These mentors are introduced based on Ponpon's own words, interviews, and social media posts. Below are some of the key figures she frequently mentions, though many other unlisted individuals have also supported her along the way.",
     "close": "Close",
     "list": [
       {
@@ -278,7 +278,7 @@
         "detailedStory": [
           {
             "date": "Recognizing Talent: Encouraging Her to Share Performances with the World",
-            "content": "Tom Weir unexpectedly met Ponpon in the studio hallway when she frequently came to practice through a friend's introduction. After watching some of her past performance videos, he immediately realized she was a performer with extremely unique personal characteristics.<br/><br/>He described Ponpon's combination of guitar playing, scatting, and whistling as '<a href=\"https://youtu.be/aswtSPQCcOU?t=95\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold border-b border-gold/30 hover:border-gold transition-colors\">Visual Jazz</a>', as if she could transform melodies into vivid stories and scenes. Because of this, he strongly encouraged Ponpon to upload her live performance videos to YouTube, allowing more people to see her unique musical language."
+            "content": "Tom Weir unexpectedly met Ponpon in the studio hallway when she frequently came to practice through a friend's introduction. After watching some of her past performance videos, he immediately realized she was a performer with extremely unique personal characteristics.<br/><br/>He described Ponpon's combination of guitar playing, scatting, and whistling as '<a href=\"https://www.youtube.com/embed/aswtSPQCcOU?start=95&end=108&autoplay=1\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold border-b border-gold/30 hover:border-gold transition-colors\">Visual Jazz</a>', as if she could transform melodies into vivid stories and scenes. Because of this, he strongly encouraged Ponpon to upload her live performance videos to YouTube, allowing more people to see her unique musical language."
           },
           {
             "date": "Personally Filming Shows to Let More People See Ponpon",
@@ -1003,7 +1003,7 @@
     "p3": "Press & Interviews",
     "p5": "Fan Cams",
     "p6": "Highlights",
-    "p7": "Auditions & TV Shows",
+    "p7": "Competitions & Shows",
     "p8": "Fan Covers & Tributes",
     "filterAllYears": "All Years",
     "before2020": "Before 2020"
