@@ -59,8 +59,8 @@ export default function SignatureTechniques() {
       titleKey: sigT.scatting?.title || "Scat Singing (擬聲吟唱)",
       descKey: sigT.scatting?.desc || "Scat Singing 是一種爵士人聲中的即興唱法，歌手不依賴完整歌詞，而是用沒有固定字義的音節（如「ba、doo、sha、bee」等）自由組合旋律與節奏，讓聲音像樂器一樣參與演出。這種唱法強調即時創作能力，透過音色變化、節奏律動與即興反應，表現出高度自由且富有個人風格的爵士語言。",
       masters: [
-        { name: "Louis Armstrong", era: "1920s", trait: "Scat 先驅", desc: "Louis Armstrong 於 1926 年錄下《Heebie Jeebies》，這首作品常被視為早期 Scat Singing 的經典代表之一。他的風格以直接有力的節奏感、粗獷而溫暖的音色，以及與小號彼此呼應的即興語法著稱。", image: masterImages.louis, videoHref: "https://www.youtube.com/embed/BhVdLd43bDI?start=34&end=88&autoplay=1", videoTitle: 'Louis Armstrong "Dinah" 1933' },
-        { name: "Ella Fitzgerald", era: "1940-60s", trait: "Scat 女王", desc: "Ella Fitzgerald 被譽為「Scat 女王」，以精準的音準、驚人的節奏感與高度器樂化的人聲即興聞名。她能在 Bebop 快速複雜的樂句中靈活穿梭，並以清晰俐落的線條，將 Scat Singing 發展成爵士史上最具代表性的表演藝術之一。", image: masterImages.ella, videoId: "ekmwIStfR0o", videoTitle: 'Ella Fitzgerald "One Note Samba" 1969' }
+        { name: "Louis Armstrong", era: "1920s", trait: sigT.scatting?.masters?.louis_trait || "Scat 先驅", desc: sigT.scatting?.masters?.louis_desc || "Louis Armstrong 於 1926 年錄下《Heebie Jeebies》，這首作品常被視為早期 Scat Singing 的經典代表之一。他的風格以直接有力的節奏感、粗獷而溫暖的音色，以及與小號彼此呼應的即興語法著稱。", image: masterImages.louis, videoHref: "https://www.youtube.com/embed/BhVdLd43bDI?start=34&end=88&autoplay=1", videoTitle: 'Louis Armstrong "Dinah" 1933' },
+        { name: "Ella Fitzgerald", era: "1940-60s", trait: sigT.scatting?.masters?.ella_trait || "Scat 女王", desc: sigT.scatting?.masters?.ella_desc || "Ella Fitzgerald 被譽為「Scat 女王」，以精準的音準、驚人的節奏感與高度器樂化的人聲即興聞名。她能在 Bebop 快速複雜的樂句中靈活穿梭，並以清晰俐落的線條，將 Scat Singing 發展成爵士史上最具代表性的表演藝術之一。", image: masterImages.ella, videoId: "ekmwIStfR0o", videoTitle: 'Ella Fitzgerald "One Note Samba" 1969' }
       ],
       ponpon: {
         desc: sigT.scatting?.ponpon || "Ponpon 的 Scat Singing 特色在於能於歌詞與即興之間自然切換，聲線溫潤且具備清晰的咬字顆粒感與節奏辨識度。她的即興線條常帶有器樂化思維，彷彿與樂團中的管樂聲部進行對話般流動，並融合現代切分節奏與 swing feel，使整體演出呈現輕盈、富空氣感且具推進力的音樂張力。",
@@ -74,7 +74,8 @@ export default function SignatureTechniques() {
       titleKey: sigT.guitarUnison?.title || "Scat–Guitar Unison (吉他與人聲齊奏)",
       descKey: sigT.guitarUnison?.desc || "Scat–Guitar Unison 是一種高協調性的同步演奏方式，演唱者需同時構思即興旋律，並以聲帶精準重現吉他所演奏的音高與節奏。此技巧要求極高的聽覺反應能力與身體控制，使人聲不再只是歌唱，而是成為吉他的即時延伸聲部，形成高度一致且具速度感的音樂線條。",
       masters: [
-        { name: "George Benson", era: "1970s-", trait: "人聲與吉他的革命", desc: "George Benson 以 Scat Singing 與吉他即興之間高度同步的 Unison 表現聞名。邊彈邊唱的緊密配合，讓他的旋律同時具備器樂般的流暢線條與人聲特有的溫度，形成極具辨識度的爵士風格。", image: masterImages.benson, videoHref: "https://www.youtube.com/embed/qWZFGXTuoRo?start=168&end=283&autoplay=1", videoTitle: 'George Benson "This Masquerade"' }
+        { name: "George Benson", era: "1970s-", trait: sigT.guitarUnison?.masters?.benson_trait || "人聲與吉他的革命", desc: sigT.guitarUnison?.masters?.benson_desc || "George Benson 以 Scat Singing 與吉他即興之間高度同步的 Unison 表現聞名。邊彈邊唱的緊密配合，讓他的旋律同時具備器樂般的流暢線條與人聲特有的溫度，形成極具辨識度的爵士風格。", image: masterImages.benson, videoHref: "https://www.youtube.com/embed/qWZFGXTuoRo?start=168&end=283&autoplay=1", videoTitle: 'George Benson "This Masquerade"' },
+        { name: "John Pizzarelli", era: "1990s-", trait: sigT.guitarUnison?.masters?.pizzarelli_trait || "爵士吉他與人聲的傳承者", desc: sigT.guitarUnison?.masters?.pizzarelli_desc || "John Pizzarelli 是當代最具代表性的爵士吉他手兼歌手之一，承襲經典爵士吉他的演奏傳統，以優雅的 fingerstyle 技巧、溫暖的歌聲，以及 Scat 與吉他的同步齊奏（Scat-Guitar Unison）聞名。他延續了 George Benson 等前輩開創的人聲與吉他互動語彙，並賦予其更細膩、富有現代感的音樂詮釋，成為當代爵士樂重要的傳承者之一。", image: "https://img.youtube.com/vi/vVNVJGLVFCk/hqdefault.jpg", videoHref: "https://www.youtube.com/embed/vVNVJGLVFCk?start=46&end=77&autoplay=1", videoTitle: 'John Pizzarelli "I Got Rhythm"' }
       ],
       ponpon: {
         desc: sigT.guitarUnison?.ponpon || "將這項技巧延伸到更自然的舞台互動。不只是炫技，更像是在「和自己的吉他對話」。",
@@ -120,7 +121,7 @@ export default function SignatureTechniques() {
       titleKey: sigT.whistlingUnison?.title || "Whistle–Guitar Unison (口哨吉他同步)",
       descKey: sigT.whistlingUnison?.desc || "Whistle–Guitar Unison 是一種以完全同步旋律為核心的演奏方式，口哨與吉他在音高與節奏上高度一致，共同呈現同一條旋律線。兩種截然不同的音色疊合後，形成「單旋律、雙聲響」的效果，使音樂呈現更立體的層次感與清晰的旋律穿透力。",
       masters: [
-        { name: "Toots Thielemans", era: "1960s", trait: "爵士口哨大師", desc: "Toots Thielemans 是爵士樂史上的傳奇，以半音階口琴與爵士口哨聞名於世。他在經典名曲《Bluesette》中展現了極具開創性的「口哨與吉他齊奏」，以輕快優美的音色風靡全球，更成功將口哨提升為正式且優雅的爵士語言。", image: masterImages.toots, videoId: "vtGMDmjk6EA", videoTitle: 'Toots Thielemans "Bluesette"' }
+        { name: "Toots Thielemans", era: "1960s", trait: sigT.whistlingUnison?.masters?.toots_trait || "爵士口哨大師", desc: sigT.whistlingUnison?.masters?.toots_desc || "Toots Thielemans 是爵士樂史上的傳奇，以半音階口琴與爵士口哨聞名於世。他在經典名曲《Bluesette》中展現了極具開創性的「口哨與吉他齊奏」，以輕快優美的音色風靡全球，更成功將口哨提升為正式且優雅的爵士語言。", image: masterImages.toots, videoId: "vtGMDmjk6EA", videoTitle: 'Toots Thielemans "Bluesette"' }
       ],
       ponpon: {
         desc: sigT.whistlingUnison?.ponpon || "Ponpon 在詮釋口哨與吉他同步齊奏時，展現出對音準與內在聽覺的高度控制能力...",

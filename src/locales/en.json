@@ -424,6 +424,18 @@
     "rank_newbie_desc": "Welcome to the fan world, let's explore together!",
     "questions": [
       {
+        "id": 50,
+        "question": "Where was Ponpon's first ticketed show in Northern California held?",
+        "options": [
+          "Agua Caliente Casino",
+          "Biscuits & Blues",
+          "Cicada Restaurant and Lounge",
+          "Blue Note"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In September 2025, Ponpon held her first Northern California ticketed show at the renowned jazz club Biscuits & Blues in San Francisco (Bay Area)."
+      },
+      {
         "id": 1,
         "question": "Which of the following skills is a 'special instrument' Ponpon first performed publicly in LA in April 2025?",
         "options": [
@@ -1185,7 +1197,7 @@
     },
     {
       "year": "2018 - 2019",
-      "title": "Overseas Duet & Landmark Contest",
+      "title": "Overseas Debut & Making a Mark",
       "desc": "Performed on the popular TV show <a href=\"https://star.ettoday.net/news/1164745\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors\">\"Come Sing with Me 3\"</a> in 2018, singing a solo duet with Wang Yuan. <a href=\"https://www.youtube.com/watch?v=JNy94_bUgx0&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=24\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch highlights</a><br/><br/>In 2019, she competed as a challenger in Taiwan's iconic music survival show <strong>\"Jungle Voice\"</strong>. <a href=\"https://www.youtube.com/watch?v=5lPml-yAc2I&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=25\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch highlights</a>",
       "category": "normal"
     },
@@ -1209,8 +1221,8 @@
     },
     {
       "year": "2024 Q3",
-      "title": "First SCATTING in a Public Performance",
-      "desc": "During the performance of \"How High The Moon\", Ponpon debuted her signature Scatting (guitar and vocal unison) technique in a public performance for the first time. <a href=\"https://www.youtube.com/watch?v=_BVm-hixXt4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch performance</a>",
+      "title": "First SCAT-GUITAR UNISON in a Public Performance",
+      "desc": "During the performance of \"How High The Moon\", Ponpon debuted her signature Scat-Guitar Unison technique in a public performance for the first time. <a href=\"https://www.youtube.com/watch?v=_BVm-hixXt4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch performance</a>",
       "category": "first"
     },
     {
@@ -1223,6 +1235,12 @@
       "year": "Apr 2025",
       "title": "First WASHBOARD in a Public Performance",
       "desc": "Incorporated the washboard into her live performance for the very first time at Cicada Restaurant and Lounge in Los Angeles.<a href=\"https://www.youtube.com/watch?v=PwxGVbZvWXI&list=PLLwWHVIUlB8lzbav-7ETbHfJhDqZDOkJj&index=4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch performance</a>",
+      "category": "first"
+    },
+    {
+      "year": "Sep 2025",
+      "title": "Debut in the Bay Area",
+      "desc": "Held her first Northern California ticketed show at the renowned jazz club Biscuits & Blues in San Francisco. Strongly supported by the local Taiwanese community, the highly anticipated event expanded from one to three sold-out shows, marking a significant milestone in her career.<a href=\"https://www.youtube.com/watch?v=1X0U_GupqPQ\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch performance</a>",
       "category": "first"
     },
     {
@@ -1247,7 +1265,13 @@
     "scatting": {
       "title": "Scat Singing",
       "desc": "Scat Singing is an improvised vocal style in jazz where the singer does not rely on complete lyrics. Instead, they freely combine melody and rhythm using nonsense syllables (such as \"ba, doo, sha, bee\") to make the voice participate in the performance like an instrument. This singing style emphasizes real-time creative ability, expressing a highly free and personal jazz language through tonal changes, rhythmic grooves, and spontaneous reactions.",
-      "ponpon": "The signature of Ponpon's Scat Singing lies in her ability to transition naturally between lyrics and improvisation, with a warm vocal tone that possesses distinct articulation and rhythmic clarity. Her improvisational lines often carry an instrumental mindset, flowing as if in dialogue with the horn section of the band. By blending modern syncopated rhythms with a swing feel, she imbues the overall performance with a light, airy, and driving musical tension."
+      "ponpon": "The signature of Ponpon's Scat Singing lies in her ability to transition naturally between lyrics and improvisation, with a warm vocal tone that possesses distinct articulation and rhythmic clarity. Her improvisational lines often carry an instrumental mindset, flowing as if in dialogue with the horn section of the band. By blending modern syncopated rhythms with a swing feel, she imbues the overall performance with a light, airy, and driving musical tension.",
+      "masters": {
+        "louis_trait": "The Pioneer of Scat",
+        "louis_desc": "Louis Armstrong recorded 'Heebie Jeebies' in 1926, which is often considered one of the classic early representations of Scat Singing. His style is known for its direct and powerful rhythm, rugged yet warm tone, and improvisational phrasing that echoes his trumpet playing.",
+        "ella_trait": "The Queen of Scat",
+        "ella_desc": "Revered as the 'Queen of Scat', Ella Fitzgerald is known for her flawless pitch, astonishing sense of rhythm, and highly instrumental vocal improvisation. She could weave effortlessly through fast and complex Bebop phrases, and with clear and crisp lines, she developed Scat Singing into one of the most representative performance arts in jazz history."
+      }
     },
     "jazzGuitar": {
       "title": "Jazz Guitar",
@@ -1257,7 +1281,13 @@
     "guitarUnison": {
       "title": "Scat–Guitar Unison",
       "desc": "Scat–Guitar Unison is a highly coordinated synchronized performance technique where the vocalist simultaneously conceives improvisational melodies and accurately reproduces the pitches and rhythms played on the guitar with their vocal cords. This technique requires extreme auditory reaction and physical control, turning the human voice into an instant extension of the guitar rather than just singing, forming highly consistent and fast-paced musical lines.",
-      "ponpon": "Ponpon excels at naturally blending Scat Singing with guitar melodies, allowing her vocals and guitar phrases to closely echo each other in rhythm, accent, and melodic lines. This expression of Scat-Guitar Unison not only showcases her acute mastery of melodic lines but also forms a personal style that is fluid, warm, and highly recognizable."
+      "ponpon": "Ponpon excels at naturally blending Scat Singing with guitar melodies, allowing her vocals and guitar phrases to closely echo each other in rhythm, accent, and melodic lines. This expression of Scat-Guitar Unison not only showcases her acute mastery of melodic lines but also forms a personal style that is fluid, warm, and highly recognizable.",
+      "masters": {
+        "benson_trait": "The Guitar-Vocal Revolution",
+        "benson_desc": "George Benson is renowned for his highly synchronized Unison between Scat Singing and guitar improvisation. The tight coordination of playing and singing gives his melodies both the smooth lines of an instrument and the warmth of the human voice, creating a distinctly recognizable jazz style.",
+        "pizzarelli_trait": "The Modern Heir to Jazz Guitar & Voice",
+        "pizzarelli_desc": "John Pizzarelli is one of the most representative jazz guitarist-vocalists of his generation, carrying on the tradition of classic jazz guitar with elegant fingerstyle technique, a warm voice, and his mastery of Scat-Guitar Unison. He has extended the interactive vocabulary of guitar and voice pioneered by George Benson and others, giving it a more nuanced and contemporary musical interpretation, making him one of the essential torchbearers of modern jazz."
+      }
     },
     "whistling": {
       "title": "Whistling",
@@ -1267,7 +1297,11 @@
     "whistlingUnison": {
       "title": "Whistle–Guitar Unison",
       "desc": "Whistle-Guitar Unison is a performance technique centered on completely synchronized melodies, where the whistling and guitar are highly consistent in pitch and rhythm, jointly presenting the same melodic line. The overlapping of two distinctly different timbres creates a \"single melody, dual sound\" effect, giving the music a more three-dimensional texture and clear melodic penetration.",
-      "ponpon": "When interpreting Whistle-Guitar Unison, Ponpon demonstrates a high degree of control over pitch and inner hearing. She naturally blends the airy whistling tone with the resonance formed by the vibration of the guitar strings, constructing a unique color akin to a third voice. This performance not only reflects precise synchronization techniques but also injects a delicate sense of breath into the instrumental melody, presenting a more fluid and vital layer of expression."
+      "ponpon": "When interpreting Whistle-Guitar Unison, Ponpon demonstrates a high degree of control over pitch and inner hearing. She naturally blends the airy whistling tone with the resonance formed by the vibration of the guitar strings, constructing a unique color akin to a third voice. This performance not only reflects precise synchronization techniques but also injects a delicate sense of breath into the instrumental melody, presenting a more fluid and vital layer of expression.",
+      "masters": {
+        "toots_trait": "The Master of Jazz Whistling",
+        "toots_desc": "Toots Thielemans is a legend in the history of jazz, renowned for his chromatic harmonica and jazz whistling. In his classic tune 'Bluesette', he demonstrated groundbreaking 'whistle and guitar unison', taking the world by storm with its light and beautiful tone, successfully elevating whistling to a formal and elegant jazz language."
+      }
     },
     "scatWhistleGuitarUnison": {
       "title": "Scat / Whistle–Guitar Unison",
