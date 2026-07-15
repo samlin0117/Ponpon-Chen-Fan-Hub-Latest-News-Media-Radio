@@ -2,8 +2,12 @@ import { VideoInfo } from '../data/videos';
 import { Play, X, ExternalLink } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { useTranslation } from '../hooks/useTranslation';
 
 export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
+  const { t } = useTranslation();
+  const localizedTitle = (t as any)?.videoTitles?.[video.id] || video.title;
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   // 判斷是否為直向 FB 影片 (Reels 或特定 ID)
   const isFbVertical = video.platform === 'facebook' && (
@@ -32,7 +36,7 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
         <div className="mb-4 text-left w-full">
 
           <h3 className="text-lg font-serif text-gray-200 group-hover:text-gold transition-colors line-clamp-2">
-            {video.title}
+            {localizedTitle}
           </h3>
           {video.date && (
             <p className="text-sm text-gray-400 mt-1 font-mono tracking-wide">
@@ -58,7 +62,7 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
               {video.thumbnailUrl ? (
                 <img
                   src={video.thumbnailUrl}
-                  alt={video.title}
+                  alt={localizedTitle}
                   className={`absolute inset-0 w-full h-full opacity-70 group-hover:opacity-90 transition-opacity ${video.category === 'p2' ? 'object-contain bg-black' : 'object-cover'}`}
                 />
               ) : (
@@ -74,7 +78,7 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
                       target.src = `https://img.youtube.com/vi/${video.embedUrl}/0.jpg`;
                     }
                   }}
-                  alt={video.title}
+                  alt={localizedTitle}
                   className={`absolute inset-0 w-full h-full opacity-70 group-hover:opacity-90 transition-opacity ${video.category === 'p2' ? 'object-contain bg-black' : 'object-cover'}`}
                 />
               )}
@@ -109,7 +113,7 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
             <>
               <img
                 src={video.thumbnailUrl || ''}
-                alt={video.title}
+                alt={localizedTitle}
                 className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity"
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/5 transition-colors z-10">
@@ -124,7 +128,7 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
             <>
               <img
                 src={video.thumbnailUrl || ''}
-                alt={video.title}
+                alt={localizedTitle}
                 className="absolute inset-0 w-full h-full object-contain bg-black opacity-70 group-hover:opacity-90 transition-opacity"
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/5 transition-colors z-10">
@@ -181,7 +185,7 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
               <iframe
                 className="w-full h-full aspect-video"
                 src={`https://www.youtube.com/embed/${video.embedUrl}?autoplay=1&vq=hd1080&hd=1${video.startTime ? `&start=${video.startTime}` : ''}${video.endTime ? `&end=${video.endTime}` : ''}`}
-                title={video.title}
+                title={localizedTitle}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -191,7 +195,7 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
               <iframe
                 className="w-full h-full aspect-video"
                 src={`https://player.pbs.org/viralplayer/${video.embedUrl}/?autoplay=true${video.startTime ? `&start=${video.startTime}` : ''}${video.endTime ? `&end=${video.endTime}` : ''}`}
-                title={video.title}
+                title={localizedTitle}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
