@@ -1035,5 +1035,15 @@ export const videoList: VideoInfo[] = [
     "embedUrl": "https://www.threads.net/@eason.chiou197/post/DZoh3Ewkzkn",
     "thumbnailUrl": "/threads-but-not-for-me.jpg",
     "isFeatured": false
+  },
+  {
+    "id": "v-ig-DQb-Oo6Ev7m",
+    "platform": "instagram",
+    "category": "p8",
+    "title": "Ponpon Chen - But Not For Me (Electric Guitar Cover)",
+    "date": "2025-10-30",
+    "embedUrl": "DQb-Oo6Ev7m",
+    "thumbnailUrl": "/ig-but-not-for-me-backtothefirsttime.jpg",
+    "isFeatured": false
   }
 ];
