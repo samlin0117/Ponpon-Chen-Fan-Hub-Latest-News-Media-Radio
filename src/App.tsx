@@ -961,7 +961,7 @@ function MainContent() {
                           <img
                             src={slide1Img}
                             alt="Interview Cover"
-                            className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-500"
+                            className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-500"
                             referrerPolicy="no-referrer"
                           />
                         </div>
@@ -994,7 +994,7 @@ function MainContent() {
                           <img
                             src="https://shoutoutla.s3.us-west-1.amazonaws.com/wp-content/uploads/2024/04/c-PersonalPonponChen__IMG3539_1712979648617.jpg"
                             alt="Interview Cover"
-                            className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-500"
+                            className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-500"
                             referrerPolicy="no-referrer"
                           />
                         </div>
