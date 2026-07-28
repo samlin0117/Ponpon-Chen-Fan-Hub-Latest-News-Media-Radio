@@ -61,7 +61,7 @@ const Mentors = () => {
   const { t } = useTranslation();
   const mentorsData = (t as any).mentors;
   const [selectedMentor, setSelectedMentor] = useState<any>(null);
-  const [activeVideo, setActiveVideo] = useState<{type: 'youtube' | 'facebook', url: string, videoId?: string, embedUrl?: string} | null>(null);
+  const [activeVideo, setActiveVideo] = useState<{type: 'youtube' | 'facebook', url: string, videoId?: string, embedUrl?: string, isVertical?: boolean} | null>(null);
 
   const handleVideoClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const target = e.target as HTMLElement;
@@ -92,9 +92,10 @@ const Mentors = () => {
         if (videoId) {
           setActiveVideo({ type: 'youtube', url, videoId, embedUrl });
         }
-      } else if (url.includes('facebook.com') && url.includes('/videos/')) {
+      } else if (url.includes('facebook.com') && (url.includes('/videos/') || url.includes('/share/v/'))) {
         e.preventDefault();
-        setActiveVideo({ type: 'facebook', url });
+        const isVertical = aTag.dataset.vertical === 'true';
+        setActiveVideo({ type: 'facebook', url, isVertical });
       }
     }
   };
@@ -286,7 +287,7 @@ const Mentors = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.95 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-4xl bg-black border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col"
+              className={`relative bg-black border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col ${activeVideo.isVertical ? 'w-[min(100%,400px)] aspect-[9/16]' : 'w-full max-w-4xl'}`}
             >
               <div className="absolute top-0 right-0 z-20 p-4">
                 <button
@@ -296,7 +297,7 @@ const Mentors = () => {
                   <X className="w-6 h-6" />
                 </button>
               </div>
-              <div className="relative aspect-video w-full bg-black">
+              <div className={`relative w-full h-full bg-black ${!activeVideo.isVertical ? 'aspect-video' : ''}`}>
                 {activeVideo.type === 'youtube' ? (
                   <iframe
                     src={activeVideo.embedUrl || `https://www.youtube.com/embed/${activeVideo.videoId}?autoplay=1`}

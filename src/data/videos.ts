@@ -1045,5 +1045,45 @@ export const videoList: VideoInfo[] = [
     "embedUrl": "DQb-Oo6Ev7m",
     "thumbnailUrl": "/ig-but-not-for-me-backtothefirsttime.jpg",
     "isFeatured": false
+  },
+  {
+    "id": "v-ig-DJbeXx1z078",
+    "platform": "instagram",
+    "category": "p8",
+    "title": "But not for me (Electric Guitar Cover)(@min_suuuuuuu8)",
+    "date": "2025-05-09",
+    "embedUrl": "DJbeXx1z078",
+    "thumbnailUrl": "/ig-DJbeXx1z078.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": "v-ig-DWywNjjE7uu",
+    "platform": "instagram",
+    "category": "p8",
+    "title": "🎵But Not For Me (Guitar Cover) (@i_am_21)",
+    "date": "2026-04-06",
+    "embedUrl": "DWywNjjE7uu",
+    "thumbnailUrl": "/ig-DWywNjjE7uu.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": "v-ig-DXrpoJFjWeK",
+    "platform": "instagram",
+    "category": "p8",
+    "title": "But not for me - Ponpon Chen (Classical Guitar Cover) (@hanaminhchi)",
+    "date": "2026-04-28",
+    "embedUrl": "DXrpoJFjWeK",
+    "thumbnailUrl": "/ig-DXrpoJFjWeK.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": "v-ig-DJ7CPUezm1q",
+    "platform": "instagram",
+    "category": "p8",
+    "title": "How high the moon(Electric Guitar Cover) (@hanaminhchi)",
+    "date": "2025-05-21",
+    "embedUrl": "DJ7CPUezm1q",
+    "thumbnailUrl": "/ig-DJ7CPUezm1q.jpg",
+    "isFeatured": false
   }
 ];
