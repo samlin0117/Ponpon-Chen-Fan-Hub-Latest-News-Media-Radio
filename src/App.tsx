@@ -14,6 +14,8 @@ import SignatureTechniques from './components/SignatureTechniques';
 
 import { Language } from './locales';
 import { useTranslation } from './hooks/useTranslation';
+import slide1Img from './assets/slide1.jpg';
+import slide2Img from './assets/slide2.jpg';
 
 function MainContent() {
   const { t, lang, setLang } = useTranslation();
@@ -57,11 +59,11 @@ function MainContent() {
 
   const carouselImages = [
     {
-      src: "/slide1.jpg",
+      src: slide1Img,
       link: "https://www.facebook.com/photo/?fbid=1777153813601544&set=pb.100039208281828.-2207520000"
     },
     {
-      src: "/slide2.jpg",
+      src: slide2Img,
       link: "https://www.facebook.com/photo/?fbid=1771077854209140&set=pb.100039208281828.-2207520000"
     }
   ];
@@ -957,7 +959,7 @@ function MainContent() {
                       <div className="flex flex-col md:flex-row gap-8 items-center md:items-start relative z-10">
                         <div className="w-full md:w-1/3 aspect-video md:aspect-square rounded-xl overflow-hidden bg-black shrink-0 border border-white/5">
                           <img
-                            src="https://shoutoutla.s3.us-west-1.amazonaws.com/wp-content/uploads/2024/04/c-PonponChen__IMG5020_1712948629197.jpg"
+                            src={slide1Img}
                             alt="Interview Cover"
                             className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-500"
                             referrerPolicy="no-referrer"
