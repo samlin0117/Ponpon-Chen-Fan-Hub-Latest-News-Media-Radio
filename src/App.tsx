@@ -57,10 +57,6 @@ function MainContent() {
 
   const carouselImages = [
     {
-      src: "https://shoutoutla.s3.us-west-1.amazonaws.com/wp-content/uploads/2024/04/c-PonponChen__IMG5020_1712948629197.jpg",
-      link: "https://www.facebook.com/photo/?fbid=3842701859081991&set=a.482592819724323"
-    },
-    {
       src: "/slide1.jpg",
       link: "https://www.facebook.com/photo/?fbid=1777153813601544&set=pb.100039208281828.-2207520000"
     },
