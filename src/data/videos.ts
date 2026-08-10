@@ -1,4 +1,4 @@
-export type Platform = 'youtube' | 'facebook' | 'instagram' | 'threads' | 'pbs';
+export type Platform = 'youtube' | 'facebook' | 'instagram' | 'threads' | 'pbs' | 'tiktok';
 
 export interface VideoInfo {
   id: string;
@@ -1034,6 +1034,17 @@ export const videoList: VideoInfo[] = [
     "date": "2026-08-06",
     "embedUrl": "Xz0IF3zKDhM",
     "thumbnailUrl": "https://i.ytimg.com/vi/Xz0IF3zKDhM/hqdefault.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": "v-tt-7667497735225888030",
+    "platform": "tiktok",
+    "category": "p2",
+    "title": "It Don't Mean a Thing",
+    "date": "2026-07-28",
+    "embedUrl": "7667497735225888030",
+    "originalUrl": "https://www.tiktok.com/@ponponofficial_/video/7667497735225888030",
+    "thumbnailUrl": "/tt-it-dont-mean-a-thing.png",
     "isFeatured": false
   },
   {

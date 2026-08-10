@@ -100,6 +100,26 @@ function FbVideoPlayer({ video, isFbVertical }: { video: VideoInfo; isFbVertical
   );
 }
 
+// TikTok 官方 blockquote embed：每次開啟都重新注入，確保 embed.js 會處理到新的 blockquote
+function TikTokEmbed({ videoId }: { videoId: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.innerHTML = `<blockquote class="tiktok-embed" cite="https://www.tiktok.com/video/${videoId}" data-video-id="${videoId}" style="max-width: 605px;min-width: 325px;"><section></section></blockquote>`;
+    }
+    const script = document.createElement('script');
+    script.src = 'https://www.tiktok.com/embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      try { document.body.removeChild(script); } catch {}
+    };
+  }, [videoId]);
+
+  return <div ref={containerRef} className="w-full h-full flex justify-center items-center overflow-y-auto" />;
+}
+
 export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
   const { t } = useTranslation();
   const localizedTitle = (t as any)?.videoTitles?.[video.id] || video.title;
@@ -234,6 +254,25 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
               </div>
             </>
           )}
+
+          {video.platform === 'tiktok' && (
+            <>
+              {video.thumbnailUrl ? (
+                <img
+                  src={video.thumbnailUrl}
+                  alt={localizedTitle}
+                  className="absolute inset-0 w-full h-full object-cover object-top opacity-70 group-hover:opacity-90 transition-opacity"
+                />
+              ) : (
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-black via-[#25F4EE]/10 to-[#FE2C55]/10" />
+              )}
+              <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/5 transition-colors z-10">
+                <div className="z-20 w-16 h-16 bg-black rounded-full flex justify-center items-center shadow-2xl group-hover:scale-110 transition-transform duration-500 ring-2 ring-[#25F4EE]">
+                  <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
 
@@ -319,6 +358,9 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
                 frameBorder="0"
                 allowTransparency
               ></iframe>
+            )}
+            {video.platform === 'tiktok' && (
+              <TikTokEmbed videoId={video.embedUrl} />
             )}
           </div>
         </div>,
