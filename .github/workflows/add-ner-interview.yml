@@ -1,0 +1,109 @@
+name: Add NER interview entry
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Add NER interview
+        env:
+          COVER_B64: __COVER_B64__
+        run: |
+          python3 - <<'PY'
+          import base64, json, os
+          from pathlib import Path
+
+          marker = "/* NER Interview 2026-08-09 */"
+          app_path = Path("src/App.tsx")
+          app = app_path.read_text(encoding="utf-8")
+
+          if marker not in app:
+              block = """                    /* NER Interview 2026-08-09 */
+                    <a
+                      href="https://www.ner.gov.tw/Program/Episode/26080513142726613/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group block p-8 border border-white/10 rounded-2xl bg-dark-lighter hover:border-gold/50 transition-all duration-300 relative overflow-hidden"
+                    >
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
+                      <div className="flex flex-col md:flex-row gap-8 items-center md:items-start relative z-10">
+                        <div className="w-full md:w-1/3 aspect-video md:aspect-square rounded-xl overflow-hidden bg-black shrink-0 border border-white/5">
+                          <img
+                            src="/ner-interview-cover.jpg"
+                            alt="Interview Cover"
+                            className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-500"
+                            referrerPolicy="no-referrer"
+                          />
+                        </div>
+                        <div className="flex-1 text-left flex flex-col justify-center h-full py-2">
+                          <div className="flex items-center mb-4">
+                            <Mic2 className="w-4 h-4 text-gold mr-2" />
+                            <span className="text-xs font-mono text-gold-light tracking-widest">{t.interview.nerDate}</span>
+                          </div>
+                          <h3 className="font-serif text-xl md:text-2xl mb-4 group-hover:text-gold transition-colors leading-snug">
+                            {t.interview.ner}
+                          </h3>
+                          <div className="mt-auto flex items-center text-xs text-gray-300 uppercase tracking-wider">
+                            <span>{t.interview.listenNow}</span>
+                            <div className="ml-3 w-6 h-[1px] bg-gray-500 group-hover:bg-gold group-hover:w-10 transition-all duration-300"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+
+"""
+              app = app.replace("                    {/* RTI Part 2 (Newest) */}", block + "                    {/* RTI Part 2 (Newest) */}", 1)
+              app_path.write_text(app, encoding="utf-8")
+
+          entries = {
+              "zh.json": (
+                  "國立教育廣播電臺｜訪問台灣旅美爵士音樂人陳芃瑄聊「赴美深造與多國巡演的心路歷程」",
+                  "2026-08-09",
+              ),
+              "en.json": (
+                  "National Education Radio｜Interview with Taiwanese jazz artist Ponpon Chen: Her journey of studying in the U.S. and touring internationally",
+                  "2026-08-09",
+              ),
+              "ja.json": (
+                  "国立教育放送｜台湾出身のジャズアーティスト Ponpon Chen：米国留学と多国ツアーへの歩み",
+                  "2026-08-09",
+              ),
+          }
+
+          for filename, (title, date) in entries.items():
+              path = Path("src/locales") / filename
+              obj = json.loads(path.read_text(encoding="utf-8"))
+              interview = obj["interview"]
+              if "ner" not in interview:
+                  new_interview = {}
+                  for key, value in interview.items():
+                      new_interview[key] = value
+                      if key == "rti2Date":
+                          new_interview["ner"] = title
+                          new_interview["nerDate"] = date
+                  obj["interview"] = new_interview
+                  path.write_text(json.dumps(obj, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+          cover = Path("public/ner-interview-cover.jpg")
+          cover.parent.mkdir(parents=True, exist_ok=True)
+          cover.write_bytes(base64.b64decode(os.environ["COVER_B64"]))
+          PY
+
+      - name: Commit changes and remove one-shot workflow
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/App.tsx src/locales/zh.json src/locales/en.json src/locales/ja.json public/ner-interview-cover.jpg
+          git rm .github/workflows/add-ner-interview.yml
+          git commit -m "Add National Education Radio interview"
+          git push
