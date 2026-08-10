@@ -1023,7 +1023,7 @@ export const videoList: VideoInfo[] = [
     "title": "Ponpon Chen - \"But Not for Me\" (Electric Guitar Solo Cover)",
     "date": "2026-07-09",
     "embedUrl": "F4WTq8jOnEw",
-    "thumbnailUrl": "https://i.ytimg.com/vi/F4WTq8jOnEw/maxresdefault.jpg",
+    "thumbnailUrl": "https://i.ytimg.com/vi/F4WTq8jOnEw/hqdefault.jpg",
     "isFeatured": false
   },
   {
