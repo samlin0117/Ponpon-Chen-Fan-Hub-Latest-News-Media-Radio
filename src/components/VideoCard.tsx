@@ -1,8 +1,104 @@
 import { VideoInfo } from '../data/videos';
 import { Play, X, ExternalLink } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslation } from '../hooks/useTranslation';
+
+// FB SDK Video Player：支援 startTime / endTime 片段播放
+function FbVideoPlayer({ video, isFbVertical }: { video: VideoInfo; isFbVertical: boolean }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  // 從 embedUrl 取出真正的 FB 影片 URL
+  const fbHref = (() => {
+    const match = video.embedUrl.match(/href=([^&]+)/);
+    return match ? decodeURIComponent(match[1]) : '';
+  })();
+
+  useEffect(() => {
+    const cleanup = () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
+
+    let handleReady: ((msg: any) => void) | null = null;
+
+    const setupPlayer = (FB: any) => {
+      handleReady = (msg: any) => {
+        if (msg.type !== 'video') return;
+        const player = msg.instance;
+
+        // seek 到開始時間
+        if (video.startTime !== undefined) {
+          player.seek(video.startTime);
+        }
+        player.play();
+
+        // polling 到 endTime 時暫停
+        if (video.endTime !== undefined) {
+          intervalRef.current = setInterval(() => {
+            try {
+              const pos = player.getCurrentPosition();
+              if (pos >= video.endTime!) {
+                player.pause();
+                cleanup();
+              }
+            } catch {
+              cleanup();
+            }
+          }, 500);
+        }
+      };
+
+      FB.Event.subscribe('xfbml.ready', handleReady);
+      if (containerRef.current) {
+        FB.XFBML.parse(containerRef.current);
+      }
+    };
+
+    if ((window as any).FB) {
+      setupPlayer((window as any).FB);
+    } else {
+      const prevInit = (window as any).fbAsyncInit;
+      (window as any).fbAsyncInit = () => {
+        if (prevInit) prevInit();
+        const FB = (window as any).FB;
+        FB.init({ xfbml: false, version: 'v22.0' });
+        setupPlayer(FB);
+      };
+      if (!document.getElementById('fb-sdk-script')) {
+        const script = document.createElement('script');
+        script.id = 'fb-sdk-script';
+        script.src = 'https://connect.facebook.net/en_US/sdk.js';
+        script.async = true;
+        script.defer = true;
+        document.body.appendChild(script);
+      }
+    }
+
+    return () => {
+      cleanup();
+      if (handleReady && (window as any).FB) {
+        try { (window as any).FB.Event.unsubscribe('xfbml.ready', handleReady); } catch {}
+      }
+    };
+  }, []);
+
+  return (
+    <div ref={containerRef} className="flex justify-center items-center w-full h-full bg-black">
+      <div
+        className="fb-video"
+        data-href={fbHref}
+        data-width={isFbVertical ? '316' : '560'}
+        data-allowfullscreen="true"
+        data-autoplay="false"
+        data-show-text="false"
+      />
+    </div>
+  );
+}
 
 export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
   const { t } = useTranslation();
@@ -202,15 +298,17 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
               ></iframe>
             )}
             {video.platform === 'facebook' && (
-              <iframe
-                src={`${video.embedUrl.replace(/width=\d+/, isFbVertical ? 'width=500' : 'width=550')}`}
-                className={isFbVertical ? "h-full aspect-[9/16] max-w-full mx-auto" : "w-full h-full max-w-5xl mx-auto"}
-                style={{ border: 'none', overflow: 'hidden' }}
-                scrolling="no"
-                frameBorder="0"
-                allowFullScreen
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-              ></iframe>
+              video.startTime !== undefined
+                ? <FbVideoPlayer video={video} isFbVertical={isFbVertical} />
+                : <iframe
+                    src={`${video.embedUrl.replace(/width=\d+/, isFbVertical ? 'width=500' : 'width=550')}`}
+                    className={isFbVertical ? "h-full aspect-[9/16] max-w-full mx-auto" : "w-full h-full max-w-5xl mx-auto"}
+                    style={{ border: 'none', overflow: 'hidden' }}
+                    scrolling="no"
+                    frameBorder="0"
+                    allowFullScreen
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  />
             )}
             {video.platform === 'instagram' && (
               <iframe

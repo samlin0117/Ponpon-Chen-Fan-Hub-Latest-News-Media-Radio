@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Heart, Users, X, ChevronRight } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
@@ -56,12 +56,78 @@ const HoverImageLink = ({ text, url, linkUrl, photoSourceLabel, index }: { text:
   );
 };
 
+// FB SDK Player with startTime/endTime control (must be outside Mentors component)
+function FbVideoPlayerMentor({ url, startTime, endTime, isVertical }: { url: string, startTime?: number, endTime?: number, isVertical?: boolean }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    const cleanup = () => {
+      if (intervalRef.current) { clearInterval(intervalRef.current); intervalRef.current = null; }
+    };
+    let handleReady: ((msg: any) => void) | null = null;
+    const setupPlayer = (FB: any) => {
+      handleReady = (msg: any) => {
+        if (msg.type !== 'video') return;
+        const player = msg.instance;
+        if (startTime !== undefined) player.seek(startTime);
+        player.play();
+        if (endTime !== undefined) {
+          intervalRef.current = setInterval(() => {
+            try {
+              if (player.getCurrentPosition() >= endTime) { player.pause(); cleanup(); }
+            } catch { cleanup(); }
+          }, 500);
+        }
+      };
+      FB.Event.subscribe('xfbml.ready', handleReady);
+      if (containerRef.current) FB.XFBML.parse(containerRef.current);
+    };
+    if ((window as any).FB) {
+      setupPlayer((window as any).FB);
+    } else {
+      const prevInit = (window as any).fbAsyncInit;
+      (window as any).fbAsyncInit = () => {
+        if (prevInit) prevInit();
+        const FB = (window as any).FB;
+        FB.init({ xfbml: false, version: 'v22.0' });
+        setupPlayer(FB);
+      };
+      if (!document.getElementById('fb-sdk-script')) {
+        const script = document.createElement('script');
+        script.id = 'fb-sdk-script';
+        script.src = 'https://connect.facebook.net/en_US/sdk.js';
+        script.async = true; script.defer = true;
+        document.body.appendChild(script);
+      }
+    }
+    return () => {
+      cleanup();
+      if (handleReady && (window as any).FB) {
+        try { (window as any).FB.Event.unsubscribe('xfbml.ready', handleReady); } catch {}
+      }
+    };
+  }, []);
+
+  return (
+    <div ref={containerRef} className="absolute inset-0 flex justify-center items-center bg-black">
+      <div
+        className="fb-video"
+        data-href={url}
+        data-width={isVertical ? '316' : '560'}
+        data-allowfullscreen="true"
+        data-autoplay="false"
+        data-show-text="false"
+      />
+    </div>
+  );
+}
 
 const Mentors = () => {
   const { t } = useTranslation();
   const mentorsData = (t as any).mentors;
   const [selectedMentor, setSelectedMentor] = useState<any>(null);
-  const [activeVideo, setActiveVideo] = useState<{type: 'youtube' | 'facebook', url: string, videoId?: string, embedUrl?: string, isVertical?: boolean} | null>(null);
+  const [activeVideo, setActiveVideo] = useState<{type: 'youtube' | 'facebook', url: string, videoId?: string, embedUrl?: string, isVertical?: boolean, startTime?: number, endTime?: number} | null>(null);
 
   const handleVideoClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const target = e.target as HTMLElement;
@@ -82,11 +148,16 @@ const Mentors = () => {
             const urlObj = new URL(url);
             videoId = urlObj.searchParams.get('v') || '';
             const t = urlObj.searchParams.get('t');
-            embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1${t ? `&start=${parseInt(t)}` : ''}`;
+            const start = urlObj.searchParams.get('start') || t;
+            const end = urlObj.searchParams.get('end');
+            embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1${start ? `&start=${parseInt(start as string)}` : ''}${end ? `&end=${parseInt(end)}` : ''}`;
           } else {
             videoId = url.split('youtu.be/')[1].split('?')[0];
-            const t = new URL(url).searchParams.get('t');
-            embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1${t ? `&start=${parseInt(t)}` : ''}`;
+            const urlObj = new URL(url);
+            const t = urlObj.searchParams.get('t');
+            const start = urlObj.searchParams.get('start') || t;
+            const end = urlObj.searchParams.get('end');
+            embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1${start ? `&start=${parseInt(start as string)}` : ''}${end ? `&end=${parseInt(end)}` : ''}`;
           }
         } catch (err) {}
         if (videoId) {
@@ -95,7 +166,9 @@ const Mentors = () => {
       } else if (url.includes('facebook.com') && (url.includes('/videos/') || url.includes('/share/v/'))) {
         e.preventDefault();
         const isVertical = aTag.dataset.vertical === 'true';
-        setActiveVideo({ type: 'facebook', url, isVertical });
+        const startTime = aTag.dataset.fbStart ? parseInt(aTag.dataset.fbStart) : undefined;
+        const endTime = aTag.dataset.fbEnd ? parseInt(aTag.dataset.fbEnd) : undefined;
+        setActiveVideo({ type: 'facebook', url, isVertical, startTime, endTime });
       }
     }
   };
@@ -305,7 +378,9 @@ const Mentors = () => {
                     allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
                     allowFullScreen
                   ></iframe>
-                ) : (
+                ) : activeVideo.startTime !== undefined
+                  ? <FbVideoPlayerMentor url={activeVideo.url} startTime={activeVideo.startTime} endTime={activeVideo.endTime} isVertical={activeVideo.isVertical} />
+                  : (
                   <iframe
                     src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(activeVideo.url)}&show_text=false&width=560`}
                     className="absolute inset-0 w-full h-full border-0"
