@@ -1027,6 +1027,16 @@ export const videoList: VideoInfo[] = [
     "isFeatured": false
   },
   {
+    "id": "v-Xz0IF3zKDhM",
+    "platform": "youtube",
+    "category": "p8",
+    "title": "Ponpon Chen 陳芃瑄 - This I Dig Of You Guitar Solo Transcription",
+    "date": "2026-08-06",
+    "embedUrl": "Xz0IF3zKDhM",
+    "thumbnailUrl": "https://i.ytimg.com/vi/Xz0IF3zKDhM/hqdefault.jpg",
+    "isFeatured": false
+  },
+  {
     "id": "v-HD2usveL-Ww",
     "platform": "youtube",
     "category": "p1",
