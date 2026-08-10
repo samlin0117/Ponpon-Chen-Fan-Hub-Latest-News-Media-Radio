@@ -17,7 +17,7 @@ jobs:
 
       - name: Add NER interview
         env:
-          COVER_B64: __COVER_B64__
+          COVER_B64: PLACEHOLDER
         run: |
           python3 - <<'PY'
           import base64, json, os
@@ -66,18 +66,9 @@ jobs:
               app_path.write_text(app, encoding="utf-8")
 
           entries = {
-              "zh.json": (
-                  "國立教育廣播電臺｜訪問台灣旅美爵士音樂人陳芃瑄聊「赴美深造與多國巡演的心路歷程」",
-                  "2026-08-09",
-              ),
-              "en.json": (
-                  "National Education Radio｜Interview with Taiwanese jazz artist Ponpon Chen: Her journey of studying in the U.S. and touring internationally",
-                  "2026-08-09",
-              ),
-              "ja.json": (
-                  "国立教育放送｜台湾出身のジャズアーティスト Ponpon Chen：米国留学と多国ツアーへの歩み",
-                  "2026-08-09",
-              ),
+              "zh.json": ("國立教育廣播電臺｜訪問台灣旅美爵士音樂人陳芃瑄聊「赴美深造與多國巡演的心路歷程」", "2026-08-09"),
+              "en.json": ("National Education Radio｜Interview with Taiwanese jazz artist Ponpon Chen: Her journey of studying in the U.S. and touring internationally", "2026-08-09"),
+              "ja.json": ("国立教育放送｜台湾出身のジャズアーティスト Ponpon Chen：米国留学と多国ツアーへの歩み", "2026-08-09"),
           }
 
           for filename, (title, date) in entries.items():
