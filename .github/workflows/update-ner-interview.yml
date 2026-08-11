@@ -20,10 +20,10 @@ jobs:
         run: |
           python3 - <<'PY'
           from pathlib import Path
+          import json
 
           app_path = Path('src/App.tsx')
           app = app_path.read_text(encoding='utf-8')
-
           marker = '/* NER Interview 2026-08-09 */'
           if marker not in app:
               block = '''                    /* NER Interview 2026-08-09 */
@@ -67,31 +67,27 @@ jobs:
               app_path.write_text(app, encoding='utf-8')
 
           locale_entries = {
-              'zh.json': ('國立教育廣播電臺｜訪問台灣旅美爵士音樂人陳芃瑄聊「赴美深造與多國巡演的心路歷程」', '2026-08-09'),
-              'en.json': ('National Education Radio | Interview with Taiwanese jazz artist Ponpon Chen: Her journey of studying in the U.S. and touring internationally', '2026-08-09'),
-              'ja.json': ('国立教育放送 | 台湾出身のジャズアーティスト Ponpon Chen：米国留学と多国ツアーへの歩み', '2026-08-09'),
+              'zh.json': '國立教育廣播電臺｜訪問台灣旅美爵士音樂人陳芃瑄聊「赴美深造與多國巡演的心路歷程」',
+              'en.json': 'National Education Radio | Interview with Taiwanese jazz artist Ponpon Chen: Her journey of studying in the U.S. and touring internationally',
+              'ja.json': '国立教育放送 | 台湾出身のジャズアーティスト Ponpon Chen：米国留学と多国ツアーへの歩み',
           }
-
-          for filename, (title, date) in locale_entries.items():
+          for filename, title in locale_entries.items():
               path = Path('src/locales') / filename
               text = path.read_text(encoding='utf-8')
               if '"nerDate"' not in text:
                   needle = '    "rti2Date": "2026-03-23",\n'
-                  replacement = needle + f'    "ner": {title!r},\n'
-                  # Use JSON double-quoted strings safely.
-                  import json
-                  replacement = needle + f'    "ner": {json.dumps(title, ensure_ascii=False)},\n    "nerDate": {json.dumps(date)},\n'
                   if needle not in text:
                       raise SystemExit(f'Locale insertion point not found: {filename}')
-                  text = text.replace(needle, replacement, 1)
-                  path.write_text(text, encoding='utf-8')
+                  replacement = needle + f'    "ner": {json.dumps(title, ensure_ascii=False)},\n    "nerDate": "2026-08-09",\n'
+                  path.write_text(text.replace(needle, replacement, 1), encoding='utf-8')
           PY
 
-      - name: Commit changes and remove one-shot workflow
+      - name: Commit changes and clean up
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src/App.tsx src/locales/zh.json src/locales/en.json src/locales/ja.json
           git rm .github/workflows/update-ner-interview.yml
+          git rm .github/ner-trigger.txt || true
           git commit -m "Add National Education Radio interview"
           git push
