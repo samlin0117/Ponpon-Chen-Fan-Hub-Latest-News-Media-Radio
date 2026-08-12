@@ -1,3 +1,0 @@
-App.tsx: NEEDLE NOT FOUND
-heavenraven.com found at pos: 41597
-' <div className="w-full md:w-1/3 aspect-video md:aspect-square rounded-xl overflow-hidden bg-black shrink-0 border border-white/5">\n                        <img\n                          src="https://heavenraven.com/wp-content/uploads/2025/08/IMG_20250802_COVER-1024x1024.jpg"\n                          onError={(e) => {\n                            // Fallback robust image link (Shoutout LA photo) if original link fails\n                            e.currentTarget.src = "https://shoutoutla.s3.us-west-1.amazonaws.com/wp-content/uploads/2024/04/c-PonponChen__IMG5020_1712948629197.jpg";\n            '

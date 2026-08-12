@@ -1,6 +1,6 @@
 npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
 
-added 246 packages, and audited 247 packages in 7s
+added 246 packages, and audited 247 packages in 8s
 
 42 packages are looking for funding
   run `npm fund` for details
@@ -22,11 +22,11 @@ rendering chunks...
 computing gzip size...
 [2mdist/[22m[32mindex.html                 [39m[1m[2m    3.19 kB[22m[1m[22m[2m │ gzip:     1.13 kB[22m
 [2mdist/[22m[2massets/[22m[35mindex-BPAIRF68.css  [39m[1m[2m   78.18 kB[22m[1m[22m[2m │ gzip:    11.75 kB[22m
-[2mdist/[22m[2massets/[22m[36mindex-IdHdqc_N.js   [39m[1m[33m1,968.29 kB[39m[22m[2m │ gzip: 1,029.18 kB[22m
+[2mdist/[22m[2massets/[22m[36mindex-C7iRAKOr.js   [39m[1m[33m1,968.08 kB[39m[22m[2m │ gzip: 1,029.11 kB[22m
 [33m
 (!) Some chunks are larger than 500 kB after minification. Consider:
 - Using dynamic import() to code-split the application
 - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
-[32m✓ built in 3.65s[39m
+[32m✓ built in 3.45s[39m
 BUILD_EXIT_CODE=0

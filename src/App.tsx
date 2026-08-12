@@ -651,11 +651,7 @@ function MainContent() {
                     <div className="flex flex-col md:flex-row gap-8 items-center md:items-start relative z-10">
                       <div className="w-full md:w-1/3 aspect-video md:aspect-square rounded-xl overflow-hidden bg-black shrink-0 border border-white/5">
                         <img
-                          src="https://heavenraven.com/wp-content/uploads/2025/08/IMG_20250802_COVER-1024x1024.jpg"
-                          onError={(e) => {
-                            // Fallback robust image link (Shoutout LA photo) if original link fails
-                            e.currentTarget.src = "https://shoutoutla.s3.us-west-1.amazonaws.com/wp-content/uploads/2024/04/c-PonponChen__IMG5020_1712948629197.jpg";
-                          }}
+                          src="/heavenraven-cover.JPG"
                           alt="News Article"
                           className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-500"
                           referrerPolicy="no-referrer"
