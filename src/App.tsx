@@ -372,7 +372,39 @@ function MainContent() {
                     <p className="text-gray-400 font-light">{(t as any).endorsement?.page_desc}</p>
                   </div>
 
-                  {/* Paul Krugman Card */}
+                  {/* Martin Taylor Card */}
+                <div className="relative p-8 md:p-10 rounded-2xl border border-gold/20 bg-gradient-to-br from-gold/5 via-dark-lighter to-dark-lighter backdrop-blur-sm overflow-hidden group hover:border-gold/40 transition-all duration-500 mb-8">
+                  <div className="absolute top-4 right-6 text-gold/10 text-8xl font-serif select-none leading-none">"</div>
+                  <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/5 rounded-full blur-[80px] -ml-12 -mb-12"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gold/10 border border-gold/30 rounded-full">
+                        <Music className="w-3.5 h-3.5 text-gold" />
+                        <span className="text-xs font-mono text-gold-light tracking-[0.2em] uppercase">{(t as any).endorsement?.martin_subtitle}</span>
+                      </div>
+                      <span className="px-3 py-1 bg-gold text-dark text-xs font-bold tracking-widest rounded-full">NEW</span>
+                    </div>
+                    <div className="mb-5">
+                      <h3 className="text-2xl md:text-3xl font-serif text-white mb-1">{(t as any).endorsement?.martin_name}</h3>
+                      <p className="text-sm text-gold/80 tracking-widest uppercase">{(t as any).endorsement?.martin_title}</p>
+                    </div>
+                    <p className="text-gray-300 leading-relaxed text-base md:text-lg font-light mb-8 text-left">
+                      {(t as any).endorsement?.martin_desc}
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <a
+                        href="https://www.thestandard.com.hk/artcan/article/339157/Martin-Taylor-The-lone-arranger-who-uses-one-guitar-to-create-multi-layered-soundscape"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/10 rounded-xl text-sm text-gray-300 hover:text-gold hover:border-gold/50 transition-all duration-300 group/link"
+                      >
+                        <ArrowRight className="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" />
+                        <span>{(t as any).endorsement?.martin_date} {(t as any).endorsement?.read_article}</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                {/* Paul Krugman Card */}
                   <div className="relative p-8 md:p-10 rounded-2xl border border-gold/20 bg-gradient-to-br from-gold/5 via-dark-lighter to-dark-lighter backdrop-blur-sm overflow-hidden group hover:border-gold/40 transition-all duration-500 mb-8">
                     <div className="absolute top-4 right-6 text-gold/10 text-8xl font-serif select-none leading-none">"</div>
                     <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/5 rounded-full blur-[80px] -ml-12 -mb-12"></div>
