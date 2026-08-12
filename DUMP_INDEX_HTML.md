@@ -1,0 +1,57 @@
+=== FULL index.html ===
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="3fdy31AexgIfU1qh8cj19URL5k9prUiUZqaxxG7LNjU" />
+    <title>Ponpon Chen (陳芃瑄) 粉絲典藏館 | Fan Hub & Archive | ポンポン・チェン 応援</title>
+    <link rel="canonical" href="https://ponponchenarchive.com/" />
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Ponpon Chen (陳芃瑄) 粉絲典藏館 | Fan Hub & Archive | ポンポン・チェン 応援">
+    <meta name="description" content="陳芃瑄 (Ponpon Chen) 粉絲應援典藏館。收錄爵士新聞、演出影片與專訪。Dedicated Fan Hub for Ponpon Chen. ポンポン・チェン (陳芃瑄) の活動を網羅したファンによるアーカイブ。">
+
+    <!-- Open Graph / Facebook / LINE -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ponponchenarchive.com/">
+    <meta property="og:title" content="Ponpon Chen (陳芃瑄) 粉絲典藏館 | Fan Hub & Archive | ポンポン・チェン 応援">
+    <meta property="og:description" content="陳芃瑄 (Ponpon Chen) 粉絲應援典藏館。收錄爵士新聞、演出影片與專訪。Dedicated Fan Hub for Ponpon Chen. ポンポン・チェン (陳芃瑄) の活動を網羅したファンによるアーカイブ。">
+    <meta property="og:image" content="https://shoutoutla.s3.us-west-1.amazonaws.com/wp-content/uploads/2024/04/c-PonponChen__IMG5020_1712948629197.jpg">
+
+    <!-- Twitter / X -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ponponchenarchive.com/">
+    <meta property="twitter:title" content="Ponpon Chen (陳芃瑄) 粉絲典藏館 | Fan Hub & Archive | ポンポン・チェン 応援">
+    <meta property="twitter:description" content="陳芃瑄 (Ponpon Chen) 粉絲應援典藏館。收錄爵士新聞、演出影片與專訪。Dedicated Fan Hub for Ponpon Chen. ポンポン・チェン (陳芃瑄) の活動を網羅したファンによるアーカイブ。">
+    <meta property="twitter:image" content="https://shoutoutla.s3.us-west-1.amazonaws.com/wp-content/uploads/2024/04/c-PonponChen__IMG5020_1712948629197.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/png" href="/favicon.png?v=2">
+
+    <!-- JSON-LD Structured Data for WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Ponpon Chen 粉絲典藏館 (Fan Hub)",
+      "url": "https://ponponchenarchive.com/"
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
+
+
+=== public/ directory (favicon files) ===
+public/favicon.png: size=608491
+
+=== public/CNAME content ===
+ponponchenarchive.com
