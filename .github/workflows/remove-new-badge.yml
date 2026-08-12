@@ -1,0 +1,49 @@
+name: Remove NEW badge from Martin Taylor card
+
+on:
+  push:
+    paths:
+      - '.github/remove-new-badge.trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Remove NEW badge
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          app = Path('src/App.tsx')
+          text = app.read_text(encoding='utf-8')
+
+          needle = '                      <span className="px-3 py-1 bg-gold text-dark text-xs font-bold tracking-widest rounded-full">NEW</span>\n'
+          if needle not in text:
+              if 'bg-gold text-dark text-xs font-bold tracking-widest rounded-full">NEW</span>' not in text:
+                  print('NEW badge already removed, skipping')
+              else:
+                  raise SystemExit('NEW badge line found but did not match exactly for removal')
+          else:
+              text = text.replace(needle, '', 1)
+              app.write_text(text, encoding='utf-8')
+              print('NEW badge removed from App.tsx')
+          PY
+
+      - name: Verify build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Commit and clean up
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/App.tsx
+          git rm -f .github/workflows/remove-new-badge.yml .github/remove-new-badge.trigger
+          git commit -m "Remove NEW badge from Martin Taylor card"
+          git push
