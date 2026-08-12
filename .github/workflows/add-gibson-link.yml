@@ -1,4 +1,4 @@
-name: Add Gibson link to 2026 milestone
+name: Diagnose Gibson mentions
 
 on:
   push:
@@ -9,12 +9,12 @@ permissions:
   contents: write
 
 jobs:
-  add:
+  diagnose:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Add Gibson link
+      - name: Dump Gibson context
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -22,61 +22,30 @@ jobs:
           app = Path('src/App.tsx')
           text = app.read_text(encoding='utf-8')
 
-          gibson_url = 'https://www.gibson.com/blogs/gibson-gazette/ponpon-joins-the-gibson-artist-spotlight-program'
-          link_open = f'<a href="{gibson_url}" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light hover:underline transition-colors">'
+          out = []
+          idx = 0
+          count = 0
+          while True:
+              idx = text.find('Gibson', idx)
+              if idx == -1:
+                  break
+              start = max(0, idx - 120)
+              end = min(len(text), idx + 120)
+              out.append(f'--- Match {count} at pos {idx} ---')
+              out.append(repr(text[start:end]))
+              out.append('')
+              idx += 6
+              count += 1
 
-          changed = False
-
-          zh_needle = '受邀擅任 <strong>Gibson</strong> 2026 年度焦點藝術家，展現'
-          zh_new = f'受邀擅任 {link_open}<strong>Gibson</strong> 2026 年度焦點藝術家</a>，展現'
-          if zh_needle in text:
-              text = text.replace(zh_needle, zh_new, 1)
-              changed = True
-              print('zh milestone updated')
-          elif zh_new in text:
-              print('zh milestone already linked, skipping')
-          else:
-              raise SystemExit('zh milestone needle not found')
-
-          en_needle = "inviting her to be <strong>Gibson</strong>'s 2026 Spotlight Artist, showcasing"
-          en_new = f'inviting her to be {link_open}<strong>Gibson</strong>\'s 2026 Spotlight Artist</a>, showcasing'
-          if en_needle in text:
-              text = text.replace(en_needle, en_new, 1)
-              changed = True
-              print('en milestone updated')
-          elif en_new in text:
-              print('en milestone already linked, skipping')
-          else:
-              raise SystemExit('en milestone needle not found')
-
-          ja_needle = '<strong>Gibson</strong>の2026年度注目アーティストに選出。'
-          ja_new = f'{link_open}<strong>Gibson</strong>の2026年度注目アーティスト</a>に選出。'
-          if ja_needle in text:
-              text = text.replace(ja_needle, ja_new, 1)
-              changed = True
-              print('ja milestone updated')
-          elif ja_new in text:
-              print('ja milestone already linked, skipping')
-          else:
-              raise SystemExit('ja milestone needle not found')
-
-          if changed:
-              app.write_text(text, encoding='utf-8')
-              print('App.tsx updated with Gibson links')
-          else:
-              print('No changes needed')
+          Path('.github/gibson_debug.txt').write_text('\n'.join(out), encoding='utf-8')
+          print(f'Found {count} occurrences of Gibson, wrote debug file')
           PY
 
-      - name: Verify build
-        run: |
-          npm ci
-          npm run build
-
-      - name: Commit and clean up
+      - name: Commit debug file
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add src/App.tsx
+          git add .github/gibson_debug.txt
           git rm -f .github/workflows/add-gibson-link.yml .github/gibson-link.trigger
-          git commit -m "Add Gibson link to 2026 milestone"
+          git commit -m "Diagnostic dump of Gibson mentions in App.tsx"
           git push
