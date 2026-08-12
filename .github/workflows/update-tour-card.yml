@@ -1,0 +1,73 @@
+name: Update tour card with confirmed Asia Tour
+
+on:
+  push:
+    paths:
+      - '.github/update-tour-card.trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update locale files
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          zh_old_title = '"title": "\u9810\u8a08\u767c\u884c\u8207\u672a\u4f86\u7684\u5de1\u6f14\u898f\u5283",'
+          zh_new_title = '"title": "\u5c08\u8f2f\u767c\u884c\u5012\u6578\u8207\u4e9e\u6d32\u5de1\u6f14\u6b63\u5f0f\u555f\u52d5",'
+          zh_old_desc = '"desc": "\u9019\u5f35\u500b\u4eba\u9996\u5f35\u7235\u58eb\u5c08\u8f2f\u9810\u8a08\u5728 2026 \u5e74\u4e0b\u534a\u5e74\u5ea6\u6b63\u5f0f\u767c\u884c\u3002<br/><br/>\u5c08\u8f2f\u767c\u884c\u5f8c\uff0cPonpon \u8a08\u756b\u5148\u5728\u7f8e\u570b\u7576\u5730\u5b89\u6392\u5de1\u8ff4\u6f14\u51fa\uff0c\u7dca\u63a5\u8457\u7684\u76ee\u6a19\u662f\u5c07\u5de1\u6f14\u7248\u5716\u64f4\u5c55\u56de\u5230\u4e9e\u6d32\u5730\u5340\u3002",'
+          zh_new_desc = '"desc": "\u9019\u5f35\u500b\u4eba\u9996\u5f35\u7235\u58eb\u5c08\u8f2f\u9810\u8a08\u5728 2026 \u5e74\u4e0b\u534a\u5e74\u5ea6\u6b63\u5f0f\u767c\u884c\u3002\u4e9e\u6d32\u5de1\u6f14\u4e5f\u5df2\u6b63\u5f0f\u6572\u5b9a\u2014\u2014\u300cPonpon Asia Tour 2026\u300d\u5c07\u65bc 10 \u6708\u5c55\u958b\uff0c\u5c07\u4f9d\u5e8f\u9020\u8a2a\u53f0\u5317\u3001\u9ad8\u96c4\u3001\u9999\u6e2f\u53ca\u6771\u4eac\u56db\u5ea7\u57ce\u5e02\u3002",'
+
+          en_old_title = '"title": "Expected Release and Future Tour Plans",'
+          en_new_title = '"title": "Upcoming Release & Confirmed Asia Tour",'
+          en_old_desc = '"desc": "This debut personal jazz album is scheduled to be officially released in the second half of 2026.<br/><br/>After the release, Ponpon plans to arrange a tour in the US first, followed by the goal of expanding the tour back to Asia.",'
+          en_new_desc = '"desc": "This debut personal jazz album is scheduled to be officially released in the second half of 2026. Her first Asia tour has now been officially confirmed \u2014 the \"Ponpon Asia Tour 2026\" will take place this October, visiting Taipei, Kaohsiung, Hong Kong, and Tokyo.",'
+
+          ja_old_title = '"title": "\u30ea\u30ea\u30fc\u30b9\u4e88\u5b9a\u3068\u4eca\u5f8c\u306e\u30c4\u30a2\u30fc\u8a08\u753b",'
+          ja_new_title = '"title": "\u30ea\u30ea\u30fc\u30b9\u4e88\u5b9a\u3068\u30a2\u30b8\u30a2\u30c4\u30a2\u30fc\u6b63\u5f0f\u6c7a\u5b9a",'
+          ja_old_desc = '"desc": "\u3053\u306e\u521d\u3068\u306a\u308b\u30d1\u30fc\u30bd\u30ca\u30eb\u30fb\u30b8\u30e3\u30ba\u30fb\u30a2\u30eb\u30d0\u30e0\u306f\u30012026\u5e74\u4e0b\u534a\u671f\u306b\u6b63\u5f0f\u30ea\u30ea\u30fc\u30b9\u3055\u308c\u308b\u4e88\u5b9a\u3067\u3059\u3002<br/><br/>\u30ea\u30ea\u30fc\u30b9\u5f8c\u306f\u3001Ponpon\u306f\u307e\u305a\u30a2\u30e1\u30ea\u30ab\u56fd\u5185\u3067\u306e\u30c4\u30a2\u30fc\u3092\u8a08\u753b\u3057\u3066\u304a\u308a\u3001\u305d\u306e\u5f8c\u30a2\u30b8\u30a2\u3078\u30c4\u30a2\u30fc\u3092\u62e1\u5927\u3059\u308b\u3053\u3068\u3092\u76ee\u6a19\u3068\u3057\u3066\u3044\u307e\u3059\u3002",'
+          ja_new_desc = '"desc": "\u3053\u306e\u521d\u3068\u306a\u308b\u30d1\u30fc\u30bd\u30ca\u30eb\u30fb\u30b8\u30e3\u30ba\u30fb\u30a2\u30eb\u30d0\u30e0\u306f\u30012026\u5e74\u4e0b\u534a\u671f\u306b\u6b63\u5f0f\u30ea\u30ea\u30fc\u30b9\u3055\u308c\u308b\u4e88\u5b9a\u3067\u3059\u3002\u521d\u306e\u30a2\u30b8\u30a2\u30c4\u30a2\u30fc\u3082\u6b63\u5f0f\u306b\u6c7a\u5b9a\u3057\u307e\u3057\u305f\u2015\u2015\u300cPonpon Asia Tour 2026\u300d\u306f10\u6708\u306b\u958b\u50ac\u3055\u308c\u3001\u53f0\u5317\u3001\u9ad8\u96c4\u3001\u9999\u6e2f\u3001\u6771\u4eac\u306e4\u90fd\u5e02\u3092\u5de1\u308a\u307e\u3059\u3002",'
+
+          p = Path('src/locales/zh.json')
+          text = p.read_text(encoding='utf-8')
+          assert zh_old_title in text, 'zh title not found'
+          assert zh_old_desc in text, 'zh desc not found'
+          text = text.replace(zh_old_title, zh_new_title, 1).replace(zh_old_desc, zh_new_desc, 1)
+          p.write_text(text, encoding='utf-8')
+
+          p = Path('src/locales/en.json')
+          text = p.read_text(encoding='utf-8')
+          assert en_old_title in text, 'en title not found'
+          assert en_old_desc in text, 'en desc not found'
+          text = text.replace(en_old_title, en_new_title, 1).replace(en_old_desc, en_new_desc, 1)
+          p.write_text(text, encoding='utf-8')
+
+          p = Path('src/locales/ja.json')
+          text = p.read_text(encoding='utf-8')
+          assert ja_old_title in text, 'ja title not found'
+          assert ja_old_desc in text, 'ja desc not found'
+          text = text.replace(ja_old_title, ja_new_title, 1).replace(ja_old_desc, ja_new_desc, 1)
+          p.write_text(text, encoding='utf-8')
+
+          print('All files updated successfully')
+          PY
+
+      - name: Verify build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Commit and clean up
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/locales/zh.json src/locales/en.json src/locales/ja.json
+          git rm -f .github/workflows/update-tour-card.yml .github/update-tour-card.trigger
+          git commit -m "Update 2026 milestone: confirmed Asia Tour details (Taipei/Kaohsiung/HK/Tokyo, Oct 2026)"
+          git push
