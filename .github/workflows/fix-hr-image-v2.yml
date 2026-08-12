@@ -1,0 +1,66 @@
+name: Fix Heaven Raven cover image v2
+
+on:
+  push:
+    paths:
+      - '.github/fix-hr-image-v2.trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update image src in App.tsx using regex
+        run: |
+          python3 - <<'PY' > /tmp/py_log.txt 2>&1
+          from pathlib import Path
+          import re
+
+          p = Path('src/App.tsx')
+          text = p.read_text(encoding='utf-8')
+
+          if '/heavenraven-cover.JPG' in text:
+              print('App.tsx: ALREADY UPDATED')
+          else:
+              pattern = re.compile(
+                  r'src="https://heavenraven\.com/wp-content/uploads/2025/08/IMG_20250802_COVER-1024x1024\.jpg"\s*'
+                  r'onError=\{\(e\) => \{\s*'
+                  r'//[^\n]*\s*'
+                  r'e\.currentTarget\.src = "https://shoutoutla\.s3\.us-west-1\.amazonaws\.com/wp-content/uploads/2024/04/c-PonponChen__IMG5020_1712948629197\.jpg";\s*'
+                  r'\}\}',
+                  re.MULTILINE
+              )
+              new_text, n = pattern.subn('src="/heavenraven-cover.JPG"', text)
+              if n == 1:
+                  Path('src/App.tsx').write_text(new_text, encoding='utf-8')
+                  print('App.tsx: UPDATED OK via regex')
+              else:
+                  print(f'App.tsx: regex matched {n} times, expected 1. NOT WRITING.')
+                  idx = text.find('heavenraven.com')
+                  print(repr(text[max(0,idx-50):idx+500]))
+          PY
+          cat /tmp/py_log.txt
+          cp /tmp/py_log.txt PY_LOG2.md
+
+      - name: Verify build
+        run: |
+          set +e
+          npm ci > /tmp/build_log.txt 2>&1
+          npm run build >> /tmp/build_log.txt 2>&1
+          echo "BUILD_EXIT_CODE=$?" >> /tmp/build_log.txt
+          cp /tmp/build_log.txt BUILD_LOG2.md
+          set -e
+
+      - name: Commit and clean up
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/App.tsx PY_LOG2.md BUILD_LOG2.md 2>/dev/null || true
+          git rm -f .github/workflows/fix-hr-image-v2.yml .github/fix-hr-image-v2.trigger PY_LOG.md BUILD_LOG.md 2>/dev/null || true
+          git commit -m "Fix Heaven Raven cover image via regex (retry)" || true
+          git push || true
