@@ -1,0 +1,57 @@
+name: Dump album category entries
+
+on:
+  push:
+    paths:
+      - '.github/dump-album-category.trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Search for album category entries
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          out = []
+          zh = Path('src/locales/zh.json').read_text(encoding='utf-8')
+
+          out.append('=== Entries with category album (searching backward from each match) ===')
+          for m in re.finditer(r'"category"\s*:\s*"album"', zh):
+              idx = m.start()
+              start = max(0, idx - 600)
+              out.append(zh[start:idx+20])
+              out.append('======')
+
+          out.append('')
+          out.append('=== Entries with category first ===')
+          for m in re.finditer(r'"category"\s*:\s*"first"', zh):
+              idx = m.start()
+              start = max(0, idx - 400)
+              out.append(zh[start:idx+20])
+              out.append('======')
+
+          out.append('')
+          out.append('=== Total counts ===')
+          out.append(f"album: {len(re.findall(r'category.*?album', zh))}")
+          out.append(f"first: {len(re.findall(r'category.*?first', zh))}")
+          out.append(f"normal: {len(re.findall(r'category.*?normal', zh))}")
+
+          Path('DUMP_ALBUM_CAT.md').write_text('\n'.join(out), encoding='utf-8')
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add DUMP_ALBUM_CAT.md
+          git rm -f .github/workflows/dump-album-category.yml .github/dump-album-category.trigger
+          git commit -m "Diagnostic: dump album category entries"
+          git push
