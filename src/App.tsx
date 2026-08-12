@@ -382,7 +382,6 @@ function MainContent() {
                         <Music className="w-3.5 h-3.5 text-gold" />
                         <span className="text-xs font-mono text-gold-light tracking-[0.2em] uppercase">{(t as any).endorsement?.martin_subtitle}</span>
                       </div>
-                      <span className="px-3 py-1 bg-gold text-dark text-xs font-bold tracking-widest rounded-full">NEW</span>
                     </div>
                     <div className="mb-5">
                       <h3 className="text-2xl md:text-3xl font-serif text-white mb-1">{(t as any).endorsement?.martin_name}</h3>
