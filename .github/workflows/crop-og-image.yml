@@ -1,0 +1,73 @@
+name: Crop OG image to square
+
+on:
+  push:
+    paths:
+      - '.github/crop-og-image.trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  crop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Crop image and update index.html
+        run: |
+          pip install Pillow > /dev/null 2>&1
+          python3 - <<'PY' > /tmp/py_log.txt 2>&1
+          from PIL import Image
+          from pathlib import Path
+
+          img = Image.open('public/ner-interview-cover.JPG')
+          w, h = img.size
+          print(f'Original size: {w}x{h}')
+
+          side = min(w, h)
+          left = (w - side) // 2
+          top = 0
+          right = left + side
+          bottom = top + side
+
+          cropped = img.crop((left, top, right, bottom))
+          cropped.save('public/og-cover-square.jpg', quality=90)
+          print(f'Cropped size: {cropped.size}, saved as public/og-cover-square.jpg')
+
+          p = Path('index.html')
+          text = p.read_text(encoding='utf-8')
+          old_url = 'https://ponponchenarchive.com/ner-interview-cover.JPG'
+          new_url = 'https://ponponchenarchive.com/og-cover-square.jpg'
+          count = text.count(old_url)
+          if count == 0:
+              if new_url in text:
+                  print('index.html: ALREADY UPDATED')
+              else:
+                  print('index.html: OLD URL NOT FOUND')
+          else:
+              text = text.replace(old_url, new_url)
+              p.write_text(text, encoding='utf-8')
+              print(f'index.html: UPDATED, replaced {count} occurrences')
+          PY
+          cat /tmp/py_log.txt
+          cp /tmp/py_log.txt PY_LOG4.md
+
+      - name: Verify build
+        run: |
+          set +e
+          npm ci > /tmp/build_log.txt 2>&1
+          npm run build >> /tmp/build_log.txt 2>&1
+          echo "BUILD_EXIT_CODE=$?" >> /tmp/build_log.txt
+          cp /tmp/build_log.txt BUILD_LOG4.md
+          set -e
+
+      - name: Commit and clean up
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/og-cover-square.jpg index.html PY_LOG4.md BUILD_LOG4.md 2>/dev/null || true
+          git rm -f .github/workflows/crop-og-image.yml .github/crop-og-image.trigger 2>/dev/null || true
+          git commit -m "Add square-cropped OG image with head preserved" || true
+          git push || true
