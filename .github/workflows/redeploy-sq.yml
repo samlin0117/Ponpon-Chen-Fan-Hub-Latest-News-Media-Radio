@@ -1,0 +1,32 @@
+name: Redeploy for square OG image
+
+on:
+  push:
+    paths:
+      - '.github/redeploy-sq.trigger'
+
+permissions:
+  actions: write
+  contents: write
+
+jobs:
+  redeploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Trigger Deploy to GitHub Pages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/deploy.yml/dispatches \
+            -d '{"ref":"main"}'
+      - name: Clean up
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm -f .github/workflows/redeploy-sq.yml .github/redeploy-sq.trigger PY_LOG4.md BUILD_LOG4.md
+          git commit -m "Clean up logs and redeploy trigger for square OG image"
+          git push
