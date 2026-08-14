@@ -1,4 +1,4 @@
-name: Reverse first-time filter order v2
+name: Reverse first-time filter order v3
 
 on:
   push:
@@ -68,5 +68,5 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add src/App.tsx PY_LOG5.md BUILD_LOG5.md 2>/dev/null || true
           git rm -f .github/workflows/reverse-first-order.yml .github/reverse-first-order.trigger 2>/dev/null || true
-          git commit -m "Retry: reverse order for first-time filter (newest first)" || true
+          git commit -m "Reverse order for first-time filter: newest first (after permission fix)" || true
           git push || true
