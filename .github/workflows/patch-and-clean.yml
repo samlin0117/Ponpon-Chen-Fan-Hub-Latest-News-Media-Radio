@@ -1,0 +1,41 @@
+name: Patch App and Clean
+
+on:
+  push:
+    paths:
+      - '.github/do-patch.trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Run python patcher
+        run: python3 scripts/patch_app.py
+
+      - name: Clean up temporary workflow files
+        run: |
+          rm -f .github/workflows/add-gibson-link-v2.yml
+          rm -f .github/workflows/add-gibson-link-v3.yml
+          rm -f .github/workflows/reverse-first-fast.yml
+          rm -f .github/workflows/final-reverse.yml
+          rm -f .github/workflows/clean-and-update.yml
+          rm -f .github/workflows/patch-and-clean.yml
+          rm -f .github/final-reverse.trigger
+          rm -f .github/fast-reverse.trigger
+          rm -f .github/apply-fix.trigger
+          rm -f .github/do-patch.trigger
+          rm -f scripts/patch_app.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --staged --quiet || (git commit -m "Update first-time timeline order and clean workflows" && git push origin HEAD:main)
