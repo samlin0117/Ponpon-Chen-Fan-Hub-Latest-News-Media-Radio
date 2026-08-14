@@ -1,0 +1,33 @@
+name: Insert NY Event and Deploy
+
+on:
+  push:
+    paths:
+      - '.github/add-ny-event.trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Insert NY Event into App.tsx
+        run: python3 scripts/insert_ny_event.py
+
+      - name: Cleanup trigger & script
+        run: |
+          rm -f .github/add-ny-event.trigger
+          rm -f scripts/insert_ny_event.py
+          rm -f .github/workflows/insert-ny-event.yml
+
+      - name: Commit and push changes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/App.tsx
+          git diff --staged --quiet || (git commit -m "Add Ponpon NY debut item (clean title format)" && git push origin HEAD:main)
