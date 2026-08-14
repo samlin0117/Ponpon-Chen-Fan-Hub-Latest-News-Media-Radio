@@ -1,2 +1,2 @@
-# Final deployment trigger for NY Event
-trigger: 2026-08-14-14-06
+# Trigger clean deploy after restore
+trigger: 2026-08-14-14-20
