@@ -1,0 +1,58 @@
+name: Dump timeline sort logic
+
+on:
+  push:
+    paths:
+      - '.github/dump-sort-logic.trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Search for filteredTimelineItems logic
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          out = []
+          text = Path('src/App.tsx').read_text(encoding='utf-8')
+
+          idx = text.find('filteredTimelineItems')
+          out.append('=== All occurrences of filteredTimelineItems ===')
+          i = 0
+          seen = set()
+          while True:
+              i = text.find('filteredTimelineItems', i)
+              if i == -1:
+                  break
+              start = max(0, i - 50)
+              end = min(len(text), i + 300)
+              snippet = text[start:end]
+              if snippet not in seen:
+                  seen.add(snippet)
+                  out.append(snippet)
+                  out.append('======')
+              i += 20
+
+          out.append('')
+          out.append('=== Where filteredTimelineItems is rendered (map) ===')
+          idx2 = text.find('filteredTimelineItems.map')
+          if idx2 != -1:
+              out.append(text[max(0,idx2-200):idx2+600])
+
+          Path('DUMP_SORT_LOGIC.md').write_text('\n'.join(out), encoding='utf-8')
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add DUMP_SORT_LOGIC.md
+          git rm -f .github/workflows/dump-sort-logic.yml .github/dump-sort-logic.trigger
+          git commit -m "Diagnostic: dump timeline sort logic"
+          git push
