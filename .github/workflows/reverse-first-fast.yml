@@ -1,0 +1,52 @@
+name: Reverse first-time filter order fast
+
+on:
+  push:
+    paths:
+      - '.github/reverse-first-fast.trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update filter logic in App.tsx
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          p = Path('src/App.tsx')
+          text = p.read_text(encoding='utf-8')
+
+          old_block = """const filteredTimelineItems = timelineItems.filter(item => {
+    if (timelineFilter === 'all') return item.category !== 'first' && item.category !== 'album';
+    return item.category === timelineFilter;
+  });"""
+
+          new_block = """const filteredTimelineItems = (() => {
+    const result = timelineItems.filter(item => {
+      if (timelineFilter === 'all') return item.category !== 'first' && item.category !== 'album';
+      return item.category === timelineFilter;
+    });
+    if (timelineFilter === 'first') return [...result].reverse();
+    return result;
+  })();"""
+
+          assert old_block in text, 'needle not found'
+          text = text.replace(old_block, new_block, 1)
+          p.write_text(text, encoding='utf-8')
+          print('UPDATED OK')
+          PY
+
+      - name: Commit and clean up
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/App.tsx
+          git rm -f .github/workflows/reverse-first-fast.yml .github/reverse-first-fast.trigger
+          git commit -m "Reverse order for first-time filter: newest first"
+          git push
