@@ -1,2 +1,2 @@
-# Trigger clean deploy after restore
-trigger: 2026-08-14-14-20
+# Deploy trigger for updated NY event item
+timestamp: 2026-08-14-14-25
