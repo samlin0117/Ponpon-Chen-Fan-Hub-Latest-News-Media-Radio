@@ -21,10 +21,14 @@ function MainContent() {
   const { t, lang, setLang } = useTranslation();
   const [timelineFilter, setTimelineFilter] = useState<'all' | 'first' | 'album'>('all');
   const timelineItems = t.timelineItems as any[];
-  const filteredTimelineItems = timelineItems.filter(item => {
-    if (timelineFilter === 'all') return item.category !== 'first' && item.category !== 'album';
-    return item.category === timelineFilter;
-  });
+  const filteredTimelineItems = (() => {
+    const result = timelineItems.filter(item => {
+      if (timelineFilter === 'all') return item.category !== 'first' && item.category !== 'album';
+      return item.category === timelineFilter;
+    });
+    if (timelineFilter === 'first') return [...result].reverse();
+    return result;
+  })();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeVideoTab, setActiveVideoTab] = useState('p1');
   const [activeYearTab, setActiveYearTab] = useState('all');
