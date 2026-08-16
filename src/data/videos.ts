@@ -637,6 +637,16 @@ export const videoList: VideoInfo[] = [
 
 
   {
+    "id": "v-VeCMKd4rd6w",
+    "platform": "youtube",
+    "category": "p3",
+    "title": "Gibson Artist Spotlight - Ponpon (August 2026)",
+    "date": "2026-08-01",
+    "embedUrl": "VeCMKd4rd6w",
+    "thumbnailUrl": "https://i.ytimg.com/vi/VeCMKd4rd6w/maxresdefault.jpg",
+    "isFeatured": false
+  },
+  {
     "id": "v-ZakfOT7pN6c",
     "platform": "youtube",
     "category": "p3",
