@@ -946,6 +946,26 @@ export const videoList: VideoInfo[] = [
     "isFeatured": false
   },
   {
+    "id": "v-nWc4pxQ_Z4E",
+    "platform": "youtube",
+    "category": "p8",
+    "title": "Ponpon Chen - But Not for Me (直笛採譜 / Recorder Transcription) @Hsing-an Lee",
+    "date": "2026-08-20",
+    "embedUrl": "nWc4pxQ_Z4E",
+    "thumbnailUrl": "https://i.ytimg.com/vi/nWc4pxQ_Z4E/maxresdefault.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": "v-yu1AC_p5EpQ",
+    "platform": "youtube",
+    "category": "p8",
+    "title": "Ponpon Chen - \"You'd Be So Nice To Come Home To\" Guitar Solo Transcription @Anthony Brennan",
+    "date": "2026-08-14",
+    "embedUrl": "yu1AC_p5EpQ",
+    "thumbnailUrl": "https://i.ytimg.com/vi/yu1AC_p5EpQ/maxresdefault.jpg",
+    "isFeatured": false
+  },
+  {
     "id": "v-fb-1026651136577463",
     "platform": "facebook",
     "category": "p8",
