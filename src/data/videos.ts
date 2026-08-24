@@ -18,6 +18,26 @@ export interface VideoInfo {
 
 export const videoList: VideoInfo[] = [
   {
+    "id": "v-gUXx6-WK-V0",
+    "platform": "youtube",
+    "category": "p1",
+    "title": "Frank Vignola's Guitar Night with Ponpon Chen and James Chirillo Aug. 12 2026",
+    "date": "2026-08-12",
+    "embedUrl": "gUXx6-WK-V0",
+    "thumbnailUrl": "https://i.ytimg.com/vi/gUXx6-WK-V0/maxresdefault.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": "v-US8gXwg853s",
+    "platform": "youtube",
+    "category": "p2",
+    "title": "Ponpon - \"How High The Moon\" ｜A little taste of my upcoming debut album.❤️‍🔥",
+    "date": "2026-08-22",
+    "embedUrl": "US8gXwg853s",
+    "thumbnailUrl": "https://i.ytimg.com/vi/US8gXwg853s/maxresdefault.jpg",
+    "isFeatured": false
+  },
+  {
     "id": "v-fb-1387294209248782",
     "platform": "facebook",
     "category": "p1",
@@ -641,7 +661,7 @@ export const videoList: VideoInfo[] = [
     "platform": "youtube",
     "category": "p3",
     "title": "Gibson Artist Spotlight - Ponpon (August 2026)",
-    "date": "2026-08-01",
+    "date": "2026-08-14",
     "embedUrl": "VeCMKd4rd6w",
     "thumbnailUrl": "https://i.ytimg.com/vi/VeCMKd4rd6w/maxresdefault.jpg",
     "isFeatured": false
