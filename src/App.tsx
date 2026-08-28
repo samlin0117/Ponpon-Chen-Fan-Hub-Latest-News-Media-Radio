@@ -446,6 +446,15 @@ function MainContent() {
                           <ArrowRight className="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" />
                           <span>{(t as any).endorsement?.article2_date} {(t as any).endorsement?.read_article} #2</span>
                         </a>
+                        <a
+                          href="https://paulkrugman.substack.com/p/scott-bessent-fails-to-gaslight-the"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/10 rounded-xl text-sm text-gray-300 hover:text-gold hover:border-gold/50 transition-all duration-300 group/link"
+                        >
+                          <ArrowRight className="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" />
+                          <span>{(t as any).endorsement?.article3_date} {(t as any).endorsement?.read_article} #3</span>
+                        </a>
                       </div>
                     </div>
                   </div>
