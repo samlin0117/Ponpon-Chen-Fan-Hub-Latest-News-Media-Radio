@@ -38,9 +38,9 @@ export const followerHistory: FollowerDataPoint[] = [
     date: '2026-08-22',
     followers: 44667,
     note: {
-      zh: 'Ponpon 在 IG 發布〈How High The Moon〉短影音爆紅，短短幾天增加超過 5,000 位追蹤者。',
-      en: 'Ponpon\'s "How High The Moon" short went viral on Instagram — over 5,000 new followers in just a few days.',
-      ja: 'PonponがInstagramに投稿した「How High The Moon」のショート動画がバズり、わずか数日で5,000人以上のフォロワーが増加。',
+      zh: 'Ponpon 在 IG 發布〈How High The Moon〉短影音爆紅——她同步展現 scatting 擬聲吟唱、吉他與口哨的技巧，引發大量轉發與留言，短短幾天增加超過 5,000 位追蹤者。',
+      en: 'Ponpon\'s "How High The Moon" short went viral on Instagram — scatting, guitar and whistling all at once drew a flood of shares and comments, adding over 5,000 followers in just a few days.',
+      ja: 'PonponがInstagramに投稿した「How High The Moon」のショート動画がバズる。スキャット・ギター・口笛を同時に披露し、多数のシェアとコメントを呼び、わずか数日で5,000人以上のフォロワーが増加。',
     },
   },
   { date: '2026-08-23', followers: 45693 },
