@@ -11,6 +11,7 @@ import Repertoire from './components/Repertoire';
 import Mentors from './components/Mentors';
 import SignatureTechniques from './components/SignatureTechniques';
 import FollowerGrowth from './components/FollowerGrowth';
+import { renderRichText } from './components/HoverImageLink';
 
 
 import { Language } from './locales';
@@ -597,9 +598,11 @@ function MainContent() {
                                 {item.year}
                               </span>
                               <h3 className="text-xl md:text-2xl font-serif text-white mb-3 group-hover:text-gold transition-colors">{item.title}</h3>
-                              <p className="text-gray-400 font-light leading-relaxed text-sm md:text-base selection:bg-gold/30">
-                                <span onClick={handleTimelineClick} dangerouslySetInnerHTML={{ __html: item.desc as string }} className="cursor-pointer" />
-                              </p>
+                              <div className="text-gray-400 font-light leading-relaxed text-sm md:text-base selection:bg-gold/30">
+                                <span onClick={handleTimelineClick} className="cursor-pointer">
+                                  {renderRichText(item.desc as string, (t as any).hero?.photoSource || '照片來源：Ponpon的fb粉絲專頁')}
+                                </span>
+                              </div>
                             </div>
                           </div>
                         </motion.div>
