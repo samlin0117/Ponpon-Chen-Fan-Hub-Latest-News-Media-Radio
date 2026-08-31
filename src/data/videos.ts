@@ -18,6 +18,17 @@ export interface VideoInfo {
 
 export const videoList: VideoInfo[] = [
   {
+    "id": "v-Pn5vo_CG1Tw",
+    "platform": "youtube",
+    "category": "p1",
+    "title": "Ponpon Chen 陳芃瑄 - Yardbird Suite (錄音室二重奏單曲 / Studio Duo Single)",
+    "date": "2026-08-16",
+    "embedUrl": "Pn5vo_CG1Tw",
+    "thumbnailUrl": "https://i.ytimg.com/vi/Pn5vo_CG1Tw/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=Pn5vo_CG1Tw&list=OLAK5uy_kfzE2S5pH0ooDXqbo1BFRSHo2gJJMxS14"
+  },
+  {
     "id": "v-gUXx6-WK-V0",
     "platform": "youtube",
     "category": "p1",
