@@ -657,6 +657,17 @@ export const videoList: VideoInfo[] = [
 
 
   {
+    "id": "v-aSF8_wx4mhs",
+    "platform": "youtube",
+    "category": "p3",
+    "title": "【首播】Interview with Ponpon Chen 陳芃瑄｜爵士鍾情｜主持：鍾一諾 Roger（D100 Radio）",
+    "date": "2026-08-28",
+    "embedUrl": "aSF8_wx4mhs",
+    "thumbnailUrl": "https://i.ytimg.com/vi/aSF8_wx4mhs/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=aSF8_wx4mhs&list=PLLwWHVIUlB8llQJXiVeWR7vSSsg8Ink4e"
+  },
+  {
     "id": "v-VeCMKd4rd6w",
     "platform": "youtube",
     "category": "p3",
