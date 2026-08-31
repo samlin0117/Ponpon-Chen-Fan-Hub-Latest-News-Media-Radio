@@ -531,7 +531,7 @@ function MainContent() {
                         }`}
                     >
                       <Music className="w-4 h-4" />
-                      NEW ALBUM 2026
+                      NEW ALBUM 2027
                     </button>
                     <button
                       onClick={() => setTimelineFilter('all')}
