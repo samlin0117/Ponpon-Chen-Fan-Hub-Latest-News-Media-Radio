@@ -8,6 +8,8 @@
 export interface FollowerDataPoint {
   date: string; // YYYY-MM-DD
   followers: number;
+  // 選填：這個日期粉絲數變化的原因。可填單一字串，或三語物件 { zh, en, ja }。
+  note?: string | { zh?: string; en?: string; ja?: string };
 }
 
 export const followerHistory: FollowerDataPoint[] = [
@@ -32,7 +34,15 @@ export const followerHistory: FollowerDataPoint[] = [
   { date: '2026-08-19', followers: 41054 },
   { date: '2026-08-20', followers: 41201 },
   { date: '2026-08-21', followers: 41333 },
-  { date: '2026-08-22', followers: 44667 },
+  {
+    date: '2026-08-22',
+    followers: 44667,
+    note: {
+      zh: 'Ponpon 在 IG 發布〈How High The Moon〉短影音，獲得約 3.3 萬個讚，單日粉絲數 +3,334。',
+      en: 'Ponpon posted her "How High The Moon" short on Instagram — ~33K likes, +3,334 followers in a day.',
+      ja: 'PonponがInstagramに「How High The Moon」のショート動画を投稿。約3.3万いいねを獲得し、1日で+3,334フォロワー。',
+    },
+  },
   { date: '2026-08-23', followers: 45693 },
   { date: '2026-08-24', followers: 46234 },
   { date: '2026-08-25', followers: 46698 },

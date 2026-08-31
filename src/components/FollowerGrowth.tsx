@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from 'react';
 import { motion } from 'motion/react';
-import { Instagram, TrendingUp, ArrowUpRight, ExternalLink } from 'lucide-react';
+import { Instagram, TrendingUp, ArrowUpRight, ExternalLink, Flag } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
-import { followerHistory, followerProfile } from '../data/followerHistory';
+import { followerHistory, followerProfile, FollowerDataPoint } from '../data/followerHistory';
 
 const VIEW_W = 820;
 const VIEW_H = 360;
@@ -24,6 +24,12 @@ const FollowerGrowth: React.FC = () => {
 
   const locale = lang === 'zh' ? 'zh-TW' : lang === 'ja' ? 'ja-JP' : 'en-US';
   const nf = useMemo(() => new Intl.NumberFormat(locale), [locale]);
+
+  const noteText = (n: FollowerDataPoint['note']): string => {
+    if (!n) return '';
+    if (typeof n === 'string') return n;
+    return n[lang as 'zh' | 'en' | 'ja'] || n.zh || n.en || n.ja || '';
+  };
 
   const { points, xTicks, yTicks, areaPath, linePath, xMin, xSpan, yMin, ySpan } = useMemo(() => {
     const xs = data.map((d) => toMs(d.date));
@@ -80,6 +86,10 @@ const FollowerGrowth: React.FC = () => {
   }, [data, lang]);
 
   const active = hoverIdx != null ? points[hoverIdx] : null;
+
+  const annotations = points
+    .map((p, i) => ({ ...p, i, text: noteText(p.note) }))
+    .filter((p) => p.text);
 
   const handleMove = (e: React.MouseEvent<SVGRectElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -190,6 +200,26 @@ const FollowerGrowth: React.FC = () => {
             {/* Endpoint dot */}
             <circle cx={last ? points[points.length - 1].cx : 0} cy={last ? points[points.length - 1].cy : 0} r={4} fill="#e8cfa6" />
 
+            {/* Annotation flags */}
+            {annotations.map((a, k) => (
+              <g key={`ann-${a.i}`}>
+                <line
+                  x1={a.cx}
+                  x2={a.cx}
+                  y1={PAD.top + 4}
+                  y2={a.cy}
+                  stroke="#e8cfa6"
+                  strokeOpacity={0.5}
+                  strokeWidth={1}
+                  strokeDasharray="3 3"
+                />
+                <circle cx={a.cx} cy={PAD.top + 4} r={9} fill="#0a0a0a" stroke="#e8cfa6" strokeWidth={1.5} />
+                <text x={a.cx} y={PAD.top + 8} textAnchor="middle" fontSize={11} fontWeight={700} fill="#e8cfa6" fontFamily="ui-monospace, monospace">
+                  {k + 1}
+                </text>
+              </g>
+            ))}
+
             {/* Hover marker */}
             {active && (
               <g>
@@ -238,6 +268,29 @@ const FollowerGrowth: React.FC = () => {
             <div className="text-[10px] text-gray-500 uppercase tracking-widest mt-1">{tr.avgPerRecord || 'Avg / day'}</div>
           </div>
         </div>
+
+        {/* Key moments */}
+        {annotations.length > 0 && (
+          <div className="mt-6 border-t border-white/5 pt-5">
+            <div className="flex items-center gap-2 text-gold-light/80 mb-3">
+              <Flag className="w-3.5 h-3.5" />
+              <span className="text-xs uppercase tracking-widest">{tr.keyMoments || 'Key moments'}</span>
+            </div>
+            <ul className="space-y-2.5">
+              {annotations.map((a, k) => (
+                <li key={`note-${a.i}`} className="flex gap-3 text-sm">
+                  <span className="shrink-0 w-5 h-5 rounded-full border border-gold/40 text-gold-light text-[11px] font-mono flex items-center justify-center mt-0.5">
+                    {k + 1}
+                  </span>
+                  <span className="text-gray-400 leading-relaxed">
+                    <span className="text-gray-500 font-mono text-xs mr-2">{fmtFullDate(a.date)}</span>
+                    {a.text}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <p className="text-[11px] text-gray-600 mt-5 leading-relaxed">
           {tr.note ||
