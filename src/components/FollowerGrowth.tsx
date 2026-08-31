@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { motion } from 'motion/react';
-import { Instagram, TrendingUp, ArrowUpRight, ExternalLink, Flag } from 'lucide-react';
+import { Instagram, TrendingUp, ExternalLink, Flag } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import { followerHistory, followerProfile, FollowerDataPoint } from '../data/followerHistory';
 
@@ -248,25 +248,6 @@ const FollowerGrowth: React.FC = () => {
               onMouseLeave={() => setHoverIdx(null)}
             />
           </svg>
-        </div>
-
-        {/* Secondary stats */}
-        <div className="grid grid-cols-3 gap-3 mt-6">
-          <div className="text-center bg-white/[0.03] border border-white/5 rounded-xl py-3">
-            <div className="text-lg font-serif text-white">{nf.format(followerProfile.posts)}</div>
-            <div className="text-[10px] text-gray-500 uppercase tracking-widest mt-1">{tr.posts || 'Posts'}</div>
-          </div>
-          <div className="text-center bg-white/[0.03] border border-white/5 rounded-xl py-3">
-            <div className="text-lg font-serif text-white">{nf.format(followerProfile.following)}</div>
-            <div className="text-[10px] text-gray-500 uppercase tracking-widest mt-1">{tr.following || 'Following'}</div>
-          </div>
-          <div className="text-center bg-white/[0.03] border border-white/5 rounded-xl py-3">
-            <div className="text-lg font-serif text-white inline-flex items-center gap-1">
-              <ArrowUpRight className="w-4 h-4 text-emerald-400" />
-              {nf.format(Math.round(gained / Math.max(1, data.length - 1)))}
-            </div>
-            <div className="text-[10px] text-gray-500 uppercase tracking-widest mt-1">{tr.avgPerRecord || 'Avg / day'}</div>
-          </div>
         </div>
 
         {/* Key moments */}
