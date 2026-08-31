@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X, Trophy, ArrowRight, Star, Disc3, Users } from 'lucide-react';
+import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X, Trophy, ArrowRight, Star, Disc3, Users, TrendingUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import FirebaseComments from './components/FirebaseComments';
@@ -10,6 +10,7 @@ import QuizGame from './components/QuizGame';
 import Repertoire from './components/Repertoire';
 import Mentors from './components/Mentors';
 import SignatureTechniques from './components/SignatureTechniques';
+import FollowerGrowth from './components/FollowerGrowth';
 
 
 import { Language } from './locales';
@@ -19,7 +20,7 @@ import slide2Img from './assets/slide2.jpg';
 
 function MainContent() {
   const { t, lang, setLang } = useTranslation();
-  const [timelineFilter, setTimelineFilter] = useState<'all' | 'first' | 'album'>('all');
+  const [timelineFilter, setTimelineFilter] = useState<'all' | 'first' | 'album' | 'followers'>('all');
   const timelineItems = t.timelineItems as any[];
   const filteredTimelineItems = (() => {
     const result = timelineItems.filter(item => {
@@ -550,10 +551,23 @@ function MainContent() {
                     >
                       {(t.timeline as any).filterFirst || '解鎖第一次'}
                     </button>
+                    <button
+                      onClick={() => setTimelineFilter('followers')}
+                      className={`px-6 py-2 rounded-full border transition-colors flex items-center gap-2 ${timelineFilter === 'followers'
+                          ? 'bg-gold/20 border-gold text-gold-light'
+                          : 'border-white/20 text-gray-400 hover:border-white/50 hover:text-gray-200'
+                        }`}
+                    >
+                      <TrendingUp className="w-4 h-4" />
+                      {(t.timeline as any).filterFollowers || 'IG 粉絲成長'}
+                    </button>
                   </div>
                 </motion.div>
 
                 {/* Timeline Container */}
+                {timelineFilter === 'followers' ? (
+                  <FollowerGrowth />
+                ) : (
                 <div className="relative max-w-3xl mx-auto">
                   {/* The vertical connector line */}
                   <div className="absolute left-[15px] md:left-1/2 md:-ml-[1px] top-4 bottom-4 w-[2px] bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
@@ -593,6 +607,7 @@ function MainContent() {
                     })}
                   </div>
                 </div>
+                )}
               </div>
             </section>
           } />

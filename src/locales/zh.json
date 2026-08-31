@@ -23,7 +23,18 @@
     "title": "演藝里程碑",
     "description": "Ponpon 從初心到躍上國際的音樂旅程",
     "filterAll": "全部里程碑",
-    "filterFirst": "解鎖第一次"
+    "filterFirst": "解鎖第一次",
+    "filterFollowers": "IG 粉絲成長"
+  },
+  "followerGrowth": {
+    "title": "Instagram 粉絲成長",
+    "current": "目前粉絲數",
+    "posts": "貼文",
+    "following": "追蹤中",
+    "avgPerRecord": "平均日增",
+    "updated": "更新於",
+    "source": "資料來源",
+    "note": "粉絲數每月月底記錄一次；2026 年 8 月為每日資料，記錄了單月爆發成長的過程。"
   },
   "hero": {
     "title": "Ponpon Chen",

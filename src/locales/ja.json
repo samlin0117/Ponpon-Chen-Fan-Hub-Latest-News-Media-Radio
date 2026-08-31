@@ -23,7 +23,18 @@
     "title": "マイルストーン",
     "description": "Ponponの音楽の旅と重要な瞬間",
     "filterAll": "すべてのマイルストーン",
-    "filterFirst": "「初めて」を解禁"
+    "filterFirst": "「初めて」を解禁",
+    "filterFollowers": "IG フォロワー推移"
+  },
+  "followerGrowth": {
+    "title": "Instagram フォロワー推移",
+    "current": "フォロワー数",
+    "posts": "投稿",
+    "following": "フォロー中",
+    "avgPerRecord": "1日平均増加",
+    "updated": "更新日",
+    "source": "出典",
+    "note": "フォロワー数は毎月末に記録しています。2026年8月は急成長の過程を示すため日次データです。"
   },
   "hero": {
     "title": "Ponpon Chen",

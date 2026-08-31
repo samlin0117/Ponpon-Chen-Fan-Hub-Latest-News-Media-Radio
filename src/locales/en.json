@@ -23,7 +23,18 @@
     "title": "Milestones",
     "description": "Ponpon's musical journey from her roots to the international stage",
     "filterAll": "All Milestones",
-    "filterFirst": "Unlock 'Firsts'"
+    "filterFirst": "Unlock 'Firsts'",
+    "filterFollowers": "IG Follower Growth"
+  },
+  "followerGrowth": {
+    "title": "Instagram Follower Growth",
+    "current": "Followers",
+    "posts": "Posts",
+    "following": "Following",
+    "avgPerRecord": "Avg gain / day",
+    "updated": "Updated",
+    "source": "Source",
+    "note": "Follower counts are recorded once a month. August 2026 is shown daily to capture the breakout month."
   },
   "hero": {
     "title": "Ponpon Chen",
