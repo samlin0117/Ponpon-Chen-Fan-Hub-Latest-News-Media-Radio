@@ -38,9 +38,9 @@ export const followerHistory: FollowerDataPoint[] = [
     date: '2026-08-22',
     followers: 44667,
     note: {
-      zh: 'Ponpon 在 IG 發布〈How High The Moon〉短影音爆紅，單日粉絲數 +3,334。',
-      en: 'Ponpon\'s "How High The Moon" short went viral on Instagram — +3,334 followers in a day.',
-      ja: 'PonponがInstagramに投稿した「How High The Moon」のショート動画がバズり、1日で+3,334フォロワー。',
+      zh: 'Ponpon 在 IG 發布〈How High The Moon〉短影音爆紅，短短幾天增加超過 5,000 位追蹤者。',
+      en: 'Ponpon\'s "How High The Moon" short went viral on Instagram — over 5,000 new followers in just a few days.',
+      ja: 'PonponがInstagramに投稿した「How High The Moon」のショート動画がバズり、わずか数日で5,000人以上のフォロワーが増加。',
     },
   },
   { date: '2026-08-23', followers: 45693 },
