@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, type ReactNode, type FC } from 'react';
+import { createPortal } from 'react-dom';
 
 interface HoverImageLinkProps {
   text: string;
@@ -8,6 +9,13 @@ interface HoverImageLinkProps {
   index: number;
 }
 
+const FbSourceBadge: FC<{ label: string }> = ({ label }) => (
+  <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-white/90 whitespace-nowrap bg-black/70 px-2.5 py-1.5 rounded-full backdrop-blur-md inline-flex items-center gap-1.5">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-facebook w-3 h-3"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+    <span>{label}</span>
+  </span>
+);
+
 export const HoverImageLink: FC<HoverImageLinkProps> = ({ text, url, linkUrl, photoSourceLabel, index }) => {
   const [isOpenMobile, setIsOpenMobile] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -16,25 +24,16 @@ export const HoverImageLink: FC<HoverImageLinkProps> = ({ text, url, linkUrl, ph
 
   const hasImage = url && url.trim() !== '';
 
-  // On touch devices, close the preview when tapping anywhere outside the link.
+  // Lock body scroll while the mobile preview is open, and close on Esc.
   useEffect(() => {
     if (!isOpenMobile) return;
-    const handleOutside = (e: Event) => {
-      if (anchorRef.current && !anchorRef.current.contains(e.target as Node)) {
-        setIsOpenMobile(false);
-      }
-    };
-    document.addEventListener('touchstart', handleOutside);
-    document.addEventListener('click', handleOutside);
-    return () => {
-      document.removeEventListener('touchstart', handleOutside);
-      document.removeEventListener('click', handleOutside);
-    };
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setIsOpenMobile(false); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
   }, [isOpenMobile]);
 
   return (
     <a
-      key={`img-${index}`}
       ref={anchorRef}
       href={linkUrl}
       target="_blank"
@@ -45,46 +44,61 @@ export const HoverImageLink: FC<HoverImageLinkProps> = ({ text, url, linkUrl, ph
       onClick={(e) => {
         const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
         if (isTouch && hasImage && !isOpenMobile) {
-          // First tap only reveals the preview; a second tap on the
-          // same link falls through and opens the FB link normally.
+          // First tap reveals the preview; a second tap on the same link
+          // falls through and opens the FB link normally.
           e.preventDefault();
           setIsOpenMobile(true);
         }
       }}
     >
       <span dangerouslySetInnerHTML={{ __html: text }} />
+
+      {/* Desktop: hover tooltip anchored above the link */}
       {hasImage && (
-        <div
-          onClick={(e) => {
-            // Tapping the preview itself (touch) just dismisses it — the tap
-            // must not fall through to the link behind it and open FB.
-            if (isOpenMobile) {
-              e.preventDefault();
-              e.stopPropagation();
-              setIsOpenMobile(false);
-            }
-          }}
-          className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-3 transition-all duration-300 z-50 w-64 md:w-80 shadow-2xl rounded-xl overflow-hidden border border-white/10 origin-bottom ${isOpenMobile ? 'pointer-events-auto' : 'pointer-events-none'} ${(isOpenMobile || isHovered) ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}
+        <span
+          aria-hidden
+          className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-3 transition-all duration-300 z-50 w-64 md:w-80 shadow-2xl rounded-xl overflow-hidden border border-white/10 origin-bottom pointer-events-none ${isHovered ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}
         >
-          <div className="relative min-h-[120px] bg-[#1a1a1a] flex items-center justify-center">
+          <span className="relative min-h-[120px] bg-[#1a1a1a] flex items-center justify-center">
             {!imgError ? (
-              <img
-                src={url}
-                alt="hover popup"
-                className="w-full h-auto object-cover block"
-                onError={() => setImgError(true)}
-              />
+              <img src={url} alt="" className="w-full h-auto object-cover block" onError={() => setImgError(true)} />
             ) : (
-              <div className="text-gray-400 text-sm text-center p-6 mb-6">
+              <span className="text-gray-400 text-sm text-center p-6 mb-6 block">
+                照片預覽已失效<br /><span className="text-xs text-gray-500">(FB圖床網址有時效限制)</span>
+              </span>
+            )}
+            <FbSourceBadge label={photoSourceLabel} />
+          </span>
+        </span>
+      )}
+
+      {/* Touch: full-screen lightbox rendered at the document root so the
+          backdrop reliably captures the dismiss tap. Tap the photo to open
+          FB, tap anywhere else to close. */}
+      {hasImage && isOpenMobile && createPortal(
+        <div
+          className="fixed inset-0 z-[120] flex flex-col items-center justify-center gap-4 p-6 bg-black/80 backdrop-blur-sm"
+          onClick={(e) => { e.stopPropagation(); setIsOpenMobile(false); }}
+        >
+          <a
+            href={linkUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="relative block w-full max-w-xs rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-[#1a1a1a]"
+          >
+            {!imgError ? (
+              <img src={url} alt="" className="w-full h-auto object-cover block" onError={() => setImgError(true)} />
+            ) : (
+              <div className="text-gray-400 text-sm text-center p-8">
                 照片預覽已失效<br /><span className="text-xs text-gray-500">(FB圖床網址有時效限制)</span>
               </div>
             )}
-            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-white/90 whitespace-nowrap bg-black/70 px-2.5 py-1.5 rounded-full backdrop-blur-md flex items-center gap-1.5">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-facebook w-3 h-3"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
-              <span>{photoSourceLabel}</span>
-            </div>
-          </div>
-        </div>
+            <FbSourceBadge label={photoSourceLabel} />
+          </a>
+          <div className="text-[11px] text-white/60">點照片看 FB 原文，點其他地方關閉</div>
+        </div>,
+        document.body
       )}
     </a>
   );
