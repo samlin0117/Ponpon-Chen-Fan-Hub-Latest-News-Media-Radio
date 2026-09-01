@@ -54,7 +54,18 @@ export const HoverImageLink: FC<HoverImageLinkProps> = ({ text, url, linkUrl, ph
     >
       <span dangerouslySetInnerHTML={{ __html: text }} />
       {hasImage && (
-        <div className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-3 transition-all duration-300 z-50 w-64 md:w-80 shadow-2xl rounded-xl overflow-hidden border border-white/10 origin-bottom pointer-events-none ${(isOpenMobile || isHovered) ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}>
+        <div
+          onClick={(e) => {
+            // Tapping the preview itself (touch) just dismisses it — the tap
+            // must not fall through to the link behind it and open FB.
+            if (isOpenMobile) {
+              e.preventDefault();
+              e.stopPropagation();
+              setIsOpenMobile(false);
+            }
+          }}
+          className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-3 transition-all duration-300 z-50 w-64 md:w-80 shadow-2xl rounded-xl overflow-hidden border border-white/10 origin-bottom ${isOpenMobile ? 'pointer-events-auto' : 'pointer-events-none'} ${(isOpenMobile || isHovered) ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}
+        >
           <div className="relative min-h-[120px] bg-[#1a1a1a] flex items-center justify-center">
             {!imgError ? (
               <img
