@@ -72,45 +72,56 @@ export const HoverImageLink: FC<HoverImageLinkProps> = ({ text, url, linkUrl, ph
         </span>
       )}
 
-      {/* Touch: full-screen lightbox rendered at the document root so the
-          backdrop reliably captures the dismiss tap. Tapping anywhere closes;
-          the FB link is a separate, explicitly labelled button. */}
+      {/* Touch: full-screen lightbox rendered at the document root so it
+          escapes the surrounding <p>/<a>. Every dismiss target is a real
+          <button> so taps register on every mobile browser (incl. iOS
+          Safari, which will not delegate clicks from bare <div>s). */}
       {hasImage && isOpenMobile && createPortal(
-        <div
-          className="fixed inset-0 z-[120] flex flex-col items-center justify-center gap-4 p-6 bg-black/80 backdrop-blur-sm"
-          onClick={(e) => { e.stopPropagation(); setIsOpenMobile(false); }}
-        >
+        <div className="fixed inset-0 z-[120] flex flex-col items-center justify-center gap-4 p-6">
+          {/* Backdrop — its own button so the whole screen dismisses */}
           <button
             type="button"
             aria-label="關閉"
-            onClick={(e) => { e.stopPropagation(); setIsOpenMobile(false); }}
-            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center backdrop-blur-md"
+            onClick={() => setIsOpenMobile(false)}
+            className="absolute inset-0 w-full h-full bg-black/80 backdrop-blur-sm cursor-pointer"
+          />
+
+          <button
+            type="button"
+            aria-label="關閉"
+            onClick={() => setIsOpenMobile(false)}
+            className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/10 active:bg-white/25 text-white flex items-center justify-center backdrop-blur-md cursor-pointer"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18M6 6l12 12" /></svg>
           </button>
 
-          <div className="relative w-full max-w-xs rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-[#1a1a1a]">
+          {/* Photo — tapping it also just closes */}
+          <button
+            type="button"
+            aria-label="關閉"
+            onClick={() => setIsOpenMobile(false)}
+            className="relative z-10 block w-full max-w-xs rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-[#1a1a1a] cursor-pointer"
+          >
             {!imgError ? (
               <img src={url} alt="" className="w-full h-auto object-cover block" onError={() => setImgError(true)} />
             ) : (
-              <div className="text-gray-400 text-sm text-center p-8">
+              <span className="block text-gray-400 text-sm text-center p-8">
                 照片預覽已失效<br /><span className="text-xs text-gray-500">(FB圖床網址有時效限制)</span>
-              </div>
+              </span>
             )}
             <FbSourceBadge label={photoSourceLabel} />
-          </div>
+          </button>
 
           <a
             href={linkUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
-            className="inline-flex items-center gap-1.5 text-xs text-white/90 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full backdrop-blur-md"
+            className="relative z-10 inline-flex items-center gap-1.5 text-xs text-white/90 bg-white/10 active:bg-white/25 px-4 py-2 rounded-full backdrop-blur-md"
           >
             在 FB 查看原文
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10M7 17 17 7" /></svg>
           </a>
-          <div className="text-[11px] text-white/50">點任意處關閉</div>
+          <div className="relative z-10 text-[11px] text-white/50 pointer-events-none">點任意處關閉</div>
         </div>,
         document.body
       )}
