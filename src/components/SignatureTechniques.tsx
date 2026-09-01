@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Mic2, Music, Wind, Radio, MessageSquare, PlayCircle, Star, Info, Youtube, History, X } from 'lucide-react';
+import { Mic2, Music, Wind, Radio, MessageSquare, PlayCircle, Star, Info, Youtube, History, X, Shuffle } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 
 interface Master {
@@ -144,6 +144,20 @@ export default function SignatureTechniques() {
           { videoId: "HCUE2cDCOqs", startTime: 257, endTime: 287 }
         ]
       }
+    },
+    {
+      id: "advanced-scat-whistle-guitar-unison",
+      icon: <Shuffle className="w-6 h-6" />,
+      titleKey: sigT.advancedScatWhistleGuitarUnison?.title || "Advanced Scat / Whistle–Guitar Unison",
+      descKey: sigT.advancedScatWhistleGuitarUnison?.desc || "在與吉他保持同步的同時，於同一條連續的樂句中，在擬聲吟唱（Scat）與爵士口哨（Whistling）之間快速切換，使聽覺上的轉換如同同一條旋律線自然延伸。",
+      masters: [],
+      hideMasters: true,
+      ponpon: {
+        desc: sigT.advancedScatWhistleGuitarUnison?.ponpon || "Ponpon 將吉他、人聲與口哨視為同一條即興旋律的不同出口，在 Scat 與口哨之間自然切換，並與吉他形成高度整合的同步關係。",
+        videoId: "gUXx6-WK-V0",
+        startTime: 1219,
+        endTime: 1296
+      }
     }
   ];
 
@@ -215,7 +229,7 @@ export default function SignatureTechniques() {
                 </div>
                 <div>
                   <h2 className="text-3xl md:text-4xl font-serif text-white">{tech.titleKey}</h2>
-                  <p className="text-gray-400 mt-2">{tech.descKey}</p>
+                  <p className="text-gray-400 mt-2 whitespace-pre-line">{tech.descKey}</p>
                 </div>
               </div>
 
@@ -278,7 +292,7 @@ export default function SignatureTechniques() {
                       <h3 className="text-lg font-mono text-gold tracking-widest uppercase">{sigT.ponponInterpretation || 'Ponpon 的詮釋'}</h3>
                     </div>
 
-                    <p className="text-gray-200 text-lg leading-relaxed mb-8 relative z-10">
+                    <p className="text-gray-200 text-lg leading-relaxed mb-8 relative z-10 whitespace-pre-line">
                       {tech.ponpon.desc}
                     </p>
 
