@@ -73,20 +73,23 @@ export const HoverImageLink: FC<HoverImageLinkProps> = ({ text, url, linkUrl, ph
       )}
 
       {/* Touch: full-screen lightbox rendered at the document root so the
-          backdrop reliably captures the dismiss tap. Tap the photo to open
-          FB, tap anywhere else to close. */}
+          backdrop reliably captures the dismiss tap. Tapping anywhere closes;
+          the FB link is a separate, explicitly labelled button. */}
       {hasImage && isOpenMobile && createPortal(
         <div
           className="fixed inset-0 z-[120] flex flex-col items-center justify-center gap-4 p-6 bg-black/80 backdrop-blur-sm"
           onClick={(e) => { e.stopPropagation(); setIsOpenMobile(false); }}
         >
-          <a
-            href={linkUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
-            className="relative block w-full max-w-xs rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-[#1a1a1a]"
+          <button
+            type="button"
+            aria-label="關閉"
+            onClick={(e) => { e.stopPropagation(); setIsOpenMobile(false); }}
+            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center backdrop-blur-md"
           >
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18M6 6l12 12" /></svg>
+          </button>
+
+          <div className="relative w-full max-w-xs rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-[#1a1a1a]">
             {!imgError ? (
               <img src={url} alt="" className="w-full h-auto object-cover block" onError={() => setImgError(true)} />
             ) : (
@@ -95,8 +98,19 @@ export const HoverImageLink: FC<HoverImageLinkProps> = ({ text, url, linkUrl, ph
               </div>
             )}
             <FbSourceBadge label={photoSourceLabel} />
+          </div>
+
+          <a
+            href={linkUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="inline-flex items-center gap-1.5 text-xs text-white/90 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full backdrop-blur-md"
+          >
+            在 FB 查看原文
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10M7 17 17 7" /></svg>
           </a>
-          <div className="text-[11px] text-white/60">點照片看 FB 原文，點其他地方關閉</div>
+          <div className="text-[11px] text-white/50">點任意處關閉</div>
         </div>,
         document.body
       )}
