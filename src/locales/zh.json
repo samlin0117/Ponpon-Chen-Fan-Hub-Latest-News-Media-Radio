@@ -1015,6 +1015,30 @@
         ],
         "correctAnswer": 3,
         "explanation": "《愛的代價》是由李宗盛作詞作曲的經典歌曲，其餘皆為 Ponpon 的原創作品。"
+      },
+      {
+        "id": 51,
+        "question": "Ponpon 首次在美國東岸公開演出，是在紐約哪一個著名的爵士場地？",
+        "options": [
+          "Village Vanguard",
+          "Birdland",
+          "Blue Note",
+          "Dizzy's Club"
+        ],
+        "correctAnswer": 1,
+        "explanation": "2026年8月，Ponpon 首次登上美國東岸舞台，受邀擔任 Frank Vignola's Guitar Night 嘉賓，於紐約知名爵士俱樂部 Birdland（Birdland Theater）演出。"
+      },
+      {
+        "id": 52,
+        "question": "Ponpon 在紐約 Birdland 首次現場挑戰哪一首 Charlie Parker 的作品？她為此練習約三個月，並錄製成錄音室版本。",
+        "options": [
+          "Ornithology",
+          "Confirmation",
+          "Yardbird Suite",
+          "Now's the Time"
+        ],
+        "correctAnswer": 2,
+        "explanation": "2026年8月，Ponpon 在紐約 Birdland Jazz Club 擔任 Frank Vignola 的演出嘉賓，首次現場挑戰 Charlie Parker 的〈Yardbird Suite〉vocalese，向傳奇致敬。這段 solo 她花了約三個月逐字逐句練習，錄音室二重奏版本也已在各大串流平台上架。"
       }
     ]
   },

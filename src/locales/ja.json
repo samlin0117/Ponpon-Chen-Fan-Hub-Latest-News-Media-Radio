@@ -1015,6 +1015,30 @@
         ],
         "correctAnswer": 3,
         "explanation": "「愛的代價」は李宗盛(ジョナサン・リー)作詞作曲の名曲で、それ以外はPonponのオリジナル曲です。"
+      },
+      {
+        "id": 51,
+        "question": "Ponponがアメリカ東海岸で初めて公の場で演奏したのは、ニューヨークのどの有名なジャズ会場ですか？",
+        "options": [
+          "Village Vanguard",
+          "Birdland",
+          "Blue Note",
+          "Dizzy's Club"
+        ],
+        "correctAnswer": 1,
+        "explanation": "2026年8月、Ponponは Frank Vignola's Guitar Night のゲストとして招かれ、ニューヨークの名門ジャズクラブ Birdland（Birdland Theater）でアメリカ東海岸デビューを果たしました。"
+      },
+      {
+        "id": 52,
+        "question": "Ponponがニューヨークの Birdland で初めてライブで挑戦した Charlie Parker の楽曲はどれですか？彼女はこの曲のために約3か月間練習し、スタジオ版も録音しました。",
+        "options": [
+          "Ornithology",
+          "Confirmation",
+          "Yardbird Suite",
+          "Now's the Time"
+        ],
+        "correctAnswer": 2,
+        "explanation": "2026年8月、Ponponはニューヨークの Birdland Jazz Club で Frank Vignola の演奏ゲストを務め、Charlie Parker の「Yardbird Suite」のボーカリーズを初めてライブで披露し、伝説に敬意を表しました。このソロを一語一句、約3か月かけて練習し、スタジオ・デュオ版も各種ストリーミングで配信中です。"
       }
     ]
   },

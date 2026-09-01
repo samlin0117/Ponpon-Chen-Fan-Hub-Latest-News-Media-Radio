@@ -1015,6 +1015,30 @@
         ],
         "correctAnswer": 3,
         "explanation": "'The price of love (愛的代價)' is a classic song written and composed by Jonathan Lee (李宗盛), while the others are Ponpon's original works."
+      },
+      {
+        "id": 51,
+        "question": "Ponpon's first public performance on the U.S. East Coast took place at which famous New York jazz venue?",
+        "options": [
+          "Village Vanguard",
+          "Birdland",
+          "Blue Note",
+          "Dizzy's Club"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In August 2026, Ponpon made her U.S. East Coast debut as a guest of Frank Vignola's Guitar Night at the renowned New York jazz club Birdland (Birdland Theater)."
+      },
+      {
+        "id": 52,
+        "question": "Which Charlie Parker piece did Ponpon perform live for the first time at Birdland in New York? She practiced it for about three months and recorded a studio version.",
+        "options": [
+          "Ornithology",
+          "Confirmation",
+          "Yardbird Suite",
+          "Now's the Time"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In August 2026, as a guest of Frank Vignola at Birdland Jazz Club in New York, Ponpon performed the vocalese of Charlie Parker's 'Yardbird Suite' live for the first time, paying tribute to the legend. She spent about three months working through the solo word by word, and the studio duo version is now available on all streaming platforms."
       }
     ]
   },
