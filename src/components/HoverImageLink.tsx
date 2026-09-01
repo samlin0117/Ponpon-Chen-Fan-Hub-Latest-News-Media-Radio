@@ -1,4 +1,4 @@
-import { useState, type ReactNode, type FC } from 'react';
+import { useState, useEffect, useRef, type ReactNode, type FC } from 'react';
 
 interface HoverImageLinkProps {
   text: string;
@@ -12,12 +12,30 @@ export const HoverImageLink: FC<HoverImageLinkProps> = ({ text, url, linkUrl, ph
   const [isOpenMobile, setIsOpenMobile] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [imgError, setImgError] = useState(false);
+  const anchorRef = useRef<HTMLAnchorElement>(null);
 
   const hasImage = url && url.trim() !== '';
+
+  // On touch devices, close the preview when tapping anywhere outside the link.
+  useEffect(() => {
+    if (!isOpenMobile) return;
+    const handleOutside = (e: Event) => {
+      if (anchorRef.current && !anchorRef.current.contains(e.target as Node)) {
+        setIsOpenMobile(false);
+      }
+    };
+    document.addEventListener('touchstart', handleOutside);
+    document.addEventListener('click', handleOutside);
+    return () => {
+      document.removeEventListener('touchstart', handleOutside);
+      document.removeEventListener('click', handleOutside);
+    };
+  }, [isOpenMobile]);
 
   return (
     <a
       key={`img-${index}`}
+      ref={anchorRef}
       href={linkUrl}
       target="_blank"
       rel="noopener noreferrer"
@@ -26,11 +44,11 @@ export const HoverImageLink: FC<HoverImageLinkProps> = ({ text, url, linkUrl, ph
       onMouseLeave={() => setIsHovered(false)}
       onClick={(e) => {
         const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-        if (isTouch && hasImage) {
-          if (!isOpenMobile) {
-            e.preventDefault();
-            setIsOpenMobile(true);
-          }
+        if (isTouch && hasImage && !isOpenMobile) {
+          // First tap only reveals the preview; a second tap on the
+          // same link falls through and opens the FB link normally.
+          e.preventDefault();
+          setIsOpenMobile(true);
         }
       }}
     >
