@@ -6,9 +6,20 @@ export interface RepertoireSong {
   lyricsText?: string;
   youtubeId?: string;
   videoLink?: string;
+  startTime?: number; // YouTube 起始秒數（僅站內 youtubeId 播放時生效）
+  endTime?: number;   // YouTube 結束秒數
 }
 
 export const repertoireData: RepertoireSong[] = [
+  {
+    id: 'autumn-leaves',
+    year: '1947',
+    composer: 'Joseph Kosma, Johnny Mercer',
+    lyricsLink: 'https://genius.com/Nat-king-cole-autumn-leaves-lyrics',
+    youtubeId: 'gUXx6-WK-V0',
+    startTime: 2995,
+    endTime: 3410
+  },
   {
     id: 'cheek-to-cheek',
     year: '1935',

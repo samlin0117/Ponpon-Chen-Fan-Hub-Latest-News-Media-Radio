@@ -310,7 +310,7 @@ const Repertoire: React.FC = () => {
                 {showVideo && (inlineVideoId || selectedSong.youtubeId) && (
                   <div className="aspect-video w-full rounded-xl overflow-hidden bg-black mb-6 border border-white/10 shadow-lg">
                     <iframe
-                      src={`https://www.youtube.com/embed/${inlineVideoId || selectedSong.youtubeId}?autoplay=1${!inlineVideoId && (selectedSong as any).endTime ? `&end=${(selectedSong as any).endTime}` : ''}`}
+                      src={`https://www.youtube.com/embed/${inlineVideoId || selectedSong.youtubeId}?autoplay=1${!inlineVideoId && selectedSong.startTime ? `&start=${selectedSong.startTime}` : ''}${!inlineVideoId && selectedSong.endTime ? `&end=${selectedSong.endTime}` : ''}`}
                       className="w-full h-full border-0"
                       allow="autoplay; encrypted-media; fullscreen"
                       allowFullScreen
