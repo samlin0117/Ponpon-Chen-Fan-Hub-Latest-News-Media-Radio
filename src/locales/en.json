@@ -368,6 +368,11 @@
     "description": "Chronicle of major feature updates and content revisions.",
     "items": [
       {
+        "date": "2026.08.31",
+        "title": "New \"IG Follower Growth\" chart",
+        "content": "Added an \"IG Follower Growth\" filter on the Milestones page — an interactive chart tracking Ponpon's Instagram follower count since August 2026. August is shown as daily data, capturing the breakout month from roughly 38K to 48K with key moments annotated; from September onward the count is recorded once a month."
+      },
+      {
         "date": "2026.08.24",
         "title": "Video Gallery Content Update",
         "content": "New videos added across the 'Live Performances & Music Works', 'Shorts', and 'Creative Fan Tributes' categories, including a live performance at New York's Birdland Theater, a debut album preview of \"How High The Moon\", and fan-made recorder and guitar transcription tributes."
