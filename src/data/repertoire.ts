@@ -12,6 +12,15 @@ export interface RepertoireSong {
 
 export const repertoireData: RepertoireSong[] = [
   {
+    id: 'yardbird-suite',
+    year: '1946',
+    composer: 'Charlie Parker, Bob Dorough',
+    lyricsLink: 'https://www.musixmatch.com/lyrics/Bob-Dorough/Yardbird-Suite',
+    youtubeId: 'gUXx6-WK-V0',
+    startTime: 3460,
+    endTime: 3805
+  },
+  {
     id: 'autumn-leaves',
     year: '1947',
     composer: 'Joseph Kosma, Johnny Mercer',
