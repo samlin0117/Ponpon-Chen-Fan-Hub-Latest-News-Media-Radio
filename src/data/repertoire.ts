@@ -12,6 +12,15 @@ export interface RepertoireSong {
 
 export const repertoireData: RepertoireSong[] = [
   {
+    id: 'our-love-is-here-to-stay',
+    year: '1938',
+    composer: 'George Gershwin, Ira Gershwin',
+    lyricsLink: 'https://genius.com/Frank-sinatra-love-is-here-to-stay-lyrics',
+    youtubeId: 'gUXx6-WK-V0',
+    startTime: 1493,
+    endTime: 1805
+  },
+  {
     id: 'yardbird-suite',
     year: '1946',
     composer: 'Charlie Parker, Bob Dorough',
