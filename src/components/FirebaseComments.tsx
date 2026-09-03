@@ -16,6 +16,8 @@ interface FirebaseCommentsProps {
 }
 
 const FIREBASE_URL = 'https://ponpon-fans-default-rtdb.firebaseio.com/comments.json';
+const NAME_MAX = 30;
+const CONTENT_MAX = 500;
 
 const FirebaseComments: React.FC<FirebaseCommentsProps> = ({ lang, t }) => {
   const [comments, setComments] = useState<Comment[]>([]);
@@ -23,41 +25,6 @@ const FirebaseComments: React.FC<FirebaseCommentsProps> = ({ lang, t }) => {
   const [content, setContent] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [adminMode, setAdminMode] = useState(false);
-  const [secretClicks, setSecretClicks] = useState(0);
-  const [replyingTo, setReplyingTo] = useState<string | null>(null);
-  const [replyContent, setReplyContent] = useState('');
-
-  const handleSecretClick = () => {
-    setSecretClicks(prev => {
-      if (prev + 1 >= 5) {
-        const pwd = window.prompt('請輸入管理員密碼以啟用回覆模式：');
-        if (pwd === 'ponpon2026') {
-          setAdminMode(true);
-          alert('管理員回覆模式已啟用！');
-        }
-        return 0;
-      }
-      return prev + 1;
-    });
-  };
-
-  const submitAdminReply = async (commentId: string) => {
-    if (!replyContent.trim()) return;
-    try {
-      const replyUrl = FIREBASE_URL.replace('.json', `/${commentId}/adminReply.json`);
-      await fetch(replyUrl, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(replyContent.trim())
-      });
-      setReplyingTo(null);
-      setReplyContent('');
-      await fetchComments();
-    } catch (error) {
-      console.error('Error submitting reply:', error);
-    }
-  };
 
   const fetchComments = async () => {
     try {
@@ -86,7 +53,7 @@ const FirebaseComments: React.FC<FirebaseCommentsProps> = ({ lang, t }) => {
 
   useEffect(() => {
     fetchComments();
-    
+
     // Auto-refresh every 30 seconds
     const interval = setInterval(fetchComments, 30000);
     return () => clearInterval(interval);
@@ -94,12 +61,14 @@ const FirebaseComments: React.FC<FirebaseCommentsProps> = ({ lang, t }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !content.trim()) return;
+    const trimmedName = name.trim().slice(0, NAME_MAX);
+    const trimmedContent = content.trim().slice(0, CONTENT_MAX);
+    if (!trimmedName || !trimmedContent) return;
 
     setIsSubmitting(true);
     const newComment = {
-      name: name.trim(),
-      content: content.trim(),
+      name: trimmedName,
+      content: trimmedContent,
       timestamp: Date.now(),
     };
 
@@ -111,7 +80,7 @@ const FirebaseComments: React.FC<FirebaseCommentsProps> = ({ lang, t }) => {
         },
         body: JSON.stringify(newComment)
       });
-      
+
       // Send Telegram notification (Use GET to avoid CORS preflight issues in browsers)
       const botToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
       const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
@@ -120,7 +89,7 @@ const FirebaseComments: React.FC<FirebaseCommentsProps> = ({ lang, t }) => {
         const tgUrl = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`;
         fetch(tgUrl, { method: 'GET' }).catch(err => console.error('TG error', err));
       }
-      
+
       setName('');
       setContent('');
       await fetchComments();
@@ -133,7 +102,7 @@ const FirebaseComments: React.FC<FirebaseCommentsProps> = ({ lang, t }) => {
 
   const formatDate = (timestamp: number) => {
     return new Date(timestamp).toLocaleDateString(
-      lang === 'zh' ? 'zh-TW' : lang === 'ja' ? 'ja-JP' : 'en-US', 
+      lang === 'zh' ? 'zh-TW' : lang === 'ja' ? 'ja-JP' : 'en-US',
       {
         year: 'numeric',
         month: 'short',
@@ -170,7 +139,7 @@ const FirebaseComments: React.FC<FirebaseCommentsProps> = ({ lang, t }) => {
   return (
     <div className="w-full" id="fan-lounge">
       <div className="flex items-center justify-between mb-8">
-        <div className="flex items-center gap-3 cursor-default" onClick={handleSecretClick}>
+        <div className="flex items-center gap-3 cursor-default">
           <div className="p-2 rounded-lg bg-amber-500/10 transition-colors hover:bg-amber-500/20">
             <MessageSquareText className="w-6 h-6 text-amber-500" />
           </div>
@@ -181,7 +150,7 @@ const FirebaseComments: React.FC<FirebaseCommentsProps> = ({ lang, t }) => {
           <span className="text-xs font-medium text-emerald-500">{t.tag_no_login}</span>
         </div>
       </div>
-      
+
       {/* Welcome Box */}
       <div className="mb-10 p-6 rounded-xl bg-white/[0.02] border border-white/5 relative overflow-hidden group">
         <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -212,11 +181,12 @@ const FirebaseComments: React.FC<FirebaseCommentsProps> = ({ lang, t }) => {
               onChange={(e) => setName(e.target.value)}
               placeholder={getPlaceholderName()}
               required
+              maxLength={NAME_MAX}
               className="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-transparent transition-all"
             />
           </div>
         </div>
-        
+
         <div>
           <label className="block text-sm font-medium text-gray-400 mb-2">
             {lang === 'zh' ? '留言內容' : lang === 'ja' ? 'コメント' : 'Message'}
@@ -227,8 +197,12 @@ const FirebaseComments: React.FC<FirebaseCommentsProps> = ({ lang, t }) => {
             placeholder={getPlaceholderContent()}
             required
             rows={4}
+            maxLength={CONTENT_MAX}
             className="w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-transparent transition-all resize-y"
           />
+          <div className="mt-1 text-right text-xs text-gray-500 tabular-nums">
+            {content.length} / {CONTENT_MAX}
+          </div>
         </div>
 
         <button
@@ -256,8 +230,8 @@ const FirebaseComments: React.FC<FirebaseCommentsProps> = ({ lang, t }) => {
           </div>
         ) : comments.length === 0 ? (
           <div className="text-center py-12 text-gray-500 bg-white/[0.01] rounded-xl border border-white/5">
-            {lang === 'zh' ? '目前還沒有留言，來搶頭香吧！' : 
-             lang === 'ja' ? 'まだコメントがありません。最初のコメントを書きましょう！' : 
+            {lang === 'zh' ? '目前還沒有留言，來搶頭香吧！' :
+             lang === 'ja' ? 'まだコメントがありません。最初のコメントを書きましょう！' :
              'No comments yet. Be the first to comment!'}
           </div>
         ) : (
@@ -288,8 +262,8 @@ const FirebaseComments: React.FC<FirebaseCommentsProps> = ({ lang, t }) => {
                 <p className="text-gray-300 leading-relaxed whitespace-pre-wrap pl-[52px]">
                   {comment.content}
                 </p>
-                
-                {/* Admin Reply Display */}
+
+                {/* Admin Reply Display (edited from the Firebase console) */}
                 {comment.adminReply && (
                   <div className="mt-4 ml-[52px] pl-4 border-l-2 border-gold/50 bg-gold/5 p-3 rounded-r-xl">
                     <div className="text-gold font-bold text-xs mb-1 flex items-center gap-1">
@@ -297,44 +271,6 @@ const FirebaseComments: React.FC<FirebaseCommentsProps> = ({ lang, t }) => {
                       {lang === 'zh' ? '管理員回覆：' : lang === 'ja' ? '管理人からの返信：' : 'Admin Reply:'}
                     </div>
                     <div className="text-gray-300 text-sm whitespace-pre-wrap">{comment.adminReply}</div>
-                  </div>
-                )}
-
-                {/* Admin Reply Action */}
-                {adminMode && (
-                  <div className="mt-4 ml-[52px]">
-                    {replyingTo === comment.id ? (
-                      <div className="space-y-2 mt-2">
-                        <textarea
-                          value={replyContent}
-                          onChange={(e) => setReplyContent(e.target.value)}
-                          placeholder="輸入回覆..."
-                          className="w-full p-3 bg-dark/50 border border-gold/20 rounded-lg text-sm text-white focus:outline-none focus:border-gold/50"
-                          rows={2}
-                        />
-                        <div className="flex gap-2">
-                          <button
-                            onClick={() => submitAdminReply(comment.id)}
-                            className="px-3 py-1.5 bg-gold text-dark text-xs font-bold rounded-lg hover:bg-gold-light"
-                          >
-                            送出回覆
-                          </button>
-                          <button
-                            onClick={() => { setReplyingTo(null); setReplyContent(''); }}
-                            className="px-3 py-1.5 bg-white/10 text-white text-xs font-medium rounded-lg hover:bg-white/20"
-                          >
-                            取消
-                          </button>
-                        </div>
-                      </div>
-                    ) : (
-                      <button
-                        onClick={() => { setReplyingTo(comment.id); setReplyContent(comment.adminReply || ''); }}
-                        className="text-xs text-gold/70 hover:text-gold hover:underline transition-colors"
-                      >
-                        {comment.adminReply ? '編輯回覆' : '回覆此留言'}
-                      </button>
-                    )}
                   </div>
                 )}
               </motion.div>
