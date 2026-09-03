@@ -524,6 +524,17 @@ export const videoList: VideoInfo[] = [
 
 
   {
+    "id": "v-4ktiVC2MGYA",
+    "platform": "youtube",
+    "category": "p6",
+    "title": "Ponpon Chen(陳芃瑄) | Whistling, Scat Singing & Guitar — An Unbelievable Musical Performance",
+    "date": "2026-09-03",
+    "embedUrl": "4ktiVC2MGYA",
+    "thumbnailUrl": "https://i.ytimg.com/vi/4ktiVC2MGYA/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=4ktiVC2MGYA"
+  },
+  {
     "id": "v-LHz2Y36D4bM",
     "platform": "youtube",
     "category": "p6",
