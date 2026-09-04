@@ -710,6 +710,17 @@ export const videoList: VideoInfo[] = [
     "isFeatured": false
   },
   {
+    "id": "v-cQfT0dLeFVM",
+    "platform": "youtube",
+    "category": "p3",
+    "title": "Ponpon Chen (陳芃瑄) - How High The Moon, A Layman's Reaction",
+    "date": "2025-12-09",
+    "embedUrl": "cQfT0dLeFVM",
+    "thumbnailUrl": "https://i.ytimg.com/vi/cQfT0dLeFVM/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=cQfT0dLeFVM"
+  },
+  {
     "id": "v-jtArmZvzigs",
     "platform": "youtube",
     "category": "p3",
