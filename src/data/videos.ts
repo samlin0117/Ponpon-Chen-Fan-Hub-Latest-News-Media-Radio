@@ -999,6 +999,17 @@ export const videoList: VideoInfo[] = [
     "isFeatured": false
   },
   {
+    "id": "v-Rc_DA04vpNo",
+    "platform": "youtube",
+    "category": "p8",
+    "title": "Ponpon Chen - \"Out of Nowhere\" Guitar Solo Transcription @Rama Dimasatria",
+    "date": "2026-08-13",
+    "embedUrl": "Rc_DA04vpNo",
+    "thumbnailUrl": "https://i.ytimg.com/vi/Rc_DA04vpNo/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=Rc_DA04vpNo"
+  },
+  {
     "id": "v-fb-1026651136577463",
     "platform": "facebook",
     "category": "p8",
