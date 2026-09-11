@@ -99,26 +99,8 @@ export const useTranslation = () => {
 
   const t = translations[lang];
 
-  useEffect(() => {
-    // 確保 t 有值
-    if (!t) return;
-
-    // 動態更新 Document Title
-    if ((t as any).site_title) {
-      document.title = (t as any).site_title;
-    }
-
-    // 動態更新 Meta Description
-    if ((t as any).site_description) {
-      let metaDescription = document.querySelector('meta[name="description"]');
-      if (!metaDescription) {
-        metaDescription = document.createElement('meta');
-        metaDescription.setAttribute('name', 'description');
-        document.head.appendChild(metaDescription);
-      }
-      metaDescription.setAttribute('content', (t as any).site_description);
-    }
-  }, [lang, t]);
+  // Title / description / canonical / hreflang 由 components/Seo.tsx 依「路由 + 語言」統一管理，
+  // 這裡不再覆寫，否則所有頁面會共用同一組 meta 而被搜尋引擎判為重複內容。
 
   return { t, lang, setLang };
 };

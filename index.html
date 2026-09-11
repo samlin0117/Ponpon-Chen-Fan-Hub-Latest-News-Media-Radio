@@ -1,11 +1,43 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hant">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="3fdy31AexgIfU1qh8cj19URL5k9prUiUZqaxxG7LNjU" />
+
+    <!--
+      在 React 載入前先把網址整理好，避免畫面閃動：
+      1. 還原 404.html 編碼過的深層路徑 (/?/news -> /news)
+      2. 把舊的 HashRouter 連結轉成新路徑 (/#/news -> /news)
+    -->
+    <script type="text/javascript">
+      (function () {
+        var l = window.location;
+
+        // 1. 還原 404.html 轉進來的路徑 (第一個 & 還原成 ?)
+        if (l.search.charAt(1) === '/') {
+          var decoded = l.search.slice(1).split('&').map(function (s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, '', l.pathname.slice(0, -1) + decoded + l.hash);
+          return;
+        }
+
+        // 2. 舊 HashRouter 連結轉址 (向後相容已分享出去的 #/ 網址)
+        if (l.hash.indexOf('#/') === 0) {
+          var hashPath = l.hash.slice(1); // 保留開頭的 "/"，含可能的 ?lang=
+          window.history.replaceState(null, '', hashPath);
+        }
+      })();
+    </script>
     <title>Ponpon Chen (陳芃瑄) 粉絲典藏館 | Fan Hub & Archive | ポンポン・チェン 応援</title>
     <link rel="canonical" href="https://ponponchenarchive.com/" />
+
+    <!-- 三語版本對應 (由 SEO 元件依當前路徑動態更新) -->
+    <link rel="alternate" hreflang="zh-Hant" href="https://ponponchenarchive.com/?lang=zh" />
+    <link rel="alternate" hreflang="en" href="https://ponponchenarchive.com/?lang=en" />
+    <link rel="alternate" hreflang="ja" href="https://ponponchenarchive.com/?lang=ja" />
+    <link rel="alternate" hreflang="x-default" href="https://ponponchenarchive.com/" />
 
     <!-- Primary Meta Tags -->
     <meta name="title" content="Ponpon Chen (陳芃瑄) 粉絲典藏館 | Fan Hub & Archive | ポンポン・チェン 応援">
@@ -31,13 +63,38 @@
     
     <link rel="icon" type="image/png" href="/favicon.png?v=2">
 
-    <!-- JSON-LD Structured Data for WebSite -->
+    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Ponpon Chen 粉絲典藏館 (Fan Hub)",
-      "url": "https://ponponchenarchive.com/"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://ponponchenarchive.com/#website",
+          "name": "Ponpon Chen 粉絲典藏館 (Fan Hub)",
+          "alternateName": ["陳芃瑄粉絲典藏館", "Ponpon Chen Fan Hub & Archive", "ポンポン・チェン ファンアーカイブ"],
+          "url": "https://ponponchenarchive.com/",
+          "inLanguage": ["zh-Hant", "en", "ja"],
+          "about": { "@id": "https://ponponchenarchive.com/#person" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://ponponchenarchive.com/#person",
+          "name": "Ponpon Chen",
+          "alternateName": ["陳芃瑄", "ポンポン・チェン"],
+          "jobTitle": "Jazz Vocalist & Guitarist",
+          "description": "台灣爵士歌手與吉他手，以吉他自彈自唱、擬聲吟唱 (scat) 與口哨演奏著稱。",
+          "nationality": { "@type": "Country", "name": "Taiwan" },
+          "url": "https://www.ponponchen.com/",
+          "sameAs": [
+            "https://www.ponponchen.com/",
+            "https://www.instagram.com/ponpon__chen/",
+            "https://www.facebook.com/ponpon0405/",
+            "https://www.youtube.com/@ponponchen2002"
+          ],
+          "subjectOf": { "@id": "https://ponponchenarchive.com/#website" }
+        }
+      ]
     }
     </script>
   </head>

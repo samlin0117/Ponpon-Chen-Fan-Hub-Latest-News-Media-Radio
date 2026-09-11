@@ -1,9 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
   <!-- 首頁 -->
   <url>
     <loc>https://ponponchenarchive.com/</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ponponchenarchive.com/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ponponchenarchive.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ponponchenarchive.com/?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ponponchenarchive.com/"/>
   </url>
+
+  <!-- 新聞報導 -->
+  <url>
+    <loc>https://ponponchenarchive.com/news</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ponponchenarchive.com/news?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ponponchenarchive.com/news?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ponponchenarchive.com/news?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ponponchenarchive.com/news"/>
+  </url>
+
+  <!-- 影音專區 -->
+  <url>
+    <loc>https://ponponchenarchive.com/videos</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ponponchenarchive.com/videos?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ponponchenarchive.com/videos?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ponponchenarchive.com/videos?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ponponchenarchive.com/videos"/>
+  </url>
+
+  <!-- 演藝里程碑 -->
+  <url>
+    <loc>https://ponponchenarchive.com/timeline</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ponponchenarchive.com/timeline?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ponponchenarchive.com/timeline?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ponponchenarchive.com/timeline?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ponponchenarchive.com/timeline"/>
+  </url>
+
+  <!-- 關於 Ponpon -->
+  <url>
+    <loc>https://ponponchenarchive.com/about</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ponponchenarchive.com/about?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ponponchenarchive.com/about?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ponponchenarchive.com/about?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ponponchenarchive.com/about"/>
+  </url>
+
+  <!-- 廣播訪問 -->
+  <url>
+    <loc>https://ponponchenarchive.com/interview</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ponponchenarchive.com/interview?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ponponchenarchive.com/interview?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ponponchenarchive.com/interview?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ponponchenarchive.com/interview"/>
+  </url>
+
+  <!-- 爵士曲庫 -->
+  <url>
+    <loc>https://ponponchenarchive.com/repertoire</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ponponchenarchive.com/repertoire?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ponponchenarchive.com/repertoire?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ponponchenarchive.com/repertoire?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ponponchenarchive.com/repertoire"/>
+  </url>
+
+  <!-- 表演藝術 -->
+  <url>
+    <loc>https://ponponchenarchive.com/signature</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ponponchenarchive.com/signature?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ponponchenarchive.com/signature?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ponponchenarchive.com/signature?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ponponchenarchive.com/signature"/>
+  </url>
+
+  <!-- 音樂推手 -->
+  <url>
+    <loc>https://ponponchenarchive.com/mentors</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ponponchenarchive.com/mentors?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ponponchenarchive.com/mentors?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ponponchenarchive.com/mentors?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ponponchenarchive.com/mentors"/>
+  </url>
+
+  <!-- 名人推薦 -->
+  <url>
+    <loc>https://ponponchenarchive.com/endorsement</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ponponchenarchive.com/endorsement?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ponponchenarchive.com/endorsement?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ponponchenarchive.com/endorsement?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ponponchenarchive.com/endorsement"/>
+  </url>
+
+  <!-- 相關連結 -->
+  <url>
+    <loc>https://ponponchenarchive.com/links</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ponponchenarchive.com/links?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ponponchenarchive.com/links?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ponponchenarchive.com/links?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ponponchenarchive.com/links"/>
+  </url>
+
+  <!-- 粉絲大考驗 -->
+  <url>
+    <loc>https://ponponchenarchive.com/quiz</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ponponchenarchive.com/quiz?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ponponchenarchive.com/quiz?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ponponchenarchive.com/quiz?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ponponchenarchive.com/quiz"/>
+  </url>
+
+  <!-- 更新紀錄 -->
+  <url>
+    <loc>https://ponponchenarchive.com/changelog</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X, Trophy, ArrowRight, Star, Disc3, Users, TrendingUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import FirebaseComments from './components/FirebaseComments';
 import { videoList, VideoInfo } from './data/videos';
 import VideoCard from './components/VideoCard';
@@ -11,6 +11,7 @@ import Repertoire from './components/Repertoire';
 import Mentors from './components/Mentors';
 import SignatureTechniques from './components/SignatureTechniques';
 import FollowerGrowth from './components/FollowerGrowth';
+import Seo from './components/Seo';
 import { renderRichText } from './components/HoverImageLink';
 
 
@@ -92,6 +93,8 @@ function MainContent() {
 
   return (
     <div className="min-h-screen bg-dark text-gray-100 font-sans selection:bg-gold/30 selection:text-gold-light flex flex-col pt-20">
+      <Seo lang={lang} />
+
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-md border-b border-white/5">
         <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">

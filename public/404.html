@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ponpon Chen (陳芃瑄) 粉絲典藏館</title>
+    <!--
+      GitHub Pages 沒有伺服器端路由，直接開 /news 這類網址會落到這支 404。
+      這裡把路徑編進 query string 後轉回首頁，再由 index.html 的解碼腳本還原，
+      讓 BrowserRouter 的深層連結可以正常運作（也才能被搜尋引擎收錄）。
+    -->
+    <script type="text/javascript">
+      (function () {
+        var l = window.location;
+        l.replace(
+          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          '/?/' +
+          l.pathname.slice(1).replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash
+        );
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
