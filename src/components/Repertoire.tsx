@@ -16,15 +16,28 @@ const Repertoire: React.FC = () => {
   const [showVideo, setShowVideo] = useState(false);
   const [inlineVideoId, setInlineVideoId] = useState<string | null>(null);
   const videoRef = useRef<HTMLDivElement>(null);
+  // 每次「播放」動作都遞增。單靠 showVideo 無法表達「再按一次」——它已經是 true，
+  // 狀態沒變 React 就不會重新渲染，第二次點擊會完全沒反應。
+  const [playToken, setPlayToken] = useState(0);
+
+  /** 播放指定影片；id 為 null 表示播放這首歌預設的 youtubeId */
+  const playVideo = (id: string | null) => {
+    setInlineVideoId(id);
+    setShowVideo(true);
+    setPlayToken((n) => n + 1);
+  };
 
   // 影片是插在彈窗內容區的最上方，但觸發它的「觀看演出」按鈕在頁尾、
   // 內文連結也多半在下方——使用者按下去時通常已經往下捲，影片會落在
-  // 可視範圍之外，看起來像沒有反應。所以出現後主動捲到影片位置。
+  // 可視範圍之外，看起來像沒有反應。所以每次播放都主動捲到影片位置。
+  //
+  // 用瞬間捲動而非 smooth：重播時 iframe 會跟著重新掛載，內容一變動就會
+  // 中斷進行中的平滑捲動，捲到一半停住等於沒反應。手機上這段距離可達
+  // 三千像素，瞬間跳到位也比慢慢捲清楚。
   useEffect(() => {
-    if (!showVideo || !videoRef.current) return;
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    videoRef.current.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-  }, [showVideo, inlineVideoId]);
+    if (!showVideo) return;
+    videoRef.current?.scrollIntoView({ block: 'start' });
+  }, [showVideo, inlineVideoId, playToken]);
 
   // Compute available alphabets and decades based on data
   const availableLetters = useMemo(() => {
@@ -104,12 +117,10 @@ const Repertoire: React.FC = () => {
         const url = new URL(anchor.href);
         if (url.hostname.includes('youtube.com') && url.searchParams.get('v')) {
           e.preventDefault();
-          setInlineVideoId(url.searchParams.get('v'));
-          setShowVideo(true);
+          playVideo(url.searchParams.get('v'));
         } else if (url.hostname === 'youtu.be') {
           e.preventDefault();
-          setInlineVideoId(url.pathname.substring(1));
-          setShowVideo(true);
+          playVideo(url.pathname.substring(1));
         }
       } catch (err) {
         // Ignore invalid URLs
@@ -308,6 +319,7 @@ const Repertoire: React.FC = () => {
                     setSelectedSong(null);
                     setShowVideo(false);
                     setInlineVideoId(null);
+                    setPlayToken(0);
                   }}
                   className="p-2 rounded-full hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
                 >
@@ -320,6 +332,7 @@ const Repertoire: React.FC = () => {
                 {showVideo && (inlineVideoId || selectedSong.youtubeId) && (
                   <div ref={videoRef} className="aspect-video w-full rounded-xl overflow-hidden bg-black mb-6 border border-white/10 shadow-lg scroll-mt-2">
                     <iframe
+                      key={playToken}
                       src={`https://www.youtube.com/embed/${inlineVideoId || selectedSong.youtubeId}?autoplay=1${!inlineVideoId && selectedSong.startTime ? `&start=${selectedSong.startTime}` : ''}${!inlineVideoId && selectedSong.endTime ? `&end=${selectedSong.endTime}` : ''}`}
                       className="w-full h-full border-0"
                       allow="autoplay; encrypted-media; fullscreen"
@@ -351,10 +364,7 @@ const Repertoire: React.FC = () => {
                 {(selectedSong.youtubeId || selectedSong.videoLink) && (
                   selectedSong.youtubeId ? (
                     <button
-                      onClick={() => {
-                        setInlineVideoId(null);
-                        setShowVideo(true);
-                      }}
+                      onClick={() => playVideo(null)}
                       className="inline-flex items-center gap-2 px-5 py-2.5 bg-gold/20 hover:bg-gold/30 border border-gold/30 rounded-xl text-sm text-gold-light hover:text-white transition-all"
                     >
                       <Disc3 className="w-4 h-4" />
