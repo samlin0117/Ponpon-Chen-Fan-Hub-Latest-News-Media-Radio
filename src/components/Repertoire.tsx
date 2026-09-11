@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Music, Disc3, ExternalLink, Search, X, BookOpen, Calendar, Type } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
@@ -15,6 +15,16 @@ const Repertoire: React.FC = () => {
   const [selectedSong, setSelectedSong] = useState<RepertoireSong | null>(null);
   const [showVideo, setShowVideo] = useState(false);
   const [inlineVideoId, setInlineVideoId] = useState<string | null>(null);
+  const videoRef = useRef<HTMLDivElement>(null);
+
+  // 影片是插在彈窗內容區的最上方，但觸發它的「觀看演出」按鈕在頁尾、
+  // 內文連結也多半在下方——使用者按下去時通常已經往下捲，影片會落在
+  // 可視範圍之外，看起來像沒有反應。所以出現後主動捲到影片位置。
+  useEffect(() => {
+    if (!showVideo || !videoRef.current) return;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    videoRef.current.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+  }, [showVideo, inlineVideoId]);
 
   // Compute available alphabets and decades based on data
   const availableLetters = useMemo(() => {
@@ -308,7 +318,7 @@ const Repertoire: React.FC = () => {
               {/* Modal Body */}
               <div className="p-6 overflow-y-auto custom-scrollbar">
                 {showVideo && (inlineVideoId || selectedSong.youtubeId) && (
-                  <div className="aspect-video w-full rounded-xl overflow-hidden bg-black mb-6 border border-white/10 shadow-lg">
+                  <div ref={videoRef} className="aspect-video w-full rounded-xl overflow-hidden bg-black mb-6 border border-white/10 shadow-lg scroll-mt-2">
                     <iframe
                       src={`https://www.youtube.com/embed/${inlineVideoId || selectedSong.youtubeId}?autoplay=1${!inlineVideoId && selectedSong.startTime ? `&start=${selectedSong.startTime}` : ''}${!inlineVideoId && selectedSong.endTime ? `&end=${selectedSong.endTime}` : ''}`}
                       className="w-full h-full border-0"
