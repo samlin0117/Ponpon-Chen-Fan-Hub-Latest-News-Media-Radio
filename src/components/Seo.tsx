@@ -58,9 +58,10 @@ export default function Seo({ lang }: { lang: Language }) {
   useEffect(() => {
     const path = pathname !== '/' && pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
     const page = PAGES[path]?.[lang] ?? PAGES['/'][lang];
-    const isHome = path === '/';
 
-    const title = isHome ? page.title : `${page.title}｜${SITE_NAME[lang]}`;
+    // pages.json 存的就是完整標題。每頁自行決定要不要帶站名、帶多長，
+    // 才能把 Google 有限的顯示寬度留給真正有搜尋價值的字。
+    const title = page.title;
     // canonical 必須指向「自己這個語言」的網址，否則等於告訴 Google
     // 英日文版本只是中文版的複本，該語言就永遠不會被單獨收錄。
     const canonical = `${SITE_URL}${buildPath(lang, path)}`;

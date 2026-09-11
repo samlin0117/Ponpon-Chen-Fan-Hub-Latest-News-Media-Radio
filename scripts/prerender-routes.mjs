@@ -96,7 +96,7 @@ for (const lang of LANGS) {
     const meta = byLang[lang];
     const isHome = route === '/';
     const url = `${siteUrl}${buildPath(lang, route)}`;
-    const title = isHome ? meta.title : `${meta.title}｜${siteName[lang]}`;
+    const title = meta.title; // pages.json 存的就是完整標題，不再自動附加站名
 
     let html = template;
     html = replaceHtmlLang(html, htmlLang[lang]);
