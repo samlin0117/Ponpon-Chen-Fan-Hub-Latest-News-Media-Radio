@@ -255,6 +255,26 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
             </>
           )}
 
+          {video.platform === 'douyin' && (
+            <>
+              {video.thumbnailUrl ? (
+                // object-top：抖音多為直式影片，卡片是橫的，置中裁切會剛好切在畫面中段。
+                <img
+                  src={video.thumbnailUrl}
+                  alt={localizedTitle}
+                  className="absolute inset-0 w-full h-full object-cover object-top opacity-70 group-hover:opacity-90 transition-opacity"
+                />
+              ) : (
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-black via-[#FE2C55]/10 to-[#161823]" />
+              )}
+              <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/5 transition-colors z-10">
+                <div className="z-20 w-16 h-16 bg-black rounded-full flex justify-center items-center shadow-2xl group-hover:scale-110 transition-transform duration-500 ring-2 ring-[#FE2C55]">
+                  <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                </div>
+              </div>
+            </>
+          )}
+
           {video.platform === 'tiktok' && (
             <>
               {video.thumbnailUrl ? (
@@ -284,6 +304,7 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
               if (video.platform === 'youtube') link = `https://www.youtube.com/watch?v=${video.embedUrl}${video.startTime ? `&t=${video.startTime}s` : ''}`;
               else if (video.platform === 'instagram') link = `https://www.instagram.com/p/${video.embedUrl}/`;
               else if (video.platform === 'threads') link = video.embedUrl;
+              else if (video.platform === 'douyin') link = `https://www.douyin.com/video/${video.embedUrl}`;
               else if (video.platform === 'facebook') {
                 const fbMatch = video.embedUrl.match(/href=([^&]+)/);
                 if (fbMatch) link = decodeURIComponent(fbMatch[1]);
@@ -361,6 +382,18 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
             )}
             {video.platform === 'tiktok' && (
               <TikTokEmbed videoId={video.embedUrl} />
+            )}
+            {video.platform === 'douyin' && (
+              // 抖音官方播放器：純 iframe，不需要外部 script，也不必登入。
+              // 播放器本身是直式的，橫式影片會自動加上黑邊置中。
+              <iframe
+                src={`https://open.douyin.com/player/video?vid=${video.embedUrl}&autoplay=0`}
+                className="w-full h-full"
+                style={{ border: 'none' }}
+                referrerPolicy="unsafe-url"
+                allow="autoplay; encrypted-media; fullscreen"
+                allowFullScreen
+              ></iframe>
             )}
           </div>
         </div>,

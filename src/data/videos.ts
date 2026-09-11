@@ -1,4 +1,4 @@
-export type Platform = 'youtube' | 'facebook' | 'instagram' | 'threads' | 'pbs' | 'tiktok';
+export type Platform = 'youtube' | 'facebook' | 'instagram' | 'threads' | 'pbs' | 'tiktok' | 'douyin';
 
 export interface VideoInfo {
   id: string;
@@ -17,6 +17,28 @@ export interface VideoInfo {
 }
 
 export const videoList: VideoInfo[] = [
+  {
+    "id": "v-dy-7582153248744721701",
+    "platform": "douyin",
+    "category": "p8",
+    "title": "How High The Moon - Scat 薩克斯風翻奏（爵士扒譜第二彈）@Decaf",
+    "date": "2025-12-10",
+    "embedUrl": "7582153248744721701",
+    "thumbnailUrl": "/douyin-how-high-the-moon-sax.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.douyin.com/video/7582153248744721701"
+  },
+  {
+    "id": "v-dy-7579565083682250085",
+    "platform": "douyin",
+    "category": "p8",
+    "title": "But Not For Me - Scat 薩克斯風翻奏 @Decaf",
+    "date": "2025-12-03",
+    "embedUrl": "7579565083682250085",
+    "thumbnailUrl": "/douyin-but-not-for-me-sax.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.douyin.com/video/7579565083682250085"
+  },
   {
     "id": "v-Pn5vo_CG1Tw",
     "platform": "youtube",
