@@ -1,103 +1,23 @@
-import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import { translations, Language } from '../locales';
+import { getLangFromPath, stripLangPrefix, buildPath } from '../i18n/route';
 
+/**
+ * 語言完全由網址路徑決定（/about = 中文、/en/about = 英文、/ja/about = 日文）。
+ *
+ * 因此同一次瀏覽期間語言是固定的，不需要 state、也不需要在各元件之間同步——
+ * 每個呼叫 useTranslation 的元件讀到的都是同一個路徑，自然得到同一個語言。
+ * 切換語言是整頁導向，這樣才能拿到該語言預先產生的靜態 HTML（含正確的 meta）。
+ */
 export const useTranslation = () => {
-  const location = useLocation();
-
-  const [lang, setLangState] = useState<Language>(() => {
-    const supportedLangs = ['zh', 'en', 'ja'];
-
-    // 1. URL 參數 (?lang=)
-    const queryParams = new URLSearchParams(window.location.search);
-    let urlLang = queryParams.get('lang');
-
-    // 相容 HashRouter (尋找 hash 裡面的 query string，如 #/?lang=en)
-    if (!urlLang && window.location.hash.includes('?')) {
-      const hashQueryString = window.location.hash.split('?')[1];
-      const hashParams = new URLSearchParams(hashQueryString);
-      urlLang = hashParams.get('lang');
-    }
-
-    let initialLang = 'zh'; // 預設值
-
-    if (urlLang && supportedLangs.includes(urlLang)) {
-      initialLang = urlLang;
-    } else {
-      // 2. localStorage
-      const saved = localStorage.getItem('app-lang');
-      if (saved && supportedLangs.includes(saved)) {
-        initialLang = saved;
-      } else {
-        // 3. 瀏覽器預設語言
-        const browserLang = navigator.language ? navigator.language.split('-')[0] : null;
-        if (browserLang && supportedLangs.includes(browserLang)) {
-          initialLang = browserLang;
-        }
-      }
-    }
-
-    localStorage.setItem('app-lang', initialLang);
-    return initialLang as Language;
-  });
-
-  // 自動同步：當 URL (location.search 或 location.hash) 變動時，更新語言
-  useEffect(() => {
-    const supportedLangs = ['zh', 'en', 'ja'];
-    
-    const queryParams = new URLSearchParams(window.location.search);
-    let urlLang = queryParams.get('lang');
-
-    if (!urlLang && window.location.hash.includes('?')) {
-      const hashQueryString = window.location.hash.split('?')[1];
-      const hashParams = new URLSearchParams(hashQueryString);
-      urlLang = hashParams.get('lang');
-    }
-
-    if (urlLang && supportedLangs.includes(urlLang) && urlLang !== lang) {
-      setLangState(urlLang as Language);
-      localStorage.setItem('app-lang', urlLang);
-    }
-  }, [location.search, location.hash, lang]);
-
-  // 同步其他組件的語言切換
-  useEffect(() => {
-    const handleLanguageChange = (e: Event) => {
-      const customEvent = e as CustomEvent;
-      if (customEvent.detail && customEvent.detail !== lang) {
-        setLangState(customEvent.detail as Language);
-      }
-    };
-    
-    window.addEventListener('languagechange', handleLanguageChange);
-    return () => {
-      window.removeEventListener('languagechange', handleLanguageChange);
-    };
-  }, [lang]);
+  const lang = getLangFromPath(window.location.pathname);
+  const t = translations[lang];
 
   const setLang = (newLang: Language) => {
-    setLangState(newLang);
+    if (newLang === lang) return;
+    const appPath = stripLangPrefix(window.location.pathname);
     localStorage.setItem('app-lang', newLang);
-    window.dispatchEvent(new CustomEvent('languagechange', { detail: newLang }));
-    
-    // 同步更新網址
-    const currentUrl = new URL(window.location.href);
-    if (currentUrl.searchParams.has('lang')) {
-        currentUrl.searchParams.set('lang', newLang);
-        window.history.replaceState({}, '', currentUrl.toString());
-    } else if (window.location.hash.includes('?lang=')) {
-        const newHash = window.location.hash.replace(/[?&]lang=[^&]*/, (match) => {
-           return match.replace(/=[^&]*/, `=${newLang}`);
-        });
-        window.location.hash = newHash;
-    } else {
-        // 若網址原本沒有 lang，可以在切換時自動加上去 (如果使用者有此需求，可選加入)
-        // currentUrl.searchParams.set('lang', newLang);
-        // window.history.replaceState({}, '', currentUrl.toString());
-    }
+    window.location.assign(buildPath(newLang, appPath) + window.location.search + window.location.hash);
   };
-
-  const t = translations[lang];
 
   // Title / description / canonical / hreflang 由 components/Seo.tsx 依「路由 + 語言」統一管理，
   // 這裡不再覆寫，否則所有頁面會共用同一組 meta 而被搜尋引擎判為重複內容。

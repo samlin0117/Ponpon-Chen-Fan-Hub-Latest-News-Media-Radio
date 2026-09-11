@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { Language } from '../locales';
 
 import seoData from '../seo/pages.json';
+import { buildPath } from '../i18n/route';
 
 const { siteUrl: SITE_URL, ogImage: DEFAULT_OG_IMAGE } = seoData;
 const HTML_LANG = seoData.htmlLang as Record<Language, string>;
@@ -60,7 +61,9 @@ export default function Seo({ lang }: { lang: Language }) {
     const isHome = path === '/';
 
     const title = isHome ? page.title : `${page.title}｜${SITE_NAME[lang]}`;
-    const canonical = `${SITE_URL}${isHome ? '/' : path}`;
+    // canonical 必須指向「自己這個語言」的網址，否則等於告訴 Google
+    // 英日文版本只是中文版的複本，該語言就永遠不會被單獨收錄。
+    const canonical = `${SITE_URL}${buildPath(lang, path)}`;
 
     document.documentElement.lang = HTML_LANG[lang];
     document.title = title;
@@ -84,12 +87,12 @@ export default function Seo({ lang }: { lang: Language }) {
 
     setLink('canonical', canonical);
 
-    // 同一路徑的三語版本互指，避免被當成重複內容
-    const base = `${SITE_URL}${isHome ? '/' : path}`;
-    setLink('alternate', `${base}?lang=zh`, 'zh-Hant');
-    setLink('alternate', `${base}?lang=en`, 'en');
-    setLink('alternate', `${base}?lang=ja`, 'ja');
-    setLink('alternate', base, 'x-default');
+    // 同一頁的三個語言版本互指。每個版本都是自我 canonical，
+    // hreflang 才會被 Google 採用（canonical 若指向別的語言，hreflang 會被忽略）。
+    setLink('alternate', `${SITE_URL}${buildPath('zh', path)}`, 'zh-Hant');
+    setLink('alternate', `${SITE_URL}${buildPath('en', path)}`, 'en');
+    setLink('alternate', `${SITE_URL}${buildPath('ja', path)}`, 'ja');
+    setLink('alternate', `${SITE_URL}${buildPath('zh', path)}`, 'x-default');
   }, [pathname, lang]);
 
   return null;

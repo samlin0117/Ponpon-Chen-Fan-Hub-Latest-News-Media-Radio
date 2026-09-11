@@ -9,6 +9,7 @@
       在 React 載入前先把網址整理好，避免畫面閃動：
       1. 還原 404.html 編碼過的深層路徑 (/?/news -> /news)
       2. 把舊的 HashRouter 連結轉成新路徑 (/#/news -> /news)
+      3. 把舊的 ?lang= 連結轉成語言路徑 (/about?lang=en -> /en/about)
     -->
     <script type="text/javascript">
       (function () {
@@ -20,23 +21,34 @@
             return s.replace(/~and~/g, '&');
           }).join('?');
           window.history.replaceState(null, '', l.pathname.slice(0, -1) + decoded + l.hash);
-          return;
         }
 
         // 2. 舊 HashRouter 連結轉址 (向後相容已分享出去的 #/ 網址)
         if (l.hash.indexOf('#/') === 0) {
-          var hashPath = l.hash.slice(1); // 保留開頭的 "/"，含可能的 ?lang=
-          window.history.replaceState(null, '', hashPath);
+          window.history.replaceState(null, '', l.hash.slice(1));
+        }
+
+        // 3. 舊的 ?lang=en / ?lang=ja 轉成語言路徑。
+        //    這裡必須真的重新載入，才能拿到該語言預先產生的靜態 HTML。
+        var path = l.pathname;
+        var seg = path.split('/')[1];
+        if (seg !== 'en' && seg !== 'ja') {
+          var m = l.search.match(/[?&]lang=(en|ja)\b/);
+          if (m) {
+            var rest = path === '/' ? '' : path.replace(/\/$/, '');
+            var query = l.search.replace(/([?&])lang=(zh|en|ja)\b&?/, '$1').replace(/[?&]$/, '');
+            l.replace('/' + m[1] + rest + (query === '?' ? '' : query) + l.hash);
+          }
         }
       })();
     </script>
     <title>Ponpon Chen (陳芃瑄) 粉絲典藏館 | Fan Hub & Archive | ポンポン・チェン 応援</title>
     <link rel="canonical" href="https://ponponchenarchive.com/" />
 
-    <!-- 三語版本對應 (由 SEO 元件依當前路徑動態更新) -->
-    <link rel="alternate" hreflang="zh-Hant" href="https://ponponchenarchive.com/?lang=zh" />
-    <link rel="alternate" hreflang="en" href="https://ponponchenarchive.com/?lang=en" />
-    <link rel="alternate" hreflang="ja" href="https://ponponchenarchive.com/?lang=ja" />
+    <!-- 三語版本對應 (build 時由 prerender 腳本寫死，執行期由 Seo 元件同步) -->
+    <link rel="alternate" hreflang="zh-Hant" href="https://ponponchenarchive.com/" />
+    <link rel="alternate" hreflang="en" href="https://ponponchenarchive.com/en" />
+    <link rel="alternate" hreflang="ja" href="https://ponponchenarchive.com/ja" />
     <link rel="alternate" hreflang="x-default" href="https://ponponchenarchive.com/" />
 
     <!-- Primary Meta Tags -->

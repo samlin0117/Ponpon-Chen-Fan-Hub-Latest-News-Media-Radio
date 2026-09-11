@@ -17,6 +17,7 @@ import { renderRichText } from './components/HoverImageLink';
 
 import { Language } from './locales';
 import { useTranslation } from './hooks/useTranslation';
+import { getBasename } from './i18n/route';
 import slide1Img from './assets/slide1.jpg';
 import slide2Img from './assets/slide2.jpg';
 
@@ -1535,8 +1536,11 @@ function MainContent() {
 }
 
 export default function App() {
+  // basename 讓 React Router 看不到語言前綴：在 /en/about 時 basename 是 '/en'，
+  // 應用內部的路徑仍是 '/about'，所有 <Link to="/about"> 會自動輸出 /en/about。
+  // 語言切換是整頁導向，所以這個值在單次瀏覽期間不會變。
   return (
-    <Router>
+    <Router basename={getBasename(window.location.pathname)}>
       <MainContent />
     </Router>
   );
