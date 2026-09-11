@@ -141,15 +141,15 @@
     "/endorsement": {
       "zh": {
         "title": "名人推薦｜Ponpon Chen (陳芃瑄) 粉絲典藏館",
-        "description": "包含諾貝爾經濟學獎得主 Paul Krugman 在內，各界名人對 Ponpon Chen (陳芃瑄) 音樂表現的公開讚譽與推薦。"
+        "description": "各界名人對 Ponpon Chen (陳芃瑄) 音樂表現的公開讚譽與推薦，收錄國際爵士樂手與各領域人士的評價。"
       },
       "en": {
         "title": "Notable Praise｜Ponpon Chen Fan Hub & Archive",
-        "description": "Public praise for Ponpon Chen from notable figures, including Nobel laureate economist Paul Krugman."
+        "description": "Public praise and recommendations for Ponpon Chen's music, from international jazz musicians and notable figures in other fields."
       },
       "ja": {
         "title": "著名人からの賛辞｜Ponpon Chen (陳芃瑄)",
-        "description": "ノーベル経済学賞受賞者ポール・クルーグマンをはじめ、各界の著名人からPonpon Chen (陳芃瑄) に寄せられた音楽への賛辞や評価を紹介します。"
+        "description": "各界の著名人からPonpon Chen (陳芃瑄) の音楽に寄せられた賛辞や評価を紹介。ジャズミュージシャンをはじめ、さまざまな分野の人々の声を収録しています。"
       }
     },
     "/quiz": {
