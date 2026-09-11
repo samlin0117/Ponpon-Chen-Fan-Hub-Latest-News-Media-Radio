@@ -6,7 +6,10 @@ import {defineConfig, loadEnv} from 'vite';
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, '.', '');
   return {
-    base: './', // Use relative paths for static assets so it works on any subpath (like GitHub Pages) and local dev
+    // 必須是絕對路徑。站台掛在自訂網域的根目錄 (public/CNAME)，而語言版本的頁面
+    // 位於巢狀路徑 (/ja/videos.html)；若用相對路徑，該頁會去抓 /ja/assets/... 而 404，
+    // 導致整頁空白。根目錄的頁面剛好正常，所以這種錯誤很容易漏測。
+    base: '/',
     plugins: [react(), tailwindcss()],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
