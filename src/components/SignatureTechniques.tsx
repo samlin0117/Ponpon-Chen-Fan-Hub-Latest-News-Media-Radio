@@ -191,18 +191,18 @@ export default function SignatureTechniques() {
         </motion.div>
 
         {/* Index / Navigation */}
-        <div className="mb-24">
+        <div className="mb-16 md:mb-24">
           <h3 className="text-sm font-mono text-gold/80 tracking-[0.2em] uppercase text-center mb-8 flex items-center justify-center gap-4">
             <div className="h-px w-12 bg-gold/30"></div>
             Signature Index
             <div className="h-px w-12 bg-gold/30"></div>
           </h3>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-4">
             {techniques.map((tech) => (
               <button
                 key={tech.id}
                 onClick={() => scrollToSection(tech.id)}
-                className={`flex items-center gap-3 px-6 py-4 rounded-2xl border transition-all duration-300 ${
+                className={`flex items-center gap-2 md:gap-3 px-3.5 py-2.5 md:px-6 md:py-4 rounded-xl md:rounded-2xl text-sm md:text-base border transition-all duration-300 [&_svg]:w-4 [&_svg]:h-4 md:[&_svg]:w-6 md:[&_svg]:h-6 ${
                   activeSection === tech.id 
                     ? 'bg-gold/20 border-gold text-gold-light scale-105 shadow-[0_0_20px_rgba(212,175,55,0.2)]' 
                     : 'bg-dark-lighter/50 border-white/10 text-gray-300 hover:border-gold/50 hover:text-white'
@@ -220,20 +220,20 @@ export default function SignatureTechniques() {
 
 
         {/* Detailed Sections */}
-        <div className="space-y-32">
+        <div className="space-y-20 md:space-y-32">
           {techniques.map((tech, index) => (
             <div key={tech.id} id={`section-${tech.id}`} className="scroll-mt-32">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="p-4 bg-gold/10 rounded-2xl text-gold">
-                  {tech.icon}
+              <div className="mb-8 md:mb-10">
+                <div className="flex items-center gap-3 md:gap-4">
+                  <div className="p-3 md:p-4 bg-gold/10 rounded-xl md:rounded-2xl text-gold shrink-0">
+                    {tech.icon}
+                  </div>
+                  <h2 className="text-2xl md:text-4xl font-serif text-white leading-snug">{tech.titleKey}</h2>
                 </div>
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-serif text-white">{tech.titleKey}</h2>
-                  <p className="text-gray-400 mt-2 whitespace-pre-line">{tech.descKey}</p>
-                </div>
+                <p className="text-gray-400 mt-4 md:mt-5 max-w-2xl leading-[1.8] whitespace-pre-line">{tech.descKey}</p>
               </div>
 
-              <div className={`grid ${tech.hideMasters ? 'grid-cols-1 max-w-4xl mx-auto' : 'lg:grid-cols-2'} gap-12 items-start`}>
+              <div className={`grid ${tech.hideMasters ? 'grid-cols-1 max-w-4xl' : 'lg:grid-cols-2'} gap-10 md:gap-12 items-start`}>
                 {/* Left Column: Historical Context */}
                 {!tech.hideMasters && (
                 <div className="space-y-6">
@@ -244,8 +244,8 @@ export default function SignatureTechniques() {
                   
                   {tech.masters.length > 0 ? (
                     tech.masters.map((master, mIdx) => (
-                      <div key={mIdx} className="flex gap-6 p-6 rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 transition-colors">
-                        <div className="w-20 h-20 rounded-full overflow-hidden shrink-0 border-2 border-white/10">
+                      <div key={mIdx} className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-5 sm:p-6 rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 transition-colors">
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden shrink-0 border-2 border-white/10">
                           {master.image ? (
                             <img src={master.image} alt={master.name} className="w-full h-full object-cover grayscale opacity-80" />
                           ) : (
@@ -255,12 +255,12 @@ export default function SignatureTechniques() {
                           )}
                         </div>
                         <div>
-                          <div className="flex items-baseline gap-3 mb-1">
+                          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
                             <h4 className="text-xl font-serif text-white">{master.name}</h4>
                             <span className="text-xs text-gold font-mono">{master.era}</span>
                           </div>
                           <span className="inline-block px-2 py-1 bg-white/10 rounded text-xs text-gray-300 mb-3">{master.trait}</span>
-                          <p className="text-gray-400 text-sm leading-relaxed mb-3">{master.desc}</p>
+                          <p className="text-gray-400 text-[15px] leading-[1.8] mb-3">{master.desc}</p>
                           {(master.videoId || master.videoHref) && (
                             <button 
                               onClick={() => setActiveVideoHref(master.videoHref || `https://www.youtube.com/embed/${master.videoId}?autoplay=1`)}
@@ -292,7 +292,7 @@ export default function SignatureTechniques() {
                       <h3 className="text-lg font-mono text-gold tracking-widest uppercase">{sigT.ponponInterpretation || 'Ponpon 的詮釋'}</h3>
                     </div>
 
-                    <p className="text-gray-200 text-lg leading-relaxed mb-8 relative z-10 whitespace-pre-line">
+                    <p className="text-gray-200 text-base md:text-lg leading-[1.8] mb-8 relative z-10 whitespace-pre-line">
                       {tech.ponpon.desc}
                     </p>
 
