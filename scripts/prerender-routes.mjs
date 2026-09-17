@@ -12,6 +12,7 @@
  *   dist/index.html      dist/about.html      ← 中文（預設語言，無前綴）
  *   dist/en.html         dist/en/about.html   ← 英文
  *   dist/ja.html         dist/ja/about.html   ← 日文
+ *   dist/jp.html         dist/jp/about.html   ← 轉址到 /ja（jp 常被誤當成日文前綴）
  *   dist/sitemap.xml     ← 依同一份資料產生，不需手動維護
  */
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
@@ -127,6 +128,34 @@ for (const lang of LANGS) {
       writeFile(`${lang}${route}.html`, html);
       count++;
     }
+  }
+}
+
+// ── /jp 轉址頁 ────────────────────────────────────────────────────────────────
+// 日文的語言代碼是 ja，但 /jp 很常被猜成日文版網址，Google 也曾回報 /jp/ 為 404。
+// 靜態主機沒辦法回 301，改用立即的 meta refresh（Google 視同永久轉址）+ canonical。
+// 這些頁面不列入 sitemap。
+// 轉址本身用站內路徑（本地 serve:dist 測試時不會跳到正式站），canonical 仍用完整網址。
+function redirectHtml(path) {
+  const href = escapeAttr(path);
+  return (
+    `<!doctype html>\n<html lang="ja">\n  <head>\n` +
+    `    <meta charset="UTF-8" />\n` +
+    `    <title>Redirecting…</title>\n` +
+    `    <link rel="canonical" href="${escapeAttr(siteUrl + path)}" />\n` +
+    `    <meta http-equiv="refresh" content="0; url=${href}" />\n` +
+    `    <script>location.replace(${JSON.stringify(path)} + location.search + location.hash);</script>\n` +
+    `  </head>\n  <body><a href="${href}">${href}</a></body>\n</html>\n`
+  );
+}
+
+for (const route of Object.keys(pages)) {
+  const html = redirectHtml(buildPath('ja', route));
+  if (route === '/') {
+    writeFile('jp.html', html);
+    writeFile('jp/index.html', html);
+  } else {
+    writeFile(`jp${route}.html`, html);
   }
 }
 

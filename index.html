@@ -10,6 +10,7 @@
       1. 還原 404.html 編碼過的深層路徑 (/?/news -> /news)
       2. 把舊的 HashRouter 連結轉成新路徑 (/#/news -> /news)
       3. 把舊的 ?lang= 連結轉成語言路徑 (/about?lang=en -> /en/about)
+      4. 把常見的誤用前綴 /jp 轉成日文的 /ja (/jp/videos -> /ja/videos)
     -->
     <script type="text/javascript">
       (function () {
@@ -39,6 +40,13 @@
             var query = l.search.replace(/([?&])lang=(zh|en|ja)\b&?/, '$1').replace(/[?&]$/, '');
             l.replace('/' + m[1] + rest + (query === '?' ? '' : query) + l.hash);
           }
+        }
+
+        // 4. /jp 不是語言代碼（日文是 ja），但很常被猜成日文版網址。
+        //    一樣要重新載入，才能拿到 /ja 預先產生的靜態 HTML。
+        if (seg === 'jp') {
+          var jaRest = path.slice(3).replace(/\/$/, '');
+          l.replace('/ja' + jaRest + l.search + l.hash);
         }
       })();
     </script>

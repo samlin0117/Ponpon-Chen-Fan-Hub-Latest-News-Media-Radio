@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X, Trophy, ArrowRight, Star, Disc3, Users, TrendingUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
 import FirebaseComments from './components/FirebaseComments';
 import { videoList, VideoInfo } from './data/videos';
 import VideoCard from './components/VideoCard';
@@ -1474,6 +1474,8 @@ function MainContent() {
               </div>
             </section>
           </>} />
+          {/* 打錯或已不存在的網址：回到目前語言的首頁，而不是只剩導覽列的空白頁 */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
 
