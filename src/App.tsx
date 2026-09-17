@@ -36,6 +36,7 @@ function MainContent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeVideoTab, setActiveVideoTab] = useState('p1');
   const [activeYearTab, setActiveYearTab] = useState('all');
+  const [activeSongTab, setActiveSongTab] = useState('all');
   const [activeTimelineVideo, setActiveTimelineVideo] = useState<{type: 'youtube' | 'facebook', url: string, videoId?: string} | null>(null);
   const location = useLocation();
 
@@ -1231,7 +1232,7 @@ function MainContent() {
                     ].map(tab => (
                       <button
                         key={tab.id}
-                        onClick={() => setActiveVideoTab(tab.id)}
+                        onClick={() => { setActiveVideoTab(tab.id); setActiveSongTab('all'); }}
                         className={`px-5 py-2.5 rounded-full whitespace-nowrap text-sm font-medium transition-all duration-300 ${activeVideoTab === tab.id
                             ? 'bg-gold text-dark shadow-lg shadow-gold/20 scale-105'
                             : 'bg-dark-lighter border border-white/10 text-gray-300 hover:text-gold hover:border-gold/50'
@@ -1278,6 +1279,36 @@ function MainContent() {
                     </motion.div>
                   )}
 
+                  {activeVideoTab === 'p8' && (() => {
+                    // 有兩支以上翻奏的歌曲才獨立成一顆按鈕，其餘歸到「其他歌曲」
+                    const fanVideos = videoList.filter(v => v.category === 'p8');
+                    const counts: { [song: string]: number } = {};
+                    fanVideos.forEach(v => { if (v.song) counts[v.song] = (counts[v.song] || 0) + 1; });
+                    const songs = Object.keys(counts).filter(song => counts[song] >= 2).sort((a, b) => counts[b] - counts[a]);
+                    const otherCount = fanVideos.filter(v => !v.song || !songs.includes(v.song)).length;
+                    const tabs = [
+                      { id: 'all', label: (t.videos as any).filterAllSongs, count: fanVideos.length },
+                      ...songs.map(song => ({ id: song, label: song, count: counts[song] })),
+                      ...(otherCount ? [{ id: 'other', label: (t.videos as any).otherSongs, count: otherCount }] : [])
+                    ];
+                    return (
+                      <div className="flex flex-wrap gap-2 md:gap-3 pb-4 mb-8 w-full justify-start">
+                        {tabs.map(tab => (
+                          <button
+                            key={tab.id}
+                            onClick={() => setActiveSongTab(tab.id)}
+                            className={`px-4 py-2 rounded-full whitespace-nowrap text-xs md:text-sm font-medium transition-all duration-300 ${activeSongTab === tab.id
+                                ? 'bg-white/20 text-white shadow-lg'
+                                : 'bg-dark-lighter border border-white/10 text-gray-400 hover:text-white hover:border-white/30'
+                              }`}
+                          >
+                            {tab.label} <span className="opacity-60">({tab.count})</span>
+                          </button>
+                        ))}
+                      </div>
+                    );
+                  })()}
+
                   <div className="mb-16">
                     {(() => {
                       let filtered = videoList
@@ -1290,6 +1321,16 @@ function MainContent() {
                           if (activeYearTab === 'before2020') return year <= 2020;
                           return year.toString() === activeYearTab;
                         });
+                      }
+
+                      if (activeVideoTab === 'p8' && activeSongTab !== 'all') {
+                        const songCounts: { [song: string]: number } = {};
+                        videoList.filter(v => v.category === 'p8' && v.song).forEach(v => {
+                          songCounts[v.song!] = (songCounts[v.song!] || 0) + 1;
+                        });
+                        filtered = activeSongTab === 'other'
+                          ? filtered.filter(v => !v.song || songCounts[v.song] < 2)
+                          : filtered.filter(v => v.song === activeSongTab);
                       }
 
                       // Only group by year for 'p1' (Live & Music Works)

@@ -1114,7 +1114,9 @@
     "p7": "コンテスト＆番組出演",
     "p8": "ファンカバー＆トリビュート",
     "filterAllYears": "すべての年",
-    "before2020": "2020年以前"
+    "before2020": "2020年以前",
+    "filterAllSongs": "すべての曲",
+    "otherSongs": "その他の曲"
   },
   "links": {
     "title": "フォローする",
