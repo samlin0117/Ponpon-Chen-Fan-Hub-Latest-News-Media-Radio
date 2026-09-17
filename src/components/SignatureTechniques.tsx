@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Mic2, Music, Wind, Radio, MessageSquare, PlayCircle, Star, Info, Youtube, History, X, Shuffle } from 'lucide-react';
+import { Mic2, Music, Wind, Radio, MessageSquare, PlayCircle, Star, Info, Youtube, History, X, Shuffle, Play, ArrowUp } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 
 interface Master {
@@ -40,6 +40,20 @@ export default function SignatureTechniques() {
   
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [activeVideoHref, setActiveVideoHref] = useState<string | null>(null);
+  // Embeds load only after a click, so the page doesn't pull in every YouTube player up front
+  const [playingVideos, setPlayingVideos] = useState<Set<string>>(new Set());
+  const indexRef = useRef<HTMLDivElement>(null);
+  const [showBackToIndex, setShowBackToIndex] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const index = indexRef.current;
+      if (index) setShowBackToIndex(index.getBoundingClientRect().bottom < 0);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   // Master images (Using YouTube thumbnails or Wikipedia placeholders)
   const masterImages = {
@@ -191,7 +205,7 @@ export default function SignatureTechniques() {
         </motion.div>
 
         {/* Index / Navigation */}
-        <div className="mb-16 md:mb-24">
+        <div ref={indexRef} className="mb-16 md:mb-24 scroll-mt-24">
           <h3 className="text-sm font-mono text-gold/80 tracking-[0.2em] uppercase text-center mb-8 flex items-center justify-center gap-4">
             <div className="h-px w-12 bg-gold/30"></div>
             Signature Index
@@ -297,18 +311,43 @@ export default function SignatureTechniques() {
                     </p>
 
                     <div className="flex flex-col gap-6">
-                      {(tech.ponpon.videos || [{videoId: tech.ponpon.videoId, startTime: tech.ponpon.startTime, endTime: tech.ponpon.endTime}]).map((video, vIdx) => video.videoId ? (
-                        <div key={vIdx} className="relative aspect-video rounded-2xl overflow-hidden bg-black border border-white/10 group">
-                          <iframe 
-                            className="w-full h-full"
-                            src={`https://www.youtube.com/embed/${video.videoId}?start=${video.startTime || 0}${video.endTime ? `&end=${video.endTime}` : ''}`} 
-                            title="YouTube video player" 
-                            frameBorder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowFullScreen>
-                          </iframe>
-                        </div>
-                      ) : null)}
+                      {(tech.ponpon.videos || [{videoId: tech.ponpon.videoId, startTime: tech.ponpon.startTime, endTime: tech.ponpon.endTime}]).map((video, vIdx) => {
+                        if (!video.videoId) return null;
+                        const key = `${tech.id}-${vIdx}`;
+                        return (
+                          <div key={vIdx} className="relative aspect-video rounded-2xl overflow-hidden bg-black border border-white/10 group">
+                            {playingVideos.has(key) ? (
+                              <iframe 
+                                className="w-full h-full"
+                                src={`https://www.youtube.com/embed/${video.videoId}?autoplay=1&start=${video.startTime || 0}${video.endTime ? `&end=${video.endTime}` : ''}`} 
+                                title="YouTube video player" 
+                                frameBorder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowFullScreen>
+                              </iframe>
+                            ) : (
+                              <button
+                                type="button"
+                                onClick={() => setPlayingVideos(prev => new Set(prev).add(key))}
+                                aria-label={`Play: ${tech.titleKey}`}
+                                className="absolute inset-0 w-full h-full"
+                              >
+                                <img
+                                  src={`https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`}
+                                  alt=""
+                                  loading="lazy"
+                                  className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity"
+                                />
+                                <span className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/5 transition-colors">
+                                  <span className="w-16 h-16 rounded-full flex justify-center items-center shadow-2xl group-hover:scale-110 transition-transform duration-500 bg-red-600/90 shadow-red-600/30">
+                                    <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                                  </span>
+                                </span>
+                              </button>
+                            )}
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
@@ -317,6 +356,23 @@ export default function SignatureTechniques() {
           ))}
         </div>
       </div>
+
+      {/* Back to index */}
+      <AnimatePresence>
+        {showBackToIndex && (
+          <motion.button
+            type="button"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 12 }}
+            onClick={() => indexRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+            aria-label="Back to Signature Index"
+            className="fixed right-4 md:right-8 bottom-[calc(1rem+env(safe-area-inset-bottom,0px))] md:bottom-8 z-40 p-3 md:p-4 rounded-full bg-dark-lighter/90 backdrop-blur-md border border-gold/40 text-gold shadow-2xl hover:bg-gold/20 hover:border-gold transition-colors"
+          >
+            <ArrowUp className="w-5 h-5 md:w-6 md:h-6" />
+          </motion.button>
+        )}
+      </AnimatePresence>
 
       {/* Video Modal */}
       <AnimatePresence>
