@@ -61,6 +61,26 @@ export const videoList: VideoInfo[] = [
     "isFeatured": false
   },
   {
+    "id": "v-YF45zI5wSJ8",
+    "platform": "youtube",
+    "category": "p2",
+    "title": "\"Skylark\" —— Ponpon",
+    "date": "2026-09-13",
+    "embedUrl": "YF45zI5wSJ8",
+    "thumbnailUrl": "https://i.ytimg.com/vi/YF45zI5wSJ8/maxresdefault.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": "v-WyWI5oTo5Qo",
+    "platform": "youtube",
+    "category": "p2",
+    "title": "\"Autumn Leaves\" —— Ponpon",
+    "date": "2026-09-07",
+    "embedUrl": "WyWI5oTo5Qo",
+    "thumbnailUrl": "https://i.ytimg.com/vi/WyWI5oTo5Qo/maxresdefault.jpg",
+    "isFeatured": false
+  },
+  {
     "id": "v-US8gXwg853s",
     "platform": "youtube",
     "category": "p2",
