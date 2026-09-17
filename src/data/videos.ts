@@ -1032,6 +1032,16 @@ export const videoList: VideoInfo[] = [
     "isFeatured": false
   },
   {
+    "id": "v-E0AEMj45UH4",
+    "platform": "youtube",
+    "category": "p8",
+    "title": "Ponpon Chen - \"World News Polka\" Guitar Solo Transcription @Sound Cat Movie",
+    "date": "2026-09-11",
+    "embedUrl": "E0AEMj45UH4",
+    "thumbnailUrl": "https://i.ytimg.com/vi/E0AEMj45UH4/maxresdefault.jpg",
+    "isFeatured": false
+  },
+  {
     "id": "v-nWc4pxQ_Z4E",
     "platform": "youtube",
     "category": "p8",
