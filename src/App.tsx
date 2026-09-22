@@ -37,7 +37,7 @@ function MainContent() {
   const [activeVideoTab, setActiveVideoTab] = useState('p1');
   const [activeYearTab, setActiveYearTab] = useState('all');
   const [activeSongTab, setActiveSongTab] = useState('all');
-  const [activeTimelineVideo, setActiveTimelineVideo] = useState<{type: 'youtube' | 'facebook', url: string, videoId?: string} | null>(null);
+  const [activeTimelineVideo, setActiveTimelineVideo] = useState<{type: 'youtube' | 'facebook', url: string, videoId?: string, startTime?: number, endTime?: number} | null>(null);
   const location = useLocation();
 
   const handleTimelineClick = (e: React.MouseEvent<HTMLSpanElement>) => {
@@ -462,6 +462,47 @@ function MainContent() {
                           <ArrowRight className="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" />
                           <span>{(t as any).endorsement?.article3_date} {(t as any).endorsement?.read_article} #3</span>
                         </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Tom Weir Card */}
+                  <div className="relative p-8 md:p-10 rounded-2xl border border-gold/20 bg-gradient-to-br from-gold/5 via-dark-lighter to-dark-lighter backdrop-blur-sm overflow-hidden group hover:border-gold/40 transition-all duration-500 mb-8">
+                    <div className="absolute top-4 right-6 text-gold/10 text-8xl font-serif select-none leading-none">"</div>
+                    <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/5 rounded-full blur-[80px] -ml-12 -mb-12"></div>
+
+                    <div className="relative z-10">
+                      <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gold/10 border border-gold/30 rounded-full mb-6">
+                        <Music className="w-3.5 h-3.5 text-gold" />
+                        <span className="text-xs font-mono text-gold-light tracking-[0.2em] uppercase">{(t as any).endorsement?.tom_subtitle}</span>
+                      </div>
+
+                      <div className="mb-5">
+                        <h3 className="text-2xl md:text-3xl font-serif text-white mb-1">{(t as any).endorsement?.tom_name}</h3>
+                        <p className="text-sm text-gold/80 tracking-widest uppercase">{(t as any).endorsement?.tom_title}</p>
+                      </div>
+
+                      <p className="text-gray-300 leading-relaxed text-base md:text-lg font-light mb-8 text-left">
+                        {(t as any).endorsement?.tom_desc}
+                      </p>
+
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        {/* 和音樂推手一樣只播 Tom 說 Visual Jazz 的片段（95–108 秒） */}
+                        <button
+                          type="button"
+                          onClick={() => setActiveTimelineVideo({ type: 'youtube', url: 'https://www.youtube.com/watch?v=aswtSPQCcOU', videoId: 'aswtSPQCcOU', startTime: 95, endTime: 108 })}
+                          className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/10 rounded-xl text-sm text-gray-300 hover:text-gold hover:border-gold/50 transition-all duration-300 group/link"
+                        >
+                          <ArrowRight className="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" />
+                          <span>{(t as any).endorsement?.tom_date} {(t as any).endorsement?.watch_interview}</span>
+                        </button>
+                        <Link
+                          to="/mentors"
+                          className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/10 rounded-xl text-sm text-gray-300 hover:text-gold hover:border-gold/50 transition-all duration-300 group/link"
+                        >
+                          <Users className="w-4 h-4" />
+                          <span>{(t as any).endorsement?.tom_story}</span>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -1549,7 +1590,7 @@ function MainContent() {
               <div className="relative aspect-video w-full bg-black">
                 {activeTimelineVideo.type === 'youtube' ? (
                   <iframe
-                    src={`https://www.youtube.com/embed/${activeTimelineVideo.videoId}?autoplay=1`}
+                    src={`https://www.youtube.com/embed/${activeTimelineVideo.videoId}?autoplay=1${activeTimelineVideo.startTime ? `&start=${activeTimelineVideo.startTime}` : ''}${activeTimelineVideo.endTime ? `&end=${activeTimelineVideo.endTime}` : ''}`}
                     className="absolute inset-0 w-full h-full border-0"
                     allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
                     allowFullScreen
