@@ -100,24 +100,21 @@ function FbVideoPlayer({ video, isFbVertical }: { video: VideoInfo; isFbVertical
   );
 }
 
-// TikTok 官方 blockquote embed：每次開啟都重新注入，確保 embed.js 會處理到新的 blockquote
+// TikTok 官方 iframe 播放器 (player/v1)。
+// 之前用的是 blockquote + embed.js：桌機常常只剩黑畫面，手機則是自動靜音播放且無法解除靜音。
+// 改成官方播放器後，由使用者自己按播放（autoplay=0），聲音才不會被瀏覽器擋掉。
 function TikTokEmbed({ videoId }: { videoId: string }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      containerRef.current.innerHTML = `<blockquote class="tiktok-embed" cite="https://www.tiktok.com/video/${videoId}" data-video-id="${videoId}" style="max-width: 605px;min-width: 325px;"><section></section></blockquote>`;
-    }
-    const script = document.createElement('script');
-    script.src = 'https://www.tiktok.com/embed.js';
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      try { document.body.removeChild(script); } catch {}
-    };
-  }, [videoId]);
-
-  return <div ref={containerRef} className="w-full h-full flex justify-center items-center overflow-y-auto" />;
+  return (
+    <div className="w-full h-full flex justify-center items-center">
+      <iframe
+        src={`https://www.tiktok.com/player/v1/${videoId}?autoplay=0&music_info=1&description=1&controls=1&volume_control=1&fullscreen_button=1`}
+        className="h-full aspect-[9/16] max-w-full mx-auto"
+        style={{ border: 'none' }}
+        allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </div>
+  );
 }
 
 export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
