@@ -27,13 +27,15 @@
   "followerGrowth": {
     "title": "Instagram Follower Growth",
     "current": "Followers",
+    "totalLabel": "Total followers",
+    "monthlyGain": "Gained that month",
     "posts": "Posts",
     "following": "Following",
     "avgPerRecord": "Avg gain / day",
     "keyMoments": "Key moments",
     "updated": "Updated",
     "source": "Source",
-    "note": "Follower counts are recorded once a month. August 2026 is shown daily to capture the breakout month."
+    "note": "Each bar is the follower count at the end of that month; the brighter top segment is what was gained during the month. The first bar is the end-of-July baseline."
   },
   "hero": {
     "title": "Ponpon Chen",
@@ -375,7 +377,7 @@
       {
         "date": "2026.08.31",
         "title": "New \"IG Follower Growth\" chart",
-        "content": "Added an \"IG Follower Growth\" filter on the Milestones page — an interactive chart tracking Ponpon's Instagram follower count since August 2026. August is shown as daily data, capturing the breakout month from roughly 38K to 48K with key moments annotated; from September onward the count is recorded once a month."
+        "content": "Added an \"IG Follower Growth\" filter on the Milestones page — a monthly bar chart tracking Ponpon's Instagram following. Each bar is the follower count at the end of that month, with the brighter top segment showing how many were gained during the month and the growth rate; the series starts from the end of July 2026. August 2026 was the breakout month, going from roughly 38K to 48K after the \"How High The Moon\" short went viral, and key moments are explained below the chart."
       },
       {
         "date": "2026.08.24",

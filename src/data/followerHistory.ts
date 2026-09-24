@@ -13,6 +13,9 @@ export interface FollowerDataPoint {
 }
 
 export const followerHistory: FollowerDataPoint[] = [
+  // 七月底的基準點。Social Blade 免費版只保留最近 31 天，查不到 7/31 當天的數字，
+  // 這裡沿用 8/1 的 38,083 當作七月底的水位（柱狀圖的第一根柱子）。
+  { date: '2026-07-31', followers: 38083 },
   { date: '2026-08-01', followers: 38083 },
   { date: '2026-08-02', followers: 38151 },
   { date: '2026-08-03', followers: 38231 },

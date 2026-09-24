@@ -1,14 +1,12 @@
 import React, { useMemo, useState } from 'react';
 import { motion } from 'motion/react';
-import { Instagram, TrendingUp, ExternalLink, Flag } from 'lucide-react';
+import { Instagram, ExternalLink, Flag } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import { followerHistory, followerProfile, FollowerDataPoint } from '../data/followerHistory';
 
 const VIEW_W = 820;
 const VIEW_H = 360;
-const PAD = { top: 28, right: 26, bottom: 46, left: 62 };
-
-const toMs = (d: string) => new Date(d + 'T00:00:00Z').getTime();
+const PAD = { top: 34, right: 26, bottom: 46, left: 62 };
 
 const FollowerGrowth: React.FC = () => {
   const { t, lang } = useTranslation();
@@ -17,10 +15,7 @@ const FollowerGrowth: React.FC = () => {
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
 
   const data = followerHistory;
-  const first = data[0];
   const last = data[data.length - 1];
-  const gained = last.followers - first.followers;
-  const gainedPct = Math.round((gained / first.followers) * 1000) / 10;
 
   const locale = lang === 'zh' ? 'zh-TW' : lang === 'ja' ? 'ja-JP' : 'en-US';
   const nf = useMemo(() => new Intl.NumberFormat(locale), [locale]);
@@ -31,80 +26,79 @@ const FollowerGrowth: React.FC = () => {
     return n[lang as 'zh' | 'en' | 'ja'] || n.zh || n.en || n.ja || '';
   };
 
-  const { points, xTicks, yTicks, areaPath, linePath, xMin, xSpan, yMin, ySpan } = useMemo(() => {
-    const xs = data.map((d) => toMs(d.date));
-    const ys = data.map((d) => d.followers);
-    const xMin = Math.min(...xs);
-    const xMax = Math.max(...xs);
-    const xSpan = Math.max(1, xMax - xMin);
+  // 以「月」為單位彙整：每個月取當月最後一筆當作月底總粉絲數，
+  // 當月新增 = 本月底 − 上月底（第一個月則用當月第一筆當基準）。
+  const months = useMemo(() => {
+    const byMonth = new Map<string, FollowerDataPoint[]>();
+    data.forEach((d) => {
+      const key = d.date.slice(0, 7);
+      if (!byMonth.has(key)) byMonth.set(key, []);
+      byMonth.get(key)!.push(d);
+    });
 
-    const rawMin = Math.min(...ys);
-    const rawMax = Math.max(...ys);
-    const yMin = Math.max(0, Math.floor((rawMin - (rawMax - rawMin) * 0.15) / 1000) * 1000);
-    const yMax = Math.ceil((rawMax + (rawMax - rawMin) * 0.12) / 1000) * 1000;
-    const ySpan = Math.max(1, yMax - yMin);
+    const keys = Array.from(byMonth.keys()).sort();
+    let prevTotal: number | null = null;
 
+    return keys.map((key) => {
+      const rows = byMonth.get(key)!;
+      const end = rows[rows.length - 1];
+      const base = prevTotal ?? rows[0].followers;
+      const gain = Math.max(0, end.followers - base);
+      prevTotal = end.followers;
+      return {
+        key,
+        date: end.date,
+        total: end.followers,
+        base: end.followers - gain,
+        gain,
+        notes: rows.filter((r) => noteText(r.note)).map((r) => ({ date: r.date, text: noteText(r.note) })),
+      };
+    });
+  }, [data, lang]);
+
+  const { bars, yTicks } = useMemo(() => {
     const plotW = VIEW_W - PAD.left - PAD.right;
     const plotH = VIEW_H - PAD.top - PAD.bottom;
-    const sx = (ms: number) => PAD.left + ((ms - xMin) / xSpan) * plotW;
-    const sy = (v: number) => PAD.top + plotH - ((v - yMin) / ySpan) * plotH;
+    const yMax = Math.ceil((Math.max(...months.map((m) => m.total)) * 1.12) / 5000) * 5000;
+    const sy = (v: number) => PAD.top + plotH - (v / yMax) * plotH;
 
-    const points = data.map((d) => ({ ...d, cx: sx(toMs(d.date)), cy: sy(d.followers) }));
+    const slot = plotW / months.length;
+    const barW = Math.min(88, slot * 0.52);
 
-    const linePath = points.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.cx.toFixed(1)},${p.cy.toFixed(1)}`).join(' ');
-    const areaPath =
-      `M${points[0].cx.toFixed(1)},${(PAD.top + plotH).toFixed(1)} ` +
-      points.map((p) => `L${p.cx.toFixed(1)},${p.cy.toFixed(1)}`).join(' ') +
-      ` L${points[points.length - 1].cx.toFixed(1)},${(PAD.top + plotH).toFixed(1)} Z`;
+    const bars = months.map((m, i) => {
+      const cx = PAD.left + slot * (i + 0.5);
+      return {
+        ...m,
+        i,
+        cx,
+        x: cx - barW / 2,
+        w: barW,
+        yTotal: sy(m.total),
+        yBase: sy(m.base),
+        baseH: Math.max(0, PAD.top + plotH - sy(m.base)),
+        gainH: Math.max(0, sy(m.base) - sy(m.total)),
+        pct: m.base > 0 ? Math.round((m.gain / m.base) * 1000) / 10 : 0,
+      };
+    });
 
-    // Y gridlines
     const yTicks = Array.from({ length: 5 }, (_, i) => {
-      const v = yMin + (ySpan / 4) * i;
+      const v = (yMax / 4) * i;
       return { v, y: sy(v) };
     });
 
-    // X ticks — 6 evenly spaced by time; format depends on span
-    const spanDays = xSpan / 86400000;
-    const fmtX = (ms: number) => {
-      const dt = new Date(ms);
-      if (spanDays <= 80) {
-        return lang === 'en'
-          ? dt.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', timeZone: 'UTC' })
-          : `${dt.getUTCMonth() + 1}/${dt.getUTCDate()}`;
-      }
-      return lang === 'en'
-        ? dt.toLocaleDateString('en-US', { year: '2-digit', month: 'short', timeZone: 'UTC' })
-        : `${dt.getUTCFullYear()}/${dt.getUTCMonth() + 1}`;
-    };
-    const tickCount = Math.min(6, data.length);
-    const xTicks = Array.from({ length: tickCount }, (_, i) => {
-      const ms = xMin + (xSpan / (tickCount - 1 || 1)) * i;
-      return { label: fmtX(ms), x: sx(ms) };
-    });
+    return { bars, yTicks };
+  }, [months]);
 
-    return { points, xTicks, yTicks, areaPath, linePath, xMin, xSpan, yMin, ySpan };
-  }, [data, lang]);
+  const active = hoverIdx != null ? bars[hoverIdx] : null;
 
-  const active = hoverIdx != null ? points[hoverIdx] : null;
+  const annotations = bars.flatMap((b) => b.notes.map((n) => ({ ...n, cx: b.cx, yTotal: b.yTotal })));
 
-  const annotations = points
-    .map((p, i) => ({ ...p, i, text: noteText(p.note) }))
-    .filter((p) => p.text);
-
-  const handleMove = (e: React.MouseEvent<SVGRectElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const ratio = (e.clientX - rect.left) / rect.width;
-    const ms = xMin + ratio * xSpan;
-    let nearest = 0;
-    let best = Infinity;
-    points.forEach((p, i) => {
-      const d = Math.abs(toMs(p.date) - ms);
-      if (d < best) {
-        best = d;
-        nearest = i;
-      }
-    });
-    setHoverIdx(nearest);
+  const fmtMonth = (key: string) => {
+    const [y, m] = key.split('-');
+    if (lang === 'en') {
+      return new Date(`${key}-01T00:00:00Z`).toLocaleDateString('en-US', { month: 'short', year: '2-digit', timeZone: 'UTC' });
+    }
+    return lang === 'ja' ? `${y}年${Number(m)}月` : `${y}/${Number(m)}`;
   };
 
   const fmtFullDate = (d: string) => {
@@ -140,24 +134,23 @@ const FollowerGrowth: React.FC = () => {
             </div>
             <div className="text-xs text-gray-500 mt-2 uppercase tracking-widest">{tr.current || 'Followers'}</div>
           </div>
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 self-start sm:self-auto">
-            <TrendingUp className="w-4 h-4" />
-            <span className="text-sm font-semibold">
-              +{nf.format(gained)} ({gainedPct > 0 ? '+' : ''}{gainedPct}%)
-            </span>
-          </div>
+        </div>
+
+        {/* Legend */}
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 mb-3 text-xs text-gray-400">
+          <span className="inline-flex items-center gap-2">
+            <span className="w-3 h-3 rounded-sm bg-[#c5a059]" />
+            {tr.totalLabel || 'Total followers'}
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <span className="w-3 h-3 rounded-sm bg-emerald-400" />
+            {tr.monthlyGain || 'Gained this month'}
+          </span>
         </div>
 
         {/* Chart */}
         <div className="relative w-full overflow-hidden">
           <svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} className="w-full h-auto" role="img" aria-label={tr.title || 'Follower growth chart'}>
-            <defs>
-              <linearGradient id="fgArea" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#c5a059" stopOpacity="0.35" />
-                <stop offset="100%" stopColor="#c5a059" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-
             {/* Y grid + labels */}
             {yTicks.map((tk, i) => (
               <g key={i}>
@@ -176,77 +169,108 @@ const FollowerGrowth: React.FC = () => {
               </g>
             ))}
 
-            {/* X labels */}
-            {xTicks.map((tk, i) => (
-              <text key={i} x={tk.x} y={VIEW_H - PAD.bottom + 22} textAnchor="middle" fontSize={12} fill="#8a8a8a" fontFamily="ui-monospace, monospace">
-                {tk.label}
-              </text>
+            {/* Bars: base = carried over, top = gained this month */}
+            {bars.map((b) => (
+              <g
+                key={b.key}
+                onMouseEnter={() => setHoverIdx(b.i)}
+                onMouseLeave={() => setHoverIdx(null)}
+                style={{ cursor: 'pointer' }}
+              >
+                <motion.rect
+                  x={b.x}
+                  width={b.w}
+                  fill="#c5a059"
+                  fillOpacity={active && active.i !== b.i ? 0.45 : 0.85}
+                  initial={{ y: PAD.top + (VIEW_H - PAD.top - PAD.bottom), height: 0 }}
+                  animate={{ y: b.yBase, height: b.baseH }}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
+                />
+                <motion.rect
+                  x={b.x}
+                  width={b.w}
+                  fill="#34d399"
+                  fillOpacity={active && active.i !== b.i ? 0.5 : 0.95}
+                  rx={3}
+                  initial={{ y: b.yBase, height: 0 }}
+                  animate={{ y: b.yTotal, height: b.gainH }}
+                  transition={{ duration: 0.8, delay: 0.25, ease: 'easeOut' }}
+                />
+                <text
+                  x={b.cx}
+                  y={b.yTotal - 10}
+                  textAnchor="middle"
+                  fontSize={12}
+                  fontWeight={700}
+                  fill="#e8cfa6"
+                  fontFamily="ui-monospace, monospace"
+                >
+                  {nf.format(b.total)}
+                </text>
+                {/* 綠色區段裡標出當月增加的比例 */}
+                {b.gain > 0 && (
+                  <text
+                    x={b.cx}
+                    y={b.yTotal + (b.gainH >= 26 ? b.gainH / 2 + 4 : b.gainH + 16)}
+                    textAnchor="middle"
+                    fontSize={11}
+                    fontWeight={700}
+                    fill={b.gainH >= 26 ? '#04301f' : '#34d399'}
+                    fontFamily="ui-monospace, monospace"
+                  >
+                    +{b.pct}%
+                  </text>
+                )}
+                <text x={b.cx} y={VIEW_H - PAD.bottom + 22} textAnchor="middle" fontSize={12} fill="#8a8a8a" fontFamily="ui-monospace, monospace">
+                  {fmtMonth(b.key)}
+                </text>
+                {/* 觸控 / 滑鼠感應範圍 */}
+                <rect
+                  x={b.cx - (VIEW_W - PAD.left - PAD.right) / bars.length / 2}
+                  y={PAD.top}
+                  width={(VIEW_W - PAD.left - PAD.right) / bars.length}
+                  height={VIEW_H - PAD.top - PAD.bottom}
+                  fill="transparent"
+                  onClick={() => setHoverIdx(hoverIdx === b.i ? null : b.i)}
+                />
+              </g>
             ))}
-
-            {/* Area + line */}
-            <path d={areaPath} fill="url(#fgArea)" />
-            <motion.path
-              d={linePath}
-              fill="none"
-              stroke="#c5a059"
-              strokeWidth={2.5}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 1.1, ease: 'easeInOut' }}
-            />
-
-            {/* Endpoint dot */}
-            <circle cx={last ? points[points.length - 1].cx : 0} cy={last ? points[points.length - 1].cy : 0} r={4} fill="#e8cfa6" />
 
             {/* Annotation flags */}
             {annotations.map((a, k) => (
-              <g key={`ann-${a.i}`}>
+              <g key={`ann-${k}`}>
                 <line
                   x1={a.cx}
                   x2={a.cx}
-                  y1={PAD.top + 4}
-                  y2={a.cy}
+                  y1={PAD.top - 20}
+                  y2={a.yTotal - 24}
                   stroke="#e8cfa6"
                   strokeOpacity={0.5}
                   strokeWidth={1}
                   strokeDasharray="3 3"
                 />
-                <circle cx={a.cx} cy={PAD.top + 4} r={9} fill="#0a0a0a" stroke="#e8cfa6" strokeWidth={1.5} />
-                <text x={a.cx} y={PAD.top + 8} textAnchor="middle" fontSize={11} fontWeight={700} fill="#e8cfa6" fontFamily="ui-monospace, monospace">
+                <circle cx={a.cx} cy={PAD.top - 20} r={9} fill="#0a0a0a" stroke="#e8cfa6" strokeWidth={1.5} />
+                <text x={a.cx} y={PAD.top - 16} textAnchor="middle" fontSize={11} fontWeight={700} fill="#e8cfa6" fontFamily="ui-monospace, monospace">
                   {k + 1}
                 </text>
               </g>
             ))}
 
-            {/* Hover marker */}
+            {/* Hover tooltip */}
             {active && (
-              <g>
-                <line x1={active.cx} x2={active.cx} y1={PAD.top} y2={VIEW_H - PAD.bottom} stroke="#c5a059" strokeOpacity={0.4} strokeWidth={1} />
-                <circle cx={active.cx} cy={active.cy} r={5} fill="#c5a059" stroke="#0a0a0a" strokeWidth={2} />
-                <g transform={`translate(${Math.min(Math.max(active.cx, PAD.left + 60), VIEW_W - PAD.right - 60)}, ${PAD.top + 6})`}>
-                  <rect x={-58} y={-2} width={116} height={44} rx={8} fill="#0a0a0a" stroke="#ffffff" strokeOpacity={0.12} />
-                  <text x={0} y={15} textAnchor="middle" fontSize={13} fontWeight={700} fill="#ffffff" fontFamily="ui-monospace, monospace">
-                    {nf.format(active.followers)}
-                  </text>
-                  <text x={0} y={32} textAnchor="middle" fontSize={10} fill="#9a9a9a" fontFamily="ui-monospace, monospace">
-                    {fmtFullDate(active.date)}
-                  </text>
-                </g>
+              <g transform={`translate(${Math.min(Math.max(active.cx, PAD.left + 64), VIEW_W - PAD.right - 64)}, ${Math.max(active.yTotal - 78, PAD.top)})`}>
+                <rect x={-62} y={0} width={124} height={56} rx={8} fill="#0a0a0a" stroke="#ffffff" strokeOpacity={0.12} />
+                <text x={0} y={19} textAnchor="middle" fontSize={13} fontWeight={700} fill="#ffffff" fontFamily="ui-monospace, monospace">
+                  {nf.format(active.total)}
+                </text>
+                <text x={0} y={36} textAnchor="middle" fontSize={11} fill="#34d399" fontFamily="ui-monospace, monospace">
+                  +{nf.format(active.gain)} ({active.pct > 0 ? '+' : ''}{active.pct}%)
+                </text>
+                <text x={0} y={50} textAnchor="middle" fontSize={10} fill="#9a9a9a" fontFamily="ui-monospace, monospace">
+                  {fmtMonth(active.key)}
+                </text>
               </g>
             )}
-
-            {/* Hover capture */}
-            <rect
-              x={PAD.left}
-              y={PAD.top}
-              width={VIEW_W - PAD.left - PAD.right}
-              height={VIEW_H - PAD.top - PAD.bottom}
-              fill="transparent"
-              onMouseMove={handleMove}
-              onMouseLeave={() => setHoverIdx(null)}
-            />
           </svg>
         </div>
 
@@ -259,7 +283,7 @@ const FollowerGrowth: React.FC = () => {
             </div>
             <ul className="space-y-2.5">
               {annotations.map((a, k) => (
-                <li key={`note-${a.i}`} className="flex gap-3 text-sm">
+                <li key={`note-${k}`} className="flex gap-3 text-sm">
                   <span className="shrink-0 w-5 h-5 rounded-full border border-gold/40 text-gold-light text-[11px] font-mono flex items-center justify-center mt-0.5">
                     {k + 1}
                   </span>
@@ -275,7 +299,7 @@ const FollowerGrowth: React.FC = () => {
 
         <p className="text-[11px] text-gray-600 mt-5 leading-relaxed">
           {tr.note ||
-            'Follower counts are recorded once a month. August 2026 is shown daily to capture the breakout.'}{' '}
+            'Each bar is the follower count at the end of that month; the brighter top segment is what was gained during the month.'}{' '}
           {tr.source || 'Source'}:{' '}
           <a
             href="https://socialblade.com/instagram/user/ponponofficial_"
