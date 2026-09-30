@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && out=$(GIT_TERMINAL_PROMPT=0 git pull --ff-only 2>&1) && echo \"[auto git pull] OK: $out\" || echo \"[auto git pull] FAILED: $out -- Before editing, run git status and resolve (pull and merge, never force-push).\"",
+            "timeout": 60,
+            "statusMessage": "Syncing with GitHub (git pull)..."
+          }
+        ]
+      }
+    ]
+  }
+}
