@@ -55,12 +55,13 @@ export const followerHistory: FollowerDataPoint[] = [
   { date: '2026-08-29', followers: 47875 },
   { date: '2026-08-30', followers: 48061 },
   { date: '2026-08-31', followers: 48148 },
+  { date: '2026-09-30', followers: 56060 },
 ];
 
 export const followerProfile = {
   handle: 'ponponofficial_',
   url: 'https://www.instagram.com/ponponofficial_/',
-  following: 943,
-  posts: 115,
-  lastUpdated: '2026-08-31',
+  following: 942,
+  posts: 119,
+  lastUpdated: '2026-09-30',
 };
