@@ -765,7 +765,7 @@ function MainContent() {
                         <img
                           src="/heavenraven-cover.JPG"
                           alt="News Article"
-                          className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-500"
+                          className="w-full h-full object-cover object-[center_15%] opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-500"
                           referrerPolicy="no-referrer"
                         />
                       </div>
