@@ -206,6 +206,7 @@ export const videoList: VideoInfo[] = [
     "title": "陳粒 · 奇妙能力歌/純字幕 【cover by-Ponpon陳芃瑄】",
     "date": "2019-08-07",
     "embedUrl": "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/ponpon0405/videos/353832705569724/&show_text=0&width=500",
+    "thumbnailUrl": "/fb-353832705569724.jpg",
     "isFeatured": false
   },
   {

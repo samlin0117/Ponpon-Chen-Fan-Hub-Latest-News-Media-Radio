@@ -204,7 +204,30 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
             </>
           )}
 
-          {video.platform === 'facebook' && (
+          {/* FB 影片有自訂封面時用自己的圖：FB 預覽會把直式封面硬拉成橫式（例如〈奇妙能力歌〉），
+              這裡改成完整顯示封面（object-contain），兩側用同一張圖模糊後補滿 */}
+          {video.platform === 'facebook' && video.thumbnailUrl && (
+            <>
+              <img
+                src={video.thumbnailUrl}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover blur-xl scale-110 opacity-60"
+              />
+              <img
+                src={video.thumbnailUrl}
+                alt={localizedTitle}
+                className="relative w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/5 transition-colors z-10">
+                <div className="z-20 w-16 h-16 bg-blue-600/80 rounded-full flex justify-center items-center shadow-[0_0_20px_rgba(37,99,235,0.5)] group-hover:scale-110 transition-transform">
+                  <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                </div>
+              </div>
+            </>
+          )}
+
+          {video.platform === 'facebook' && !video.thumbnailUrl && (
             <div className="w-full h-full flex justify-center items-center overflow-hidden relative pointer-events-none bg-black">
               <iframe
                 src={video.embedUrl.replace(/width=\d+/, isFbVertical ? 'width=316' : 'width=350')}
