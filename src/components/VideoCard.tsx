@@ -382,7 +382,8 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
                 ? <FbVideoPlayer video={video} isFbVertical={isFbVertical} />
                 : <iframe
                     src={`${video.embedUrl.replace(/width=\d+/, isFbVertical ? 'width=500' : 'width=550')}`}
-                    className={isFbVertical ? "h-full aspect-[9/16] max-w-full mx-auto" : "w-full h-full max-w-5xl mx-auto"}
+                    // 橫式：FB 播放器最寬約 1024px 且內容貼齊上緣，用 16:9 的高度包住它，才會在視窗中垂直置中
+                    className={isFbVertical ? "h-full aspect-[9/16] max-w-full mx-auto" : "w-full max-w-5xl aspect-video mx-auto"}
                     style={{ border: 'none', overflow: 'hidden' }}
                     scrolling="no"
                     frameBorder="0"
