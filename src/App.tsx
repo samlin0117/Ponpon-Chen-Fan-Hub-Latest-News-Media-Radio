@@ -684,6 +684,111 @@ function MainContent() {
                   className="flex flex-col gap-8"
                 >
                   <a
+                    href="https://partystar.media/73149"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block p-8 border border-white/10 rounded-2xl bg-dark-lighter hover:border-gold/50 transition-all duration-300 relative overflow-hidden"
+                  >
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
+                    <div className="flex flex-col md:flex-row gap-8 items-center md:items-start relative z-10">
+                      <div className="w-full md:w-1/3 aspect-video md:aspect-square rounded-xl overflow-hidden bg-black shrink-0 border border-white/5">
+                        <img
+                          src="https://i0.wp.com/partystar.media/wp-content/uploads/2026/10/%E6%BC%94%E5%87%BA%E5%98%89%E8%B3%93-Ponpon-2.jpg?fit=1621%2C1080&ssl=1"
+                          alt="News Article"
+                          className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-500"
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
+                      <div className="flex-1 text-left flex flex-col justify-center h-full py-2">
+                        <div className="flex items-center mb-4">
+                          <Globe className="w-4 h-4 text-gold mr-2" />
+                          <span className="text-xs font-mono text-gold-light tracking-widest">{t.news.source13}</span>
+                        </div>
+                        <h3 className="font-serif text-2xl mb-4 group-hover:text-gold transition-colors leading-snug">
+                          {t.news.article13}
+                        </h3>
+                        <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                          {t.news.article13Desc}
+                        </p>
+                        <div className="mt-auto flex items-center text-xs text-gray-300 uppercase tracking-wider">
+                          <span>{t.news.readMore}</span>
+                          <div className="ml-3 w-6 h-[1px] bg-gray-500 group-hover:bg-gold group-hover:w-10 transition-all duration-300"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a
+                    href="https://stars.udn.com/star/story/10092/9798632"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block p-8 border border-white/10 rounded-2xl bg-dark-lighter hover:border-gold/50 transition-all duration-300 relative overflow-hidden"
+                  >
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
+                    <div className="flex flex-col md:flex-row gap-8 items-center md:items-start relative z-10">
+                      <div className="w-full md:w-1/3 aspect-video md:aspect-square rounded-xl overflow-hidden bg-black shrink-0 border border-white/5">
+                        <img
+                          src="https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/t3/2026/10/06/35396081.jpg&M=1&s=Y&x=0&y=0&sw=1170&sh=780&sl=W&fw=800&exp=3600"
+                          alt="News Article"
+                          className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-500"
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
+                      <div className="flex-1 text-left flex flex-col justify-center h-full py-2">
+                        <div className="flex items-center mb-4">
+                          <Globe className="w-4 h-4 text-gold mr-2" />
+                          <span className="text-xs font-mono text-gold-light tracking-widest">{t.news.source15}</span>
+                        </div>
+                        <h3 className="font-serif text-2xl mb-4 group-hover:text-gold transition-colors leading-snug">
+                          {t.news.article15}
+                        </h3>
+                        <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                          {t.news.article15Desc}
+                        </p>
+                        <div className="mt-auto flex items-center text-xs text-gray-300 uppercase tracking-wider">
+                          <span>{t.news.readMore}</span>
+                          <div className="ml-3 w-6 h-[1px] bg-gray-500 group-hover:bg-gold group-hover:w-10 transition-all duration-300"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a
+                    href="https://news.nextapple.com/entertainment/20261006/4F2C740F6CBBBA7E9E84EAEA727FE1C4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group block p-8 border border-white/10 rounded-2xl bg-dark-lighter hover:border-gold/50 transition-all duration-300 relative overflow-hidden"
+                  >
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
+                    <div className="flex flex-col md:flex-row gap-8 items-center md:items-start relative z-10">
+                      <div className="w-full md:w-1/3 aspect-video md:aspect-square rounded-xl overflow-hidden bg-black shrink-0 border border-white/5">
+                        <img
+                          src="https://static-cdn.nextapple.tw/prod/2026-10/4F2C740F6CBBBA7E9E84EAEA727FE1C4/4d897bbf787a72a9bab2cf1f9ddf1848_1280.jpeg"
+                          alt="News Article"
+                          className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-500"
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
+                      <div className="flex-1 text-left flex flex-col justify-center h-full py-2">
+                        <div className="flex items-center mb-4">
+                          <Globe className="w-4 h-4 text-gold mr-2" />
+                          <span className="text-xs font-mono text-gold-light tracking-widest">{t.news.source14}</span>
+                        </div>
+                        <h3 className="font-serif text-2xl mb-4 group-hover:text-gold transition-colors leading-snug">
+                          {t.news.article14}
+                        </h3>
+                        <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                          {t.news.article14Desc}
+                        </p>
+                        <div className="mt-auto flex items-center text-xs text-gray-300 uppercase tracking-wider">
+                          <span>{t.news.readMore}</span>
+                          <div className="ml-3 w-6 h-[1px] bg-gray-500 group-hover:bg-gold group-hover:w-10 transition-all duration-300"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a
                     href="https://jazzguitartoday.com/2026/09/taiwianese-american-singer-and-guitarist-ponpon-chen/"
                     target="_blank"
                     rel="noopener noreferrer"

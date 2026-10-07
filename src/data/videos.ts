@@ -726,6 +726,16 @@ export const videoList: VideoInfo[] = [
 
 
   {
+    "id": "v-Ij3FLtfR8-0",
+    "platform": "youtube",
+    "category": "p3",
+    "title": "台灣女孩被國際看見! 陳芃瑄熱愛爵士樂「獨自闖美」受邀登ABC News片尾走紅｜TVBS新聞",
+    "date": "2026-10-06",
+    "embedUrl": "Ij3FLtfR8-0",
+    "thumbnailUrl": "https://i.ytimg.com/vi/Ij3FLtfR8-0/maxresdefault.jpg",
+    "isFeatured": false
+  },
+  {
     "id": "v-aSF8_wx4mhs",
     "platform": "youtube",
     "category": "p3",
