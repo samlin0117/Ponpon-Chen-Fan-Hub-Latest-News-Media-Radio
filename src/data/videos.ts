@@ -1037,6 +1037,16 @@ export const videoList: VideoInfo[] = [
     "isFeatured": false
   },
   {
+    "id": "v-threads-DeJkm99CQcn",
+    "platform": "threads",
+    "category": "p5",
+    "title": "Ponpon Chen｜If I Had You 吉他彈唱 @2026 臺北爵士音樂節記者會 (@dogcheep)",
+    "date": "2026-10-06",
+    "embedUrl": "https://www.threads.net/@dogcheep/post/DeJkm99CQcn",
+    "thumbnailUrl": "/threads-if-i-had-you-taipei-jazz.jpg",
+    "isFeatured": false
+  },
+  {
     "id": "v-threads-riverside-20241213",
     "platform": "threads",
     "category": "p5",
