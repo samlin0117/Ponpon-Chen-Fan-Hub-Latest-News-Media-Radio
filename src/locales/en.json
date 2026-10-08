@@ -1110,6 +1110,54 @@
         ],
         "correctAnswer": 2,
         "explanation": "In August 2026, as a guest of Frank Vignola at Birdland Jazz Club in New York, Ponpon performed the vocalese of Charlie Parker's 'Yardbird Suite' live for the first time, paying tribute to the legend. She spent about three months working through the solo word by word, and the studio duo version is now available on all streaming platforms."
+      },
+      {
+        "id": 53,
+        "question": "During her 2019 'Jungle Voice 2' appearance, Ponpon's opening went wrong because of a problem with her in-ear monitors. Which mentor stopped the performance and gave her a 'second chance'?",
+        "options": [
+          "Jam Hsiao(蕭敬騰)",
+          "Yoga Lin(林宥嘉)",
+          "David Tao(陶喆)",
+          "Tanya Chua(蔡健雅)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Yoga Lin noticed the in-ear problem right away, stopped the performance and checked on her equipment so she could reset and sing properly. Ponpon still says: 'Looking back, I'm really grateful to Yoga!'"
+      },
+      {
+        "id": 54,
+        "question": "What did 'Jungle Voice 2' mentor David Tao(陶喆) tell 17-year-old Ponpon that later gave her the confidence to chase her dream in the US?",
+        "options": [
+          "'There's no right answer in music'",
+          "'Youth is your capital'",
+          "'The stage is where you're made'",
+          "'Sing with your heart, not your strength'"
+        ],
+        "correctAnswer": 1,
+        "explanation": "She admits she didn't really understand it at 17. Only at 20, when she gave everything up and moved to Los Angeles alone to relearn jazz guitar, did it sink in: 'That line became my biggest source of confidence in chasing my dream!'"
+      },
+      {
+        "id": 55,
+        "question": "The Taipei show of Ponpon's first Asia tour, 'Ponpon ASIA TOUR 2026' (Oct 13, Riverside Live House Red House), was the only stop on the tour with a special guest. Who was the guest?",
+        "options": [
+          "Waa Wei(魏如萱)",
+          "9m88",
+          "YELLOW(黃宣)",
+          "Yoga Lin(林宥嘉)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Taipei stop was the only show on her first Asia tour with a special guest — she invited YELLOW(黃宣), a singer she admires, to join her on stage."
+      },
+      {
+        "id": 56,
+        "question": "Which four cities did Ponpon's first Asia tour, 'Ponpon ASIA TOUR 2026', visit?",
+        "options": [
+          "Taipei, Taichung, Singapore, Tokyo",
+          "Taipei, Kaohsiung, Hong Kong, Seoul",
+          "Taipei, Kaohsiung, Hong Kong, Tokyo",
+          "Taipei, Tainan, Hong Kong, Osaka"
+        ],
+        "correctAnswer": 2,
+        "explanation": "'Ponpon ASIA TOUR 2026' kicked off in October and visited Taipei, Kaohsiung, Hong Kong and Tokyo, in that order. The Taipei show was the only stop with a special guest, YELLOW(黃宣)."
       }
     ]
   },
