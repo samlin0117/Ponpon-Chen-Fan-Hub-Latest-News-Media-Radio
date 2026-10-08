@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X, Trophy, ArrowRight, Star, Disc3, Users, TrendingUp } from 'lucide-react';
+import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X, Trophy, ArrowRight, Star, Disc3, Users, TrendingUp, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
 import FirebaseComments from './components/FirebaseComments';
 import { videoList, VideoInfo } from './data/videos';
+import { taipeiJazz2026Coverage } from './data/pressCoverage';
 import VideoCard from './components/VideoCard';
 import VideoGroupCard from './components/VideoGroupCard';
 import QuizGame from './components/QuizGame';
@@ -787,6 +788,41 @@ function MainContent() {
                       </div>
                     </div>
                   </a>
+
+                  {/* 2026 臺北爵士音樂節記者會的其他報導：預設收合，只列媒體、標題、日期 */}
+                  <details className="group/more border border-white/10 rounded-2xl bg-dark-lighter overflow-hidden">
+                    <summary className="flex items-center justify-between gap-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden px-8 py-5 hover:bg-white/[0.02] transition-colors">
+                      <span className="flex items-start gap-3 min-w-0">
+                        <Globe className="w-4 h-4 text-gold shrink-0 mt-1.5" />
+                        <span className="flex flex-col gap-1 min-w-0">
+                          <span className="font-serif text-lg md:text-xl text-gray-200 leading-snug">{t.news.taipeiJazz2026Event}</span>
+                          <span className="text-xs font-mono text-gold-light/80">
+                            {t.news.moreCoverage}・{t.news.outletsCount.replace('{n}', String(taipeiJazz2026Coverage.length))}
+                          </span>
+                        </span>
+                      </span>
+                      <ChevronDown className="w-5 h-5 text-gray-400 shrink-0 transition-transform duration-300 group-open/more:rotate-180" />
+                    </summary>
+                    <div className="px-8 pb-6">
+                      <p className="text-xs text-gray-500 mb-3">{t.news.moreCoverageNote}</p>
+                      <ul className="divide-y divide-white/5">
+                        {taipeiJazz2026Coverage.map((item) => (
+                          <li key={item.url}>
+                            <a
+                              href={item.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group/item flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 py-3"
+                            >
+                              <span className="text-xs font-mono text-gold-light/90 sm:w-36 shrink-0">{item.outlet}</span>
+                              <span className="text-sm text-gray-300 group-hover/item:text-gold transition-colors leading-relaxed flex-1">{item.title}</span>
+                              <span className="text-[11px] font-mono text-gray-500 shrink-0">{item.date}</span>
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
 
                   <a
                     href="https://jazzguitartoday.com/2026/09/taiwianese-american-singer-and-guitarist-ponpon-chen/"
