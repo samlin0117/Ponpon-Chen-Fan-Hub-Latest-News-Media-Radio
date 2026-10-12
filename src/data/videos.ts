@@ -20,6 +20,28 @@ export interface VideoInfo {
 
 export const videoList: VideoInfo[] = [
   {
+    "id": "v-Zi_9KKCTmKY",
+    "platform": "youtube",
+    "category": "p1",
+    "title": "Ponpon Quintet｜2026 臺北爵士音樂節 完整演出 Full Concert (video by 阿興)",
+    "date": "2026-10-10",
+    "embedUrl": "Zi_9KKCTmKY",
+    "thumbnailUrl": "https://i.ytimg.com/vi/Zi_9KKCTmKY/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=Zi_9KKCTmKY"
+  },
+  {
+    "id": "v-btu_t-ghn0M",
+    "platform": "youtube",
+    "category": "p1",
+    "title": "Ponpon Quintet｜2026 臺北爵士音樂節 安可曲 Encore: How High The Moon (video by 阿興)",
+    "date": "2026-10-10",
+    "embedUrl": "btu_t-ghn0M",
+    "thumbnailUrl": "https://i.ytimg.com/vi/btu_t-ghn0M/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=btu_t-ghn0M"
+  },
+  {
     "id": "v-dy-7582153248744721701",
     "platform": "douyin",
     "category": "p8",
@@ -1035,6 +1057,66 @@ export const videoList: VideoInfo[] = [
     "embedUrl": "KemQ67OBJCk",
     "thumbnailUrl": "https://i.ytimg.com/vi/KemQ67OBJCk/maxresdefault.jpg",
     "isFeatured": false
+  },
+  {
+    "id": "v-SqDxrENHXsY",
+    "platform": "youtube",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 - How High The Moon (Steve Chen)",
+    "date": "2026-10-10",
+    "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
+    "embedUrl": "SqDxrENHXsY",
+    "thumbnailUrl": "https://i.ytimg.com/vi/SqDxrENHXsY/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=SqDxrENHXsY"
+  },
+  {
+    "id": "v-8iMOiYe4u50",
+    "platform": "youtube",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 - Yardbird Suite (Steve Chen)",
+    "date": "2026-10-10",
+    "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
+    "embedUrl": "8iMOiYe4u50",
+    "thumbnailUrl": "https://i.ytimg.com/vi/8iMOiYe4u50/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=8iMOiYe4u50"
+  },
+  {
+    "id": "v-mgrJHeY7xlw",
+    "platform": "youtube",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 - Destination Moon (Steve Chen)",
+    "date": "2026-10-10",
+    "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
+    "embedUrl": "mgrJHeY7xlw",
+    "thumbnailUrl": "https://i.ytimg.com/vi/mgrJHeY7xlw/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=mgrJHeY7xlw"
+  },
+  {
+    "id": "v-PmteBqxM9sw",
+    "platform": "youtube",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 - Take the A Train (Steve Chen)",
+    "date": "2026-10-10",
+    "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
+    "embedUrl": "PmteBqxM9sw",
+    "thumbnailUrl": "https://i.ytimg.com/vi/PmteBqxM9sw/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=PmteBqxM9sw"
+  },
+  {
+    "id": "v-sEBVir_7phE",
+    "platform": "youtube",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 - No More Blues (Steve Chen)",
+    "date": "2026-10-10",
+    "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
+    "embedUrl": "sEBVir_7phE",
+    "thumbnailUrl": "https://i.ytimg.com/vi/sEBVir_7phE/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=sEBVir_7phE"
   },
   {
     "id": "v-threads-DeJkm99CQcn",
