@@ -1234,16 +1234,16 @@ export const videoList: VideoInfo[] = [
     "isFeatured": false
   },
   {
-    "id": "v-oslP8J4lYso",
+    "id": "v-pT1askRMq04",
     "platform": "youtube",
     "category": "p8",
     "song": "All Of Me",
-    "title": "Ponpon Chen - \"All Of Me\" Guitar Solo Transcription @Sound Cat Movie",
+    "title": "Ponpon Chen - \"All Of Me\" Guitar Solo Transcription & Cover @Sound Cat Movie",
     "date": "2026-10-09",
-    "embedUrl": "oslP8J4lYso",
-    "thumbnailUrl": "https://i.ytimg.com/vi/oslP8J4lYso/maxresdefault.jpg",
+    "embedUrl": "pT1askRMq04",
+    "thumbnailUrl": "https://i.ytimg.com/vi/pT1askRMq04/maxresdefault.jpg",
     "isFeatured": false,
-    "originalUrl": "https://www.youtube.com/watch?v=oslP8J4lYso"
+    "originalUrl": "https://www.youtube.com/watch?v=pT1askRMq04"
   },
   {
     "id": "v-E0AEMj45UH4",
