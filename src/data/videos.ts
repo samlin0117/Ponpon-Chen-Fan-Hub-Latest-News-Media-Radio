@@ -87,6 +87,17 @@ export const videoList: VideoInfo[] = [
     "isFeatured": false
   },
   {
+    "id": "v-WMZ94n5T1WQ",
+    "platform": "youtube",
+    "category": "p2",
+    "title": "Ponpon Chen｜Happy Birthday 吉他彈唱 @2026 臺北爵士音樂節記者會 (@funlife2u)",
+    "date": "2026-10-06",
+    "embedUrl": "WMZ94n5T1WQ",
+    "thumbnailUrl": "https://i.ytimg.com/vi/WMZ94n5T1WQ/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/shorts/WMZ94n5T1WQ"
+  },
+  {
     "id": "v-YF45zI5wSJ8",
     "platform": "youtube",
     "category": "p2",
