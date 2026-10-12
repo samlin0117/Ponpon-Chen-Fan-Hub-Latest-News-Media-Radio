@@ -1119,6 +1119,18 @@ export const videoList: VideoInfo[] = [
     "originalUrl": "https://www.youtube.com/watch?v=4UXm0U6mp94"
   },
   {
+    "id": "v-3nI5_lXmxns",
+    "platform": "youtube",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 - Moon River (Maxine Lin)",
+    "date": "2026-10-10",
+    "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
+    "embedUrl": "3nI5_lXmxns",
+    "thumbnailUrl": "https://i.ytimg.com/vi/3nI5_lXmxns/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=3nI5_lXmxns"
+  },
+  {
     "id": "v-SqDxrENHXsY",
     "platform": "youtube",
     "category": "p5",
