@@ -1059,6 +1059,66 @@ export const videoList: VideoInfo[] = [
     "isFeatured": false
   },
   {
+    "id": "v-hQvDZYiKFgY",
+    "platform": "youtube",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 - Yardbird Suite (Art Jazz)",
+    "date": "2026-10-10",
+    "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
+    "embedUrl": "hQvDZYiKFgY",
+    "thumbnailUrl": "https://i.ytimg.com/vi/hQvDZYiKFgY/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=hQvDZYiKFgY"
+  },
+  {
+    "id": "v-bg7s8Ni34MQ",
+    "platform": "youtube",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 - Moon River (Art Jazz)",
+    "date": "2026-10-10",
+    "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
+    "embedUrl": "bg7s8Ni34MQ",
+    "thumbnailUrl": "https://i.ytimg.com/vi/bg7s8Ni34MQ/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=bg7s8Ni34MQ"
+  },
+  {
+    "id": "v-V7xlmnLsgfc",
+    "platform": "youtube",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 - No More Blues (Chega de Saudade) (Art Jazz)",
+    "date": "2026-10-10",
+    "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
+    "embedUrl": "V7xlmnLsgfc",
+    "thumbnailUrl": "https://i.ytimg.com/vi/V7xlmnLsgfc/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=V7xlmnLsgfc"
+  },
+  {
+    "id": "v-BBwWt-lmYCg",
+    "platform": "youtube",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 - Destination Moon (Art Jazz)",
+    "date": "2026-10-10",
+    "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
+    "embedUrl": "BBwWt-lmYCg",
+    "thumbnailUrl": "https://i.ytimg.com/vi/BBwWt-lmYCg/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=BBwWt-lmYCg"
+  },
+  {
+    "id": "v-4UXm0U6mp94",
+    "platform": "youtube",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 - Come Fly With Me (Art Jazz)",
+    "date": "2026-10-10",
+    "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
+    "embedUrl": "4UXm0U6mp94",
+    "thumbnailUrl": "https://i.ytimg.com/vi/4UXm0U6mp94/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=4UXm0U6mp94"
+  },
+  {
     "id": "v-SqDxrENHXsY",
     "platform": "youtube",
     "category": "p5",
