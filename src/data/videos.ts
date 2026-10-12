@@ -1202,14 +1202,15 @@ export const videoList: VideoInfo[] = [
     "originalUrl": "https://www.youtube.com/watch?v=sEBVir_7phE"
   },
   {
-    "id": "v-threads-DeJkm99CQcn",
-    "platform": "threads",
+    "id": "v-fb-1701729444257743",
+    "platform": "facebook",
     "category": "p5",
-    "title": "Ponpon Chen｜If I Had You 吉他彈唱 @2026 臺北爵士音樂節記者會 (@dogcheep)",
+    "title": "Ponpon Chen｜If I Had You 吉他彈唱 @2026 臺北爵士音樂節記者會 (郭宏治)",
     "date": "2026-10-06",
-    "embedUrl": "https://www.threads.net/@dogcheep/post/DeJkm99CQcn",
-    "thumbnailUrl": "/threads-if-i-had-you-taipei-jazz.jpg",
-    "isFeatured": false
+    "embedUrl": "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1701729444257743&show_text=0&width=500",
+    "thumbnailUrl": "/fb-1701729444257743.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.facebook.com/reel/1701729444257743"
   },
   {
     "id": "v-threads-riverside-20241213",
