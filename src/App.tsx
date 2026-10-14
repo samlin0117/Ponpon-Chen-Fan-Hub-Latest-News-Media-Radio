@@ -532,7 +532,8 @@ function MainContent() {
                     {/* Vertical Line */}
                     <div className="absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-gold/50 via-gold/10 to-transparent ml-4 md:ml-0 md:left-0"></div>
 
-                    {((t as any).changelog?.items || []).map((item: any, idx: number) => (
+                    {/* hidden: true 的紀錄先不顯示（例如巡演期間暫不公開的影片），資料保留 */}
+                    {((t as any).changelog?.items || []).filter((item: any) => !item.hidden).map((item: any, idx: number) => (
                       <div key={idx} className="relative pl-12 md:pl-16 group">
                         {/* Dot */}
                         <div className="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-gold shadow-[0_0_10px_rgba(212,175,55,0.5)] group-hover:scale-150 transition-transform duration-300 ml-4 md:ml-0 md:left-[-4px]"></div>

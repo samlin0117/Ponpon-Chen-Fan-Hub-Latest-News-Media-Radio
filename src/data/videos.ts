@@ -16,9 +16,11 @@ export interface VideoInfo {
   originalUrl?: string;
   /** 網友創意致敬 (p8) 用來依歌曲篩選；同一首歌的翻奏、採譜要寫成一模一樣的歌名 */
   song?: string;
+  /** 暫時不在網站上顯示（例如巡演期間先不公開），資料保留，拿掉這個欄位就會恢復 */
+  hidden?: boolean;
 }
 
-export const videoList: VideoInfo[] = [
+const allVideos: VideoInfo[] = [
   {
     "id": "v-Zi_9KKCTmKY",
     "platform": "youtube",
@@ -27,6 +29,7 @@ export const videoList: VideoInfo[] = [
     "date": "2026-10-10",
     "embedUrl": "Zi_9KKCTmKY",
     "thumbnailUrl": "https://i.ytimg.com/vi/Zi_9KKCTmKY/maxresdefault.jpg",
+    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=Zi_9KKCTmKY"
   },
@@ -38,6 +41,7 @@ export const videoList: VideoInfo[] = [
     "date": "2026-10-10",
     "embedUrl": "btu_t-ghn0M",
     "thumbnailUrl": "https://i.ytimg.com/vi/btu_t-ghn0M/maxresdefault.jpg",
+    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=btu_t-ghn0M"
   },
@@ -1089,6 +1093,7 @@ export const videoList: VideoInfo[] = [
     "eventGroup": "Ponpon 亞巡西門河岸留言專場 (2026-10-13)",
     "embedUrl": "https://www.threads.com/@scarf.h/post/DecFh3gkhm1",
     "thumbnailUrl": "/threads-DecFh3gkhm1.jpg",
+    "hidden": true,
     "isFeatured": false
   },
   {
@@ -1100,6 +1105,7 @@ export const videoList: VideoInfo[] = [
     "eventGroup": "Ponpon 亞巡西門河岸留言專場 (2026-10-13)",
     "embedUrl": "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1466038758920198&show_text=0&width=500",
     "thumbnailUrl": "/fb-1466038758920198.jpg",
+    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.facebook.com/reel/1466038758920198"
   },
@@ -1112,6 +1118,7 @@ export const videoList: VideoInfo[] = [
     "eventGroup": "Ponpon 亞巡西門河岸留言專場 (2026-10-13)",
     "embedUrl": "https://www.threads.com/@ac_bm_1001/post/DecQR6tGolo",
     "thumbnailUrl": "/threads-DecQR6tGolo.jpg",
+    "hidden": true,
     "isFeatured": false
   },
   {
@@ -1123,6 +1130,7 @@ export const videoList: VideoInfo[] = [
     "eventGroup": "Ponpon 亞巡西門河岸留言專場 (2026-10-13)",
     "embedUrl": "https://www.threads.com/@brecht/post/DecQGO2koH_",
     "thumbnailUrl": "/threads-DecQGO2koH_.jpg",
+    "hidden": true,
     "isFeatured": false
   },
   {
@@ -1134,6 +1142,7 @@ export const videoList: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "hQvDZYiKFgY",
     "thumbnailUrl": "https://i.ytimg.com/vi/hQvDZYiKFgY/maxresdefault.jpg",
+    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=hQvDZYiKFgY"
   },
@@ -1146,6 +1155,7 @@ export const videoList: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "bg7s8Ni34MQ",
     "thumbnailUrl": "https://i.ytimg.com/vi/bg7s8Ni34MQ/maxresdefault.jpg",
+    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=bg7s8Ni34MQ"
   },
@@ -1158,6 +1168,7 @@ export const videoList: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "V7xlmnLsgfc",
     "thumbnailUrl": "https://i.ytimg.com/vi/V7xlmnLsgfc/maxresdefault.jpg",
+    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=V7xlmnLsgfc"
   },
@@ -1170,6 +1181,7 @@ export const videoList: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "BBwWt-lmYCg",
     "thumbnailUrl": "https://i.ytimg.com/vi/BBwWt-lmYCg/maxresdefault.jpg",
+    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=BBwWt-lmYCg"
   },
@@ -1182,6 +1194,7 @@ export const videoList: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "4UXm0U6mp94",
     "thumbnailUrl": "https://i.ytimg.com/vi/4UXm0U6mp94/maxresdefault.jpg",
+    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=4UXm0U6mp94"
   },
@@ -1194,6 +1207,7 @@ export const videoList: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "3nI5_lXmxns",
     "thumbnailUrl": "https://i.ytimg.com/vi/3nI5_lXmxns/maxresdefault.jpg",
+    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=3nI5_lXmxns"
   },
@@ -1206,6 +1220,7 @@ export const videoList: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "SqDxrENHXsY",
     "thumbnailUrl": "https://i.ytimg.com/vi/SqDxrENHXsY/maxresdefault.jpg",
+    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=SqDxrENHXsY"
   },
@@ -1218,6 +1233,7 @@ export const videoList: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "8iMOiYe4u50",
     "thumbnailUrl": "https://i.ytimg.com/vi/8iMOiYe4u50/maxresdefault.jpg",
+    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=8iMOiYe4u50"
   },
@@ -1230,6 +1246,7 @@ export const videoList: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "mgrJHeY7xlw",
     "thumbnailUrl": "https://i.ytimg.com/vi/mgrJHeY7xlw/maxresdefault.jpg",
+    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=mgrJHeY7xlw"
   },
@@ -1242,6 +1259,7 @@ export const videoList: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "PmteBqxM9sw",
     "thumbnailUrl": "https://i.ytimg.com/vi/PmteBqxM9sw/maxresdefault.jpg",
+    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=PmteBqxM9sw"
   },
@@ -1254,6 +1272,7 @@ export const videoList: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "sEBVir_7phE",
     "thumbnailUrl": "https://i.ytimg.com/vi/sEBVir_7phE/maxresdefault.jpg",
+    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=sEBVir_7phE"
   },
@@ -1554,3 +1573,5 @@ export const videoList: VideoInfo[] = [
     "isFeatured": false
   }
 ];
+
+export const videoList = allVideos.filter(v => !v.hidden);

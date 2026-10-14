@@ -376,6 +376,7 @@
     "items": [
       {
         "date": "2026.10.12",
+        "hidden": true,
         "title": "Taipei Jazz Festival concert videos added",
         "content": "On Oct 10, Ponpon played the 2026 Taipei Jazz Festival with her own quintet, her first show in Taiwan leading her own band. In the Video Gallery, Live & Music Works adds a fan's full-length recording of the set plus the encore, \"How High The Moon\", and Fan Cams adds 11 more clips from the show."
       },
@@ -1469,7 +1470,7 @@
     {
       "year": "October 2026",
       "title": "First Appearance at the Taipei Jazz Festival",
-      "desc": "On October 10, 2026, Ponpon made her debut at the Taipei Jazz Festival, also her first show in Taiwan leading her own band, Ponpon Quintet. Closing the night on the Jazz Right Stage at the Taipei Music Center's outdoor plaza, she drew a packed crowd eager to catch this rising jazz star from Taiwan.<a href=\"https://www.youtube.com/watch?v=Zi_9KKCTmKY\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch the performance</a> <a href=\"https://www.youtube.com/watch?v=btu_t-ghn0M\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ Watch the encore, \"How High The Moon\"</a>",
+      "desc": "On October 10, 2026, Ponpon made her debut at the Taipei Jazz Festival, also her first show in Taiwan leading her own band, Ponpon Quintet. Closing the night on the Jazz Right Stage at the Taipei Music Center's outdoor plaza, she drew a packed crowd eager to catch this rising jazz star from Taiwan.",
       "category": "first"
     },
     {

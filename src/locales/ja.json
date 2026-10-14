@@ -376,6 +376,7 @@
     "items": [
       {
         "date": "2026.10.12",
+        "hidden": true,
         "title": "台北ジャズフェスティバルのライブ映像を追加",
         "content": "10月10日、Ponpon は「2026 台北ジャズフェスティバル」に自身のクインテットを率いて出演し、初めて自分のバンドでの台湾公演を果たしました。「動画ギャラリー」の「ライブ＆ミュージックワークス」にファンが撮影した全編映像とアンコール〈How High The Moon〉を、「ファンカメラ」に11本のライブ映像を追加しました。"
       },
@@ -1469,7 +1470,7 @@
     {
       "year": "2026年10月",
       "title": "台北ジャズフェスティバルに初出演",
-      "desc": "2026年10月10日、「台北ジャズフェスティバル」に初出演。自身のバンド Ponpon Quintet を率いての初めての台湾公演となった。台北流行音楽センター屋外のメインステージ（Jazz Right Stage）でその夜のトリを務め、会場は台湾発のジャズの新星をひと目見ようと詰めかけた観客で埋め尽くされた。<a href=\"https://www.youtube.com/watch?v=Zi_9KKCTmKY\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 公演映像を見る</a> <a href=\"https://www.youtube.com/watch?v=btu_t-ghn0M\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ アンコール〈How High The Moon〉を見る</a>",
+      "desc": "2026年10月10日、「台北ジャズフェスティバル」に初出演。自身のバンド Ponpon Quintet を率いての初めての台湾公演となった。台北流行音楽センター屋外のメインステージ（Jazz Right Stage）でその夜のトリを務め、会場は台湾発のジャズの新星をひと目見ようと詰めかけた観客で埋め尽くされた。",
       "category": "first"
     },
     {
