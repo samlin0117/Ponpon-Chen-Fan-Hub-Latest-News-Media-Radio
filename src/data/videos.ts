@@ -1092,6 +1092,18 @@ export const videoList: VideoInfo[] = [
     "isFeatured": false
   },
   {
+    "id": "v-fb-1466038758920198",
+    "platform": "facebook",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 & YELLOW黃宣 - 現場演出 (秀珠老師)",
+    "date": "2026-10-13",
+    "eventGroup": "Ponpon 亞巡西門河岸留言專場 (2026-10-13)",
+    "embedUrl": "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1466038758920198&show_text=0&width=500",
+    "thumbnailUrl": "/fb-1466038758920198.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.facebook.com/reel/1466038758920198"
+  },
+  {
     "id": "v-hQvDZYiKFgY",
     "platform": "youtube",
     "category": "p5",
