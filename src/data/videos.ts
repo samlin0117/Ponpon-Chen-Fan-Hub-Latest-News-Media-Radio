@@ -1104,6 +1104,28 @@ export const videoList: VideoInfo[] = [
     "originalUrl": "https://www.facebook.com/reel/1466038758920198"
   },
   {
+    "id": "v-threads-DecQR6tGolo",
+    "platform": "threads",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 - 專場現場片段 (@ac_bm_1001)",
+    "date": "2026-10-13",
+    "eventGroup": "Ponpon 亞巡西門河岸留言專場 (2026-10-13)",
+    "embedUrl": "https://www.threads.com/@ac_bm_1001/post/DecQR6tGolo",
+    "thumbnailUrl": "/threads-DecQR6tGolo.jpg",
+    "isFeatured": false
+  },
+  {
+    "id": "v-threads-DecQGO2koH_",
+    "platform": "threads",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 - 專場現場片段 (@brecht)",
+    "date": "2026-10-13",
+    "eventGroup": "Ponpon 亞巡西門河岸留言專場 (2026-10-13)",
+    "embedUrl": "https://www.threads.com/@brecht/post/DecQGO2koH_",
+    "thumbnailUrl": "/threads-DecQGO2koH_.jpg",
+    "isFeatured": false
+  },
+  {
     "id": "v-hQvDZYiKFgY",
     "platform": "youtube",
     "category": "p5",
