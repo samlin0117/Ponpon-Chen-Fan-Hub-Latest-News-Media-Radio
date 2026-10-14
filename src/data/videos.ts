@@ -1081,6 +1081,17 @@ export const videoList: VideoInfo[] = [
     "isFeatured": false
   },
   {
+    "id": "v-threads-DecFh3gkhm1",
+    "platform": "threads",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 & YELLOW黃宣 - 獨上C樓 (@scarf.h)",
+    "date": "2026-10-13",
+    "eventGroup": "Ponpon 亞巡西門河岸留言專場 (2026-10-13)",
+    "embedUrl": "https://www.threads.com/@scarf.h/post/DecFh3gkhm1",
+    "thumbnailUrl": "/threads-DecFh3gkhm1.jpg",
+    "isFeatured": false
+  },
+  {
     "id": "v-hQvDZYiKFgY",
     "platform": "youtube",
     "category": "p5",
