@@ -12,6 +12,12 @@ export interface RepertoireSong {
 
 export const repertoireData: RepertoireSong[] = [
   {
+    id: 'mama-dont-allow-it',
+    year: '1925',
+    composer: 'Cow Cow Davenport (Traditional)',
+    lyricsLink: 'https://genius.com/Milton-brown-1930s-country-mama-dont-allow-it-lyrics'
+  },
+  {
     id: 'take-the-a-train',
     year: '1939',
     composer: 'Billy Strayhorn, Joya Sherrill'
