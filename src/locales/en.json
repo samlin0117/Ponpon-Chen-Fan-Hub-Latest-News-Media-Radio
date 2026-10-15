@@ -1164,6 +1164,18 @@
         ],
         "correctAnswer": 2,
         "explanation": "'Ponpon ASIA TOUR 2026' kicked off in October and visited Taipei, Kaohsiung, Hong Kong and Tokyo, in that order. The Taipei show was the only stop with a special guest, YELLOW(黃宣)."
+      },
+      {
+        "id": 57,
+        "question": "On October 10, 2026, Ponpon made her debut at which music festival in Taiwan? It was also her first show back in Taiwan leading her own band, Ponpon Quintet.",
+        "options": [
+          "Taichung Jazz Festival",
+          "Taipei Jazz Festival",
+          "Simple Life Festival",
+          "Megaport Festival"
+        ],
+        "correctAnswer": 1,
+        "explanation": "On October 10, 2026, Ponpon made her debut at the Taipei Jazz Festival in Taiwan, also her first show back in Taiwan leading her own band, Ponpon Quintet. She closed the night on the Jazz Right Stage at the Taipei Music Center's outdoor plaza."
       }
     ]
   },

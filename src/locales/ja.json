@@ -1164,6 +1164,18 @@
         ],
         "correctAnswer": 2,
         "explanation": "「Ponpon ASIA TOUR 2026」は10月にスタートし、台北・高雄・香港・東京の4都市を順に巡りました。そのうち台北公演は、ツアーで唯一スペシャルゲスト（YELLOW(黃宣)）を迎えた公演です。"
+      },
+      {
+        "id": 57,
+        "question": "2026年10月10日、Ponpon が初めて出演した台湾の音楽フェスティバルはどれですか？自身のバンド Ponpon Quintet を率いての初めての台湾公演でもありました。",
+        "options": [
+          "台中ジャズフェスティバル",
+          "台北ジャズフェスティバル",
+          "簡単生活節（Simple Life）",
+          "大港開唱（Megaport Festival）"
+        ],
+        "correctAnswer": 1,
+        "explanation": "2026年10月10日、Ponpon は台湾の「台北ジャズフェスティバル」に初出演。自身のバンド Ponpon Quintet を率いての初めての台湾公演となり、台北流行音楽センター屋外のメインステージ（Jazz Right Stage）でその夜のトリを務めました。"
       }
     ]
   },
