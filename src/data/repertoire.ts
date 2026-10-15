@@ -8,28 +8,33 @@ export interface RepertoireSong {
   videoLink?: string;
   startTime?: number; // YouTube 起始秒數（僅站內 youtubeId 播放時生效）
   endTime?: number;   // YouTube 結束秒數
+  hidden?: boolean;   // 暫不顯示（例如還沒補上演繹特色與影片），拿掉就會出現
 }
 
-export const repertoireData: RepertoireSong[] = [
+const allSongs: RepertoireSong[] = [
   {
     id: 'mama-dont-allow-it',
+    hidden: true,
     year: '1925',
     composer: 'Cow Cow Davenport (Traditional)',
     lyricsLink: 'https://genius.com/Milton-brown-1930s-country-mama-dont-allow-it-lyrics'
   },
   {
     id: 'take-the-a-train',
+    hidden: true,
     year: '1939',
     composer: 'Billy Strayhorn, Joya Sherrill'
   },
   {
     id: 'no-more-blues',
+    hidden: true,
     year: '1958',
     composer: 'Antônio Carlos Jobim, Vinícius de Moraes, Jon Hendricks, Jessie Cavanaugh',
     lyricsLink: 'https://genius.com/Jane-monheit-chega-de-saudade-no-more-blues-lyrics'
   },
   {
     id: 'come-fly-with-me',
+    hidden: true,
     year: '1957',
     composer: 'Jimmy Van Heusen, Sammy Cahn',
     lyricsLink: 'https://genius.com/Frank-sinatra-come-fly-with-me-lyrics'
@@ -229,3 +234,5 @@ export const repertoireData: RepertoireSong[] = [
     youtubeId: 'FQ8HoS0HQxg'
   }
 ];
+
+export const repertoireData = allSongs.filter(song => !song.hidden);
