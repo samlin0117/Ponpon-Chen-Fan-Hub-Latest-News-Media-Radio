@@ -12,6 +12,11 @@ export interface RepertoireSong {
 
 export const repertoireData: RepertoireSong[] = [
   {
+    id: 'take-the-a-train',
+    year: '1939',
+    composer: 'Billy Strayhorn, Joya Sherrill'
+  },
+  {
     id: 'no-more-blues',
     year: '1958',
     composer: 'Antônio Carlos Jobim, Vinícius de Moraes, Jon Hendricks, Jessie Cavanaugh',
