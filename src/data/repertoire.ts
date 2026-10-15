@@ -12,6 +12,12 @@ export interface RepertoireSong {
 
 export const repertoireData: RepertoireSong[] = [
   {
+    id: 'come-fly-with-me',
+    year: '1957',
+    composer: 'Jimmy Van Heusen, Sammy Cahn',
+    lyricsLink: 'https://genius.com/Frank-sinatra-come-fly-with-me-lyrics'
+  },
+  {
     id: 'our-love-is-here-to-stay',
     year: '1938',
     composer: 'George Gershwin, Ira Gershwin',
