@@ -12,6 +12,12 @@ export interface RepertoireSong {
 
 export const repertoireData: RepertoireSong[] = [
   {
+    id: 'no-more-blues',
+    year: '1958',
+    composer: 'Antônio Carlos Jobim, Vinícius de Moraes, Jon Hendricks, Jessie Cavanaugh',
+    lyricsLink: 'https://genius.com/Jane-monheit-chega-de-saudade-no-more-blues-lyrics'
+  },
+  {
     id: 'come-fly-with-me',
     year: '1957',
     composer: 'Jimmy Van Heusen, Sammy Cahn',
