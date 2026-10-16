@@ -1298,6 +1298,18 @@ const allVideos: VideoInfo[] = [
     "isFeatured": false
   },
   {
+    "id": "v-2a_khGtXk_I",
+    "platform": "youtube",
+    "category": "p8",
+    "song": "How High The Moon",
+    "title": "Ponpon Chen - \"How High The Moon\" Guitar Solo Cover @K. Kiyohisa",
+    "date": "2026-10-09",
+    "embedUrl": "2a_khGtXk_I",
+    "thumbnailUrl": "https://i.ytimg.com/vi/2a_khGtXk_I/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=2a_khGtXk_I"
+  },
+  {
     "id": "v-pT1askRMq04",
     "platform": "youtube",
     "category": "p8",
