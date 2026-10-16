@@ -9,9 +9,13 @@ interface HoverImageLinkProps {
   index: number;
 }
 
-const FbSourceBadge: FC<{ label: string }> = ({ label }) => (
+const SourceBadge: FC<{ label: string; instagram: boolean }> = ({ label, instagram }) => (
   <span className="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-white/90 whitespace-nowrap bg-black/70 px-2.5 py-1.5 rounded-full backdrop-blur-md inline-flex items-center gap-1.5">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-facebook w-3 h-3"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+    {instagram ? (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram w-3 h-3"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
+    ) : (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-facebook w-3 h-3"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+    )}
     <span>{label}</span>
   </span>
 );
@@ -25,6 +29,7 @@ export const HoverImageLink: FC<HoverImageLinkProps> = ({ text, url, linkUrl, ph
   const anchorRef = useRef<HTMLAnchorElement>(null);
 
   const hasImage = url && url.trim() !== '';
+  const isInstagram = linkUrl.includes('instagram.com');
 
   useEffect(() => {
     setCanHover(window.matchMedia('(hover: hover) and (pointer: fine)').matches);
@@ -71,7 +76,7 @@ export const HoverImageLink: FC<HoverImageLinkProps> = ({ text, url, linkUrl, ph
                 照片預覽已失效<br /><span className="text-xs text-gray-500">(FB圖床網址有時效限制)</span>
               </span>
             )}
-            <FbSourceBadge label={photoSourceLabel} />
+            <SourceBadge label={photoSourceLabel} instagram={isInstagram} />
           </span>
         </span>
       )}
@@ -102,7 +107,7 @@ export const HoverImageLink: FC<HoverImageLinkProps> = ({ text, url, linkUrl, ph
                   照片預覽已失效<br /><span className="text-xs text-gray-500">(FB圖床網址有時效限制)</span>
                 </span>
               )}
-              <FbSourceBadge label={photoSourceLabel} />
+              <SourceBadge label={photoSourceLabel} instagram={isInstagram} />
               <span className="absolute -top-2.5 -right-2.5 w-7 h-7 rounded-full bg-black border border-white/20 text-white flex items-center justify-center shadow-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18M6 6l12 12" /></svg>
               </span>
@@ -113,7 +118,7 @@ export const HoverImageLink: FC<HoverImageLinkProps> = ({ text, url, linkUrl, ph
               rel="noopener noreferrer"
               className="mt-2 flex items-center justify-center gap-1.5 text-[11px] text-white/90 bg-black/70 active:bg-black/90 py-1.5 rounded-full backdrop-blur-md"
             >
-              在 FB 查看原文
+              {isInstagram ? '在 IG 查看原文' : '在 FB 查看原文'}
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10M7 17 17 7" /></svg>
             </a>
           </div>
@@ -124,11 +129,11 @@ export const HoverImageLink: FC<HoverImageLinkProps> = ({ text, url, linkUrl, ph
   );
 };
 
-// Parse a string that may contain [HOVER_IMG:text|imageUrl|linkUrl] tokens into
+// Parse a string that may contain [HOVER_IMG:text|imageUrl|linkUrl|sourceLabel] tokens into
 // React nodes. Plain text (incl. inline HTML like <a>) is rendered as-is.
 export const renderRichText = (content: string, photoSourceLabel: string) => {
   if (!content) return null;
-  const regex = /\[HOVER_IMG:(.*?)\|(.*?)(?:\|(.*?))?\]/g;
+  const regex = /\[HOVER_IMG:(.*?)\|(.*?)(?:\|(.*?))?(?:\|(.*?))?\]/g;
   const parts: ReactNode[] = [];
   let lastIndex = 0;
   let match: RegExpExecArray | null;
@@ -148,7 +153,7 @@ export const renderRichText = (content: string, photoSourceLabel: string) => {
         text={text}
         url={url}
         linkUrl={linkUrl}
-        photoSourceLabel={photoSourceLabel}
+        photoSourceLabel={match[4] || photoSourceLabel}
       />
     );
     lastIndex = regex.lastIndex;
