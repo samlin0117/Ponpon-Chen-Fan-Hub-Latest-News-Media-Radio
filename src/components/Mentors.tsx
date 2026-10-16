@@ -213,7 +213,7 @@ const Mentors = () => {
                         關於 {selectedMentor.name}
                       </h4>
                       <p className="text-gray-300 font-light leading-relaxed mb-6">
-                        {selectedMentor.intro.bio}
+                        {renderContentWithHoverImage(selectedMentor.intro.bio)}
                       </p>
                       {selectedMentor.intro.classicSongs && (
                         <div>
