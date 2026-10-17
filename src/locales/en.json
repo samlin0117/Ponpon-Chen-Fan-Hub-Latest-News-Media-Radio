@@ -1211,6 +1211,18 @@
         ],
         "correctAnswer": 1,
         "explanation": "On October 10, 2026, Ponpon made her debut at the Taipei Jazz Festival in Taiwan, also her first show back in Taiwan leading her own band, Ponpon Quintet. She closed the night on the Jazz Right Stage at the Taipei Music Center's outdoor plaza."
+      },
+      {
+        "id": 58,
+        "question": "What is Ponpon's favorite jazz style?",
+        "options": [
+          "Bebop",
+          "Bossa Nova",
+          "Fusion",
+          "Swing"
+        ],
+        "correctAnswer": 3,
+        "explanation": "In a September 2025 podcast interview (EP125), Ponpon said her favorite jazz style is swing, which fits her love of classic jazz from the 1920s to 1950s."
       }
     ]
   },
