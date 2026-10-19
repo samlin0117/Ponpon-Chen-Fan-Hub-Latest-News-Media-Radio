@@ -1211,6 +1211,18 @@
         ],
         "correctAnswer": 3,
         "explanation": "In a September 2025 podcast interview (EP125), Ponpon said her favorite jazz style is swing, which fits her love of classic jazz from the 1920s to 1950s."
+      },
+      {
+        "id": 59,
+        "question": "Who bought Ponpon the washboard she plays on stage?",
+        "options": [
+          "Drummer Mark",
+          "Studio owner Tom Weir",
+          "Guitar teacher Geddy Lin (林正如)",
+          "Album producer Graham Dechter"
+        ],
+        "correctAnswer": 0,
+        "explanation": "While performing \"Them There Eyes\" at a Society for the Preservation of Dixieland Jazz show on August 1, 2025, Ponpon told the audience that drummer Mark bought her the washboard."
       }
     ]
   },
