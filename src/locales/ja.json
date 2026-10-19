@@ -565,18 +565,6 @@
     "rank_newbie_desc": "ファンコミュニティへようこそ！一緒に探索しましょう！",
     "questions": [
       {
-        "id": 50,
-        "question": "Ponponの北カリフォルニアでの初のチケット制単独ライブが行われた場所はどこですか？",
-        "options": [
-          "Agua Caliente Casino",
-          "Biscuits & Blues",
-          "Cicada Restaurant and Lounge",
-          "Blue Note"
-        ],
-        "correctAnswer": 1,
-        "explanation": "2025年9月、Ponponはサンフランシスコ（ベイエリア）の有名ジャズクラブ「Biscuits & Blues」で北カリフォルニア初のチケット制単独ライブを開催しました。"
-      },
-      {
         "id": 1,
         "question": "2025年4月、Ponponがロサンゼルスで初めて公の場で演奏した「特殊な楽器」は何ですか？",
         "options": [
@@ -1022,7 +1010,7 @@
       },
       {
         "id": 41,
-        "question": "2025年9月20日、Ponponが初めてサンフランシスコでライブを行いました。その会場はどこですか？",
+        "question": "2025年9月20日、Ponponが初めてサンフランシスコでライブを行いました。これは北カリフォルニアでの初のチケット制単独ライブでもあります。その会場はどこですか？",
         "options": [
           "Blue Note San Francisco",
           "Biscuits & Blues",
@@ -1030,7 +1018,7 @@
           "The Fillmore"
         ],
         "correctAnswer": 1,
-        "explanation": "2025年9月20日, Ponponはサンフランシスコの401 Mason Stにある「Biscuits & Blues」で初のサンフランシスコ公演を行いました。"
+        "explanation": "2025年9月20日、Ponponはサンフランシスコの401 Mason Stにある有名ジャズクラブ「Biscuits & Blues」で初のサンフランシスコ公演を行いました。これは北カリフォルニアでの初のチケット制単独ライブでもありました。"
       },
       {
         "id": 42,

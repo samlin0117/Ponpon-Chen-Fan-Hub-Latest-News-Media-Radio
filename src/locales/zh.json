@@ -565,18 +565,6 @@
     "rank_newbie_desc": "歡迎來到 Ponpon 的粉絲世界，一起來探索吧！",
     "questions": [
       {
-        "id": 50,
-        "question": "Ponpon首次北加州售票演出的地點在哪裡?",
-        "options": [
-          "Agua Caliente Casino",
-          "Biscuits & Blues",
-          "Cicada Restaurant and Lounge",
-          "Blue Note"
-        ],
-        "correctAnswer": 1,
-        "explanation": "2025年9月，Ponpon 在舊金山（灣區）知名爵士俱樂部 Biscuits & Blues 舉辦了首次北加州售票演出。"
-      },
-      {
         "id": 1,
         "question": "下列哪一項技能是 Ponpon 在 2025 年 4 月首次於洛杉磯公開表演的「特殊樂器」？",
         "options": [
@@ -1022,7 +1010,7 @@
       },
       {
         "id": 41,
-        "question": "2025 年 9 月 20 日，Ponpon 首次在舊金山登台演出，請問演出場地是哪裡？",
+        "question": "2025 年 9 月 20 日，Ponpon 首次在舊金山登台，這也是她在北加州的首場售票演出。請問演出場地是哪裡？",
         "options": [
           "Blue Note San Francisco",
           "Biscuits & Blues",
@@ -1030,7 +1018,7 @@
           "The Fillmore"
         ],
         "correctAnswer": 1,
-        "explanation": "2025年9月20日，Ponpon 首次踏上舊金山的舞台，演出場地是位於 401 Mason St 的 Biscuits & Blues。"
+        "explanation": "2025 年 9 月 20 日，Ponpon 在舊金山 401 Mason St 的知名爵士俱樂部 Biscuits & Blues 首次登台，這也是她在北加州的首場售票演出。"
       },
       {
         "id": 42,
