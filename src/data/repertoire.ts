@@ -14,30 +14,38 @@ export interface RepertoireSong {
 const allSongs: RepertoireSong[] = [
   {
     id: 'mama-dont-allow-it',
-    hidden: true,
     year: '1925',
     composer: 'Cow Cow Davenport (Traditional)',
-    lyricsLink: 'https://genius.com/Milton-brown-1930s-country-mama-dont-allow-it-lyrics'
+    lyricsLink: 'https://genius.com/Milton-brown-1930s-country-mama-dont-allow-it-lyrics',
+    youtubeId: 'Zi_9KKCTmKY',
+    startTime: 3182,
+    endTime: 3540
   },
   {
     id: 'take-the-a-train',
-    hidden: true,
     year: '1939',
-    composer: 'Billy Strayhorn, Joya Sherrill'
+    composer: 'Billy Strayhorn, Joya Sherrill',
+    youtubeId: 'Zi_9KKCTmKY',
+    startTime: 1385,
+    endTime: 1973
   },
   {
     id: 'no-more-blues',
-    hidden: true,
     year: '1958',
     composer: 'Antônio Carlos Jobim, Vinícius de Moraes, Jon Hendricks, Jessie Cavanaugh',
-    lyricsLink: 'https://genius.com/Jane-monheit-chega-de-saudade-no-more-blues-lyrics'
+    lyricsLink: 'https://genius.com/Jane-monheit-chega-de-saudade-no-more-blues-lyrics',
+    youtubeId: 'Zi_9KKCTmKY',
+    startTime: 916,
+    endTime: 1197
   },
   {
     id: 'come-fly-with-me',
-    hidden: true,
     year: '1957',
     composer: 'Jimmy Van Heusen, Sammy Cahn',
-    lyricsLink: 'https://genius.com/Frank-sinatra-come-fly-with-me-lyrics'
+    lyricsLink: 'https://genius.com/Frank-sinatra-come-fly-with-me-lyrics',
+    youtubeId: 'Zi_9KKCTmKY',
+    startTime: 1,
+    endTime: 332
   },
   {
     id: 'our-love-is-here-to-stay',
