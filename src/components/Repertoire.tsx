@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Music, Disc3, ExternalLink, Search, X, BookOpen, Calendar, Type } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import { repertoireData, RepertoireSong } from '../data/repertoire';
@@ -12,7 +13,14 @@ const Repertoire: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [filterType, setFilterType] = useState<'alpha' | 'year'>('alpha');
-  const [selectedSong, setSelectedSong] = useState<RepertoireSong | null>(null);
+  // 打開的歌記在網址 (?song=<id>)，不只放在 state：手機上點「查看完整歌詞」等
+  // 外部連結時，有些瀏覽器（LINE、FB 內建瀏覽器等）會無視 target="_blank"
+  // 在同一頁開啟，按上一頁回來就會回到這首歌的視窗，而不是曲庫清單。
+  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const songParam = searchParams.get('song');
+  const selectedSong: RepertoireSong | null = repertoireData.find(s => s.id === songParam) ?? null;
+  const openedHere = useRef(false);
   const [showVideo, setShowVideo] = useState(false);
   const [inlineVideoId, setInlineVideoId] = useState<string | null>(null);
   const videoRef = useRef<HTMLDivElement>(null);
@@ -26,6 +34,33 @@ const Repertoire: React.FC = () => {
     setShowVideo(true);
     setPlayToken((n) => n + 1);
   };
+
+  const resetVideo = () => {
+    setShowVideo(false);
+    setInlineVideoId(null);
+    setPlayToken(0);
+  };
+
+  const openSong = (song: RepertoireSong) => {
+    resetVideo();
+    openedHere.current = true;
+    setSearchParams(prev => { const p = new URLSearchParams(prev); p.set('song', song.id); return p; });
+  };
+
+  const closeSong = () => {
+    resetVideo();
+    if (openedHere.current) {
+      // 在這頁點開的：退回上一筆紀錄，不留多餘的歷史紀錄
+      openedHere.current = false;
+      navigate(-1);
+    } else {
+      // 帶著 ?song= 進來的（例如從歌詞網站按上一頁）：只拿掉參數，免得退出本站
+      setSearchParams(prev => { const p = new URLSearchParams(prev); p.delete('song'); return p; }, { replace: true });
+    }
+  };
+
+  // 用上一頁／下一頁換歌或關閉時，不沿用上一首的影片狀態
+  useEffect(() => { resetVideo(); }, [songParam]);
 
   // 影片是插在彈窗內容區的最上方，但觸發它的「觀看演出」按鈕在頁尾、
   // 內文連結也多半在下方——使用者按下去時通常已經往下捲，影片會落在
@@ -255,11 +290,7 @@ const Repertoire: React.FC = () => {
 
                   <div className="mt-auto pt-4 flex gap-3">
                     <button
-                      onClick={() => {
-                        setSelectedSong(song);
-                        setShowVideo(false);
-                        setInlineVideoId(null);
-                      }}
+                      onClick={() => openSong(song)}
                       className="flex-1 flex justify-center items-center gap-2 py-2.5 bg-gold/10 hover:bg-gold/20 text-gold-light rounded-xl text-sm font-medium transition-colors"
                     >
                       <BookOpen className="w-4 h-4" />
@@ -288,11 +319,7 @@ const Repertoire: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => {
-                setSelectedSong(null);
-                setShowVideo(false);
-                setInlineVideoId(null);
-              }}
+              onClick={closeSong}
               className="absolute inset-0 bg-dark/80 backdrop-blur-sm"
             />
 
@@ -315,12 +342,7 @@ const Repertoire: React.FC = () => {
                   </div>
                 </div>
                 <button
-                  onClick={() => {
-                    setSelectedSong(null);
-                    setShowVideo(false);
-                    setInlineVideoId(null);
-                    setPlayToken(0);
-                  }}
+                  onClick={closeSong}
                   className="p-2 rounded-full hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
                 >
                   <X className="w-6 h-6" />
