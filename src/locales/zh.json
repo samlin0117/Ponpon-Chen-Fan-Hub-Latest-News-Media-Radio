@@ -411,7 +411,6 @@
     "items": [
       {
         "date": "2026.10.12",
-        "hidden": true,
         "title": "新增臺北爵士音樂節演出影片",
         "content": "Ponpon 於 10/10 在「2026 臺北爵士音樂節」首度帶著自己的五重奏返台演出。「影音專區」的「現場演出與音樂作品」新增樂迷拍攝的整場完整演出，以及安可曲〈How High The Moon〉；「網友拍攝 (Fan Cam)」則新增 11 段現場影片。"
       },
@@ -1545,7 +1544,7 @@
     {
       "year": "2026年10月",
       "title": "首度登上臺北爵士音樂節",
-      "desc": "2026年10月10日，Ponpon 首度登上「臺北爵士音樂節」，這也是她第一次帶著自己的樂團 Ponpon Quintet 返台演出。當晚她在臺北流行音樂中心戶外主舞台 (Jazz Right Stage) 擔任壓軸，台下擠滿聽眾，爭相一睹這位來自臺灣的爵士明日之星風采。",
+      "desc": "2026年10月10日，Ponpon 首度登上「臺北爵士音樂節」，這也是她第一次帶著自己的樂團 Ponpon Quintet 返台演出。當晚她在臺北流行音樂中心戶外主舞台 (Jazz Right Stage) 擔任壓軸，台下擠滿聽眾，爭相一睹這位來自臺灣的爵士明日之星風采。<a href=\"https://www.youtube.com/watch?v=Zi_9KKCTmKY\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 觀看演出影片</a> <a href=\"https://www.youtube.com/watch?v=btu_t-ghn0M\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-gold hover:text-gold-light hover:underline transition-colors whitespace-nowrap ml-1\">➜ 觀看安可曲〈How High The Moon〉</a>",
       "category": "first"
     },
     {

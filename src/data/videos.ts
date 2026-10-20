@@ -29,7 +29,6 @@ const allVideos: VideoInfo[] = [
     "date": "2026-10-10",
     "embedUrl": "Zi_9KKCTmKY",
     "thumbnailUrl": "https://i.ytimg.com/vi/Zi_9KKCTmKY/maxresdefault.jpg",
-    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=Zi_9KKCTmKY"
   },
@@ -41,7 +40,6 @@ const allVideos: VideoInfo[] = [
     "date": "2026-10-10",
     "embedUrl": "btu_t-ghn0M",
     "thumbnailUrl": "https://i.ytimg.com/vi/btu_t-ghn0M/maxresdefault.jpg",
-    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=btu_t-ghn0M"
   },
@@ -1142,7 +1140,6 @@ const allVideos: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "hQvDZYiKFgY",
     "thumbnailUrl": "https://i.ytimg.com/vi/hQvDZYiKFgY/maxresdefault.jpg",
-    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=hQvDZYiKFgY"
   },
@@ -1155,7 +1152,6 @@ const allVideos: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "bg7s8Ni34MQ",
     "thumbnailUrl": "https://i.ytimg.com/vi/bg7s8Ni34MQ/maxresdefault.jpg",
-    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=bg7s8Ni34MQ"
   },
@@ -1168,7 +1164,6 @@ const allVideos: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "V7xlmnLsgfc",
     "thumbnailUrl": "https://i.ytimg.com/vi/V7xlmnLsgfc/maxresdefault.jpg",
-    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=V7xlmnLsgfc"
   },
@@ -1181,7 +1176,6 @@ const allVideos: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "BBwWt-lmYCg",
     "thumbnailUrl": "https://i.ytimg.com/vi/BBwWt-lmYCg/maxresdefault.jpg",
-    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=BBwWt-lmYCg"
   },
@@ -1194,7 +1188,6 @@ const allVideos: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "4UXm0U6mp94",
     "thumbnailUrl": "https://i.ytimg.com/vi/4UXm0U6mp94/maxresdefault.jpg",
-    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=4UXm0U6mp94"
   },
@@ -1207,7 +1200,6 @@ const allVideos: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "3nI5_lXmxns",
     "thumbnailUrl": "https://i.ytimg.com/vi/3nI5_lXmxns/maxresdefault.jpg",
-    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=3nI5_lXmxns"
   },
@@ -1220,7 +1212,6 @@ const allVideos: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "SqDxrENHXsY",
     "thumbnailUrl": "https://i.ytimg.com/vi/SqDxrENHXsY/maxresdefault.jpg",
-    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=SqDxrENHXsY"
   },
@@ -1233,7 +1224,6 @@ const allVideos: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "8iMOiYe4u50",
     "thumbnailUrl": "https://i.ytimg.com/vi/8iMOiYe4u50/maxresdefault.jpg",
-    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=8iMOiYe4u50"
   },
@@ -1246,7 +1236,6 @@ const allVideos: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "mgrJHeY7xlw",
     "thumbnailUrl": "https://i.ytimg.com/vi/mgrJHeY7xlw/maxresdefault.jpg",
-    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=mgrJHeY7xlw"
   },
@@ -1259,7 +1248,6 @@ const allVideos: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "PmteBqxM9sw",
     "thumbnailUrl": "https://i.ytimg.com/vi/PmteBqxM9sw/maxresdefault.jpg",
-    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=PmteBqxM9sw"
   },
@@ -1272,7 +1260,6 @@ const allVideos: VideoInfo[] = [
     "eventGroup": "2026 臺北爵士音樂節 (2026-10-10)",
     "embedUrl": "sEBVir_7phE",
     "thumbnailUrl": "https://i.ytimg.com/vi/sEBVir_7phE/maxresdefault.jpg",
-    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.youtube.com/watch?v=sEBVir_7phE"
   },
