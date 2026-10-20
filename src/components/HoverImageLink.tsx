@@ -82,9 +82,12 @@ export const HoverImageLink: FC<HoverImageLinkProps> = ({ text, url, linkUrl, ph
       )}
 
       {/* Touch: a small preview card (not full-screen), portalled out so it
-          escapes the surrounding <p>/<a> and can use real <button>s — which
-          register taps on every mobile browser, unlike bare <div>s on iOS
-          Safari. A transparent button behind it catches "tap outside". */}
+          escapes the surrounding <p>/<a> and can use real <button>s / <a>s —
+          which register taps on every mobile browser, unlike bare <div>s on
+          iOS Safari. Tapping the photo opens the original post (people expect
+          that, and it's the biggest target); the ✕ or a tap outside closes.
+          Don't close the card from the links' onClick: React would unmount the
+          <a> before the browser follows it, and the navigation would be lost. */}
       {hasImage && isOpenMobile && createPortal(
         <>
           <button
@@ -94,11 +97,11 @@ export const HoverImageLink: FC<HoverImageLinkProps> = ({ text, url, linkUrl, ph
             className="fixed inset-0 z-[110] bg-black/20 cursor-default"
           />
           <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[111] w-60 max-w-[calc(100vw-2rem)]">
-            <button
-              type="button"
-              aria-label="關閉預覽"
-              onClick={() => setIsOpenMobile(false)}
-              className="relative block w-full rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-[#1a1a1a] cursor-pointer"
+            <a
+              href={linkUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative block w-full rounded-xl overflow-hidden border border-white/10 shadow-2xl bg-[#1a1a1a]"
             >
               {!imgError ? (
                 <img src={url} alt="" className="w-full h-auto object-cover block" onError={() => setImgError(true)} />
@@ -108,15 +111,20 @@ export const HoverImageLink: FC<HoverImageLinkProps> = ({ text, url, linkUrl, ph
                 </span>
               )}
               <SourceBadge label={photoSourceLabel} instagram={isInstagram} />
-              <span className="absolute -top-2.5 -right-2.5 w-7 h-7 rounded-full bg-black border border-white/20 text-white flex items-center justify-center shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18M6 6l12 12" /></svg>
-              </span>
+            </a>
+            <button
+              type="button"
+              aria-label="關閉預覽"
+              onClick={() => setIsOpenMobile(false)}
+              className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-black border border-white/20 text-white flex items-center justify-center shadow-lg"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18M6 6l12 12" /></svg>
             </button>
             <a
               href={linkUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 flex items-center justify-center gap-1.5 text-[11px] text-white/90 bg-black/70 active:bg-black/90 py-1.5 rounded-full backdrop-blur-md"
+              className="mt-3 flex items-center justify-center gap-1.5 text-xs text-white bg-black/80 active:bg-black border border-white/15 py-2.5 rounded-full backdrop-blur-md"
             >
               {isInstagram ? '在 IG 查看原文' : '在 FB 查看原文'}
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10M7 17 17 7" /></svg>

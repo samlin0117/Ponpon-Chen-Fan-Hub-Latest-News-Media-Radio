@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Heart, Users, X, ChevronRight } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import { renderRichText } from './HoverImageLink';
@@ -74,7 +75,30 @@ function FbVideoPlayerMentor({ url, startTime, endTime, isVertical }: { url: str
 const Mentors = () => {
   const { t } = useTranslation();
   const mentorsData = (t as any).mentors;
-  const [selectedMentor, setSelectedMentor] = useState<any>(null);
+  const navigate = useNavigate();
+
+  // 打開的導師記在網址 (?mentor=<清單索引>)，不只放在 state：手機上點出去看
+  // IG/FB 原文時，有些瀏覽器（LINE、FB 內建瀏覽器等）會無視 target="_blank"
+  // 在同一頁開啟，按上一頁回來就會回到這位導師的視窗，而不是清單。
+  // zh/en/ja 的導師清單順序相同，所以索引不受語言影響。
+  const [searchParams, setSearchParams] = useSearchParams();
+  const mentorParam = searchParams.get('mentor');
+  const selectedMentor = mentorParam && /^\d+$/.test(mentorParam) ? mentorsData.list[Number(mentorParam)] ?? null : null;
+  const openedHere = useRef(false);
+  const openMentor = (idx: number) => {
+    openedHere.current = true;
+    setSearchParams(prev => { const p = new URLSearchParams(prev); p.set('mentor', String(idx)); return p; });
+  };
+  const closeMentor = () => {
+    if (openedHere.current) {
+      // 在這頁點開的：退回上一筆紀錄，不留多餘的歷史紀錄
+      openedHere.current = false;
+      navigate(-1);
+    } else {
+      // 帶著 ?mentor= 進來的（例如從 IG 按上一頁）：只拿掉參數，免得退出本站
+      setSearchParams(prev => { const p = new URLSearchParams(prev); p.delete('mentor'); return p; }, { replace: true });
+    }
+  };
   const [activeVideo, setActiveVideo] = useState<{type: 'youtube' | 'facebook', url: string, videoId?: string, embedUrl?: string, isVertical?: boolean, startTime?: number, endTime?: number} | null>(null);
 
   const handleVideoClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -149,7 +173,7 @@ const Mentors = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                onClick={() => setSelectedMentor(mentor)}
+                onClick={() => openMentor(idx)}
                 className="bg-dark/50 border border-white/5 p-6 md:p-8 rounded-2xl cursor-pointer hover:bg-white/5 hover:border-gold/30 transition-all duration-300 group flex flex-col h-full"
               >
                 <div className="flex items-center gap-3 mb-4">
@@ -180,7 +204,7 @@ const Mentors = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setSelectedMentor(null)}
+              onClick={closeMentor}
               className="absolute inset-0 bg-black/80 backdrop-blur-sm cursor-pointer"
             ></motion.div>
 
@@ -197,7 +221,7 @@ const Mentors = () => {
                   <p className="text-sm tracking-widest text-gray-400 uppercase">{selectedMentor.role}</p>
                 </div>
                 <button
-                  onClick={() => setSelectedMentor(null)}
+                  onClick={closeMentor}
                   className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
                 >
                   <X className="w-5 h-5" />
