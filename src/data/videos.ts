@@ -89,6 +89,17 @@ const allVideos: VideoInfo[] = [
     "isFeatured": false
   },
   {
+    "id": "v-X6QlNOWjQeg",
+    "platform": "youtube",
+    "category": "p2",
+    "title": "Ponpon introduces the Gibson Custom 1957 L-5 CES Reissue (Gibson TV)",
+    "date": "2026-10-16",
+    "embedUrl": "X6QlNOWjQeg",
+    "thumbnailUrl": "https://i.ytimg.com/vi/X6QlNOWjQeg/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/shorts/X6QlNOWjQeg"
+  },
+  {
     "id": "v-WMZ94n5T1WQ",
     "platform": "youtube",
     "category": "p2",
