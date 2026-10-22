@@ -617,6 +617,16 @@ const allVideos: VideoInfo[] = [
 
 
   {
+    "id": "v-_TrOjlqmV_w",
+    "platform": "youtube",
+    "category": "p6",
+    "title": "陳芃瑄 Ponpon Chen Quintet｜2026 臺北爵士音樂節 精華 Taipei Jazz Festival Highlights (2026.10.10)",
+    "date": "2026-10-21",
+    "embedUrl": "_TrOjlqmV_w",
+    "thumbnailUrl": "https://i.ytimg.com/vi/_TrOjlqmV_w/maxresdefault.jpg",
+    "isFeatured": false
+  },
+  {
     "id": "v-4ktiVC2MGYA",
     "platform": "youtube",
     "category": "p6",
