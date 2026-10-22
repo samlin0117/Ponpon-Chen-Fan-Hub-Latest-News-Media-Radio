@@ -1296,6 +1296,18 @@ const allVideos: VideoInfo[] = [
     "isFeatured": false
   },
   {
+    "id": "v-imubuoCWgBw",
+    "platform": "youtube",
+    "category": "p8",
+    "song": "Yardbird Suite",
+    "title": "Ponpon Chen - \"Yardbird Suite\" Guitar Solo Transcription @Changhee Han",
+    "date": "2026-10-21",
+    "embedUrl": "imubuoCWgBw",
+    "thumbnailUrl": "https://i.ytimg.com/vi/imubuoCWgBw/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=imubuoCWgBw"
+  },
+  {
     "id": "v-2a_khGtXk_I",
     "platform": "youtube",
     "category": "p8",
