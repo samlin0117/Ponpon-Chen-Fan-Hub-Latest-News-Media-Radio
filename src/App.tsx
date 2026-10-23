@@ -49,16 +49,23 @@ function MainContent() {
       if (url.includes('youtube.com/watch') || url.includes('youtu.be/')) {
         e.preventDefault();
         let videoId = '';
+        let startTime: number | undefined;
+        let endTime: number | undefined;
         try {
+          const urlObj = new URL(url);
           if (url.includes('youtube.com/watch')) {
-            const urlObj = new URL(url);
             videoId = urlObj.searchParams.get('v') || '';
           } else {
             videoId = url.split('youtu.be/')[1].split('?')[0];
           }
+          // 連結可帶 &start=秒數（或 &t=）與 &end=秒數，只播其中一段
+          const start = urlObj.searchParams.get('start') || urlObj.searchParams.get('t');
+          const end = urlObj.searchParams.get('end');
+          if (start) startTime = parseInt(start, 10) || undefined;
+          if (end) endTime = parseInt(end, 10) || undefined;
         } catch (err) {}
         if (videoId) {
-          setActiveTimelineVideo({ type: 'youtube', url, videoId });
+          setActiveTimelineVideo({ type: 'youtube', url, videoId, startTime, endTime });
         }
       } else if (url.includes('facebook.com') && url.includes('/videos/')) {
         e.preventDefault();
