@@ -11,6 +11,8 @@ export interface VideoInfo {
   thumbnailUrl?: string;
   isFeatured: boolean;
   eventGroup?: string;
+  /** 同一個 eventGroup 合輯內的順序（例如演出曲序），數字小的在前；沒寫的排在後面，照上傳者與歌名排 */
+  groupOrder?: number;
   startTime?: number;
   endTime?: number;
   originalUrl?: string;
@@ -1112,7 +1114,6 @@ const allVideos: VideoInfo[] = [
     "eventGroup": "Ponpon 亞巡西門河岸留言專場 (2026-10-13)",
     "embedUrl": "https://www.threads.com/@scarf.h/post/DecFh3gkhm1",
     "thumbnailUrl": "/threads-DecFh3gkhm1.jpg",
-    "hidden": true,
     "isFeatured": false
   },
   {
@@ -1124,7 +1125,6 @@ const allVideos: VideoInfo[] = [
     "eventGroup": "Ponpon 亞巡西門河岸留言專場 (2026-10-13)",
     "embedUrl": "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1466038758920198&show_text=0&width=500",
     "thumbnailUrl": "/fb-1466038758920198.jpg",
-    "hidden": true,
     "isFeatured": false,
     "originalUrl": "https://www.facebook.com/reel/1466038758920198"
   },
@@ -1137,7 +1137,6 @@ const allVideos: VideoInfo[] = [
     "eventGroup": "Ponpon 亞巡西門河岸留言專場 (2026-10-13)",
     "embedUrl": "https://www.threads.com/@ac_bm_1001/post/DecQR6tGolo",
     "thumbnailUrl": "/threads-DecQR6tGolo.jpg",
-    "hidden": true,
     "isFeatured": false
   },
   {
@@ -1149,8 +1148,46 @@ const allVideos: VideoInfo[] = [
     "eventGroup": "Ponpon 亞巡西門河岸留言專場 (2026-10-13)",
     "embedUrl": "https://www.threads.com/@brecht/post/DecQGO2koH_",
     "thumbnailUrl": "/threads-DecQGO2koH_.jpg",
-    "hidden": true,
     "isFeatured": false
+  },
+  {
+    "id": "v-UT98Oy5TuHE",
+    "platform": "youtube",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 & YELLOW黃宣 - 獨上C樓 (Sam Lin)",
+    "date": "2026-10-13",
+    "eventGroup": "Ponpon 亞巡西門河岸留言專場 (2026-10-13)",
+    "groupOrder": 1,
+    "embedUrl": "UT98Oy5TuHE",
+    "thumbnailUrl": "https://i.ytimg.com/vi/UT98Oy5TuHE/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=UT98Oy5TuHE"
+  },
+  {
+    "id": "v-EECbyzt8z9U",
+    "platform": "youtube",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 - Mama Don't Allow It (Sam Lin)",
+    "date": "2026-10-13",
+    "eventGroup": "Ponpon 亞巡西門河岸留言專場 (2026-10-13)",
+    "groupOrder": 2,
+    "embedUrl": "EECbyzt8z9U",
+    "thumbnailUrl": "https://i.ytimg.com/vi/EECbyzt8z9U/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=EECbyzt8z9U"
+  },
+  {
+    "id": "v-Js8LQMAsvVs",
+    "platform": "youtube",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 - Route 66 安可曲 Encore (Sam Lin)",
+    "date": "2026-10-13",
+    "eventGroup": "Ponpon 亞巡西門河岸留言專場 (2026-10-13)",
+    "groupOrder": 3,
+    "embedUrl": "Js8LQMAsvVs",
+    "thumbnailUrl": "https://i.ytimg.com/vi/Js8LQMAsvVs/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=Js8LQMAsvVs"
   },
   {
     "id": "v-hQvDZYiKFgY",

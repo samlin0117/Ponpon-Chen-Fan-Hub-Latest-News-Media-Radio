@@ -3,7 +3,7 @@ import { Play, Layers, X, Calendar } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import VideoCard from './VideoCard';
+import VideoCard, { PLATFORM_LABELS } from './VideoCard';
 
 export default function VideoGroupCard({ name, videos }: { name: string; videos: VideoInfo[]; key?: any }) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -28,13 +28,21 @@ export default function VideoGroupCard({ name, videos }: { name: string; videos:
           <h3 className="text-lg font-serif text-gold group-hover:text-gold-light transition-colors line-clamp-2">
             {name}
           </h3>
-          <div className="flex items-center gap-3 mt-1">
-            <p className="text-sm text-gray-400 font-mono tracking-wide flex items-center">
+          {/* flex-wrap + 各段 nowrap：欄位太窄時整段換行，日期和平台名稱不會從中間斷開 */}
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1">
+            <p className="text-sm text-gray-400 font-mono tracking-wide flex items-center whitespace-nowrap">
               <Calendar className="w-3 h-3 mr-1" />
               {date}
             </p>
-            <span className="text-xs px-2 py-0.5 bg-gold/10 text-gold-light rounded-full border border-gold/20">
+            <span className="text-xs px-2 py-0.5 bg-gold/10 text-gold-light rounded-full border border-gold/20 whitespace-nowrap">
               {videos.length} Videos
+            </span>
+            {/* 合輯裡用到的平台，照 PLATFORM_LABELS 的固定順序列出 */}
+            <span className="text-sm text-gold/80 whitespace-nowrap">
+              {(Object.keys(PLATFORM_LABELS) as VideoInfo['platform'][])
+                .filter(p => videos.some(v => v.platform === p))
+                .map(p => PLATFORM_LABELS[p])
+                .join(' / ')}
             </span>
           </div>
         </div>
@@ -97,6 +105,13 @@ export default function VideoGroupCard({ name, videos }: { name: string; videos:
                   };
 
                   const sortedVideos = [...videos].sort((a, b) => {
+                    // 有指定 groupOrder 的照演出順序排在前面，其餘照下面的規則
+                    if (a.groupOrder != null || b.groupOrder != null) {
+                      if (a.groupOrder == null) return 1;
+                      if (b.groupOrder == null) return -1;
+                      if (a.groupOrder !== b.groupOrder) return a.groupOrder - b.groupOrder;
+                    }
+
                     const uploaderA = a.title.match(/\(([^)]+)\)$/)?.[1] || '';
                     const uploaderB = b.title.match(/\(([^)]+)\)$/)?.[1] || '';
                     

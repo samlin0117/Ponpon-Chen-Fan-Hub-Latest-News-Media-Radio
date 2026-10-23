@@ -117,6 +117,16 @@ function TikTokEmbed({ videoId }: { videoId: string }) {
   );
 }
 
+export const PLATFORM_LABELS: Record<VideoInfo['platform'], string> = {
+  youtube: 'YouTube',
+  facebook: 'Facebook',
+  instagram: 'Instagram',
+  threads: 'Threads',
+  tiktok: 'TikTok',
+  douyin: '抖音',
+  pbs: 'PBS',
+};
+
 export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
   const { t } = useTranslation();
   const localizedTitle = (t as any)?.videoTitles?.[video.id] || video.title;
@@ -151,11 +161,11 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
           <h3 className="text-lg font-serif text-gray-200 group-hover:text-gold transition-colors line-clamp-2">
             {localizedTitle}
           </h3>
-          {video.date && (
-            <p className="text-sm text-gray-400 mt-1 font-mono tracking-wide">
-              {video.displayDate || video.date}
-            </p>
-          )}
+          {/* 日期旁標出平台（YouTube、Threads、FB…），讓人點之前就知道會在哪裡播放 */}
+          <p className="text-sm text-gray-400 mt-1 font-mono tracking-wide">
+            {video.displayDate || video.date}
+            <span className="ml-2 font-sans tracking-normal text-gold/80">· {PLATFORM_LABELS[video.platform]}</span>
+          </p>
         </div>
 
         <div
