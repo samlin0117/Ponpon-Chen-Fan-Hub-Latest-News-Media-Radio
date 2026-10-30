@@ -1190,6 +1190,30 @@ const allVideos: VideoInfo[] = [
     "originalUrl": "https://www.youtube.com/watch?v=Js8LQMAsvVs"
   },
   {
+    "id": "v-xfp8RghL9EU",
+    "platform": "youtube",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 & YELLOW黃宣 - 獨上C樓 (Joanne조앤)",
+    "date": "2026-10-13",
+    "eventGroup": "Ponpon 亞巡西門河岸留言專場 (2026-10-13)",
+    "embedUrl": "xfp8RghL9EU",
+    "thumbnailUrl": "https://i.ytimg.com/vi/xfp8RghL9EU/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=xfp8RghL9EU"
+  },
+  {
+    "id": "v-e9PNV_54NDM",
+    "platform": "youtube",
+    "category": "p5",
+    "title": "Ponpon Chen 陳芃瑄 - Mama Don't Allow It (Joanne조앤)",
+    "date": "2026-10-13",
+    "eventGroup": "Ponpon 亞巡西門河岸留言專場 (2026-10-13)",
+    "embedUrl": "e9PNV_54NDM",
+    "thumbnailUrl": "https://i.ytimg.com/vi/e9PNV_54NDM/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=e9PNV_54NDM"
+  },
+  {
     "id": "v-hQvDZYiKFgY",
     "platform": "youtube",
     "category": "p5",
