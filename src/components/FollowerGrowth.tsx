@@ -77,7 +77,6 @@ const FollowerGrowth: React.FC = () => {
         yBase: sy(m.base),
         baseH: Math.max(0, PAD.top + plotH - sy(m.base)),
         gainH: Math.max(0, sy(m.base) - sy(m.total)),
-        pct: m.base > 0 ? Math.round((m.gain / m.base) * 1000) / 10 : 0,
       };
     });
 
@@ -207,7 +206,7 @@ const FollowerGrowth: React.FC = () => {
                 >
                   {nf.format(b.total)}
                 </text>
-                {/* 綠色區段裡標出當月增加的比例 */}
+                {/* 綠色區段裡標出當月新增的人數 */}
                 {b.gain > 0 && (
                   <text
                     x={b.cx}
@@ -218,7 +217,7 @@ const FollowerGrowth: React.FC = () => {
                     fill={b.gainH >= 16 ? '#04301f' : '#34d399'}
                     fontFamily="ui-monospace, monospace"
                   >
-                    +{b.pct.toFixed(1)}%
+                    +{nf.format(b.gain)}
                   </text>
                 )}
                 <text x={b.cx} y={VIEW_H - PAD.bottom + 22} textAnchor="middle" fontSize={12} fill="#8a8a8a" fontFamily="ui-monospace, monospace">
@@ -264,7 +263,7 @@ const FollowerGrowth: React.FC = () => {
                   {nf.format(active.total)}
                 </text>
                 <text x={0} y={36} textAnchor="middle" fontSize={11} fill="#34d399" fontFamily="ui-monospace, monospace">
-                  +{nf.format(active.gain)} ({active.pct > 0 ? '+' : ''}{active.pct.toFixed(1)}%)
+                  +{nf.format(active.gain)}
                 </text>
                 <text x={0} y={50} textAnchor="middle" fontSize={10} fill="#9a9a9a" fontFamily="ui-monospace, monospace">
                   {fmtMonth(active.key)}
