@@ -56,6 +56,15 @@ export const followerHistory: FollowerDataPoint[] = [
   { date: '2026-08-30', followers: 48061 },
   { date: '2026-08-31', followers: 48148 },
   { date: '2026-09-30', followers: 56060 },
+  {
+    date: '2026-10-22',
+    followers: 60739,
+    note: {
+      zh: 'Gibson Custom 官方 IG 發布 Ponpon 試奏全新 1957 L-5 CES 復刻版的短影音，並講述一把 L-5 從 Wes Montgomery、George Benson 一路傳到 Pat Metheny 的故事。當天單日新增 1,074 位追蹤者，突破千人。',
+      en: 'Gibson Custom posted a reel of Ponpon playing the new 1957 L-5 CES Reissue, telling the story of an L-5 that passed from Wes Montgomery to George Benson and on to Pat Metheny. She gained 1,074 followers that day — over a thousand in a single day.',
+      ja: 'Gibson Custom 公式 Instagram が、Ponpon が新しい 1957 L-5 CES リイシューを演奏するショート動画を公開。Wes Montgomery から George Benson、そして Pat Metheny へと受け継がれた L-5 の物語を紹介。この日だけで 1,074 人のフォロワーが増え、1 日で千人を突破。',
+    },
+  },
   { date: '2026-10-31', followers: 61659 },
 ];
 
