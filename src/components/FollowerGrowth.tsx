@@ -211,14 +211,14 @@ const FollowerGrowth: React.FC = () => {
                 {b.gain > 0 && (
                   <text
                     x={b.cx}
-                    y={b.yTotal + (b.gainH >= 26 ? b.gainH / 2 + 4 : b.gainH + 16)}
+                    y={b.yTotal + (b.gainH >= 16 ? b.gainH / 2 + 4 : b.gainH + 16)}
                     textAnchor="middle"
                     fontSize={11}
                     fontWeight={700}
-                    fill={b.gainH >= 26 ? '#04301f' : '#34d399'}
+                    fill={b.gainH >= 16 ? '#04301f' : '#34d399'}
                     fontFamily="ui-monospace, monospace"
                   >
-                    +{b.pct}%
+                    +{b.pct.toFixed(1)}%
                   </text>
                 )}
                 <text x={b.cx} y={VIEW_H - PAD.bottom + 22} textAnchor="middle" fontSize={12} fill="#8a8a8a" fontFamily="ui-monospace, monospace">
@@ -264,7 +264,7 @@ const FollowerGrowth: React.FC = () => {
                   {nf.format(active.total)}
                 </text>
                 <text x={0} y={36} textAnchor="middle" fontSize={11} fill="#34d399" fontFamily="ui-monospace, monospace">
-                  +{nf.format(active.gain)} ({active.pct > 0 ? '+' : ''}{active.pct}%)
+                  +{nf.format(active.gain)} ({active.pct > 0 ? '+' : ''}{active.pct.toFixed(1)}%)
                 </text>
                 <text x={0} y={50} textAnchor="middle" fontSize={10} fill="#9a9a9a" fontFamily="ui-monospace, monospace">
                   {fmtMonth(active.key)}
