@@ -10,6 +10,8 @@ export interface FollowerDataPoint {
   followers: number;
   // 選填：這個日期粉絲數變化的原因。可填單一字串，或三語物件 { zh, en, ja }。
   note?: string | { zh?: string; en?: string; ja?: string };
+  // 選填：如果變化是某支影片帶動的，填該影片的網址，事件說明裡會出現「觀看影片」連結。
+  link?: string;
 }
 
 export const followerHistory: FollowerDataPoint[] = [

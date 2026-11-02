@@ -1,18 +1,60 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'motion/react';
-import { Instagram, ExternalLink, Flag } from 'lucide-react';
+import { Instagram, ExternalLink, Flag, Play, X } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import { followerHistory, followerProfile, FollowerDataPoint } from '../data/followerHistory';
 
 const VIEW_W = 820;
 const VIEW_H = 360;
 const PAD = { top: 34, right: 26, bottom: 46, left: 62 };
+// 圖表上方事件編號圓圈的 y 座標
+const MARKER_Y = PAD.top - 20;
+// 事件說明卡的寬度：最寬 320px，窄螢幕時左右各留 8px
+const POP_W = 'min(320px, calc(100% - 16px))';
 
 const FollowerGrowth: React.FC = () => {
   const { t, lang } = useTranslation();
   const tr = (t as any).followerGrowth || {};
 
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
+  const [openNote, setOpenNote] = useState<number | null>(null);
+  // 先假設有滑鼠，掛載後再依裝置修正；手機沒有 hover，改用點擊開關事件說明
+  const [canHover, setCanHover] = useState(true);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    setCanHover(window.matchMedia('(hover: hover) and (pointer: fine)').matches);
+    return () => {
+      if (closeTimer.current) clearTimeout(closeTimer.current);
+    };
+  }, []);
+
+  // 點到事件編號與說明卡以外的地方、或按 Esc，就關掉說明卡
+  useEffect(() => {
+    if (openNote == null) return;
+    const onPointerDown = (e: PointerEvent) => {
+      if (!(e.target as Element).closest?.('[data-note-ui]')) setOpenNote(null);
+    };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpenNote(null);
+    };
+    document.addEventListener('pointerdown', onPointerDown);
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown);
+      document.removeEventListener('keydown', onKeyDown);
+    };
+  }, [openNote]);
+
+  const showNote = (k: number) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpenNote(k);
+  };
+  // 稍微延遲再關，讓滑鼠能從編號移到說明卡上點連結
+  const hideNoteSoon = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setOpenNote(null), 200);
+  };
 
   const data = followerHistory;
   const last = data[data.length - 1];
@@ -51,7 +93,7 @@ const FollowerGrowth: React.FC = () => {
         total: end.followers,
         base: end.followers - gain,
         gain,
-        notes: rows.filter((r) => noteText(r.note)).map((r) => ({ date: r.date, text: noteText(r.note) })),
+        notes: rows.filter((r) => noteText(r.note)).map((r) => ({ date: r.date, text: noteText(r.note), link: r.link })),
       };
     });
   }, [data, lang]);
@@ -91,6 +133,7 @@ const FollowerGrowth: React.FC = () => {
   const active = hoverIdx != null ? bars[hoverIdx] : null;
 
   const annotations = bars.flatMap((b) => b.notes.map((n) => ({ ...n, cx: b.cx, yTotal: b.yTotal })));
+  const openAnn = openNote != null ? annotations[openNote] : null;
 
   const fmtMonth = (key: string) => {
     const [y, m] = key.split('-');
@@ -147,8 +190,8 @@ const FollowerGrowth: React.FC = () => {
           </span>
         </div>
 
-        {/* Chart */}
-        <div className="relative w-full overflow-hidden">
+        {/* Chart（不裁切外框，事件說明卡在手機上可能超出圖表高度） */}
+        <div className="relative w-full">
           <svg viewBox={`0 0 ${VIEW_W} ${VIEW_H}`} className="w-full h-auto" role="img" aria-label={tr.title || 'Follower growth chart'}>
             {/* Y grid + labels */}
             {yTicks.map((tk, i) => (
@@ -241,15 +284,15 @@ const FollowerGrowth: React.FC = () => {
                 <line
                   x1={a.cx}
                   x2={a.cx}
-                  y1={PAD.top - 20}
+                  y1={MARKER_Y}
                   y2={a.yTotal - 24}
                   stroke="#e8cfa6"
                   strokeOpacity={0.5}
                   strokeWidth={1}
                   strokeDasharray="3 3"
                 />
-                <circle cx={a.cx} cy={PAD.top - 20} r={9} fill="#0a0a0a" stroke="#e8cfa6" strokeWidth={1.5} />
-                <text x={a.cx} y={PAD.top - 16} textAnchor="middle" fontSize={11} fontWeight={700} fill="#e8cfa6" fontFamily="ui-monospace, monospace">
+                <circle cx={a.cx} cy={MARKER_Y} r={10} fill={openNote === k ? '#e8cfa6' : '#0a0a0a'} stroke="#e8cfa6" strokeWidth={1.5} />
+                <text x={a.cx} y={MARKER_Y + 4} textAnchor="middle" fontSize={11} fontWeight={700} fill={openNote === k ? '#0a0a0a' : '#e8cfa6'} fontFamily="ui-monospace, monospace">
                   {k + 1}
                 </text>
               </g>
@@ -271,30 +314,71 @@ const FollowerGrowth: React.FC = () => {
               </g>
             )}
           </svg>
-        </div>
 
-        {/* Key moments */}
-        {annotations.length > 0 && (
-          <div className="mt-6 border-t border-white/5 pt-5">
-            <div className="flex items-center gap-2 text-gold-light/80 mb-3">
-              <Flag className="w-3.5 h-3.5" />
-              <span className="text-xs uppercase tracking-widest">{tr.keyMoments || 'Key moments'}</span>
+          {/* 事件編號的點擊 / 滑鼠感應區（比圓圈大，手機上也點得到） */}
+          {annotations.map((a, k) => (
+            <button
+              key={`ann-btn-${k}`}
+              type="button"
+              data-note-ui
+              aria-label={`${tr.keyMoments || 'Key moments'} ${k + 1}`}
+              aria-expanded={openNote === k}
+              className="absolute w-9 h-9 -translate-x-1/2 -translate-y-1/2 rounded-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/60"
+              style={{ left: `${(a.cx / VIEW_W) * 100}%`, top: `${(MARKER_Y / VIEW_H) * 100}%` }}
+              onMouseEnter={() => canHover && showNote(k)}
+              onMouseLeave={() => canHover && hideNoteSoon()}
+              onClick={() => (canHover || openNote !== k ? showNote(k) : setOpenNote(null))}
+            />
+          ))}
+
+          {/* 事件說明卡：電腦版滑鼠移到編號上出現，手機版點編號開關 */}
+          {openAnn && (
+            <div
+              data-note-ui
+              role="dialog"
+              aria-label={`${tr.keyMoments || 'Key moments'} ${openNote! + 1}`}
+              className="absolute z-30 rounded-xl border border-gold/25 bg-[#0a0a0a]/95 backdrop-blur-sm p-4 shadow-2xl text-left"
+              style={{
+                width: POP_W,
+                left: `clamp(8px, calc(${(openAnn.cx / VIEW_W) * 100}% - ${POP_W} / 2), calc(100% - ${POP_W} - 8px))`,
+                top: `calc(${(MARKER_Y / VIEW_H) * 100}% + 22px)`,
+              }}
+              onMouseEnter={() => canHover && showNote(openNote!)}
+              onMouseLeave={() => canHover && hideNoteSoon()}
+            >
+              <div className="flex items-center gap-2 text-gold-light/80 mb-2">
+                <Flag className="w-3.5 h-3.5 shrink-0" />
+                <span className="text-[11px] uppercase tracking-widest">
+                  {tr.keyMoments || 'Key moments'} {openNote! + 1}
+                </span>
+                <span className="ml-auto text-[11px] font-mono text-gray-500">{fmtFullDate(openAnn.date)}</span>
+                {!canHover && (
+                  <button
+                    type="button"
+                    aria-label="Close"
+                    className="-mr-1 p-1 text-gray-500 hover:text-white"
+                    onClick={() => setOpenNote(null)}
+                  >
+                    <X className="w-3.5 h-3.5" />
+                  </button>
+                )}
+              </div>
+              <p className="text-sm text-gray-300 leading-relaxed">{openAnn.text}</p>
+              {openAnn.link && (
+                <a
+                  href={openAnn.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-1.5 text-sm text-gold hover:text-gold-light transition-colors"
+                >
+                  <Play className="w-3.5 h-3.5" />
+                  {tr.watchVideo || 'Watch the video'}
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              )}
             </div>
-            <ul className="space-y-2.5">
-              {annotations.map((a, k) => (
-                <li key={`note-${k}`} className="flex gap-3 text-sm">
-                  <span className="shrink-0 w-5 h-5 rounded-full border border-gold/40 text-gold-light text-[11px] font-mono flex items-center justify-center mt-0.5">
-                    {k + 1}
-                  </span>
-                  <span className="text-gray-400 leading-relaxed">
-                    <span className="text-gray-500 font-mono text-xs mr-2">{fmtFullDate(a.date)}</span>
-                    {a.text}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+          )}
+        </div>
 
         <p className="text-[11px] text-gray-600 mt-5 leading-relaxed">
           {tr.note ||
