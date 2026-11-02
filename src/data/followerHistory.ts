@@ -42,7 +42,7 @@ export const followerHistory: FollowerDataPoint[] = [
   {
     date: '2026-08-22',
     followers: 44667,
-    link: 'https://www.instagram.com/reel/DcTm_6dhBNo/',
+    link: 'https://www.youtube.com/watch?v=US8gXwg853s',
     note: {
       zh: 'Ponpon 在 IG 發布〈How High The Moon〉短影音爆紅——她同步展現 scatting 擬聲吟唱、吉他與口哨的技巧，引發大量轉發與留言，短短幾天增加超過 5,000 位追蹤者。',
       en: 'Ponpon\'s "How High The Moon" short went viral on Instagram — scatting, guitar and whistling all at once drew a flood of shares and comments, adding over 5,000 followers in just a few days.',
@@ -62,7 +62,7 @@ export const followerHistory: FollowerDataPoint[] = [
   {
     date: '2026-10-22',
     followers: 60739,
-    link: 'https://www.instagram.com/reel/DewrqEIFbpg/',
+    link: 'https://www.youtube.com/shorts/X6QlNOWjQeg',
     note: {
       zh: 'Gibson Custom 官方 IG 發布 Ponpon 試奏全新 1957 L-5 CES 復刻版的短影音，並講述一把 L-5 從 Wes Montgomery、George Benson 一路傳到 Pat Metheny 的故事。當天單日新增 1,074 位追蹤者，突破千人。',
       en: 'Gibson Custom posted a reel of Ponpon playing the new 1957 L-5 CES Reissue, telling the story of an L-5 that passed from Wes Montgomery to George Benson and on to Pat Metheny. She gained 1,074 followers that day — over a thousand in a single day.',
