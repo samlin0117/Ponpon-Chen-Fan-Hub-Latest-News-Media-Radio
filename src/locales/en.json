@@ -34,6 +34,9 @@
     "avgPerRecord": "Avg gain / day",
     "keyMoments": "Key moments",
     "watchVideo": "Watch the video",
+    "eventLegend": "A key moment that brought in new followers",
+    "eventHintHover": " (hover over the icon for details)",
+    "eventHintTap": " (tap the icon for details)",
     "updated": "Updated",
     "source": "Source",
     "note": "Each bar is the follower count at the end of that month; the brighter top segment is what was gained during the month. The first bar is the end-of-July baseline."

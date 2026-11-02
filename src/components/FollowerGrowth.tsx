@@ -1,16 +1,32 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { motion } from 'motion/react';
-import { Instagram, ExternalLink, Flag, Play, X } from 'lucide-react';
+import { createPortal } from 'react-dom';
+import { motion, AnimatePresence } from 'motion/react';
+import { Instagram, ExternalLink, Play, Star, X } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 import { followerHistory, followerProfile, FollowerDataPoint } from '../data/followerHistory';
 
 const VIEW_W = 820;
 const VIEW_H = 360;
 const PAD = { top: 34, right: 26, bottom: 46, left: 62 };
-// 圖表上方事件編號圓圈的 y 座標
+// 圖表上方重要事件星號圖示的 y 座標
 const MARKER_Y = PAD.top - 20;
 // 事件說明卡的寬度：最寬 320px，窄螢幕時左右各留 8px
 const POP_W = 'min(320px, calc(100% - 16px))';
+
+// 從 YouTube 網址取出影片 ID；/shorts/ 網址用直式播放視窗。不是 YouTube 就回傳 null（改用另開分頁）
+const parseYouTube = (url: string): { id: string; vertical: boolean } | null => {
+  try {
+    const u = new URL(url);
+    if (u.hostname === 'youtu.be') return { id: u.pathname.slice(1), vertical: false };
+    if (!u.hostname.endsWith('youtube.com')) return null;
+    const shorts = u.pathname.match(/^\/shorts\/([^/]+)/);
+    if (shorts) return { id: shorts[1], vertical: true };
+    const v = u.searchParams.get('v');
+    return v ? { id: v, vertical: false } : null;
+  } catch {
+    return null;
+  }
+};
 
 const FollowerGrowth: React.FC = () => {
   const { t, lang } = useTranslation();
@@ -20,6 +36,7 @@ const FollowerGrowth: React.FC = () => {
   const [openNote, setOpenNote] = useState<number | null>(null);
   // 先假設有滑鼠，掛載後再依裝置修正；手機沒有 hover，改用點擊開關事件說明
   const [canHover, setCanHover] = useState(true);
+  const [playing, setPlaying] = useState<{ id: string; vertical: boolean } | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -29,7 +46,7 @@ const FollowerGrowth: React.FC = () => {
     };
   }, []);
 
-  // 點到事件編號與說明卡以外的地方、或按 Esc，就關掉說明卡
+  // 點到事件圖示與說明卡以外的地方、或按 Esc，就關掉說明卡
   useEffect(() => {
     if (openNote == null) return;
     const onPointerDown = (e: PointerEvent) => {
@@ -46,11 +63,27 @@ const FollowerGrowth: React.FC = () => {
     };
   }, [openNote]);
 
+  // 影片播放視窗開著時，按 Esc 關閉
+  useEffect(() => {
+    if (!playing) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setPlaying(null);
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [playing]);
+
+  const playVideo = (yt: { id: string; vertical: boolean }) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpenNote(null);
+    setPlaying(yt);
+  };
+
   const showNote = (k: number) => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
     setOpenNote(k);
   };
-  // 稍微延遲再關，讓滑鼠能從編號移到說明卡上點連結
+  // 稍微延遲再關，讓滑鼠能從圖示移到說明卡上點連結
   const hideNoteSoon = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
     closeTimer.current = setTimeout(() => setOpenNote(null), 200);
@@ -134,6 +167,7 @@ const FollowerGrowth: React.FC = () => {
 
   const annotations = bars.flatMap((b) => b.notes.map((n) => ({ ...n, cx: b.cx, yTotal: b.yTotal })));
   const openAnn = openNote != null ? annotations[openNote] : null;
+  const openAnnYT = openAnn?.link ? parseYouTube(openAnn.link) : null;
 
   const fmtMonth = (key: string) => {
     const [y, m] = key.split('-');
@@ -188,6 +222,17 @@ const FollowerGrowth: React.FC = () => {
             <span className="w-3 h-3 rounded-sm bg-emerald-400" />
             {tr.monthlyGain || 'Gained this month'}
           </span>
+          {annotations.length > 0 && (
+            <span className="inline-flex items-center gap-2">
+              <Star className="w-3 h-3 text-gold-light fill-current" />
+              <span>
+                {tr.eventLegend || 'A key moment that brought in new followers'}
+                <span className="text-gray-500">
+                  {canHover ? tr.eventHintHover || ' (hover over the icon for details)' : tr.eventHintTap || ' (tap the icon for details)'}
+                </span>
+              </span>
+            </span>
+          )}
         </div>
 
         {/* Chart（不裁切外框，事件說明卡在手機上可能超出圖表高度） */}
@@ -278,24 +323,19 @@ const FollowerGrowth: React.FC = () => {
               </g>
             ))}
 
-            {/* Annotation flags */}
+            {/* 重要事件：從星號圖示拉一條虛線到該月柱子（圖示本身畫在下方的按鈕裡） */}
             {annotations.map((a, k) => (
-              <g key={`ann-${k}`}>
-                <line
-                  x1={a.cx}
-                  x2={a.cx}
-                  y1={MARKER_Y}
-                  y2={a.yTotal - 24}
-                  stroke="#e8cfa6"
-                  strokeOpacity={0.5}
-                  strokeWidth={1}
-                  strokeDasharray="3 3"
-                />
-                <circle cx={a.cx} cy={MARKER_Y} r={10} fill={openNote === k ? '#e8cfa6' : '#0a0a0a'} stroke="#e8cfa6" strokeWidth={1.5} />
-                <text x={a.cx} y={MARKER_Y + 4} textAnchor="middle" fontSize={11} fontWeight={700} fill={openNote === k ? '#0a0a0a' : '#e8cfa6'} fontFamily="ui-monospace, monospace">
-                  {k + 1}
-                </text>
-              </g>
+              <line
+                key={`ann-${k}`}
+                x1={a.cx}
+                x2={a.cx}
+                y1={MARKER_Y}
+                y2={a.yTotal - 24}
+                stroke="#e8cfa6"
+                strokeOpacity={0.5}
+                strokeWidth={1}
+                strokeDasharray="3 3"
+              />
             ))}
 
             {/* Hover tooltip */}
@@ -315,28 +355,34 @@ const FollowerGrowth: React.FC = () => {
             )}
           </svg>
 
-          {/* 事件編號的點擊 / 滑鼠感應區（比圓圈大，手機上也點得到） */}
+          {/* 重要事件星號圖示：用 HTML 畫，手機上不會跟著圖表縮小；感應範圍比圖示大，手機上也點得到 */}
           {annotations.map((a, k) => (
             <button
               key={`ann-btn-${k}`}
               type="button"
               data-note-ui
-              aria-label={`${tr.keyMoments || 'Key moments'} ${k + 1}`}
+              aria-label={`${tr.keyMoments || 'Key moments'} ${fmtFullDate(a.date)}`}
               aria-expanded={openNote === k}
-              className="absolute w-9 h-9 -translate-x-1/2 -translate-y-1/2 rounded-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/60"
+              className="group absolute w-9 h-9 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/60"
               style={{ left: `${(a.cx / VIEW_W) * 100}%`, top: `${(MARKER_Y / VIEW_H) * 100}%` }}
               onMouseEnter={() => canHover && showNote(k)}
               onMouseLeave={() => canHover && hideNoteSoon()}
               onClick={() => (canHover || openNote !== k ? showNote(k) : setOpenNote(null))}
-            />
+            >
+              <span
+                className={`w-6 h-6 flex items-center justify-center rounded-full border border-[#e8cfa6] transition-colors ${openNote === k ? 'bg-[#e8cfa6] text-[#0a0a0a]' : 'bg-[#0a0a0a] text-[#e8cfa6] group-hover:bg-[#e8cfa6]/15'}`}
+              >
+                <Star className="w-3.5 h-3.5 fill-current" />
+              </span>
+            </button>
           ))}
 
-          {/* 事件說明卡：電腦版滑鼠移到編號上出現，手機版點編號開關 */}
+          {/* 事件說明卡：電腦版滑鼠移到圖示上出現，手機版點圖示開關 */}
           {openAnn && (
             <div
               data-note-ui
               role="dialog"
-              aria-label={`${tr.keyMoments || 'Key moments'} ${openNote! + 1}`}
+              aria-label={`${tr.keyMoments || 'Key moments'} ${fmtFullDate(openAnn.date)}`}
               className="absolute z-30 rounded-xl border border-gold/25 bg-[#0a0a0a]/95 backdrop-blur-sm p-4 shadow-2xl text-left"
               style={{
                 width: POP_W,
@@ -347,10 +393,8 @@ const FollowerGrowth: React.FC = () => {
               onMouseLeave={() => canHover && hideNoteSoon()}
             >
               <div className="flex items-center gap-2 text-gold-light/80 mb-2">
-                <Flag className="w-3.5 h-3.5 shrink-0" />
-                <span className="text-[11px] uppercase tracking-widest">
-                  {tr.keyMoments || 'Key moments'} {openNote! + 1}
-                </span>
+                <Star className="w-3.5 h-3.5 shrink-0 fill-current" />
+                <span className="text-[11px] uppercase tracking-widest">{tr.keyMoments || 'Key moments'}</span>
                 <span className="ml-auto text-[11px] font-mono text-gray-500">{fmtFullDate(openAnn.date)}</span>
                 {!canHover && (
                   <button
@@ -364,7 +408,17 @@ const FollowerGrowth: React.FC = () => {
                 )}
               </div>
               <p className="text-sm text-gray-300 leading-relaxed">{openAnn.text}</p>
-              {openAnn.link && (
+              {/* YouTube 影片在本頁跳出播放視窗；其他網站的連結另開分頁 */}
+              {openAnnYT ? (
+                <button
+                  type="button"
+                  onClick={() => playVideo(openAnnYT)}
+                  className="mt-3 inline-flex items-center gap-1.5 text-sm text-gold hover:text-gold-light transition-colors"
+                >
+                  <Play className="w-3.5 h-3.5" />
+                  {tr.watchVideo || 'Watch the video'}
+                </button>
+              ) : openAnn.link && (
                 <a
                   href={openAnn.link}
                   target="_blank"
@@ -396,6 +450,52 @@ const FollowerGrowth: React.FC = () => {
           {tr.updated || 'Updated'} {fmtFullDate(followerProfile.lastUpdated)}
         </p>
       </div>
+
+      {/* 影片播放視窗：掛到 body 底下，不受外層動畫的 transform 影響 */}
+      {typeof document !== 'undefined' &&
+        createPortal(
+          <AnimatePresence>
+            {playing && (
+              <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={() => setPlaying(null)}
+                  className="absolute inset-0 bg-dark/90 backdrop-blur-sm"
+                />
+                <motion.div
+                  initial={{ opacity: 0, y: 50, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 20, scale: 0.95 }}
+                  transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+                  className={`relative bg-black border border-white/10 rounded-2xl shadow-2xl overflow-hidden ${playing.vertical ? 'aspect-[9/16]' : 'w-full max-w-4xl aspect-video'}`}
+                  // 直式影片：寬度最多 400px，且整個視窗高度不超出螢幕
+                  style={playing.vertical ? { width: 'min(400px, 100%, calc((100dvh - 3rem) * 9 / 16))' } : undefined}
+                >
+                  <div className="absolute top-0 right-0 z-20 p-3">
+                    <button
+                      type="button"
+                      aria-label="Close"
+                      onClick={() => setPlaying(null)}
+                      className="p-2 rounded-full bg-black/60 hover:bg-white/20 text-white backdrop-blur-md transition-colors"
+                    >
+                      <X className="w-6 h-6" />
+                    </button>
+                  </div>
+                  <iframe
+                    src={`https://www.youtube.com/embed/${playing.id}?autoplay=1`}
+                    title={tr.watchVideo || 'Watch the video'}
+                    className="absolute inset-0 w-full h-full border-0"
+                    allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </motion.div>
+              </div>
+            )}
+          </AnimatePresence>,
+          document.body
+        )}
     </motion.div>
   );
 };

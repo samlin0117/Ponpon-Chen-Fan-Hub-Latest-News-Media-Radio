@@ -10,7 +10,8 @@ export interface FollowerDataPoint {
   followers: number;
   // 選填：這個日期粉絲數變化的原因。可填單一字串，或三語物件 { zh, en, ja }。
   note?: string | { zh?: string; en?: string; ja?: string };
-  // 選填：如果變化是某支影片帶動的，填該影片的網址，事件說明裡會出現「觀看影片」連結。
+  // 選填：如果變化是某支影片帶動的，填該影片的網址，事件說明裡會出現「觀看影片」。
+  // YouTube 影片會在本頁跳出播放視窗（直式短影音請用 youtube.com/shorts/ 網址，視窗才會是直的）；其他網站另開分頁。
   link?: string;
 }
 
@@ -42,7 +43,7 @@ export const followerHistory: FollowerDataPoint[] = [
   {
     date: '2026-08-22',
     followers: 44667,
-    link: 'https://www.youtube.com/watch?v=US8gXwg853s',
+    link: 'https://www.youtube.com/shorts/US8gXwg853s',
     note: {
       zh: 'Ponpon 在 IG 發布〈How High The Moon〉短影音爆紅——她同步展現 scatting 擬聲吟唱、吉他與口哨的技巧，引發大量轉發與留言，短短幾天增加超過 5,000 位追蹤者。',
       en: 'Ponpon\'s "How High The Moon" short went viral on Instagram — scatting, guitar and whistling all at once drew a flood of shares and comments, adding over 5,000 followers in just a few days.',
