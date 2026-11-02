@@ -208,7 +208,10 @@ const FollowerGrowth: React.FC = () => {
             <div className="text-4xl md:text-5xl font-serif text-white leading-none">
               {nf.format(last.followers)}
             </div>
-            <div className="text-xs text-gray-500 mt-2 uppercase tracking-widest">{tr.current || 'Followers'}</div>
+            {/* 標出這個數字是哪一天的（取資料最後一筆的日期） */}
+            <div className="text-xs text-gray-500 mt-2 uppercase tracking-widest">
+              {(tr.currentAsOf || 'Followers as of {date}').replace('{date}', fmtFullDate(last.date))}
+            </div>
           </div>
         </div>
 

@@ -26,7 +26,7 @@
   },
   "followerGrowth": {
     "title": "Instagram フォロワー推移",
-    "current": "フォロワー数",
+    "currentAsOf": "{date}時点のフォロワー数",
     "totalLabel": "総フォロワー数",
     "monthlyGain": "その月の増加数",
     "posts": "投稿",

@@ -26,7 +26,7 @@
   },
   "followerGrowth": {
     "title": "Instagram 粉絲成長",
-    "current": "目前粉絲數",
+    "currentAsOf": "截至 {date}的追蹤人數",
     "totalLabel": "總粉絲數",
     "monthlyGain": "當月新增",
     "posts": "貼文",
