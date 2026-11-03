@@ -619,6 +619,16 @@ const allVideos: VideoInfo[] = [
 
 
   {
+    "id": "v-TyEmFDNbn7w",
+    "platform": "youtube",
+    "category": "p6",
+    "title": "Ponpon Chen 陳芃瑄 – Washboard Highlights 洗衣板精華｜Live 2025–2026",
+    "date": "2026-11-03",
+    "embedUrl": "TyEmFDNbn7w",
+    "thumbnailUrl": "https://i.ytimg.com/vi/TyEmFDNbn7w/maxresdefault.jpg",
+    "isFeatured": false
+  },
+  {
     "id": "v-_TrOjlqmV_w",
     "platform": "youtube",
     "category": "p6",
