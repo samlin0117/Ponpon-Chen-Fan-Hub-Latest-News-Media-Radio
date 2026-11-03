@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Mic2, Music, Wind, Radio, MessageSquare, PlayCircle, Star, Info, Youtube, History, X, Shuffle, Play, ArrowUp } from 'lucide-react';
+import { Mic2, Music, Wind, Radio, MessageSquare, PlayCircle, Star, Info, Youtube, History, X, Shuffle, Play, ArrowUp, Drum } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
 
 interface Master {
@@ -26,10 +26,13 @@ interface Technique {
     videoId?: string;
     startTime?: number;
     endTime?: number;
+    /** 直式影片（YouTube Shorts），用 9:16 的播放框 */
+    vertical?: boolean;
     videos?: {
       videoId: string;
       startTime?: number;
       endTime?: number;
+      vertical?: boolean;
     }[];
   };
 }
@@ -172,6 +175,19 @@ export default function SignatureTechniques() {
         startTime: 1219,
         endTime: 1296
       }
+    },
+    {
+      id: "washboard",
+      icon: <Drum className="w-6 h-6" />,
+      titleKey: sigT.washboard?.title || "Washboard (洗衣板)",
+      descKey: sigT.washboard?.desc || "Washboard（洗衣板）原本是洗衣服用的家用工具，20 世紀初被美國南方的非裔音樂人拿來當作打擊樂器，常見於早期爵士與傳統爵士樂團。",
+      masters: [],
+      hideMasters: true,
+      ponpon: {
+        desc: sigT.washboard?.ponpon || "Ponpon 在〈All of Me〉、〈Them There Eyes〉等 Swing 標準曲中，常一邊演唱、一邊敲擊洗衣板，為演出增添復古爵士氛圍與俏皮趣味。",
+        videoId: "TyEmFDNbn7w", // Washboard Highlights（Shorts）
+        vertical: true
+      }
     }
   ];
 
@@ -311,11 +327,11 @@ export default function SignatureTechniques() {
                     </p>
 
                     <div className="flex flex-col gap-6">
-                      {(tech.ponpon.videos || [{videoId: tech.ponpon.videoId, startTime: tech.ponpon.startTime, endTime: tech.ponpon.endTime}]).map((video, vIdx) => {
+                      {(tech.ponpon.videos || [{videoId: tech.ponpon.videoId, startTime: tech.ponpon.startTime, endTime: tech.ponpon.endTime, vertical: tech.ponpon.vertical}]).map((video, vIdx) => {
                         if (!video.videoId) return null;
                         const key = `${tech.id}-${vIdx}`;
                         return (
-                          <div key={vIdx} className="relative aspect-video rounded-2xl overflow-hidden bg-black border border-white/10 group">
+                          <div key={vIdx} className={`relative ${video.vertical ? 'aspect-[9/16] w-full max-w-[360px] mx-auto' : 'aspect-video'} rounded-2xl overflow-hidden bg-black border border-white/10 group`}>
                             {playingVideos.has(key) ? (
                               <iframe 
                                 className="w-full h-full"
@@ -333,7 +349,8 @@ export default function SignatureTechniques() {
                                 className="absolute inset-0 w-full h-full"
                               >
                                 <img
-                                  src={`https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`}
+                                  // 直式影片用 YouTube 為 Shorts 產生的直式封面 oar2.jpg
+                                  src={`https://img.youtube.com/vi/${video.videoId}/${video.vertical ? 'oar2' : 'hqdefault'}.jpg`}
                                   alt=""
                                   loading="lazy"
                                   className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity"
