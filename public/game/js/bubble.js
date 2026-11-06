@@ -64,6 +64,7 @@ const $ = (id) => document.getElementById(id);
 const stage = $('stage');
 const canvas = $('canvas');
 const g2d = canvas.getContext('2d');
+const shooter = $('shooter');
 
 // 瀏覽器儲存可能被封鎖（無痕模式等），讀寫都包 try/catch
 const load = (k) => {
@@ -191,6 +192,11 @@ function resize() {
   left = (W - R * COLS * 2) / 2;
   launcher = { x: W / 2, y: H - Math.max(66, R * 3.3) };
   nextPos = { x: W / 2 - R * 3.6, y: launcher.y + R * 0.7 };
+  // 公仔站在發射台右邊的地板上，比例照場地大小
+  const shooterH = R * 6.2;
+  shooter.style.height = `${shooterH}px`;
+  shooter.style.left = `${W / 2 + R * 2.1}px`;
+  shooter.style.bottom = `calc(10px + env(safe-area-inset-bottom))`;
   deadY = top + 2 * R + (DEAD_ROWS - 1) * rowH() + 1;
   for (const type of TYPES) {
     const s = document.createElement('canvas');
@@ -282,6 +288,7 @@ function startLevel(index, score) {
   if (engine.ctx.state !== 'running') engine.ctx.resume();
 
   $('overlay-end').classList.remove('show');
+  shooter.classList.remove('sad', 'cheer', 'happy', 'strum');
   show('screen-game');
   resize();
   const level = LEVELS[index];
@@ -387,6 +394,7 @@ function fire(angle) {
   G.aim = null;
   G.trace = null;
   engine.stick(engine.now(), 0.1);
+  restart(shooter, 'strum');
 }
 
 function swapBubbles() {
@@ -553,6 +561,8 @@ function place(shot) {
     G.score += gained;
     G.fx.push({ kind: 'text', x: cellX(row, col), y: cellY(row), born: now, life: 0.8, text: `+${gained}` });
     if (cluster.length + loose.length >= 6) showBanner(T.cheers[Math.floor(Math.random() * T.cheers.length)]);
+    shooter.classList.remove('strum');
+    restart(shooter, 'happy');
     trimRows();
   } else {
     engine.stick(audioNow, 0.14);
@@ -603,6 +613,7 @@ function endLevel(won) {
   const now = engine.now();
   if (!won) {
     engine.sour(now, 0.2);
+    shooter.classList.add('sad');
     updateHud();
     setTimeout(() => G === run && showPanel(false), 650);
     return;
@@ -610,6 +621,8 @@ function endLevel(won) {
   G.score += (G.index + 1) * 100; // 越後面的關卡，過關加分越多
   updateHud();
   engine.applause(now + 0.2, 90);
+  shooter.classList.remove('strum', 'happy');
+  restart(shooter, 'cheer');
   // 彩帶
   const t = performance.now() / 1000;
   for (let i = 0; i < 60; i++) {

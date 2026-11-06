@@ -30,16 +30,47 @@
 
 /* ---------- 舞台 ---------- */
 #screen-game { touch-action: none; }
-.bubble-stage { position: absolute; inset: 0; overflow: hidden; touch-action: none; }
-.bubble-stage .bg {
+.bubble-stage { position: absolute; inset: 0; overflow: hidden; touch-action: none; background: linear-gradient(180deg, #1c1428 0%, #150f1f 60%, #0d0912 100%); }
+/* 舞台燈 */
+.spots {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 30%;
+  background:
+    radial-gradient(55% 45% at 18% 0%, rgba(255, 220, 150, 0.15), rgba(255, 220, 150, 0)),
+    radial-gradient(55% 45% at 82% 0%, rgba(255, 220, 150, 0.15), rgba(255, 220, 150, 0)),
+    radial-gradient(70% 30% at 50% 100%, rgba(255, 200, 120, 0.12), rgba(255, 200, 120, 0));
 }
-.veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6, 5, 4, 0.82), rgba(6, 5, 4, 0.66) 70%, rgba(6, 5, 4, 0.82)); }
+/* 舞台地板，公仔站在上面 */
+.floor {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(52px + env(safe-area-inset-bottom));
+  background: linear-gradient(180deg, #4a3119, #1d130a);
+  border-top: 1px solid rgba(232, 207, 166, 0.35);
+}
+/* Ponpon 公仔：發射泡泡的人，位置由程式依場地大小決定 */
+.shooter {
+  position: absolute;
+  width: auto;
+  transform-origin: 50% 100%;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.55));
+}
+.shooter.strum { animation: strum 0.26s ease-out; }
+.shooter.happy { animation: hop 0.55s cubic-bezier(0.3, 1.4, 0.5, 1); }
+.shooter.cheer { animation: hop 0.5s cubic-bezier(0.3, 1.4, 0.5, 1) 3; }
+.shooter.sad { filter: grayscale(0.75) brightness(0.8) drop-shadow(0 4px 6px rgba(0, 0, 0, 0.55)); }
+@keyframes strum {
+  0% { transform: rotate(0deg) scale(1); }
+  35% { transform: rotate(-5deg) scale(1.05, 0.96); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+@keyframes hop {
+  0%, 100% { transform: translateY(0); }
+  45% { transform: translateY(-22%); }
+}
 .bubble-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
 
 .banner {
