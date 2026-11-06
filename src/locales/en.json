@@ -15,8 +15,7 @@
     "quiz": "Ponpon Quiz",
     "links": "Links",
     "changelog": "Site Update Log",
-    "game": "Bubble Band",
-    "gameTag": "Interactive Game",
+    "games": "Ponpon Game Room",
     "repertoire": "Jazz Repertoire"
   },
   "timeline": {
@@ -1592,6 +1591,19 @@
       "category": "normal"
     }
   ],
+  "games": {
+    "subtitle": "Game Room",
+    "title": "Ponpon Game Room",
+    "intro": "Fan-made interactive games inspired by Ponpon's music and performances.",
+    "play": "Play",
+    "note": "Unofficial fan games | Images are AI-generated",
+    "list": {
+      "bubble": {
+        "name": "Bubble Band",
+        "desc": "Connect 3 or more of the same instrument to pop them, and clear them all before the ceiling comes down."
+      }
+    }
+  },
   "signature": {
     "title": "The Art of Ponpon",
     "subtitle": "Behind the Notes",

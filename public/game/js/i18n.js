@@ -288,6 +288,7 @@ export const BUBBLE = {
     retry: '再試這一關',
     home: '回到首頁',
     credit: '非官方粉絲遊戲｜圖片由 AI 生成',
+    backToSite: '回 Ponpon 遊戲室',
   },
   en: {
     subtitle: 'Bubble Band',
@@ -309,6 +310,7 @@ export const BUBBLE = {
     retry: 'Retry this level',
     home: 'Back to start',
     credit: 'Unofficial fan game | Images are AI-generated',
+    backToSite: 'Back to the Game Room',
   },
   ja: {
     subtitle: 'バブルバンド',
@@ -330,6 +332,7 @@ export const BUBBLE = {
     retry: 'このステージに再挑戦',
     home: 'トップへ戻る',
     credit: '非公式ファンゲーム｜画像は AI 生成です',
+    backToSite: 'ゲームルームへ戻る',
   },
 };
 

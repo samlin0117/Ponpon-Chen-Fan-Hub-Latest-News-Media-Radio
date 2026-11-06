@@ -129,7 +129,7 @@ function applyLang() {
   document.querySelectorAll('[data-lang]').forEach((b) => b.classList.toggle('on', b.dataset.lang === lang));
   renderLegend();
   renderBest();
-  $('back-to-site').href = lang === 'zh' ? '/' : `/${lang}`;
+  $('back-to-site').href = lang === 'zh' ? '/games' : `/${lang}/games`;
   if (G) updateHud();
 }
 

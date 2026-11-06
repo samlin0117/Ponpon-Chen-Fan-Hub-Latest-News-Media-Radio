@@ -15,8 +15,7 @@
     "quiz": "ファンクイズ",
     "links": "リンク",
     "changelog": "サイト更新履歴",
-    "game": "バブルバンド",
-    "gameTag": "ゲーム",
+    "games": "Ponpon ゲームルーム",
     "repertoire": "ジャズ・レパートリー"
   },
   "timeline": {
@@ -1592,6 +1591,19 @@
       "category": "normal"
     }
   ],
+  "games": {
+    "subtitle": "Game Room",
+    "title": "Ponpon ゲームルーム",
+    "intro": "Ponpon の音楽とパフォーマンスをテーマにした、ファン制作のゲームです。",
+    "play": "プレイする",
+    "note": "非公式ファンゲーム｜画像は AI 生成です",
+    "list": {
+      "bubble": {
+        "name": "バブルバンド",
+        "desc": "同じ楽器を 3 つ以上つなげて割り、天井が下がる前に全部消そう。"
+      }
+    }
+  },
   "signature": {
     "title": "The Art of Ponpon",
     "subtitle": "Behind the Notes",

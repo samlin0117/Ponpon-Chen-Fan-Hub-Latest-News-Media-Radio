@@ -110,6 +110,20 @@
         "description": "Ponpon Chen (陳芃瑄) が歌ってきたジャズスタンダードを紹介。各曲の制作年代、オリジナル歌手、時代背景を解説します。"
       }
     },
+    "/games": {
+      "zh": {
+        "title": "Ponpon 遊戲室｜粉絲自製互動遊戲｜Ponpon Chen (陳芃瑄) 粉絲典藏館",
+        "description": "粉絲自製的互動遊戲，以 Ponpon Chen (陳芃瑄) 的音樂與表演為主題。"
+      },
+      "en": {
+        "title": "Ponpon Game Room｜Ponpon Chen Fan Hub & Archive",
+        "description": "Fan-made interactive games inspired by Ponpon Chen's music and performances."
+      },
+      "ja": {
+        "title": "Ponpon ゲームルーム｜Ponpon Chen (陳芃瑄)",
+        "description": "Ponpon Chen (陳芃瑄) の音楽とパフォーマンスをテーマにした、ファン制作のゲームです。"
+      }
+    },
     "/signature": {
       "zh": {
         "title": "Ponpon 的表演藝術｜口哨、Scat 與吉他｜Ponpon Chen (陳芃瑄) 粉絲典藏館",

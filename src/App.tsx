@@ -8,6 +8,7 @@ import { taipeiJazz2026Coverage } from './data/pressCoverage';
 import VideoCard from './components/VideoCard';
 import VideoGroupCard from './components/VideoGroupCard';
 import QuizGame from './components/QuizGame';
+import Games from './components/Games';
 import Repertoire from './components/Repertoire';
 import Mentors from './components/Mentors';
 import SignatureTechniques from './components/SignatureTechniques';
@@ -207,15 +208,13 @@ function MainContent() {
                   <p className="text-lg md:text-xl text-gray-400 font-light max-w-md leading-relaxed italic font-serif">
                     "{t.hero.slogan}"
                   </p>
-                  {/* 小遊戲是獨立的靜態頁（public/game），要整頁跳轉，不走 React Router */}
-                  <a
-                    href={`/game/bubble.html?lang=${lang}`}
-                    className="mt-6 inline-flex items-center gap-3 px-7 py-3 border border-gold/60 hover:border-gold hover:bg-gold/10 rounded-full text-gold transition-colors"
+                  {/* 只寫通用的入口名稱，之後新增遊戲都放在遊戲室裡 */}
+                  <Link
+                    to="/games"
+                    className="mt-6 inline-flex items-center px-7 py-3 border border-gold/60 hover:border-gold hover:bg-gold/10 rounded-full text-gold transition-colors"
                   >
-                    <span className="font-serif text-lg tracking-[0.12em]">{t.nav.game}</span>
-                    <span className="h-4 w-px bg-gold/40"></span>
-                    <span className="text-xs tracking-[0.2em] text-gray-400">{t.nav.gameTag}</span>
-                  </a>
+                    <span className="font-serif text-lg tracking-[0.12em]">{t.nav.games}</span>
+                  </Link>
                   <div className="mt-8 text-sm md:text-base text-gray-400/80 leading-relaxed font-sans bg-white/5 border border-white/10 p-5 rounded-2xl shadow-inner max-w-lg md:mx-0 mx-auto text-left relative overflow-hidden group hover:bg-white/10 transition-colors duration-500">
                     <div className="absolute top-0 left-0 w-1 h-full bg-gold/50 group-hover:bg-gold transition-colors duration-500"></div>
                     <span className="text-gold/80 block mb-2 font-medium tracking-widest text-xs uppercase flex items-center gap-2">
@@ -368,6 +367,8 @@ function MainContent() {
               <QuizGame />
             </div>
           } />
+
+          <Route path="/games" element={<Games />} />
 
           <Route path="/repertoire" element={
             <div className="pt-10">

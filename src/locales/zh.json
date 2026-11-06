@@ -15,8 +15,7 @@
     "quiz": "粉絲大考驗",
     "links": "相關連結",
     "changelog": "本站更新紀錄",
-    "game": "泡泡樂團",
-    "gameTag": "互動遊戲",
+    "games": "Ponpon 遊戲室",
     "repertoire": "爵士曲庫"
   },
   "timeline": {
@@ -1592,6 +1591,19 @@
       "category": "normal"
     }
   ],
+  "games": {
+    "subtitle": "Game Room",
+    "title": "Ponpon 遊戲室",
+    "intro": "粉絲自製的互動遊戲，以 Ponpon 的音樂與表演為主題。",
+    "play": "開始遊戲",
+    "note": "非官方粉絲遊戲｜圖片由 AI 生成",
+    "list": {
+      "bubble": {
+        "name": "泡泡樂團",
+        "desc": "把同樣的樂器連成 3 個以上就會破，趕在天花板壓下來之前全部打破。"
+      }
+    }
+  },
   "signature": {
     "title": "Ponpon 的表演藝術",
     "subtitle": "Behind the Notes",
