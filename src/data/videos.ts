@@ -1377,6 +1377,18 @@ const allVideos: VideoInfo[] = [
     "isFeatured": false
   },
   {
+    "id": "v-GysSBjaTFRM",
+    "platform": "youtube",
+    "category": "p8",
+    "song": "Yardbird Suite",
+    "title": "Ponpon Chen - \"Yardbird Suite\" Guitar Solo Transcription @Sound Cat Movie",
+    "date": "2026-11-04",
+    "embedUrl": "GysSBjaTFRM",
+    "thumbnailUrl": "https://i.ytimg.com/vi/GysSBjaTFRM/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=GysSBjaTFRM"
+  },
+  {
     "id": "v-imubuoCWgBw",
     "platform": "youtube",
     "category": "p8",
