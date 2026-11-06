@@ -3,7 +3,7 @@ import { COLORS, drawBubble } from './icons.js';
 import { BUBBLE, STRINGS, detectLang } from './i18n.js';
 
 const COLS = 9; // 單數列少一顆，往右錯開半顆
-const TYPES = ['guitar', 'whistle', 'washboard', 'scat', 'note']; // 前四關用前 4 種，第 5 關起才有音符
+const TYPES = ['guitar', 'whistle', 'washboard', 'scat', 'note', 'mic']; // 每關用前幾種由 types 決定：第 5 關起有音符，第 8 關起有麥克風
 const SHOT_SPEED = 1050; // 泡泡飛行速度（每秒幾個像素）
 const HIT_DIST = 1.72; // 飛行中碰到別顆的距離（半徑的幾倍），比 2 小一點才鑽得進空隙
 const MAX_AIM = 1.36; // 最多往左右瞄幾弧度，太平的角度打不到東西
@@ -47,15 +47,15 @@ const LEVELS = [
     map: ['#########', '########', '#.#.#.#.#', '#.#.#.##', '#.#.#.#.#', '#.#.#.##', '#.#.#.#.#'],
   },
   { // 第八關：洗衣板，一排一排的波紋，靠兩邊的框撐著
-    types: 5, seed: 104, mix: 0.2, secs: 8,
+    types: 6, seed: 104, mix: 0.2, secs: 8,
     map: ['#########', '##....##', '#########', '##....##', '#########', '##....##', '#########'],
   },
   { // 第九關：星星
-    types: 5, seed: 66, mix: 0.15, secs: 7,
+    types: 6, seed: 66, mix: 0.15, secs: 7,
     map: ['..#####..', '..####..', '...###...', '########', '.#######.', '.######.', '..#####..', '.######.', '.###.###.'],
   },
   { // 第十關：安可！滿滿一面牆
-    types: 5, seed: 131, mix: 0.1, secs: 6,
+    types: 6, seed: 131, mix: 0.1, secs: 6,
     map: ['#########', '########', '#########', '########', '#########', '########', '#########', '########'],
   },
 ];
@@ -111,6 +111,7 @@ function popSound(type, step, t) {
   else if (type === 'whistle') engine.whistle(t, m, 0.9);
   else if (type === 'washboard') engine.washboard(t, 0.7);
   else if (type === 'scat') engine.bell(t, m, 0.18);
+  else if (type === 'mic') engine.bell(t, m - 12, 0.22);
   else engine.bell(t, m + 12, 0.2);
 }
 
@@ -126,9 +127,29 @@ function applyLang() {
     el.setAttribute('aria-label', T[el.dataset.i18nLabel]);
   });
   document.querySelectorAll('[data-lang]').forEach((b) => b.classList.toggle('on', b.dataset.lang === lang));
+  renderLegend();
   renderBest();
   $('back-to-site').href = lang === 'zh' ? '/' : `/${lang}`;
   if (G) updateHud();
+}
+
+// 首頁的圖示說明：每種泡泡代表什麼
+function renderLegend() {
+  const box = $('legend');
+  box.textContent = '';
+  for (const type of TYPES) {
+    const item = document.createElement('div');
+    const c = document.createElement('canvas');
+    c.width = 120;
+    c.height = 120;
+    const x = c.getContext('2d');
+    x.translate(60, 60);
+    drawBubble(x, type, 56);
+    const label = document.createElement('span');
+    label.textContent = T[type];
+    item.append(c, label);
+    box.appendChild(item);
+  }
 }
 
 function renderBest() {

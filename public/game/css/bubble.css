@@ -20,11 +20,21 @@
   line-height: 1.5;
   color: #e8e2d6;
 }
+.legend {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2px;
+  width: min(100%, 380px);
+}
+.legend div { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 11px; line-height: 1.25; color: #cfc8bc; }
+.legend canvas { width: 42px; height: 42px; }
+
 @media (max-height: 720px) {
   .bubble-art { width: auto; height: 21dvh; }
   .title-body { gap: 7px; padding: 2px 0 6px; }
   .title-main { font-size: 34px; }
   .how { font-size: 12.5px; }
+  .legend canvas { width: 36px; height: 36px; }
   .credit { padding-top: 2px; }
 }
 

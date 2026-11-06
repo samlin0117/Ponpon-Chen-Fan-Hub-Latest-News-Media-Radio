@@ -270,6 +270,12 @@ export const SWIPE = {
 export const BUBBLE = {
   zh: {
     subtitle: '泡泡樂團',
+    guitar: '吉他',
+    whistle: '口哨',
+    washboard: '洗衣板',
+    scat: 'Scat',
+    note: '音符',
+    mic: '麥克風',
     how1: '手指按住瞄準，放開就發射',
     how2: '同樣的樂器連成 3 個以上，泡泡就會破',
     how3: '天花板會隨時間往下壓，泡泡超過底線就輸了',
@@ -285,6 +291,12 @@ export const BUBBLE = {
   },
   en: {
     subtitle: 'Bubble Band',
+    guitar: 'Guitar',
+    whistle: 'Whistle',
+    washboard: 'Washboard',
+    scat: 'Scat',
+    note: 'Note',
+    mic: 'Mic',
     how1: 'Press and hold to aim, let go to shoot',
     how2: 'Connect 3 or more of the same instrument to pop them',
     how3: 'The ceiling keeps dropping as time passes. Bubbles past the line end the game.',
@@ -300,6 +312,12 @@ export const BUBBLE = {
   },
   ja: {
     subtitle: 'バブルバンド',
+    guitar: 'ギター',
+    whistle: '口笛',
+    washboard: 'ウォッシュボード',
+    scat: 'スキャット',
+    note: '音符',
+    mic: 'マイク',
     how1: '指で押さえて狙い、離すと発射',
     how2: '同じ楽器を 3 つ以上つなげると割れる',
     how3: '時間とともに天井が下がる。泡が線を越えると負け',

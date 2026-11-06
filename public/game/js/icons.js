@@ -5,6 +5,7 @@ export const COLORS = {
   washboard: '#60a5fa',
   note: '#f472b6',
   scat: '#a78bfa',
+  mic: '#a3e635',
   bomb: '#ef4444',
 };
 
@@ -61,6 +62,20 @@ function drawGlyph(c, type, r) {
       c.lineTo(r * 0.35, y);
       c.stroke();
     }
+  } else if (type === 'mic') {
+    c.rotate(0.6);
+    c.fillStyle = '#cfd3d6';
+    c.fillRect(-r * 0.12, -r * 0.1, r * 0.24, r * 0.78);
+    c.fillStyle = col;
+    c.beginPath();
+    c.arc(0, -r * 0.34, r * 0.32, 0, Math.PI * 2);
+    c.fill();
+    c.strokeStyle = 'rgba(16, 12, 8, 0.55)';
+    c.lineWidth = r * 0.05;
+    c.beginPath();
+    c.moveTo(-r * 0.3, -r * 0.34);
+    c.lineTo(r * 0.3, -r * 0.34);
+    c.stroke();
   } else if (type === 'scat') {
     // Scat 沒有公認的符號，所以直接畫唱出來的音節：對話泡泡寫 doo
     const k = r / 33;
