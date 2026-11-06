@@ -3,7 +3,7 @@ import { COLORS, drawBubble } from './icons.js';
 import { BUBBLE, STRINGS, detectLang } from './i18n.js';
 
 const COLS = 9; // 單數列少一顆，往右錯開半顆
-const TYPES = ['guitar', 'whistle', 'washboard', 'note', 'mic'];
+const TYPES = ['guitar', 'whistle', 'washboard', 'scat', 'note']; // 前四關用前 4 種，第 5 關起才有音符
 const SHOT_SPEED = 1050; // 泡泡飛行速度（每秒幾個像素）
 const HIT_DIST = 1.72; // 飛行中碰到別顆的距離（半徑的幾倍），比 2 小一點才鑽得進空隙
 const MAX_AIM = 1.36; // 最多往左右瞄幾弧度，太平的角度打不到東西
@@ -110,7 +110,7 @@ function popSound(type, step, t) {
   if (type === 'guitar') engine.guitar(t, m - 12, 0.5);
   else if (type === 'whistle') engine.whistle(t, m, 0.9);
   else if (type === 'washboard') engine.washboard(t, 0.7);
-  else if (type === 'mic') engine.bell(t, m, 0.18);
+  else if (type === 'scat') engine.bell(t, m, 0.18);
   else engine.bell(t, m + 12, 0.2);
 }
 

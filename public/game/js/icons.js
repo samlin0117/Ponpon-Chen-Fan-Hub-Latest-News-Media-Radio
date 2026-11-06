@@ -4,7 +4,7 @@ export const COLORS = {
   whistle: '#2dd4bf',
   washboard: '#60a5fa',
   note: '#f472b6',
-  mic: '#a78bfa',
+  scat: '#a78bfa',
   bomb: '#ef4444',
 };
 
@@ -28,23 +28,26 @@ function drawGlyph(c, type, r) {
     c.arc(0, r * 0.14, r * 0.09, 0, Math.PI * 2);
     c.fill();
   } else if (type === 'whistle') {
-    c.fillStyle = col;
+    // 吹口哨的表情：閉著眼睛、嘟嘴，旁邊飄一個音符
+    const k = r / 33;
+    c.scale(k, k);
+    c.fillStyle = '#ffd27a';
     c.beginPath();
-    c.arc(r * 0.12, r * 0.14, r * 0.38, 0, Math.PI * 2);
+    c.arc(-5, 3, 23, 0, Math.PI * 2);
     c.fill();
-    c.fillRect(-r * 0.66, -r * 0.24, r * 0.82, r * 0.24);
-    c.fillStyle = '#10201d';
-    c.beginPath();
-    c.arc(r * 0.12, r * 0.14, r * 0.13, 0, Math.PI * 2);
-    c.fill();
-    c.strokeStyle = col;
+    c.strokeStyle = '#3a2508';
+    c.lineWidth = 3;
     c.lineCap = 'round';
-    c.lineWidth = r * 0.07;
-    for (const a of [0.34, 0.55]) {
-      c.beginPath();
-      c.arc(r * 0.12, -r * 0.1, r * a + r * 0.1, -1.05, -0.2);
-      c.stroke();
-    }
+    c.stroke(new Path2D('M-18 -5 q5 -5 9 0 M0 -5 q5 -5 9 0'));
+    c.fillStyle = '#3a2508';
+    c.beginPath();
+    c.ellipse(2, 13, 4.5, 3.8, 0, 0, Math.PI * 2);
+    c.fill();
+    c.fillStyle = col;
+    c.font = "700 22px Georgia, 'Times New Roman', serif";
+    c.textAlign = 'center';
+    c.textBaseline = 'alphabetic';
+    c.fillText('♪', 23, -11);
   } else if (type === 'washboard') {
     c.fillStyle = '#b7793f';
     c.fillRect(-r * 0.48, -r * 0.68, r * 0.96, r * 1.36);
@@ -58,20 +61,17 @@ function drawGlyph(c, type, r) {
       c.lineTo(r * 0.35, y);
       c.stroke();
     }
-  } else if (type === 'mic') {
-    c.rotate(0.6);
-    c.fillStyle = '#cfd3d6';
-    c.fillRect(-r * 0.12, -r * 0.1, r * 0.24, r * 0.78);
+  } else if (type === 'scat') {
+    // Scat 沒有公認的符號，所以直接畫唱出來的音節：對話泡泡寫 doo
+    const k = r / 33;
+    c.scale(k, k);
     c.fillStyle = col;
-    c.beginPath();
-    c.arc(0, -r * 0.34, r * 0.32, 0, Math.PI * 2);
-    c.fill();
-    c.strokeStyle = 'rgba(16, 12, 8, 0.55)';
-    c.lineWidth = r * 0.05;
-    c.beginPath();
-    c.moveTo(-r * 0.3, -r * 0.34);
-    c.lineTo(r * 0.3, -r * 0.34);
-    c.stroke();
+    c.fill(new Path2D('M-25 -19 h50 a6 6 0 0 1 6 6 v21 a6 6 0 0 1 -6 6 h-30 l-11 12 v-12 h-9 a6 6 0 0 1 -6 -6 v-21 a6 6 0 0 1 6 -6z'));
+    c.fillStyle = '#100c08';
+    c.font = "700 21px Georgia, 'Times New Roman', serif";
+    c.textAlign = 'center';
+    c.textBaseline = 'middle';
+    c.fillText('doo', 0, 2);
   } else {
     c.fillStyle = col;
     c.font = `700 ${r * 1.25}px Georgia, 'Times New Roman', serif`;
