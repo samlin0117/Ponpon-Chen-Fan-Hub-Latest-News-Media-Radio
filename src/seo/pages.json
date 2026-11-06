@@ -112,16 +112,16 @@
     },
     "/games": {
       "zh": {
-        "title": "Ponpon 遊戲室｜粉絲自製互動遊戲｜Ponpon Chen (陳芃瑄) 粉絲典藏館",
-        "description": "粉絲自製的互動遊戲，以 Ponpon Chen (陳芃瑄) 的音樂與表演為主題。"
+        "title": "Ponpon 遊戲室｜互動遊戲｜Ponpon Chen (陳芃瑄) 粉絲典藏館",
+        "description": "以 Ponpon Chen (陳芃瑄) 的音樂與表演為主題的互動遊戲。"
       },
       "en": {
         "title": "Ponpon Game Room｜Ponpon Chen Fan Hub & Archive",
-        "description": "Fan-made interactive games inspired by Ponpon Chen's music and performances."
+        "description": "Interactive games inspired by Ponpon Chen's music and performances."
       },
       "ja": {
         "title": "Ponpon ゲームルーム｜Ponpon Chen (陳芃瑄)",
-        "description": "Ponpon Chen (陳芃瑄) の音楽とパフォーマンスをテーマにした、ファン制作のゲームです。"
+        "description": "Ponpon Chen (陳芃瑄) の音楽とパフォーマンスをテーマにしたゲームです。"
       }
     },
     "/signature": {

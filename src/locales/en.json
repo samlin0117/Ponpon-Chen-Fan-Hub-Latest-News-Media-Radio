@@ -421,7 +421,7 @@
       {
         "date": "2026.11.06",
         "title": "Ponpon Game Room added",
-        "content": "The home page now links to the Ponpon Game Room, a home for fan-made interactive games. The first game, Bubble Band, has 10 levels: connect 3 or more of the same instrument (guitar, whistle, washboard, scat, note or mic) to pop them, and clear them all before the ceiling comes down. Playable on both phones and computers."
+        "content": "The home page now links to the Ponpon Game Room. The first game, Bubble Band, has 10 levels: connect 3 or more of the same instrument (guitar, whistle, washboard, scat, note or mic) to pop them, and clear them all before the ceiling comes down. Playable on both phones and computers."
       },
       {
         "date": "2026.10.23",
@@ -1599,7 +1599,7 @@
   "games": {
     "subtitle": "Game Room",
     "title": "Ponpon Game Room",
-    "intro": "Fan-made interactive games inspired by Ponpon's music and performances.",
+    "intro": "Interactive games inspired by Ponpon's music and performances.",
     "play": "Play",
     "note": "Unofficial fan games | Images are AI-generated",
     "list": {
