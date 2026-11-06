@@ -53,8 +53,8 @@
         <div class="banner" id="banner"></div>
       </div>
       <header class="bar">
-        <button type="button" id="btn-back" class="btn-icon" data-i18n-label="home">
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        <button type="button" id="btn-pause" class="btn-icon" data-i18n-label="paused">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor" /><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor" /></svg>
         </button>
         <div class="bar-mid">
           <b id="level-label"></b>
@@ -62,13 +62,21 @@
         </div>
         <span></span>
       </header>
+      <div class="overlay" id="overlay-pause">
+        <div class="panel">
+          <h2 data-i18n="paused"></h2>
+          <button type="button" id="btn-resume" class="btn-primary" data-i18n="resume"></button>
+          <button type="button" id="btn-restart" class="btn" data-i18n="retry"></button>
+          <button type="button" id="btn-quit" class="btn" data-i18n="quit"></button>
+        </div>
+      </div>
       <div class="overlay" id="overlay-end">
         <div class="panel">
           <h2 id="end-title"></h2>
           <p class="end-score" id="end-score"></p>
           <div class="new-best" id="end-newbest" data-i18n="newBest"></div>
           <button type="button" id="btn-retry" class="btn-primary"></button>
-          <button type="button" id="btn-home" class="btn" data-i18n="home"></button>
+          <button type="button" id="btn-home" class="btn" data-i18n="quit"></button>
         </div>
       </div>
     </section>

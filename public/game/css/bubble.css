@@ -129,6 +129,6 @@
 .bar-mid small { font-family: var(--serif); font-size: 18px; font-weight: 700; color: #fff; font-variant-numeric: tabular-nums; }
 
 /* ---------- 過關面板 ---------- */
-#overlay-end { z-index: 5; }
+#overlay-end, #overlay-pause { z-index: 5; }
 #overlay-end .new-best { align-self: center; }
 .end-score { margin: 0 0 4px; font-family: var(--serif); font-size: 26px; color: #fff; font-variant-numeric: tabular-nums; }

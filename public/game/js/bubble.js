@@ -163,6 +163,7 @@ function show(id) {
 function toTitle() {
   G = null;
   $('overlay-end').classList.remove('show');
+  $('overlay-pause').classList.remove('show');
   renderBest();
   show('screen-title');
 }
@@ -175,10 +176,49 @@ document.querySelectorAll('[data-lang]').forEach((b) =>
   }),
 );
 $('btn-start').addEventListener('click', () => startLevel(0, 0));
-$('btn-back').addEventListener('click', toTitle);
-$('btn-home').addEventListener('click', toTitle);
+$('btn-pause').addEventListener('click', pauseGame);
+$('btn-resume').addEventListener('click', resumeGame);
+$('btn-restart').addEventListener('click', () => startLevel(G.index, G.startScore));
+$('btn-quit').addEventListener('click', quitGame);
+$('btn-home').addEventListener('click', quitGame);
 // 全破就從第一關重來；輸了就重打這一關，分數回到這關開始時
 $('btn-retry').addEventListener('click', () => (G.allClear ? startLevel(0, 0) : startLevel(G.index, G.startScore)));
+
+// 暫停：天花板的計時和飛行中的泡泡都停住，也不接受瞄準和發射
+function pauseGame() {
+  if (!G || G.ended || G.paused) return;
+  G.paused = true;
+  G.keyDir = 0;
+  G.aim = null;
+  G.trace = null;
+  touchOn = null;
+  $('overlay-pause').classList.add('show');
+}
+
+function resumeGame() {
+  if (!G || !G.paused) return;
+  G.paused = false;
+  $('overlay-pause').classList.remove('show');
+}
+
+// 結束遊戲：這局的分數也算進最高分，然後回到遊戲首頁
+function quitGame() {
+  saveBest();
+  toTitle();
+}
+
+function saveBest() {
+  const isNew = G.score > best;
+  if (isNew) {
+    best = G.score;
+    save('ponpon-bubble-best', String(best));
+  }
+  return isNew;
+}
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) pauseGame(); // 切到別的分頁或接電話時自動暫停
+});
 
 function updateHud() {
   $('level-label').textContent = T.level.replace('{n}', G.index + 1);
@@ -309,6 +349,7 @@ function startLevel(index, score) {
   if (engine.ctx.state !== 'running') engine.ctx.resume();
 
   $('overlay-end').classList.remove('show');
+  $('overlay-pause').classList.remove('show');
   shooter.classList.remove('sad', 'cheer', 'happy', 'strum');
   show('screen-game');
   resize();
@@ -327,6 +368,7 @@ function startLevel(index, score) {
     lastAim: 0, // 箭頭的角度
     keyDir: 0,
     keyboard: false,
+    paused: false,
     startScore: score,
     score,
     allClear: false,
@@ -403,7 +445,7 @@ function aimFrom(px, py) {
 }
 
 function fire(angle) {
-  if (!G || G.ended || G.shot) return;
+  if (!G || G.ended || G.paused || G.shot) return;
   G.lastAim = angle;
   const path = trace(angle);
   let len = 0;
@@ -419,7 +461,7 @@ function fire(angle) {
 }
 
 function swapBubbles() {
-  if (!G || G.ended) return;
+  if (!G || G.ended || G.paused) return;
   [G.cur, G.next] = [G.next, G.cur];
   engine.stick(engine.now(), 0.08);
 }
@@ -438,7 +480,7 @@ function setAim(a) {
 let touchOn = null; // 'swap' 或 'aim'
 
 canvas.addEventListener('pointerdown', (e) => {
-  if (!G || G.ended) return;
+  if (!G || G.ended || G.paused) return;
   e.preventDefault();
   const p = pointerPos(e);
   try {
@@ -484,6 +526,12 @@ canvas.addEventListener('pointercancel', () => {
 // 電腦：左右鍵轉箭頭，空白鍵發射，上鍵交換
 document.addEventListener('keydown', (e) => {
   if (!G || G.ended || !$('screen-game').classList.contains('active')) return;
+  if (e.code === 'Escape') {
+    if (G.paused) resumeGame();
+    else pauseGame();
+    return;
+  }
+  if (G.paused) return;
   if (e.code === 'ArrowLeft' || e.code === 'ArrowRight') {
     e.preventDefault();
     G.keyboard = true;
@@ -661,11 +709,7 @@ function endLevel(won) {
 
 // 只有輸了或全破才跳出面板；過關直接進下一關
 function showPanel(cleared) {
-  const isNew = G.score > best;
-  if (isNew) {
-    best = G.score;
-    save('ponpon-bubble-best', String(best));
-  }
+  const isNew = saveBest();
   $('end-title').textContent = cleared ? T.winAll : T.lose;
   $('end-score').textContent = G.score.toLocaleString();
   $('end-newbest').classList.toggle('show', isNew);
@@ -688,6 +732,7 @@ function frame() {
 }
 
 function update(dt) {
+  if (G.paused) return;
   if (G.keyDir) {
     setAim(Math.max(-MAX_AIM, Math.min(MAX_AIM, G.lastAim + G.keyDir * 1.3 * dt)));
   } else if (G.keyboard && G.aim === null && !G.shot && !G.ended) {
