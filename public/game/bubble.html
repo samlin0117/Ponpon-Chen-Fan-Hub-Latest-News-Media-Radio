@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Ponpon Bubble Band｜Ponpon 泡泡樂團</title>
+  <meta name="description" content="Ponpon 粉絲自製的小遊戲：瞄準發射，把同樣的樂器連成 3 個以上，泡泡就會破。" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="icon" href="img/ponpon-avatar.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/bubble.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- 首頁：選關 -->
+    <section id="screen-title" class="screen active">
+      <div class="lang-switch">
+        <button type="button" data-lang="zh">中</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ja">日</button>
+      </div>
+      <div class="title-body">
+        <img class="bubble-art" src="img/ponpon-figure.webp" alt="Ponpon" width="800" height="800" />
+        <h1 class="title">
+          <span class="title-main">Ponpon</span>
+          <span class="title-sub" data-i18n="subtitle"></span>
+        </h1>
+        <ul class="how">
+          <li data-i18n="how1"></li>
+          <li data-i18n="how2"></li>
+          <li data-i18n="how3"></li>
+        </ul>
+        <button type="button" id="btn-start" class="btn-primary" data-i18n="start"></button>
+        <p class="hint" id="title-best"></p>
+      </div>
+      <footer class="credit">
+        <span data-i18n="credit"></span><br />
+        <a id="back-to-site" href="/" data-i18n="backToSite"></a>
+      </footer>
+    </section>
+
+    <!-- 遊戲畫面 -->
+    <section id="screen-game" class="screen">
+      <div class="bubble-stage" id="stage">
+        <img class="bg" src="img/duet-stage.webp" alt="" width="1086" height="1448" />
+        <div class="veil"></div>
+        <canvas id="canvas"></canvas>
+        <div class="banner" id="banner"></div>
+      </div>
+      <header class="bar">
+        <button type="button" id="btn-back" class="btn-icon" data-i18n-label="home">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </button>
+        <div class="bar-mid">
+          <b id="level-label"></b>
+          <small id="score-label"></small>
+        </div>
+        <span></span>
+      </header>
+      <div class="overlay" id="overlay-end">
+        <div class="panel">
+          <h2 id="end-title"></h2>
+          <p class="end-score" id="end-score"></p>
+          <div class="new-best" id="end-newbest" data-i18n="newBest"></div>
+          <button type="button" id="btn-retry" class="btn-primary"></button>
+          <button type="button" id="btn-home" class="btn" data-i18n="home"></button>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script type="module" src="js/bubble.js"></script>
+</body>
+</html>

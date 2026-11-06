@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X, Trophy, ArrowRight, Star, Disc3, Users, TrendingUp, ChevronDown } from 'lucide-react';
+import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X, Trophy, ArrowRight, Star, Disc3, Users, TrendingUp, ChevronDown, Gamepad2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
 import FirebaseComments from './components/FirebaseComments';
@@ -207,6 +207,14 @@ function MainContent() {
                   <p className="text-lg md:text-xl text-gray-400 font-light max-w-md leading-relaxed italic font-serif">
                     "{t.hero.slogan}"
                   </p>
+                  {/* 小遊戲是獨立的靜態頁（public/game），要整頁跳轉，不走 React Router */}
+                  <a
+                    href={`/game/bubble.html?lang=${lang}`}
+                    className="mt-6 inline-flex items-center gap-3 px-8 py-3.5 bg-gold hover:bg-gold-light rounded-full text-base font-bold tracking-[0.15em] text-dark transition-all hover:scale-105 shadow-[0_0_30px_rgba(212,175,55,0.3)]"
+                  >
+                    <Gamepad2 className="w-5 h-5" />
+                    <span>{t.nav.game}</span>
+                  </a>
                   <div className="mt-8 text-sm md:text-base text-gray-400/80 leading-relaxed font-sans bg-white/5 border border-white/10 p-5 rounded-2xl shadow-inner max-w-lg md:mx-0 mx-auto text-left relative overflow-hidden group hover:bg-white/10 transition-colors duration-500">
                     <div className="absolute top-0 left-0 w-1 h-full bg-gold/50 group-hover:bg-gold transition-colors duration-500"></div>
                     <span className="text-gold/80 block mb-2 font-medium tracking-widest text-xs uppercase flex items-center gap-2">
