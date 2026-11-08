@@ -4,6 +4,30 @@ import { BUBBLE, STRINGS, detectLang } from './i18n.js';
 
 const COLS = 9; // 單數列少一顆，往右錯開半顆
 const TYPES = ['guitar', 'whistle', 'washboard', 'scat', 'note', 'mic']; // 每關用前幾種由 types 決定：第 5 關起有音符，第 8 關起有麥克風
+
+// 泡泡的圖片（img/bubbles/*.webp）。圖還沒載好之前先用程式畫的泡泡，載好後重畫一次
+const BUBBLE_IMGS = {};
+let imgsLeft = TYPES.length;
+for (const type of TYPES) {
+  const img = new Image();
+  img.onload = img.onerror = () => {
+    if (--imgsLeft > 0) return;
+    renderLegend();
+    resize();
+  };
+  img.src = `img/bubbles/${type}.webp`;
+  BUBBLE_IMGS[type] = img;
+}
+
+function paintBubble(c, type, r) {
+  const img = BUBBLE_IMGS[type];
+  if (img && img.complete && img.naturalWidth) {
+    c.imageSmoothingQuality = 'high';
+    c.drawImage(img, -r, -r, r * 2, r * 2);
+  } else {
+    drawBubble(c, type, r);
+  }
+}
 const SHOT_SPEED = 1050; // 泡泡飛行速度（每秒幾個像素）
 const HIT_DIST = 1.72; // 飛行中碰到別顆的距離（半徑的幾倍），比 2 小一點才鑽得進空隙
 const MAX_AIM = 1.36; // 最多往左右瞄幾弧度，太平的角度打不到東西
@@ -144,7 +168,7 @@ function renderLegend() {
     c.height = 120;
     const x = c.getContext('2d');
     x.translate(60, 60);
-    drawBubble(x, type, 56);
+    paintBubble(x, type, 58);
     const label = document.createElement('span');
     label.textContent = T[type];
     item.append(c, label);
@@ -267,7 +291,7 @@ function resize() {
     const c = s.getContext('2d');
     c.translate(size / 2, size / 2);
     c.scale(dpr, dpr);
-    drawBubble(c, type, R - 0.5);
+    paintBubble(c, type, R - 0.5);
     sprites[type] = { canvas: s, size: size / dpr };
   }
 }
