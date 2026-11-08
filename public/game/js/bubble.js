@@ -5,7 +5,9 @@ import { BUBBLE, STRINGS, detectLang } from './i18n.js';
 const COLS = 9; // 單數列少一顆，往右錯開半顆
 const TYPES = ['guitar', 'whistle', 'washboard', 'scat', 'note', 'mic']; // 每關用前幾種由 types 決定：第 5 關起有音符，第 8 關起有麥克風
 
-// 泡泡的圖片（img/bubbles/*.webp）。圖還沒載好之前先用程式畫的泡泡，載好後重畫一次
+// 泡泡的圖片（img/bubbles/*.webp）。圖還沒載好之前先用程式畫的泡泡，載好後重畫一次。
+// 網址接上這支 js 的 ?v=（build 時 scripts/stamp-game-assets.mjs 加的），換圖後瀏覽器才不會用舊的
+const ASSET_V = new URL(import.meta.url).search;
 const BUBBLE_IMGS = {};
 let imgsLeft = TYPES.length;
 for (const type of TYPES) {
@@ -15,7 +17,7 @@ for (const type of TYPES) {
     renderLegend();
     resize();
   };
-  img.src = `img/bubbles/${type}.webp`;
+  img.src = `img/bubbles/${type}.webp${ASSET_V}`;
   BUBBLE_IMGS[type] = img;
 }
 

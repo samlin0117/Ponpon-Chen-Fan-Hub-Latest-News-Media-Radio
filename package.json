@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build && node scripts/prerender-routes.mjs",
+    "build": "vite build && node scripts/prerender-routes.mjs && node scripts/stamp-game-assets.mjs",
     "preview": "vite preview",
     "serve:dist": "node scripts/serve-dist.mjs",
     "clean": "rm -rf dist",
