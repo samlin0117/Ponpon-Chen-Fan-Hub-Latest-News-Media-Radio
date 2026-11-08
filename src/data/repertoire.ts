@@ -43,7 +43,9 @@ const allSongs: RepertoireSong[] = [
     year: '1957',
     composer: 'Jimmy Van Heusen, Sammy Cahn',
     lyricsLink: 'https://genius.com/Frank-sinatra-come-fly-with-me-lyrics',
-    youtubeId: '8HeuE9I0JFQ'
+    youtubeId: 'Zi_9KKCTmKY',
+    startTime: 1,
+    endTime: 332
   },
   {
     id: 'our-love-is-here-to-stay',
