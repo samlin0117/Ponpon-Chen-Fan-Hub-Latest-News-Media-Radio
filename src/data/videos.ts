@@ -24,6 +24,17 @@ export interface VideoInfo {
 
 const allVideos: VideoInfo[] = [
   {
+    "id": "v-8HeuE9I0JFQ",
+    "platform": "youtube",
+    "category": "p1",
+    "title": "Ponpon｜Come Fly With Me (Live in Taipei)",
+    "date": "2026-11-08",
+    "embedUrl": "8HeuE9I0JFQ",
+    "thumbnailUrl": "https://i.ytimg.com/vi/8HeuE9I0JFQ/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=8HeuE9I0JFQ"
+  },
+  {
     "id": "v-Zi_9KKCTmKY",
     "platform": "youtube",
     "category": "p1",
