@@ -2,45 +2,46 @@
 // 兩張一樣的牌，只要能用不超過 2 個轉角的線連起來就能消。線只能走空格，也可以繞到牌陣外面一圈。
 
 // 關卡：# 是牌，. 是空格。kinds 是用幾種圖案，secs 是限時幾秒。每關的牌數一定要是雙數。
+// slide 是消牌後其他牌往哪邊滑（down / up / left / right），沒寫就不滑。
 export const LEVELS = [
   { // 第一關：小舞台
-    kinds: 6, secs: 40,
+    kinds: 8, secs: 40,
     rows: ['######', '######', '######', '######'],
   },
   { // 第二關：愛心
-    kinds: 8, secs: 42,
+    kinds: 10, secs: 42,
     rows: ['.##.##.', '#######', '#######', '.#####.', '..###..'],
   },
   { // 第三關：音符
-    kinds: 10, secs: 38,
+    kinds: 13, secs: 38, slide: 'down',
     rows: ['..#####', '..#####', '..#...#', '..#...#', '###.###', '###.###'],
   },
   { // 第四關：吉他
-    kinds: 12, secs: 46,
+    kinds: 16, secs: 46, slide: 'up',
     rows: ['...##..', '...##..', '...##..', '..####.', '.######', '.######', '.######', '..####.'],
   },
   { // 第五關：麥克風
-    kinds: 12, secs: 48,
+    kinds: 16, secs: 48, slide: 'left',
     rows: ['.#####.', '#######', '#######', '.#####.', '...#...', '...#...', '..###..', '.#####.'],
   },
   { // 第六關：星星
-    kinds: 13, secs: 46,
+    kinds: 16, secs: 46, slide: 'right',
     rows: ['...#...', '..###..', '#######', '#######', '.#####.', '.#####.', '.##.##.', '.#...#.'],
   },
   { // 第七關：鋼琴鍵盤
-    kinds: 14, secs: 44,
+    kinds: 16, secs: 44, slide: 'down',
     rows: ['#######', '#######', '#.#.#.#', '#.#.#.#', '#.#.#.#', '#.#.#.#', '#.#.#.#'],
   },
   { // 第八關：洗衣板
-    kinds: 14, secs: 44,
+    kinds: 16, secs: 44, slide: 'left',
     rows: ['#######', '#.....#', '#######', '#.....#', '#######', '#.....#', '#######', '#.....#'],
   },
   { // 第九關：舞台拱門
-    kinds: 15, secs: 56,
+    kinds: 16, secs: 56, slide: 'up',
     rows: ['#######', '#######', '#######', '#######', '###.###', '##...##', '##...##', '##...##'],
   },
   { // 第十關：滿滿一面牆，一開始只有外圈的牌連得到
-    kinds: 16, secs: 68,
+    kinds: 16, secs: 68, slide: 'down',
     rows: ['#######', '#######', '#######', '#######', '#######', '#######', '#######', '#######'],
   },
 ];
@@ -115,6 +116,28 @@ export function findPath(a, b, blocked, size) {
 }
 
 export const occupied = (tiles) => new Set(tiles.map((t) => key(t.c, t.r)));
+
+const SLIDES = { down: [0, 1], up: [0, -1], left: [-1, 0], right: [1, 0] };
+
+// 消牌後，其他牌往 dir 滑到底。只會滑進關卡圖形裡的格子（slots），碰到別的牌或圖形的缺口就停。
+// 回傳有沒有牌移動。
+export function slideTiles(tiles, dir, slots) {
+  const [x, y] = SLIDES[dir];
+  const taken = occupied(tiles);
+  // 最靠近目的地的牌先滑，後面的牌才有位置補上
+  const queue = [...tiles].sort((p, q) => (q.c - p.c) * x + (q.r - p.r) * y);
+  let moved = false;
+  for (const t of queue) {
+    taken.delete(key(t.c, t.r));
+    while (slots.has(key(t.c + x, t.r + y)) && !taken.has(key(t.c + x, t.r + y))) {
+      t.c += x;
+      t.r += y;
+      moved = true;
+    }
+    taken.add(key(t.c, t.r));
+  }
+  return moved;
+}
 
 // 發牌：從空盤開始，一次放一對，放的時候這兩格要連得起來。
 // 反過來照放的順序消，每一對當下都連得到，所以每局都解得開。回傳消牌順序，發不出來就回傳 null。

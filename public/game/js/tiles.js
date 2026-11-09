@@ -1,14 +1,17 @@
 import { AudioEngine } from './audio.js';
-import { LEVELS, buildPositions, dealLevel, findPair, findPath, levelSize, occupied, reshuffle } from './tiles-logic.js';
+import { LEVELS, buildPositions, dealLevel, findPair, findPath, levelSize, occupied, reshuffle, slideTiles } from './tiles-logic.js';
 import { STRINGS, TILES, detectLang } from './i18n.js';
 
 // 牌面圖案：放在 img/tiles/，之後有新的圖，放進資料夾再在這裡加一筆就好。
 // 前面的最好分，每關都會用到；後面幾張長得比較像，到後面的關卡才出現。
 const KINDS = ['fig-red', 'fig-gold-seated', 'fig-tray', 'guitar', 'gold-figure', 'whistle', 'fig-mic', 'note', 'fig-white-dress', 'mic', 'fig-suit', 'washboard', 'white-figure', 'scat', 'fig-khaki', 'fig-bag'];
-const HINTS = 2; // 每關幾次提示
+const HINTS = 1; // 每關幾次提示
 const SHUFFLES = 1; // 每關幾次洗牌
 const COMBO_SECS = 4; // 幾秒內再消一對算連擊
 const WARN_SECS = 10; // 剩幾秒開始滴答
+const NO_PATH_SECS = 2; // 一樣的牌卻連不起來，扣幾秒
+const STUCK_SECS = 5; // 沒牌可消又沒有洗牌次數時，自動洗牌扣幾秒
+const ARROWS = { down: '↓', up: '↑', left: '←', right: '→' };
 const NEXT_LEVEL_DELAY = 1500;
 const SFX_GAIN = 0.55;
 const SCALE = [60, 62, 64, 67, 69, 72, 74, 76, 79, 81, 84]; // 連擊越高，音越高（C 大調五聲音階）
@@ -81,7 +84,8 @@ function showBanner(text) {
 }
 
 function updateHud() {
-  $('level-label').textContent = T.level.replace('{n}', G.index + 1);
+  // 這關牌往哪邊滑，一直顯示在關卡旁邊
+  $('level-label').textContent = `${T.level.replace('{n}', G.index + 1)}${G.level.slide ? ` ${ARROWS[G.level.slide]}` : ''}`;
   $('score-label').textContent = G.score.toLocaleString();
   $('hint-n').textContent = G.hints;
   $('shuffle-n').textContent = G.shuffles;
@@ -176,6 +180,7 @@ function startLevel(index, score) {
     level,
     size,
     tiles,
+    slots: occupied(tiles), // 關卡圖形的格子，牌只會滑進這些格子
     selected: null,
     timeLeft: level.secs,
     tick: 0,
@@ -197,7 +202,7 @@ function startLevel(index, score) {
   board.appendChild(svg);
   layout();
   updateHud();
-  showBanner(T.level.replace('{n}', index + 1));
+  showBanner(level.slide ? `${T.level.replace('{n}', index + 1)} ${T.slides[level.slide]}` : T.level.replace('{n}', index + 1));
 }
 
 function addTileElement(t) {
@@ -271,7 +276,8 @@ function pick(t) {
     // 一樣但連不起來：兩張都抖一下，改選新的這張
     restart(first.el, 'nope');
     restart(t.el, 'nope');
-    showFloat(t, T.noPath);
+    G.timeLeft -= NO_PATH_SECS;
+    showFloat(t, `${T.noPath} -${NO_PATH_SECS}s`);
     engine.stick(engine.now(), 0.06);
     G.selected = t;
     t.el.classList.add('selected');
@@ -298,6 +304,7 @@ function match(a, b, path) {
     setTimeout(() => x.el.remove(), LINE_MS);
   });
   G.tiles = G.tiles.filter((x) => x !== a && x !== b);
+  if (G.level.slide && slideTiles(G.tiles, G.level.slide, G.slots)) layout();
   updateHud();
   if (!G.tiles.length) {
     endLevel(true);
@@ -323,15 +330,17 @@ function showFloat(t, text) {
   setTimeout(() => el.remove(), 800);
 }
 
-// 場上沒有能消的牌：還有洗牌就提醒，沒有就算輸
+// 場上沒有能消的牌：還有洗牌就提醒；沒有就自動洗牌並扣時間，不會因為運氣不好直接輸
 function checkStuck() {
   if (findPair(G.tiles, G.size)) return;
   if (G.shuffles > 0) {
     showBanner(T.noMoves);
     restart($('btn-shuffle'), 'pulse');
-  } else {
-    endLevel(false, T.stuck);
+    return;
   }
+  G.timeLeft -= STUCK_SECS;
+  showBanner(`${T.autoShuffle} -${STUCK_SECS}s`);
+  redeal();
 }
 
 // ---------- 提示與洗牌 ----------
@@ -365,7 +374,12 @@ function useShuffle() {
     G.selected = null;
   }
   G.shuffles--;
+  redeal();
+}
+
+function redeal() {
   reshuffle(G.tiles, G.size);
+  G.tiles.forEach((t) => G.slots.add(`${t.c},${t.r}`)); // 少數情況洗牌會把牌排到圖形外
   for (const t of G.tiles) {
     t.el.querySelector('img').src = `img/tiles/${t.kind}.webp${ASSET_V}`;
     restart(t.el, 'dealt');
@@ -436,5 +450,5 @@ if (new URLSearchParams(location.search).has('debug')) {
     const blocked = occupied(G.tiles);
     for (const a of G.tiles) for (const b of G.tiles) if (a !== b && a.kind === b.kind && !findPath(a, b, blocked, G.size)) return [a, b];
     return null;
-  }, start: startLevel, best: () => best });
+  }, start: startLevel, best: () => best, checkStuck });
 }
