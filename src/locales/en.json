@@ -1606,7 +1606,11 @@
       "bubble": {
         "name": "Bubble Band",
         "desc": "Connect 3 or more of the same instrument to pop them, and clear them all before the ceiling comes down."
-      }
+      },
+        "tiles": {
+          "name": "Ponpon Pairs",
+          "desc": "Tap two matching tiles. If a line with at most 2 turns can join them, they clear. Clear them all before time runs out."
+        }
     }
   },
   "signature": {

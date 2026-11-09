@@ -5,6 +5,7 @@ import { useTranslation } from '../hooks/useTranslation';
 // 遊戲清單。新增遊戲時：檔案放進 public/game，這裡加一筆，三個語系檔的 games.list 也各加一筆
 const GAMES = [
   { id: 'bubble', href: '/game/bubble.html', image: '/game/img/ponpon-figure.webp' },
+  { id: 'tiles', href: '/game/tiles.html', image: '/game/img/tiles-card.webp' },
 ];
 
 export default function Games() {
