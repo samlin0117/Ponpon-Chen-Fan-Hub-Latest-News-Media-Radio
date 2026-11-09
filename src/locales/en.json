@@ -1258,6 +1258,18 @@
         ],
         "correctAnswer": 3,
         "explanation": "It happened while recording “Destination Moon.” Ponpon told the story before singing it at the 2026 Taipei Jazz Festival. The producer wanted the simplest way to teach her “Moon,” one even a child would get, so they asked how a cow sounds. After her “哞,” the studio went quiet for five seconds, then burst out laughing. It even got everyone talking about what dogs, cats and other animals say."
+      },
+      {
+        "id": 61,
+        "question": "Which of these songs did Ponpon NOT perform at the 2026 Taipei Jazz Festival?",
+        "options": [
+          "“Come Fly With Me”",
+          "“Moon River”",
+          "“Route 66”",
+          "“Mama Don't Allow It”"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Ponpon's set at the 2026 Taipei Jazz Festival was “Come Fly With Me,” “Destination Moon,” “No More Blues,” “Take the A Train,” “The World News Polka,” “Yardbird Suite,” “Moon River” and “Mama Don't Allow It,” with “How High The Moon” as the encore. “Route 66” was the encore at her Oct 13 show at Riverside Live House (Ximen Red House)."
       }
     ]
   },

@@ -1258,6 +1258,18 @@
         ],
         "correctAnswer": 3,
         "explanation": "這段插曲發生在錄製〈Destination Moon〉的時候，Ponpon 在 2026 年臺北爵士音樂節演唱這首歌前分享了這個故事。製作人想用最簡單、小朋友都懂的方式教她發「Moon」，才問她牛怎麼叫。聽到她回答「哞～」，錄音室安靜了五秒鐘，接著笑成一片。後來大家還因此聊起狗、貓等其他動物又是怎麼叫的。"
+      },
+      {
+        "id": 61,
+        "question": "下列哪一首不是 Ponpon 在 2026 臺北爵士音樂節演出的曲目？",
+        "options": [
+          "〈Come Fly With Me〉",
+          "〈Moon River〉",
+          "〈Route 66〉",
+          "〈Mama Don't Allow It〉"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Ponpon 在 2026 臺北爵士音樂節演出的曲目是〈Come Fly With Me〉、〈Destination Moon〉、〈No More Blues〉、〈Take the A Train〉、〈The World News Polka〉、〈Yardbird Suite〉、〈Moon River〉和〈Mama Don't Allow It〉，安可曲是〈How High The Moon〉。〈Route 66〉則是 10 月 13 日河岸留言西門紅樓專場的安可曲。"
       }
     ]
   },
