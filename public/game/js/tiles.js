@@ -1,5 +1,5 @@
 import { AudioEngine } from './audio.js';
-import { LEVELS, buildPositions, dealLevel, findPair, isFree, reshuffle } from './tiles-logic.js';
+import { LEVELS, buildPositions, dealLevel, findPair, findPath, levelSize, occupied, reshuffle } from './tiles-logic.js';
 import { STRINGS, TILES, detectLang } from './i18n.js';
 
 // 牌面圖案：放在 img/tiles/，之後有新的公仔圖，換掉檔案或在這裡加一筆就好。
@@ -12,12 +12,16 @@ const WARN_SECS = 10; // 剩幾秒開始滴答
 const NEXT_LEVEL_DELAY = 1500;
 const SFX_GAIN = 0.55;
 const SCALE = [60, 62, 64, 67, 69, 72, 74, 76, 79, 81, 84]; // 連擊越高，音越高（C 大調五聲音階）
-const ASPECT = 1.2; // 牌的高是寬的幾倍
-const DEPTH = 0.09; // 每疊高一層，往左上偏移牌寬的幾倍
+const ASPECT = 1.15; // 牌的高是寬的幾倍
+const RING = 0.4; // 牌陣外面留幾張牌寬，連線繞到外面時才畫得出來
+const LINE_MS = 280; // 連線和消牌動畫的時間
 const ASSET_V = new URL(import.meta.url).search;
 
 const $ = (id) => document.getElementById(id);
 const board = $('board');
+const SVG_NS = 'http://www.w3.org/2000/svg';
+const svg = document.createElementNS(SVG_NS, 'svg'); // 消牌時的連線畫在這裡
+svg.classList.add('lines');
 
 // 瀏覽器儲存可能被封鎖（無痕模式等），讀寫都包 try/catch
 const load = (k) => {
@@ -165,10 +169,12 @@ function startLevel(index, score) {
 
   const level = LEVELS[index];
   const tiles = buildPositions(level);
-  dealLevel(tiles, KINDS.slice(0, level.kinds));
+  const size = levelSize(level);
+  dealLevel(tiles, KINDS.slice(0, level.kinds), size);
   G = {
     index,
     level,
+    size,
     tiles,
     selected: null,
     timeLeft: level.secs,
@@ -188,8 +194,8 @@ function startLevel(index, score) {
   show('screen-game');
   board.textContent = '';
   tiles.forEach(addTileElement);
+  board.appendChild(svg);
   layout();
-  refresh();
   updateHud();
   showBanner(T.level.replace('{n}', index + 1));
 }
@@ -209,47 +215,37 @@ function addTileElement(t) {
 }
 
 // 算出牌要多大才放得下，再把每張牌擺上去
+let tileW = 50;
+let tileH = 60;
+let originX = 0;
+let originY = 0;
+// 格子中心的位置。線繞到牌陣外時，只超出外圈留白的範圍，不會跑出畫面
+const lineX = (c) => Math.max(originX - tileW * RING * 0.6, Math.min(originX + (G.size.cols + RING * 0.6) * tileW, originX + (c + 0.5) * tileW));
+const lineY = (r) => Math.max(originY - tileH * RING * 0.6, Math.min(originY + (G.size.rows + RING * 0.6) * tileH, originY + (r + 0.5) * tileH));
+
 function layout() {
-  if (!G || !G.tiles.length) return;
+  if (!G) return;
   const box = board.getBoundingClientRect();
   if (!box.width) return;
-  const xs = G.tiles.map((t) => t.x);
-  const ys = G.tiles.map((t) => t.y);
-  const zMax = Math.max(...G.tiles.map((t) => t.z));
-  const minX = Math.min(...xs);
-  const minY = Math.min(...ys);
-  const cols = (Math.max(...xs) + 2 - minX) / 2;
-  const rows = (Math.max(...ys) + 2 - minY) / 2;
-  const w = Math.min(72, box.width / (cols + zMax * DEPTH), box.height / ((rows + zMax * DEPTH) * ASPECT));
-  const h = w * ASPECT;
-  const d = w * DEPTH;
-  const left = (box.width - (cols * w + zMax * d)) / 2 + zMax * d;
-  const top = (box.height - (rows * h + zMax * d)) / 2 + zMax * d;
-  board.style.setProperty('--tile-w', `${w}px`);
-  board.style.setProperty('--tile-h', `${h}px`);
+  const { cols, rows } = G.size;
+  tileW = Math.min(72, box.width / (cols + RING * 2), box.height / ((rows + RING * 2) * ASPECT));
+  tileH = tileW * ASPECT;
+  originX = (box.width - cols * tileW) / 2;
+  originY = (box.height - rows * tileH) / 2;
+  board.style.setProperty('--tile-w', `${tileW}px`);
+  board.style.setProperty('--tile-h', `${tileH}px`);
   for (const t of G.tiles) {
-    t.el.style.left = `${left + ((t.x - minX) / 2) * w - t.z * d}px`;
-    t.el.style.top = `${top + ((t.y - minY) / 2) * h - t.z * d}px`;
-    t.el.style.zIndex = t.z * 1000 + t.y * 10 + t.x;
+    t.el.style.left = `${originX + t.c * tileW}px`;
+    t.el.style.top = `${originY + t.r * tileH}px`;
   }
 }
 window.addEventListener('resize', layout);
-
-// 被壓住的牌調暗，一眼看得出哪些能點
-function refresh() {
-  for (const t of G.tiles) t.el.classList.toggle('blocked', !isFree(t, G.tiles));
-}
 
 // ---------- 點牌 ----------
 
 function pick(t) {
   if (!G || G.ended || G.paused || !G.tiles.includes(t)) return;
   clearHint();
-  if (!isFree(t, G.tiles)) {
-    restart(t.el, 'nope');
-    engine.stick(engine.now(), 0.06);
-    return;
-  }
   const first = G.selected;
   if (first === t) {
     t.el.classList.remove('selected');
@@ -270,11 +266,22 @@ function pick(t) {
     engine.stick(engine.now(), 0.1);
     return;
   }
+  const path = findPath(first, t, occupied(G.tiles), G.size);
+  if (!path) {
+    // 一樣但連不起來：兩張都抖一下，改選新的這張
+    restart(first.el, 'nope');
+    restart(t.el, 'nope');
+    showFloat(t, T.noPath);
+    engine.stick(engine.now(), 0.06);
+    G.selected = t;
+    t.el.classList.add('selected');
+    return;
+  }
   G.selected = null;
-  match(first, t);
+  match(first, t, path);
 }
 
-function match(a, b) {
+function match(a, b, path) {
   const now = performance.now() / 1000;
   G.combo = now - G.lastMatch <= COMBO_SECS ? G.combo + 1 : 0;
   G.lastMatch = now;
@@ -285,18 +292,25 @@ function match(a, b) {
   engine.guitar(t, m - 12, 0.5);
   engine.bell(t + 0.05, m + 12, 0.14);
   if (G.combo >= 2) showFloat(b, `${T.comboWord} ×${G.combo + 1}`);
+  drawLine(path);
   [a, b].forEach((x) => {
     x.el.classList.add('gone');
-    setTimeout(() => x.el.remove(), 260);
+    setTimeout(() => x.el.remove(), LINE_MS);
   });
   G.tiles = G.tiles.filter((x) => x !== a && x !== b);
-  refresh();
   updateHud();
   if (!G.tiles.length) {
     endLevel(true);
     return;
   }
   checkStuck();
+}
+
+function drawLine(path) {
+  const line = document.createElementNS(SVG_NS, 'polyline');
+  line.setAttribute('points', path.map((p) => `${lineX(p.c)},${lineY(p.r)}`).join(' '));
+  svg.appendChild(line);
+  setTimeout(() => line.remove(), LINE_MS);
 }
 
 function showFloat(t, text) {
@@ -311,7 +325,7 @@ function showFloat(t, text) {
 
 // 場上沒有能消的牌：還有洗牌就提醒，沒有就算輸
 function checkStuck() {
-  if (findPair(G.tiles)) return;
+  if (findPair(G.tiles, G.size)) return;
   if (G.shuffles > 0) {
     showBanner(T.noMoves);
     restart($('btn-shuffle'), 'pulse');
@@ -330,7 +344,7 @@ function clearHint() {
 
 function useHint() {
   if (!G || G.ended || G.paused || G.hints <= 0) return;
-  const pair = findPair(G.tiles);
+  const pair = findPair(G.tiles, G.size);
   if (!pair) {
     checkStuck();
     return;
@@ -351,13 +365,12 @@ function useShuffle() {
     G.selected = null;
   }
   G.shuffles--;
-  reshuffle(G.tiles);
+  reshuffle(G.tiles, G.size);
   for (const t of G.tiles) {
     t.el.querySelector('img').src = `img/tiles/${t.kind}.webp${ASSET_V}`;
     restart(t.el, 'dealt');
   }
   layout();
-  refresh();
   updateHud();
   engine.washboard(engine.now(), 0.5);
 }
@@ -419,5 +432,9 @@ requestAnimationFrame(frame);
 applyLang();
 
 if (new URLSearchParams(location.search).has('debug')) {
-  window.__tiles = () => ({ G, pick, findPair, start: startLevel, best: () => best });
+  window.__tiles = () => ({ G, pick, findPair: () => findPair(G.tiles, G.size), noPathPair: () => {
+    const blocked = occupied(G.tiles);
+    for (const a of G.tiles) for (const b of G.tiles) if (a !== b && a.kind === b.kind && !findPath(a, b, blocked, G.size)) return [a, b];
+    return null;
+  }, start: startLevel, best: () => best });
 }
