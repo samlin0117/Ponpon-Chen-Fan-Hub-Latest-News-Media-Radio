@@ -1,0 +1,154 @@
+/* 公仔對對碰（tiles.html）專用的樣式，共用的按鈕、面板在 style.css */
+
+/* ---------- 首頁 ---------- */
+.tiles-art {
+  width: min(60%, 224px);
+  height: auto;
+  border-radius: 22px;
+  border: 1px solid rgba(232, 207, 166, 0.45);
+  box-shadow: 0 14px 44px rgba(197, 160, 89, 0.22);
+}
+.how {
+  margin: 0;
+  padding: 0;
+  width: min(100%, 380px);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #e8e2d6;
+}
+@media (max-height: 720px) {
+  .tiles-art { width: auto; height: 24dvh; }
+  .title-body { gap: 7px; padding: 2px 0 6px; }
+  .title-main { font-size: 34px; }
+  .how { font-size: 12.5px; }
+  .credit { padding-top: 2px; }
+}
+
+/* ---------- 遊戲畫面 ---------- */
+#screen-game { background: linear-gradient(180deg, #1c1428 0%, #150f1f 60%, #0d0912 100%); }
+.bar {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px 6px;
+  padding-top: max(8px, env(safe-area-inset-top));
+}
+.bar-mid { text-align: center; line-height: 1.25; }
+.bar-mid b { display: block; font-size: 14px; color: var(--gold-light); }
+.bar-mid small { font-family: var(--serif); font-size: 18px; font-weight: 700; color: #fff; font-variant-numeric: tabular-nums; }
+.time { justify-self: end; font-size: 20px; color: #fff3d6; font-variant-numeric: tabular-nums; }
+.time.warn { color: #f87171; }
+
+.time-track { height: 5px; margin: 0 12px; border-radius: 5px; overflow: hidden; background: rgba(255, 255, 255, 0.1); }
+.time-track i { display: block; height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transform-origin: left; }
+.time.warn ~ .time-track i { background: #f87171; }
+
+.board-wrap { position: relative; flex: 1; min-height: 0; padding: 12px 8px 8px; }
+.board { position: relative; width: 100%; height: 100%; }
+
+/* 牌：象牙色牌面，右下的陰影是牌的厚度 */
+.tile {
+  position: absolute;
+  width: var(--tile-w);
+  height: var(--tile-h);
+  padding: 2px;
+  border: 1px solid #c9b48a;
+  border-radius: 7px;
+  background: linear-gradient(145deg, #fffaf0, #eadfc6);
+  box-shadow: 2px 3px 0 #a98a56, 3px 5px 7px rgba(0, 0, 0, 0.55);
+  transition: left 0.25s, top 0.25s, filter 0.15s, translate 0.1s;
+  touch-action: manipulation;
+}
+.tile img { display: block; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+.tile.blocked { filter: brightness(0.55) saturate(0.75); cursor: default; }
+.tile.selected {
+  translate: 0 -4px;
+  border-color: #fff3d6;
+  outline: 3px solid #f5b83d;
+  outline-offset: -1px;
+}
+.tile.hint { animation: tile-hint 0.8s ease-in-out infinite; outline: 3px solid #5eead4; outline-offset: -1px; }
+@keyframes tile-hint { 50% { translate: 0 -5px; } }
+.tile.nope { animation: tile-nope 0.25s; }
+@keyframes tile-nope {
+  25% { translate: -3px 0; }
+  75% { translate: 3px 0; }
+}
+.tile.dealt { animation: tile-dealt 0.3s ease-out; }
+@keyframes tile-dealt { from { scale: 0.7; } }
+.tile.gone { animation: tile-gone 0.26s ease-in forwards; pointer-events: none; }
+@keyframes tile-gone { to { scale: 1.25; opacity: 0; } }
+
+.float {
+  position: absolute;
+  z-index: 9000;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 18px;
+  color: #ffe08a;
+  white-space: nowrap;
+  pointer-events: none;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  animation: float-up 0.8s ease-out forwards;
+}
+@keyframes float-up { to { translate: 0 -34px; opacity: 0; } }
+
+.banner {
+  position: absolute;
+  z-index: 9500;
+  left: 50%;
+  top: 44%;
+  padding: 10px 24px;
+  border-radius: 999px;
+  background: rgba(10, 8, 5, 0.86);
+  border: 1px solid var(--gold-light);
+  color: #fff3d6;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.banner.go { animation: banner 1.1s ease-out; }
+@keyframes banner {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.7); }
+  14% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
+  24% { transform: translate(-50%, -50%) scale(1); }
+  72% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
+}
+
+.tools {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 6px 12px max(12px, env(safe-area-inset-bottom));
+}
+.tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 207, 166, 0.45);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--gold-light);
+  font-size: 15px;
+  font-weight: 600;
+}
+.tool b { color: #fff; font-variant-numeric: tabular-nums; }
+.tool:disabled { opacity: 0.35; cursor: default; }
+.tool.pulse { animation: tool-pulse 0.6s ease-in-out 3; }
+@keyframes tool-pulse { 50% { background: rgba(245, 184, 61, 0.45); scale: 1.08; } }
+
+#overlay-end, #overlay-pause { z-index: 9800; }
+#overlay-end .new-best { align-self: center; }
+.end-score { margin: 0 0 4px; font-family: var(--serif); font-size: 26px; color: #fff; font-variant-numeric: tabular-nums; }
