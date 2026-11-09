@@ -102,6 +102,17 @@ const allVideos: VideoInfo[] = [
     "isFeatured": false
   },
   {
+    "id": "v-j7H8iMQSbFQ",
+    "platform": "youtube",
+    "category": "p2",
+    "title": "Ponpon｜Come Fly With Me (Live in Taipei) (Shorts)",
+    "date": "2026-11-08",
+    "embedUrl": "j7H8iMQSbFQ",
+    "thumbnailUrl": "https://i.ytimg.com/vi/j7H8iMQSbFQ/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/shorts/j7H8iMQSbFQ"
+  },
+  {
     "id": "v-X6QlNOWjQeg",
     "platform": "youtube",
     "category": "p2",
