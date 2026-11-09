@@ -4,7 +4,7 @@ import { STRINGS, TILES, detectLang } from './i18n.js';
 
 // 牌面圖案：放在 img/tiles/，之後有新的圖，放進資料夾再在這裡加一筆就好。
 // 前面的最好分，每關都會用到；後面幾張長得比較像，到後面的關卡才出現。
-const KINDS = ['gold-figure', 'black-suit', 'pink-shirt', 'white-shirt', 'gold-dress', 'white-figure', 'stage-a', 'duo-right', 'poster', 'duo-left'];
+const KINDS = ['fig-red', 'fig-gold-seated', 'fig-tray', 'guitar', 'gold-figure', 'whistle', 'fig-mic', 'note', 'fig-white-dress', 'mic', 'fig-suit', 'washboard', 'white-figure', 'scat', 'fig-khaki', 'fig-bag'];
 const HINTS = 2; // 每關幾次提示
 const SHUFFLES = 1; // 每關幾次洗牌
 const COMBO_SECS = 4; // 幾秒內再消一對算連擊
