@@ -295,8 +295,7 @@ function match(a, b, path) {
   G.score += gained;
   const t = engine.now();
   const m = SCALE[Math.min(G.combo, SCALE.length - 1)];
-  engine.guitar(t, m - 12, 0.5);
-  engine.bell(t + 0.05, m + 12, 0.14);
+  engine.keys(t, [m, m + 4, m + 7], 0.12, 0.24); // 電鋼琴和弦
   if (G.combo >= 2) showFloat(b, `${T.comboWord} ×${G.combo + 1}`);
   drawLine(path);
   [a, b].forEach((x) => {
