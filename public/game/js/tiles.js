@@ -4,7 +4,7 @@ import { STRINGS, TILES, detectLang } from './i18n.js';
 
 // 牌面圖案：放在 img/tiles/，之後有新的圖，放進資料夾再在這裡加一筆就好。
 // 前面的最好分，每關都會用到；後面幾張長得比較像，到後面的關卡才出現。
-const KINDS = ['fig-red', 'fig-gold-seated', 'fig-tray', 'guitar', 'gold-figure', 'whistle', 'fig-mic', 'note', 'fig-white-dress', 'mic', 'fig-suit', 'washboard', 'white-figure', 'scat', 'fig-khaki', 'fig-bag'];
+const KINDS = ['fig-red', 'fig-gold-seated', 'fig-tray', 'guitar', 'gold-figure', 'whistle', 'fig-mic', 'note', 'fig-white-dress', 'mic', 'fig-suit', 'washboard', 'white-figure', 'scat', 'fig-khaki', 'fig-bag', 'fig-black-suit', 'fig-green', 'fig-brooch-smile', 'fig-green-updo', 'fig-brooch'];
 const HINTS = 1; // 每關幾次提示
 const SHUFFLES = 1; // 每關幾次洗牌
 const COMBO_SECS = 4; // 幾秒內再消一對算連擊
@@ -52,7 +52,7 @@ function applyLang() {
   T = { ...STRINGS[lang], ...TILES[lang] };
   document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : lang;
   document.querySelectorAll('[data-i18n]').forEach((el) => {
-    el.textContent = T[el.dataset.i18n];
+    el.textContent = T[el.dataset.i18n].replace('{levels}', LEVELS.length);
   });
   document.querySelectorAll('[data-i18n-label]').forEach((el) => {
     el.setAttribute('aria-label', T[el.dataset.i18nLabel]);
@@ -418,6 +418,7 @@ function showPanel(title) {
   $('end-score').textContent = G.score.toLocaleString();
   $('end-newbest').classList.toggle('show', isNew);
   $('btn-retry').textContent = G.allClear ? T.again : T.retry;
+  $('overlay-end').classList.toggle('win', G.allClear); // 全破才有公仔祝賀
   $('overlay-end').classList.add('show');
 }
 

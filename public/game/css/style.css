@@ -261,6 +261,23 @@ a { color: var(--gold); }
   text-align: center;
 }
 .panel h2 { margin: 0 0 6px; font-family: var(--serif); font-size: 26px; color: var(--gold-light); }
+/* 全部破關時的公仔祝賀，平常不顯示 */
+.cheer, .cheer-msg { display: none; }
+.overlay.win .cheer {
+  display: block;
+  align-self: center;
+  width: auto;
+  height: min(30dvh, 230px);
+  border-radius: 20px;
+  border: 1px solid rgba(232, 207, 166, 0.45);
+  box-shadow: 0 12px 40px rgba(197, 160, 89, 0.28);
+  animation: cheer-in 0.5s cubic-bezier(0.3, 1.5, 0.5, 1), cheer-bob 1.6s ease-in-out 0.5s infinite;
+}
+.overlay.win .cheer-msg { display: block; margin: 0; white-space: pre-line; font-size: 15px; font-weight: 600; line-height: 1.5; color: #fff3d6; }
+.overlay.win .panel h2 { margin-bottom: 0; }
+@keyframes cheer-in { from { scale: 0.4; opacity: 0; } }
+@keyframes cheer-bob { 50% { translate: 0 -6px; rotate: 2deg; } }
+@media (prefers-reduced-motion: reduce) { .overlay.win .cheer { animation: none; } }
 
 /* ---------- 結算畫面 ---------- */
 #screen-result { overflow-y: auto; padding: 20px 16px; }

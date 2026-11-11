@@ -147,7 +147,7 @@ function applyLang() {
   T = { ...STRINGS[lang], ...BUBBLE[lang] };
   document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : lang;
   document.querySelectorAll('[data-i18n]').forEach((el) => {
-    el.textContent = T[el.dataset.i18n];
+    el.textContent = T[el.dataset.i18n].replace('{levels}', LEVELS.length);
   });
   document.querySelectorAll('[data-i18n-label]').forEach((el) => {
     el.setAttribute('aria-label', T[el.dataset.i18nLabel]);
@@ -740,6 +740,7 @@ function showPanel(cleared) {
   $('end-score').textContent = G.score.toLocaleString();
   $('end-newbest').classList.toggle('show', isNew);
   $('btn-retry').textContent = cleared ? T.again : T.retry;
+  $('overlay-end').classList.toggle('win', cleared); // 全破才有公仔祝賀
   $('overlay-end').classList.add('show');
 }
 
@@ -984,6 +985,7 @@ if (new URLSearchParams(location.search).has('debug')) {
       return { total, row: slot.row, cluster: cluster.length };
     },
     start: startLevel,
+    endLevel,
     best: () => best,
   });
 }
