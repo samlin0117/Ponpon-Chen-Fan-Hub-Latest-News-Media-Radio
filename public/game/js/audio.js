@@ -154,17 +154,20 @@ export class AudioEngine {
   }
 
   // 鋼琴和弦（電鋼琴感的音色）
-  keys(t, midis, dur, vel = 0.07) {
+  // strum 是每個音之間錯開幾秒，幾個音不會同一瞬間一起衝到最大聲；attack 是每個音從無聲到最大聲要幾秒，太短會像爆音
+  keys(t, midis, dur, vel = 0.07, strum = 0, attack = 0.006) {
     const c = this.ctx;
-    const g = c.createGain();
     const f = c.createBiquadFilter();
     f.type = 'lowpass';
     f.frequency.value = 2400;
-    const end = t + dur + 0.35;
-    g.gain.setValueAtTime(0.0001, t);
-    g.gain.exponentialRampToValueAtTime(vel, t + 0.006);
-    g.gain.exponentialRampToValueAtTime(0.0001, end);
-    for (const m of midis) {
+    midis.forEach((m, i) => {
+      const s = t + i * strum;
+      const end = s + dur + 0.35;
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, s);
+      g.gain.exponentialRampToValueAtTime(vel, s + attack);
+      g.gain.exponentialRampToValueAtTime(0.0001, end);
+      g.connect(f);
       const fr = mtof(m);
       const o1 = c.createOscillator();
       o1.type = 'sine';
@@ -174,16 +177,15 @@ export class AudioEngine {
       o2.frequency.value = fr * 2.001;
       const g2 = c.createGain();
       g2.gain.value = 0.18;
-      o1.connect(f);
+      o1.connect(g);
       o2.connect(g2);
-      g2.connect(f);
-      o1.start(t);
-      o2.start(t);
+      g2.connect(g);
+      o1.start(s);
+      o2.start(s);
       o1.stop(end + 0.02);
       o2.stop(end + 0.02);
-    }
-    f.connect(g);
-    this.out(g, 0.3);
+    });
+    this.out(f, 0.3);
   }
 
   ride(t, vel = 0.1) {

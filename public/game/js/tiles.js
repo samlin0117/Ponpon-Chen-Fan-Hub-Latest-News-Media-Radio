@@ -14,6 +14,7 @@ const STUCK_SECS = 5; // 沒牌可消又沒有洗牌次數時，自動洗牌扣�
 const ARROWS = { down: '↓', up: '↑', left: '←', right: '→' };
 const NEXT_LEVEL_DELAY = 1500;
 const SFX_GAIN = 0.55;
+const KEYS_VEL = 0.1; // 消牌和弦的音量（原本 0.24 太大聲，手機喇叭會破音）
 const SCALE = [60, 62, 64, 67, 69, 72, 74, 76, 79, 81, 84]; // 連擊越高，音越高（C 大調五聲音階）
 const ASPECT = 1.15; // 牌的高是寬的幾倍
 const RING = 0.4; // 牌陣外面留幾張牌寬，連線繞到外面時才畫得出來
@@ -295,7 +296,7 @@ function match(a, b, path) {
   G.score += gained;
   const t = engine.now();
   const m = SCALE[Math.min(G.combo, SCALE.length - 1)];
-  engine.keys(t, [m, m + 4, m + 7], 0.12, 0.24); // 電鋼琴和弦
+  engine.keys(t, [m, m + 4, m + 7], 0.12, KEYS_VEL, 0.02, 0.02); // 電鋼琴和弦，三個音錯開一點點、起音放軟，才不會像爆音
   if (G.combo >= 2) showFloat(b, `${T.comboWord} ×${G.combo + 1}`);
   drawLine(path);
   [a, b].forEach((x) => {
