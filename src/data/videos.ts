@@ -24,6 +24,28 @@ export interface VideoInfo {
 
 const allVideos: VideoInfo[] = [
   {
+    "id": "v-NMD7UT4hzf4",
+    "platform": "youtube",
+    "category": "p1",
+    "title": "Ponpon 陳芃瑄 x YELLOW 黃宣｜獨上C樓・Once in a Blue Moon (Live in Taipei)",
+    "date": "2026-11-14",
+    "embedUrl": "NMD7UT4hzf4",
+    "thumbnailUrl": "https://i.ytimg.com/vi/NMD7UT4hzf4/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=NMD7UT4hzf4"
+  },
+  {
+    "id": "v-CDmvxDAB8nA",
+    "platform": "youtube",
+    "category": "p2",
+    "title": "Ponpon × YELLOW —— 獨上C樓 • Once in a Blue Moon (Live in Taipei) coming soon… (Shorts)",
+    "date": "2026-11-13",
+    "embedUrl": "CDmvxDAB8nA",
+    "thumbnailUrl": "https://i.ytimg.com/vi/CDmvxDAB8nA/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/shorts/CDmvxDAB8nA"
+  },
+  {
     "id": "v-8HeuE9I0JFQ",
     "platform": "youtube",
     "category": "p1",
