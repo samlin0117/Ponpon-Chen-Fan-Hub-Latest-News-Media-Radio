@@ -24,6 +24,17 @@ export interface VideoInfo {
 
 const allVideos: VideoInfo[] = [
   {
+    "id": "v-Mywmi_c1R9Q",
+    "platform": "youtube",
+    "category": "p2",
+    "title": "Ponpon’s Guitar Solo on “獨上C樓” (Shorts)",
+    "date": "2026-11-15",
+    "embedUrl": "Mywmi_c1R9Q",
+    "thumbnailUrl": "https://i.ytimg.com/vi/Mywmi_c1R9Q/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/shorts/Mywmi_c1R9Q"
+  },
+  {
     "id": "v-NMD7UT4hzf4",
     "platform": "youtube",
     "category": "p1",
