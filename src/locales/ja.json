@@ -28,6 +28,7 @@
   "followerGrowth": {
     "title": "Instagram フォロワー推移",
     "currentAsOf": "{date}時点のフォロワー数",
+    "dayRecord": "1日のフォロワー増加 最高記録",
     "totalLabel": "総フォロワー数",
     "monthlyGain": "その月の増加数",
     "posts": "投稿",

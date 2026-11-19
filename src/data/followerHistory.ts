@@ -73,6 +73,10 @@ export const followerHistory: FollowerDataPoint[] = [
   { date: '2026-10-31', followers: 61659 },
 ];
 
+// 單日新增追蹤人數的最高紀錄（看 Social Blade 每日表格的 Followers 欄）。
+// 跟上面的月底統計分開，不會畫進圖表。之後破紀錄時，只要改日期和人數。
+export const followerDayRecord = { date: '2026-11-15', gain: 5002 };
+
 export const followerProfile = {
   handle: 'ponponofficial_',
   url: 'https://www.instagram.com/ponponofficial_/',

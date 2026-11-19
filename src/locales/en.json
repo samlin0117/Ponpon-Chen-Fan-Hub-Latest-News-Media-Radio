@@ -28,6 +28,7 @@
   "followerGrowth": {
     "title": "Instagram Follower Growth",
     "currentAsOf": "Followers as of {date}",
+    "dayRecord": "Most followers gained in one day",
     "totalLabel": "Total followers",
     "monthlyGain": "Gained that month",
     "posts": "Posts",

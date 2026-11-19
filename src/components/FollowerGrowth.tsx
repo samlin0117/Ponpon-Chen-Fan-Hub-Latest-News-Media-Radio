@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Instagram, ExternalLink, Play, Star, X } from 'lucide-react';
+import { Instagram, ExternalLink, Play, Star, Trophy, X } from 'lucide-react';
 import { useTranslation } from '../hooks/useTranslation';
-import { followerHistory, followerProfile, FollowerDataPoint } from '../data/followerHistory';
+import { followerHistory, followerProfile, followerDayRecord, FollowerDataPoint } from '../data/followerHistory';
 
 const VIEW_W = 820;
 const VIEW_H = 360;
@@ -212,6 +212,18 @@ const FollowerGrowth: React.FC = () => {
             <div className="text-xs text-gray-500 mt-2 uppercase tracking-widest">
               {(tr.currentAsOf || 'Followers as of {date}').replace('{date}', fmtFullDate(last.date))}
             </div>
+          </div>
+
+          {/* 單日新增追蹤的最高紀錄，資料在 followerHistory.ts 的 followerDayRecord */}
+          <div className="sm:text-right">
+            <div className="flex items-center gap-1.5 sm:justify-end text-xs text-gold-light/80 uppercase tracking-widest mb-2">
+              <Trophy className="w-3.5 h-3.5" />
+              {tr.dayRecord || 'Most followers gained in one day'}
+            </div>
+            <div className="text-3xl md:text-4xl font-serif text-emerald-400 leading-none">
+              +{nf.format(followerDayRecord.gain)}
+            </div>
+            <div className="text-xs text-gray-500 mt-2 uppercase tracking-widest">{fmtFullDate(followerDayRecord.date)}</div>
           </div>
         </div>
 
