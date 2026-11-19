@@ -28,7 +28,7 @@ const allVideos: VideoInfo[] = [
     "platform": "youtube",
     "category": "p8",
     "song": "But Not For Me",
-    "title": "Ponpon Chen - But Not For Me (鼓刷伴奏 / Brush Drums Play-Along) @Murray Green",
+    "title": "Ponpon Chen - But Not For Me (95 歲爵士鼓手鼓刷伴奏 / Brush Drums Play-Along by a 95-Year-Old Jazz Drummer) @Murray Green",
     "date": "2026-11-19",
     "embedUrl": "VlLUZj4o_7Y",
     "thumbnailUrl": "https://i.ytimg.com/vi/VlLUZj4o_7Y/maxresdefault.jpg",
