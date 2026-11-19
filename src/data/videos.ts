@@ -24,6 +24,18 @@ export interface VideoInfo {
 
 const allVideos: VideoInfo[] = [
   {
+    "id": "v-VlLUZj4o_7Y",
+    "platform": "youtube",
+    "category": "p8",
+    "song": "But Not For Me",
+    "title": "Ponpon Chen - But Not For Me (鼓刷伴奏 / Brush Drums Play-Along) @Murray Green",
+    "date": "2026-11-19",
+    "embedUrl": "VlLUZj4o_7Y",
+    "thumbnailUrl": "https://i.ytimg.com/vi/VlLUZj4o_7Y/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=VlLUZj4o_7Y"
+  },
+  {
     "id": "v-Mywmi_c1R9Q",
     "platform": "youtube",
     "category": "p2",
