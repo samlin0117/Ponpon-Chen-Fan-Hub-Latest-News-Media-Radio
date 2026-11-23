@@ -24,6 +24,18 @@ export interface VideoInfo {
 
 const allVideos: VideoInfo[] = [
   {
+    "id": "v-H9GTS32gW9g",
+    "platform": "youtube",
+    "category": "p8",
+    "song": "But Not For Me",
+    "title": "Ponpon Chen - But Not For Me (Scat Solo \"Mouth Guitar\" Cover / 스캣 솔로 입기타 커버) @Doyun Bang",
+    "date": "2026-10-02",
+    "embedUrl": "H9GTS32gW9g",
+    "thumbnailUrl": "https://i.ytimg.com/vi/H9GTS32gW9g/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=H9GTS32gW9g"
+  },
+  {
     "id": "v-VlLUZj4o_7Y",
     "platform": "youtube",
     "category": "p8",
