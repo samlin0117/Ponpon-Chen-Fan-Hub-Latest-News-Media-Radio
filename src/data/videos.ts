@@ -1525,6 +1525,18 @@ const allVideos: VideoInfo[] = [
     "isFeatured": false
   },
   {
+    "id": "v-6Os17fNa0P8",
+    "platform": "youtube",
+    "category": "p8",
+    "song": "獨上C樓",
+    "title": "Ponpon Chen - \"獨上C樓\" Guitar Solo Analysis @Bojue",
+    "date": "2026-11-16",
+    "embedUrl": "6Os17fNa0P8",
+    "thumbnailUrl": "https://i.ytimg.com/vi/6Os17fNa0P8/maxresdefault.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.youtube.com/watch?v=6Os17fNa0P8"
+  },
+  {
     "id": "v-Rc_DA04vpNo",
     "platform": "youtube",
     "category": "p8",
