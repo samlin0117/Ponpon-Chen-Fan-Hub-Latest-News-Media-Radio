@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Youtube, Instagram, Facebook, Globe, Music, Mic2, AtSign, Menu, X, Trophy, ArrowRight, Star, Disc3, Users, TrendingUp, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { BrowserRouter as Router, Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, Navigate, useLocation, useSearchParams } from 'react-router-dom';
 import FirebaseComments from './components/FirebaseComments';
 import { videoList, VideoInfo } from './data/videos';
 import { taipeiJazz2026Coverage } from './data/pressCoverage';
@@ -23,6 +23,17 @@ import { getBasename } from './i18n/route';
 import slide1Img from './assets/slide1.jpg';
 import slide2Img from './assets/slide2.jpg';
 
+/** 影音專區分頁 id 對應的網址名稱（?tab=...），現場演出 p1 是預設分頁，不加參數 */
+const VIDEO_TAB_SLUGS: Record<string, string> = {
+  p1: 'live',
+  p6: 'highlights',
+  p7: 'shows',
+  p2: 'shorts',
+  p3: 'press',
+  p5: 'fancams',
+  p8: 'tributes',
+};
+
 function MainContent() {
   const { t, lang, setLang } = useTranslation();
   const [timelineFilter, setTimelineFilter] = useState<'all' | 'first' | 'album' | 'followers'>('all');
@@ -36,7 +47,14 @@ function MainContent() {
     return result;
   })();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeVideoTab, setActiveVideoTab] = useState('p1');
+  // 影音專區的分頁記在網址上（例如 /videos?tab=tributes），分享連結可以直接打開指定分頁
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeVideoTab = Object.keys(VIDEO_TAB_SLUGS).find(id => VIDEO_TAB_SLUGS[id] === searchParams.get('tab')) || 'p1';
+  const setActiveVideoTab = (id: string) => setSearchParams(prev => {
+    const p = new URLSearchParams(prev);
+    if (id === 'p1') p.delete('tab'); else p.set('tab', VIDEO_TAB_SLUGS[id]);
+    return p;
+  }, { replace: true });
   const [activeYearTab, setActiveYearTab] = useState('all');
   const [activeSongTab, setActiveSongTab] = useState('all');
   const [activeTimelineVideo, setActiveTimelineVideo] = useState<{type: 'youtube' | 'facebook', url: string, videoId?: string, startTime?: number, endTime?: number} | null>(null);
