@@ -1407,18 +1407,9 @@ function MainContent() {
                           {t.interview.pod2}
                         </h3>
 
-                        <div className="w-full rounded-2xl overflow-hidden shadow-2xl shadow-gold/5 border border-white/10">
-                          <iframe
-                            style={{ borderRadius: '12px' }}
-                            src="https://open.spotify.com/embed/episode/5E9Bl69WxCP1Ppj5oHC8V7?utm_source=generator&theme=0"
-                            width="100%"
-                            height="352"
-                            frameBorder="0"
-                            allowFullScreen={false}
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                            loading="lazy"
-                            title="Spotify Podcast Interview"
-                          ></iframe>
+                        {/* Spotify episode 5E9Bl69WxCP1Ppj5oHC8V7 was taken down (oembed 404 on 2026-11-26) */}
+                        <div className="w-full rounded-2xl border border-white/10 bg-dark px-6 py-10 text-center text-sm text-gray-400">
+                          {t.interview.pod2Removed}
                         </div>
                       </div>
                     </div>
