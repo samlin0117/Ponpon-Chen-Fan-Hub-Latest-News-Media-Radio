@@ -129,7 +129,7 @@ export const PLATFORM_LABELS: Record<VideoInfo['platform'], string> = {
 };
 
 export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
-  const { t } = useTranslation();
+  const { t, lang } = useTranslation();
   const localizedTitle = (t as any)?.videoTitles?.[video.id] || video.title;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -449,9 +449,10 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
             )}
             {video.platform === 'bilibili' && (
               // Bilibili 官方外嵌播放器：embedUrl 是 BV 號，danmaku=0 預設關閉彈幕。
+              // isOutside=true 是 Bilibili 給站外網站用的新版外嵌參數，手機瀏覽器比較能直接播放。
               <iframe
                 className="w-full h-full aspect-video"
-                src={`https://player.bilibili.com/player.html?bvid=${video.embedUrl}&autoplay=0&high_quality=1&danmaku=0`}
+                src={`https://player.bilibili.com/player.html?isOutside=true&bvid=${video.embedUrl}&autoplay=0&high_quality=1&danmaku=0`}
                 title={localizedTitle}
                 style={{ border: 'none' }}
                 allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
@@ -459,6 +460,19 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
               ></iframe>
             )}
           </div>
+          {video.platform === 'bilibili' && (
+            // 手機上 Bilibili 外嵌播放器常常不能播（要求開 App 或黑畫面），
+            // 而左上角「在原網站觀看」在手機只剩圖示，所以在播放器下方放一顆明顯的按鈕。
+            <a
+              href={video.originalUrl || `https://www.bilibili.com/video/${video.embedUrl}/`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="md:hidden absolute bottom-10 left-1/2 -translate-x-1/2 z-[10000] flex items-center gap-2 px-5 py-3 rounded-full bg-[#00AEEC] text-white text-sm font-medium whitespace-nowrap shadow-[0_0_20px_rgba(0,174,236,0.4)]"
+            >
+              <ExternalLink className="w-4 h-4" />
+              {lang === 'en' ? "Can't play? Watch on Bilibili" : lang === 'ja' ? '再生できない場合は Bilibili で見る' : '無法播放？到 Bilibili 觀看'}
+            </a>
+          )}
         </div>,
         document.body
       )}
