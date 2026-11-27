@@ -449,10 +449,12 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
             )}
             {video.platform === 'bilibili' && (
               // Bilibili 官方外嵌播放器：embedUrl 是 BV 號，danmaku=0 預設關閉彈幕。
-              // isOutside=true 是 Bilibili 給站外網站用的新版外嵌參數，手機瀏覽器比較能直接播放。
+              // 手機（觸控裝置）上一般外嵌播放器會要求安裝 App，改用 Bilibili 的手機網頁播放器。
               <iframe
                 className="w-full h-full aspect-video"
-                src={`https://player.bilibili.com/player.html?isOutside=true&bvid=${video.embedUrl}&autoplay=0&high_quality=1&danmaku=0`}
+                src={window.matchMedia('(hover: none) and (pointer: coarse)').matches
+                  ? `https://www.bilibili.com/blackboard/html5mobileplayer.html?bvid=${video.embedUrl}&danmaku=0&high_quality=1`
+                  : `https://player.bilibili.com/player.html?isOutside=true&bvid=${video.embedUrl}&autoplay=0&high_quality=1&danmaku=0`}
                 title={localizedTitle}
                 style={{ border: 'none' }}
                 allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
