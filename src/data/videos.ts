@@ -873,6 +873,17 @@ const allVideos: VideoInfo[] = [
 
 
   {
+    "id": "v-bili-BV1bT14zpEgL",
+    "platform": "bilibili",
+    "category": "p3",
+    "title": "Ponpon Chen專訪｜從吉他新手到洛杉磯爵士舞台，她的音樂成長與爵士學習心得",
+    "date": "2026-11-27",
+    "embedUrl": "BV1bT14zpEgL",
+    "thumbnailUrl": "/bilibili-ponpon-interview.jpg",
+    "isFeatured": false,
+    "originalUrl": "https://www.bilibili.com/video/BV1bT14zpEgL/"
+  },
+  {
     "id": "v-dvBCMb_VpI8",
     "platform": "youtube",
     "category": "p3",
