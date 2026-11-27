@@ -1,4 +1,4 @@
-export type Platform = 'youtube' | 'facebook' | 'instagram' | 'threads' | 'pbs' | 'tiktok' | 'douyin';
+export type Platform = 'youtube' | 'facebook' | 'instagram' | 'threads' | 'pbs' | 'tiktok' | 'douyin' | 'bilibili';
 
 export interface VideoInfo {
   id: string;

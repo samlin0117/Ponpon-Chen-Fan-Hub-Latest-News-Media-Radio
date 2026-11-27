@@ -124,6 +124,7 @@ export const PLATFORM_LABELS: Record<VideoInfo['platform'], string> = {
   threads: 'Threads',
   tiktok: 'TikTok',
   douyin: '抖音',
+  bilibili: 'Bilibili',
   pbs: 'PBS',
 };
 
@@ -305,6 +306,25 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
             </>
           )}
 
+          {video.platform === 'bilibili' && (
+            <>
+              {video.thumbnailUrl ? (
+                <img
+                  src={video.thumbnailUrl}
+                  alt={localizedTitle}
+                  className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity"
+                />
+              ) : (
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-black via-[#00AEEC]/15 to-[#FB7299]/15" />
+              )}
+              <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/5 transition-colors z-10">
+                <div className="z-20 w-16 h-16 bg-[#00AEEC]/90 rounded-full flex justify-center items-center shadow-[0_0_20px_rgba(0,174,236,0.5)] group-hover:scale-110 transition-transform duration-500">
+                  <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                </div>
+              </div>
+            </>
+          )}
+
           {video.platform === 'tiktok' && (
             <>
               {video.thumbnailUrl ? (
@@ -335,6 +355,7 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
               else if (video.platform === 'instagram') link = `https://www.instagram.com/p/${video.embedUrl}/`;
               else if (video.platform === 'threads') link = video.embedUrl;
               else if (video.platform === 'douyin') link = `https://www.douyin.com/video/${video.embedUrl}`;
+              else if (video.platform === 'bilibili') link = `https://www.bilibili.com/video/${video.embedUrl}/`;
               else if (video.platform === 'facebook') {
                 const fbMatch = video.embedUrl.match(/href=([^&]+)/);
                 if (fbMatch) link = decodeURIComponent(fbMatch[1]);
@@ -363,7 +384,7 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
             <X className="w-6 h-6 md:w-8 md:h-8" />
           </button>
 
-          <div className={`bg-black md:rounded-2xl shadow-[0_0_80px_rgba(212,175,55,0.15)] ring-1 ring-white/10 md:ring-gold/30 relative flex flex-col items-center justify-center animate-in zoom-in-95 duration-300 w-full md:w-[90vw] max-w-[1600px] ${(video.platform === 'youtube' || video.platform === 'pbs' || (video.platform === 'facebook' && !isFbVertical))
+          <div className={`bg-black md:rounded-2xl shadow-[0_0_80px_rgba(212,175,55,0.15)] ring-1 ring-white/10 md:ring-gold/30 relative flex flex-col items-center justify-center animate-in zoom-in-95 duration-300 w-full md:w-[90vw] max-w-[1600px] ${(video.platform === 'youtube' || video.platform === 'pbs' || video.platform === 'bilibili' || (video.platform === 'facebook' && !isFbVertical))
               ? 'aspect-video h-auto overflow-hidden'
               : 'h-[90vh] md:h-[85vh] py-6 md:py-10 overflow-y-auto'
             }`}>
@@ -423,6 +444,17 @@ export default function VideoCard({ video }: { video: VideoInfo; key?: any }) {
                 style={{ border: 'none' }}
                 referrerPolicy="unsafe-url"
                 allow="autoplay; encrypted-media; fullscreen"
+                allowFullScreen
+              ></iframe>
+            )}
+            {video.platform === 'bilibili' && (
+              // Bilibili 官方外嵌播放器：embedUrl 是 BV 號，danmaku=0 預設關閉彈幕。
+              <iframe
+                className="w-full h-full aspect-video"
+                src={`https://player.bilibili.com/player.html?bvid=${video.embedUrl}&autoplay=0&high_quality=1&danmaku=0`}
+                title={localizedTitle}
+                style={{ border: 'none' }}
+                allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
                 allowFullScreen
               ></iframe>
             )}
